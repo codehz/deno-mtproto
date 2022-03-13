@@ -57,7 +57,7 @@ export class Deserializer implements BaseDeserializer {
   }
   double(): number {
     const value = this.#view.getFloat64(this.#offset, true);
-    this.#offset += 4;
+    this.#offset += 8;
     return value;
   }
   bytes(): Uint8Array {
@@ -106,7 +106,9 @@ export class Deserializer implements BaseDeserializer {
     if (id == -1720552011) return true as any;
     const fn = $decoder.get(id);
     if (fn == null) {
-      console.error(dump_u8arr(this.remain));
+      console.log(this.#offset);
+      Deno.writeFileSync("diag.bin", this.#buffer);
+      // console.log(dump_u8arr(this.#buffer));
       throw new Error(`unknown tag ${id}`);
     }
     return fn.call(this) as unknown as T;
