@@ -677,6 +677,9 @@ const global = {
   messageActionSetChatTheme(params) {
     return { ...params, _: "messageActionSetChatTheme" };
   },
+  messageActionChatJoinedByRequest() {
+    return { _: "messageActionChatJoinedByRequest" };
+  },
 
   // type Dialog
   dialog(params) {
@@ -1138,6 +1141,15 @@ const global = {
   updateBotCommands(params) {
     return { ...params, _: "updateBotCommands" };
   },
+  updatePendingJoinRequests(params) {
+    return { ...params, _: "updatePendingJoinRequests" };
+  },
+  updateBotChatInviteRequester(params) {
+    return { ...params, _: "updateBotChatInviteRequester" };
+  },
+  updateMessageReactions(params) {
+    return { ...params, _: "updateMessageReactions" };
+  },
 
   // type Updates
   updatesTooLong() {
@@ -1561,6 +1573,12 @@ const global = {
   keyboardButtonRequestPoll(params) {
     return { ...params, _: "keyboardButtonRequestPoll" };
   },
+  inputKeyboardButtonUserProfile(params) {
+    return { ...params, _: "inputKeyboardButtonUserProfile" };
+  },
+  keyboardButtonUserProfile(params) {
+    return { ...params, _: "keyboardButtonUserProfile" };
+  },
 
   // type KeyboardButtonRow
   keyboardButtonRow(params) {
@@ -1638,6 +1656,9 @@ const global = {
   },
   messageEntityBankCard(params) {
     return { ...params, _: "messageEntityBankCard" };
+  },
+  messageEntitySpoiler(params) {
+    return { ...params, _: "messageEntitySpoiler" };
   },
 
   // type InputChannel
@@ -2279,6 +2300,18 @@ const global = {
   },
   channelAdminLogEventActionChangeHistoryTTL(params) {
     return { ...params, _: "channelAdminLogEventActionChangeHistoryTTL" };
+  },
+  channelAdminLogEventActionParticipantJoinByRequest(params) {
+    return { ...params, _: "channelAdminLogEventActionParticipantJoinByRequest" };
+  },
+  channelAdminLogEventActionToggleNoForwards(params) {
+    return { ...params, _: "channelAdminLogEventActionToggleNoForwards" };
+  },
+  channelAdminLogEventActionSendMessage(params) {
+    return { ...params, _: "channelAdminLogEventActionSendMessage" };
+  },
+  channelAdminLogEventActionChangeAvailableReactions(params) {
+    return { ...params, _: "channelAdminLogEventActionChangeAvailableReactions" };
   },
 
   // type ChannelAdminLogEvent
@@ -2959,14 +2992,39 @@ const global = {
     return { ...params, _: "botCommandScopePeerUser" };
   },
 
-  // type ChatTheme
-  chatTheme(params) {
-    return { ...params, _: "chatTheme" };
-  },
-
   // type SponsoredMessage
   sponsoredMessage(params) {
     return { ...params, _: "sponsoredMessage" };
+  },
+
+  // type SearchResultsCalendarPeriod
+  searchResultsCalendarPeriod(params) {
+    return { ...params, _: "searchResultsCalendarPeriod" };
+  },
+
+  // type SearchResultsPosition
+  searchResultPosition(params) {
+    return { ...params, _: "searchResultPosition" };
+  },
+
+  // type ReactionCount
+  reactionCount(params) {
+    return { ...params, _: "reactionCount" };
+  },
+
+  // type MessageReactions
+  messageReactions(params) {
+    return { ...params, _: "messageReactions" };
+  },
+
+  // type AvailableReaction
+  availableReaction(params) {
+    return { ...params, _: "availableReaction" };
+  },
+
+  // type MessagePeerReaction
+  messagePeerReaction(params) {
+    return { ...params, _: "messagePeerReaction" };
   },
 
 };
@@ -3130,6 +3188,7 @@ global.messageActionInviteToGroupCall.ref = "messageActionInviteToGroupCall";
 global.messageActionSetMessagesTTL.ref = "messageActionSetMessagesTTL";
 global.messageActionGroupCallScheduled.ref = "messageActionGroupCallScheduled";
 global.messageActionSetChatTheme.ref = "messageActionSetChatTheme";
+global.messageActionChatJoinedByRequest.ref = "messageActionChatJoinedByRequest";
 
 // type Dialog
 global.dialog.ref = "dialog";
@@ -3305,6 +3364,9 @@ global.updateChannelParticipant.ref = "updateChannelParticipant";
 global.updateBotStopped.ref = "updateBotStopped";
 global.updateGroupCallConnection.ref = "updateGroupCallConnection";
 global.updateBotCommands.ref = "updateBotCommands";
+global.updatePendingJoinRequests.ref = "updatePendingJoinRequests";
+global.updateBotChatInviteRequester.ref = "updateBotChatInviteRequester";
+global.updateMessageReactions.ref = "updateMessageReactions";
 
 // type Updates
 global.updatesTooLong.ref = "updatesTooLong";
@@ -3486,6 +3548,8 @@ global.keyboardButtonBuy.ref = "keyboardButtonBuy";
 global.keyboardButtonUrlAuth.ref = "keyboardButtonUrlAuth";
 global.inputKeyboardButtonUrlAuth.ref = "inputKeyboardButtonUrlAuth";
 global.keyboardButtonRequestPoll.ref = "keyboardButtonRequestPoll";
+global.inputKeyboardButtonUserProfile.ref = "inputKeyboardButtonUserProfile";
+global.keyboardButtonUserProfile.ref = "keyboardButtonUserProfile";
 
 // type KeyboardButtonRow
 global.keyboardButtonRow.ref = "keyboardButtonRow";
@@ -3516,6 +3580,7 @@ global.messageEntityUnderline.ref = "messageEntityUnderline";
 global.messageEntityStrike.ref = "messageEntityStrike";
 global.messageEntityBlockquote.ref = "messageEntityBlockquote";
 global.messageEntityBankCard.ref = "messageEntityBankCard";
+global.messageEntitySpoiler.ref = "messageEntitySpoiler";
 
 // type InputChannel
 global.inputChannelEmpty.ref = "inputChannelEmpty";
@@ -3795,6 +3860,10 @@ global.channelAdminLogEventActionExportedInviteRevoke.ref = "channelAdminLogEven
 global.channelAdminLogEventActionExportedInviteEdit.ref = "channelAdminLogEventActionExportedInviteEdit";
 global.channelAdminLogEventActionParticipantVolume.ref = "channelAdminLogEventActionParticipantVolume";
 global.channelAdminLogEventActionChangeHistoryTTL.ref = "channelAdminLogEventActionChangeHistoryTTL";
+global.channelAdminLogEventActionParticipantJoinByRequest.ref = "channelAdminLogEventActionParticipantJoinByRequest";
+global.channelAdminLogEventActionToggleNoForwards.ref = "channelAdminLogEventActionToggleNoForwards";
+global.channelAdminLogEventActionSendMessage.ref = "channelAdminLogEventActionSendMessage";
+global.channelAdminLogEventActionChangeAvailableReactions.ref = "channelAdminLogEventActionChangeAvailableReactions";
 
 // type ChannelAdminLogEvent
 global.channelAdminLogEvent.ref = "channelAdminLogEvent";
@@ -4146,11 +4215,26 @@ global.botCommandScopePeer.ref = "botCommandScopePeer";
 global.botCommandScopePeerAdmins.ref = "botCommandScopePeerAdmins";
 global.botCommandScopePeerUser.ref = "botCommandScopePeerUser";
 
-// type ChatTheme
-global.chatTheme.ref = "chatTheme";
-
 // type SponsoredMessage
 global.sponsoredMessage.ref = "sponsoredMessage";
+
+// type SearchResultsCalendarPeriod
+global.searchResultsCalendarPeriod.ref = "searchResultsCalendarPeriod";
+
+// type SearchResultsPosition
+global.searchResultPosition.ref = "searchResultPosition";
+
+// type ReactionCount
+global.reactionCount.ref = "reactionCount";
+
+// type MessageReactions
+global.messageReactions.ref = "messageReactions";
+
+// type AvailableReaction
+global.availableReaction.ref = "availableReaction";
+
+// type MessagePeerReaction
+global.messagePeerReaction.ref = "messagePeerReaction";
 
 export default global;
 
@@ -4235,6 +4319,9 @@ export const auth = {
   codeTypeFlashCall() {
     return { _: "auth.codeTypeFlashCall" };
   },
+  codeTypeMissedCall() {
+    return { _: "auth.codeTypeMissedCall" };
+  },
 
   // type SentCodeType
   sentCodeTypeApp(params) {
@@ -4249,6 +4336,9 @@ export const auth = {
   sentCodeTypeFlashCall(params) {
     return { ...params, _: "auth.sentCodeTypeFlashCall" };
   },
+  sentCodeTypeMissedCall(params) {
+    return { ...params, _: "auth.sentCodeTypeMissedCall" };
+  },
 
   // type LoginToken
   loginToken(params) {
@@ -4259,6 +4349,11 @@ export const auth = {
   },
   loginTokenSuccess(params) {
     return { ...params, _: "auth.loginTokenSuccess" };
+  },
+
+  // type LoggedOut
+  loggedOut(params) {
+    return { ...params, _: "auth.loggedOut" };
   },
 
 };
@@ -4280,17 +4375,22 @@ auth.passwordRecovery.ref = "auth.passwordRecovery";
 auth.codeTypeSms.ref = "auth.codeTypeSms";
 auth.codeTypeCall.ref = "auth.codeTypeCall";
 auth.codeTypeFlashCall.ref = "auth.codeTypeFlashCall";
+auth.codeTypeMissedCall.ref = "auth.codeTypeMissedCall";
 
 // type SentCodeType
 auth.sentCodeTypeApp.ref = "auth.sentCodeTypeApp";
 auth.sentCodeTypeSms.ref = "auth.sentCodeTypeSms";
 auth.sentCodeTypeCall.ref = "auth.sentCodeTypeCall";
 auth.sentCodeTypeFlashCall.ref = "auth.sentCodeTypeFlashCall";
+auth.sentCodeTypeMissedCall.ref = "auth.sentCodeTypeMissedCall";
 
 // type LoginToken
 auth.loginToken.ref = "auth.loginToken";
 auth.loginTokenMigrateTo.ref = "auth.loginTokenMigrateTo";
 auth.loginTokenSuccess.ref = "auth.loginTokenSuccess";
+
+// type LoggedOut
+auth.loggedOut.ref = "auth.loggedOut";
 
 export const contacts = {
   // type Contacts
@@ -4444,6 +4544,9 @@ export const messages = {
   stickerSet(params) {
     return { ...params, _: "messages.stickerSet" };
   },
+  stickerSetNotModified() {
+    return { _: "messages.stickerSetNotModified" };
+  },
 
   // type SavedGifs
   savedGifsNotModified() {
@@ -4596,6 +4699,42 @@ export const messages = {
     return { ...params, _: "messages.sponsoredMessages" };
   },
 
+  // type SearchResultsCalendar
+  searchResultsCalendar(params) {
+    return { ...params, _: "messages.searchResultsCalendar" };
+  },
+
+  // type SearchResultsPositions
+  searchResultsPositions(params) {
+    return { ...params, _: "messages.searchResultsPositions" };
+  },
+
+  // type PeerSettings
+  peerSettings(params) {
+    return { ...params, _: "messages.peerSettings" };
+  },
+
+  // type MessageReactionsList
+  messageReactionsList(params) {
+    return { ...params, _: "messages.messageReactionsList" };
+  },
+
+  // type AvailableReactions
+  availableReactionsNotModified() {
+    return { _: "messages.availableReactionsNotModified" };
+  },
+  availableReactions(params) {
+    return { ...params, _: "messages.availableReactions" };
+  },
+
+  // type TranslatedText
+  translateNoResult() {
+    return { _: "messages.translateNoResult" };
+  },
+  translateResultText(params) {
+    return { ...params, _: "messages.translateResultText" };
+  },
+
 };
 
 // type Dialogs
@@ -4640,6 +4779,7 @@ messages.affectedMessages.ref = "messages.affectedMessages";
 
 // type StickerSet
 messages.stickerSet.ref = "messages.stickerSet";
+messages.stickerSetNotModified.ref = "messages.stickerSetNotModified";
 
 // type SavedGifs
 messages.savedGifsNotModified.ref = "messages.savedGifsNotModified";
@@ -4725,6 +4865,26 @@ messages.checkedHistoryImportPeer.ref = "messages.checkedHistoryImportPeer";
 
 // type SponsoredMessages
 messages.sponsoredMessages.ref = "messages.sponsoredMessages";
+
+// type SearchResultsCalendar
+messages.searchResultsCalendar.ref = "messages.searchResultsCalendar";
+
+// type SearchResultsPositions
+messages.searchResultsPositions.ref = "messages.searchResultsPositions";
+
+// type PeerSettings
+messages.peerSettings.ref = "messages.peerSettings";
+
+// type MessageReactionsList
+messages.messageReactionsList.ref = "messages.messageReactionsList";
+
+// type AvailableReactions
+messages.availableReactionsNotModified.ref = "messages.availableReactionsNotModified";
+messages.availableReactions.ref = "messages.availableReactions";
+
+// type TranslatedText
+messages.translateNoResult.ref = "messages.translateNoResult";
+messages.translateResultText.ref = "messages.translateResultText";
 
 export const updates = {
   // type State
@@ -5062,14 +5222,6 @@ export const account = {
     return { _: "account.resetPasswordOk" };
   },
 
-  // type ChatThemes
-  chatThemesNotModified() {
-    return { _: "account.chatThemesNotModified" };
-  },
-  chatThemes(params) {
-    return { ...params, _: "account.chatThemes" };
-  },
-
 };
 
 // type PrivacyRules
@@ -5121,10 +5273,6 @@ account.resetPasswordFailedWait.ref = "account.resetPasswordFailedWait";
 account.resetPasswordRequestedWait.ref = "account.resetPasswordRequestedWait";
 account.resetPasswordOk.ref = "account.resetPasswordOk";
 
-// type ChatThemes
-account.chatThemesNotModified.ref = "account.chatThemesNotModified";
-account.chatThemes.ref = "account.chatThemes";
-
 export const channels = {
   // type ChannelParticipants
   channelParticipants(params) {
@@ -5144,6 +5292,11 @@ export const channels = {
     return { ...params, _: "channels.adminLogResults" };
   },
 
+  // type SendAsPeers
+  sendAsPeers(params) {
+    return { ...params, _: "channels.sendAsPeers" };
+  },
+
 };
 
 // type ChannelParticipants
@@ -5155,6 +5308,9 @@ channels.channelParticipant.ref = "channels.channelParticipant";
 
 // type AdminLogResults
 channels.adminLogResults.ref = "channels.adminLogResults";
+
+// type SendAsPeers
+channels.sendAsPeers.ref = "channels.sendAsPeers";
 
 export const payments = {
   // type PaymentForm
@@ -5291,6 +5447,17 @@ export const stickers = {
 
 // type SuggestedShortName
 stickers.suggestedShortName.ref = "stickers.suggestedShortName";
+
+export const users = {
+  // type UserFull
+  userFull(params) {
+    return { ...params, _: "users.userFull" };
+  },
+
+};
+
+// type UserFull
+users.userFull.ref = "users.userFull";
 
 // #endregion "constructors"
 
@@ -5764,7 +5931,7 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
   },
   ["chatFull"](_) {
-    this.int32(1304281241);
+    this.int32(-779165146);
     this.int32(
       (+(_.can_set_username != null) << 7)
       | (+(_.has_scheduled != null) << 8)
@@ -5777,6 +5944,9 @@ export const $encoder = {
       | (+(_.ttl_period != null) << 14)
       | (+(_.groupcall_default_join_as != null) << 15)
       | (+(_.theme_emoticon != null) << 16)
+      | (+(_.requests_pending != null) << 17)
+      | (+(_.recent_requesters != null) << 17)
+      | (+(_.available_reactions != null) << 18)
     )
     if (_.can_set_username != null)
       this.true(_.can_set_username);        // ?: true - flags.7?true
@@ -5804,6 +5974,12 @@ export const $encoder = {
       this.object(_.groupcall_default_join_as); // ?: Peer - flags.15?Peer
     if (_.theme_emoticon != null)
       this.string(_.theme_emoticon);        // ?: string - flags.16?string
+    if (_.requests_pending != null)
+      this.int32(_.requests_pending);       // ?: number - flags.17?int
+    if (_.recent_requesters != null && _.recent_requesters.length > 0)
+      this.vector(_.recent_requesters, this.int64); // ?: bigint[] - flags.17?Vector<long>
+    if (_.available_reactions != null && _.available_reactions.length > 0)
+      this.vector(_.available_reactions, this.string); // ?: string[] - flags.18?Vector<string>
   },
   ["chatParticipant"](_) {
     this.int32(-1070776313);
@@ -5852,7 +6028,7 @@ export const $encoder = {
       this.object(_.peer_id);               // ?: Peer - flags.0?Peer
   },
   ["message"](_) {
-    this.int32(-2049520670);
+    this.int32(940666592);
     this.int32(
       (+(_.out != null) << 1)
       | (+(_.mentioned != null) << 4)
@@ -5877,6 +6053,7 @@ export const $encoder = {
       | (+(_.edit_date != null) << 15)
       | (+(_.post_author != null) << 16)
       | (+(_.grouped_id != null) << 17)
+      | (+(_.reactions != null) << 20)
       | (+(_.restriction_reason != null) << 22)
       | (+(_.ttl_period != null) << 25)
     )
@@ -5930,6 +6107,8 @@ export const $encoder = {
       this.string(_.post_author);           // ?: string - flags.16?string
     if (_.grouped_id != null)
       this.int64(_.grouped_id);             // ?: bigint - flags.17?long
+    if (_.reactions != null)
+      this.object(_.reactions);             // ?: MessageReactions - flags.20?MessageReactions
     if (_.restriction_reason != null && _.restriction_reason.length > 0)
       this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.22?Vector<RestrictionReason>
     if (_.ttl_period != null)
@@ -6028,7 +6207,7 @@ export const $encoder = {
     this.int64(_.user_id);                  // : bigint - long
   },
   ["dialog"](_) {
-    this.int32(739712882);
+    this.int32(-1460809483);
     this.int32(
       (+(_.pinned != null) << 2)
       | (+(_.unread_mark != null) << 3)
@@ -6046,6 +6225,7 @@ export const $encoder = {
     this.int32(_.read_outbox_max_id);       // : number - int
     this.int32(_.unread_count);             // : number - int
     this.int32(_.unread_mentions_count);    // : number - int
+    this.int32(_.unread_reactions_count);   // : number - int
     this.object(_.notify_settings);         // : PeerNotifySettings - PeerNotifySettings
     if (_.pts != null)
       this.int32(_.pts);                    // ?: number - flags.0?int
@@ -6121,10 +6301,16 @@ export const $encoder = {
       this.int32(_.timeout);                // ?: number - flags.2?int
   },
   ["auth.authorization"](_) {
-    this.int32(-855308010);
+    this.int32(872119224);
     this.int32(
-      (+(_.tmp_sessions != null) << 0)
+      (+(_.setup_password_required != null) << 1)
+      | (+(_.otherwise_relogin_days != null) << 1)
+      | (+(_.tmp_sessions != null) << 0)
     )
+    if (_.setup_password_required != null)
+      this.true(_.setup_password_required); // ?: true - flags.1?true
+    if (_.otherwise_relogin_days != null)
+      this.int32(_.otherwise_relogin_days); // ?: number - flags.1?int
     if (_.tmp_sessions != null)
       this.int32(_.tmp_sessions);           // ?: number - flags.0?int
     this.object(_.user);                    // : User - User
@@ -6179,7 +6365,7 @@ export const $encoder = {
       this.string(_.sound);                 // ?: string - flags.3?string
   },
   ["peerSettings"](_) {
-    this.int32(1933519201);
+    this.int32(-1525149427);
     this.int32(
       (+(_.report_spam != null) << 0)
       | (+(_.add_contact != null) << 1)
@@ -6189,7 +6375,10 @@ export const $encoder = {
       | (+(_.report_geo != null) << 5)
       | (+(_.autoarchived != null) << 7)
       | (+(_.invite_members != null) << 8)
+      | (+(_.request_chat_broadcast != null) << 10)
       | (+(_.geo_distance != null) << 6)
+      | (+(_.request_chat_title != null) << 9)
+      | (+(_.request_chat_date != null) << 9)
     )
     if (_.report_spam != null)
       this.true(_.report_spam);             // ?: true - flags.0?true
@@ -6207,8 +6396,14 @@ export const $encoder = {
       this.true(_.autoarchived);            // ?: true - flags.7?true
     if (_.invite_members != null)
       this.true(_.invite_members);          // ?: true - flags.8?true
+    if (_.request_chat_broadcast != null)
+      this.true(_.request_chat_broadcast);  // ?: true - flags.10?true
     if (_.geo_distance != null)
       this.int32(_.geo_distance);           // ?: number - flags.6?int
+    if (_.request_chat_title != null)
+      this.string(_.request_chat_title);    // ?: string - flags.9?string
+    if (_.request_chat_date != null)
+      this.int32(_.request_chat_date);      // ?: number - flags.9?int
   },
   ["wallPaper"](_) {
     this.int32(-1539849235);
@@ -6250,7 +6445,7 @@ export const $encoder = {
     this.int32(-1041980751);
   },
   ["userFull"](_) {
-    this.int32(-694681851);
+    this.int32(-818518751);
     this.int32(
       (+(_.blocked != null) << 0)
       | (+(_.phone_calls_available != null) << 4)
@@ -6265,6 +6460,7 @@ export const $encoder = {
       | (+(_.folder_id != null) << 11)
       | (+(_.ttl_period != null) << 14)
       | (+(_.theme_emoticon != null) << 15)
+      | (+(_.private_forward_name != null) << 16)
     )
     if (_.blocked != null)
       this.true(_.blocked);                 // ?: true - flags.0?true
@@ -6278,7 +6474,7 @@ export const $encoder = {
       this.true(_.has_scheduled);           // ?: true - flags.12?true
     if (_.video_calls_available != null)
       this.true(_.video_calls_available);   // ?: true - flags.13?true
-    this.object(_.user);                    // : User - User
+    this.int64(_.id);                       // : bigint - long
     if (_.about != null)
       this.string(_.about);                 // ?: string - flags.1?string
     this.object(_.settings);                // : PeerSettings - PeerSettings
@@ -6296,6 +6492,8 @@ export const $encoder = {
       this.int32(_.ttl_period);             // ?: number - flags.14?int
     if (_.theme_emoticon != null)
       this.string(_.theme_emoticon);        // ?: string - flags.15?string
+    if (_.private_forward_name != null)
+      this.string(_.private_forward_name);  // ?: string - flags.16?string
   },
   ["contact"](_) {
     this.int32(341499403);
@@ -7379,7 +7577,8 @@ export const $encoder = {
     this.string(_.region);                  // : string - string
   },
   ["account.authorizations"](_) {
-    this.int32(307276766);
+    this.int32(1275039392);
+    this.int32(_.authorization_ttl_days);   // : number - int
     this.vector(_.authorizations, this.object); // : Authorization[] - Vector<Authorization>
   },
   ["account.password"](_) {
@@ -7476,19 +7675,24 @@ export const $encoder = {
     this.int32(_.flags);                    // : number - int
   },
   ["chatInviteExported"](_) {
-    this.int32(-1316944408);
+    this.int32(179611673);
     this.int32(
       (+(_.revoked != null) << 0)
       | (+(_.permanent != null) << 5)
+      | (+(_.request_needed != null) << 6)
       | (+(_.start_date != null) << 4)
       | (+(_.expire_date != null) << 1)
       | (+(_.usage_limit != null) << 2)
       | (+(_.usage != null) << 3)
+      | (+(_.requested != null) << 7)
+      | (+(_.title != null) << 8)
     )
     if (_.revoked != null)
       this.true(_.revoked);                 // ?: true - flags.0?true
     if (_.permanent != null)
       this.true(_.permanent);               // ?: true - flags.5?true
+    if (_.request_needed != null)
+      this.true(_.request_needed);          // ?: true - flags.6?true
     this.string(_.link);                    // : string - string
     this.int64(_.admin_id);                 // : bigint - long
     this.int32(_.date);                     // : number - int
@@ -7500,18 +7704,24 @@ export const $encoder = {
       this.int32(_.usage_limit);            // ?: number - flags.2?int
     if (_.usage != null)
       this.int32(_.usage);                  // ?: number - flags.3?int
+    if (_.requested != null)
+      this.int32(_.requested);              // ?: number - flags.7?int
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.8?string
   },
   ["chatInviteAlready"](_) {
     this.int32(1516793212);
     this.object(_.chat);                    // : Chat - Chat
   },
   ["chatInvite"](_) {
-    this.int32(-540871282);
+    this.int32(806110401);
     this.int32(
       (+(_.channel != null) << 0)
       | (+(_.broadcast != null) << 1)
       | (+(_.public != null) << 2)
       | (+(_.megagroup != null) << 3)
+      | (+(_.request_needed != null) << 6)
+      | (+(_.about != null) << 5)
       | (+(_.participants != null) << 4)
     )
     if (_.channel != null)
@@ -7522,7 +7732,11 @@ export const $encoder = {
       this.true(_.public);                  // ?: true - flags.2?true
     if (_.megagroup != null)
       this.true(_.megagroup);               // ?: true - flags.3?true
+    if (_.request_needed != null)
+      this.true(_.request_needed);          // ?: true - flags.6?true
     this.string(_.title);                   // : string - string
+    if (_.about != null)
+      this.string(_.about);                 // ?: string - flags.5?string
     this.object(_.photo);                   // : Photo - Photo
     this.int32(_.participants_count);       // : number - int
     if (_.participants != null && _.participants.length > 0)
@@ -7947,7 +8161,7 @@ export const $encoder = {
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["channelFull"](_) {
-    this.int32(-374179305);
+    this.int32(-516145888);
     this.int32(
       (+(_.can_view_participants != null) << 3)
       | (+(_.can_set_username != null) << 6)
@@ -7979,6 +8193,10 @@ export const $encoder = {
       | (+(_.pending_suggestions != null) << 25)
       | (+(_.groupcall_default_join_as != null) << 26)
       | (+(_.theme_emoticon != null) << 27)
+      | (+(_.requests_pending != null) << 28)
+      | (+(_.recent_requesters != null) << 28)
+      | (+(_.default_send_as != null) << 29)
+      | (+(_.available_reactions != null) << 30)
     )
     if (_.can_view_participants != null)
       this.true(_.can_view_participants);   // ?: true - flags.3?true
@@ -8049,6 +8267,14 @@ export const $encoder = {
       this.object(_.groupcall_default_join_as); // ?: Peer - flags.26?Peer
     if (_.theme_emoticon != null)
       this.string(_.theme_emoticon);        // ?: string - flags.27?string
+    if (_.requests_pending != null)
+      this.int32(_.requests_pending);       // ?: number - flags.28?int
+    if (_.recent_requesters != null && _.recent_requesters.length > 0)
+      this.vector(_.recent_requesters, this.int64); // ?: bigint[] - flags.28?Vector<long>
+    if (_.default_send_as != null)
+      this.object(_.default_send_as);       // ?: Peer - flags.29?Peer
+    if (_.available_reactions != null && _.available_reactions.length > 0)
+      this.vector(_.available_reactions, this.string); // ?: string[] - flags.30?Vector<string>
   },
   ["messageRange"](_) {
     this.int32(182649427);
@@ -8180,7 +8406,12 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
   },
   ["channelParticipantSelf"](_) {
-    this.int32(682146919);
+    this.int32(900251559);
+    this.int32(
+      (+(_.via_request != null) << 0)
+    )
+    if (_.via_request != null)
+      this.true(_.via_request);             // ?: true - flags.0?true
     this.int64(_.user_id);                  // : bigint - long
     this.int64(_.inviter_id);               // : bigint - long
     this.int32(_.date);                     // : number - int
@@ -11059,11 +11290,13 @@ export const $encoder = {
     this.vector(_.wallpapers, this.object); // : WallPaper[] - Vector<WallPaper>
   },
   ["codeSettings"](_) {
-    this.int32(-557924733);
+    this.int32(-1973130814);
     this.int32(
       (+(_.allow_flashcall != null) << 0)
       | (+(_.current_number != null) << 1)
       | (+(_.allow_app_hash != null) << 4)
+      | (+(_.allow_missed_call != null) << 5)
+      | (+(_.logout_tokens != null) << 6)
     )
     if (_.allow_flashcall != null)
       this.true(_.allow_flashcall);         // ?: true - flags.0?true
@@ -11071,6 +11304,10 @@ export const $encoder = {
       this.true(_.current_number);          // ?: true - flags.1?true
     if (_.allow_app_hash != null)
       this.true(_.allow_app_hash);          // ?: true - flags.4?true
+    if (_.allow_missed_call != null)
+      this.true(_.allow_missed_call);       // ?: true - flags.5?true
+    if (_.logout_tokens != null && _.logout_tokens.length > 0)
+      this.vector(_.logout_tokens, this.bytes); // ?: BufferSource[] - flags.6?Vector<bytes>
   },
   ["wallPaperSettings"](_) {
     this.int32(499236004);
@@ -11454,13 +11691,14 @@ export const $encoder = {
     this.string(_.slug);                    // : string - string
   },
   ["theme"](_) {
-    this.int32(-402474788);
+    this.int32(-1609668650);
     this.int32(
       (+(_.creator != null) << 0)
       | (+(_.default != null) << 1)
       | (+(_.for_chat != null) << 5)
       | (+(_.document != null) << 2)
       | (+(_.settings != null) << 3)
+      | (+(_.emoticon != null) << 6)
       | (+(_.installs_count != null) << 4)
     )
     if (_.creator != null)
@@ -11475,8 +11713,10 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
     if (_.document != null)
       this.object(_.document);              // ?: Document - flags.2?Document
-    if (_.settings != null)
-      this.object(_.settings);              // ?: ThemeSettings - flags.3?ThemeSettings
+    if (_.settings != null && _.settings.length > 0)
+      this.vector(_.settings, this.object); // ?: ThemeSettings[] - flags.3?Vector<ThemeSettings>
+    if (_.emoticon != null)
+      this.string(_.emoticon);              // ?: string - flags.6?string
     if (_.installs_count != null)
       this.int32(_.installs_count);         // ?: number - flags.4?int
   },
@@ -12437,9 +12677,20 @@ export const $encoder = {
     this.int32(_.qts);                      // : number - int
   },
   ["chatInviteImporter"](_) {
-    this.int32(190633460);
+    this.int32(-1940201511);
+    this.int32(
+      (+(_.requested != null) << 0)
+      | (+(_.about != null) << 2)
+      | (+(_.approved_by != null) << 1)
+    )
+    if (_.requested != null)
+      this.true(_.requested);               // ?: true - flags.0?true
     this.int64(_.user_id);                  // : bigint - long
     this.int32(_.date);                     // : number - int
+    if (_.about != null)
+      this.string(_.about);                 // ?: string - flags.2?string
+    if (_.approved_by != null)
+      this.int64(_.approved_by);            // ?: bigint - flags.1?long
   },
   ["messages.exportedChatInvites"](_) {
     this.int32(-1111085620);
@@ -12645,20 +12896,6 @@ export const $encoder = {
     this.int64(_.bot_id);                   // : bigint - long
     this.vector(_.commands, this.object);   // : BotCommand[] - Vector<BotCommand>
   },
-  ["chatTheme"](_) {
-    this.int32(-318022605);
-    this.string(_.emoticon);                // : string - string
-    this.object(_.theme);                   // : Theme - Theme
-    this.object(_.dark_theme);              // : Theme - Theme
-  },
-  ["account.chatThemesNotModified"](_) {
-    this.int32(-535699004);
-  },
-  ["account.chatThemes"](_) {
-    this.int32(-28524867);
-    this.int32(_.hash);                     // : number - int
-    this.vector(_.themes, this.object);     // : ChatTheme[] - Vector<ChatTheme>
-  },
   ["messageActionSetChatTheme"](_) {
     this.int32(-1434950843);
     this.string(_.emoticon);                // : string - string
@@ -12667,13 +12904,24 @@ export const $encoder = {
     this.int32(-1336228175);
   },
   ["sponsoredMessage"](_) {
-    this.int32(708589599);
+    this.int32(981691896);
     this.int32(
-      (+(_.start_param != null) << 0)
+      (+(_.from_id != null) << 3)
+      | (+(_.chat_invite != null) << 4)
+      | (+(_.chat_invite_hash != null) << 4)
+      | (+(_.channel_post != null) << 2)
+      | (+(_.start_param != null) << 0)
       | (+(_.entities != null) << 1)
     )
     this.bytes(_.random_id);                // : BufferSource - bytes
-    this.object(_.from_id);                 // : Peer - Peer
+    if (_.from_id != null)
+      this.object(_.from_id);               // ?: Peer - flags.3?Peer
+    if (_.chat_invite != null)
+      this.object(_.chat_invite);           // ?: ChatInvite - flags.4?ChatInvite
+    if (_.chat_invite_hash != null)
+      this.string(_.chat_invite_hash);      // ?: string - flags.4?string
+    if (_.channel_post != null)
+      this.int32(_.channel_post);           // ?: number - flags.2?int
     if (_.start_param != null)
       this.string(_.start_param);           // ?: string - flags.0?string
     this.string(_.message);                 // : string - string
@@ -12705,6 +12953,222 @@ export const $encoder = {
     this.int64(_.owner_id);                 // : bigint - long
     this.int32(_.id);                       // : number - int
     this.int64(_.access_hash);              // : bigint - long
+  },
+  ["searchResultsCalendarPeriod"](_) {
+    this.int32(-911191137);
+    this.int32(_.date);                     // : number - int
+    this.int32(_.min_msg_id);               // : number - int
+    this.int32(_.max_msg_id);               // : number - int
+    this.int32(_.count);                    // : number - int
+  },
+  ["messages.searchResultsCalendar"](_) {
+    this.int32(343859772);
+    this.int32(
+      (+(_.inexact != null) << 0)
+      | (+(_.offset_id_offset != null) << 1)
+    )
+    if (_.inexact != null)
+      this.true(_.inexact);                 // ?: true - flags.0?true
+    this.int32(_.count);                    // : number - int
+    this.int32(_.min_date);                 // : number - int
+    this.int32(_.min_msg_id);               // : number - int
+    if (_.offset_id_offset != null)
+      this.int32(_.offset_id_offset);       // ?: number - flags.1?int
+    this.vector(_.periods, this.object);    // : SearchResultsCalendarPeriod[] - Vector<SearchResultsCalendarPeriod>
+    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["searchResultPosition"](_) {
+    this.int32(2137295719);
+    this.int32(_.msg_id);                   // : number - int
+    this.int32(_.date);                     // : number - int
+    this.int32(_.offset);                   // : number - int
+  },
+  ["messages.searchResultsPositions"](_) {
+    this.int32(1404185519);
+    this.int32(_.count);                    // : number - int
+    this.vector(_.positions, this.object);  // : SearchResultsPosition[] - Vector<SearchResultsPosition>
+  },
+  ["messageActionChatJoinedByRequest"](_) {
+    this.int32(-339958837);
+  },
+  ["updatePendingJoinRequests"](_) {
+    this.int32(1885586395);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.requests_pending);         // : number - int
+    this.vector(_.recent_requesters, this.int64); // : bigint[] - Vector<long>
+  },
+  ["updateBotChatInviteRequester"](_) {
+    this.int32(299870598);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.date);                     // : number - int
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.about);                   // : string - string
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+    this.int32(_.qts);                      // : number - int
+  },
+  ["channelAdminLogEventActionParticipantJoinByRequest"](_) {
+    this.int32(-1347021750);
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+    this.int64(_.approved_by);              // : bigint - long
+  },
+  ["inputKeyboardButtonUserProfile"](_) {
+    this.int32(-376962181);
+    this.string(_.text);                    // : string - string
+    this.object(_.user_id);                 // : InputUser - InputUser
+  },
+  ["keyboardButtonUserProfile"](_) {
+    this.int32(814112961);
+    this.string(_.text);                    // : string - string
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["channels.sendAsPeers"](_) {
+    this.int32(-2091463255);
+    this.vector(_.peers, this.object);      // : Peer[] - Vector<Peer>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["channelAdminLogEventActionToggleNoForwards"](_) {
+    this.int32(-886388890);
+    this.bool(_.new_value);                 // : boolean - Bool
+  },
+  ["messages.stickerSetNotModified"](_) {
+    this.int32(-738646805);
+  },
+  ["users.userFull"](_) {
+    this.int32(997004590);
+    this.object(_.full_user);               // : UserFull - UserFull
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.peerSettings"](_) {
+    this.int32(1753266509);
+    this.object(_.settings);                // : PeerSettings - PeerSettings
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["channelAdminLogEventActionSendMessage"](_) {
+    this.int32(663693416);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["auth.codeTypeMissedCall"](_) {
+    this.int32(-702884114);
+  },
+  ["auth.sentCodeTypeMissedCall"](_) {
+    this.int32(-2113903484);
+    this.string(_.prefix);                  // : string - string
+    this.int32(_.length);                   // : number - int
+  },
+  ["auth.loggedOut"](_) {
+    this.int32(-1012759713);
+    this.int32(
+      (+(_.future_auth_token != null) << 0)
+    )
+    if (_.future_auth_token != null)
+      this.bytes(_.future_auth_token);      // ?: BufferSource - flags.0?bytes
+  },
+  ["updateMessageReactions"](_) {
+    this.int32(357013699);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.object(_.reactions);               // : MessageReactions - MessageReactions
+  },
+  ["reactionCount"](_) {
+    this.int32(1873957073);
+    this.int32(
+      (+(_.chosen != null) << 0)
+    )
+    if (_.chosen != null)
+      this.true(_.chosen);                  // ?: true - flags.0?true
+    this.string(_.reaction);                // : string - string
+    this.int32(_.count);                    // : number - int
+  },
+  ["messageReactions"](_) {
+    this.int32(1328256121);
+    this.int32(
+      (+(_.min != null) << 0)
+      | (+(_.can_see_list != null) << 2)
+      | (+(_.recent_reactions != null) << 1)
+    )
+    if (_.min != null)
+      this.true(_.min);                     // ?: true - flags.0?true
+    if (_.can_see_list != null)
+      this.true(_.can_see_list);            // ?: true - flags.2?true
+    this.vector(_.results, this.object);    // : ReactionCount[] - Vector<ReactionCount>
+    if (_.recent_reactions != null && _.recent_reactions.length > 0)
+      this.vector(_.recent_reactions, this.object); // ?: MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
+  },
+  ["messages.messageReactionsList"](_) {
+    this.int32(834488621);
+    this.int32(
+      (+(_.next_offset != null) << 0)
+    )
+    this.int32(_.count);                    // : number - int
+    this.vector(_.reactions, this.object);  // : MessagePeerReaction[] - Vector<MessagePeerReaction>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+    if (_.next_offset != null)
+      this.string(_.next_offset);           // ?: string - flags.0?string
+  },
+  ["availableReaction"](_) {
+    this.int32(-1065882623);
+    this.int32(
+      (+(_.inactive != null) << 0)
+      | (+(_.around_animation != null) << 1)
+      | (+(_.center_icon != null) << 1)
+    )
+    if (_.inactive != null)
+      this.true(_.inactive);                // ?: true - flags.0?true
+    this.string(_.reaction);                // : string - string
+    this.string(_.title);                   // : string - string
+    this.object(_.static_icon);             // : Document - Document
+    this.object(_.appear_animation);        // : Document - Document
+    this.object(_.select_animation);        // : Document - Document
+    this.object(_.activate_animation);      // : Document - Document
+    this.object(_.effect_animation);        // : Document - Document
+    if (_.around_animation != null)
+      this.object(_.around_animation);      // ?: Document - flags.1?Document
+    if (_.center_icon != null)
+      this.object(_.center_icon);           // ?: Document - flags.1?Document
+  },
+  ["messages.availableReactionsNotModified"](_) {
+    this.int32(-1626924713);
+  },
+  ["messages.availableReactions"](_) {
+    this.int32(1989032621);
+    this.int32(_.hash);                     // : number - int
+    this.vector(_.reactions, this.object);  // : AvailableReaction[] - Vector<AvailableReaction>
+  },
+  ["messageEntitySpoiler"](_) {
+    this.int32(852137487);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["channelAdminLogEventActionChangeAvailableReactions"](_) {
+    this.int32(-1661470870);
+    this.vector(_.prev_value, this.string); // : string[] - Vector<string>
+    this.vector(_.new_value, this.string);  // : string[] - Vector<string>
+  },
+  ["messages.translateNoResult"](_) {
+    this.int32(1741309751);
+  },
+  ["messages.translateResultText"](_) {
+    this.int32(-1575684144);
+    this.string(_.text);                    // : string - string
+  },
+  ["messagePeerReaction"](_) {
+    this.int32(1370914559);
+    this.int32(
+      (+(_.big != null) << 0)
+      | (+(_.unread != null) << 1)
+    )
+    if (_.big != null)
+      this.true(_.big);                     // ?: true - flags.0?true
+    if (_.unread != null)
+      this.true(_.unread);                  // ?: true - flags.1?true
+    this.object(_.peer_id);                 // : Peer - Peer
+    this.string(_.reaction);                // : string - string
   },
 };
 
@@ -13190,7 +13654,7 @@ export const $decoder = new Map([
     _.title = this.string();                // : string - string
     return _;
   }],
-  [1304281241, function decode$chatFull() {
+  [-779165146, function decode$chatFull() {
     const _ = { _: "chatFull" }
     const flags = this.int32();
     if (flags & 128) _.can_set_username = true // ?: true - flags.7?true
@@ -13208,6 +13672,9 @@ export const $decoder = new Map([
     if (flags & 16384) _.ttl_period = this.int32() // ?: number - flags.14?int
     if (flags & 32768) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.15?Peer
     if (flags & 65536) _.theme_emoticon = this.string() // ?: string - flags.16?string
+    if (flags & 131072) _.requests_pending = this.int32() // ?: number - flags.17?int
+    if (flags & 131072) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.17?Vector<long>
+    if (flags & 262144) _.available_reactions = this.vector(this.string) // ?: string[] - flags.18?Vector<string>
     return _;
   }],
   [-1070776313, function decode$chatParticipant() {
@@ -13250,7 +13717,7 @@ export const $decoder = new Map([
     if (flags & 1) _.peer_id = this.object() // ?: global.Peer - flags.0?Peer
     return _;
   }],
-  [-2049520670, function decode$message() {
+  [940666592, function decode$message() {
     const _ = { _: "message" }
     const flags = this.int32();
     if (flags & 2) _.out = true             // ?: true - flags.1?true
@@ -13280,6 +13747,7 @@ export const $decoder = new Map([
     if (flags & 32768) _.edit_date = this.int32() // ?: number - flags.15?int
     if (flags & 65536) _.post_author = this.string() // ?: string - flags.16?string
     if (flags & 131072) _.grouped_id = this.int64() // ?: bigint - flags.17?long
+    if (flags & 1048576) _.reactions = this.object() // ?: global.MessageReactions - flags.20?MessageReactions
     if (flags & 4194304) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.22?Vector<RestrictionReason>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     return _;
@@ -13361,7 +13829,7 @@ export const $decoder = new Map([
     _.user_id = this.int64();               // : bigint - long
     return _;
   }],
-  [739712882, function decode$dialog() {
+  [-1460809483, function decode$dialog() {
     const _ = { _: "dialog" }
     const flags = this.int32();
     if (flags & 4) _.pinned = true          // ?: true - flags.2?true
@@ -13372,6 +13840,7 @@ export const $decoder = new Map([
     _.read_outbox_max_id = this.int32();    // : number - int
     _.unread_count = this.int32();          // : number - int
     _.unread_mentions_count = this.int32(); // : number - int
+    _.unread_reactions_count = this.int32(); // : number - int
     _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
     if (flags & 1) _.pts = this.int32()     // ?: number - flags.0?int
     if (flags & 2) _.draft = this.object()  // ?: global.DraftMessage - flags.1?DraftMessage
@@ -13438,9 +13907,11 @@ export const $decoder = new Map([
     if (flags & 4) _.timeout = this.int32() // ?: number - flags.2?int
     return _;
   }],
-  [-855308010, function decode$auth__authorization() {
+  [872119224, function decode$auth__authorization() {
     const _ = { _: "auth.authorization" }
     const flags = this.int32();
+    if (flags & 2) _.setup_password_required = true // ?: true - flags.1?true
+    if (flags & 2) _.otherwise_relogin_days = this.int32() // ?: number - flags.1?int
     if (flags & 1) _.tmp_sessions = this.int32() // ?: number - flags.0?int
     _.user = this.object();                 // : global.User - User
     return _;
@@ -13480,7 +13951,7 @@ export const $decoder = new Map([
     if (flags & 8) _.sound = this.string()  // ?: string - flags.3?string
     return _;
   }],
-  [1933519201, function decode$peerSettings() {
+  [-1525149427, function decode$peerSettings() {
     const _ = { _: "peerSettings" }
     const flags = this.int32();
     if (flags & 1) _.report_spam = true     // ?: true - flags.0?true
@@ -13491,7 +13962,10 @@ export const $decoder = new Map([
     if (flags & 32) _.report_geo = true     // ?: true - flags.5?true
     if (flags & 128) _.autoarchived = true  // ?: true - flags.7?true
     if (flags & 256) _.invite_members = true // ?: true - flags.8?true
+    if (flags & 1024) _.request_chat_broadcast = true // ?: true - flags.10?true
     if (flags & 64) _.geo_distance = this.int32() // ?: number - flags.6?int
+    if (flags & 512) _.request_chat_title = this.string() // ?: string - flags.9?string
+    if (flags & 512) _.request_chat_date = this.int32() // ?: number - flags.9?int
     return _;
   }],
   [-1539849235, function decode$wallPaper() {
@@ -13523,7 +13997,7 @@ export const $decoder = new Map([
   [-1041980751, function decode$inputReportReasonOther() {
     return { _: "inputReportReasonOther" }
   }],
-  [-694681851, function decode$userFull() {
+  [-818518751, function decode$userFull() {
     const _ = { _: "userFull" }
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
@@ -13532,7 +14006,7 @@ export const $decoder = new Map([
     if (flags & 128) _.can_pin_message = true // ?: true - flags.7?true
     if (flags & 4096) _.has_scheduled = true // ?: true - flags.12?true
     if (flags & 8192) _.video_calls_available = true // ?: true - flags.13?true
-    _.user = this.object();                 // : global.User - User
+    _.id = this.int64();                    // : bigint - long
     if (flags & 2) _.about = this.string()  // ?: string - flags.1?string
     _.settings = this.object();             // : global.PeerSettings - PeerSettings
     if (flags & 4) _.profile_photo = this.object() // ?: global.Photo - flags.2?Photo
@@ -13543,6 +14017,7 @@ export const $decoder = new Map([
     if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
     if (flags & 16384) _.ttl_period = this.int32() // ?: number - flags.14?int
     if (flags & 32768) _.theme_emoticon = this.string() // ?: string - flags.15?string
+    if (flags & 65536) _.private_forward_name = this.string() // ?: string - flags.16?string
     return _;
   }],
   [341499403, function decode$contact() {
@@ -14534,8 +15009,9 @@ export const $decoder = new Map([
     _.region = this.string();               // : string - string
     return _;
   }],
-  [307276766, function decode$account__authorizations() {
+  [1275039392, function decode$account__authorizations() {
     const _ = { _: "account.authorizations" }
+    _.authorization_ttl_days = this.int32(); // : number - int
     _.authorizations = this.vector(this.object); // : global.Authorization[] - Vector<Authorization>
     return _;
   }],
@@ -14604,11 +15080,12 @@ export const $decoder = new Map([
     _.flags = this.int32();                 // : number - int
     return _;
   }],
-  [-1316944408, function decode$chatInviteExported() {
+  [179611673, function decode$chatInviteExported() {
     const _ = { _: "chatInviteExported" }
     const flags = this.int32();
     if (flags & 1) _.revoked = true         // ?: true - flags.0?true
     if (flags & 32) _.permanent = true      // ?: true - flags.5?true
+    if (flags & 64) _.request_needed = true // ?: true - flags.6?true
     _.link = this.string();                 // : string - string
     _.admin_id = this.int64();              // : bigint - long
     _.date = this.int32();                  // : number - int
@@ -14616,6 +15093,8 @@ export const $decoder = new Map([
     if (flags & 2) _.expire_date = this.int32() // ?: number - flags.1?int
     if (flags & 4) _.usage_limit = this.int32() // ?: number - flags.2?int
     if (flags & 8) _.usage = this.int32()   // ?: number - flags.3?int
+    if (flags & 128) _.requested = this.int32() // ?: number - flags.7?int
+    if (flags & 256) _.title = this.string() // ?: string - flags.8?string
     return _;
   }],
   [1516793212, function decode$chatInviteAlready() {
@@ -14623,14 +15102,16 @@ export const $decoder = new Map([
     _.chat = this.object();                 // : global.Chat - Chat
     return _;
   }],
-  [-540871282, function decode$chatInvite() {
+  [806110401, function decode$chatInvite() {
     const _ = { _: "chatInvite" }
     const flags = this.int32();
     if (flags & 1) _.channel = true         // ?: true - flags.0?true
     if (flags & 2) _.broadcast = true       // ?: true - flags.1?true
     if (flags & 4) _.public = true          // ?: true - flags.2?true
     if (flags & 8) _.megagroup = true       // ?: true - flags.3?true
+    if (flags & 64) _.request_needed = true // ?: true - flags.6?true
     _.title = this.string();                // : string - string
+    if (flags & 32) _.about = this.string() // ?: string - flags.5?string
     _.photo = this.object();                // : global.Photo - Photo
     _.participants_count = this.int32();    // : number - int
     if (flags & 16) _.participants = this.vector(this.object) // ?: global.User[] - flags.4?Vector<User>
@@ -14932,7 +15413,7 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [-374179305, function decode$channelFull() {
+  [-516145888, function decode$channelFull() {
     const _ = { _: "channelFull" }
     const flags = this.int32();
     if (flags & 8) _.can_view_participants = true // ?: true - flags.3?true
@@ -14974,6 +15455,10 @@ export const $decoder = new Map([
     if (flags & 33554432) _.pending_suggestions = this.vector(this.string) // ?: string[] - flags.25?Vector<string>
     if (flags & 67108864) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.26?Peer
     if (flags & 134217728) _.theme_emoticon = this.string() // ?: string - flags.27?string
+    if (flags & 268435456) _.requests_pending = this.int32() // ?: number - flags.28?int
+    if (flags & 268435456) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.28?Vector<long>
+    if (flags & 536870912) _.default_send_as = this.object() // ?: global.Peer - flags.29?Peer
+    if (flags & 1073741824) _.available_reactions = this.vector(this.string) // ?: string[] - flags.30?Vector<string>
     return _;
   }],
   [182649427, function decode$messageRange() {
@@ -15090,8 +15575,10 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     return _;
   }],
-  [682146919, function decode$channelParticipantSelf() {
+  [900251559, function decode$channelParticipantSelf() {
     const _ = { _: "channelParticipantSelf" }
+    const flags = this.int32();
+    if (flags & 1) _.via_request = true     // ?: true - flags.0?true
     _.user_id = this.int64();               // : bigint - long
     _.inviter_id = this.int64();            // : bigint - long
     _.date = this.int32();                  // : number - int
@@ -17660,12 +18147,14 @@ export const $decoder = new Map([
     _.wallpapers = this.vector(this.object); // : global.WallPaper[] - Vector<WallPaper>
     return _;
   }],
-  [-557924733, function decode$codeSettings() {
+  [-1973130814, function decode$codeSettings() {
     const _ = { _: "codeSettings" }
     const flags = this.int32();
     if (flags & 1) _.allow_flashcall = true // ?: true - flags.0?true
     if (flags & 2) _.current_number = true  // ?: true - flags.1?true
     if (flags & 16) _.allow_app_hash = true // ?: true - flags.4?true
+    if (flags & 32) _.allow_missed_call = true // ?: true - flags.5?true
+    if (flags & 64) _.logout_tokens = this.vector(this.bytes) // ?: BufferSource[] - flags.6?Vector<bytes>
     return _;
   }],
   [499236004, function decode$wallPaperSettings() {
@@ -18040,7 +18529,7 @@ export const $decoder = new Map([
     _.slug = this.string();                 // : string - string
     return _;
   }],
-  [-402474788, function decode$theme() {
+  [-1609668650, function decode$theme() {
     const _ = { _: "theme" }
     const flags = this.int32();
     if (flags & 1) _.creator = true         // ?: true - flags.0?true
@@ -18051,7 +18540,8 @@ export const $decoder = new Map([
     _.slug = this.string();                 // : string - string
     _.title = this.string();                // : string - string
     if (flags & 4) _.document = this.object() // ?: global.Document - flags.2?Document
-    if (flags & 8) _.settings = this.object() // ?: global.ThemeSettings - flags.3?ThemeSettings
+    if (flags & 8) _.settings = this.vector(this.object) // ?: global.ThemeSettings[] - flags.3?Vector<ThemeSettings>
+    if (flags & 64) _.emoticon = this.string() // ?: string - flags.6?string
     if (flags & 16) _.installs_count = this.int32() // ?: number - flags.4?int
     return _;
   }],
@@ -18877,10 +19367,14 @@ export const $decoder = new Map([
     _.qts = this.int32();                   // : number - int
     return _;
   }],
-  [190633460, function decode$chatInviteImporter() {
+  [-1940201511, function decode$chatInviteImporter() {
     const _ = { _: "chatInviteImporter" }
+    const flags = this.int32();
+    if (flags & 1) _.requested = true       // ?: true - flags.0?true
     _.user_id = this.int64();               // : bigint - long
     _.date = this.int32();                  // : number - int
+    if (flags & 4) _.about = this.string()  // ?: string - flags.2?string
+    if (flags & 2) _.approved_by = this.int64() // ?: bigint - flags.1?long
     return _;
   }],
   [-1111085620, function decode$messages__exportedChatInvites() {
@@ -19089,22 +19583,6 @@ export const $decoder = new Map([
     _.commands = this.vector(this.object);  // : global.BotCommand[] - Vector<BotCommand>
     return _;
   }],
-  [-318022605, function decode$chatTheme() {
-    const _ = { _: "chatTheme" }
-    _.emoticon = this.string();             // : string - string
-    _.theme = this.object();                // : global.Theme - Theme
-    _.dark_theme = this.object();           // : global.Theme - Theme
-    return _;
-  }],
-  [-535699004, function decode$account__chatThemesNotModified() {
-    return { _: "account.chatThemesNotModified" }
-  }],
-  [-28524867, function decode$account__chatThemes() {
-    const _ = { _: "account.chatThemes" }
-    _.hash = this.int32();                  // : number - int
-    _.themes = this.vector(this.object);    // : global.ChatTheme[] - Vector<ChatTheme>
-    return _;
-  }],
   [-1434950843, function decode$messageActionSetChatTheme() {
     const _ = { _: "messageActionSetChatTheme" }
     _.emoticon = this.string();             // : string - string
@@ -19113,11 +19591,14 @@ export const $decoder = new Map([
   [-1336228175, function decode$sendMessageChooseStickerAction() {
     return { _: "sendMessageChooseStickerAction" }
   }],
-  [708589599, function decode$sponsoredMessage() {
+  [981691896, function decode$sponsoredMessage() {
     const _ = { _: "sponsoredMessage" }
     const flags = this.int32();
     _.random_id = this.bytes();             // : BufferSource - bytes
-    _.from_id = this.object();              // : global.Peer - Peer
+    if (flags & 8) _.from_id = this.object() // ?: global.Peer - flags.3?Peer
+    if (flags & 16) _.chat_invite = this.object() // ?: global.ChatInvite - flags.4?ChatInvite
+    if (flags & 16) _.chat_invite_hash = this.string() // ?: string - flags.4?string
+    if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
     if (flags & 1) _.start_param = this.string() // ?: string - flags.0?string
     _.message = this.string();              // : string - string
     if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
@@ -19151,6 +19632,215 @@ export const $decoder = new Map([
     _.owner_id = this.int64();              // : bigint - long
     _.id = this.int32();                    // : number - int
     _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [-911191137, function decode$searchResultsCalendarPeriod() {
+    const _ = { _: "searchResultsCalendarPeriod" }
+    _.date = this.int32();                  // : number - int
+    _.min_msg_id = this.int32();            // : number - int
+    _.max_msg_id = this.int32();            // : number - int
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
+  [343859772, function decode$messages__searchResultsCalendar() {
+    const _ = { _: "messages.searchResultsCalendar" }
+    const flags = this.int32();
+    if (flags & 1) _.inexact = true         // ?: true - flags.0?true
+    _.count = this.int32();                 // : number - int
+    _.min_date = this.int32();              // : number - int
+    _.min_msg_id = this.int32();            // : number - int
+    if (flags & 2) _.offset_id_offset = this.int32() // ?: number - flags.1?int
+    _.periods = this.vector(this.object);   // : global.SearchResultsCalendarPeriod[] - Vector<SearchResultsCalendarPeriod>
+    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [2137295719, function decode$searchResultPosition() {
+    const _ = { _: "searchResultPosition" }
+    _.msg_id = this.int32();                // : number - int
+    _.date = this.int32();                  // : number - int
+    _.offset = this.int32();                // : number - int
+    return _;
+  }],
+  [1404185519, function decode$messages__searchResultsPositions() {
+    const _ = { _: "messages.searchResultsPositions" }
+    _.count = this.int32();                 // : number - int
+    _.positions = this.vector(this.object); // : global.SearchResultsPosition[] - Vector<SearchResultsPosition>
+    return _;
+  }],
+  [-339958837, function decode$messageActionChatJoinedByRequest() {
+    return { _: "messageActionChatJoinedByRequest" }
+  }],
+  [1885586395, function decode$updatePendingJoinRequests() {
+    const _ = { _: "updatePendingJoinRequests" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.requests_pending = this.int32();      // : number - int
+    _.recent_requesters = this.vector(this.int64); // : bigint[] - Vector<long>
+    return _;
+  }],
+  [299870598, function decode$updateBotChatInviteRequester() {
+    const _ = { _: "updateBotChatInviteRequester" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.date = this.int32();                  // : number - int
+    _.user_id = this.int64();               // : bigint - long
+    _.about = this.string();                // : string - string
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1347021750, function decode$channelAdminLogEventActionParticipantJoinByRequest() {
+    const _ = { _: "channelAdminLogEventActionParticipantJoinByRequest" }
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.approved_by = this.int64();           // : bigint - long
+    return _;
+  }],
+  [-376962181, function decode$inputKeyboardButtonUserProfile() {
+    const _ = { _: "inputKeyboardButtonUserProfile" }
+    _.text = this.string();                 // : string - string
+    _.user_id = this.object();              // : global.InputUser - InputUser
+    return _;
+  }],
+  [814112961, function decode$keyboardButtonUserProfile() {
+    const _ = { _: "keyboardButtonUserProfile" }
+    _.text = this.string();                 // : string - string
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-2091463255, function decode$channels__sendAsPeers() {
+    const _ = { _: "channels.sendAsPeers" }
+    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-886388890, function decode$channelAdminLogEventActionToggleNoForwards() {
+    const _ = { _: "channelAdminLogEventActionToggleNoForwards" }
+    _.new_value = this.bool();              // : boolean - Bool
+    return _;
+  }],
+  [-738646805, function decode$messages__stickerSetNotModified() {
+    return { _: "messages.stickerSetNotModified" }
+  }],
+  [997004590, function decode$users__userFull() {
+    const _ = { _: "users.userFull" }
+    _.full_user = this.object();            // : global.UserFull - UserFull
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1753266509, function decode$messages__peerSettings() {
+    const _ = { _: "messages.peerSettings" }
+    _.settings = this.object();             // : global.PeerSettings - PeerSettings
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [663693416, function decode$channelAdminLogEventActionSendMessage() {
+    const _ = { _: "channelAdminLogEventActionSendMessage" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-702884114, function decode$auth__codeTypeMissedCall() {
+    return { _: "auth.codeTypeMissedCall" }
+  }],
+  [-2113903484, function decode$auth__sentCodeTypeMissedCall() {
+    const _ = { _: "auth.sentCodeTypeMissedCall" }
+    _.prefix = this.string();               // : string - string
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1012759713, function decode$auth__loggedOut() {
+    const _ = { _: "auth.loggedOut" }
+    const flags = this.int32();
+    if (flags & 1) _.future_auth_token = this.bytes() // ?: BufferSource - flags.0?bytes
+    return _;
+  }],
+  [357013699, function decode$updateMessageReactions() {
+    const _ = { _: "updateMessageReactions" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.reactions = this.object();            // : global.MessageReactions - MessageReactions
+    return _;
+  }],
+  [1873957073, function decode$reactionCount() {
+    const _ = { _: "reactionCount" }
+    const flags = this.int32();
+    if (flags & 1) _.chosen = true          // ?: true - flags.0?true
+    _.reaction = this.string();             // : string - string
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
+  [1328256121, function decode$messageReactions() {
+    const _ = { _: "messageReactions" }
+    const flags = this.int32();
+    if (flags & 1) _.min = true             // ?: true - flags.0?true
+    if (flags & 4) _.can_see_list = true    // ?: true - flags.2?true
+    _.results = this.vector(this.object);   // : global.ReactionCount[] - Vector<ReactionCount>
+    if (flags & 2) _.recent_reactions = this.vector(this.object) // ?: global.MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
+    return _;
+  }],
+  [834488621, function decode$messages__messageReactionsList() {
+    const _ = { _: "messages.messageReactionsList" }
+    const flags = this.int32();
+    _.count = this.int32();                 // : number - int
+    _.reactions = this.vector(this.object); // : global.MessagePeerReaction[] - Vector<MessagePeerReaction>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
+    return _;
+  }],
+  [-1065882623, function decode$availableReaction() {
+    const _ = { _: "availableReaction" }
+    const flags = this.int32();
+    if (flags & 1) _.inactive = true        // ?: true - flags.0?true
+    _.reaction = this.string();             // : string - string
+    _.title = this.string();                // : string - string
+    _.static_icon = this.object();          // : global.Document - Document
+    _.appear_animation = this.object();     // : global.Document - Document
+    _.select_animation = this.object();     // : global.Document - Document
+    _.activate_animation = this.object();   // : global.Document - Document
+    _.effect_animation = this.object();     // : global.Document - Document
+    if (flags & 2) _.around_animation = this.object() // ?: global.Document - flags.1?Document
+    if (flags & 2) _.center_icon = this.object() // ?: global.Document - flags.1?Document
+    return _;
+  }],
+  [-1626924713, function decode$messages__availableReactionsNotModified() {
+    return { _: "messages.availableReactionsNotModified" }
+  }],
+  [1989032621, function decode$messages__availableReactions() {
+    const _ = { _: "messages.availableReactions" }
+    _.hash = this.int32();                  // : number - int
+    _.reactions = this.vector(this.object); // : global.AvailableReaction[] - Vector<AvailableReaction>
+    return _;
+  }],
+  [852137487, function decode$messageEntitySpoiler() {
+    const _ = { _: "messageEntitySpoiler" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1661470870, function decode$channelAdminLogEventActionChangeAvailableReactions() {
+    const _ = { _: "channelAdminLogEventActionChangeAvailableReactions" }
+    _.prev_value = this.vector(this.string); // : string[] - Vector<string>
+    _.new_value = this.vector(this.string); // : string[] - Vector<string>
+    return _;
+  }],
+  [1741309751, function decode$messages__translateNoResult() {
+    return { _: "messages.translateNoResult" }
+  }],
+  [-1575684144, function decode$messages__translateResultText() {
+    const _ = { _: "messages.translateResultText" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [1370914559, function decode$messagePeerReaction() {
+    const _ = { _: "messagePeerReaction" }
+    const flags = this.int32();
+    if (flags & 1) _.big = true             // ?: true - flags.0?true
+    if (flags & 2) _.unread = true          // ?: true - flags.1?true
+    _.peer_id = this.object();              // : global.Peer - Peer
+    _.reaction = this.string();             // : string - string
     return _;
   }],
 ]);
@@ -19415,12 +20105,12 @@ auth.logOut = function logOut() {
   return { _: "auth.logOut" }
 }
 $encoder["auth.logOut"] = function (_) {
-  this.int32(1461180992);
+  this.int32(1047706137);
 };
 auth.logOut.ref = "auth.logOut";
 auth.logOut.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["auth.loggedOut"].includes($._))) throw new TypeError("element");
   return $$;
 };
 auth.resetAuthorizations = function resetAuthorizations() {
@@ -20451,7 +21141,7 @@ account.createTheme = function createTheme(_) {
   return { ..._, _: "account.createTheme" }
 }
 $encoder["account.createTheme"] = function (_) {
-  this.int32(-2077048289);
+  this.int32(1697530880);
   this.int32(
     (+(_.document != null) << 2)
     | (+(_.settings != null) << 3)
@@ -20460,8 +21150,8 @@ $encoder["account.createTheme"] = function (_) {
   this.string(_.title);                   // : string - string
   if (_.document != null)
     this.object(_.document);              // ?: InputDocument - flags.2?InputDocument
-  if (_.settings != null)
-    this.object(_.settings);              // ?: InputThemeSettings - flags.3?InputThemeSettings
+  if (_.settings != null && _.settings.length > 0)
+    this.vector(_.settings, this.object); // ?: InputThemeSettings[] - flags.3?Vector<InputThemeSettings>
 };
 account.createTheme.ref = "account.createTheme";
 account.createTheme.verify = function($$) {
@@ -20473,7 +21163,7 @@ account.updateTheme = function updateTheme(_) {
   return { ..._, _: "account.updateTheme" }
 }
 $encoder["account.updateTheme"] = function (_) {
-  this.int32(1555261397);
+  this.int32(737414348);
   this.int32(
     (+(_.slug != null) << 0)
     | (+(_.title != null) << 1)
@@ -20488,8 +21178,8 @@ $encoder["account.updateTheme"] = function (_) {
     this.string(_.title);                 // ?: string - flags.1?string
   if (_.document != null)
     this.object(_.document);              // ?: InputDocument - flags.2?InputDocument
-  if (_.settings != null)
-    this.object(_.settings);              // ?: InputThemeSettings - flags.3?InputThemeSettings
+  if (_.settings != null && _.settings.length > 0)
+    this.vector(_.settings, this.object); // ?: InputThemeSettings[] - flags.3?Vector<InputThemeSettings>
 };
 account.updateTheme.ref = "account.updateTheme";
 account.updateTheme.verify = function($$) {
@@ -20515,18 +21205,21 @@ account.installTheme = function installTheme(_) {
   return { ..._, _: "account.installTheme" }
 }
 $encoder["account.installTheme"] = function (_) {
-  this.int32(2061776695);
+  this.int32(-953697477);
   this.int32(
     (+(_.dark != null) << 0)
-    | (+(_.format != null) << 1)
     | (+(_.theme != null) << 1)
+    | (+(_.format != null) << 2)
+    | (+(_.base_theme != null) << 3)
   )
   if (_.dark != null)
     this.true(_.dark);                    // ?: true - flags.0?true
-  if (_.format != null)
-    this.string(_.format);                // ?: string - flags.1?string
   if (_.theme != null)
     this.object(_.theme);                 // ?: InputTheme - flags.1?InputTheme
+  if (_.format != null)
+    this.string(_.format);                // ?: string - flags.2?string
+  if (_.base_theme != null)
+    this.object(_.base_theme);            // ?: BaseTheme - flags.3?BaseTheme
 };
 account.installTheme.ref = "account.installTheme";
 account.installTheme.verify = function($$) {
@@ -20675,17 +21368,50 @@ account.getChatThemes = function getChatThemes(_) {
   return { ..._, _: "account.getChatThemes" }
 }
 $encoder["account.getChatThemes"] = function (_) {
-  this.int32(-690545285);
-  this.int32(_.hash);                     // : number - int
+  this.int32(-700916087);
+  this.int64(_.hash);                     // : bigint - long
 };
 account.getChatThemes.ref = "account.getChatThemes";
 account.getChatThemes.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["account.chatThemesNotModified", "account.chatThemes"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["account.themesNotModified", "account.themes"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.setAuthorizationTTL = function setAuthorizationTTL(_) {
+  return { ..._, _: "account.setAuthorizationTTL" }
+}
+$encoder["account.setAuthorizationTTL"] = function (_) {
+  this.int32(-1081501024);
+  this.int32(_.authorization_ttl_days);   // : number - int
+};
+account.setAuthorizationTTL.ref = "account.setAuthorizationTTL";
+account.setAuthorizationTTL.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.changeAuthorizationSettings = function changeAuthorizationSettings(_) {
+  return { ..._, _: "account.changeAuthorizationSettings" }
+}
+$encoder["account.changeAuthorizationSettings"] = function (_) {
+  this.int32(1089766498);
+  this.int32(
+    (+(_.encrypted_requests_disabled != null) << 0)
+    | (+(_.call_requests_disabled != null) << 1)
+  )
+  this.int64(_.hash);                     // : bigint - long
+  if (_.encrypted_requests_disabled != null)
+    this.bool(_.encrypted_requests_disabled); // ?: boolean - flags.0?Bool
+  if (_.call_requests_disabled != null)
+    this.bool(_.call_requests_disabled);  // ?: boolean - flags.1?Bool
+};
+account.changeAuthorizationSettings.ref = "account.changeAuthorizationSettings";
+account.changeAuthorizationSettings.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
 
-export const users = {};
 users.getUsers = function getUsers(_) {
   return { ..._, _: "users.getUsers" }
 }
@@ -20704,13 +21430,13 @@ users.getFullUser = function getFullUser(_) {
   return { ..._, _: "users.getFullUser" }
 }
 $encoder["users.getFullUser"] = function (_) {
-  this.int32(-902781519);
+  this.int32(-1240508136);
   this.object(_.id);                      // : InputUser - InputUser
 };
 users.getFullUser.ref = "users.getFullUser";
 users.getFullUser.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["userFull"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["users.userFull"].includes($._))) throw new TypeError("element");
   return $$;
 };
 users.setSecureValueErrors = function setSecureValueErrors(_) {
@@ -21154,10 +21880,12 @@ messages.deleteHistory = function deleteHistory(_) {
   return { ..._, _: "messages.deleteHistory" }
 }
 $encoder["messages.deleteHistory"] = function (_) {
-  this.int32(469850889);
+  this.int32(-1332768214);
   this.int32(
     (+(_.just_clear != null) << 0)
     | (+(_.revoke != null) << 1)
+    | (+(_.min_date != null) << 2)
+    | (+(_.max_date != null) << 3)
   )
   if (_.just_clear != null)
     this.true(_.just_clear);              // ?: true - flags.0?true
@@ -21165,6 +21893,10 @@ $encoder["messages.deleteHistory"] = function (_) {
     this.true(_.revoke);                  // ?: true - flags.1?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.int32(_.max_id);                   // : number - int
+  if (_.min_date != null)
+    this.int32(_.min_date);               // ?: number - flags.2?int
+  if (_.max_date != null)
+    this.int32(_.max_date);               // ?: number - flags.3?int
 };
 messages.deleteHistory.ref = "messages.deleteHistory";
 messages.deleteHistory.verify = function($$) {
@@ -21227,16 +21959,18 @@ messages.sendMessage = function sendMessage(_) {
   return { ..._, _: "messages.sendMessage" }
 }
 $encoder["messages.sendMessage"] = function (_) {
-  this.int32(1376532592);
+  this.int32(228423076);
   this.int32(
     (+(_.no_webpage != null) << 1)
     | (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
     | (+(_.clear_draft != null) << 7)
+    | (+(_.noforwards != null) << 14)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.reply_markup != null) << 2)
     | (+(_.entities != null) << 3)
     | (+(_.schedule_date != null) << 10)
+    | (+(_.send_as != null) << 13)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -21246,6 +21980,8 @@ $encoder["messages.sendMessage"] = function (_) {
     this.true(_.background);              // ?: true - flags.6?true
   if (_.clear_draft != null)
     this.true(_.clear_draft);             // ?: true - flags.7?true
+  if (_.noforwards != null)
+    this.true(_.noforwards);              // ?: true - flags.14?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.reply_to_msg_id != null)
     this.int32(_.reply_to_msg_id);        // ?: number - flags.0?int
@@ -21257,6 +21993,8 @@ $encoder["messages.sendMessage"] = function (_) {
     this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.10?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
 };
 messages.sendMessage.ref = "messages.sendMessage";
 messages.sendMessage.verify = function($$) {
@@ -21268,15 +22006,17 @@ messages.sendMedia = function sendMedia(_) {
   return { ..._, _: "messages.sendMedia" }
 }
 $encoder["messages.sendMedia"] = function (_) {
-  this.int32(881978281);
+  this.int32(-497026848);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
     | (+(_.clear_draft != null) << 7)
+    | (+(_.noforwards != null) << 14)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.reply_markup != null) << 2)
     | (+(_.entities != null) << 3)
     | (+(_.schedule_date != null) << 10)
+    | (+(_.send_as != null) << 13)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -21284,6 +22024,8 @@ $encoder["messages.sendMedia"] = function (_) {
     this.true(_.background);              // ?: true - flags.6?true
   if (_.clear_draft != null)
     this.true(_.clear_draft);             // ?: true - flags.7?true
+  if (_.noforwards != null)
+    this.true(_.noforwards);              // ?: true - flags.14?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.reply_to_msg_id != null)
     this.int32(_.reply_to_msg_id);        // ?: number - flags.0?int
@@ -21296,6 +22038,8 @@ $encoder["messages.sendMedia"] = function (_) {
     this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.10?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
 };
 messages.sendMedia.ref = "messages.sendMedia";
 messages.sendMedia.verify = function($$) {
@@ -21307,14 +22051,16 @@ messages.forwardMessages = function forwardMessages(_) {
   return { ..._, _: "messages.forwardMessages" }
 }
 $encoder["messages.forwardMessages"] = function (_) {
-  this.int32(-637606386);
+  this.int32(-869258997);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
     | (+(_.with_my_score != null) << 8)
     | (+(_.drop_author != null) << 11)
     | (+(_.drop_media_captions != null) << 12)
+    | (+(_.noforwards != null) << 14)
     | (+(_.schedule_date != null) << 10)
+    | (+(_.send_as != null) << 13)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -21326,12 +22072,16 @@ $encoder["messages.forwardMessages"] = function (_) {
     this.true(_.drop_author);             // ?: true - flags.11?true
   if (_.drop_media_captions != null)
     this.true(_.drop_media_captions);     // ?: true - flags.12?true
+  if (_.noforwards != null)
+    this.true(_.noforwards);              // ?: true - flags.14?true
   this.object(_.from_peer);               // : InputPeer - InputPeer
   this.vector(_.id, this.int32);          // : number[] - Vector<int>
   this.vector(_.random_id, this.int64);   // : bigint[] - Vector<long>
   this.object(_.to_peer);                 // : InputPeer - InputPeer
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.10?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
 };
 messages.forwardMessages.ref = "messages.forwardMessages";
 messages.forwardMessages.verify = function($$) {
@@ -21356,13 +22106,13 @@ messages.getPeerSettings = function getPeerSettings(_) {
   return { ..._, _: "messages.getPeerSettings" }
 }
 $encoder["messages.getPeerSettings"] = function (_) {
-  this.int32(913498268);
+  this.int32(-270948702);
   this.object(_.peer);                    // : InputPeer - InputPeer
 };
 messages.getPeerSettings.ref = "messages.getPeerSettings";
 messages.getPeerSettings.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["peerSettings"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.peerSettings"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.report = function report(_) {
@@ -21718,19 +22468,25 @@ messages.exportChatInvite = function exportChatInvite(_) {
   return { ..._, _: "messages.exportChatInvite" }
 }
 $encoder["messages.exportChatInvite"] = function (_) {
-  this.int32(347716823);
+  this.int32(-1607670315);
   this.int32(
     (+(_.legacy_revoke_permanent != null) << 2)
+    | (+(_.request_needed != null) << 3)
     | (+(_.expire_date != null) << 0)
     | (+(_.usage_limit != null) << 1)
+    | (+(_.title != null) << 4)
   )
   if (_.legacy_revoke_permanent != null)
     this.true(_.legacy_revoke_permanent); // ?: true - flags.2?true
+  if (_.request_needed != null)
+    this.true(_.request_needed);          // ?: true - flags.3?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.expire_date != null)
     this.int32(_.expire_date);            // ?: number - flags.0?int
   if (_.usage_limit != null)
     this.int32(_.usage_limit);            // ?: number - flags.1?int
+  if (_.title != null)
+    this.string(_.title);                 // ?: string - flags.4?string
 };
 messages.exportChatInvite.ref = "messages.exportChatInvite";
 messages.exportChatInvite.verify = function($$) {
@@ -21768,13 +22524,14 @@ messages.getStickerSet = function getStickerSet(_) {
   return { ..._, _: "messages.getStickerSet" }
 }
 $encoder["messages.getStickerSet"] = function (_) {
-  this.int32(639215886);
+  this.int32(-928977804);
   this.object(_.stickerset);              // : InputStickerSet - InputStickerSet
+  this.int32(_.hash);                     // : number - int
 };
 messages.getStickerSet.ref = "messages.getStickerSet";
 messages.getStickerSet.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.installStickerSet = function installStickerSet(_) {
@@ -22002,7 +22759,7 @@ messages.sendInlineBotResult = function sendInlineBotResult(_) {
   return { ..._, _: "messages.sendInlineBotResult" }
 }
 $encoder["messages.sendInlineBotResult"] = function (_) {
-  this.int32(570955184);
+  this.int32(2057376407);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
@@ -22010,6 +22767,7 @@ $encoder["messages.sendInlineBotResult"] = function (_) {
     | (+(_.hide_via != null) << 11)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.schedule_date != null) << 10)
+    | (+(_.send_as != null) << 13)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -22027,6 +22785,8 @@ $encoder["messages.sendInlineBotResult"] = function (_) {
   this.string(_.id);                      // : string - string
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.10?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
 };
 messages.sendInlineBotResult.ref = "messages.sendInlineBotResult";
 messages.sendInlineBotResult.verify = function($$) {
@@ -22654,13 +23414,15 @@ messages.sendMultiMedia = function sendMultiMedia(_) {
   return { ..._, _: "messages.sendMultiMedia" }
 }
 $encoder["messages.sendMultiMedia"] = function (_) {
-  this.int32(-872345397);
+  this.int32(-134016113);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
     | (+(_.clear_draft != null) << 7)
+    | (+(_.noforwards != null) << 14)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.schedule_date != null) << 10)
+    | (+(_.send_as != null) << 13)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -22668,12 +23430,16 @@ $encoder["messages.sendMultiMedia"] = function (_) {
     this.true(_.background);              // ?: true - flags.6?true
   if (_.clear_draft != null)
     this.true(_.clear_draft);             // ?: true - flags.7?true
+  if (_.noforwards != null)
+    this.true(_.noforwards);              // ?: true - flags.14?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.reply_to_msg_id != null)
     this.int32(_.reply_to_msg_id);        // ?: number - flags.0?int
   this.vector(_.multi_media, this.object); // : InputSingleMedia[] - Vector<InputSingleMedia>
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.10?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
 };
 messages.sendMultiMedia.ref = "messages.sendMultiMedia";
 messages.sendMultiMedia.verify = function($$) {
@@ -23372,11 +24138,13 @@ messages.editExportedChatInvite = function editExportedChatInvite(_) {
   return { ..._, _: "messages.editExportedChatInvite" }
 }
 $encoder["messages.editExportedChatInvite"] = function (_) {
-  this.int32(48562110);
+  this.int32(-1110823051);
   this.int32(
     (+(_.revoked != null) << 2)
     | (+(_.expire_date != null) << 0)
     | (+(_.usage_limit != null) << 1)
+    | (+(_.request_needed != null) << 3)
+    | (+(_.title != null) << 4)
   )
   if (_.revoked != null)
     this.true(_.revoked);                 // ?: true - flags.2?true
@@ -23386,6 +24154,10 @@ $encoder["messages.editExportedChatInvite"] = function (_) {
     this.int32(_.expire_date);            // ?: number - flags.0?int
   if (_.usage_limit != null)
     this.int32(_.usage_limit);            // ?: number - flags.1?int
+  if (_.request_needed != null)
+    this.bool(_.request_needed);          // ?: boolean - flags.3?Bool
+  if (_.title != null)
+    this.string(_.title);                 // ?: string - flags.4?string
 };
 messages.editExportedChatInvite.ref = "messages.editExportedChatInvite";
 messages.editExportedChatInvite.verify = function($$) {
@@ -23438,9 +24210,19 @@ messages.getChatInviteImporters = function getChatInviteImporters(_) {
   return { ..._, _: "messages.getChatInviteImporters" }
 }
 $encoder["messages.getChatInviteImporters"] = function (_) {
-  this.int32(654013065);
+  this.int32(-553329330);
+  this.int32(
+    (+(_.requested != null) << 0)
+    | (+(_.link != null) << 1)
+    | (+(_.q != null) << 2)
+  )
+  if (_.requested != null)
+    this.true(_.requested);               // ?: true - flags.0?true
   this.object(_.peer);                    // : InputPeer - InputPeer
-  this.string(_.link);                    // : string - string
+  if (_.link != null)
+    this.string(_.link);                  // ?: string - flags.1?string
+  if (_.q != null)
+    this.string(_.q);                     // ?: string - flags.2?string
   this.int32(_.offset_date);              // : number - int
   this.object(_.offset_user);             // : InputUser - InputUser
   this.int32(_.limit);                    // : number - int
@@ -23505,6 +24287,263 @@ messages.getMessageReadParticipants.verify = function($$) {
   if (!Array.isArray($$)) throw new TypeError("require array");
   for (const $ of $$)
     if (!(typeof $ == "bigint")) throw new TypeError("array element");
+  return $$;
+};
+messages.getSearchResultsCalendar = function getSearchResultsCalendar(_) {
+  return { ..._, _: "messages.getSearchResultsCalendar" }
+}
+$encoder["messages.getSearchResultsCalendar"] = function (_) {
+  this.int32(1240514025);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.filter);                  // : MessagesFilter - MessagesFilter
+  this.int32(_.offset_id);                // : number - int
+  this.int32(_.offset_date);              // : number - int
+};
+messages.getSearchResultsCalendar.ref = "messages.getSearchResultsCalendar";
+messages.getSearchResultsCalendar.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.searchResultsCalendar"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getSearchResultsPositions = function getSearchResultsPositions(_) {
+  return { ..._, _: "messages.getSearchResultsPositions" }
+}
+$encoder["messages.getSearchResultsPositions"] = function (_) {
+  this.int32(1855292323);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.filter);                  // : MessagesFilter - MessagesFilter
+  this.int32(_.offset_id);                // : number - int
+  this.int32(_.limit);                    // : number - int
+};
+messages.getSearchResultsPositions.ref = "messages.getSearchResultsPositions";
+messages.getSearchResultsPositions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.searchResultsPositions"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.hideChatJoinRequest = function hideChatJoinRequest(_) {
+  return { ..._, _: "messages.hideChatJoinRequest" }
+}
+$encoder["messages.hideChatJoinRequest"] = function (_) {
+  this.int32(2145904661);
+  this.int32(
+    (+(_.approved != null) << 0)
+  )
+  if (_.approved != null)
+    this.true(_.approved);                // ?: true - flags.0?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.user_id);                 // : InputUser - InputUser
+};
+messages.hideChatJoinRequest.ref = "messages.hideChatJoinRequest";
+messages.hideChatJoinRequest.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.hideAllChatJoinRequests = function hideAllChatJoinRequests(_) {
+  return { ..._, _: "messages.hideAllChatJoinRequests" }
+}
+$encoder["messages.hideAllChatJoinRequests"] = function (_) {
+  this.int32(-528091926);
+  this.int32(
+    (+(_.approved != null) << 0)
+    | (+(_.link != null) << 1)
+  )
+  if (_.approved != null)
+    this.true(_.approved);                // ?: true - flags.0?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  if (_.link != null)
+    this.string(_.link);                  // ?: string - flags.1?string
+};
+messages.hideAllChatJoinRequests.ref = "messages.hideAllChatJoinRequests";
+messages.hideAllChatJoinRequests.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.toggleNoForwards = function toggleNoForwards(_) {
+  return { ..._, _: "messages.toggleNoForwards" }
+}
+$encoder["messages.toggleNoForwards"] = function (_) {
+  this.int32(-1323389022);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+messages.toggleNoForwards.ref = "messages.toggleNoForwards";
+messages.toggleNoForwards.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.saveDefaultSendAs = function saveDefaultSendAs(_) {
+  return { ..._, _: "messages.saveDefaultSendAs" }
+}
+$encoder["messages.saveDefaultSendAs"] = function (_) {
+  this.int32(-855777386);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.send_as);                 // : InputPeer - InputPeer
+};
+messages.saveDefaultSendAs.ref = "messages.saveDefaultSendAs";
+messages.saveDefaultSendAs.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.sendReaction = function sendReaction(_) {
+  return { ..._, _: "messages.sendReaction" }
+}
+$encoder["messages.sendReaction"] = function (_) {
+  this.int32(627641572);
+  this.int32(
+    (+(_.big != null) << 1)
+    | (+(_.reaction != null) << 0)
+  )
+  if (_.big != null)
+    this.true(_.big);                     // ?: true - flags.1?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.msg_id);                   // : number - int
+  if (_.reaction != null)
+    this.string(_.reaction);              // ?: string - flags.0?string
+};
+messages.sendReaction.ref = "messages.sendReaction";
+messages.sendReaction.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getMessagesReactions = function getMessagesReactions(_) {
+  return { ..._, _: "messages.getMessagesReactions" }
+}
+$encoder["messages.getMessagesReactions"] = function (_) {
+  this.int32(-1950707482);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.vector(_.id, this.int32);          // : number[] - Vector<int>
+};
+messages.getMessagesReactions.ref = "messages.getMessagesReactions";
+messages.getMessagesReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getMessageReactionsList = function getMessageReactionsList(_) {
+  return { ..._, _: "messages.getMessageReactionsList" }
+}
+$encoder["messages.getMessageReactionsList"] = function (_) {
+  this.int32(-521245833);
+  this.int32(
+    (+(_.reaction != null) << 0)
+    | (+(_.offset != null) << 1)
+  )
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.id);                       // : number - int
+  if (_.reaction != null)
+    this.string(_.reaction);              // ?: string - flags.0?string
+  if (_.offset != null)
+    this.string(_.offset);                // ?: string - flags.1?string
+  this.int32(_.limit);                    // : number - int
+};
+messages.getMessageReactionsList.ref = "messages.getMessageReactionsList";
+messages.getMessageReactionsList.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.messageReactionsList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.setChatAvailableReactions = function setChatAvailableReactions(_) {
+  return { ..._, _: "messages.setChatAvailableReactions" }
+}
+$encoder["messages.setChatAvailableReactions"] = function (_) {
+  this.int32(335875750);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.vector(_.available_reactions, this.string); // : string[] - Vector<string>
+};
+messages.setChatAvailableReactions.ref = "messages.setChatAvailableReactions";
+messages.setChatAvailableReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getAvailableReactions = function getAvailableReactions(_) {
+  return { ..._, _: "messages.getAvailableReactions" }
+}
+$encoder["messages.getAvailableReactions"] = function (_) {
+  this.int32(417243308);
+  this.int32(_.hash);                     // : number - int
+};
+messages.getAvailableReactions.ref = "messages.getAvailableReactions";
+messages.getAvailableReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.availableReactionsNotModified", "messages.availableReactions"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.setDefaultReaction = function setDefaultReaction(_) {
+  return { ..._, _: "messages.setDefaultReaction" }
+}
+$encoder["messages.setDefaultReaction"] = function (_) {
+  this.int32(-647969580);
+  this.string(_.reaction);                // : string - string
+};
+messages.setDefaultReaction.ref = "messages.setDefaultReaction";
+messages.setDefaultReaction.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.translateText = function translateText(_) {
+  return { ..._, _: "messages.translateText" }
+}
+$encoder["messages.translateText"] = function (_) {
+  this.int32(617508334);
+  this.int32(
+    (+(_.peer != null) << 0)
+    | (+(_.msg_id != null) << 0)
+    | (+(_.text != null) << 1)
+    | (+(_.from_lang != null) << 2)
+  )
+  if (_.peer != null)
+    this.object(_.peer);                  // ?: InputPeer - flags.0?InputPeer
+  if (_.msg_id != null)
+    this.int32(_.msg_id);                 // ?: number - flags.0?int
+  if (_.text != null)
+    this.string(_.text);                  // ?: string - flags.1?string
+  if (_.from_lang != null)
+    this.string(_.from_lang);             // ?: string - flags.2?string
+  this.string(_.to_lang);                 // : string - string
+};
+messages.translateText.ref = "messages.translateText";
+messages.translateText.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.translateNoResult", "messages.translateResultText"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getUnreadReactions = function getUnreadReactions(_) {
+  return { ..._, _: "messages.getUnreadReactions" }
+}
+$encoder["messages.getUnreadReactions"] = function (_) {
+  this.int32(-396644838);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.offset_id);                // : number - int
+  this.int32(_.add_offset);               // : number - int
+  this.int32(_.limit);                    // : number - int
+  this.int32(_.max_id);                   // : number - int
+  this.int32(_.min_id);                   // : number - int
+};
+messages.getUnreadReactions.ref = "messages.getUnreadReactions";
+messages.getUnreadReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.readReactions = function readReactions(_) {
+  return { ..._, _: "messages.readReactions" }
+}
+$encoder["messages.readReactions"] = function (_) {
+  this.int32(-2099097129);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+};
+messages.readReactions.ref = "messages.readReactions";
+messages.readReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -24070,27 +25109,13 @@ channels.deleteMessages.verify = function($$) {
   if (!(typeof $ == "object" && ["messages.affectedMessages"].includes($._))) throw new TypeError("element");
   return $$;
 };
-channels.deleteUserHistory = function deleteUserHistory(_) {
-  return { ..._, _: "channels.deleteUserHistory" }
-}
-$encoder["channels.deleteUserHistory"] = function (_) {
-  this.int32(-787622117);
-  this.object(_.channel);                 // : InputChannel - InputChannel
-  this.object(_.user_id);                 // : InputUser - InputUser
-};
-channels.deleteUserHistory.ref = "channels.deleteUserHistory";
-channels.deleteUserHistory.verify = function($$) {
-  const $ = $$;
-  if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
-  return $$;
-};
 channels.reportSpam = function reportSpam(_) {
   return { ..._, _: "channels.reportSpam" }
 }
 $encoder["channels.reportSpam"] = function (_) {
-  this.int32(-32999408);
+  this.int32(-196443371);
   this.object(_.channel);                 // : InputChannel - InputChannel
-  this.object(_.user_id);                 // : InputUser - InputUser
+  this.object(_.participant);             // : InputPeer - InputPeer
   this.vector(_.id, this.int32);          // : number[] - Vector<int>
 };
 channels.reportSpam.ref = "channels.reportSpam";
@@ -24613,6 +25638,33 @@ channels.getSponsoredMessages.verify = function($$) {
   if (!(typeof $ == "object" && ["messages.sponsoredMessages"].includes($._))) throw new TypeError("element");
   return $$;
 };
+channels.getSendAs = function getSendAs(_) {
+  return { ..._, _: "channels.getSendAs" }
+}
+$encoder["channels.getSendAs"] = function (_) {
+  this.int32(231174382);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+};
+channels.getSendAs.ref = "channels.getSendAs";
+channels.getSendAs.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["channels.sendAsPeers"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.deleteParticipantHistory = function deleteParticipantHistory(_) {
+  return { ..._, _: "channels.deleteParticipantHistory" }
+}
+$encoder["channels.deleteParticipantHistory"] = function (_) {
+  this.int32(913655003);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.object(_.participant);             // : InputPeer - InputPeer
+};
+channels.deleteParticipantHistory.ref = "channels.deleteParticipantHistory";
+channels.deleteParticipantHistory.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 export const bots = {};
 bots.sendCustomRequest = function sendCustomRequest(_) {
@@ -24844,7 +25896,7 @@ $encoder["stickers.createStickerSet"] = function (_) {
 stickers.createStickerSet.ref = "stickers.createStickerSet";
 stickers.createStickerSet.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stickers.removeStickerFromSet = function removeStickerFromSet(_) {
@@ -24857,7 +25909,7 @@ $encoder["stickers.removeStickerFromSet"] = function (_) {
 stickers.removeStickerFromSet.ref = "stickers.removeStickerFromSet";
 stickers.removeStickerFromSet.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stickers.changeStickerPosition = function changeStickerPosition(_) {
@@ -24871,7 +25923,7 @@ $encoder["stickers.changeStickerPosition"] = function (_) {
 stickers.changeStickerPosition.ref = "stickers.changeStickerPosition";
 stickers.changeStickerPosition.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stickers.addStickerToSet = function addStickerToSet(_) {
@@ -24885,7 +25937,7 @@ $encoder["stickers.addStickerToSet"] = function (_) {
 stickers.addStickerToSet.ref = "stickers.addStickerToSet";
 stickers.addStickerToSet.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stickers.setStickerSetThumb = function setStickerSetThumb(_) {
@@ -24899,7 +25951,7 @@ $encoder["stickers.setStickerSetThumb"] = function (_) {
 stickers.setStickerSetThumb.ref = "stickers.setStickerSetThumb";
 stickers.setStickerSetThumb.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.stickerSet"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stickers.checkShortName = function checkShortName(_) {
