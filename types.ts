@@ -24,10 +24,11 @@ export interface PacketCodec {
 export type TransportFactory = (ip: string, port: number) => Promise<Transport>;
 
 export type DCIdentifier<
-  T extends "prod" | "test" | "media" | "cdn" =
+  T extends "prod" | "test" | "testmedia" | "prodmedia" | "cdn" =
     | "prod"
     | "test"
-    | "media"
+    | "testmedia"
+    | "prodmedia"
     | "cdn",
 > = `${T}-${number}`;
 

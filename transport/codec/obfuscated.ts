@@ -1,6 +1,6 @@
 import { CTR } from "mtproto/crypto/aes.ts";
-import { todv, view_arr } from "mtproto/common/utils.ts";
-import { PacketCodec } from "mtproto/types.ts";
+import { sha256, todv, view_arr } from "mtproto/common/utils.ts";
+import { DCIdentifier, PacketCodec } from "mtproto/types.ts";
 
 const badpatterns = [
   0x44414548,
@@ -12,13 +12,26 @@ const badpatterns = [
   0x02010316,
 ];
 
+export interface ObfuscateOptions {
+  dc?: DCIdentifier;
+  secret?: Uint8Array;
+}
+
+function gendcnumid(id: DCIdentifier) {
+  const [a, b] = id.split("-", 2);
+  let num = +b;
+  if (a.includes("test")) num += 10000;
+  if (a.includes("media")) num *= -1;
+  return num;
+}
+
 export default class Obfuscated implements PacketCodec {
   init = new Uint8Array(64);
   #upper: PacketCodec;
   #enc_aes: CTR;
   #dec_aes: CTR;
 
-  constructor(upper: PacketCodec) {
+  constructor(upper: PacketCodec, options: ObfuscateOptions = {}) {
     if (upper.obfuscate_tag == null) throw new Error("unsupported codec");
     this.#upper = upper;
     while (true) {
@@ -26,6 +39,10 @@ export default class Obfuscated implements PacketCodec {
       if (this.init[0] == 0xef) continue;
       const view = todv(this.init);
       this.init.set(upper.obfuscate_tag, 56);
+      if (options.dc) {
+        const num = gendcnumid(options.dc);
+        view.setUint32(60, num, true);
+      }
       const firstInt = view.getUint32(0, true);
       if (badpatterns.includes(firstInt)) continue;
       const secondInt = view.getUint32(4, true);
@@ -33,9 +50,13 @@ export default class Obfuscated implements PacketCodec {
       break;
     }
     const initrev = this.init.slice(0).reverse();
-    const enc_key = view_arr(this.init, 8, 32);
+    let enc_key = view_arr(this.init, 8, 32);
+    let dec_key = view_arr(initrev, 8, 32);
+    if (options.secret) {
+      enc_key = sha256(enc_key, options.secret.subarray(1));
+      dec_key = sha256(dec_key, options.secret.subarray(1));
+    }
     const enc_iv = view_arr(this.init, 40, 16);
-    const dec_key = view_arr(initrev, 8, 32);
     const dec_iv = view_arr(initrev, 40, 16);
 
     this.#enc_aes = new CTR(enc_key, enc_iv);

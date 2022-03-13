@@ -1,5 +1,6 @@
 import { Sha1 } from "std/hash/sha1.ts";
 import { Sha256 } from "std/hash/sha256.ts";
+import * as hex from "std/encoding/hex.ts";
 
 export function rand_int(max: number) {
   return Math.random() * max | 0;
@@ -72,6 +73,14 @@ export function todv(buffer: BufferSource): DataView {
   } else {
     return new DataView(buffer.buffer, buffer.byteOffset);
   }
+}
+
+export function fromhex(hexstr: string) {
+  return hex.decode(new TextEncoder().encode(hexstr));
+}
+
+export function tohex(buffer: BufferSource) {
+  return new TextDecoder().decode(hex.encode(tou8(buffer)));
 }
 
 export function tobig(bytes: Iterable<number>, reversed = false) {
