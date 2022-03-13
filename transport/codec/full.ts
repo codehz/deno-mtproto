@@ -10,13 +10,14 @@ export default class Full implements PacketCodec {
   *encode_packet(data: Uint8Array): Iterable<Uint8Array> {
     const len = data.length + 12;
     this.#dv.setUint32(0, len, true);
-    this.#dv.setUint32(1, this.#seq++, true);
+    this.#dv.setUint32(4, this.#seq++, true);
     yield this.#sendbuf;
     yield data;
     const crc = crc32(this.#sendbuf, data);
     this.#dv.setUint32(0, crc, true);
     yield view_arr(this.#sendbuf, 0, 4);
   }
+
   async *read_packet(reader: Deno.Reader): AsyncIterable<Uint8Array> {
     let stream = new Uint8Array();
     const temp = new Uint8Array(4096);
