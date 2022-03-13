@@ -19,10 +19,7 @@ import { serialize } from "mtproto/tl/serializer.ts";
 import { Deserializer } from "mtproto/tl/deserializer.ts";
 import { rand_array, rand_bigint, rand_int } from "mtproto/common/utils.ts";
 import { max } from "mtproto/common/alg.ts";
-import {
-  decode as debase64,
-  encode as base64,
-} from "std/encoding/base64.ts";
+import { decode as debase64, encode as base64 } from "std/encoding/base64.ts";
 import authorize from "mtproto/rpc/authorizor.ts";
 import { decompressObject } from "mtproto/common/gzip.ts";
 
@@ -358,7 +355,13 @@ export default class RPC {
       deserializer.int64(); // auth key
       const msgkey = deserializer.int128();
       const encrypted_payload = deserializer.remain;
-      const decrypted_payload = this.#aes_decrypt(msgkey, encrypted_payload);
+      const decrypted_payload = this.#aes_decrypt(
+        msgkey,
+        encrypted_payload.subarray(
+          0,
+          encrypted_payload.length - encrypted_payload.length % 16,
+        ),
+      );
       const computed_msgkey = view_arr(
         sha256(view_arr(this.#auth, 96, 32), decrypted_payload),
         8,
