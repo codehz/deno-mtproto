@@ -5,12 +5,7 @@ import {
   Transport,
 } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
-import {
-  AnyObject,
-  initConnection,
-  invokeWithLayer,
-  mt,
-} from "mtproto/gen/api.js";
+import { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
 import {
   concat_array,
   eq_array,
@@ -19,6 +14,7 @@ import {
   sha256,
   view_arr,
 } from "mtproto/common/utils.ts";
+import Resolver from "mtproto/common/resolver.ts";
 import * as aes from "mtproto/crypto/aes.ts";
 import { serialize } from "mtproto/tl/serializer.ts";
 import { Deserializer } from "mtproto/tl/deserializer.ts";
@@ -87,13 +83,11 @@ class Session {
 interface PendingCall<N extends string = string, T = any, R = any> {
   method: TLApiMethod<N, T, R>;
   params: Omit<T, "api_id" | "api_hash">;
-  resolve: (result: R) => void;
-  reject: (error: any) => void;
+  resolver: Resolver<R>;
 }
 
 interface PendingResquest<T = any> {
-  resolve: (result: T) => void;
-  reject: (error: any) => void;
+  resolver: Resolver<T>;
   packet: Uint8Array;
   ack?: true;
 }
@@ -104,6 +98,7 @@ class QueueHandler<T> {
   #queue: T[] = [];
   #blocked: boolean = true;
   #next: number | undefined;
+  wait?: Promise<void>;
 
   constructor(
     handler: (t: T[]) => Promise<void>,
@@ -119,11 +114,21 @@ class QueueHandler<T> {
     return this.#queue[Symbol.iterator]();
   }
 
+  async #runner() {
+    try {
+      await this.#handler(this.#queue);
+    } catch (e) {
+      this.#errhandler(e);
+    } finally {
+      delete this.wait;
+    }
+  }
+
   set blocked(value: boolean) {
     this.#blocked = value;
     if (!value) {
-      if (this.#queue.length) {
-        this.#handler(this.#queue).catch(this.#errhandler);
+      if (this.#queue.length && !this.wait && !this.#next) {
+        this.wait = this.#runner();
       }
     } else {
       if (this.#next) clearTimeout(this.#next);
@@ -134,9 +139,10 @@ class QueueHandler<T> {
   push(item: T) {
     this.#queue.push(item);
     if (this.#next == undefined && !this.#blocked) {
-      this.#next = setTimeout(() =>
-        this.#handler(this.#queue).catch(this.#errhandler)
-      );
+      this.#next = setTimeout(() => {
+        this.#next = undefined;
+        this.wait = this.#runner();
+      });
     }
   }
 }
@@ -167,25 +173,32 @@ export default class RPC {
   }, this.#handleerr);
   #pending_calls = new QueueHandler<PendingCall>(
     async (list) => {
-      const { method, params, resolve, reject } = list.shift()!;
-      const packet = serialize(invokeWithLayer, {
-        layer: 138,
-        query: initConnection({
-          ...this.#environment_information,
-          api_id: this.#api_id,
-          lang_code: "en",
-          lang_pack: "",
-          system_lang_code: "en",
-          query: method({
+      while (list.length) {
+        const { method, params, resolver } = list.shift()!;
+        const packet = this.#session.first
+          ? serialize(invokeWithLayer, {
+            layer: 138,
+            query: initConnection({
+              ...this.#environment_information,
+              api_id: this.#api_id,
+              lang_code: "en",
+              lang_pack: "",
+              system_lang_code: "en",
+              query: method({
+                ...params,
+                api_id: this.#api_id,
+                api_hash: this.#api_hash,
+              }),
+            }),
+          })
+          : serialize(method, {
             ...params,
             api_id: this.#api_id,
             api_hash: this.#api_hash,
-          }),
-        }),
-      });
-      const msgid = await this.#send_encrypted(packet);
-      console.log("sent", msgid);
-      this.#waitlist.set(msgid, { resolve, reject, packet });
+          });
+        const msgid = await this.#send_encrypted(packet);
+        this.#waitlist.set(msgid, { resolver, packet });
+      }
     },
     this.#handleerr,
   );
@@ -219,11 +232,11 @@ export default class RPC {
     this.#ack_queue.blocked = true;
     this.#pending_calls.blocked = true;
     const suberror = new Error("rpc failed", { cause: e });
-    for (const { reject } of this.#pending_calls) {
-      reject(suberror);
+    for (const { resolver } of this.#pending_calls) {
+      resolver.reject(suberror);
     }
-    for (const [, { reject }] of this.#waitlist) {
-      reject(suberror);
+    for (const [, { resolver }] of this.#waitlist) {
+      resolver.reject(suberror);
     }
   }
 
@@ -311,14 +324,13 @@ export default class RPC {
     method: TLApiMethod<N, T, R>,
     params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
   ): Promise<R> {
-    return new Promise<R>((resolve, reject) => {
-      this.#pending_calls.push({
-        method,
-        params: params ?? {},
-        resolve,
-        reject,
-      });
+    const resolver = new Resolver<R>();
+    this.#pending_calls.push({
+      method,
+      params: params ?? {},
+      resolver,
     });
+    return resolver.promise;
   }
 
   async #send_encrypted(
@@ -413,14 +425,14 @@ export default class RPC {
   ): Promise<void> {
     switch (data._) {
       case "mt.pong":
-        break;
+        return;
       case "mt.gzip_packed":
         return this.#process_message(decompressObject(data), msgid);
       case "mt.msg_container":
         for (const msg of data.messages) {
           await this.#process_message(decompressObject(msg.body), msg.msg_id);
         }
-        break;
+        return;
       case "mt.msgs_ack":
         for (const id of data.msg_ids) {
           const msg = this.#waitlist.get(id);
@@ -430,14 +442,14 @@ export default class RPC {
           }
           msg.ack = true;
         }
-        break;
+        return;
       case "mt.new_session_created":
         this.#ack_queue.push(msgid);
         this.#setitem(
           "salt",
           base64(this.#salt = frombig(data.server_salt, true)),
         );
-        break;
+        return;
       case "mt.rpc_result": {
         this.#ack_queue.push(msgid);
         const msg = this.#waitlist.get(data.req_msg_id);
@@ -448,12 +460,14 @@ export default class RPC {
         const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
           const { error_code, error_message } = res as mt.RpcError;
-          msg.reject(new Error(`rpc error(${error_code}): ${error_message}`));
+          msg.resolver.reject(
+            new Error(`rpc error(${error_code}): ${error_message}`),
+          );
         } else {
-          msg.resolve(res);
+          msg.resolver.resolve(res);
         }
         this.#waitlist.delete(data.req_msg_id);
-        break;
+        return;
       }
       case "mt.bad_server_salt":
         this.#setitem(
@@ -461,24 +475,24 @@ export default class RPC {
           base64(this.#salt = frombig(data.new_server_salt, true)),
         );
         await this.#resend_packet(data.bad_msg_id);
-        break;
+        return;
       case "mt.bad_msg_notification":
         if ([16, 17].includes(data.error_code)) {
           const server_time = +(msgid >> 32n).toString();
           const offset = (Date.now() / 1000) - server_time;
           this.#setitem("time_offset", (this.#session.offset = offset) + "");
           await this.#resend_packet(data.bad_msg_id);
-          break;
+          return;
         }
         // TODO: Better handling
         {
           const msg = this.#waitlist.get(data.bad_msg_id);
           if (msg) {
-            msg.reject(new Error(`reject due to ${data.error_code}`));
+            msg.resolver.reject(new Error(`reject due to ${data.error_code}`));
             this.#waitlist.delete(data.bad_msg_id);
           }
         }
-        break;
+        return;
     }
     this.#ack_queue.push(msgid);
     console.log(data);

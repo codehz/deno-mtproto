@@ -6,6 +6,7 @@ import Abridged from "mtproto/transport/codec/abridged.ts";
 // import Intermediate from "mtproto/transport/codec/intermediate.ts";
 import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
 import { help } from "mtproto/gen/api.js";
+import { decode } from "mtproto/tl/json.ts";
 
 const create = factory(() => new Obfuscated(new Abridged()));
 const transport = await create("149.154.167.40", 80);
@@ -34,16 +35,20 @@ const storage = {
     localStorage.removeItem(key);
   },
 };
+const rpc = new RPC(transport, storage, "test-2", api_id, api_hash, {
+  app_version: "1.0",
+  device_model: "Unknown",
+  system_version: "1.0",
+});
 
 try {
-  const rpc = new RPC(transport, storage, "test-2", api_id, api_hash, {
-    app_version: "1.0",
-    device_model: "Unknown",
-    system_version: "1.0",
-  });
-  const cfg = await rpc.call(help.getAppConfig);
+  const cfg = await rpc.call(help.getConfig);
   console.log(cfg);
+  const appcfg = await rpc.call(help.getAppConfig, {
+    lang_code: "zh_CN",
+    hash: 0,
+  });
+  console.log(decode(appcfg));
+} finally {
   rpc.close();
-} catch (e) {
-  console.error("err", e);
 }
