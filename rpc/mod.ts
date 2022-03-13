@@ -5,7 +5,12 @@ import {
   Transport,
 } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
-import { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
+import {
+  AnyObject,
+  initConnection,
+  invokeWithLayer,
+  mt,
+} from "mtproto/gen/api.js";
 import {
   concat_array,
   eq_array,
@@ -410,10 +415,10 @@ export default class RPC {
       case "mt.pong":
         break;
       case "mt.gzip_packed":
-        return this.#process_message(decompressObject(data.packed_data), msgid);
+        return this.#process_message(decompressObject(data), msgid);
       case "mt.msg_container":
         for (const msg of data.messages) {
-          await this.#process_message(msg.body, msg.msg_id);
+          await this.#process_message(decompressObject(msg.body), msg.msg_id);
         }
         break;
       case "mt.msgs_ack":
@@ -440,7 +445,7 @@ export default class RPC {
           console.warn(`Result message ${data.req_msg_id} not in list`);
           break;
         }
-        const res = decompressObject(data.result.packed_data);
+        const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
           const { error_code, error_message } = res as mt.RpcError;
           msg.reject(new Error(`rpc error(${error_code}): ${error_message}`));
@@ -506,6 +511,7 @@ export default class RPC {
               deserializer.int64();
               deserializer.int64();
               deserializer.int32();
+              // @ts-ignore
               resolve(fn.verify(deserializer.object()));
             } catch (e) {
               reject(e);

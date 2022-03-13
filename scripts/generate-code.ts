@@ -62,6 +62,7 @@ function mapSimpleType(type: string): string {
 
 function generateParamDecl(type: ParamType): string {
   let base = mapSimpleType(type.type);
+  if (type.type == "mt.Object") return ": AnyObject";
   if (type.vector) base += "[]";
   if (type.flag != null) return "?: " + base;
   return ": " + base;
@@ -262,7 +263,6 @@ class DefinitionProcessor {
     tsfile.indent++;
     tsfile.append`BaseSerializer,`;
     tsfile.append`BaseDeserializer,`;
-    tsfile.append`GenericObject,`;
     tsfile.append`ToUnderscore,`;
     tsfile.append`TLMethod,`;
     tsfile.append`TLApiMethod,`;
@@ -372,6 +372,7 @@ class DefinitionProcessor {
       typelist,
       typesubs,
       methods,
+      types,
     } = this;
     const globals = new Set<string>();
     tsfile.append`// #region "constructors"`;
@@ -469,8 +470,19 @@ class DefinitionProcessor {
     jsfile.append`// #endregion "constructors"`;
     jsfile.empty();
 
+    tsfile.append`export type AnyObject =`;
+    tsfile.indent++;
+    for (const type of types) {
+      const { namespace = "global", name } = parseNamespace(type);
+      tsfile.append`| ${namespace}.${name}`;
+    }
+    tsfile.eat();
+    tsfile.writeraw(`;`);
+    tsfile.indent--;
+    tsfile.empty();
+
     tsfile.append
-      `export const $encoder: Record<string, (this: BaseSerializer, input: { _: string } & Record<string, any>) => void>;`;
+      `export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;`;
     jsfile.append`export const $encoder = {`;
     jsfile.indent++;
     for (const { predicate, params, id } of filtered) {
@@ -502,7 +514,7 @@ class DefinitionProcessor {
     jsfile.empty();
 
     tsfile.append
-      `export const $decoder: Map<number, (this: BaseDeserializer) => GenericObject>;`;
+      `export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;`;
     jsfile.append`export const $decoder = new Map([`;
     jsfile.indent++;
     for (const { predicate, params, id } of filtered) {
@@ -714,30 +726,6 @@ class DefinitionProcessor {
             jsfile.append`if (!(${base})) throw new TypeError("element");`;
           }
           jsfile.append`return $$;`;
-          // let base: string | undefined;
-          // if (commontypes.includes(parsed.type)) {
-          //   base = `this.${parsed.type}`;
-          // } else {
-          //   base = `this.object`;
-          // }
-          // if (parsed.vector) {
-          //   jsfile.append`return this.vector(${base});`;
-          // } else {
-          //   jsfile.append`const ret = ${base}();`;
-          //   const subs = typesubs.get(parsed.type);
-          //   if (subs != null) {
-          //     jsfile.append`if ([`;
-          //     jsfile.indent++;
-          //     for (const sub of subs) {
-          //       jsfile.append`"${sub}",`;
-          //     }
-          //     jsfile.indent--;
-          //     jsfile.append`].includes(ret._)) return ret;`;
-          //     jsfile.append`throw ret;`;
-          //   } else {
-          //     jsfile.append`return ret;`;
-          //   }
-          // }
         }
         jsfile.indent--;
         jsfile.append`};`;

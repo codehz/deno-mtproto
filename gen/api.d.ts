@@ -2,13 +2,12 @@
 import type {
   BaseSerializer,
   BaseDeserializer,
-  GenericObject,
   ToUnderscore,
   TLMethod,
   TLApiMethod,
   TLConstructor,
   TLConstructorEmpty,
-} from "../tl/types.ts";
+} from "mtproto/tl/types.ts";
 
 // #region "constructors"
 
@@ -154,7 +153,7 @@ export namespace mt {
   type _RpcResult = {
     "mt.rpc_result": {
       req_msg_id: bigint;                     // long
-      result: mt.Object;                      // mt.Object
+      result: AnyObject;                      // mt.Object
     },
   };
 
@@ -251,7 +250,7 @@ export namespace mt {
       msg_id: bigint;                         // long
       seqno: number;                          // int
       bytes: number;                          // int
-      body: mt.Object;                        // mt.Object
+      body: AnyObject;                        // mt.Object
     },
   };
 
@@ -7443,8 +7442,359 @@ export namespace stickers {
 
 // #endregion "constructors"
 
-export const $encoder: Record<string, (this: BaseSerializer, input: { _: string } & Record<string, any>) => void>;
-export const $decoder: Map<number, (this: BaseDeserializer) => GenericObject>;
+export type AnyObject =
+  | mt.ResPQ
+  | mt.P_Q_inner_data
+  | mt.P_Q_inner_d
+  | mt.Server_DH_Params
+  | mt.Server_DH_inner_data
+  | mt.Client_DH_Inner_Data
+  | mt.Set_client_DH_params_answer
+  | mt.RpcResult
+  | mt.RpcError
+  | mt.RpcDropAnswer
+  | mt.FutureSalt
+  | mt.FutureSalts
+  | mt.Pong
+  | mt.NewSession
+  | mt.MessageContainer
+  | mt.Message
+  | mt.MessageCopy
+  | mt.Object
+  | mt.MsgsAck
+  | mt.BadMsgNotification
+  | mt.MsgResendReq
+  | mt.MsgsStateReq
+  | mt.MsgsStateInfo
+  | mt.MsgsAllInfo
+  | mt.MsgDetailedInfo
+  | mt.BindAuthKeyInner
+  | mt.DestroyAuthKeyRes
+  | mt.DestroySessionRes
+  | global.InputPeer
+  | global.InputUser
+  | global.InputContact
+  | global.InputFile
+  | global.InputMedia
+  | global.InputChatPhoto
+  | global.InputGeoPoint
+  | global.InputPhoto
+  | global.InputFileLocation
+  | global.Peer
+  | storage.FileType
+  | global.User
+  | global.UserProfilePhoto
+  | global.UserStatus
+  | global.Chat
+  | global.ChatFull
+  | global.ChatParticipant
+  | global.ChatParticipants
+  | global.ChatPhoto
+  | global.Message
+  | global.MessageMedia
+  | global.MessageAction
+  | global.Dialog
+  | global.Photo
+  | global.PhotoSize
+  | global.GeoPoint
+  | auth.SentCode
+  | auth.Authorization
+  | auth.ExportedAuthorization
+  | global.InputNotifyPeer
+  | global.InputPeerNotifySettings
+  | global.PeerNotifySettings
+  | global.PeerSettings
+  | global.WallPaper
+  | global.ReportReason
+  | global.UserFull
+  | global.Contact
+  | global.ImportedContact
+  | global.ContactStatus
+  | contacts.Contacts
+  | contacts.ImportedContacts
+  | contacts.Blocked
+  | messages.Dialogs
+  | messages.Messages
+  | messages.Chats
+  | messages.ChatFull
+  | messages.AffectedHistory
+  | global.MessagesFilter
+  | global.Update
+  | updates.State
+  | updates.Difference
+  | global.Updates
+  | photos.Photos
+  | photos.Photo
+  | upload.File
+  | global.DcOption
+  | global.Config
+  | global.NearestDc
+  | help.AppUpdate
+  | help.InviteText
+  | global.EncryptedChat
+  | global.InputEncryptedChat
+  | global.EncryptedFile
+  | global.InputEncryptedFile
+  | global.EncryptedMessage
+  | messages.DhConfig
+  | messages.SentEncryptedMessage
+  | global.InputDocument
+  | global.Document
+  | help.Support
+  | global.NotifyPeer
+  | global.SendMessageAction
+  | contacts.Found
+  | global.InputPrivacyKey
+  | global.PrivacyKey
+  | global.InputPrivacyRule
+  | global.PrivacyRule
+  | account.PrivacyRules
+  | global.AccountDaysTTL
+  | global.DocumentAttribute
+  | messages.Stickers
+  | global.StickerPack
+  | messages.AllStickers
+  | messages.AffectedMessages
+  | global.WebPage
+  | global.Authorization
+  | account.Authorizations
+  | account.Password
+  | account.PasswordSettings
+  | account.PasswordInputSettings
+  | auth.PasswordRecovery
+  | global.ReceivedNotifyMessage
+  | global.ExportedChatInvite
+  | global.ChatInvite
+  | global.InputStickerSet
+  | global.StickerSet
+  | messages.StickerSet
+  | global.BotCommand
+  | global.BotInfo
+  | global.KeyboardButton
+  | global.KeyboardButtonRow
+  | global.ReplyMarkup
+  | global.MessageEntity
+  | global.InputChannel
+  | contacts.ResolvedPeer
+  | global.MessageRange
+  | updates.ChannelDifference
+  | global.ChannelMessagesFilter
+  | global.ChannelParticipant
+  | global.ChannelParticipantsFilter
+  | channels.ChannelParticipants
+  | channels.ChannelParticipant
+  | help.TermsOfService
+  | messages.SavedGifs
+  | global.InputBotInlineMessage
+  | global.InputBotInlineResult
+  | global.BotInlineMessage
+  | global.BotInlineResult
+  | messages.BotResults
+  | global.ExportedMessageLink
+  | global.MessageFwdHeader
+  | auth.CodeType
+  | auth.SentCodeType
+  | messages.BotCallbackAnswer
+  | messages.MessageEditData
+  | global.InputBotInlineMessageID
+  | global.InlineBotSwitchPM
+  | messages.PeerDialogs
+  | global.TopPeer
+  | global.TopPeerCategory
+  | global.TopPeerCategoryPeers
+  | contacts.TopPeers
+  | global.DraftMessage
+  | messages.FeaturedStickers
+  | messages.RecentStickers
+  | messages.ArchivedStickers
+  | messages.StickerSetInstallResult
+  | global.StickerSetCovered
+  | global.MaskCoords
+  | global.InputStickeredMedia
+  | global.Game
+  | global.InputGame
+  | global.HighScore
+  | messages.HighScores
+  | global.RichText
+  | global.PageBlock
+  | global.PhoneCallDiscardReason
+  | global.DataJSON
+  | global.LabeledPrice
+  | global.Invoice
+  | global.PaymentCharge
+  | global.PostAddress
+  | global.PaymentRequestedInfo
+  | global.PaymentSavedCredentials
+  | global.WebDocument
+  | global.InputWebDocument
+  | global.InputWebFileLocation
+  | upload.WebFile
+  | payments.PaymentForm
+  | payments.ValidatedRequestedInfo
+  | payments.PaymentResult
+  | payments.PaymentReceipt
+  | payments.SavedInfo
+  | global.InputPaymentCredentials
+  | account.TmpPassword
+  | global.ShippingOption
+  | global.InputStickerSetItem
+  | global.InputPhoneCall
+  | global.PhoneCall
+  | global.PhoneConnection
+  | global.PhoneCallProtocol
+  | phone.PhoneCall
+  | upload.CdnFile
+  | global.CdnPublicKey
+  | global.CdnConfig
+  | global.LangPackString
+  | global.LangPackDifference
+  | global.LangPackLanguage
+  | global.ChannelAdminLogEventAction
+  | global.ChannelAdminLogEvent
+  | channels.AdminLogResults
+  | global.ChannelAdminLogEventsFilter
+  | global.PopularContact
+  | messages.FavedStickers
+  | global.RecentMeUrl
+  | help.RecentMeUrls
+  | global.InputSingleMedia
+  | global.WebAuthorization
+  | account.WebAuthorizations
+  | global.InputMessage
+  | global.InputDialogPeer
+  | global.DialogPeer
+  | messages.FoundStickerSets
+  | global.FileHash
+  | global.InputClientProxy
+  | help.TermsOfServiceUpdate
+  | global.InputSecureFile
+  | global.SecureFile
+  | global.SecureData
+  | global.SecurePlainData
+  | global.SecureValueType
+  | global.SecureValue
+  | global.InputSecureValue
+  | global.SecureValueHash
+  | global.SecureValueError
+  | global.SecureCredentialsEncrypted
+  | account.AuthorizationForm
+  | account.SentEmailCode
+  | help.DeepLinkInfo
+  | global.SavedContact
+  | account.Takeout
+  | global.PasswordKdfAlgo
+  | global.SecurePasswordKdfAlgo
+  | global.SecureSecretSettings
+  | global.InputCheckPasswordSRP
+  | global.SecureRequiredType
+  | help.PassportConfig
+  | global.InputAppEvent
+  | global.JSONObjectValue
+  | global.JSONValue
+  | global.PageTableCell
+  | global.PageTableRow
+  | global.PageCaption
+  | global.PageListItem
+  | global.PageListOrderedItem
+  | global.PageRelatedArticle
+  | global.Page
+  | help.SupportName
+  | help.UserInfo
+  | global.PollAnswer
+  | global.Poll
+  | global.PollAnswerVoters
+  | global.PollResults
+  | global.ChatOnlines
+  | global.StatsURL
+  | global.ChatAdminRights
+  | global.ChatBannedRights
+  | global.InputWallPaper
+  | account.WallPapers
+  | global.CodeSettings
+  | global.WallPaperSettings
+  | global.AutoDownloadSettings
+  | account.AutoDownloadSettings
+  | global.EmojiKeyword
+  | global.EmojiKeywordsDifference
+  | global.EmojiURL
+  | global.EmojiLanguage
+  | global.Folder
+  | global.InputFolderPeer
+  | global.FolderPeer
+  | messages.SearchCounter
+  | global.UrlAuthResult
+  | global.ChannelLocation
+  | global.PeerLocated
+  | global.RestrictionReason
+  | global.InputTheme
+  | global.Theme
+  | account.Themes
+  | auth.LoginToken
+  | account.ContentSettings
+  | messages.InactiveChats
+  | global.BaseTheme
+  | global.InputThemeSettings
+  | global.ThemeSettings
+  | global.WebPageAttribute
+  | global.MessageUserVote
+  | messages.VotesList
+  | global.BankCardOpenUrl
+  | payments.BankCardData
+  | global.DialogFilter
+  | global.DialogFilterSuggested
+  | global.StatsDateRangeDays
+  | global.StatsAbsValueAndPrev
+  | global.StatsPercentValue
+  | global.StatsGraph
+  | global.MessageInteractionCounters
+  | stats.BroadcastStats
+  | help.PromoData
+  | global.VideoSize
+  | global.StatsGroupTopPoster
+  | global.StatsGroupTopAdmin
+  | global.StatsGroupTopInviter
+  | stats.MegagroupStats
+  | global.GlobalPrivacySettings
+  | help.CountryCode
+  | help.Country
+  | help.CountriesList
+  | global.MessageViews
+  | messages.MessageViews
+  | messages.DiscussionMessage
+  | global.MessageReplyHeader
+  | global.MessageReplies
+  | global.PeerBlocked
+  | stats.MessageStats
+  | global.GroupCall
+  | global.InputGroupCall
+  | global.GroupCallParticipant
+  | phone.GroupCall
+  | phone.GroupParticipants
+  | global.InlineQueryPeerType
+  | messages.HistoryImport
+  | messages.HistoryImportParsed
+  | messages.AffectedFoundMessages
+  | global.ChatInviteImporter
+  | messages.ExportedChatInvites
+  | messages.ExportedChatInvite
+  | messages.ChatInviteImporters
+  | global.ChatAdminWithInvites
+  | messages.ChatAdminsWithInvites
+  | messages.CheckedHistoryImportPeer
+  | phone.JoinAsPeers
+  | phone.ExportedGroupCallInvite
+  | global.GroupCallParticipantVideoSourceGroup
+  | global.GroupCallParticipantVideo
+  | stickers.SuggestedShortName
+  | global.BotCommandScope
+  | account.ResetPasswordResult
+  | global.ChatTheme
+  | account.ChatThemes
+  | global.SponsoredMessage
+  | messages.SponsoredMessages;
+
+export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
+export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
 // #region "method"
 
 export namespace mt {

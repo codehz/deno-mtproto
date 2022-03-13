@@ -56,7 +56,7 @@ class Counter implements BaseSerializer {
   }
   object(value: GenericObject): void {
     const fn = $encoder[value._];
-    fn.call(this, value);
+    fn.call(this, value as any);
   }
 
   get count() {
@@ -158,7 +158,7 @@ export class Serializer implements BaseSerializer {
   }
   object(value: GenericObject): void {
     const fn = $encoder[value._];
-    fn.call(this, value);
+    fn.call(this, value as any);
   }
 }
 

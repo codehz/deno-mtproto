@@ -41,7 +41,7 @@ try {
     device_model: "Unknown",
     system_version: "1.0",
   });
-  const cfg = await rpc.call(help.getConfig);
+  const cfg = await rpc.call(help.getNearestDc);
   console.log(cfg);
   rpc.close();
 } catch (e) {

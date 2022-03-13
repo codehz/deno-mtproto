@@ -5391,7 +5391,7 @@ export const $encoder = {
   ["mt.rpc_result"](_) {
     this.int32(-212046591);
     this.int64(_.req_msg_id);               // : bigint - long
-    this.object(_.result);                  // : mt.Object - mt.Object
+    this.object(_.result);                  // : AnyObject - mt.Object
   },
   ["mt.rpc_error"](_) {
     this.int32(558156313);
@@ -5442,7 +5442,7 @@ export const $encoder = {
     this.int64(_.msg_id);                   // : bigint - long
     this.int32(_.seqno);                    // : number - int
     this.int32(_.bytes);                    // : number - int
-    this.object(_.body);                    // : mt.Object - mt.Object
+    this.object(_.body);                    // : AnyObject - mt.Object
   },
   ["mt.msg_copy"](_) {
     this.int32(-530561358);
@@ -12817,7 +12817,7 @@ export const $decoder = new Map([
   [-212046591, function decode$mt__rpc_result() {
     const _ = { _: "mt.rpc_result" }
     _.req_msg_id = this.int64();            // : bigint - long
-    _.result = this.object();               // : mt.Object - mt.Object
+    _.result = this.object();               // : AnyObject - mt.Object
     return _;
   }],
   [558156313, function decode$mt__rpc_error() {
@@ -12876,7 +12876,7 @@ export const $decoder = new Map([
     _.msg_id = this.int64();                // : bigint - long
     _.seqno = this.int32();                 // : number - int
     _.bytes = this.int32();                 // : number - int
-    _.body = this.object();                 // : mt.Object - mt.Object
+    _.body = this.object();                 // : AnyObject - mt.Object
     return _;
   }],
   [-530561358, function decode$mt__msg_copy() {

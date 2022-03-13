@@ -109,7 +109,7 @@ export class Deserializer implements BaseDeserializer {
       console.error(dump_u8arr(this.remain));
       throw new Error(`unknown tag ${id}`);
     }
-    return fn.call(this) as T;
+    return fn.call(this) as unknown as T;
   }
 }
 
