@@ -1,6 +1,6 @@
 import { $decoder } from "mtproto/gen/api.js";
 import { BaseDeserializer } from "mtproto/tl/types.ts";
-import { dump_u8arr, todv, tou8, view_arr } from "mtproto/common/utils.ts";
+import { sha1, tobig, todv, tou8, view_arr } from "mtproto/common/utils.ts";
 
 export class Deserializer implements BaseDeserializer {
   #buffer: Uint8Array;
@@ -106,9 +106,9 @@ export class Deserializer implements BaseDeserializer {
     if (id == -1720552011) return true as any;
     const fn = $decoder.get(id);
     if (fn == null) {
-      console.log(this.#offset);
-      Deno.writeFileSync("diag.bin", this.#buffer);
-      // console.log(dump_u8arr(this.#buffer));
+      const filename = `diag_${tobig(sha1(this.#buffer))}.bin`;
+      console.log(`${filename}:${this.#offset} generated`);
+      Deno.writeFileSync(filename, this.#buffer);
       throw new Error(`unknown tag ${id}`);
     }
     return fn.call(this) as unknown as T;
