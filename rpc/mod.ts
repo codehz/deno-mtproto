@@ -143,7 +143,7 @@ class QueueHandler<T> {
 
 export default class RPC {
   #api_id: number;
-  #api_hash: bigint;
+  #api_hash: string;
   #environment_information: EnvironmentInformation;
   #dcid: DCIdentifier;
   #transport: Transport;
@@ -199,7 +199,7 @@ export default class RPC {
     storage: KVStorage,
     dcid: DCIdentifier,
     api_id: number,
-    api_hash: bigint,
+    api_hash: string,
     environment_information: EnvironmentInformation,
   ) {
     this.#transport = transport;

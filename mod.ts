@@ -25,7 +25,7 @@ function parseDcId(
 
 export default class MTProto {
   #api_id: number;
-  #api_hash: bigint;
+  #api_hash: string;
   #initdc: InitDC;
   #transport_factory: TransportFactory;
   #storage: KVStorage;

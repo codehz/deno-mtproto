@@ -52,7 +52,7 @@ export interface EnvironmentInformation {
 
 export interface MTProtoOptions {
   api_id: number;
-  api_hash: bigint;
+  api_hash: string;
   environment: EnvironmentInformation;
   initdc?: InitDC;
   transport_factory: TransportFactory;

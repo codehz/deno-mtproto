@@ -13,7 +13,7 @@ const transport = await create("149.154.167.40", 80);
 console.log("connected");
 
 const api_id = 4;
-const api_hash = 0x014b35b6184100b085b0d0572f9b5103n;
+const api_hash = "014b35b6184100b085b0d0572f9b5103";
 
 if (0) {
   localStorage.clear();
@@ -41,7 +41,7 @@ try {
     device_model: "Unknown",
     system_version: "1.0",
   });
-  const cfg = await rpc.call(help.getNearestDc);
+  const cfg = await rpc.call(help.getAppConfig);
   console.log(cfg);
   rpc.close();
 } catch (e) {
