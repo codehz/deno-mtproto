@@ -151,18 +151,8 @@ export default class RPC {
   #waitlist = new Map<bigint, PendingResquest>();
 
   #handleerr = (e: any) => {
-    this.#state = "disconnected";
-    console.error(e);
-    this.#transport.close();
-    this.#ack_queue.blocked = true;
-    this.#pending_calls.blocked = true;
-    const suberror = new Error("rpc failed", { cause: e });
-    for (const { reject } of this.#pending_calls) {
-      reject(suberror);
-    }
-    for (const [, { reject }] of this.#waitlist) {
-      reject(suberror);
-    }
+    console.error(new Error(e, { cause: e }));
+    this.close(e);
   };
 
   #ack_queue = new QueueHandler<bigint>(async (msg_ids) => {
@@ -217,6 +207,21 @@ export default class RPC {
     this.#connect().catch(this.#handleerr);
   }
 
+  close(e?: any) {
+    if (this.#state == "disconnected") return;
+    this.#state = "disconnected";
+    this.#transport.close();
+    this.#ack_queue.blocked = true;
+    this.#pending_calls.blocked = true;
+    const suberror = new Error("rpc failed", { cause: e });
+    for (const { reject } of this.#pending_calls) {
+      reject(suberror);
+    }
+    for (const [, { reject }] of this.#waitlist) {
+      reject(suberror);
+    }
+  }
+
   #setitem(key: string, value: string | undefined) {
     if (value != null) {
       this.#storage.set(`${this.#dcid}-${key}`, value);
@@ -242,7 +247,9 @@ export default class RPC {
             break;
         }
       }
-      this.#handleerr("connection ended");
+      if (this.#state != "disconnected") {
+        this.#handleerr("connection ended");
+      }
     } catch (e) {
       this.#handleerr(e);
     }

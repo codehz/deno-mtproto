@@ -8,7 +8,7 @@ import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
 import { help } from "mtproto/gen/api.js";
 
 const create = factory(() => new Obfuscated(new Abridged()));
-const transport = await create("149.154.167.40", 443);
+const transport = await create("149.154.167.40", 80);
 
 console.log("connected");
 
@@ -43,6 +43,7 @@ try {
   });
   const cfg = await rpc.call(help.getConfig);
   console.log(cfg);
+  rpc.close();
 } catch (e) {
-  console.error(e);
+  console.error("err", e);
 }

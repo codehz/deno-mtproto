@@ -20,21 +20,35 @@ export class DenoTCP implements Transport {
   }
 
   async send(packet: Uint8Array): Promise<void> {
-    for (const piece of this.#codec.encode_packet(packet)) {
-      this.#conn.write(piece);
+    try {
+      for (const piece of this.#codec.encode_packet(packet)) {
+        await this.#conn.write(piece);
+      }
+    } catch (e) {
+      if (e instanceof Deno.errors.BadResource && this.#closed) {
+        return;
+      }
+      throw e;
     }
   }
 
   async *[Symbol.asyncIterator](): AsyncIterator<
     TransportEvent<keyof TransportEvents>
   > {
-    for await (const piece of this.#codec.read_packet(this.#conn)) {
-      if (piece.length == 4) {
-        const code = todv(piece).getUint32(0, true);
-        yield { _: "error", code };
-      } else {
-        yield { _: "message", data: piece };
+    try {
+      for await (const piece of this.#codec.read_packet(this.#conn)) {
+        if (piece.length == 4) {
+          const code = todv(piece).getUint32(0, true);
+          yield { _: "error", code };
+        } else {
+          yield { _: "message", data: piece };
+        }
       }
+    } catch (e) {
+      if (e instanceof Deno.errors.BadResource && this.#closed) {
+        return;
+      }
+      throw e;
     }
   }
   close(): void {
