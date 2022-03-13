@@ -245,6 +245,7 @@ export default class RPC {
             break;
         }
       }
+      this.#handleerr("connection ended");
     } catch (e) {
       this.#handleerr(e);
     }
