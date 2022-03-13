@@ -55,7 +55,9 @@ export default class Obfuscated implements PacketCodec {
     return this.#upper.read_packet({
       read: async (buffer) => {
         const len = await reader.read(buffer);
-        buffer.set(this.#deobfuscate(buffer));
+        if (len) {
+          buffer.set(this.#deobfuscate(buffer.subarray(0, len)));
+        }
         return len;
       },
     });
