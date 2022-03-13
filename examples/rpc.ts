@@ -1,10 +1,13 @@
 import RPC from "mtproto/rpc/mod.ts";
 import factory from "mtproto/transport/connection/deno-tcp.ts";
-import Intermediate from "mtproto/transport/codec/intermediate.ts";
+// import Padded from "mtproto/transport/codec/padded.ts";
+// import Full from "mtproto/transport/codec/full.ts";
+import Abridged from "mtproto/transport/codec/abridged.ts";
+// import Intermediate from "mtproto/transport/codec/intermediate.ts";
 import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
 import { help } from "mtproto/gen/api.js";
 
-const create = factory(() => new Intermediate());
+const create = factory(() => new Obfuscated(new Abridged()));
 const transport = await create("149.154.167.40", 443);
 
 console.log("connected");
@@ -39,7 +42,7 @@ try {
     system_version: "1.0",
   });
   const cfg = await rpc.call(help.getConfig);
-  console.log("here");
+  console.log(cfg);
 } catch (e) {
   console.error(e);
 }
