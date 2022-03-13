@@ -1,5 +1,5 @@
 import { PacketCodec } from "mtproto/types.ts";
-import { concat_array, todv, view_arr } from "mtproto/common/utils.ts";
+import { concat_array, view_arr } from "mtproto/common/utils.ts";
 
 const init = new Uint8Array([0xef]);
 const obfuscate_tag = new Uint8Array([0xef, 0xef, 0xef, 0xef]);
@@ -34,7 +34,7 @@ export default class Abridged implements PacketCodec {
         temp.subarray(0, res),
       );
       while (stream.length > 1) {
-        let len = stream[0] << 2;
+        let len = stream[0];
         let header = 1;
         if (len >= 127) {
           if (stream.length < 4) break;
@@ -43,6 +43,7 @@ export default class Abridged implements PacketCodec {
           len |= stream[3] << 16;
           header = 4;
         }
+        len <<= 2;
         if (len > stream.length - header) break;
         yield view_arr(stream, header, len);
         stream = stream.subarray(header + len);
