@@ -21,7 +21,6 @@ export class DenoTCP implements Transport {
 
   async send(packet: Uint8Array): Promise<void> {
     for (const piece of this.#codec.encode_packet(packet)) {
-      console.log(piece);
       this.#conn.write(piece);
     }
   }
