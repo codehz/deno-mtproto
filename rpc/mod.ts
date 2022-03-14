@@ -15,6 +15,7 @@ import {
   view_arr,
 } from "mtproto/common/utils.ts";
 import Resolver from "mtproto/common/resolver.ts";
+import { err, ok, type Result } from "mtproto/common/result.ts";
 import * as aes from "mtproto/crypto/aes.ts";
 import { serialize } from "mtproto/tl/serializer.ts";
 import { Deserializer } from "mtproto/tl/deserializer.ts";
@@ -80,14 +81,14 @@ class Session {
   }
 }
 
-interface PendingCall<N extends string = string, T = any, R = any> {
-  method: TLApiMethod<N, T, R>;
+interface PendingCall<N extends string = string, T = any, R = any, E = any> {
+  method: TLApiMethod<N, T, R, E>;
   params: Omit<T, "api_id" | "api_hash">;
-  resolver: Resolver<R>;
+  resolver: Resolver<Result<R, E>>;
 }
 
-interface PendingResquest<T = any> {
-  resolver: Resolver<T>;
+interface PendingResquest<T = any, E = any> {
+  resolver: Resolver<Result<T, E>>;
   packet: Uint8Array;
   ack?: true;
 }
@@ -313,18 +314,18 @@ export default class RPC {
     return this.#aes_instance(msgkey, false).encrypt(data);
   }
 
-  async call<N extends string, R>(
-    method: TLApiMethod<N, void, R>,
-  ): Promise<R>;
-  async call<N extends string, T, R>(
-    method: TLApiMethod<N, T, R>,
+  async call<N extends string, R, E>(
+    method: TLApiMethod<N, void, R, E>,
+  ): Promise<Result<R, E>>;
+  async call<N extends string, T, R, E>(
+    method: TLApiMethod<N, T, R, E>,
     params: Omit<T, "api_id" | "api_hash">,
-  ): Promise<R>;
-  async call<N extends string, T, R>(
-    method: TLApiMethod<N, T, R>,
+  ): Promise<Result<R, E>>;
+  async call<N extends string, T, R, E>(
+    method: TLApiMethod<N, T, R, E>,
     params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
-  ): Promise<R> {
-    const resolver = new Resolver<R>();
+  ): Promise<Result<R, E>> {
+    const resolver = new Resolver<Result<R, E>>();
     this.#pending_calls.push({
       method,
       params: params ?? {},
@@ -459,12 +460,10 @@ export default class RPC {
         }
         const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
-          const { error_code, error_message } = res as mt.RpcError;
-          msg.resolver.reject(
-            new Error(`rpc error(${error_code}): ${error_message}`),
-          );
+          const { error_message } = res as mt.RpcError;
+          msg.resolver.resolve(err(error_message));
         } else {
-          msg.resolver.resolve(res);
+          msg.resolver.resolve(ok(res));
         }
         this.#waitlist.delete(data.req_msg_id);
         return;

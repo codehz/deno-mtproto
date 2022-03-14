@@ -43,12 +43,12 @@ const rpc = new RPC(transport, storage, "test-2", api_id, api_hash, {
 
 try {
   const cfg = await rpc.call(help.getConfig);
-  console.log(cfg);
+  console.log(cfg.unwrap());
   const appcfg = await rpc.call(help.getAppConfig, {
     lang_code: "zh_CN",
     hash: 0,
   });
-  console.log(decode(appcfg));
+  console.log(appcfg.map(decode).unwrap());
 } finally {
   rpc.close();
 }

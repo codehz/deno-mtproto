@@ -7,11 +7,11 @@ import {
   TransportFactory,
 } from "mtproto/types.ts";
 import RPC from "mtproto/rpc/mod.ts";
-import api from "mtproto/gen/api.js";
+import api, { help } from "mtproto/gen/api.js";
 
 const testdc: InitDC = {
-  id: "test-2",
-  ip: "149.154.167.40",
+  id: "test-1",
+  ip: "149.154.175.10",
   port: 443,
 };
 
@@ -54,7 +54,7 @@ export default class MTProto {
 
   async init() {
     const rpc = await this.rpc();
-    // rpc
+    // const config = await rpc.call(help.getConfig);
   }
 
   async rpc(dcid?: DCIdentifier): Promise<RPC> {

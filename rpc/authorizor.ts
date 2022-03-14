@@ -32,7 +32,7 @@ type AesParams = {
 };
 
 export type PlainTransport = {
-  send<T, R>(fn: TLMethod<T, R>, value: T): Promise<R>;
+  send<T, R, E>(fn: TLMethod<T, R>, value: T): Promise<R>;
   set_timeoffset(offset: number): void;
 };
 
