@@ -1,10 +1,12 @@
-type ResultT<T, E> = {
-  ok: true;
-  value: T;
-} | {
-  ok: false;
-  error: E;
-};
+type ResultT<T, E> =
+  | {
+    ok: true;
+    value: T;
+  }
+  | (E extends never ? never : {
+    ok: false;
+    error: E;
+  });
 
 export class UnwrapError<E> extends Error {
   constructor(public value: E) {

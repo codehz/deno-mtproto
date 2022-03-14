@@ -16,7 +16,8 @@ export type TLConstructorEmpty<N> = {
   ref: N;
 };
 
-export type TLApiMethod<N extends string, T, R, _E> = {
+export type TLApiMethod<N extends string, T, R, E> = {
+  __error: E;
   (param: T): { _: N } & T;
   ref: string;
   verify: VerifyType<R>;

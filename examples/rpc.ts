@@ -5,7 +5,6 @@ import factory from "mtproto/transport/connection/deno-tcp.ts";
 import Abridged from "mtproto/transport/codec/abridged.ts";
 // import Intermediate from "mtproto/transport/codec/intermediate.ts";
 import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
-import { help } from "mtproto/gen/api.js";
 import { decode } from "mtproto/tl/json.ts";
 
 const create = factory(() => new Obfuscated(new Abridged()));
@@ -42,13 +41,10 @@ const rpc = new RPC(transport, storage, "test-2", api_id, api_hash, {
 });
 
 try {
-  const cfg = await rpc.call(help.getConfig);
+  const cfg = await rpc.api.help.getConfig();
   console.log(cfg.unwrap());
-  const appcfg = await rpc.call(help.getAppConfig, {
-    lang_code: "zh_CN",
-    hash: 0,
-  });
-  console.log(appcfg.map(decode).unwrap());
+  const appcfg = await rpc.api.help.getAppConfig();
+  console.log(decode(appcfg.value));
 } finally {
   rpc.close();
 }

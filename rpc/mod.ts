@@ -6,6 +6,7 @@ import {
 } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
 import { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
+import * as apiset from "mtproto/gen/api.js";
 import {
   concat_array,
   eq_array,
@@ -16,6 +17,7 @@ import {
 } from "mtproto/common/utils.ts";
 import Resolver from "mtproto/common/resolver.ts";
 import { err, ok, type Result } from "mtproto/common/result.ts";
+import cached from "mtproto/common/cached.ts";
 import * as aes from "mtproto/crypto/aes.ts";
 import { serialize } from "mtproto/tl/serializer.ts";
 import { Deserializer } from "mtproto/tl/deserializer.ts";
@@ -26,6 +28,23 @@ import authorize from "mtproto/rpc/authorizor.ts";
 import { decompressObject } from "mtproto/common/gzip.ts";
 
 export type RPCState = "connecting" | "connected" | "disconnected";
+
+type FilteredKeys<T, U> = {
+  [P in keyof T]: T[P] extends U ? P : never;
+}[keyof T];
+
+type GenApiMethods<T> = {
+  [K in FilteredKeys<T, TLApiMethod<any, any, any, any>>]: T[K] extends {
+    (param: infer I): any;
+    __error: infer E;
+    verify(param: infer R): any;
+  } ? (param: void extends I ? void : I) => Promise<Result<R, E>>
+    : never;
+};
+
+type GenApi<T> = {
+  [K in FilteredKeys<T, Record<string, { ref: string }>>]: GenApiMethods<T[K]>;
+};
 
 class Session {
   #seq = 0;
@@ -333,6 +352,20 @@ export default class RPC {
     });
     return resolver.promise;
   }
+
+  readonly api: GenApi<typeof apiset> = cached((name) => {
+    if (
+      name in apiset && !name.startsWith("$") && name != "mt" &&
+      name != "default"
+    ) {
+      const obj = (apiset as any)[name];
+      return cached((name) => {
+        if (name in obj && obj[name].ref && obj[name].verify) {
+          return this.call.bind(this, obj[name]);
+        }
+      });
+    }
+  });
 
   async #send_encrypted(
     data: Uint8Array,
