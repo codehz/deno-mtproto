@@ -1,7 +1,5 @@
 import {
-  DCIdentifier,
   EnvironmentInformation,
-  KVStorage,
   Transport,
 } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
@@ -16,6 +14,7 @@ import {
   view_arr,
 } from "mtproto/common/utils.ts";
 import Resolver from "mtproto/common/resolver.ts";
+import type { FilteredKeys } from "mtproto/common/magic.ts";
 import { err, ok, type Result } from "mtproto/common/result.ts";
 import cached from "mtproto/common/cached.ts";
 import * as aes from "mtproto/crypto/aes.ts";
@@ -26,12 +25,10 @@ import { max } from "mtproto/common/alg.ts";
 import { decode as debase64, encode as base64 } from "std/encoding/base64.ts";
 import authorize from "mtproto/rpc/authorizor.ts";
 import { decompressObject } from "mtproto/common/gzip.ts";
+import { DCIdentifier } from "mtproto/common/dc.ts";
+import { KVStorage } from "../storage/types.ts";
 
 export type RPCState = "connecting" | "connected" | "disconnected";
-
-type FilteredKeys<T, U> = {
-  [P in keyof T]: T[P] extends U ? P : never;
-}[keyof T];
 
 type GenApiMethods<T> = {
   [K in FilteredKeys<T, TLApiMethod<any, any, any, any>>]: T[K] extends {
@@ -262,14 +259,14 @@ export default class RPC {
 
   #setitem(key: string, value: string | undefined) {
     if (value != null) {
-      this.#storage.set(`${this.#dcid}-${key}`, value);
+      this.#storage.set(key, value);
     } else {
-      this.#storage.delete(`${this.#dcid}-${key}`);
+      this.#storage.delete(key);
     }
   }
 
   #getitem(key: string) {
-    return this.#storage.get(`${this.#dcid}-${key}`);
+    return this.#storage.get(key);
   }
 
   async #recv_loop() {

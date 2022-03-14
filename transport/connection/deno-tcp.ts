@@ -5,7 +5,7 @@ import {
   TransportEvents,
   TransportFactory,
 } from "mtproto/types.ts";
-import { concat_array, todv, view_arr } from "mtproto/common/utils.ts";
+import { todv } from "mtproto/common/utils.ts";
 
 export class DenoTCP implements Transport {
   #closed = false;

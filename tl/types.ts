@@ -1,8 +1,7 @@
-export type GenericObject = { _: string } & Record<string, any>;
+import type { ToUnderscore } from "mtproto/common/magic.ts";
+export type { ToUnderscore };
 
-export type ToUnderscore<T, K extends keyof T = keyof T> = {
-  [K in keyof T]: { _: K } & T[K];
-}[K];
+export type GenericObject = { _: string } & Record<string, any>;
 
 export type VerifyType<T> = (input: T) => T;
 

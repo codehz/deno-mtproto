@@ -1,4 +1,6 @@
-import { ToUnderscore } from "mtproto/tl/types.ts";
+import type { ToUnderscore } from "mtproto/tl/types.ts";
+import type { DCIdentifier } from "mtproto/common/dc.ts";
+import type { MTStorage } from "mtproto/storage/types.ts";
 
 export type TransportEvents = {
   error: { code: number };
@@ -23,26 +25,11 @@ export interface PacketCodec {
 
 export type TransportFactory = (ip: string, port: number) => Promise<Transport>;
 
-export type DCIdentifier<
-  T extends "prod" | "test" | "testmedia" | "prodmedia" | "cdn" =
-    | "prod"
-    | "test"
-    | "testmedia"
-    | "prodmedia"
-    | "cdn",
-> = `${T}-${number}`;
-
 export interface InitDC {
-  id: DCIdentifier<"prod" | "test">;
+  id: DCIdentifier;
   ip: string;
   port: number;
 }
-
-export type KVStorage = {
-  get(key: string): string | undefined;
-  set(key: string, value: string): void;
-  delete(key: string): void;
-};
 
 export interface EnvironmentInformation {
   device_model: string;
@@ -56,5 +43,5 @@ export interface MTProtoOptions {
   environment: EnvironmentInformation;
   initdc?: InitDC;
   transport_factory: TransportFactory;
-  storage?: KVStorage;
+  storage?: MTStorage;
 }

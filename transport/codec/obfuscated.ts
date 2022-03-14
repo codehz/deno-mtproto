@@ -1,6 +1,7 @@
 import { CTR } from "mtproto/crypto/aes.ts";
 import { sha256, todv, view_arr } from "mtproto/common/utils.ts";
-import { DCIdentifier, PacketCodec } from "mtproto/types.ts";
+import { type PacketCodec } from "mtproto/types.ts";
+import { type DCIdentifier, toDCInfo } from "mtproto/common/dc.ts";
 
 const badpatterns = [
   0x44414548,
@@ -18,10 +19,9 @@ export interface ObfuscateOptions {
 }
 
 function gendcnumid(id: DCIdentifier) {
-  const [a, b] = id.split("-", 2);
-  let num = +b;
-  if (a.includes("test")) num += 10000;
-  if (a.includes("media")) num *= -1;
+  let { test, type, id: num } = toDCInfo(id);
+  if (test) num += 10000;
+  if (type != "main") num *= -1;
   return num;
 }
 

@@ -1,16 +1,17 @@
-import {
-  DCIdentifier,
+import type {
   EnvironmentInformation,
   InitDC,
-  KVStorage,
   MTProtoOptions,
   TransportFactory,
 } from "mtproto/types.ts";
 import RPC from "mtproto/rpc/mod.ts";
-import api, { help } from "mtproto/gen/api.js";
+import type api from "mtproto/gen/api.js";
+import { DCIdentifier, toDCInfo } from "mtproto/common/dc.ts";
+import type { MTStorage } from "mtproto/storage/types.ts";
+import KVStorageAdapter from "mtproto/storage/kv.ts";
 
 const testdc: InitDC = {
-  id: "test-1",
+  id: "main-test-1",
   ip: "149.154.175.10",
   port: 443,
 };
@@ -28,7 +29,7 @@ export default class MTProto {
   #api_hash: string;
   #initdc: InitDC;
   #transport_factory: TransportFactory;
-  #storage: KVStorage;
+  #storage: MTStorage;
   #environment: EnvironmentInformation;
   #connections = new Map<DCIdentifier, RPC>();
   #initconn?: RPC;
@@ -41,7 +42,7 @@ export default class MTProto {
       initdc = testdc,
       transport_factory,
       environment,
-      storage = new Map(),
+      storage = new KVStorageAdapter(),
     }: MTProtoOptions,
   ) {
     this.#api_id = api_id;
@@ -66,7 +67,7 @@ export default class MTProto {
       );
       this.#initconn = new RPC(
         connection,
-        this.#storage,
+        this.#storage.get({ _: "dc", ...toDCInfo(this.#initdc.id) }),
         this.#initdc.id,
         this.#api_id,
         this.#api_hash,
@@ -77,11 +78,12 @@ export default class MTProto {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
     }
-    const { type, id: nid } = parseDcId(dcid);
+    const { type, id: nid } = toDCInfo(dcid);
     let found = this.#dclist.find(({ cdn, media_only, id }) => {
-      if (type == "cdn") return cdn && id == nid;
-      if (type == "media") return media_only && id == nid;
-      return id == nid;
+      if (id != nid) return false;
+      if (type == "cdn") return cdn;
+      if (type == "media") return media_only;
+      return true;
     });
     if (found) {
       const connection = await this.#transport_factory(
@@ -90,7 +92,7 @@ export default class MTProto {
       );
       const rpc = new RPC(
         connection,
-        this.#storage,
+        this.#storage.get({ _: "dc", ...toDCInfo(this.#initdc.id) }),
         this.#initdc.id,
         this.#api_id,
         this.#api_hash,

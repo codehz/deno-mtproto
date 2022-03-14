@@ -33,8 +33,14 @@ const storage = {
     console.log("delete", key);
     localStorage.removeItem(key);
   },
+  *[Symbol.iterator]() {
+    for (const key in localStorage) {
+      yield [key, localStorage.getItem(key)!] as [string, string];
+    }
+  },
 };
-const rpc = new RPC(transport, storage, "test-2", api_id, api_hash, {
+
+const rpc = new RPC(transport, storage, "main-test-2", api_id, api_hash, {
   app_version: "1.0",
   device_model: "Unknown",
   system_version: "1.0",
