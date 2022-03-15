@@ -258,12 +258,12 @@ export default class RPC {
 
   close(e?: any) {
     if (this.#state == "disconnected") return;
-    this.#send_queue.stop();
+    const suberror = new Error("rpc failed", { cause: e });
+    this.#send_queue.stop(suberror);
     this.#state = "disconnected";
     this.#transport.close();
     this.#ack_queue.blocked = true;
     this.#pending_calls.blocked = true;
-    const suberror = new Error("rpc failed", { cause: e });
     for (const { resolver } of this.#pending_calls) {
       resolver.reject(suberror);
     }
