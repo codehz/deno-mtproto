@@ -13,6 +13,7 @@ import {
 import Resolver from "mtproto/common/resolver.ts";
 import type { FilteredKeys } from "mtproto/common/magic.ts";
 import { err, ok, type Result } from "mtproto/common/result.ts";
+import TaskQueue from "mtproto/common/queue.ts";
 import cached from "mtproto/common/cached.ts";
 import * as aes from "mtproto/crypto/aes.ts";
 import { serialize } from "mtproto/tl/serializer.ts";
@@ -177,6 +178,17 @@ export default class RPC {
   #session = new Session();
   #waitlist = new Map<bigint, PendingResquest>();
   #flood_wait = 0;
+  #send_queue = new TaskQueue<Uint8Array>(async (msg) => {
+    if (this.#flood_wait) {
+      await new Promise((resolve) => setTimeout(resolve, this.#flood_wait));
+      this.#flood_wait = 0;
+    }
+    await this.#transport.send(msg);
+  });
+
+  #send(packet: Uint8Array) {
+    return this.#send_queue.enqueue(packet);
+  }
 
   #handleerr = (e: any) => {
     console.error(new Error(e, { cause: e }));
@@ -187,10 +199,7 @@ export default class RPC {
     const packet = serialize(mt.msgs_ack, { msg_ids });
     console.log("ack", msg_ids);
     msg_ids.length = 0;
-    await this.#send_encrypted(packet, {
-      content_related: false,
-      skip_flood: true,
-    });
+    await this.#send_encrypted(packet, { content_related: false });
   }, this.#handleerr);
   #pending_calls = new QueueHandler<PendingCall>(
     async (list) => {
@@ -242,12 +251,14 @@ export default class RPC {
     this.#api_id = api_id;
     this.#api_hash = api_hash;
     this.#environment_information = environment_information;
+    this.#send_queue.unblock();
     this.#recv_loop();
     this.#connect().catch(this.#handleerr);
   }
 
   close(e?: any) {
     if (this.#state == "disconnected") return;
+    this.#send_queue.stop();
     this.#state = "disconnected";
     this.#transport.close();
     this.#ack_queue.blocked = true;
@@ -373,11 +384,9 @@ export default class RPC {
     {
       content_related = true,
       msgid = this.#session.msgid,
-      skip_flood = false,
     }: {
       content_related?: boolean;
       msgid?: bigint;
-      skip_flood?: boolean;
     } = {},
   ) {
     const salt = this.#salt;
@@ -406,13 +415,7 @@ export default class RPC {
     const encrypted = this.#aes_encrypt(msgkey, payload);
     const authkeyid = sha1(this.#auth).subarray(-8);
     const packet = concat_array(authkeyid, msgkey, encrypted);
-    if (!skip_flood && this.#flood_wait) {
-      await new Promise((resolve) =>
-        setTimeout(resolve, this.#flood_wait * 1000)
-      );
-      this.#flood_wait = 0;
-    }
-    await this.#transport.send(packet);
+    await this.#send(packet);
     return msgid;
   }
 
@@ -568,7 +571,7 @@ export default class RPC {
           this.raw(data);
         });
         return new Promise((resolve, reject) => {
-          this.#transport.send(payload).catch(reject);
+          this.#send(payload).catch(reject);
           this.#handle = async function (data) {
             this.#handle = undefined;
             try {
