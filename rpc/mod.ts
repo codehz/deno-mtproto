@@ -35,7 +35,7 @@ type GenApiMethods<T> = {
     (param: infer I): any;
     __error: infer E;
     verify(param: infer R): any;
-  } ? (param: void extends I ? void : I) => Promise<Result<R, E>>
+  } ? (param: void extends I ? void : Omit<I, "api_id" | "api_hash">) => Promise<Result<R, E>>
     : never;
 };
 
