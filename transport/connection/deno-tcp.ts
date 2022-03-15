@@ -38,7 +38,7 @@ export class DenoTCP implements Transport {
     try {
       for await (const piece of this.#codec.read_packet(this.#conn)) {
         if (piece.length == 4) {
-          const code = todv(piece).getUint32(0, true);
+          const code = Math.abs(todv(piece).getInt32(0, true));
           yield { _: "error", code };
         } else {
           yield { _: "message", data: piece };

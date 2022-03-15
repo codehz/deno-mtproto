@@ -1,7 +1,4 @@
-import {
-  EnvironmentInformation,
-  Transport,
-} from "mtproto/types.ts";
+import { EnvironmentInformation, Transport } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
 import { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
 import * as apiset from "mtproto/gen/api.js";
@@ -35,7 +32,9 @@ type GenApiMethods<T> = {
     (param: infer I): any;
     __error: infer E;
     verify(param: infer R): any;
-  } ? (param: void extends I ? void : Omit<I, "api_id" | "api_hash">) => Promise<Result<R, E>>
+  } ? (
+    param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
+  ) => Promise<Result<R, E>>
     : never;
 };
 
@@ -177,6 +176,7 @@ export default class RPC {
   #handle?: (this: RPC, data: Uint8Array) => Promise<void>;
   #session = new Session();
   #waitlist = new Map<bigint, PendingResquest>();
+  #flood_wait = 0;
 
   #handleerr = (e: any) => {
     console.error(new Error(e, { cause: e }));
@@ -185,8 +185,12 @@ export default class RPC {
 
   #ack_queue = new QueueHandler<bigint>(async (msg_ids) => {
     const packet = serialize(mt.msgs_ack, { msg_ids });
+    console.log("ack", msg_ids);
     msg_ids.length = 0;
-    await this.#send_encrypted(packet, { content_related: false });
+    await this.#send_encrypted(packet, {
+      content_related: false,
+      skip_flood: true,
+    });
   }, this.#handleerr);
   #pending_calls = new QueueHandler<PendingCall>(
     async (list) => {
@@ -369,9 +373,11 @@ export default class RPC {
     {
       content_related = true,
       msgid = this.#session.msgid,
+      skip_flood = false,
     }: {
       content_related?: boolean;
       msgid?: bigint;
+      skip_flood?: boolean;
     } = {},
   ) {
     const salt = this.#salt;
@@ -400,6 +406,12 @@ export default class RPC {
     const encrypted = this.#aes_encrypt(msgkey, payload);
     const authkeyid = sha1(this.#auth).subarray(-8);
     const packet = concat_array(authkeyid, msgkey, encrypted);
+    if (!skip_flood && this.#flood_wait) {
+      await new Promise((resolve) =>
+        setTimeout(resolve, this.#flood_wait * 1000)
+      );
+      this.#flood_wait = 0;
+    }
     await this.#transport.send(packet);
     return msgid;
   }
@@ -491,6 +503,16 @@ export default class RPC {
         const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
           const { error_message } = res as mt.RpcError;
+          const matched = /FLOOD_WAIT_(\d+)/.exec(error_message);
+          if (matched) {
+            const waittime = +matched[1];
+            console.log("FLOOD", waittime);
+            this.#flood_wait = waittime;
+            this.#waitlist.delete(data.req_msg_id);
+            const newid = await this.#send_encrypted(msg.packet);
+            this.#waitlist.set(newid, msg);
+            return;
+          }
           msg.resolver.resolve(err(error_message));
         } else {
           msg.resolver.resolve(ok(res));
@@ -576,9 +598,15 @@ export default class RPC {
   async #error(code: number) {
     switch (code) {
       case 404:
+        console.error("invalid auth key");
+        this.#pending_calls.blocked = true;
+        this.#ack_queue.blocked = true;
         this.#setitem("auth", undefined);
         this.#setitem("salt", undefined);
-        throw new Error("sent invalid packet");
+        this.#state = "connecting";
+        this.#session.reset();
+        await this.#connect();
+        break;
       case 429:
         throw new Error("transport flood");
       default:
