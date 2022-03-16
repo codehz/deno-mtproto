@@ -10,7 +10,7 @@ type ResultT<T, E> =
 
 export class UnwrapError<E> extends Error {
   constructor(public value: E) {
-    super("unwrap error");
+    super("unwrap error: " + value);
   }
 }
 
