@@ -79,14 +79,16 @@ export default class MTProto {
       return this.#connections.get(dcid)!;
     }
     const { type, id: nid } = toDCInfo(dcid);
-    let founds = this.#dclist.filter(({ cdn, media_only, id, ipv6 }) => {
-      if (id != nid) return false;
-      if (this.#ipv6 == "ipv4" && ipv6) return false;
-      if (this.#ipv6 == "ipv6" && !ipv6) return false;
-      if (type == "cdn") return cdn;
-      if (type == "media") return media_only;
-      return true;
-    });
+    let founds = this.#dclist.filter(
+      ({ cdn, media_only, id, ipv6, tcpo_only }) => {
+        if (id != nid || tcpo_only) return false;
+        if (this.#ipv6 == "ipv4" && ipv6) return false;
+        if (this.#ipv6 == "ipv6" && !ipv6) return false;
+        if (type == "cdn") return cdn;
+        if (type == "media") return media_only;
+        return true;
+      },
+    );
     let lasterr: Error | undefined;
     for (const found of founds) {
       try {
