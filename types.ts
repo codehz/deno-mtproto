@@ -26,7 +26,8 @@ export interface PacketCodec {
 export type TransportFactory = (ip: string, port: number) => Promise<Transport>;
 
 export interface InitDC {
-  id: DCIdentifier;
+  test: boolean;
+  id: number;
   ip: string;
   port: number;
 }

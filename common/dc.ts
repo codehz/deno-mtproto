@@ -1,7 +1,7 @@
-type DCType = "media" | "cdn" | "main";
-type DCTarget = "test" | "prod";
+export type DCType = "media" | "cdn" | "main";
+export type DCTarget = "test" | "prod";
 
-type DCPrefix = `${DCType}-${DCTarget}`;
+export type DCPrefix = `${DCType}-${DCTarget}`;
 
 export type DCIdentifier<T extends DCPrefix = DCPrefix> = `${T}-${number}`;
 

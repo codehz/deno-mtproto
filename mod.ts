@@ -6,23 +6,21 @@ import type {
 } from "mtproto/types.ts";
 import RPC from "mtproto/rpc/mod.ts";
 import type api from "mtproto/gen/api.js";
-import { DCIdentifier, toDCInfo } from "mtproto/common/dc.ts";
+import {
+  DCIdentifier,
+  DCType,
+  toDCIdentifier,
+  toDCInfo,
+} from "mtproto/common/dc.ts";
 import type { MTStorage } from "mtproto/storage/types.ts";
 import KVStorageAdapter from "mtproto/storage/kv.ts";
 
 const testdc: InitDC = {
-  id: "main-test-1",
+  test: true,
+  id: 1,
   ip: "149.154.175.10",
   port: 443,
 };
-
-function parseDcId(
-  id: DCIdentifier,
-): { type: "test" | "prod" | "media" | "cdn"; id: number } {
-  const [type, idstr] = id.split("-");
-  // @ts-ignore
-  return { type, id: +idstr };
-}
 
 export default class MTProto {
   #api_id: number;
@@ -32,7 +30,6 @@ export default class MTProto {
   #storage: MTStorage;
   #environment: EnvironmentInformation;
   #connections = new Map<DCIdentifier, RPC>();
-  #initconn?: RPC;
   #dclist: api.DcOption[] = [];
 
   constructor(
@@ -51,30 +48,29 @@ export default class MTProto {
     this.#transport_factory = transport_factory;
     this.#storage = storage;
     this.#environment = environment;
+    this.#dclist.push({
+      _: "dcOption",
+      id: initdc.id,
+      ip_address: initdc.ip,
+      port: initdc.port,
+    });
   }
 
   async init() {
     const rpc = await this.rpc();
-    // const config = await rpc.call(help.getConfig);
+    const config = (await rpc.api.help.getConfig()).unwrap();
+    this.#dclist = config.dc_options;
   }
 
-  async rpc(dcid?: DCIdentifier): Promise<RPC> {
-    if (dcid == null) {
-      if (this.#initconn) return this.#initconn;
-      const connection = await this.#transport_factory(
-        this.#initdc.ip,
-        this.#initdc.port,
-      );
-      this.#initconn = new RPC(
-        connection,
-        this.#storage.get({ _: "dc", ...toDCInfo(this.#initdc.id) }),
-        this.#initdc.id,
-        this.#api_id,
-        this.#api_hash,
-        this.#environment,
-      );
-      return this.#initconn;
-    }
+  getDcId(id: number, type: DCType = "main") {
+    return toDCIdentifier({
+      id,
+      type,
+      test: this.#initdc.test,
+    });
+  }
+
+  async rpc(dcid: DCIdentifier = this.getDcId(this.#initdc.id)): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
     }
@@ -92,8 +88,8 @@ export default class MTProto {
       );
       const rpc = new RPC(
         connection,
-        this.#storage.get({ _: "dc", ...toDCInfo(this.#initdc.id) }),
-        this.#initdc.id,
+        this.#storage.get({ _: "dc", ...toDCInfo(dcid) }),
+        dcid,
         this.#api_id,
         this.#api_hash,
         this.#environment,
