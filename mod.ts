@@ -42,7 +42,7 @@ export default class MTProto {
       transport_factory,
       environment,
       storage = new KVStorageAdapter(),
-      ipv6_policy,
+      ipv6_policy = "both",
     }: MTProtoOptions,
   ) {
     this.#api_id = api_id;

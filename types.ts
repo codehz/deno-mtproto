@@ -47,5 +47,5 @@ export interface MTProtoOptions {
   initdc?: InitDC;
   transport_factory: TransportFactory;
   storage?: MTStorage;
-  ipv6_policy: IPv6Policy;
+  ipv6_policy?: IPv6Policy;
 }
