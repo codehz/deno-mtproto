@@ -38,6 +38,8 @@ export interface EnvironmentInformation {
   app_version: string;
 }
 
+export type IPv6Policy = "ipv4" | "ipv6" | "both";
+
 export interface MTProtoOptions {
   api_id: number;
   api_hash: string;
@@ -45,4 +47,5 @@ export interface MTProtoOptions {
   initdc?: InitDC;
   transport_factory: TransportFactory;
   storage?: MTStorage;
+  ipv6_policy: IPv6Policy;
 }

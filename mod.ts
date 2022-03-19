@@ -1,6 +1,7 @@
 import type {
   EnvironmentInformation,
   InitDC,
+  IPv6Policy,
   MTProtoOptions,
   TransportFactory,
 } from "mtproto/types.ts";
@@ -31,6 +32,7 @@ export default class MTProto {
   #environment: EnvironmentInformation;
   #connections = new Map<DCIdentifier, RPC>();
   #dclist: api.DcOption[] = [];
+  #ipv6: IPv6Policy;
 
   constructor(
     {
@@ -40,6 +42,7 @@ export default class MTProto {
       transport_factory,
       environment,
       storage = new KVStorageAdapter(),
+      ipv6_policy,
     }: MTProtoOptions,
   ) {
     this.#api_id = api_id;
@@ -54,6 +57,7 @@ export default class MTProto {
       ip_address: initdc.ip,
       port: initdc.port,
     });
+    this.#ipv6 = ipv6_policy;
   }
 
   async init() {
@@ -75,28 +79,35 @@ export default class MTProto {
       return this.#connections.get(dcid)!;
     }
     const { type, id: nid } = toDCInfo(dcid);
-    let found = this.#dclist.find(({ cdn, media_only, id }) => {
+    let founds = this.#dclist.filter(({ cdn, media_only, id, ipv6 }) => {
       if (id != nid) return false;
+      if (this.#ipv6 == "ipv4" && ipv6) return false;
+      if (this.#ipv6 == "ipv6" && !ipv6) return false;
       if (type == "cdn") return cdn;
       if (type == "media") return media_only;
       return true;
     });
-    if (found) {
-      const connection = await this.#transport_factory(
-        found.ip_address,
-        found.port,
-      );
-      const rpc = new RPC(
-        connection,
-        this.#storage.get({ _: "dc", ...toDCInfo(dcid) }),
-        dcid,
-        this.#api_id,
-        this.#api_hash,
-        this.#environment,
-      );
-      this.#connections.set(dcid, rpc);
-      return rpc;
+    let lasterr: Error | undefined;
+    for (const found of founds) {
+      try {
+        const connection = await this.#transport_factory(
+          found.ip_address,
+          found.port,
+        );
+        const rpc = new RPC(
+          connection,
+          this.#storage.get({ _: "dc", ...toDCInfo(dcid) }),
+          dcid,
+          this.#api_id,
+          this.#api_hash,
+          this.#environment,
+        );
+        this.#connections.set(dcid, rpc);
+        return rpc;
+      } catch (e) {
+        lasterr = e;
+      }
     }
-    throw new Error(`Unknown DC ${dcid}`);
+    throw lasterr ?? new Error(`Unknown DC ${dcid}`);
   }
 }
