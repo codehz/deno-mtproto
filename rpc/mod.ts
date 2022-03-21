@@ -192,6 +192,7 @@ export default class RPC extends EventEmitter<api._Update> {
   }
 
   #handleerr = (e: any) => {
+    if (this.#state === "disconnected") return;
     console.error(new Error(e, { cause: e }));
     this.close(e);
   };

@@ -34,11 +34,24 @@ export default class MTProto {
   #dclist: api.DcOption[] = [];
   #ipv6: IPv6Policy;
 
+  #setting_get(key: string) {
+    return this.#storage.get({ "_": "global" }).get(key);
+  }
+
+  #setting_put(key: string, value: string | undefined) {
+    const view = this.#storage.get({ "_": "global" });
+    if (value == null) {
+      view.delete(key);
+    } else {
+      view.set(key, value);
+    }
+  }
+
   constructor(
     {
       api_id,
       api_hash,
-      initdc = testdc,
+      initdc,
       transport_factory,
       environment,
       storage = new KVStorageAdapter(),
@@ -47,15 +60,20 @@ export default class MTProto {
   ) {
     this.#api_id = api_id;
     this.#api_hash = api_hash;
-    this.#initdc = initdc;
-    this.#transport_factory = transport_factory;
     this.#storage = storage;
+    const defaultdc = this.#setting_get("dc");
+    if (defaultdc) {
+      this.#initdc = JSON.parse(defaultdc);
+    } else {
+      this.#initdc = initdc ?? testdc;
+    }
+    this.#transport_factory = transport_factory;
     this.#environment = environment;
     this.#dclist.push({
       _: "dcOption",
-      id: initdc.id,
-      ip_address: initdc.ip,
-      port: initdc.port,
+      id: this.#initdc.id,
+      ip_address: this.#initdc.ip,
+      port: this.#initdc.port,
     });
     this.#ipv6 = ipv6_policy;
   }
@@ -66,7 +84,27 @@ export default class MTProto {
     this.#dclist = config.dc_options;
   }
 
-  getDcId(id: number, type: DCType = "main") {
+  set_default_dc(dcid: number) {
+    let founds = this.#dclist.filter(
+      ({ cdn, media_only, id, ipv6, tcpo_only }) => {
+        if (id != dcid || tcpo_only) return false;
+        if (this.#ipv6 == "ipv4" && ipv6) return false;
+        if (this.#ipv6 == "ipv6" && !ipv6) return false;
+        return !cdn && !media_only;
+      },
+    );
+    if (founds.length) {
+      const { id, ip_address, port } = founds[0];
+      this.#initdc.id = id;
+      this.#initdc.ip = ip_address;
+      this.#initdc.port = port;
+      this.#setting_put("dc", JSON.stringify(this.#initdc));
+    } else {
+      throw new Error("dc not found!");
+    }
+  }
+
+  get_dc_id(id: number, type: DCType = "main") {
     return toDCIdentifier({
       id,
       type,
@@ -74,7 +112,9 @@ export default class MTProto {
     });
   }
 
-  async rpc(dcid: DCIdentifier = this.getDcId(this.#initdc.id)): Promise<RPC> {
+  async rpc(
+    dcid: DCIdentifier = this.get_dc_id(this.#initdc.id),
+  ): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
     }

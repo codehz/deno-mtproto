@@ -1,6 +1,7 @@
 import MTProto from "mtproto";
 import srp from "mtproto/crypto/srp.ts";
 import RPC from "mtproto/rpc/mod.ts";
+import parse_error from "mtproto/common/errparse.ts";
 
 export interface SendCodeUI {
   askCode(): Promise<string>;
@@ -37,8 +38,9 @@ export async function sendCode(
   phone_number: string,
   logout_tokens: BufferSource[] = [],
 ) {
-  let rpc = await proto.rpc();
-  do {
+  while (true) {
+    console.log('retry');
+    const rpc = await proto.rpc();
     const sent = (await rpc.api.auth.sendCode({
       phone_number,
       settings: {
@@ -47,8 +49,12 @@ export async function sendCode(
       },
     }));
     if (!sent.ok) {
+      let mig_dc: number | null;
       if (sent.error as string == "SESSION_PASSWORD_NEEDED") {
         return await login2fa(rpc, ui);
+      } else if ((mig_dc = parse_error("PHONE_MIGRATE_", sent.error)) != null) {
+        proto.set_default_dc(mig_dc);
+        continue;
       } else if (sent.error == "AUTH_RESTART") {
         continue;
       } else {
@@ -83,5 +89,5 @@ export async function sendCode(
       sign.value = signup;
     }
     return sign.value;
-  } while (false);
+  }
 }
