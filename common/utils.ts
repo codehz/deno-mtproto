@@ -83,9 +83,9 @@ export function tohex(buffer: BufferSource) {
   return new TextDecoder().decode(hex.encode(tou8(buffer)));
 }
 
-export function tobig(bytes: Iterable<number>, reversed = false) {
+export function tobig(bytes: Iterable<number>, little_endian = false) {
   let input = 0n;
-  if (reversed) {
+  if (little_endian) {
     let i = 0n;
     for (const byte of bytes) input |= BigInt(byte) << (i++ * 8n);
   } else {
@@ -94,10 +94,10 @@ export function tobig(bytes: Iterable<number>, reversed = false) {
   return input;
 }
 
-export function frombig(value: bigint, reversed = false) {
+export function frombig(value: bigint, little_endian = false) {
   const result = [];
   while (value > 0) {
-    if (reversed) {
+    if (little_endian) {
       result.push(+BigInt.asUintN(8, value).toString());
     } else {
       result.unshift(+BigInt.asUintN(8, value).toString());
@@ -107,9 +107,9 @@ export function frombig(value: bigint, reversed = false) {
   return new Uint8Array(result);
 }
 
-export function frombig16(value: bigint, reversed = false) {
+export function frombig16(value: bigint, little_endian = false) {
   const ret = new BigUint64Array(2);
-  if (reversed) {
+  if (little_endian) {
     ret[0] = value;
     ret[1] = value >> 64n;
   } else {
@@ -119,9 +119,9 @@ export function frombig16(value: bigint, reversed = false) {
   return new Uint8Array(ret.buffer, ret.byteOffset);
 }
 
-export function frombig32(value: bigint, reversed = false) {
+export function frombig32(value: bigint, little_endian = false) {
   const ret = new BigUint64Array(4);
-  if (reversed) {
+  if (little_endian) {
     ret[0] = value;
     ret[1] = value >> 64n;
     ret[2] = value >> 128n;
@@ -135,12 +135,12 @@ export function frombig32(value: bigint, reversed = false) {
   return new Uint8Array(ret.buffer, ret.byteOffset);
 }
 
-export function frombig128(value: bigint, reversed = false) {
+export function frombig128(value: bigint, little_endian = false) {
   const ret = new Uint8Array(128);
   const view = todv(ret);
   for (let i = 0; i < 16; i++) {
-    if (reversed) {
-      view.setBigUint64(8 * i, value >> (BigInt(i) * 64n));
+    if (little_endian) {
+      view.setBigUint64(8 * i, value >> (BigInt(i) * 64n), true);
     } else {
       view.setBigUint64(8 * i, value >> ((15n - BigInt(i)) * 64n));
     }
@@ -148,12 +148,12 @@ export function frombig128(value: bigint, reversed = false) {
   return ret;
 }
 
-export function frombig256(value: bigint, reversed = false) {
+export function frombig256(value: bigint, little_endian = false) {
   const ret = new Uint8Array(256);
   const view = todv(ret);
   for (let i = 0; i < 32; i++) {
-    if (reversed) {
-      view.setBigUint64(8 * i, value >> (BigInt(i) * 64n));
+    if (little_endian) {
+      view.setBigUint64(8 * i, value >> (BigInt(i) * 64n), true);
     } else {
       view.setBigUint64(8 * i, value >> ((31n - BigInt(i)) * 64n));
     }

@@ -1,20 +1,35 @@
 import MTProto from "mtproto";
+import srp from "mtproto/crypto/srp.ts";
 import RPC from "mtproto/rpc/mod.ts";
 
-export interface UI {
+export interface SendCodeUI {
   askCode(): Promise<string>;
-  askPassword(): Promise<string>;
+  askPassword(hint?: string): Promise<string>;
   askSignUp(): Promise<{ first_name: string; last_name: string } | undefined>;
 }
 
-async function login2fa(rpc: RPC, ui: UI) {
+async function login2fa(rpc: RPC, ui: SendCodeUI) {
+  const passinfo = (await rpc.api.account.getPassword()).unwrap();
+  if (passinfo.new_algo._ == "passwordKdfAlgoUnknown") {
+    throw new Error("unknown alg");
+  }
+  if (!passinfo.srp_B) throw new Error("no srp params");
+  const password = await ui.askPassword(passinfo.hint);
+  const srpres = srp(passinfo.new_algo, { gb: passinfo.srp_B, password });
+  return (await rpc.api.auth.checkPassword({
+    password: {
+      _: "inputCheckPasswordSRP",
+      srp_id: passinfo.srp_id!,
+      ...srpres,
+    },
+  })).unwrap();
 }
 
-export async function login(
+export async function sendCode(
   proto: MTProto,
-  ui: UI,
+  ui: SendCodeUI,
   phone_number: string,
-  logout_tokens: BufferSource[],
+  logout_tokens: BufferSource[] = [],
 ) {
   let rpc = await proto.rpc();
   do {
@@ -56,9 +71,9 @@ export async function login(
       const signup = (await rpc.api.auth.signUp({
         phone_number,
         phone_code_hash,
-        ...signupinfo
+        ...signupinfo,
       })).unwrap();
-      if (signup._ != "auth.authorization") throw new Error("failed to signup")
+      if (signup._ != "auth.authorization") throw new Error("failed to signup");
       sign.value = signup;
     }
     return sign.value;

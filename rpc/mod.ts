@@ -198,7 +198,7 @@ export default class RPC extends EventEmitter<api._Update> {
 
   #ack_queue = new QueueHandler<bigint>(async (msg_ids) => {
     const packet = serialize(mt.msgs_ack, { msg_ids });
-    console.log("ack", msg_ids);
+    // console.log("ack", msg_ids);
     msg_ids.length = 0;
     await this.#send_encrypted(packet, { content_related: false });
   }, this.#handleerr);
@@ -512,7 +512,7 @@ export default class RPC extends EventEmitter<api._Update> {
           const matched = /FLOOD_WAIT_(\d+)/.exec(error_message);
           if (matched) {
             const waittime = +matched[1];
-            console.log("FLOOD", waittime);
+            // console.log("FLOOD", waittime);
             this.#flood_wait = waittime;
             this.#waitlist.delete(data.req_msg_id);
             const newid = await this.#send_encrypted(msg.packet);

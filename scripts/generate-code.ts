@@ -498,8 +498,12 @@ class DefinitionProcessor {
             name,
             type: parseParamType(type),
           })).filter(({ type }) => type.flag != null).map((
-            { name, type: { flag } },
-          ) => `(+(_.${name} != null) << ${flag})`).join("\n| ");
+            { name, type: { flag, vector } },
+          ) =>
+            vector
+              ? `(+(_.${name} != null && _.${name}.length > 0) << ${flag})`
+              : `(+(_.${name} != null) << ${flag})`
+          ).join("\n| ");
           jsfile.append`${flags}`;
           jsfile.indent--;
           jsfile.append`)`;

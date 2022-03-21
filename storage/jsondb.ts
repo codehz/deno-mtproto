@@ -54,7 +54,6 @@ export default class JsonDBAdapter implements MTStorage {
   get(kind: StorageKind): KVStorage {
     const key = serialize_storage_kind(kind);
     let ret = this.data.get(key);
-    console.log(ret);
     if (!ret) {
       ret = new JsonKV(this.sync);
       this.data.set(key, ret);

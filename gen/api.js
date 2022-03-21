@@ -5732,7 +5732,7 @@ export const $encoder = {
   ["inputMediaUploadedPhoto"](_) {
     this.int32(505969924);
     this.int32(
-      (+(_.stickers != null) << 0)
+      (+(_.stickers != null && _.stickers.length > 0) << 0)
       | (+(_.ttl_seconds != null) << 1)
     )
     this.object(_.file);                    // : InputFile - InputFile
@@ -5937,7 +5937,7 @@ export const $encoder = {
       | (+(_.has_scheduled != null) << 8)
       | (+(_.chat_photo != null) << 2)
       | (+(_.exported_invite != null) << 13)
-      | (+(_.bot_info != null) << 3)
+      | (+(_.bot_info != null && _.bot_info.length > 0) << 3)
       | (+(_.pinned_msg_id != null) << 6)
       | (+(_.folder_id != null) << 11)
       | (+(_.call != null) << 12)
@@ -5945,8 +5945,8 @@ export const $encoder = {
       | (+(_.groupcall_default_join_as != null) << 15)
       | (+(_.theme_emoticon != null) << 16)
       | (+(_.requests_pending != null) << 17)
-      | (+(_.recent_requesters != null) << 17)
-      | (+(_.available_reactions != null) << 18)
+      | (+(_.recent_requesters != null && _.recent_requesters.length > 0) << 17)
+      | (+(_.available_reactions != null && _.available_reactions.length > 0) << 18)
     )
     if (_.can_set_username != null)
       this.true(_.can_set_username);        // ?: true - flags.7?true
@@ -6046,7 +6046,7 @@ export const $encoder = {
       | (+(_.reply_to != null) << 3)
       | (+(_.media != null) << 9)
       | (+(_.reply_markup != null) << 6)
-      | (+(_.entities != null) << 7)
+      | (+(_.entities != null && _.entities.length > 0) << 7)
       | (+(_.views != null) << 10)
       | (+(_.forwards != null) << 10)
       | (+(_.replies != null) << 23)
@@ -6054,7 +6054,7 @@ export const $encoder = {
       | (+(_.post_author != null) << 16)
       | (+(_.grouped_id != null) << 17)
       | (+(_.reactions != null) << 20)
-      | (+(_.restriction_reason != null) << 22)
+      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 22)
       | (+(_.ttl_period != null) << 25)
     )
     if (_.out != null)
@@ -6242,7 +6242,7 @@ export const $encoder = {
     this.int32(-82216347);
     this.int32(
       (+(_.has_stickers != null) << 0)
-      | (+(_.video_sizes != null) << 1)
+      | (+(_.video_sizes != null && _.video_sizes.length > 0) << 1)
     )
     if (_.has_stickers != null)
       this.true(_.has_stickers);            // ?: true - flags.0?true
@@ -6710,7 +6710,7 @@ export const $encoder = {
       | (+(_.fwd_from != null) << 2)
       | (+(_.via_bot_id != null) << 11)
       | (+(_.reply_to != null) << 3)
-      | (+(_.entities != null) << 7)
+      | (+(_.entities != null && _.entities.length > 0) << 7)
       | (+(_.ttl_period != null) << 25)
     )
     if (_.out != null)
@@ -6748,7 +6748,7 @@ export const $encoder = {
       | (+(_.fwd_from != null) << 2)
       | (+(_.via_bot_id != null) << 11)
       | (+(_.reply_to != null) << 3)
-      | (+(_.entities != null) << 7)
+      | (+(_.entities != null && _.entities.length > 0) << 7)
       | (+(_.ttl_period != null) << 25)
     )
     if (_.out != null)
@@ -7141,7 +7141,7 @@ export const $encoder = {
       (+(_.nosound_video != null) << 3)
       | (+(_.force_file != null) << 4)
       | (+(_.thumb != null) << 2)
-      | (+(_.stickers != null) << 0)
+      | (+(_.stickers != null && _.stickers.length > 0) << 0)
       | (+(_.ttl_seconds != null) << 1)
     )
     if (_.nosound_video != null)
@@ -7204,8 +7204,8 @@ export const $encoder = {
   ["document"](_) {
     this.int32(512177195);
     this.int32(
-      (+(_.thumbs != null) << 0)
-      | (+(_.video_thumbs != null) << 1)
+      (+(_.thumbs != null && _.thumbs.length > 0) << 0)
+      | (+(_.video_thumbs != null && _.video_thumbs.length > 0) << 1)
     )
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
@@ -7505,7 +7505,7 @@ export const $encoder = {
       | (+(_.author != null) << 8)
       | (+(_.document != null) << 9)
       | (+(_.cached_page != null) << 10)
-      | (+(_.attributes != null) << 12)
+      | (+(_.attributes != null && _.attributes.length > 0) << 12)
     )
     this.int64(_.id);                       // : bigint - long
     this.string(_.url);                     // : string - string
@@ -7722,7 +7722,7 @@ export const $encoder = {
       | (+(_.megagroup != null) << 3)
       | (+(_.request_needed != null) << 6)
       | (+(_.about != null) << 5)
-      | (+(_.participants != null) << 4)
+      | (+(_.participants != null && _.participants.length > 0) << 4)
     )
     if (_.channel != null)
       this.true(_.channel);                 // ?: true - flags.0?true
@@ -7773,7 +7773,7 @@ export const $encoder = {
       | (+(_.animated != null) << 5)
       | (+(_.videos != null) << 6)
       | (+(_.installed_date != null) << 0)
-      | (+(_.thumbs != null) << 4)
+      | (+(_.thumbs != null && _.thumbs.length > 0) << 4)
       | (+(_.thumb_dc_id != null) << 4)
       | (+(_.thumb_version != null) << 4)
     )
@@ -7834,7 +7834,7 @@ export const $encoder = {
       | (+(_.photo != null) << 5)
       | (+(_.status != null) << 6)
       | (+(_.bot_info_version != null) << 14)
-      | (+(_.restriction_reason != null) << 18)
+      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 18)
       | (+(_.bot_inline_placeholder != null) << 19)
       | (+(_.lang_code != null) << 22)
     )
@@ -8023,7 +8023,7 @@ export const $encoder = {
     this.int32(
       (+(_.out != null) << 1)
       | (+(_.media != null) << 9)
-      | (+(_.entities != null) << 7)
+      | (+(_.entities != null && _.entities.length > 0) << 7)
       | (+(_.ttl_period != null) << 25)
     )
     if (_.out != null)
@@ -8078,7 +8078,7 @@ export const $encoder = {
       | (+(_.noforwards != null) << 27)
       | (+(_.access_hash != null) << 13)
       | (+(_.username != null) << 6)
-      | (+(_.restriction_reason != null) << 9)
+      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 9)
       | (+(_.admin_rights != null) << 14)
       | (+(_.banned_rights != null) << 15)
       | (+(_.default_banned_rights != null) << 18)
@@ -8190,13 +8190,13 @@ export const $encoder = {
       | (+(_.stats_dc != null) << 12)
       | (+(_.call != null) << 21)
       | (+(_.ttl_period != null) << 24)
-      | (+(_.pending_suggestions != null) << 25)
+      | (+(_.pending_suggestions != null && _.pending_suggestions.length > 0) << 25)
       | (+(_.groupcall_default_join_as != null) << 26)
       | (+(_.theme_emoticon != null) << 27)
       | (+(_.requests_pending != null) << 28)
-      | (+(_.recent_requesters != null) << 28)
+      | (+(_.recent_requesters != null && _.recent_requesters.length > 0) << 28)
       | (+(_.default_send_as != null) << 29)
-      | (+(_.available_reactions != null) << 30)
+      | (+(_.available_reactions != null && _.available_reactions.length > 0) << 30)
     )
     if (_.can_view_participants != null)
       this.true(_.can_view_participants);   // ?: true - flags.3?true
@@ -8522,7 +8522,7 @@ export const $encoder = {
   ["inputBotInlineMessageMediaAuto"](_) {
     this.int32(864077702);
     this.int32(
-      (+(_.entities != null) << 1)
+      (+(_.entities != null && _.entities.length > 0) << 1)
       | (+(_.reply_markup != null) << 2)
     )
     this.string(_.message);                 // : string - string
@@ -8535,7 +8535,7 @@ export const $encoder = {
     this.int32(1036876423);
     this.int32(
       (+(_.no_webpage != null) << 0)
-      | (+(_.entities != null) << 1)
+      | (+(_.entities != null && _.entities.length > 0) << 1)
       | (+(_.reply_markup != null) << 2)
     )
     if (_.no_webpage != null)
@@ -8572,7 +8572,7 @@ export const $encoder = {
   ["botInlineMessageMediaAuto"](_) {
     this.int32(1984755728);
     this.int32(
-      (+(_.entities != null) << 1)
+      (+(_.entities != null && _.entities.length > 0) << 1)
       | (+(_.reply_markup != null) << 2)
     )
     this.string(_.message);                 // : string - string
@@ -8585,7 +8585,7 @@ export const $encoder = {
     this.int32(-1937807902);
     this.int32(
       (+(_.no_webpage != null) << 0)
-      | (+(_.entities != null) << 1)
+      | (+(_.entities != null && _.entities.length > 0) << 1)
       | (+(_.reply_markup != null) << 2)
     )
     if (_.no_webpage != null)
@@ -9072,7 +9072,7 @@ export const $encoder = {
     this.int32(
       (+(_.no_webpage != null) << 1)
       | (+(_.reply_to_msg_id != null) << 0)
-      | (+(_.entities != null) << 3)
+      | (+(_.entities != null && _.entities.length > 0) << 3)
     )
     if (_.no_webpage != null)
       this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -9481,7 +9481,7 @@ export const $encoder = {
     this.int32(-99664734);
     this.int32(
       (+(_.folder_id != null) << 1)
-      | (+(_.order != null) << 0)
+      | (+(_.order != null && _.order.length > 0) << 0)
     )
     if (_.folder_id != null)
       this.int32(_.folder_id);              // ?: number - flags.1?int
@@ -9519,7 +9519,7 @@ export const $encoder = {
       | (+(_.phone_to_provider != null) << 6)
       | (+(_.email_to_provider != null) << 7)
       | (+(_.max_tip_amount != null) << 8)
-      | (+(_.suggested_tip_amounts != null) << 8)
+      | (+(_.suggested_tip_amounts != null && _.suggested_tip_amounts.length > 0) << 8)
     )
     if (_.test != null)
       this.true(_.test);                    // ?: true - flags.0?true
@@ -9704,7 +9704,7 @@ export const $encoder = {
     this.int32(-784000893);
     this.int32(
       (+(_.id != null) << 0)
-      | (+(_.shipping_options != null) << 1)
+      | (+(_.shipping_options != null && _.shipping_options.length > 0) << 1)
     )
     if (_.id != null)
       this.string(_.id);                    // ?: string - flags.0?string
@@ -10384,7 +10384,7 @@ export const $encoder = {
   ["inputSingleMedia"](_) {
     this.int32(482797855);
     this.int32(
-      (+(_.entities != null) << 0)
+      (+(_.entities != null && _.entities.length > 0) << 0)
     )
     this.object(_.media);                   // : InputMedia - InputMedia
     this.int64(_.random_id);                // : bigint - long
@@ -10568,8 +10568,8 @@ export const $encoder = {
       | (+(_.front_side != null) << 1)
       | (+(_.reverse_side != null) << 2)
       | (+(_.selfie != null) << 3)
-      | (+(_.translation != null) << 6)
-      | (+(_.files != null) << 4)
+      | (+(_.translation != null && _.translation.length > 0) << 6)
+      | (+(_.files != null && _.files.length > 0) << 4)
       | (+(_.plain_data != null) << 5)
     )
     this.object(_.type);                    // : SecureValueType - SecureValueType
@@ -10596,8 +10596,8 @@ export const $encoder = {
       | (+(_.front_side != null) << 1)
       | (+(_.reverse_side != null) << 2)
       | (+(_.selfie != null) << 3)
-      | (+(_.translation != null) << 6)
-      | (+(_.files != null) << 4)
+      | (+(_.translation != null && _.translation.length > 0) << 6)
+      | (+(_.files != null && _.files.length > 0) << 4)
       | (+(_.plain_data != null) << 5)
     )
     this.object(_.type);                    // : SecureValueType - SecureValueType
@@ -10697,7 +10697,7 @@ export const $encoder = {
     this.int32(1783556146);
     this.int32(
       (+(_.update_app != null) << 0)
-      | (+(_.entities != null) << 1)
+      | (+(_.entities != null && _.entities.length > 0) << 1)
     )
     if (_.update_app != null)
       this.true(_.update_app);              // ?: true - flags.0?true
@@ -11121,11 +11121,11 @@ export const $encoder = {
     this.int32(-591909213);
     this.int32(
       (+(_.min != null) << 0)
-      | (+(_.results != null) << 1)
+      | (+(_.results != null && _.results.length > 0) << 1)
       | (+(_.total_voters != null) << 2)
-      | (+(_.recent_voters != null) << 3)
+      | (+(_.recent_voters != null && _.recent_voters.length > 0) << 3)
       | (+(_.solution != null) << 4)
-      | (+(_.solution_entities != null) << 4)
+      | (+(_.solution_entities != null && _.solution_entities.length > 0) << 4)
     )
     if (_.min != null)
       this.true(_.min);                     // ?: true - flags.0?true
@@ -11143,9 +11143,9 @@ export const $encoder = {
   ["inputMediaPoll"](_) {
     this.int32(261416433);
     this.int32(
-      (+(_.correct_answers != null) << 0)
+      (+(_.correct_answers != null && _.correct_answers.length > 0) << 0)
       | (+(_.solution != null) << 1)
-      | (+(_.solution_entities != null) << 1)
+      | (+(_.solution_entities != null && _.solution_entities.length > 0) << 1)
     )
     this.object(_.poll);                    // : Poll - Poll
     if (_.correct_answers != null && _.correct_answers.length > 0)
@@ -11296,7 +11296,7 @@ export const $encoder = {
       | (+(_.current_number != null) << 1)
       | (+(_.allow_app_hash != null) << 4)
       | (+(_.allow_missed_call != null) << 5)
-      | (+(_.logout_tokens != null) << 6)
+      | (+(_.logout_tokens != null && _.logout_tokens.length > 0) << 6)
     )
     if (_.allow_flashcall != null)
       this.true(_.allow_flashcall);         // ?: true - flags.0?true
@@ -11697,7 +11697,7 @@ export const $encoder = {
       | (+(_.default != null) << 1)
       | (+(_.for_chat != null) << 5)
       | (+(_.document != null) << 2)
-      | (+(_.settings != null) << 3)
+      | (+(_.settings != null && _.settings.length > 0) << 3)
       | (+(_.emoticon != null) << 6)
       | (+(_.installs_count != null) << 4)
     )
@@ -11816,7 +11816,7 @@ export const $encoder = {
     this.int32(
       (+(_.message_colors_animated != null) << 2)
       | (+(_.outbox_accent_color != null) << 3)
-      | (+(_.message_colors != null) << 0)
+      | (+(_.message_colors != null && _.message_colors.length > 0) << 0)
       | (+(_.wallpaper != null) << 1)
       | (+(_.wallpaper_settings != null) << 1)
     )
@@ -11838,7 +11838,7 @@ export const $encoder = {
     this.int32(
       (+(_.message_colors_animated != null) << 2)
       | (+(_.outbox_accent_color != null) << 3)
-      | (+(_.message_colors != null) << 0)
+      | (+(_.message_colors != null && _.message_colors.length > 0) << 0)
       | (+(_.wallpaper != null) << 1)
     )
     if (_.message_colors_animated != null)
@@ -11855,7 +11855,7 @@ export const $encoder = {
   ["webPageAttributeTheme"](_) {
     this.int32(1421174295);
     this.int32(
-      (+(_.documents != null) << 0)
+      (+(_.documents != null && _.documents.length > 0) << 0)
       | (+(_.settings != null) << 1)
     )
     if (_.documents != null && _.documents.length > 0)
@@ -12163,8 +12163,8 @@ export const $encoder = {
   ["help.countryCode"](_) {
     this.int32(1107543535);
     this.int32(
-      (+(_.prefixes != null) << 0)
-      | (+(_.patterns != null) << 1)
+      (+(_.prefixes != null && _.prefixes.length > 0) << 0)
+      | (+(_.patterns != null && _.patterns.length > 0) << 1)
     )
     this.string(_.country_code);            // : string - string
     if (_.prefixes != null && _.prefixes.length > 0)
@@ -12281,7 +12281,7 @@ export const $encoder = {
     this.int32(-2083123262);
     this.int32(
       (+(_.comments != null) << 0)
-      | (+(_.recent_repliers != null) << 1)
+      | (+(_.recent_repliers != null && _.recent_repliers.length > 0) << 1)
       | (+(_.channel_id != null) << 0)
       | (+(_.max_id != null) << 2)
       | (+(_.read_max_id != null) << 3)
@@ -12911,7 +12911,7 @@ export const $encoder = {
       | (+(_.chat_invite_hash != null) << 4)
       | (+(_.channel_post != null) << 2)
       | (+(_.start_param != null) << 0)
-      | (+(_.entities != null) << 1)
+      | (+(_.entities != null && _.entities.length > 0) << 1)
     )
     this.bytes(_.random_id);                // : BufferSource - bytes
     if (_.from_id != null)
@@ -13089,7 +13089,7 @@ export const $encoder = {
     this.int32(
       (+(_.min != null) << 0)
       | (+(_.can_see_list != null) << 2)
-      | (+(_.recent_reactions != null) << 1)
+      | (+(_.recent_reactions != null && _.recent_reactions.length > 0) << 1)
     )
     if (_.min != null)
       this.true(_.min);                     // ?: true - flags.0?true
