@@ -66,11 +66,12 @@ export class Deserializer implements BaseDeserializer {
       length = this.#buffer[this.#offset++] |
         (this.#buffer[this.#offset++] << 8) |
         (this.#buffer[this.#offset++] << 16);
-    }
+    };
     const bytes = view_arr(this.#buffer, this.#offset, length);
     this.#offset += length;
     const lost = this.#offset % 4;
     if (lost) this.#offset += 4 - lost;
+    if (length == 0) return new Uint8Array();
     return bytes;
   }
   string(): string {
