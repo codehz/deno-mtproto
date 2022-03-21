@@ -10,12 +10,15 @@ export interface SendCodeUI {
 
 async function login2fa(rpc: RPC, ui: SendCodeUI) {
   const passinfo = (await rpc.api.account.getPassword()).unwrap();
-  if (passinfo.new_algo._ == "passwordKdfAlgoUnknown") {
+  if (
+    !passinfo.current_algo ||
+    passinfo.current_algo._ == "passwordKdfAlgoUnknown"
+  ) {
     throw new Error("unknown alg");
   }
   if (!passinfo.srp_B || !passinfo.srp_id) throw new Error("no srp params");
   const password = await ui.askPassword(passinfo.hint);
-  const srpres = await srp(passinfo.new_algo, {
+  const srpres = await srp(passinfo.current_algo, {
     gb: passinfo.srp_B,
     password,
   });
