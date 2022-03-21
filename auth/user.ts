@@ -39,7 +39,6 @@ export async function sendCode(
   logout_tokens: BufferSource[] = [],
 ) {
   while (true) {
-    console.log('retry');
     const rpc = await proto.rpc();
     const sent = (await rpc.api.auth.sendCode({
       phone_number,
