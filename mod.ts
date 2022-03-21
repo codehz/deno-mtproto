@@ -112,4 +112,10 @@ export default class MTProto {
     }
     throw lasterr ?? new Error(`Unknown DC ${dcid}`);
   }
+
+  async shutdown() {
+    const conns = [...this.#connections.values()];
+    this.#connections.clear();
+    return await Promise.all(conns.map((conn) => conn.close("closed")));
+  }
 }
