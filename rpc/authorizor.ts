@@ -91,7 +91,7 @@ async function generate_dh(
   const encrypted_data = new aes.IGE(aes_key, aes_iv).encrypt(
     concat_array(innerhash, inner, padding),
   );
-  console.log("set_client_DH_params");
+  // console.log("set_client_DH_params");
   const dh_ans = await transport.send(mt.set_client_DH_params, {
     nonce,
     server_nonce,
@@ -137,7 +137,7 @@ async function generate_dh(
 }
 
 async function get_pq_and_key(transport: PlainTransport, nonce: Uint8Array) {
-  console.log("req_pq_multi");
+  // console.log("req_pq_multi");
   const pq_res = await transport.send(mt.req_pq_multi, { nonce });
   if (!eq_array(nonce, pq_res.nonce)) {
     throw new Error(
@@ -179,7 +179,7 @@ async function get_params(
   pq_inner.set(pq_inner_data_hash);
   pq_inner.set(pq_inner_data, pq_inner_data_hash.length);
   const encrypted_data = rsa.encrypt(key.modulus, pq_inner);
-  console.log("req_DH_params");
+  // console.log("req_DH_params");
   const dh_res = await transport.send(mt.req_DH_params, {
     nonce,
     server_nonce,

@@ -4,7 +4,6 @@
     "mtproto/": "./",
     "denoflate": "https://deno.land/x/denoflate@1.2.1/mod.ts",
     "std/": "https://deno.land/std@0.129.0/",
-    "aes": "https://esm.sh/aes-js@3.1.2",
-    "crypto/": "https://deno.land/x/crypto@v0.10.0/"
+    "aes": "https://esm.sh/aes-js@3.1.2"
   }
 }

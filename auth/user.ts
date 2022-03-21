@@ -13,9 +13,12 @@ async function login2fa(rpc: RPC, ui: SendCodeUI) {
   if (passinfo.new_algo._ == "passwordKdfAlgoUnknown") {
     throw new Error("unknown alg");
   }
-  if (!passinfo.srp_B) throw new Error("no srp params");
+  if (!passinfo.srp_B || !passinfo.srp_id) throw new Error("no srp params");
   const password = await ui.askPassword(passinfo.hint);
-  const srpres = srp(passinfo.new_algo, { gb: passinfo.srp_B, password });
+  const srpres = await srp(passinfo.new_algo, {
+    gb: passinfo.srp_B,
+    password,
+  });
   return (await rpc.api.auth.checkPassword({
     password: {
       _: "inputCheckPasswordSRP",
