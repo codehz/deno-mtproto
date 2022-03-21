@@ -46,7 +46,7 @@ export function concat_array(...arrays: ArrayLike<number>[]) {
 }
 
 export function view_arr(array: Uint8Array, start: number, length?: number) {
-  return array.subarray(start, length ? start + length : undefined);
+  return array.subarray(start, length != null ? start + length : undefined);
 }
 
 export function xor_array(src: Uint8Array, rhs: Uint8Array, clone = false) {

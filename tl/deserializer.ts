@@ -71,7 +71,6 @@ export class Deserializer implements BaseDeserializer {
     this.#offset += length;
     const lost = this.#offset % 4;
     if (lost) this.#offset += 4 - lost;
-    if (length == 0) return new Uint8Array();
     return bytes;
   }
   string(): string {
