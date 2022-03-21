@@ -400,7 +400,7 @@ class DefinitionProcessor {
         tsfile.append`K extends keyof _${typename} = keyof _${typename}`;
         tsfile.indent--;
         tsfile.append`> = ToUnderscore<_${typename}, K>;`;
-        tsfile.append`type _${typename} = {`;
+        tsfile.append`export type _${typename} = {`;
         tsfile.indent++;
         jsfile.append`// type ${typename}`;
         for (const { constructor: { predicate, params } } of constructors) {

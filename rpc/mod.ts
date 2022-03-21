@@ -1,6 +1,6 @@
 import { EnvironmentInformation, Transport } from "mtproto/types.ts";
 import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
-import { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
+import api, { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
 import * as apiset from "mtproto/gen/api.js";
 import {
   concat_array,
@@ -24,7 +24,8 @@ import { decode as debase64, encode as base64 } from "std/encoding/base64.ts";
 import authorize from "mtproto/rpc/authorizor.ts";
 import { decompressObject } from "mtproto/common/gzip.ts";
 import { DCIdentifier } from "mtproto/common/dc.ts";
-import { KVStorage } from "../storage/types.ts";
+import { KVStorage } from "mtproto/storage/types.ts";
+import EventEmitter from "mtproto/common/event.ts";
 
 export type RPCState = "connecting" | "connected" | "disconnected";
 
@@ -164,7 +165,7 @@ class QueueHandler<T> {
   }
 }
 
-export default class RPC {
+export default class RPC extends EventEmitter<api._Update> {
   #api_id: number;
   #api_hash: string;
   #environment_information: EnvironmentInformation;
@@ -245,6 +246,7 @@ export default class RPC {
     api_hash: string,
     environment_information: EnvironmentInformation,
   ) {
+    super();
     this.#transport = transport;
     this.#storage = storage;
     this.#dcid = dcid;
@@ -466,7 +468,8 @@ export default class RPC {
       | mt.MsgsAck
       | mt.RpcResult
       | mt.Object
-      | mt.Pong,
+      | mt.Pong
+      | api.Update,
     msgid: bigint,
   ): Promise<void> {
     switch (data._) {
@@ -501,7 +504,7 @@ export default class RPC {
         const msg = this.#waitlist.get(data.req_msg_id);
         if (!msg) {
           console.warn(`Result message ${data.req_msg_id} not in list`);
-          break;
+          return;
         }
         const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
@@ -549,7 +552,7 @@ export default class RPC {
         return;
     }
     this.#ack_queue.push(msgid);
-    console.log(data);
+    this.emit(data._, data);
   }
 
   async #resend_packet(msgid: bigint) {

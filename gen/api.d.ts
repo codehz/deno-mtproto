@@ -15,7 +15,7 @@ export namespace mt {
   export type ResPQ<
     K extends keyof _ResPQ = keyof _ResPQ
   > = ToUnderscore<_ResPQ, K>;
-  type _ResPQ = {
+  export type _ResPQ = {
     "mt.resPQ": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
@@ -28,7 +28,7 @@ export namespace mt {
   export type P_Q_inner_data<
     K extends keyof _P_Q_inner_data = keyof _P_Q_inner_data
   > = ToUnderscore<_P_Q_inner_data, K>;
-  type _P_Q_inner_data = {
+  export type _P_Q_inner_data = {
     "mt.p_q_inner_data": {
       pq: BufferSource;                       // bytes
       p: BufferSource;                        // bytes
@@ -63,7 +63,7 @@ export namespace mt {
   export type P_Q_inner_d<
     K extends keyof _P_Q_inner_d = keyof _P_Q_inner_d
   > = ToUnderscore<_P_Q_inner_d, K>;
-  type _P_Q_inner_d = {
+  export type _P_Q_inner_d = {
     "mt.p_q_inner_data_temp_dc": {
       pq: BufferSource;                       // bytes
       p: BufferSource;                        // bytes
@@ -80,7 +80,7 @@ export namespace mt {
   export type Server_DH_Params<
     K extends keyof _Server_DH_Params = keyof _Server_DH_Params
   > = ToUnderscore<_Server_DH_Params, K>;
-  type _Server_DH_Params = {
+  export type _Server_DH_Params = {
     "mt.server_DH_params_fail": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
@@ -98,7 +98,7 @@ export namespace mt {
   export type Server_DH_inner_data<
     K extends keyof _Server_DH_inner_data = keyof _Server_DH_inner_data
   > = ToUnderscore<_Server_DH_inner_data, K>;
-  type _Server_DH_inner_data = {
+  export type _Server_DH_inner_data = {
     "mt.server_DH_inner_data": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
@@ -113,7 +113,7 @@ export namespace mt {
   export type Client_DH_Inner_Data<
     K extends keyof _Client_DH_Inner_Data = keyof _Client_DH_Inner_Data
   > = ToUnderscore<_Client_DH_Inner_Data, K>;
-  type _Client_DH_Inner_Data = {
+  export type _Client_DH_Inner_Data = {
     "mt.client_DH_inner_data": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
@@ -126,7 +126,7 @@ export namespace mt {
   export type Set_client_DH_params_answer<
     K extends keyof _Set_client_DH_params_answer = keyof _Set_client_DH_params_answer
   > = ToUnderscore<_Set_client_DH_params_answer, K>;
-  type _Set_client_DH_params_answer = {
+  export type _Set_client_DH_params_answer = {
     "mt.dh_gen_ok": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
@@ -150,7 +150,7 @@ export namespace mt {
   export type RpcResult<
     K extends keyof _RpcResult = keyof _RpcResult
   > = ToUnderscore<_RpcResult, K>;
-  type _RpcResult = {
+  export type _RpcResult = {
     "mt.rpc_result": {
       req_msg_id: bigint;                     // long
       result: AnyObject;                      // mt.Object
@@ -161,7 +161,7 @@ export namespace mt {
   export type RpcError<
     K extends keyof _RpcError = keyof _RpcError
   > = ToUnderscore<_RpcError, K>;
-  type _RpcError = {
+  export type _RpcError = {
     "mt.rpc_error": {
       error_code: number;                     // int
       error_message: string;                  // string
@@ -172,7 +172,7 @@ export namespace mt {
   export type RpcDropAnswer<
     K extends keyof _RpcDropAnswer = keyof _RpcDropAnswer
   > = ToUnderscore<_RpcDropAnswer, K>;
-  type _RpcDropAnswer = {
+  export type _RpcDropAnswer = {
     "mt.rpc_answer_unknown": {}
     "mt.rpc_answer_dropped_running": {}
     "mt.rpc_answer_dropped": {
@@ -188,7 +188,7 @@ export namespace mt {
   export type FutureSalt<
     K extends keyof _FutureSalt = keyof _FutureSalt
   > = ToUnderscore<_FutureSalt, K>;
-  type _FutureSalt = {
+  export type _FutureSalt = {
     "mt.future_salt": {
       valid_since: number;                    // int
       valid_until: number;                    // int
@@ -200,7 +200,7 @@ export namespace mt {
   export type FutureSalts<
     K extends keyof _FutureSalts = keyof _FutureSalts
   > = ToUnderscore<_FutureSalts, K>;
-  type _FutureSalts = {
+  export type _FutureSalts = {
     "mt.future_salts": {
       req_msg_id: bigint;                     // long
       now: number;                            // int
@@ -212,7 +212,7 @@ export namespace mt {
   export type Pong<
     K extends keyof _Pong = keyof _Pong
   > = ToUnderscore<_Pong, K>;
-  type _Pong = {
+  export type _Pong = {
     "mt.pong": {
       msg_id: bigint;                         // long
       ping_id: bigint;                        // long
@@ -223,7 +223,7 @@ export namespace mt {
   export type NewSession<
     K extends keyof _NewSession = keyof _NewSession
   > = ToUnderscore<_NewSession, K>;
-  type _NewSession = {
+  export type _NewSession = {
     "mt.new_session_created": {
       first_msg_id: bigint;                   // long
       unique_id: bigint;                      // long
@@ -235,7 +235,7 @@ export namespace mt {
   export type MessageContainer<
     K extends keyof _MessageContainer = keyof _MessageContainer
   > = ToUnderscore<_MessageContainer, K>;
-  type _MessageContainer = {
+  export type _MessageContainer = {
     "mt.msg_container": {
       messages: mt.Message[];                 // vector<%mt.Message>
     },
@@ -245,7 +245,7 @@ export namespace mt {
   export type Message<
     K extends keyof _Message = keyof _Message
   > = ToUnderscore<_Message, K>;
-  type _Message = {
+  export type _Message = {
     "mt.message": {
       msg_id: bigint;                         // long
       seqno: number;                          // int
@@ -258,7 +258,7 @@ export namespace mt {
   export type MessageCopy<
     K extends keyof _MessageCopy = keyof _MessageCopy
   > = ToUnderscore<_MessageCopy, K>;
-  type _MessageCopy = {
+  export type _MessageCopy = {
     "mt.msg_copy": {
       orig_message: mt.Message;               // mt.Message
     },
@@ -268,7 +268,7 @@ export namespace mt {
   export type Object<
     K extends keyof _Object = keyof _Object
   > = ToUnderscore<_Object, K>;
-  type _Object = {
+  export type _Object = {
     "mt.gzip_packed": {
       packed_data: BufferSource;              // bytes
     },
@@ -278,7 +278,7 @@ export namespace mt {
   export type MsgsAck<
     K extends keyof _MsgsAck = keyof _MsgsAck
   > = ToUnderscore<_MsgsAck, K>;
-  type _MsgsAck = {
+  export type _MsgsAck = {
     "mt.msgs_ack": {
       msg_ids: bigint[];                      // Vector<long>
     },
@@ -288,7 +288,7 @@ export namespace mt {
   export type BadMsgNotification<
     K extends keyof _BadMsgNotification = keyof _BadMsgNotification
   > = ToUnderscore<_BadMsgNotification, K>;
-  type _BadMsgNotification = {
+  export type _BadMsgNotification = {
     "mt.bad_msg_notification": {
       bad_msg_id: bigint;                     // long
       bad_msg_seqno: number;                  // int
@@ -307,7 +307,7 @@ export namespace mt {
   export type MsgResendReq<
     K extends keyof _MsgResendReq = keyof _MsgResendReq
   > = ToUnderscore<_MsgResendReq, K>;
-  type _MsgResendReq = {
+  export type _MsgResendReq = {
     "mt.msg_resend_req": {
       msg_ids: bigint[];                      // Vector<long>
     },
@@ -321,7 +321,7 @@ export namespace mt {
   export type MsgsStateReq<
     K extends keyof _MsgsStateReq = keyof _MsgsStateReq
   > = ToUnderscore<_MsgsStateReq, K>;
-  type _MsgsStateReq = {
+  export type _MsgsStateReq = {
     "mt.msgs_state_req": {
       msg_ids: bigint[];                      // Vector<long>
     },
@@ -331,7 +331,7 @@ export namespace mt {
   export type MsgsStateInfo<
     K extends keyof _MsgsStateInfo = keyof _MsgsStateInfo
   > = ToUnderscore<_MsgsStateInfo, K>;
-  type _MsgsStateInfo = {
+  export type _MsgsStateInfo = {
     "mt.msgs_state_info": {
       req_msg_id: bigint;                     // long
       info: BufferSource;                     // bytes
@@ -342,7 +342,7 @@ export namespace mt {
   export type MsgsAllInfo<
     K extends keyof _MsgsAllInfo = keyof _MsgsAllInfo
   > = ToUnderscore<_MsgsAllInfo, K>;
-  type _MsgsAllInfo = {
+  export type _MsgsAllInfo = {
     "mt.msgs_all_info": {
       msg_ids: bigint[];                      // Vector<long>
       info: BufferSource;                     // bytes
@@ -353,7 +353,7 @@ export namespace mt {
   export type MsgDetailedInfo<
     K extends keyof _MsgDetailedInfo = keyof _MsgDetailedInfo
   > = ToUnderscore<_MsgDetailedInfo, K>;
-  type _MsgDetailedInfo = {
+  export type _MsgDetailedInfo = {
     "mt.msg_detailed_info": {
       msg_id: bigint;                         // long
       answer_msg_id: bigint;                  // long
@@ -372,7 +372,7 @@ export namespace mt {
   export type BindAuthKeyInner<
     K extends keyof _BindAuthKeyInner = keyof _BindAuthKeyInner
   > = ToUnderscore<_BindAuthKeyInner, K>;
-  type _BindAuthKeyInner = {
+  export type _BindAuthKeyInner = {
     "mt.bind_auth_key_inner": {
       nonce: bigint;                          // long
       temp_auth_key_id: bigint;               // long
@@ -386,7 +386,7 @@ export namespace mt {
   export type DestroyAuthKeyRes<
     K extends keyof _DestroyAuthKeyRes = keyof _DestroyAuthKeyRes
   > = ToUnderscore<_DestroyAuthKeyRes, K>;
-  type _DestroyAuthKeyRes = {
+  export type _DestroyAuthKeyRes = {
     "mt.destroy_auth_key_ok": {}
     "mt.destroy_auth_key_none": {}
     "mt.destroy_auth_key_fail": {}
@@ -398,7 +398,7 @@ export namespace mt {
   export type DestroySessionRes<
     K extends keyof _DestroySessionRes = keyof _DestroySessionRes
   > = ToUnderscore<_DestroySessionRes, K>;
-  type _DestroySessionRes = {
+  export type _DestroySessionRes = {
     "mt.destroy_session_ok": {
       session_id: bigint;                     // long
     },
@@ -415,7 +415,7 @@ declare namespace global {
   export type InputPeer<
     K extends keyof _InputPeer = keyof _InputPeer
   > = ToUnderscore<_InputPeer, K>;
-  type _InputPeer = {
+  export type _InputPeer = {
     "inputPeerEmpty": {}
     "inputPeerSelf": {}
     "inputPeerChat": {
@@ -451,7 +451,7 @@ declare namespace global {
   export type InputUser<
     K extends keyof _InputUser = keyof _InputUser
   > = ToUnderscore<_InputUser, K>;
-  type _InputUser = {
+  export type _InputUser = {
     "inputUserEmpty": {}
     "inputUserSelf": {}
     "inputUser": {
@@ -472,7 +472,7 @@ declare namespace global {
   export type InputContact<
     K extends keyof _InputContact = keyof _InputContact
   > = ToUnderscore<_InputContact, K>;
-  type _InputContact = {
+  export type _InputContact = {
     "inputPhoneContact": {
       client_id: bigint;                      // long
       phone: string;                          // string
@@ -485,7 +485,7 @@ declare namespace global {
   export type InputFile<
     K extends keyof _InputFile = keyof _InputFile
   > = ToUnderscore<_InputFile, K>;
-  type _InputFile = {
+  export type _InputFile = {
     "inputFile": {
       id: bigint;                             // long
       parts: number;                          // int
@@ -504,7 +504,7 @@ declare namespace global {
   export type InputMedia<
     K extends keyof _InputMedia = keyof _InputMedia
   > = ToUnderscore<_InputMedia, K>;
-  type _InputMedia = {
+  export type _InputMedia = {
     "inputMediaEmpty": {}
     "inputMediaUploadedPhoto": {
       file: global.InputFile;                 // InputFile
@@ -604,7 +604,7 @@ declare namespace global {
   export type InputChatPhoto<
     K extends keyof _InputChatPhoto = keyof _InputChatPhoto
   > = ToUnderscore<_InputChatPhoto, K>;
-  type _InputChatPhoto = {
+  export type _InputChatPhoto = {
     "inputChatPhotoEmpty": {}
     "inputChatUploadedPhoto": {
       file?: global.InputFile;                // flags.0?InputFile
@@ -622,7 +622,7 @@ declare namespace global {
   export type InputGeoPoint<
     K extends keyof _InputGeoPoint = keyof _InputGeoPoint
   > = ToUnderscore<_InputGeoPoint, K>;
-  type _InputGeoPoint = {
+  export type _InputGeoPoint = {
     "inputGeoPointEmpty": {}
     "inputGeoPoint": {
       lat: number;                            // double
@@ -636,7 +636,7 @@ declare namespace global {
   export type InputPhoto<
     K extends keyof _InputPhoto = keyof _InputPhoto
   > = ToUnderscore<_InputPhoto, K>;
-  type _InputPhoto = {
+  export type _InputPhoto = {
     "inputPhotoEmpty": {}
     "inputPhoto": {
       id: bigint;                             // long
@@ -650,7 +650,7 @@ declare namespace global {
   export type InputFileLocation<
     K extends keyof _InputFileLocation = keyof _InputFileLocation
   > = ToUnderscore<_InputFileLocation, K>;
-  type _InputFileLocation = {
+  export type _InputFileLocation = {
     "inputFileLocation": {
       volume_id: bigint;                      // long
       local_id: number;                       // int
@@ -717,7 +717,7 @@ declare namespace global {
   export type Peer<
     K extends keyof _Peer = keyof _Peer
   > = ToUnderscore<_Peer, K>;
-  type _Peer = {
+  export type _Peer = {
     "peerUser": {
       user_id: bigint;                        // long
     },
@@ -735,7 +735,7 @@ declare namespace global {
   export type User<
     K extends keyof _User = keyof _User
   > = ToUnderscore<_User, K>;
-  type _User = {
+  export type _User = {
     "userEmpty": {
       id: bigint;                             // long
     },
@@ -775,7 +775,7 @@ declare namespace global {
   export type UserProfilePhoto<
     K extends keyof _UserProfilePhoto = keyof _UserProfilePhoto
   > = ToUnderscore<_UserProfilePhoto, K>;
-  type _UserProfilePhoto = {
+  export type _UserProfilePhoto = {
     "userProfilePhotoEmpty": {}
     "userProfilePhoto": {
       has_video?: true;                       // flags.0?true
@@ -790,7 +790,7 @@ declare namespace global {
   export type UserStatus<
     K extends keyof _UserStatus = keyof _UserStatus
   > = ToUnderscore<_UserStatus, K>;
-  type _UserStatus = {
+  export type _UserStatus = {
     "userStatusEmpty": {}
     "userStatusOnline": {
       expires: number;                        // int
@@ -812,7 +812,7 @@ declare namespace global {
   export type Chat<
     K extends keyof _Chat = keyof _Chat
   > = ToUnderscore<_Chat, K>;
-  type _Chat = {
+  export type _Chat = {
     "chatEmpty": {
       id: bigint;                             // long
     },
@@ -886,7 +886,7 @@ declare namespace global {
   export type ChatFull<
     K extends keyof _ChatFull = keyof _ChatFull
   > = ToUnderscore<_ChatFull, K>;
-  type _ChatFull = {
+  export type _ChatFull = {
     "chatFull": {
       can_set_username?: true;                // flags.7?true
       has_scheduled?: true;                   // flags.8?true
@@ -959,7 +959,7 @@ declare namespace global {
   export type ChatParticipant<
     K extends keyof _ChatParticipant = keyof _ChatParticipant
   > = ToUnderscore<_ChatParticipant, K>;
-  type _ChatParticipant = {
+  export type _ChatParticipant = {
     "chatParticipant": {
       user_id: bigint;                        // long
       inviter_id: bigint;                     // long
@@ -981,7 +981,7 @@ declare namespace global {
   export type ChatParticipants<
     K extends keyof _ChatParticipants = keyof _ChatParticipants
   > = ToUnderscore<_ChatParticipants, K>;
-  type _ChatParticipants = {
+  export type _ChatParticipants = {
     "chatParticipantsForbidden": {
       chat_id: bigint;                        // long
       self_participant?: global.ChatParticipant; // flags.0?ChatParticipant
@@ -998,7 +998,7 @@ declare namespace global {
   export type ChatPhoto<
     K extends keyof _ChatPhoto = keyof _ChatPhoto
   > = ToUnderscore<_ChatPhoto, K>;
-  type _ChatPhoto = {
+  export type _ChatPhoto = {
     "chatPhotoEmpty": {}
     "chatPhoto": {
       has_video?: true;                       // flags.0?true
@@ -1013,7 +1013,7 @@ declare namespace global {
   export type Message<
     K extends keyof _Message = keyof _Message
   > = ToUnderscore<_Message, K>;
-  type _Message = {
+  export type _Message = {
     "messageEmpty": {
       id: number;                             // int
       peer_id?: global.Peer;                  // flags.0?Peer
@@ -1073,7 +1073,7 @@ declare namespace global {
   export type MessageMedia<
     K extends keyof _MessageMedia = keyof _MessageMedia
   > = ToUnderscore<_MessageMedia, K>;
-  type _MessageMedia = {
+  export type _MessageMedia = {
     "messageMediaEmpty": {}
     "messageMediaPhoto": {
       photo?: global.Photo;                   // flags.0?Photo
@@ -1151,7 +1151,7 @@ declare namespace global {
   export type MessageAction<
     K extends keyof _MessageAction = keyof _MessageAction
   > = ToUnderscore<_MessageAction, K>;
-  type _MessageAction = {
+  export type _MessageAction = {
     "messageActionEmpty": {}
     "messageActionChatCreate": {
       title: string;                          // string
@@ -1281,7 +1281,7 @@ declare namespace global {
   export type Dialog<
     K extends keyof _Dialog = keyof _Dialog
   > = ToUnderscore<_Dialog, K>;
-  type _Dialog = {
+  export type _Dialog = {
     "dialog": {
       pinned?: true;                          // flags.2?true
       unread_mark?: true;                     // flags.3?true
@@ -1314,7 +1314,7 @@ declare namespace global {
   export type Photo<
     K extends keyof _Photo = keyof _Photo
   > = ToUnderscore<_Photo, K>;
-  type _Photo = {
+  export type _Photo = {
     "photoEmpty": {
       id: bigint;                             // long
     },
@@ -1335,7 +1335,7 @@ declare namespace global {
   export type PhotoSize<
     K extends keyof _PhotoSize = keyof _PhotoSize
   > = ToUnderscore<_PhotoSize, K>;
-  type _PhotoSize = {
+  export type _PhotoSize = {
     "photoSizeEmpty": {
       type: string;                           // string
     },
@@ -1376,7 +1376,7 @@ declare namespace global {
   export type GeoPoint<
     K extends keyof _GeoPoint = keyof _GeoPoint
   > = ToUnderscore<_GeoPoint, K>;
-  type _GeoPoint = {
+  export type _GeoPoint = {
     "geoPointEmpty": {}
     "geoPoint": {
       long: number;                           // double
@@ -1391,7 +1391,7 @@ declare namespace global {
   export type InputNotifyPeer<
     K extends keyof _InputNotifyPeer = keyof _InputNotifyPeer
   > = ToUnderscore<_InputNotifyPeer, K>;
-  type _InputNotifyPeer = {
+  export type _InputNotifyPeer = {
     "inputNotifyPeer": {
       peer: global.InputPeer;                 // InputPeer
     },
@@ -1407,7 +1407,7 @@ declare namespace global {
   export type InputPeerNotifySettings<
     K extends keyof _InputPeerNotifySettings = keyof _InputPeerNotifySettings
   > = ToUnderscore<_InputPeerNotifySettings, K>;
-  type _InputPeerNotifySettings = {
+  export type _InputPeerNotifySettings = {
     "inputPeerNotifySettings": {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
@@ -1420,7 +1420,7 @@ declare namespace global {
   export type PeerNotifySettings<
     K extends keyof _PeerNotifySettings = keyof _PeerNotifySettings
   > = ToUnderscore<_PeerNotifySettings, K>;
-  type _PeerNotifySettings = {
+  export type _PeerNotifySettings = {
     "peerNotifySettings": {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
@@ -1433,7 +1433,7 @@ declare namespace global {
   export type PeerSettings<
     K extends keyof _PeerSettings = keyof _PeerSettings
   > = ToUnderscore<_PeerSettings, K>;
-  type _PeerSettings = {
+  export type _PeerSettings = {
     "peerSettings": {
       report_spam?: true;                     // flags.0?true
       add_contact?: true;                     // flags.1?true
@@ -1454,7 +1454,7 @@ declare namespace global {
   export type WallPaper<
     K extends keyof _WallPaper = keyof _WallPaper
   > = ToUnderscore<_WallPaper, K>;
-  type _WallPaper = {
+  export type _WallPaper = {
     "wallPaper": {
       id: bigint;                             // long
       creator?: true;                         // flags.0?true
@@ -1479,7 +1479,7 @@ declare namespace global {
   export type ReportReason<
     K extends keyof _ReportReason = keyof _ReportReason
   > = ToUnderscore<_ReportReason, K>;
-  type _ReportReason = {
+  export type _ReportReason = {
     "inputReportReasonSpam": {}
     "inputReportReasonViolence": {}
     "inputReportReasonPornography": {}
@@ -1501,7 +1501,7 @@ declare namespace global {
   export type UserFull<
     K extends keyof _UserFull = keyof _UserFull
   > = ToUnderscore<_UserFull, K>;
-  type _UserFull = {
+  export type _UserFull = {
     "userFull": {
       blocked?: true;                         // flags.0?true
       phone_calls_available?: true;           // flags.4?true
@@ -1528,7 +1528,7 @@ declare namespace global {
   export type Contact<
     K extends keyof _Contact = keyof _Contact
   > = ToUnderscore<_Contact, K>;
-  type _Contact = {
+  export type _Contact = {
     "contact": {
       user_id: bigint;                        // long
       mutual: boolean;                        // Bool
@@ -1539,7 +1539,7 @@ declare namespace global {
   export type ImportedContact<
     K extends keyof _ImportedContact = keyof _ImportedContact
   > = ToUnderscore<_ImportedContact, K>;
-  type _ImportedContact = {
+  export type _ImportedContact = {
     "importedContact": {
       user_id: bigint;                        // long
       client_id: bigint;                      // long
@@ -1550,7 +1550,7 @@ declare namespace global {
   export type ContactStatus<
     K extends keyof _ContactStatus = keyof _ContactStatus
   > = ToUnderscore<_ContactStatus, K>;
-  type _ContactStatus = {
+  export type _ContactStatus = {
     "contactStatus": {
       user_id: bigint;                        // long
       status: global.UserStatus;              // UserStatus
@@ -1561,7 +1561,7 @@ declare namespace global {
   export type MessagesFilter<
     K extends keyof _MessagesFilter = keyof _MessagesFilter
   > = ToUnderscore<_MessagesFilter, K>;
-  type _MessagesFilter = {
+  export type _MessagesFilter = {
     "inputMessagesFilterEmpty": {}
     "inputMessagesFilterPhotos": {}
     "inputMessagesFilterVideo": {}
@@ -1603,7 +1603,7 @@ declare namespace global {
   export type Update<
     K extends keyof _Update = keyof _Update
   > = ToUnderscore<_Update, K>;
-  type _Update = {
+  export type _Update = {
     "updateNewMessage": {
       message: global.Message;                // Message
       pts: number;                            // int
@@ -2147,7 +2147,7 @@ declare namespace global {
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
-  type _Updates = {
+  export type _Updates = {
     "updatesTooLong": {}
     "updateShortMessage": {
       out?: true;                             // flags.1?true
@@ -2225,7 +2225,7 @@ declare namespace global {
   export type DcOption<
     K extends keyof _DcOption = keyof _DcOption
   > = ToUnderscore<_DcOption, K>;
-  type _DcOption = {
+  export type _DcOption = {
     "dcOption": {
       ipv6?: true;                            // flags.0?true
       media_only?: true;                      // flags.1?true
@@ -2243,7 +2243,7 @@ declare namespace global {
   export type Config<
     K extends keyof _Config = keyof _Config
   > = ToUnderscore<_Config, K>;
-  type _Config = {
+  export type _Config = {
     "config": {
       phonecalls_enabled?: true;              // flags.1?true
       default_p2p_contacts?: true;            // flags.3?true
@@ -2303,7 +2303,7 @@ declare namespace global {
   export type NearestDc<
     K extends keyof _NearestDc = keyof _NearestDc
   > = ToUnderscore<_NearestDc, K>;
-  type _NearestDc = {
+  export type _NearestDc = {
     "nearestDc": {
       country: string;                        // string
       this_dc: number;                        // int
@@ -2315,7 +2315,7 @@ declare namespace global {
   export type EncryptedChat<
     K extends keyof _EncryptedChat = keyof _EncryptedChat
   > = ToUnderscore<_EncryptedChat, K>;
-  type _EncryptedChat = {
+  export type _EncryptedChat = {
     "encryptedChatEmpty": {
       id: number;                             // int
     },
@@ -2358,7 +2358,7 @@ declare namespace global {
   export type InputEncryptedChat<
     K extends keyof _InputEncryptedChat = keyof _InputEncryptedChat
   > = ToUnderscore<_InputEncryptedChat, K>;
-  type _InputEncryptedChat = {
+  export type _InputEncryptedChat = {
     "inputEncryptedChat": {
       chat_id: number;                        // int
       access_hash: bigint;                    // long
@@ -2369,7 +2369,7 @@ declare namespace global {
   export type EncryptedFile<
     K extends keyof _EncryptedFile = keyof _EncryptedFile
   > = ToUnderscore<_EncryptedFile, K>;
-  type _EncryptedFile = {
+  export type _EncryptedFile = {
     "encryptedFileEmpty": {}
     "encryptedFile": {
       id: bigint;                             // long
@@ -2385,7 +2385,7 @@ declare namespace global {
   export type InputEncryptedFile<
     K extends keyof _InputEncryptedFile = keyof _InputEncryptedFile
   > = ToUnderscore<_InputEncryptedFile, K>;
-  type _InputEncryptedFile = {
+  export type _InputEncryptedFile = {
     "inputEncryptedFileEmpty": {}
     "inputEncryptedFileUploaded": {
       id: bigint;                             // long
@@ -2411,7 +2411,7 @@ declare namespace global {
   export type EncryptedMessage<
     K extends keyof _EncryptedMessage = keyof _EncryptedMessage
   > = ToUnderscore<_EncryptedMessage, K>;
-  type _EncryptedMessage = {
+  export type _EncryptedMessage = {
     "encryptedMessage": {
       random_id: bigint;                      // long
       chat_id: number;                        // int
@@ -2432,7 +2432,7 @@ declare namespace global {
   export type InputDocument<
     K extends keyof _InputDocument = keyof _InputDocument
   > = ToUnderscore<_InputDocument, K>;
-  type _InputDocument = {
+  export type _InputDocument = {
     "inputDocumentEmpty": {}
     "inputDocument": {
       id: bigint;                             // long
@@ -2446,7 +2446,7 @@ declare namespace global {
   export type Document<
     K extends keyof _Document = keyof _Document
   > = ToUnderscore<_Document, K>;
-  type _Document = {
+  export type _Document = {
     "documentEmpty": {
       id: bigint;                             // long
     },
@@ -2469,7 +2469,7 @@ declare namespace global {
   export type NotifyPeer<
     K extends keyof _NotifyPeer = keyof _NotifyPeer
   > = ToUnderscore<_NotifyPeer, K>;
-  type _NotifyPeer = {
+  export type _NotifyPeer = {
     "notifyPeer": {
       peer: global.Peer;                      // Peer
     },
@@ -2485,7 +2485,7 @@ declare namespace global {
   export type SendMessageAction<
     K extends keyof _SendMessageAction = keyof _SendMessageAction
   > = ToUnderscore<_SendMessageAction, K>;
-  type _SendMessageAction = {
+  export type _SendMessageAction = {
     "sendMessageTypingAction": {}
     "sendMessageCancelAction": {}
     "sendMessageRecordVideoAction": {}
@@ -2545,7 +2545,7 @@ declare namespace global {
   export type InputPrivacyKey<
     K extends keyof _InputPrivacyKey = keyof _InputPrivacyKey
   > = ToUnderscore<_InputPrivacyKey, K>;
-  type _InputPrivacyKey = {
+  export type _InputPrivacyKey = {
     "inputPrivacyKeyStatusTimestamp": {}
     "inputPrivacyKeyChatInvite": {}
     "inputPrivacyKeyPhoneCall": {}
@@ -2567,7 +2567,7 @@ declare namespace global {
   export type PrivacyKey<
     K extends keyof _PrivacyKey = keyof _PrivacyKey
   > = ToUnderscore<_PrivacyKey, K>;
-  type _PrivacyKey = {
+  export type _PrivacyKey = {
     "privacyKeyStatusTimestamp": {}
     "privacyKeyChatInvite": {}
     "privacyKeyPhoneCall": {}
@@ -2589,7 +2589,7 @@ declare namespace global {
   export type InputPrivacyRule<
     K extends keyof _InputPrivacyRule = keyof _InputPrivacyRule
   > = ToUnderscore<_InputPrivacyRule, K>;
-  type _InputPrivacyRule = {
+  export type _InputPrivacyRule = {
     "inputPrivacyValueAllowContacts": {}
     "inputPrivacyValueAllowAll": {}
     "inputPrivacyValueAllowUsers": {
@@ -2619,7 +2619,7 @@ declare namespace global {
   export type PrivacyRule<
     K extends keyof _PrivacyRule = keyof _PrivacyRule
   > = ToUnderscore<_PrivacyRule, K>;
-  type _PrivacyRule = {
+  export type _PrivacyRule = {
     "privacyValueAllowContacts": {}
     "privacyValueAllowAll": {}
     "privacyValueAllowUsers": {
@@ -2649,7 +2649,7 @@ declare namespace global {
   export type AccountDaysTTL<
     K extends keyof _AccountDaysTTL = keyof _AccountDaysTTL
   > = ToUnderscore<_AccountDaysTTL, K>;
-  type _AccountDaysTTL = {
+  export type _AccountDaysTTL = {
     "accountDaysTTL": {
       days: number;                           // int
     },
@@ -2659,7 +2659,7 @@ declare namespace global {
   export type DocumentAttribute<
     K extends keyof _DocumentAttribute = keyof _DocumentAttribute
   > = ToUnderscore<_DocumentAttribute, K>;
-  type _DocumentAttribute = {
+  export type _DocumentAttribute = {
     "documentAttributeImageSize": {
       w: number;                              // int
       h: number;                              // int
@@ -2701,7 +2701,7 @@ declare namespace global {
   export type StickerPack<
     K extends keyof _StickerPack = keyof _StickerPack
   > = ToUnderscore<_StickerPack, K>;
-  type _StickerPack = {
+  export type _StickerPack = {
     "stickerPack": {
       emoticon: string;                       // string
       documents: bigint[];                    // Vector<long>
@@ -2712,7 +2712,7 @@ declare namespace global {
   export type WebPage<
     K extends keyof _WebPage = keyof _WebPage
   > = ToUnderscore<_WebPage, K>;
-  type _WebPage = {
+  export type _WebPage = {
     "webPageEmpty": {
       id: bigint;                             // long
     },
@@ -2752,7 +2752,7 @@ declare namespace global {
   export type Authorization<
     K extends keyof _Authorization = keyof _Authorization
   > = ToUnderscore<_Authorization, K>;
-  type _Authorization = {
+  export type _Authorization = {
     "authorization": {
       current?: true;                         // flags.0?true
       official_app?: true;                    // flags.1?true
@@ -2778,7 +2778,7 @@ declare namespace global {
   export type ReceivedNotifyMessage<
     K extends keyof _ReceivedNotifyMessage = keyof _ReceivedNotifyMessage
   > = ToUnderscore<_ReceivedNotifyMessage, K>;
-  type _ReceivedNotifyMessage = {
+  export type _ReceivedNotifyMessage = {
     "receivedNotifyMessage": {
       id: number;                             // int
       flags: number;                          // int
@@ -2789,7 +2789,7 @@ declare namespace global {
   export type ExportedChatInvite<
     K extends keyof _ExportedChatInvite = keyof _ExportedChatInvite
   > = ToUnderscore<_ExportedChatInvite, K>;
-  type _ExportedChatInvite = {
+  export type _ExportedChatInvite = {
     "chatInviteExported": {
       revoked?: true;                         // flags.0?true
       permanent?: true;                       // flags.5?true
@@ -2810,7 +2810,7 @@ declare namespace global {
   export type ChatInvite<
     K extends keyof _ChatInvite = keyof _ChatInvite
   > = ToUnderscore<_ChatInvite, K>;
-  type _ChatInvite = {
+  export type _ChatInvite = {
     "chatInviteAlready": {
       chat: global.Chat;                      // Chat
     },
@@ -2838,7 +2838,7 @@ declare namespace global {
   export type InputStickerSet<
     K extends keyof _InputStickerSet = keyof _InputStickerSet
   > = ToUnderscore<_InputStickerSet, K>;
-  type _InputStickerSet = {
+  export type _InputStickerSet = {
     "inputStickerSetEmpty": {}
     "inputStickerSetID": {
       id: bigint;                             // long
@@ -2863,7 +2863,7 @@ declare namespace global {
   export type StickerSet<
     K extends keyof _StickerSet = keyof _StickerSet
   > = ToUnderscore<_StickerSet, K>;
-  type _StickerSet = {
+  export type _StickerSet = {
     "stickerSet": {
       archived?: true;                        // flags.1?true
       official?: true;                        // flags.2?true
@@ -2887,7 +2887,7 @@ declare namespace global {
   export type BotCommand<
     K extends keyof _BotCommand = keyof _BotCommand
   > = ToUnderscore<_BotCommand, K>;
-  type _BotCommand = {
+  export type _BotCommand = {
     "botCommand": {
       command: string;                        // string
       description: string;                    // string
@@ -2898,7 +2898,7 @@ declare namespace global {
   export type BotInfo<
     K extends keyof _BotInfo = keyof _BotInfo
   > = ToUnderscore<_BotInfo, K>;
-  type _BotInfo = {
+  export type _BotInfo = {
     "botInfo": {
       user_id: bigint;                        // long
       description: string;                    // string
@@ -2910,7 +2910,7 @@ declare namespace global {
   export type KeyboardButton<
     K extends keyof _KeyboardButton = keyof _KeyboardButton
   > = ToUnderscore<_KeyboardButton, K>;
-  type _KeyboardButton = {
+  export type _KeyboardButton = {
     "keyboardButton": {
       text: string;                           // string
     },
@@ -2983,7 +2983,7 @@ declare namespace global {
   export type KeyboardButtonRow<
     K extends keyof _KeyboardButtonRow = keyof _KeyboardButtonRow
   > = ToUnderscore<_KeyboardButtonRow, K>;
-  type _KeyboardButtonRow = {
+  export type _KeyboardButtonRow = {
     "keyboardButtonRow": {
       buttons: global.KeyboardButton[];       // Vector<KeyboardButton>
     },
@@ -2993,7 +2993,7 @@ declare namespace global {
   export type ReplyMarkup<
     K extends keyof _ReplyMarkup = keyof _ReplyMarkup
   > = ToUnderscore<_ReplyMarkup, K>;
-  type _ReplyMarkup = {
+  export type _ReplyMarkup = {
     "replyKeyboardHide": {
       selective?: true;                       // flags.2?true
     },
@@ -3021,7 +3021,7 @@ declare namespace global {
   export type MessageEntity<
     K extends keyof _MessageEntity = keyof _MessageEntity
   > = ToUnderscore<_MessageEntity, K>;
-  type _MessageEntity = {
+  export type _MessageEntity = {
     "messageEntityUnknown": {
       offset: number;                         // int
       length: number;                         // int
@@ -3131,7 +3131,7 @@ declare namespace global {
   export type InputChannel<
     K extends keyof _InputChannel = keyof _InputChannel
   > = ToUnderscore<_InputChannel, K>;
-  type _InputChannel = {
+  export type _InputChannel = {
     "inputChannelEmpty": {}
     "inputChannel": {
       channel_id: bigint;                     // long
@@ -3150,7 +3150,7 @@ declare namespace global {
   export type MessageRange<
     K extends keyof _MessageRange = keyof _MessageRange
   > = ToUnderscore<_MessageRange, K>;
-  type _MessageRange = {
+  export type _MessageRange = {
     "messageRange": {
       min_id: number;                         // int
       max_id: number;                         // int
@@ -3161,7 +3161,7 @@ declare namespace global {
   export type ChannelMessagesFilter<
     K extends keyof _ChannelMessagesFilter = keyof _ChannelMessagesFilter
   > = ToUnderscore<_ChannelMessagesFilter, K>;
-  type _ChannelMessagesFilter = {
+  export type _ChannelMessagesFilter = {
     "channelMessagesFilterEmpty": {}
     "channelMessagesFilter": {
       exclude_new_messages?: true;            // flags.1?true
@@ -3174,7 +3174,7 @@ declare namespace global {
   export type ChannelParticipant<
     K extends keyof _ChannelParticipant = keyof _ChannelParticipant
   > = ToUnderscore<_ChannelParticipant, K>;
-  type _ChannelParticipant = {
+  export type _ChannelParticipant = {
     "channelParticipant": {
       user_id: bigint;                        // long
       date: number;                           // int
@@ -3221,7 +3221,7 @@ declare namespace global {
   export type ChannelParticipantsFilter<
     K extends keyof _ChannelParticipantsFilter = keyof _ChannelParticipantsFilter
   > = ToUnderscore<_ChannelParticipantsFilter, K>;
-  type _ChannelParticipantsFilter = {
+  export type _ChannelParticipantsFilter = {
     "channelParticipantsRecent": {}
     "channelParticipantsAdmins": {}
     "channelParticipantsKicked": {
@@ -3254,7 +3254,7 @@ declare namespace global {
   export type InputBotInlineMessage<
     K extends keyof _InputBotInlineMessage = keyof _InputBotInlineMessage
   > = ToUnderscore<_InputBotInlineMessage, K>;
-  type _InputBotInlineMessage = {
+  export type _InputBotInlineMessage = {
     "inputBotInlineMessageMediaAuto": {
       message: string;                        // string
       entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
@@ -3314,7 +3314,7 @@ declare namespace global {
   export type InputBotInlineResult<
     K extends keyof _InputBotInlineResult = keyof _InputBotInlineResult
   > = ToUnderscore<_InputBotInlineResult, K>;
-  type _InputBotInlineResult = {
+  export type _InputBotInlineResult = {
     "inputBotInlineResult": {
       id: string;                             // string
       type: string;                           // string
@@ -3353,7 +3353,7 @@ declare namespace global {
   export type BotInlineMessage<
     K extends keyof _BotInlineMessage = keyof _BotInlineMessage
   > = ToUnderscore<_BotInlineMessage, K>;
-  type _BotInlineMessage = {
+  export type _BotInlineMessage = {
     "botInlineMessageMediaAuto": {
       message: string;                        // string
       entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
@@ -3409,7 +3409,7 @@ declare namespace global {
   export type BotInlineResult<
     K extends keyof _BotInlineResult = keyof _BotInlineResult
   > = ToUnderscore<_BotInlineResult, K>;
-  type _BotInlineResult = {
+  export type _BotInlineResult = {
     "botInlineResult": {
       id: string;                             // string
       type: string;                           // string
@@ -3436,7 +3436,7 @@ declare namespace global {
   export type ExportedMessageLink<
     K extends keyof _ExportedMessageLink = keyof _ExportedMessageLink
   > = ToUnderscore<_ExportedMessageLink, K>;
-  type _ExportedMessageLink = {
+  export type _ExportedMessageLink = {
     "exportedMessageLink": {
       link: string;                           // string
       html: string;                           // string
@@ -3447,7 +3447,7 @@ declare namespace global {
   export type MessageFwdHeader<
     K extends keyof _MessageFwdHeader = keyof _MessageFwdHeader
   > = ToUnderscore<_MessageFwdHeader, K>;
-  type _MessageFwdHeader = {
+  export type _MessageFwdHeader = {
     "messageFwdHeader": {
       imported?: true;                        // flags.7?true
       from_id?: global.Peer;                  // flags.0?Peer
@@ -3465,7 +3465,7 @@ declare namespace global {
   export type InputBotInlineMessageID<
     K extends keyof _InputBotInlineMessageID = keyof _InputBotInlineMessageID
   > = ToUnderscore<_InputBotInlineMessageID, K>;
-  type _InputBotInlineMessageID = {
+  export type _InputBotInlineMessageID = {
     "inputBotInlineMessageID": {
       dc_id: number;                          // int
       id: bigint;                             // long
@@ -3484,7 +3484,7 @@ declare namespace global {
   export type InlineBotSwitchPM<
     K extends keyof _InlineBotSwitchPM = keyof _InlineBotSwitchPM
   > = ToUnderscore<_InlineBotSwitchPM, K>;
-  type _InlineBotSwitchPM = {
+  export type _InlineBotSwitchPM = {
     "inlineBotSwitchPM": {
       text: string;                           // string
       start_param: string;                    // string
@@ -3495,7 +3495,7 @@ declare namespace global {
   export type TopPeer<
     K extends keyof _TopPeer = keyof _TopPeer
   > = ToUnderscore<_TopPeer, K>;
-  type _TopPeer = {
+  export type _TopPeer = {
     "topPeer": {
       peer: global.Peer;                      // Peer
       rating: number;                         // double
@@ -3506,7 +3506,7 @@ declare namespace global {
   export type TopPeerCategory<
     K extends keyof _TopPeerCategory = keyof _TopPeerCategory
   > = ToUnderscore<_TopPeerCategory, K>;
-  type _TopPeerCategory = {
+  export type _TopPeerCategory = {
     "topPeerCategoryBotsPM": {}
     "topPeerCategoryBotsInline": {}
     "topPeerCategoryCorrespondents": {}
@@ -3528,7 +3528,7 @@ declare namespace global {
   export type TopPeerCategoryPeers<
     K extends keyof _TopPeerCategoryPeers = keyof _TopPeerCategoryPeers
   > = ToUnderscore<_TopPeerCategoryPeers, K>;
-  type _TopPeerCategoryPeers = {
+  export type _TopPeerCategoryPeers = {
     "topPeerCategoryPeers": {
       category: global.TopPeerCategory;       // TopPeerCategory
       count: number;                          // int
@@ -3540,7 +3540,7 @@ declare namespace global {
   export type DraftMessage<
     K extends keyof _DraftMessage = keyof _DraftMessage
   > = ToUnderscore<_DraftMessage, K>;
-  type _DraftMessage = {
+  export type _DraftMessage = {
     "draftMessageEmpty": {
       date?: number;                          // flags.0?int
     },
@@ -3558,7 +3558,7 @@ declare namespace global {
   export type StickerSetCovered<
     K extends keyof _StickerSetCovered = keyof _StickerSetCovered
   > = ToUnderscore<_StickerSetCovered, K>;
-  type _StickerSetCovered = {
+  export type _StickerSetCovered = {
     "stickerSetCovered": {
       set: global.StickerSet;                 // StickerSet
       cover: global.Document;                 // Document
@@ -3574,7 +3574,7 @@ declare namespace global {
   export type MaskCoords<
     K extends keyof _MaskCoords = keyof _MaskCoords
   > = ToUnderscore<_MaskCoords, K>;
-  type _MaskCoords = {
+  export type _MaskCoords = {
     "maskCoords": {
       n: number;                              // int
       x: number;                              // double
@@ -3587,7 +3587,7 @@ declare namespace global {
   export type InputStickeredMedia<
     K extends keyof _InputStickeredMedia = keyof _InputStickeredMedia
   > = ToUnderscore<_InputStickeredMedia, K>;
-  type _InputStickeredMedia = {
+  export type _InputStickeredMedia = {
     "inputStickeredMediaPhoto": {
       id: global.InputPhoto;                  // InputPhoto
     },
@@ -3601,7 +3601,7 @@ declare namespace global {
   export type Game<
     K extends keyof _Game = keyof _Game
   > = ToUnderscore<_Game, K>;
-  type _Game = {
+  export type _Game = {
     "game": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -3617,7 +3617,7 @@ declare namespace global {
   export type InputGame<
     K extends keyof _InputGame = keyof _InputGame
   > = ToUnderscore<_InputGame, K>;
-  type _InputGame = {
+  export type _InputGame = {
     "inputGameID": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -3633,7 +3633,7 @@ declare namespace global {
   export type HighScore<
     K extends keyof _HighScore = keyof _HighScore
   > = ToUnderscore<_HighScore, K>;
-  type _HighScore = {
+  export type _HighScore = {
     "highScore": {
       pos: number;                            // int
       user_id: bigint;                        // long
@@ -3645,7 +3645,7 @@ declare namespace global {
   export type RichText<
     K extends keyof _RichText = keyof _RichText
   > = ToUnderscore<_RichText, K>;
-  type _RichText = {
+  export type _RichText = {
     "textEmpty": {}
     "textPlain": {
       text: string;                           // string
@@ -3720,7 +3720,7 @@ declare namespace global {
   export type PageBlock<
     K extends keyof _PageBlock = keyof _PageBlock
   > = ToUnderscore<_PageBlock, K>;
-  type _PageBlock = {
+  export type _PageBlock = {
     "pageBlockUnsupported": {}
     "pageBlockTitle": {
       text: global.RichText;                  // RichText
@@ -3874,7 +3874,7 @@ declare namespace global {
   export type PhoneCallDiscardReason<
     K extends keyof _PhoneCallDiscardReason = keyof _PhoneCallDiscardReason
   > = ToUnderscore<_PhoneCallDiscardReason, K>;
-  type _PhoneCallDiscardReason = {
+  export type _PhoneCallDiscardReason = {
     "phoneCallDiscardReasonMissed": {}
     "phoneCallDiscardReasonDisconnect": {}
     "phoneCallDiscardReasonHangup": {}
@@ -3888,7 +3888,7 @@ declare namespace global {
   export type DataJSON<
     K extends keyof _DataJSON = keyof _DataJSON
   > = ToUnderscore<_DataJSON, K>;
-  type _DataJSON = {
+  export type _DataJSON = {
     "dataJSON": {
       data: string;                           // string
     },
@@ -3898,7 +3898,7 @@ declare namespace global {
   export type LabeledPrice<
     K extends keyof _LabeledPrice = keyof _LabeledPrice
   > = ToUnderscore<_LabeledPrice, K>;
-  type _LabeledPrice = {
+  export type _LabeledPrice = {
     "labeledPrice": {
       label: string;                          // string
       amount: bigint;                         // long
@@ -3909,7 +3909,7 @@ declare namespace global {
   export type Invoice<
     K extends keyof _Invoice = keyof _Invoice
   > = ToUnderscore<_Invoice, K>;
-  type _Invoice = {
+  export type _Invoice = {
     "invoice": {
       test?: true;                            // flags.0?true
       name_requested?: true;                  // flags.1?true
@@ -3930,7 +3930,7 @@ declare namespace global {
   export type PaymentCharge<
     K extends keyof _PaymentCharge = keyof _PaymentCharge
   > = ToUnderscore<_PaymentCharge, K>;
-  type _PaymentCharge = {
+  export type _PaymentCharge = {
     "paymentCharge": {
       id: string;                             // string
       provider_charge_id: string;             // string
@@ -3941,7 +3941,7 @@ declare namespace global {
   export type PostAddress<
     K extends keyof _PostAddress = keyof _PostAddress
   > = ToUnderscore<_PostAddress, K>;
-  type _PostAddress = {
+  export type _PostAddress = {
     "postAddress": {
       street_line1: string;                   // string
       street_line2: string;                   // string
@@ -3956,7 +3956,7 @@ declare namespace global {
   export type PaymentRequestedInfo<
     K extends keyof _PaymentRequestedInfo = keyof _PaymentRequestedInfo
   > = ToUnderscore<_PaymentRequestedInfo, K>;
-  type _PaymentRequestedInfo = {
+  export type _PaymentRequestedInfo = {
     "paymentRequestedInfo": {
       name?: string;                          // flags.0?string
       phone?: string;                         // flags.1?string
@@ -3969,7 +3969,7 @@ declare namespace global {
   export type PaymentSavedCredentials<
     K extends keyof _PaymentSavedCredentials = keyof _PaymentSavedCredentials
   > = ToUnderscore<_PaymentSavedCredentials, K>;
-  type _PaymentSavedCredentials = {
+  export type _PaymentSavedCredentials = {
     "paymentSavedCredentialsCard": {
       id: string;                             // string
       title: string;                          // string
@@ -3980,7 +3980,7 @@ declare namespace global {
   export type WebDocument<
     K extends keyof _WebDocument = keyof _WebDocument
   > = ToUnderscore<_WebDocument, K>;
-  type _WebDocument = {
+  export type _WebDocument = {
     "webDocument": {
       url: string;                            // string
       access_hash: bigint;                    // long
@@ -4001,7 +4001,7 @@ declare namespace global {
   export type InputWebDocument<
     K extends keyof _InputWebDocument = keyof _InputWebDocument
   > = ToUnderscore<_InputWebDocument, K>;
-  type _InputWebDocument = {
+  export type _InputWebDocument = {
     "inputWebDocument": {
       url: string;                            // string
       size: number;                           // int
@@ -4014,7 +4014,7 @@ declare namespace global {
   export type InputWebFileLocation<
     K extends keyof _InputWebFileLocation = keyof _InputWebFileLocation
   > = ToUnderscore<_InputWebFileLocation, K>;
-  type _InputWebFileLocation = {
+  export type _InputWebFileLocation = {
     "inputWebFileLocation": {
       url: string;                            // string
       access_hash: bigint;                    // long
@@ -4034,7 +4034,7 @@ declare namespace global {
   export type InputPaymentCredentials<
     K extends keyof _InputPaymentCredentials = keyof _InputPaymentCredentials
   > = ToUnderscore<_InputPaymentCredentials, K>;
-  type _InputPaymentCredentials = {
+  export type _InputPaymentCredentials = {
     "inputPaymentCredentialsSaved": {
       id: string;                             // string
       tmp_password: BufferSource;             // bytes
@@ -4058,7 +4058,7 @@ declare namespace global {
   export type ShippingOption<
     K extends keyof _ShippingOption = keyof _ShippingOption
   > = ToUnderscore<_ShippingOption, K>;
-  type _ShippingOption = {
+  export type _ShippingOption = {
     "shippingOption": {
       id: string;                             // string
       title: string;                          // string
@@ -4070,7 +4070,7 @@ declare namespace global {
   export type InputStickerSetItem<
     K extends keyof _InputStickerSetItem = keyof _InputStickerSetItem
   > = ToUnderscore<_InputStickerSetItem, K>;
-  type _InputStickerSetItem = {
+  export type _InputStickerSetItem = {
     "inputStickerSetItem": {
       document: global.InputDocument;         // InputDocument
       emoji: string;                          // string
@@ -4082,7 +4082,7 @@ declare namespace global {
   export type InputPhoneCall<
     K extends keyof _InputPhoneCall = keyof _InputPhoneCall
   > = ToUnderscore<_InputPhoneCall, K>;
-  type _InputPhoneCall = {
+  export type _InputPhoneCall = {
     "inputPhoneCall": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -4093,7 +4093,7 @@ declare namespace global {
   export type PhoneCall<
     K extends keyof _PhoneCall = keyof _PhoneCall
   > = ToUnderscore<_PhoneCall, K>;
-  type _PhoneCall = {
+  export type _PhoneCall = {
     "phoneCallEmpty": {
       id: bigint;                             // long
     },
@@ -4160,7 +4160,7 @@ declare namespace global {
   export type PhoneConnection<
     K extends keyof _PhoneConnection = keyof _PhoneConnection
   > = ToUnderscore<_PhoneConnection, K>;
-  type _PhoneConnection = {
+  export type _PhoneConnection = {
     "phoneConnection": {
       id: bigint;                             // long
       ip: string;                             // string
@@ -4185,7 +4185,7 @@ declare namespace global {
   export type PhoneCallProtocol<
     K extends keyof _PhoneCallProtocol = keyof _PhoneCallProtocol
   > = ToUnderscore<_PhoneCallProtocol, K>;
-  type _PhoneCallProtocol = {
+  export type _PhoneCallProtocol = {
     "phoneCallProtocol": {
       udp_p2p?: true;                         // flags.0?true
       udp_reflector?: true;                   // flags.1?true
@@ -4199,7 +4199,7 @@ declare namespace global {
   export type CdnPublicKey<
     K extends keyof _CdnPublicKey = keyof _CdnPublicKey
   > = ToUnderscore<_CdnPublicKey, K>;
-  type _CdnPublicKey = {
+  export type _CdnPublicKey = {
     "cdnPublicKey": {
       dc_id: number;                          // int
       public_key: string;                     // string
@@ -4210,7 +4210,7 @@ declare namespace global {
   export type CdnConfig<
     K extends keyof _CdnConfig = keyof _CdnConfig
   > = ToUnderscore<_CdnConfig, K>;
-  type _CdnConfig = {
+  export type _CdnConfig = {
     "cdnConfig": {
       public_keys: global.CdnPublicKey[];     // Vector<CdnPublicKey>
     },
@@ -4220,7 +4220,7 @@ declare namespace global {
   export type LangPackString<
     K extends keyof _LangPackString = keyof _LangPackString
   > = ToUnderscore<_LangPackString, K>;
-  type _LangPackString = {
+  export type _LangPackString = {
     "langPackString": {
       key: string;                            // string
       value: string;                          // string
@@ -4245,7 +4245,7 @@ declare namespace global {
   export type LangPackDifference<
     K extends keyof _LangPackDifference = keyof _LangPackDifference
   > = ToUnderscore<_LangPackDifference, K>;
-  type _LangPackDifference = {
+  export type _LangPackDifference = {
     "langPackDifference": {
       lang_code: string;                      // string
       from_version: number;                   // int
@@ -4258,7 +4258,7 @@ declare namespace global {
   export type LangPackLanguage<
     K extends keyof _LangPackLanguage = keyof _LangPackLanguage
   > = ToUnderscore<_LangPackLanguage, K>;
-  type _LangPackLanguage = {
+  export type _LangPackLanguage = {
     "langPackLanguage": {
       official?: true;                        // flags.0?true
       rtl?: true;                             // flags.2?true
@@ -4278,7 +4278,7 @@ declare namespace global {
   export type ChannelAdminLogEventAction<
     K extends keyof _ChannelAdminLogEventAction = keyof _ChannelAdminLogEventAction
   > = ToUnderscore<_ChannelAdminLogEventAction, K>;
-  type _ChannelAdminLogEventAction = {
+  export type _ChannelAdminLogEventAction = {
     "channelAdminLogEventActionChangeTitle": {
       prev_value: string;                     // string
       new_value: string;                      // string
@@ -4440,7 +4440,7 @@ declare namespace global {
   export type ChannelAdminLogEvent<
     K extends keyof _ChannelAdminLogEvent = keyof _ChannelAdminLogEvent
   > = ToUnderscore<_ChannelAdminLogEvent, K>;
-  type _ChannelAdminLogEvent = {
+  export type _ChannelAdminLogEvent = {
     "channelAdminLogEvent": {
       id: bigint;                             // long
       date: number;                           // int
@@ -4453,7 +4453,7 @@ declare namespace global {
   export type ChannelAdminLogEventsFilter<
     K extends keyof _ChannelAdminLogEventsFilter = keyof _ChannelAdminLogEventsFilter
   > = ToUnderscore<_ChannelAdminLogEventsFilter, K>;
-  type _ChannelAdminLogEventsFilter = {
+  export type _ChannelAdminLogEventsFilter = {
     "channelAdminLogEventsFilter": {
       join?: true;                            // flags.0?true
       leave?: true;                           // flags.1?true
@@ -4479,7 +4479,7 @@ declare namespace global {
   export type PopularContact<
     K extends keyof _PopularContact = keyof _PopularContact
   > = ToUnderscore<_PopularContact, K>;
-  type _PopularContact = {
+  export type _PopularContact = {
     "popularContact": {
       client_id: bigint;                      // long
       importers: number;                      // int
@@ -4490,7 +4490,7 @@ declare namespace global {
   export type RecentMeUrl<
     K extends keyof _RecentMeUrl = keyof _RecentMeUrl
   > = ToUnderscore<_RecentMeUrl, K>;
-  type _RecentMeUrl = {
+  export type _RecentMeUrl = {
     "recentMeUrlUnknown": {
       url: string;                            // string
     },
@@ -4520,7 +4520,7 @@ declare namespace global {
   export type InputSingleMedia<
     K extends keyof _InputSingleMedia = keyof _InputSingleMedia
   > = ToUnderscore<_InputSingleMedia, K>;
-  type _InputSingleMedia = {
+  export type _InputSingleMedia = {
     "inputSingleMedia": {
       media: global.InputMedia;               // InputMedia
       random_id: bigint;                      // long
@@ -4533,7 +4533,7 @@ declare namespace global {
   export type WebAuthorization<
     K extends keyof _WebAuthorization = keyof _WebAuthorization
   > = ToUnderscore<_WebAuthorization, K>;
-  type _WebAuthorization = {
+  export type _WebAuthorization = {
     "webAuthorization": {
       hash: bigint;                           // long
       bot_id: bigint;                         // long
@@ -4551,7 +4551,7 @@ declare namespace global {
   export type InputMessage<
     K extends keyof _InputMessage = keyof _InputMessage
   > = ToUnderscore<_InputMessage, K>;
-  type _InputMessage = {
+  export type _InputMessage = {
     "inputMessageID": {
       id: number;                             // int
     },
@@ -4572,7 +4572,7 @@ declare namespace global {
   export type InputDialogPeer<
     K extends keyof _InputDialogPeer = keyof _InputDialogPeer
   > = ToUnderscore<_InputDialogPeer, K>;
-  type _InputDialogPeer = {
+  export type _InputDialogPeer = {
     "inputDialogPeer": {
       peer: global.InputPeer;                 // InputPeer
     },
@@ -4586,7 +4586,7 @@ declare namespace global {
   export type DialogPeer<
     K extends keyof _DialogPeer = keyof _DialogPeer
   > = ToUnderscore<_DialogPeer, K>;
-  type _DialogPeer = {
+  export type _DialogPeer = {
     "dialogPeer": {
       peer: global.Peer;                      // Peer
     },
@@ -4600,7 +4600,7 @@ declare namespace global {
   export type FileHash<
     K extends keyof _FileHash = keyof _FileHash
   > = ToUnderscore<_FileHash, K>;
-  type _FileHash = {
+  export type _FileHash = {
     "fileHash": {
       offset: number;                         // int
       limit: number;                          // int
@@ -4612,7 +4612,7 @@ declare namespace global {
   export type InputClientProxy<
     K extends keyof _InputClientProxy = keyof _InputClientProxy
   > = ToUnderscore<_InputClientProxy, K>;
-  type _InputClientProxy = {
+  export type _InputClientProxy = {
     "inputClientProxy": {
       address: string;                        // string
       port: number;                           // int
@@ -4623,7 +4623,7 @@ declare namespace global {
   export type InputSecureFile<
     K extends keyof _InputSecureFile = keyof _InputSecureFile
   > = ToUnderscore<_InputSecureFile, K>;
-  type _InputSecureFile = {
+  export type _InputSecureFile = {
     "inputSecureFileUploaded": {
       id: bigint;                             // long
       parts: number;                          // int
@@ -4642,7 +4642,7 @@ declare namespace global {
   export type SecureFile<
     K extends keyof _SecureFile = keyof _SecureFile
   > = ToUnderscore<_SecureFile, K>;
-  type _SecureFile = {
+  export type _SecureFile = {
     "secureFileEmpty": {}
     "secureFile": {
       id: bigint;                             // long
@@ -4660,7 +4660,7 @@ declare namespace global {
   export type SecureData<
     K extends keyof _SecureData = keyof _SecureData
   > = ToUnderscore<_SecureData, K>;
-  type _SecureData = {
+  export type _SecureData = {
     "secureData": {
       data: BufferSource;                     // bytes
       data_hash: BufferSource;                // bytes
@@ -4672,7 +4672,7 @@ declare namespace global {
   export type SecurePlainData<
     K extends keyof _SecurePlainData = keyof _SecurePlainData
   > = ToUnderscore<_SecurePlainData, K>;
-  type _SecurePlainData = {
+  export type _SecurePlainData = {
     "securePlainPhone": {
       phone: string;                          // string
     },
@@ -4686,7 +4686,7 @@ declare namespace global {
   export type SecureValueType<
     K extends keyof _SecureValueType = keyof _SecureValueType
   > = ToUnderscore<_SecureValueType, K>;
-  type _SecureValueType = {
+  export type _SecureValueType = {
     "secureValueTypePersonalDetails": {}
     "secureValueTypePassport": {}
     "secureValueTypeDriverLicense": {}
@@ -4718,7 +4718,7 @@ declare namespace global {
   export type SecureValue<
     K extends keyof _SecureValue = keyof _SecureValue
   > = ToUnderscore<_SecureValue, K>;
-  type _SecureValue = {
+  export type _SecureValue = {
     "secureValue": {
       type: global.SecureValueType;           // SecureValueType
       data?: global.SecureData;               // flags.0?SecureData
@@ -4736,7 +4736,7 @@ declare namespace global {
   export type InputSecureValue<
     K extends keyof _InputSecureValue = keyof _InputSecureValue
   > = ToUnderscore<_InputSecureValue, K>;
-  type _InputSecureValue = {
+  export type _InputSecureValue = {
     "inputSecureValue": {
       type: global.SecureValueType;           // SecureValueType
       data?: global.SecureData;               // flags.0?SecureData
@@ -4753,7 +4753,7 @@ declare namespace global {
   export type SecureValueHash<
     K extends keyof _SecureValueHash = keyof _SecureValueHash
   > = ToUnderscore<_SecureValueHash, K>;
-  type _SecureValueHash = {
+  export type _SecureValueHash = {
     "secureValueHash": {
       type: global.SecureValueType;           // SecureValueType
       hash: BufferSource;                     // bytes
@@ -4764,7 +4764,7 @@ declare namespace global {
   export type SecureValueError<
     K extends keyof _SecureValueError = keyof _SecureValueError
   > = ToUnderscore<_SecureValueError, K>;
-  type _SecureValueError = {
+  export type _SecureValueError = {
     "secureValueErrorData": {
       type: global.SecureValueType;           // SecureValueType
       data_hash: BufferSource;                // bytes
@@ -4825,7 +4825,7 @@ declare namespace global {
   export type SecureCredentialsEncrypted<
     K extends keyof _SecureCredentialsEncrypted = keyof _SecureCredentialsEncrypted
   > = ToUnderscore<_SecureCredentialsEncrypted, K>;
-  type _SecureCredentialsEncrypted = {
+  export type _SecureCredentialsEncrypted = {
     "secureCredentialsEncrypted": {
       data: BufferSource;                     // bytes
       hash: BufferSource;                     // bytes
@@ -4837,7 +4837,7 @@ declare namespace global {
   export type SavedContact<
     K extends keyof _SavedContact = keyof _SavedContact
   > = ToUnderscore<_SavedContact, K>;
-  type _SavedContact = {
+  export type _SavedContact = {
     "savedPhoneContact": {
       phone: string;                          // string
       first_name: string;                     // string
@@ -4850,7 +4850,7 @@ declare namespace global {
   export type PasswordKdfAlgo<
     K extends keyof _PasswordKdfAlgo = keyof _PasswordKdfAlgo
   > = ToUnderscore<_PasswordKdfAlgo, K>;
-  type _PasswordKdfAlgo = {
+  export type _PasswordKdfAlgo = {
     "passwordKdfAlgoUnknown": {}
     "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow": {
       salt1: BufferSource;                    // bytes
@@ -4865,7 +4865,7 @@ declare namespace global {
   export type SecurePasswordKdfAlgo<
     K extends keyof _SecurePasswordKdfAlgo = keyof _SecurePasswordKdfAlgo
   > = ToUnderscore<_SecurePasswordKdfAlgo, K>;
-  type _SecurePasswordKdfAlgo = {
+  export type _SecurePasswordKdfAlgo = {
     "securePasswordKdfAlgoUnknown": {}
     "securePasswordKdfAlgoPBKDF2HMACSHA512iter100000": {
       salt: BufferSource;                     // bytes
@@ -4881,7 +4881,7 @@ declare namespace global {
   export type SecureSecretSettings<
     K extends keyof _SecureSecretSettings = keyof _SecureSecretSettings
   > = ToUnderscore<_SecureSecretSettings, K>;
-  type _SecureSecretSettings = {
+  export type _SecureSecretSettings = {
     "secureSecretSettings": {
       secure_algo: global.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
       secure_secret: BufferSource;            // bytes
@@ -4893,7 +4893,7 @@ declare namespace global {
   export type InputCheckPasswordSRP<
     K extends keyof _InputCheckPasswordSRP = keyof _InputCheckPasswordSRP
   > = ToUnderscore<_InputCheckPasswordSRP, K>;
-  type _InputCheckPasswordSRP = {
+  export type _InputCheckPasswordSRP = {
     "inputCheckPasswordEmpty": {}
     "inputCheckPasswordSRP": {
       srp_id: bigint;                         // long
@@ -4907,7 +4907,7 @@ declare namespace global {
   export type SecureRequiredType<
     K extends keyof _SecureRequiredType = keyof _SecureRequiredType
   > = ToUnderscore<_SecureRequiredType, K>;
-  type _SecureRequiredType = {
+  export type _SecureRequiredType = {
     "secureRequiredType": {
       native_names?: true;                    // flags.0?true
       selfie_required?: true;                 // flags.1?true
@@ -4924,7 +4924,7 @@ declare namespace global {
   export type InputAppEvent<
     K extends keyof _InputAppEvent = keyof _InputAppEvent
   > = ToUnderscore<_InputAppEvent, K>;
-  type _InputAppEvent = {
+  export type _InputAppEvent = {
     "inputAppEvent": {
       time: number;                           // double
       type: string;                           // string
@@ -4937,7 +4937,7 @@ declare namespace global {
   export type JSONObjectValue<
     K extends keyof _JSONObjectValue = keyof _JSONObjectValue
   > = ToUnderscore<_JSONObjectValue, K>;
-  type _JSONObjectValue = {
+  export type _JSONObjectValue = {
     "jsonObjectValue": {
       key: string;                            // string
       value: global.JSONValue;                // JSONValue
@@ -4948,7 +4948,7 @@ declare namespace global {
   export type JSONValue<
     K extends keyof _JSONValue = keyof _JSONValue
   > = ToUnderscore<_JSONValue, K>;
-  type _JSONValue = {
+  export type _JSONValue = {
     "jsonNull": {}
     "jsonBool": {
       value: boolean;                         // Bool
@@ -4976,7 +4976,7 @@ declare namespace global {
   export type PageTableCell<
     K extends keyof _PageTableCell = keyof _PageTableCell
   > = ToUnderscore<_PageTableCell, K>;
-  type _PageTableCell = {
+  export type _PageTableCell = {
     "pageTableCell": {
       header?: true;                          // flags.0?true
       align_center?: true;                    // flags.3?true
@@ -4993,7 +4993,7 @@ declare namespace global {
   export type PageTableRow<
     K extends keyof _PageTableRow = keyof _PageTableRow
   > = ToUnderscore<_PageTableRow, K>;
-  type _PageTableRow = {
+  export type _PageTableRow = {
     "pageTableRow": {
       cells: global.PageTableCell[];          // Vector<PageTableCell>
     },
@@ -5003,7 +5003,7 @@ declare namespace global {
   export type PageCaption<
     K extends keyof _PageCaption = keyof _PageCaption
   > = ToUnderscore<_PageCaption, K>;
-  type _PageCaption = {
+  export type _PageCaption = {
     "pageCaption": {
       text: global.RichText;                  // RichText
       credit: global.RichText;                // RichText
@@ -5014,7 +5014,7 @@ declare namespace global {
   export type PageListItem<
     K extends keyof _PageListItem = keyof _PageListItem
   > = ToUnderscore<_PageListItem, K>;
-  type _PageListItem = {
+  export type _PageListItem = {
     "pageListItemText": {
       text: global.RichText;                  // RichText
     },
@@ -5028,7 +5028,7 @@ declare namespace global {
   export type PageListOrderedItem<
     K extends keyof _PageListOrderedItem = keyof _PageListOrderedItem
   > = ToUnderscore<_PageListOrderedItem, K>;
-  type _PageListOrderedItem = {
+  export type _PageListOrderedItem = {
     "pageListOrderedItemText": {
       num: string;                            // string
       text: global.RichText;                  // RichText
@@ -5044,7 +5044,7 @@ declare namespace global {
   export type PageRelatedArticle<
     K extends keyof _PageRelatedArticle = keyof _PageRelatedArticle
   > = ToUnderscore<_PageRelatedArticle, K>;
-  type _PageRelatedArticle = {
+  export type _PageRelatedArticle = {
     "pageRelatedArticle": {
       url: string;                            // string
       webpage_id: bigint;                     // long
@@ -5060,7 +5060,7 @@ declare namespace global {
   export type Page<
     K extends keyof _Page = keyof _Page
   > = ToUnderscore<_Page, K>;
-  type _Page = {
+  export type _Page = {
     "page": {
       part?: true;                            // flags.0?true
       rtl?: true;                             // flags.1?true
@@ -5077,7 +5077,7 @@ declare namespace global {
   export type PollAnswer<
     K extends keyof _PollAnswer = keyof _PollAnswer
   > = ToUnderscore<_PollAnswer, K>;
-  type _PollAnswer = {
+  export type _PollAnswer = {
     "pollAnswer": {
       text: string;                           // string
       option: BufferSource;                   // bytes
@@ -5088,7 +5088,7 @@ declare namespace global {
   export type Poll<
     K extends keyof _Poll = keyof _Poll
   > = ToUnderscore<_Poll, K>;
-  type _Poll = {
+  export type _Poll = {
     "poll": {
       id: bigint;                             // long
       closed?: true;                          // flags.0?true
@@ -5106,7 +5106,7 @@ declare namespace global {
   export type PollAnswerVoters<
     K extends keyof _PollAnswerVoters = keyof _PollAnswerVoters
   > = ToUnderscore<_PollAnswerVoters, K>;
-  type _PollAnswerVoters = {
+  export type _PollAnswerVoters = {
     "pollAnswerVoters": {
       chosen?: true;                          // flags.0?true
       correct?: true;                         // flags.1?true
@@ -5119,7 +5119,7 @@ declare namespace global {
   export type PollResults<
     K extends keyof _PollResults = keyof _PollResults
   > = ToUnderscore<_PollResults, K>;
-  type _PollResults = {
+  export type _PollResults = {
     "pollResults": {
       min?: true;                             // flags.0?true
       results?: global.PollAnswerVoters[];    // flags.1?Vector<PollAnswerVoters>
@@ -5134,7 +5134,7 @@ declare namespace global {
   export type ChatOnlines<
     K extends keyof _ChatOnlines = keyof _ChatOnlines
   > = ToUnderscore<_ChatOnlines, K>;
-  type _ChatOnlines = {
+  export type _ChatOnlines = {
     "chatOnlines": {
       onlines: number;                        // int
     },
@@ -5144,7 +5144,7 @@ declare namespace global {
   export type StatsURL<
     K extends keyof _StatsURL = keyof _StatsURL
   > = ToUnderscore<_StatsURL, K>;
-  type _StatsURL = {
+  export type _StatsURL = {
     "statsURL": {
       url: string;                            // string
     },
@@ -5154,7 +5154,7 @@ declare namespace global {
   export type ChatAdminRights<
     K extends keyof _ChatAdminRights = keyof _ChatAdminRights
   > = ToUnderscore<_ChatAdminRights, K>;
-  type _ChatAdminRights = {
+  export type _ChatAdminRights = {
     "chatAdminRights": {
       change_info?: true;                     // flags.0?true
       post_messages?: true;                   // flags.1?true
@@ -5174,7 +5174,7 @@ declare namespace global {
   export type ChatBannedRights<
     K extends keyof _ChatBannedRights = keyof _ChatBannedRights
   > = ToUnderscore<_ChatBannedRights, K>;
-  type _ChatBannedRights = {
+  export type _ChatBannedRights = {
     "chatBannedRights": {
       view_messages?: true;                   // flags.0?true
       send_messages?: true;                   // flags.1?true
@@ -5196,7 +5196,7 @@ declare namespace global {
   export type InputWallPaper<
     K extends keyof _InputWallPaper = keyof _InputWallPaper
   > = ToUnderscore<_InputWallPaper, K>;
-  type _InputWallPaper = {
+  export type _InputWallPaper = {
     "inputWallPaper": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -5215,7 +5215,7 @@ declare namespace global {
   export type CodeSettings<
     K extends keyof _CodeSettings = keyof _CodeSettings
   > = ToUnderscore<_CodeSettings, K>;
-  type _CodeSettings = {
+  export type _CodeSettings = {
     "codeSettings": {
       allow_flashcall?: true;                 // flags.0?true
       current_number?: true;                  // flags.1?true
@@ -5229,7 +5229,7 @@ declare namespace global {
   export type WallPaperSettings<
     K extends keyof _WallPaperSettings = keyof _WallPaperSettings
   > = ToUnderscore<_WallPaperSettings, K>;
-  type _WallPaperSettings = {
+  export type _WallPaperSettings = {
     "wallPaperSettings": {
       blur?: true;                            // flags.1?true
       motion?: true;                          // flags.2?true
@@ -5246,7 +5246,7 @@ declare namespace global {
   export type AutoDownloadSettings<
     K extends keyof _AutoDownloadSettings = keyof _AutoDownloadSettings
   > = ToUnderscore<_AutoDownloadSettings, K>;
-  type _AutoDownloadSettings = {
+  export type _AutoDownloadSettings = {
     "autoDownloadSettings": {
       disabled?: true;                        // flags.0?true
       video_preload_large?: true;             // flags.1?true
@@ -5263,7 +5263,7 @@ declare namespace global {
   export type EmojiKeyword<
     K extends keyof _EmojiKeyword = keyof _EmojiKeyword
   > = ToUnderscore<_EmojiKeyword, K>;
-  type _EmojiKeyword = {
+  export type _EmojiKeyword = {
     "emojiKeyword": {
       keyword: string;                        // string
       emoticons: string[];                    // Vector<string>
@@ -5279,7 +5279,7 @@ declare namespace global {
   export type EmojiKeywordsDifference<
     K extends keyof _EmojiKeywordsDifference = keyof _EmojiKeywordsDifference
   > = ToUnderscore<_EmojiKeywordsDifference, K>;
-  type _EmojiKeywordsDifference = {
+  export type _EmojiKeywordsDifference = {
     "emojiKeywordsDifference": {
       lang_code: string;                      // string
       from_version: number;                   // int
@@ -5292,7 +5292,7 @@ declare namespace global {
   export type EmojiURL<
     K extends keyof _EmojiURL = keyof _EmojiURL
   > = ToUnderscore<_EmojiURL, K>;
-  type _EmojiURL = {
+  export type _EmojiURL = {
     "emojiURL": {
       url: string;                            // string
     },
@@ -5302,7 +5302,7 @@ declare namespace global {
   export type EmojiLanguage<
     K extends keyof _EmojiLanguage = keyof _EmojiLanguage
   > = ToUnderscore<_EmojiLanguage, K>;
-  type _EmojiLanguage = {
+  export type _EmojiLanguage = {
     "emojiLanguage": {
       lang_code: string;                      // string
     },
@@ -5312,7 +5312,7 @@ declare namespace global {
   export type Folder<
     K extends keyof _Folder = keyof _Folder
   > = ToUnderscore<_Folder, K>;
-  type _Folder = {
+  export type _Folder = {
     "folder": {
       autofill_new_broadcasts?: true;         // flags.0?true
       autofill_public_groups?: true;          // flags.1?true
@@ -5327,7 +5327,7 @@ declare namespace global {
   export type InputFolderPeer<
     K extends keyof _InputFolderPeer = keyof _InputFolderPeer
   > = ToUnderscore<_InputFolderPeer, K>;
-  type _InputFolderPeer = {
+  export type _InputFolderPeer = {
     "inputFolderPeer": {
       peer: global.InputPeer;                 // InputPeer
       folder_id: number;                      // int
@@ -5338,7 +5338,7 @@ declare namespace global {
   export type FolderPeer<
     K extends keyof _FolderPeer = keyof _FolderPeer
   > = ToUnderscore<_FolderPeer, K>;
-  type _FolderPeer = {
+  export type _FolderPeer = {
     "folderPeer": {
       peer: global.Peer;                      // Peer
       folder_id: number;                      // int
@@ -5349,7 +5349,7 @@ declare namespace global {
   export type UrlAuthResult<
     K extends keyof _UrlAuthResult = keyof _UrlAuthResult
   > = ToUnderscore<_UrlAuthResult, K>;
-  type _UrlAuthResult = {
+  export type _UrlAuthResult = {
     "urlAuthResultRequest": {
       request_write_access?: true;            // flags.0?true
       bot: global.User;                       // User
@@ -5367,7 +5367,7 @@ declare namespace global {
   export type ChannelLocation<
     K extends keyof _ChannelLocation = keyof _ChannelLocation
   > = ToUnderscore<_ChannelLocation, K>;
-  type _ChannelLocation = {
+  export type _ChannelLocation = {
     "channelLocationEmpty": {}
     "channelLocation": {
       geo_point: global.GeoPoint;             // GeoPoint
@@ -5380,7 +5380,7 @@ declare namespace global {
   export type PeerLocated<
     K extends keyof _PeerLocated = keyof _PeerLocated
   > = ToUnderscore<_PeerLocated, K>;
-  type _PeerLocated = {
+  export type _PeerLocated = {
     "peerLocated": {
       peer: global.Peer;                      // Peer
       expires: number;                        // int
@@ -5396,7 +5396,7 @@ declare namespace global {
   export type RestrictionReason<
     K extends keyof _RestrictionReason = keyof _RestrictionReason
   > = ToUnderscore<_RestrictionReason, K>;
-  type _RestrictionReason = {
+  export type _RestrictionReason = {
     "restrictionReason": {
       platform: string;                       // string
       reason: string;                         // string
@@ -5408,7 +5408,7 @@ declare namespace global {
   export type InputTheme<
     K extends keyof _InputTheme = keyof _InputTheme
   > = ToUnderscore<_InputTheme, K>;
-  type _InputTheme = {
+  export type _InputTheme = {
     "inputTheme": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -5423,7 +5423,7 @@ declare namespace global {
   export type Theme<
     K extends keyof _Theme = keyof _Theme
   > = ToUnderscore<_Theme, K>;
-  type _Theme = {
+  export type _Theme = {
     "theme": {
       creator?: true;                         // flags.0?true
       default?: true;                         // flags.1?true
@@ -5443,7 +5443,7 @@ declare namespace global {
   export type BaseTheme<
     K extends keyof _BaseTheme = keyof _BaseTheme
   > = ToUnderscore<_BaseTheme, K>;
-  type _BaseTheme = {
+  export type _BaseTheme = {
     "baseThemeClassic": {}
     "baseThemeDay": {}
     "baseThemeNight": {}
@@ -5459,7 +5459,7 @@ declare namespace global {
   export type InputThemeSettings<
     K extends keyof _InputThemeSettings = keyof _InputThemeSettings
   > = ToUnderscore<_InputThemeSettings, K>;
-  type _InputThemeSettings = {
+  export type _InputThemeSettings = {
     "inputThemeSettings": {
       message_colors_animated?: true;         // flags.2?true
       base_theme: global.BaseTheme;           // BaseTheme
@@ -5475,7 +5475,7 @@ declare namespace global {
   export type ThemeSettings<
     K extends keyof _ThemeSettings = keyof _ThemeSettings
   > = ToUnderscore<_ThemeSettings, K>;
-  type _ThemeSettings = {
+  export type _ThemeSettings = {
     "themeSettings": {
       message_colors_animated?: true;         // flags.2?true
       base_theme: global.BaseTheme;           // BaseTheme
@@ -5490,7 +5490,7 @@ declare namespace global {
   export type WebPageAttribute<
     K extends keyof _WebPageAttribute = keyof _WebPageAttribute
   > = ToUnderscore<_WebPageAttribute, K>;
-  type _WebPageAttribute = {
+  export type _WebPageAttribute = {
     "webPageAttributeTheme": {
       documents?: global.Document[];          // flags.0?Vector<Document>
       settings?: global.ThemeSettings;        // flags.1?ThemeSettings
@@ -5501,7 +5501,7 @@ declare namespace global {
   export type MessageUserVote<
     K extends keyof _MessageUserVote = keyof _MessageUserVote
   > = ToUnderscore<_MessageUserVote, K>;
-  type _MessageUserVote = {
+  export type _MessageUserVote = {
     "messageUserVote": {
       user_id: bigint;                        // long
       option: BufferSource;                   // bytes
@@ -5524,7 +5524,7 @@ declare namespace global {
   export type BankCardOpenUrl<
     K extends keyof _BankCardOpenUrl = keyof _BankCardOpenUrl
   > = ToUnderscore<_BankCardOpenUrl, K>;
-  type _BankCardOpenUrl = {
+  export type _BankCardOpenUrl = {
     "bankCardOpenUrl": {
       url: string;                            // string
       name: string;                           // string
@@ -5535,7 +5535,7 @@ declare namespace global {
   export type DialogFilter<
     K extends keyof _DialogFilter = keyof _DialogFilter
   > = ToUnderscore<_DialogFilter, K>;
-  type _DialogFilter = {
+  export type _DialogFilter = {
     "dialogFilter": {
       contacts?: true;                        // flags.0?true
       non_contacts?: true;                    // flags.1?true
@@ -5558,7 +5558,7 @@ declare namespace global {
   export type DialogFilterSuggested<
     K extends keyof _DialogFilterSuggested = keyof _DialogFilterSuggested
   > = ToUnderscore<_DialogFilterSuggested, K>;
-  type _DialogFilterSuggested = {
+  export type _DialogFilterSuggested = {
     "dialogFilterSuggested": {
       filter: global.DialogFilter;            // DialogFilter
       description: string;                    // string
@@ -5569,7 +5569,7 @@ declare namespace global {
   export type StatsDateRangeDays<
     K extends keyof _StatsDateRangeDays = keyof _StatsDateRangeDays
   > = ToUnderscore<_StatsDateRangeDays, K>;
-  type _StatsDateRangeDays = {
+  export type _StatsDateRangeDays = {
     "statsDateRangeDays": {
       min_date: number;                       // int
       max_date: number;                       // int
@@ -5580,7 +5580,7 @@ declare namespace global {
   export type StatsAbsValueAndPrev<
     K extends keyof _StatsAbsValueAndPrev = keyof _StatsAbsValueAndPrev
   > = ToUnderscore<_StatsAbsValueAndPrev, K>;
-  type _StatsAbsValueAndPrev = {
+  export type _StatsAbsValueAndPrev = {
     "statsAbsValueAndPrev": {
       current: number;                        // double
       previous: number;                       // double
@@ -5591,7 +5591,7 @@ declare namespace global {
   export type StatsPercentValue<
     K extends keyof _StatsPercentValue = keyof _StatsPercentValue
   > = ToUnderscore<_StatsPercentValue, K>;
-  type _StatsPercentValue = {
+  export type _StatsPercentValue = {
     "statsPercentValue": {
       part: number;                           // double
       total: number;                          // double
@@ -5602,7 +5602,7 @@ declare namespace global {
   export type StatsGraph<
     K extends keyof _StatsGraph = keyof _StatsGraph
   > = ToUnderscore<_StatsGraph, K>;
-  type _StatsGraph = {
+  export type _StatsGraph = {
     "statsGraphAsync": {
       token: string;                          // string
     },
@@ -5621,7 +5621,7 @@ declare namespace global {
   export type MessageInteractionCounters<
     K extends keyof _MessageInteractionCounters = keyof _MessageInteractionCounters
   > = ToUnderscore<_MessageInteractionCounters, K>;
-  type _MessageInteractionCounters = {
+  export type _MessageInteractionCounters = {
     "messageInteractionCounters": {
       msg_id: number;                         // int
       views: number;                          // int
@@ -5633,7 +5633,7 @@ declare namespace global {
   export type VideoSize<
     K extends keyof _VideoSize = keyof _VideoSize
   > = ToUnderscore<_VideoSize, K>;
-  type _VideoSize = {
+  export type _VideoSize = {
     "videoSize": {
       type: string;                           // string
       w: number;                              // int
@@ -5647,7 +5647,7 @@ declare namespace global {
   export type StatsGroupTopPoster<
     K extends keyof _StatsGroupTopPoster = keyof _StatsGroupTopPoster
   > = ToUnderscore<_StatsGroupTopPoster, K>;
-  type _StatsGroupTopPoster = {
+  export type _StatsGroupTopPoster = {
     "statsGroupTopPoster": {
       user_id: bigint;                        // long
       messages: number;                       // int
@@ -5659,7 +5659,7 @@ declare namespace global {
   export type StatsGroupTopAdmin<
     K extends keyof _StatsGroupTopAdmin = keyof _StatsGroupTopAdmin
   > = ToUnderscore<_StatsGroupTopAdmin, K>;
-  type _StatsGroupTopAdmin = {
+  export type _StatsGroupTopAdmin = {
     "statsGroupTopAdmin": {
       user_id: bigint;                        // long
       deleted: number;                        // int
@@ -5672,7 +5672,7 @@ declare namespace global {
   export type StatsGroupTopInviter<
     K extends keyof _StatsGroupTopInviter = keyof _StatsGroupTopInviter
   > = ToUnderscore<_StatsGroupTopInviter, K>;
-  type _StatsGroupTopInviter = {
+  export type _StatsGroupTopInviter = {
     "statsGroupTopInviter": {
       user_id: bigint;                        // long
       invitations: number;                    // int
@@ -5683,7 +5683,7 @@ declare namespace global {
   export type GlobalPrivacySettings<
     K extends keyof _GlobalPrivacySettings = keyof _GlobalPrivacySettings
   > = ToUnderscore<_GlobalPrivacySettings, K>;
-  type _GlobalPrivacySettings = {
+  export type _GlobalPrivacySettings = {
     "globalPrivacySettings": {
       archive_and_mute_new_noncontact_peers?: boolean; // flags.0?Bool
     },
@@ -5693,7 +5693,7 @@ declare namespace global {
   export type MessageViews<
     K extends keyof _MessageViews = keyof _MessageViews
   > = ToUnderscore<_MessageViews, K>;
-  type _MessageViews = {
+  export type _MessageViews = {
     "messageViews": {
       views?: number;                         // flags.0?int
       forwards?: number;                      // flags.1?int
@@ -5705,7 +5705,7 @@ declare namespace global {
   export type MessageReplyHeader<
     K extends keyof _MessageReplyHeader = keyof _MessageReplyHeader
   > = ToUnderscore<_MessageReplyHeader, K>;
-  type _MessageReplyHeader = {
+  export type _MessageReplyHeader = {
     "messageReplyHeader": {
       reply_to_msg_id: number;                // int
       reply_to_peer_id?: global.Peer;         // flags.0?Peer
@@ -5717,7 +5717,7 @@ declare namespace global {
   export type MessageReplies<
     K extends keyof _MessageReplies = keyof _MessageReplies
   > = ToUnderscore<_MessageReplies, K>;
-  type _MessageReplies = {
+  export type _MessageReplies = {
     "messageReplies": {
       comments?: true;                        // flags.0?true
       replies: number;                        // int
@@ -5733,7 +5733,7 @@ declare namespace global {
   export type PeerBlocked<
     K extends keyof _PeerBlocked = keyof _PeerBlocked
   > = ToUnderscore<_PeerBlocked, K>;
-  type _PeerBlocked = {
+  export type _PeerBlocked = {
     "peerBlocked": {
       peer_id: global.Peer;                   // Peer
       date: number;                           // int
@@ -5744,7 +5744,7 @@ declare namespace global {
   export type GroupCall<
     K extends keyof _GroupCall = keyof _GroupCall
   > = ToUnderscore<_GroupCall, K>;
-  type _GroupCall = {
+  export type _GroupCall = {
     "groupCallDiscarded": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -5777,7 +5777,7 @@ declare namespace global {
   export type InputGroupCall<
     K extends keyof _InputGroupCall = keyof _InputGroupCall
   > = ToUnderscore<_InputGroupCall, K>;
-  type _InputGroupCall = {
+  export type _InputGroupCall = {
     "inputGroupCall": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -5788,7 +5788,7 @@ declare namespace global {
   export type GroupCallParticipant<
     K extends keyof _GroupCallParticipant = keyof _GroupCallParticipant
   > = ToUnderscore<_GroupCallParticipant, K>;
-  type _GroupCallParticipant = {
+  export type _GroupCallParticipant = {
     "groupCallParticipant": {
       muted?: true;                           // flags.0?true
       left?: true;                            // flags.1?true
@@ -5816,7 +5816,7 @@ declare namespace global {
   export type InlineQueryPeerType<
     K extends keyof _InlineQueryPeerType = keyof _InlineQueryPeerType
   > = ToUnderscore<_InlineQueryPeerType, K>;
-  type _InlineQueryPeerType = {
+  export type _InlineQueryPeerType = {
     "inlineQueryPeerTypeSameBotPM": {}
     "inlineQueryPeerTypePM": {}
     "inlineQueryPeerTypeChat": {}
@@ -5832,7 +5832,7 @@ declare namespace global {
   export type ChatInviteImporter<
     K extends keyof _ChatInviteImporter = keyof _ChatInviteImporter
   > = ToUnderscore<_ChatInviteImporter, K>;
-  type _ChatInviteImporter = {
+  export type _ChatInviteImporter = {
     "chatInviteImporter": {
       requested?: true;                       // flags.0?true
       user_id: bigint;                        // long
@@ -5846,7 +5846,7 @@ declare namespace global {
   export type ChatAdminWithInvites<
     K extends keyof _ChatAdminWithInvites = keyof _ChatAdminWithInvites
   > = ToUnderscore<_ChatAdminWithInvites, K>;
-  type _ChatAdminWithInvites = {
+  export type _ChatAdminWithInvites = {
     "chatAdminWithInvites": {
       admin_id: bigint;                       // long
       invites_count: number;                  // int
@@ -5858,7 +5858,7 @@ declare namespace global {
   export type GroupCallParticipantVideoSourceGroup<
     K extends keyof _GroupCallParticipantVideoSourceGroup = keyof _GroupCallParticipantVideoSourceGroup
   > = ToUnderscore<_GroupCallParticipantVideoSourceGroup, K>;
-  type _GroupCallParticipantVideoSourceGroup = {
+  export type _GroupCallParticipantVideoSourceGroup = {
     "groupCallParticipantVideoSourceGroup": {
       semantics: string;                      // string
       sources: number[];                      // Vector<int>
@@ -5869,7 +5869,7 @@ declare namespace global {
   export type GroupCallParticipantVideo<
     K extends keyof _GroupCallParticipantVideo = keyof _GroupCallParticipantVideo
   > = ToUnderscore<_GroupCallParticipantVideo, K>;
-  type _GroupCallParticipantVideo = {
+  export type _GroupCallParticipantVideo = {
     "groupCallParticipantVideo": {
       paused?: true;                          // flags.0?true
       endpoint: string;                       // string
@@ -5882,7 +5882,7 @@ declare namespace global {
   export type BotCommandScope<
     K extends keyof _BotCommandScope = keyof _BotCommandScope
   > = ToUnderscore<_BotCommandScope, K>;
-  type _BotCommandScope = {
+  export type _BotCommandScope = {
     "botCommandScopeDefault": {}
     "botCommandScopeUsers": {}
     "botCommandScopeChats": {}
@@ -5909,7 +5909,7 @@ declare namespace global {
   export type SponsoredMessage<
     K extends keyof _SponsoredMessage = keyof _SponsoredMessage
   > = ToUnderscore<_SponsoredMessage, K>;
-  type _SponsoredMessage = {
+  export type _SponsoredMessage = {
     "sponsoredMessage": {
       random_id: BufferSource;                // bytes
       from_id?: global.Peer;                  // flags.3?Peer
@@ -5926,7 +5926,7 @@ declare namespace global {
   export type SearchResultsCalendarPeriod<
     K extends keyof _SearchResultsCalendarPeriod = keyof _SearchResultsCalendarPeriod
   > = ToUnderscore<_SearchResultsCalendarPeriod, K>;
-  type _SearchResultsCalendarPeriod = {
+  export type _SearchResultsCalendarPeriod = {
     "searchResultsCalendarPeriod": {
       date: number;                           // int
       min_msg_id: number;                     // int
@@ -5939,7 +5939,7 @@ declare namespace global {
   export type SearchResultsPosition<
     K extends keyof _SearchResultsPosition = keyof _SearchResultsPosition
   > = ToUnderscore<_SearchResultsPosition, K>;
-  type _SearchResultsPosition = {
+  export type _SearchResultsPosition = {
     "searchResultPosition": {
       msg_id: number;                         // int
       date: number;                           // int
@@ -5951,7 +5951,7 @@ declare namespace global {
   export type ReactionCount<
     K extends keyof _ReactionCount = keyof _ReactionCount
   > = ToUnderscore<_ReactionCount, K>;
-  type _ReactionCount = {
+  export type _ReactionCount = {
     "reactionCount": {
       chosen?: true;                          // flags.0?true
       reaction: string;                       // string
@@ -5963,7 +5963,7 @@ declare namespace global {
   export type MessageReactions<
     K extends keyof _MessageReactions = keyof _MessageReactions
   > = ToUnderscore<_MessageReactions, K>;
-  type _MessageReactions = {
+  export type _MessageReactions = {
     "messageReactions": {
       min?: true;                             // flags.0?true
       can_see_list?: true;                    // flags.2?true
@@ -5976,7 +5976,7 @@ declare namespace global {
   export type AvailableReaction<
     K extends keyof _AvailableReaction = keyof _AvailableReaction
   > = ToUnderscore<_AvailableReaction, K>;
-  type _AvailableReaction = {
+  export type _AvailableReaction = {
     "availableReaction": {
       inactive?: true;                        // flags.0?true
       reaction: string;                       // string
@@ -5995,7 +5995,7 @@ declare namespace global {
   export type MessagePeerReaction<
     K extends keyof _MessagePeerReaction = keyof _MessagePeerReaction
   > = ToUnderscore<_MessagePeerReaction, K>;
-  type _MessagePeerReaction = {
+  export type _MessagePeerReaction = {
     "messagePeerReaction": {
       big?: true;                             // flags.0?true
       unread?: true;                          // flags.1?true
@@ -6013,7 +6013,7 @@ export namespace storage {
   export type FileType<
     K extends keyof _FileType = keyof _FileType
   > = ToUnderscore<_FileType, K>;
-  type _FileType = {
+  export type _FileType = {
     "storage.fileUnknown": {}
     "storage.filePartial": {}
     "storage.fileJpeg": {}
@@ -6042,7 +6042,7 @@ export namespace auth {
   export type SentCode<
     K extends keyof _SentCode = keyof _SentCode
   > = ToUnderscore<_SentCode, K>;
-  type _SentCode = {
+  export type _SentCode = {
     "auth.sentCode": {
       type: auth.SentCodeType;                // auth.SentCodeType
       phone_code_hash: string;                // string
@@ -6055,7 +6055,7 @@ export namespace auth {
   export type Authorization<
     K extends keyof _Authorization = keyof _Authorization
   > = ToUnderscore<_Authorization, K>;
-  type _Authorization = {
+  export type _Authorization = {
     "auth.authorization": {
       setup_password_required?: true;         // flags.1?true
       otherwise_relogin_days?: number;        // flags.1?int
@@ -6072,7 +6072,7 @@ export namespace auth {
   export type ExportedAuthorization<
     K extends keyof _ExportedAuthorization = keyof _ExportedAuthorization
   > = ToUnderscore<_ExportedAuthorization, K>;
-  type _ExportedAuthorization = {
+  export type _ExportedAuthorization = {
     "auth.exportedAuthorization": {
       id: bigint;                             // long
       bytes: BufferSource;                    // bytes
@@ -6083,7 +6083,7 @@ export namespace auth {
   export type PasswordRecovery<
     K extends keyof _PasswordRecovery = keyof _PasswordRecovery
   > = ToUnderscore<_PasswordRecovery, K>;
-  type _PasswordRecovery = {
+  export type _PasswordRecovery = {
     "auth.passwordRecovery": {
       email_pattern: string;                  // string
     },
@@ -6093,7 +6093,7 @@ export namespace auth {
   export type CodeType<
     K extends keyof _CodeType = keyof _CodeType
   > = ToUnderscore<_CodeType, K>;
-  type _CodeType = {
+  export type _CodeType = {
     "auth.codeTypeSms": {}
     "auth.codeTypeCall": {}
     "auth.codeTypeFlashCall": {}
@@ -6107,7 +6107,7 @@ export namespace auth {
   export type SentCodeType<
     K extends keyof _SentCodeType = keyof _SentCodeType
   > = ToUnderscore<_SentCodeType, K>;
-  type _SentCodeType = {
+  export type _SentCodeType = {
     "auth.sentCodeTypeApp": {
       length: number;                         // int
     },
@@ -6134,7 +6134,7 @@ export namespace auth {
   export type LoginToken<
     K extends keyof _LoginToken = keyof _LoginToken
   > = ToUnderscore<_LoginToken, K>;
-  type _LoginToken = {
+  export type _LoginToken = {
     "auth.loginToken": {
       expires: number;                        // int
       token: BufferSource;                    // bytes
@@ -6154,7 +6154,7 @@ export namespace auth {
   export type LoggedOut<
     K extends keyof _LoggedOut = keyof _LoggedOut
   > = ToUnderscore<_LoggedOut, K>;
-  type _LoggedOut = {
+  export type _LoggedOut = {
     "auth.loggedOut": {
       future_auth_token?: BufferSource;       // flags.0?bytes
     },
@@ -6167,7 +6167,7 @@ export namespace contacts {
   export type Contacts<
     K extends keyof _Contacts = keyof _Contacts
   > = ToUnderscore<_Contacts, K>;
-  type _Contacts = {
+  export type _Contacts = {
     "contacts.contactsNotModified": {}
     "contacts.contacts": {
       contacts: global.Contact[];             // Vector<Contact>
@@ -6181,7 +6181,7 @@ export namespace contacts {
   export type ImportedContacts<
     K extends keyof _ImportedContacts = keyof _ImportedContacts
   > = ToUnderscore<_ImportedContacts, K>;
-  type _ImportedContacts = {
+  export type _ImportedContacts = {
     "contacts.importedContacts": {
       imported: global.ImportedContact[];     // Vector<ImportedContact>
       popular_invites: global.PopularContact[]; // Vector<PopularContact>
@@ -6194,7 +6194,7 @@ export namespace contacts {
   export type Blocked<
     K extends keyof _Blocked = keyof _Blocked
   > = ToUnderscore<_Blocked, K>;
-  type _Blocked = {
+  export type _Blocked = {
     "contacts.blocked": {
       blocked: global.PeerBlocked[];          // Vector<PeerBlocked>
       chats: global.Chat[];                   // Vector<Chat>
@@ -6213,7 +6213,7 @@ export namespace contacts {
   export type Found<
     K extends keyof _Found = keyof _Found
   > = ToUnderscore<_Found, K>;
-  type _Found = {
+  export type _Found = {
     "contacts.found": {
       my_results: global.Peer[];              // Vector<Peer>
       results: global.Peer[];                 // Vector<Peer>
@@ -6226,7 +6226,7 @@ export namespace contacts {
   export type ResolvedPeer<
     K extends keyof _ResolvedPeer = keyof _ResolvedPeer
   > = ToUnderscore<_ResolvedPeer, K>;
-  type _ResolvedPeer = {
+  export type _ResolvedPeer = {
     "contacts.resolvedPeer": {
       peer: global.Peer;                      // Peer
       chats: global.Chat[];                   // Vector<Chat>
@@ -6238,7 +6238,7 @@ export namespace contacts {
   export type TopPeers<
     K extends keyof _TopPeers = keyof _TopPeers
   > = ToUnderscore<_TopPeers, K>;
-  type _TopPeers = {
+  export type _TopPeers = {
     "contacts.topPeersNotModified": {}
     "contacts.topPeers": {
       categories: global.TopPeerCategoryPeers[]; // Vector<TopPeerCategoryPeers>
@@ -6257,7 +6257,7 @@ export namespace messages {
   export type Dialogs<
     K extends keyof _Dialogs = keyof _Dialogs
   > = ToUnderscore<_Dialogs, K>;
-  type _Dialogs = {
+  export type _Dialogs = {
     "messages.dialogs": {
       dialogs: global.Dialog[];               // Vector<Dialog>
       messages: global.Message[];             // Vector<Message>
@@ -6282,7 +6282,7 @@ export namespace messages {
   export type Messages<
     K extends keyof _Messages = keyof _Messages
   > = ToUnderscore<_Messages, K>;
-  type _Messages = {
+  export type _Messages = {
     "messages.messages": {
       messages: global.Message[];             // Vector<Message>
       chats: global.Chat[];                   // Vector<Chat>
@@ -6318,7 +6318,7 @@ export namespace messages {
   export type Chats<
     K extends keyof _Chats = keyof _Chats
   > = ToUnderscore<_Chats, K>;
-  type _Chats = {
+  export type _Chats = {
     "messages.chats": {
       chats: global.Chat[];                   // Vector<Chat>
     },
@@ -6333,7 +6333,7 @@ export namespace messages {
   export type ChatFull<
     K extends keyof _ChatFull = keyof _ChatFull
   > = ToUnderscore<_ChatFull, K>;
-  type _ChatFull = {
+  export type _ChatFull = {
     "messages.chatFull": {
       full_chat: global.ChatFull;             // ChatFull
       chats: global.Chat[];                   // Vector<Chat>
@@ -6345,7 +6345,7 @@ export namespace messages {
   export type AffectedHistory<
     K extends keyof _AffectedHistory = keyof _AffectedHistory
   > = ToUnderscore<_AffectedHistory, K>;
-  type _AffectedHistory = {
+  export type _AffectedHistory = {
     "messages.affectedHistory": {
       pts: number;                            // int
       pts_count: number;                      // int
@@ -6357,7 +6357,7 @@ export namespace messages {
   export type DhConfig<
     K extends keyof _DhConfig = keyof _DhConfig
   > = ToUnderscore<_DhConfig, K>;
-  type _DhConfig = {
+  export type _DhConfig = {
     "messages.dhConfigNotModified": {
       random: BufferSource;                   // bytes
     },
@@ -6374,7 +6374,7 @@ export namespace messages {
   export type SentEncryptedMessage<
     K extends keyof _SentEncryptedMessage = keyof _SentEncryptedMessage
   > = ToUnderscore<_SentEncryptedMessage, K>;
-  type _SentEncryptedMessage = {
+  export type _SentEncryptedMessage = {
     "messages.sentEncryptedMessage": {
       date: number;                           // int
     },
@@ -6389,7 +6389,7 @@ export namespace messages {
   export type Stickers<
     K extends keyof _Stickers = keyof _Stickers
   > = ToUnderscore<_Stickers, K>;
-  type _Stickers = {
+  export type _Stickers = {
     "messages.stickersNotModified": {}
     "messages.stickers": {
       hash: bigint;                           // long
@@ -6402,7 +6402,7 @@ export namespace messages {
   export type AllStickers<
     K extends keyof _AllStickers = keyof _AllStickers
   > = ToUnderscore<_AllStickers, K>;
-  type _AllStickers = {
+  export type _AllStickers = {
     "messages.allStickersNotModified": {}
     "messages.allStickers": {
       hash: bigint;                           // long
@@ -6415,7 +6415,7 @@ export namespace messages {
   export type AffectedMessages<
     K extends keyof _AffectedMessages = keyof _AffectedMessages
   > = ToUnderscore<_AffectedMessages, K>;
-  type _AffectedMessages = {
+  export type _AffectedMessages = {
     "messages.affectedMessages": {
       pts: number;                            // int
       pts_count: number;                      // int
@@ -6426,7 +6426,7 @@ export namespace messages {
   export type StickerSet<
     K extends keyof _StickerSet = keyof _StickerSet
   > = ToUnderscore<_StickerSet, K>;
-  type _StickerSet = {
+  export type _StickerSet = {
     "messages.stickerSet": {
       set: global.StickerSet;                 // StickerSet
       packs: global.StickerPack[];            // Vector<StickerPack>
@@ -6440,7 +6440,7 @@ export namespace messages {
   export type SavedGifs<
     K extends keyof _SavedGifs = keyof _SavedGifs
   > = ToUnderscore<_SavedGifs, K>;
-  type _SavedGifs = {
+  export type _SavedGifs = {
     "messages.savedGifsNotModified": {}
     "messages.savedGifs": {
       hash: bigint;                           // long
@@ -6453,7 +6453,7 @@ export namespace messages {
   export type BotResults<
     K extends keyof _BotResults = keyof _BotResults
   > = ToUnderscore<_BotResults, K>;
-  type _BotResults = {
+  export type _BotResults = {
     "messages.botResults": {
       gallery?: true;                         // flags.0?true
       query_id: bigint;                       // long
@@ -6469,7 +6469,7 @@ export namespace messages {
   export type BotCallbackAnswer<
     K extends keyof _BotCallbackAnswer = keyof _BotCallbackAnswer
   > = ToUnderscore<_BotCallbackAnswer, K>;
-  type _BotCallbackAnswer = {
+  export type _BotCallbackAnswer = {
     "messages.botCallbackAnswer": {
       alert?: true;                           // flags.1?true
       has_url?: true;                         // flags.3?true
@@ -6484,7 +6484,7 @@ export namespace messages {
   export type MessageEditData<
     K extends keyof _MessageEditData = keyof _MessageEditData
   > = ToUnderscore<_MessageEditData, K>;
-  type _MessageEditData = {
+  export type _MessageEditData = {
     "messages.messageEditData": {
       caption?: true;                         // flags.0?true
     },
@@ -6494,7 +6494,7 @@ export namespace messages {
   export type PeerDialogs<
     K extends keyof _PeerDialogs = keyof _PeerDialogs
   > = ToUnderscore<_PeerDialogs, K>;
-  type _PeerDialogs = {
+  export type _PeerDialogs = {
     "messages.peerDialogs": {
       dialogs: global.Dialog[];               // Vector<Dialog>
       messages: global.Message[];             // Vector<Message>
@@ -6508,7 +6508,7 @@ export namespace messages {
   export type FeaturedStickers<
     K extends keyof _FeaturedStickers = keyof _FeaturedStickers
   > = ToUnderscore<_FeaturedStickers, K>;
-  type _FeaturedStickers = {
+  export type _FeaturedStickers = {
     "messages.featuredStickersNotModified": {
       count: number;                          // int
     },
@@ -6525,7 +6525,7 @@ export namespace messages {
   export type RecentStickers<
     K extends keyof _RecentStickers = keyof _RecentStickers
   > = ToUnderscore<_RecentStickers, K>;
-  type _RecentStickers = {
+  export type _RecentStickers = {
     "messages.recentStickersNotModified": {}
     "messages.recentStickers": {
       hash: bigint;                           // long
@@ -6540,7 +6540,7 @@ export namespace messages {
   export type ArchivedStickers<
     K extends keyof _ArchivedStickers = keyof _ArchivedStickers
   > = ToUnderscore<_ArchivedStickers, K>;
-  type _ArchivedStickers = {
+  export type _ArchivedStickers = {
     "messages.archivedStickers": {
       count: number;                          // int
       sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
@@ -6551,7 +6551,7 @@ export namespace messages {
   export type StickerSetInstallResult<
     K extends keyof _StickerSetInstallResult = keyof _StickerSetInstallResult
   > = ToUnderscore<_StickerSetInstallResult, K>;
-  type _StickerSetInstallResult = {
+  export type _StickerSetInstallResult = {
     "messages.stickerSetInstallResultSuccess": {}
     "messages.stickerSetInstallResultArchive": {
       sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
@@ -6563,7 +6563,7 @@ export namespace messages {
   export type HighScores<
     K extends keyof _HighScores = keyof _HighScores
   > = ToUnderscore<_HighScores, K>;
-  type _HighScores = {
+  export type _HighScores = {
     "messages.highScores": {
       scores: global.HighScore[];             // Vector<HighScore>
       users: global.User[];                   // Vector<User>
@@ -6574,7 +6574,7 @@ export namespace messages {
   export type FavedStickers<
     K extends keyof _FavedStickers = keyof _FavedStickers
   > = ToUnderscore<_FavedStickers, K>;
-  type _FavedStickers = {
+  export type _FavedStickers = {
     "messages.favedStickersNotModified": {}
     "messages.favedStickers": {
       hash: bigint;                           // long
@@ -6588,7 +6588,7 @@ export namespace messages {
   export type FoundStickerSets<
     K extends keyof _FoundStickerSets = keyof _FoundStickerSets
   > = ToUnderscore<_FoundStickerSets, K>;
-  type _FoundStickerSets = {
+  export type _FoundStickerSets = {
     "messages.foundStickerSetsNotModified": {}
     "messages.foundStickerSets": {
       hash: bigint;                           // long
@@ -6601,7 +6601,7 @@ export namespace messages {
   export type SearchCounter<
     K extends keyof _SearchCounter = keyof _SearchCounter
   > = ToUnderscore<_SearchCounter, K>;
-  type _SearchCounter = {
+  export type _SearchCounter = {
     "messages.searchCounter": {
       inexact?: true;                         // flags.1?true
       filter: global.MessagesFilter;          // MessagesFilter
@@ -6613,7 +6613,7 @@ export namespace messages {
   export type InactiveChats<
     K extends keyof _InactiveChats = keyof _InactiveChats
   > = ToUnderscore<_InactiveChats, K>;
-  type _InactiveChats = {
+  export type _InactiveChats = {
     "messages.inactiveChats": {
       dates: number[];                        // Vector<int>
       chats: global.Chat[];                   // Vector<Chat>
@@ -6625,7 +6625,7 @@ export namespace messages {
   export type VotesList<
     K extends keyof _VotesList = keyof _VotesList
   > = ToUnderscore<_VotesList, K>;
-  type _VotesList = {
+  export type _VotesList = {
     "messages.votesList": {
       count: number;                          // int
       votes: global.MessageUserVote[];        // Vector<MessageUserVote>
@@ -6638,7 +6638,7 @@ export namespace messages {
   export type MessageViews<
     K extends keyof _MessageViews = keyof _MessageViews
   > = ToUnderscore<_MessageViews, K>;
-  type _MessageViews = {
+  export type _MessageViews = {
     "messages.messageViews": {
       views: global.MessageViews[];           // Vector<MessageViews>
       chats: global.Chat[];                   // Vector<Chat>
@@ -6650,7 +6650,7 @@ export namespace messages {
   export type DiscussionMessage<
     K extends keyof _DiscussionMessage = keyof _DiscussionMessage
   > = ToUnderscore<_DiscussionMessage, K>;
-  type _DiscussionMessage = {
+  export type _DiscussionMessage = {
     "messages.discussionMessage": {
       messages: global.Message[];             // Vector<Message>
       max_id?: number;                        // flags.0?int
@@ -6666,7 +6666,7 @@ export namespace messages {
   export type HistoryImport<
     K extends keyof _HistoryImport = keyof _HistoryImport
   > = ToUnderscore<_HistoryImport, K>;
-  type _HistoryImport = {
+  export type _HistoryImport = {
     "messages.historyImport": {
       id: bigint;                             // long
     },
@@ -6676,7 +6676,7 @@ export namespace messages {
   export type HistoryImportParsed<
     K extends keyof _HistoryImportParsed = keyof _HistoryImportParsed
   > = ToUnderscore<_HistoryImportParsed, K>;
-  type _HistoryImportParsed = {
+  export type _HistoryImportParsed = {
     "messages.historyImportParsed": {
       pm?: true;                              // flags.0?true
       group?: true;                           // flags.1?true
@@ -6688,7 +6688,7 @@ export namespace messages {
   export type AffectedFoundMessages<
     K extends keyof _AffectedFoundMessages = keyof _AffectedFoundMessages
   > = ToUnderscore<_AffectedFoundMessages, K>;
-  type _AffectedFoundMessages = {
+  export type _AffectedFoundMessages = {
     "messages.affectedFoundMessages": {
       pts: number;                            // int
       pts_count: number;                      // int
@@ -6701,7 +6701,7 @@ export namespace messages {
   export type ExportedChatInvites<
     K extends keyof _ExportedChatInvites = keyof _ExportedChatInvites
   > = ToUnderscore<_ExportedChatInvites, K>;
-  type _ExportedChatInvites = {
+  export type _ExportedChatInvites = {
     "messages.exportedChatInvites": {
       count: number;                          // int
       invites: global.ExportedChatInvite[];   // Vector<ExportedChatInvite>
@@ -6713,7 +6713,7 @@ export namespace messages {
   export type ExportedChatInvite<
     K extends keyof _ExportedChatInvite = keyof _ExportedChatInvite
   > = ToUnderscore<_ExportedChatInvite, K>;
-  type _ExportedChatInvite = {
+  export type _ExportedChatInvite = {
     "messages.exportedChatInvite": {
       invite: global.ExportedChatInvite;      // ExportedChatInvite
       users: global.User[];                   // Vector<User>
@@ -6730,7 +6730,7 @@ export namespace messages {
   export type ChatInviteImporters<
     K extends keyof _ChatInviteImporters = keyof _ChatInviteImporters
   > = ToUnderscore<_ChatInviteImporters, K>;
-  type _ChatInviteImporters = {
+  export type _ChatInviteImporters = {
     "messages.chatInviteImporters": {
       count: number;                          // int
       importers: global.ChatInviteImporter[]; // Vector<ChatInviteImporter>
@@ -6742,7 +6742,7 @@ export namespace messages {
   export type ChatAdminsWithInvites<
     K extends keyof _ChatAdminsWithInvites = keyof _ChatAdminsWithInvites
   > = ToUnderscore<_ChatAdminsWithInvites, K>;
-  type _ChatAdminsWithInvites = {
+  export type _ChatAdminsWithInvites = {
     "messages.chatAdminsWithInvites": {
       admins: global.ChatAdminWithInvites[];  // Vector<ChatAdminWithInvites>
       users: global.User[];                   // Vector<User>
@@ -6753,7 +6753,7 @@ export namespace messages {
   export type CheckedHistoryImportPeer<
     K extends keyof _CheckedHistoryImportPeer = keyof _CheckedHistoryImportPeer
   > = ToUnderscore<_CheckedHistoryImportPeer, K>;
-  type _CheckedHistoryImportPeer = {
+  export type _CheckedHistoryImportPeer = {
     "messages.checkedHistoryImportPeer": {
       confirm_text: string;                   // string
     },
@@ -6763,7 +6763,7 @@ export namespace messages {
   export type SponsoredMessages<
     K extends keyof _SponsoredMessages = keyof _SponsoredMessages
   > = ToUnderscore<_SponsoredMessages, K>;
-  type _SponsoredMessages = {
+  export type _SponsoredMessages = {
     "messages.sponsoredMessages": {
       messages: global.SponsoredMessage[];    // Vector<SponsoredMessage>
       chats: global.Chat[];                   // Vector<Chat>
@@ -6775,7 +6775,7 @@ export namespace messages {
   export type SearchResultsCalendar<
     K extends keyof _SearchResultsCalendar = keyof _SearchResultsCalendar
   > = ToUnderscore<_SearchResultsCalendar, K>;
-  type _SearchResultsCalendar = {
+  export type _SearchResultsCalendar = {
     "messages.searchResultsCalendar": {
       inexact?: true;                         // flags.0?true
       count: number;                          // int
@@ -6793,7 +6793,7 @@ export namespace messages {
   export type SearchResultsPositions<
     K extends keyof _SearchResultsPositions = keyof _SearchResultsPositions
   > = ToUnderscore<_SearchResultsPositions, K>;
-  type _SearchResultsPositions = {
+  export type _SearchResultsPositions = {
     "messages.searchResultsPositions": {
       count: number;                          // int
       positions: global.SearchResultsPosition[]; // Vector<SearchResultsPosition>
@@ -6804,7 +6804,7 @@ export namespace messages {
   export type PeerSettings<
     K extends keyof _PeerSettings = keyof _PeerSettings
   > = ToUnderscore<_PeerSettings, K>;
-  type _PeerSettings = {
+  export type _PeerSettings = {
     "messages.peerSettings": {
       settings: global.PeerSettings;          // PeerSettings
       chats: global.Chat[];                   // Vector<Chat>
@@ -6816,7 +6816,7 @@ export namespace messages {
   export type MessageReactionsList<
     K extends keyof _MessageReactionsList = keyof _MessageReactionsList
   > = ToUnderscore<_MessageReactionsList, K>;
-  type _MessageReactionsList = {
+  export type _MessageReactionsList = {
     "messages.messageReactionsList": {
       count: number;                          // int
       reactions: global.MessagePeerReaction[]; // Vector<MessagePeerReaction>
@@ -6830,7 +6830,7 @@ export namespace messages {
   export type AvailableReactions<
     K extends keyof _AvailableReactions = keyof _AvailableReactions
   > = ToUnderscore<_AvailableReactions, K>;
-  type _AvailableReactions = {
+  export type _AvailableReactions = {
     "messages.availableReactionsNotModified": {}
     "messages.availableReactions": {
       hash: number;                           // int
@@ -6843,7 +6843,7 @@ export namespace messages {
   export type TranslatedText<
     K extends keyof _TranslatedText = keyof _TranslatedText
   > = ToUnderscore<_TranslatedText, K>;
-  type _TranslatedText = {
+  export type _TranslatedText = {
     "messages.translateNoResult": {}
     "messages.translateResultText": {
       text: string;                           // string
@@ -6858,7 +6858,7 @@ export namespace updates {
   export type State<
     K extends keyof _State = keyof _State
   > = ToUnderscore<_State, K>;
-  type _State = {
+  export type _State = {
     "updates.state": {
       pts: number;                            // int
       qts: number;                            // int
@@ -6872,7 +6872,7 @@ export namespace updates {
   export type Difference<
     K extends keyof _Difference = keyof _Difference
   > = ToUnderscore<_Difference, K>;
-  type _Difference = {
+  export type _Difference = {
     "updates.differenceEmpty": {
       date: number;                           // int
       seq: number;                            // int
@@ -6905,7 +6905,7 @@ export namespace updates {
   export type ChannelDifference<
     K extends keyof _ChannelDifference = keyof _ChannelDifference
   > = ToUnderscore<_ChannelDifference, K>;
-  type _ChannelDifference = {
+  export type _ChannelDifference = {
     "updates.channelDifferenceEmpty": {
       final?: true;                           // flags.0?true
       pts: number;                            // int
@@ -6939,7 +6939,7 @@ export namespace photos {
   export type Photos<
     K extends keyof _Photos = keyof _Photos
   > = ToUnderscore<_Photos, K>;
-  type _Photos = {
+  export type _Photos = {
     "photos.photos": {
       photos: global.Photo[];                 // Vector<Photo>
       users: global.User[];                   // Vector<User>
@@ -6956,7 +6956,7 @@ export namespace photos {
   export type Photo<
     K extends keyof _Photo = keyof _Photo
   > = ToUnderscore<_Photo, K>;
-  type _Photo = {
+  export type _Photo = {
     "photos.photo": {
       photo: global.Photo;                    // Photo
       users: global.User[];                   // Vector<User>
@@ -6970,7 +6970,7 @@ export namespace upload {
   export type File<
     K extends keyof _File = keyof _File
   > = ToUnderscore<_File, K>;
-  type _File = {
+  export type _File = {
     "upload.file": {
       type: storage.FileType;                 // storage.FileType
       mtime: number;                          // int
@@ -6990,7 +6990,7 @@ export namespace upload {
   export type WebFile<
     K extends keyof _WebFile = keyof _WebFile
   > = ToUnderscore<_WebFile, K>;
-  type _WebFile = {
+  export type _WebFile = {
     "upload.webFile": {
       size: number;                           // int
       mime_type: string;                      // string
@@ -7004,7 +7004,7 @@ export namespace upload {
   export type CdnFile<
     K extends keyof _CdnFile = keyof _CdnFile
   > = ToUnderscore<_CdnFile, K>;
-  type _CdnFile = {
+  export type _CdnFile = {
     "upload.cdnFileReuploadNeeded": {
       request_token: BufferSource;            // bytes
     },
@@ -7021,7 +7021,7 @@ export namespace help {
   export type AppUpdate<
     K extends keyof _AppUpdate = keyof _AppUpdate
   > = ToUnderscore<_AppUpdate, K>;
-  type _AppUpdate = {
+  export type _AppUpdate = {
     "help.appUpdate": {
       can_not_skip?: true;                    // flags.0?true
       id: number;                             // int
@@ -7040,7 +7040,7 @@ export namespace help {
   export type InviteText<
     K extends keyof _InviteText = keyof _InviteText
   > = ToUnderscore<_InviteText, K>;
-  type _InviteText = {
+  export type _InviteText = {
     "help.inviteText": {
       message: string;                        // string
     },
@@ -7050,7 +7050,7 @@ export namespace help {
   export type Support<
     K extends keyof _Support = keyof _Support
   > = ToUnderscore<_Support, K>;
-  type _Support = {
+  export type _Support = {
     "help.support": {
       phone_number: string;                   // string
       user: global.User;                      // User
@@ -7061,7 +7061,7 @@ export namespace help {
   export type TermsOfService<
     K extends keyof _TermsOfService = keyof _TermsOfService
   > = ToUnderscore<_TermsOfService, K>;
-  type _TermsOfService = {
+  export type _TermsOfService = {
     "help.termsOfService": {
       popup?: true;                           // flags.0?true
       id: global.DataJSON;                    // DataJSON
@@ -7075,7 +7075,7 @@ export namespace help {
   export type RecentMeUrls<
     K extends keyof _RecentMeUrls = keyof _RecentMeUrls
   > = ToUnderscore<_RecentMeUrls, K>;
-  type _RecentMeUrls = {
+  export type _RecentMeUrls = {
     "help.recentMeUrls": {
       urls: global.RecentMeUrl[];             // Vector<RecentMeUrl>
       chats: global.Chat[];                   // Vector<Chat>
@@ -7087,7 +7087,7 @@ export namespace help {
   export type TermsOfServiceUpdate<
     K extends keyof _TermsOfServiceUpdate = keyof _TermsOfServiceUpdate
   > = ToUnderscore<_TermsOfServiceUpdate, K>;
-  type _TermsOfServiceUpdate = {
+  export type _TermsOfServiceUpdate = {
     "help.termsOfServiceUpdateEmpty": {
       expires: number;                        // int
     },
@@ -7102,7 +7102,7 @@ export namespace help {
   export type DeepLinkInfo<
     K extends keyof _DeepLinkInfo = keyof _DeepLinkInfo
   > = ToUnderscore<_DeepLinkInfo, K>;
-  type _DeepLinkInfo = {
+  export type _DeepLinkInfo = {
     "help.deepLinkInfoEmpty": {}
     "help.deepLinkInfo": {
       update_app?: true;                      // flags.0?true
@@ -7116,7 +7116,7 @@ export namespace help {
   export type PassportConfig<
     K extends keyof _PassportConfig = keyof _PassportConfig
   > = ToUnderscore<_PassportConfig, K>;
-  type _PassportConfig = {
+  export type _PassportConfig = {
     "help.passportConfigNotModified": {}
     "help.passportConfig": {
       hash: number;                           // int
@@ -7129,7 +7129,7 @@ export namespace help {
   export type SupportName<
     K extends keyof _SupportName = keyof _SupportName
   > = ToUnderscore<_SupportName, K>;
-  type _SupportName = {
+  export type _SupportName = {
     "help.supportName": {
       name: string;                           // string
     },
@@ -7139,7 +7139,7 @@ export namespace help {
   export type UserInfo<
     K extends keyof _UserInfo = keyof _UserInfo
   > = ToUnderscore<_UserInfo, K>;
-  type _UserInfo = {
+  export type _UserInfo = {
     "help.userInfoEmpty": {}
     "help.userInfo": {
       message: string;                        // string
@@ -7154,7 +7154,7 @@ export namespace help {
   export type PromoData<
     K extends keyof _PromoData = keyof _PromoData
   > = ToUnderscore<_PromoData, K>;
-  type _PromoData = {
+  export type _PromoData = {
     "help.promoDataEmpty": {
       expires: number;                        // int
     },
@@ -7174,7 +7174,7 @@ export namespace help {
   export type CountryCode<
     K extends keyof _CountryCode = keyof _CountryCode
   > = ToUnderscore<_CountryCode, K>;
-  type _CountryCode = {
+  export type _CountryCode = {
     "help.countryCode": {
       country_code: string;                   // string
       prefixes?: string[];                    // flags.0?Vector<string>
@@ -7186,7 +7186,7 @@ export namespace help {
   export type Country<
     K extends keyof _Country = keyof _Country
   > = ToUnderscore<_Country, K>;
-  type _Country = {
+  export type _Country = {
     "help.country": {
       hidden?: true;                          // flags.0?true
       iso2: string;                           // string
@@ -7200,7 +7200,7 @@ export namespace help {
   export type CountriesList<
     K extends keyof _CountriesList = keyof _CountriesList
   > = ToUnderscore<_CountriesList, K>;
-  type _CountriesList = {
+  export type _CountriesList = {
     "help.countriesListNotModified": {}
     "help.countriesList": {
       countries: help.Country[];              // Vector<help.Country>
@@ -7216,7 +7216,7 @@ export namespace account {
   export type PrivacyRules<
     K extends keyof _PrivacyRules = keyof _PrivacyRules
   > = ToUnderscore<_PrivacyRules, K>;
-  type _PrivacyRules = {
+  export type _PrivacyRules = {
     "account.privacyRules": {
       rules: global.PrivacyRule[];            // Vector<PrivacyRule>
       chats: global.Chat[];                   // Vector<Chat>
@@ -7228,7 +7228,7 @@ export namespace account {
   export type Authorizations<
     K extends keyof _Authorizations = keyof _Authorizations
   > = ToUnderscore<_Authorizations, K>;
-  type _Authorizations = {
+  export type _Authorizations = {
     "account.authorizations": {
       authorization_ttl_days: number;         // int
       authorizations: global.Authorization[]; // Vector<Authorization>
@@ -7239,7 +7239,7 @@ export namespace account {
   export type Password<
     K extends keyof _Password = keyof _Password
   > = ToUnderscore<_Password, K>;
-  type _Password = {
+  export type _Password = {
     "account.password": {
       has_recovery?: true;                    // flags.0?true
       has_secure_values?: true;               // flags.1?true
@@ -7260,7 +7260,7 @@ export namespace account {
   export type PasswordSettings<
     K extends keyof _PasswordSettings = keyof _PasswordSettings
   > = ToUnderscore<_PasswordSettings, K>;
-  type _PasswordSettings = {
+  export type _PasswordSettings = {
     "account.passwordSettings": {
       email?: string;                         // flags.0?string
       secure_settings?: global.SecureSecretSettings; // flags.1?SecureSecretSettings
@@ -7271,7 +7271,7 @@ export namespace account {
   export type PasswordInputSettings<
     K extends keyof _PasswordInputSettings = keyof _PasswordInputSettings
   > = ToUnderscore<_PasswordInputSettings, K>;
-  type _PasswordInputSettings = {
+  export type _PasswordInputSettings = {
     "account.passwordInputSettings": {
       new_algo?: global.PasswordKdfAlgo;      // flags.0?PasswordKdfAlgo
       new_password_hash?: BufferSource;       // flags.0?bytes
@@ -7285,7 +7285,7 @@ export namespace account {
   export type TmpPassword<
     K extends keyof _TmpPassword = keyof _TmpPassword
   > = ToUnderscore<_TmpPassword, K>;
-  type _TmpPassword = {
+  export type _TmpPassword = {
     "account.tmpPassword": {
       tmp_password: BufferSource;             // bytes
       valid_until: number;                    // int
@@ -7296,7 +7296,7 @@ export namespace account {
   export type WebAuthorizations<
     K extends keyof _WebAuthorizations = keyof _WebAuthorizations
   > = ToUnderscore<_WebAuthorizations, K>;
-  type _WebAuthorizations = {
+  export type _WebAuthorizations = {
     "account.webAuthorizations": {
       authorizations: global.WebAuthorization[]; // Vector<WebAuthorization>
       users: global.User[];                   // Vector<User>
@@ -7307,7 +7307,7 @@ export namespace account {
   export type AuthorizationForm<
     K extends keyof _AuthorizationForm = keyof _AuthorizationForm
   > = ToUnderscore<_AuthorizationForm, K>;
-  type _AuthorizationForm = {
+  export type _AuthorizationForm = {
     "account.authorizationForm": {
       required_types: global.SecureRequiredType[]; // Vector<SecureRequiredType>
       values: global.SecureValue[];           // Vector<SecureValue>
@@ -7321,7 +7321,7 @@ export namespace account {
   export type SentEmailCode<
     K extends keyof _SentEmailCode = keyof _SentEmailCode
   > = ToUnderscore<_SentEmailCode, K>;
-  type _SentEmailCode = {
+  export type _SentEmailCode = {
     "account.sentEmailCode": {
       email_pattern: string;                  // string
       length: number;                         // int
@@ -7332,7 +7332,7 @@ export namespace account {
   export type Takeout<
     K extends keyof _Takeout = keyof _Takeout
   > = ToUnderscore<_Takeout, K>;
-  type _Takeout = {
+  export type _Takeout = {
     "account.takeout": {
       id: bigint;                             // long
     },
@@ -7342,7 +7342,7 @@ export namespace account {
   export type WallPapers<
     K extends keyof _WallPapers = keyof _WallPapers
   > = ToUnderscore<_WallPapers, K>;
-  type _WallPapers = {
+  export type _WallPapers = {
     "account.wallPapersNotModified": {}
     "account.wallPapers": {
       hash: bigint;                           // long
@@ -7355,7 +7355,7 @@ export namespace account {
   export type AutoDownloadSettings<
     K extends keyof _AutoDownloadSettings = keyof _AutoDownloadSettings
   > = ToUnderscore<_AutoDownloadSettings, K>;
-  type _AutoDownloadSettings = {
+  export type _AutoDownloadSettings = {
     "account.autoDownloadSettings": {
       low: global.AutoDownloadSettings;       // AutoDownloadSettings
       medium: global.AutoDownloadSettings;    // AutoDownloadSettings
@@ -7367,7 +7367,7 @@ export namespace account {
   export type Themes<
     K extends keyof _Themes = keyof _Themes
   > = ToUnderscore<_Themes, K>;
-  type _Themes = {
+  export type _Themes = {
     "account.themesNotModified": {}
     "account.themes": {
       hash: bigint;                           // long
@@ -7380,7 +7380,7 @@ export namespace account {
   export type ContentSettings<
     K extends keyof _ContentSettings = keyof _ContentSettings
   > = ToUnderscore<_ContentSettings, K>;
-  type _ContentSettings = {
+  export type _ContentSettings = {
     "account.contentSettings": {
       sensitive_enabled?: true;               // flags.0?true
       sensitive_can_change?: true;            // flags.1?true
@@ -7391,7 +7391,7 @@ export namespace account {
   export type ResetPasswordResult<
     K extends keyof _ResetPasswordResult = keyof _ResetPasswordResult
   > = ToUnderscore<_ResetPasswordResult, K>;
-  type _ResetPasswordResult = {
+  export type _ResetPasswordResult = {
     "account.resetPasswordFailedWait": {
       retry_date: number;                     // int
     },
@@ -7410,7 +7410,7 @@ export namespace channels {
   export type ChannelParticipants<
     K extends keyof _ChannelParticipants = keyof _ChannelParticipants
   > = ToUnderscore<_ChannelParticipants, K>;
-  type _ChannelParticipants = {
+  export type _ChannelParticipants = {
     "channels.channelParticipants": {
       count: number;                          // int
       participants: global.ChannelParticipant[]; // Vector<ChannelParticipant>
@@ -7425,7 +7425,7 @@ export namespace channels {
   export type ChannelParticipant<
     K extends keyof _ChannelParticipant = keyof _ChannelParticipant
   > = ToUnderscore<_ChannelParticipant, K>;
-  type _ChannelParticipant = {
+  export type _ChannelParticipant = {
     "channels.channelParticipant": {
       participant: global.ChannelParticipant; // ChannelParticipant
       chats: global.Chat[];                   // Vector<Chat>
@@ -7437,7 +7437,7 @@ export namespace channels {
   export type AdminLogResults<
     K extends keyof _AdminLogResults = keyof _AdminLogResults
   > = ToUnderscore<_AdminLogResults, K>;
-  type _AdminLogResults = {
+  export type _AdminLogResults = {
     "channels.adminLogResults": {
       events: global.ChannelAdminLogEvent[];  // Vector<ChannelAdminLogEvent>
       chats: global.Chat[];                   // Vector<Chat>
@@ -7449,7 +7449,7 @@ export namespace channels {
   export type SendAsPeers<
     K extends keyof _SendAsPeers = keyof _SendAsPeers
   > = ToUnderscore<_SendAsPeers, K>;
-  type _SendAsPeers = {
+  export type _SendAsPeers = {
     "channels.sendAsPeers": {
       peers: global.Peer[];                   // Vector<Peer>
       chats: global.Chat[];                   // Vector<Chat>
@@ -7464,7 +7464,7 @@ export namespace payments {
   export type PaymentForm<
     K extends keyof _PaymentForm = keyof _PaymentForm
   > = ToUnderscore<_PaymentForm, K>;
-  type _PaymentForm = {
+  export type _PaymentForm = {
     "payments.paymentForm": {
       can_save_credentials?: true;            // flags.2?true
       password_missing?: true;                // flags.3?true
@@ -7485,7 +7485,7 @@ export namespace payments {
   export type ValidatedRequestedInfo<
     K extends keyof _ValidatedRequestedInfo = keyof _ValidatedRequestedInfo
   > = ToUnderscore<_ValidatedRequestedInfo, K>;
-  type _ValidatedRequestedInfo = {
+  export type _ValidatedRequestedInfo = {
     "payments.validatedRequestedInfo": {
       id?: string;                            // flags.0?string
       shipping_options?: global.ShippingOption[]; // flags.1?Vector<ShippingOption>
@@ -7496,7 +7496,7 @@ export namespace payments {
   export type PaymentResult<
     K extends keyof _PaymentResult = keyof _PaymentResult
   > = ToUnderscore<_PaymentResult, K>;
-  type _PaymentResult = {
+  export type _PaymentResult = {
     "payments.paymentResult": {
       updates: global.Updates;                // Updates
     },
@@ -7510,7 +7510,7 @@ export namespace payments {
   export type PaymentReceipt<
     K extends keyof _PaymentReceipt = keyof _PaymentReceipt
   > = ToUnderscore<_PaymentReceipt, K>;
-  type _PaymentReceipt = {
+  export type _PaymentReceipt = {
     "payments.paymentReceipt": {
       date: number;                           // int
       bot_id: bigint;                         // long
@@ -7533,7 +7533,7 @@ export namespace payments {
   export type SavedInfo<
     K extends keyof _SavedInfo = keyof _SavedInfo
   > = ToUnderscore<_SavedInfo, K>;
-  type _SavedInfo = {
+  export type _SavedInfo = {
     "payments.savedInfo": {
       has_saved_credentials?: true;           // flags.1?true
       saved_info?: global.PaymentRequestedInfo; // flags.0?PaymentRequestedInfo
@@ -7544,7 +7544,7 @@ export namespace payments {
   export type BankCardData<
     K extends keyof _BankCardData = keyof _BankCardData
   > = ToUnderscore<_BankCardData, K>;
-  type _BankCardData = {
+  export type _BankCardData = {
     "payments.bankCardData": {
       title: string;                          // string
       open_urls: global.BankCardOpenUrl[];    // Vector<BankCardOpenUrl>
@@ -7558,7 +7558,7 @@ export namespace phone {
   export type PhoneCall<
     K extends keyof _PhoneCall = keyof _PhoneCall
   > = ToUnderscore<_PhoneCall, K>;
-  type _PhoneCall = {
+  export type _PhoneCall = {
     "phone.phoneCall": {
       phone_call: global.PhoneCall;           // PhoneCall
       users: global.User[];                   // Vector<User>
@@ -7569,7 +7569,7 @@ export namespace phone {
   export type GroupCall<
     K extends keyof _GroupCall = keyof _GroupCall
   > = ToUnderscore<_GroupCall, K>;
-  type _GroupCall = {
+  export type _GroupCall = {
     "phone.groupCall": {
       call: global.GroupCall;                 // GroupCall
       participants: global.GroupCallParticipant[]; // Vector<GroupCallParticipant>
@@ -7583,7 +7583,7 @@ export namespace phone {
   export type GroupParticipants<
     K extends keyof _GroupParticipants = keyof _GroupParticipants
   > = ToUnderscore<_GroupParticipants, K>;
-  type _GroupParticipants = {
+  export type _GroupParticipants = {
     "phone.groupParticipants": {
       count: number;                          // int
       participants: global.GroupCallParticipant[]; // Vector<GroupCallParticipant>
@@ -7598,7 +7598,7 @@ export namespace phone {
   export type JoinAsPeers<
     K extends keyof _JoinAsPeers = keyof _JoinAsPeers
   > = ToUnderscore<_JoinAsPeers, K>;
-  type _JoinAsPeers = {
+  export type _JoinAsPeers = {
     "phone.joinAsPeers": {
       peers: global.Peer[];                   // Vector<Peer>
       chats: global.Chat[];                   // Vector<Chat>
@@ -7610,7 +7610,7 @@ export namespace phone {
   export type ExportedGroupCallInvite<
     K extends keyof _ExportedGroupCallInvite = keyof _ExportedGroupCallInvite
   > = ToUnderscore<_ExportedGroupCallInvite, K>;
-  type _ExportedGroupCallInvite = {
+  export type _ExportedGroupCallInvite = {
     "phone.exportedGroupCallInvite": {
       link: string;                           // string
     },
@@ -7623,7 +7623,7 @@ export namespace stats {
   export type BroadcastStats<
     K extends keyof _BroadcastStats = keyof _BroadcastStats
   > = ToUnderscore<_BroadcastStats, K>;
-  type _BroadcastStats = {
+  export type _BroadcastStats = {
     "stats.broadcastStats": {
       period: global.StatsDateRangeDays;      // StatsDateRangeDays
       followers: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
@@ -7647,7 +7647,7 @@ export namespace stats {
   export type MegagroupStats<
     K extends keyof _MegagroupStats = keyof _MegagroupStats
   > = ToUnderscore<_MegagroupStats, K>;
-  type _MegagroupStats = {
+  export type _MegagroupStats = {
     "stats.megagroupStats": {
       period: global.StatsDateRangeDays;      // StatsDateRangeDays
       members: global.StatsAbsValueAndPrev;   // StatsAbsValueAndPrev
@@ -7673,7 +7673,7 @@ export namespace stats {
   export type MessageStats<
     K extends keyof _MessageStats = keyof _MessageStats
   > = ToUnderscore<_MessageStats, K>;
-  type _MessageStats = {
+  export type _MessageStats = {
     "stats.messageStats": {
       views_graph: global.StatsGraph;         // StatsGraph
     },
@@ -7686,7 +7686,7 @@ export namespace stickers {
   export type SuggestedShortName<
     K extends keyof _SuggestedShortName = keyof _SuggestedShortName
   > = ToUnderscore<_SuggestedShortName, K>;
-  type _SuggestedShortName = {
+  export type _SuggestedShortName = {
     "stickers.suggestedShortName": {
       short_name: string;                     // string
     },
@@ -7699,7 +7699,7 @@ export namespace users {
   export type UserFull<
     K extends keyof _UserFull = keyof _UserFull
   > = ToUnderscore<_UserFull, K>;
-  type _UserFull = {
+  export type _UserFull = {
     "users.userFull": {
       full_user: global.UserFull;             // UserFull
       chats: global.Chat[];                   // Vector<Chat>
