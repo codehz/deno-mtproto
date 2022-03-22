@@ -165,7 +165,12 @@ class QueueHandler<T> {
   }
 }
 
-export default class RPC extends EventEmitter<api._Update> {
+type Events = api._Update & {
+  terminate: {};
+  authorize: { resolve?: Promise<void> };
+};
+
+export default class RPC extends EventEmitter<Events> {
   #api_id: number;
   #api_hash: string;
   #environment_information: EnvironmentInformation;
@@ -186,6 +191,10 @@ export default class RPC extends EventEmitter<api._Update> {
     }
     await this.#transport.send(msg);
   });
+
+  get dcid() {
+    return this.#dcid;
+  }
 
   #send(packet: Uint8Array) {
     return this.#send_queue.enqueue(packet);
@@ -262,6 +271,7 @@ export default class RPC extends EventEmitter<api._Update> {
   close(e?: any) {
     if (this.#state == "disconnected") return;
     const suberror = new Error("rpc failed", { cause: e });
+    this.emit("terminate", {});
     this.#send_queue.stop(suberror);
     this.#state = "disconnected";
     this.#transport.close();
@@ -509,6 +519,7 @@ export default class RPC extends EventEmitter<api._Update> {
         }
         const res = decompressObject(data.result);
         if (typeof res == "object" && res._ == "mt.rpc_error") {
+          this.#waitlist.delete(data.req_msg_id);
           const { error_message } = res as mt.RpcError;
           const matched = /FLOOD_WAIT_(\d+)/.exec(error_message);
           if (matched) {
@@ -516,9 +527,32 @@ export default class RPC extends EventEmitter<api._Update> {
             // console.log("FLOOD", waittime);
             this.#flood_wait = waittime;
             this.#waitlist.delete(data.req_msg_id);
-            const newid = await this.#send_encrypted(msg.packet);
-            this.#waitlist.set(newid, msg);
+            (async () => {
+              try {
+                const newid = await this.#send_encrypted(msg.packet);
+                this.#waitlist.set(newid, msg);
+              } catch (e) {
+                msg.resolver.reject(e);
+                this.#handleerr(e);
+              }
+            })();
             return;
+          } else if (error_message === "AUTH_KEY_UNREGISTERED") {
+            let obj: { resolve?: Promise<void> } = {};
+            this.emit("authorize", obj);
+            if (obj.resolve) {
+              (async (resolve) => {
+                try {
+                  await resolve;
+                  const newid = await this.#send_encrypted(msg.packet);
+                  this.#waitlist.set(newid, msg);
+                } catch (e) {
+                  msg.resolver.reject(e);
+                  this.#handleerr(e);
+                }
+              })(obj.resolve);
+              return;
+            }
           }
           msg.resolver.resolve(err(error_message));
         } else {
@@ -539,7 +573,7 @@ export default class RPC extends EventEmitter<api._Update> {
           const server_time = +(msgid >> 32n).toString();
           const offset = (Date.now() / 1000) - server_time;
           this.#setitem("time_offset", (this.#session.offset = offset) + "");
-          await this.#resend_packet(data.bad_msg_id);
+          this.#resend_packet(data.bad_msg_id).catch(this.#handleerr);
           return;
         }
         // TODO: Better handling

@@ -52,7 +52,7 @@ export async function sendCode(
       if (sent.error as string == "SESSION_PASSWORD_NEEDED") {
         return await login2fa(rpc, ui);
       } else if ((mig_dc = parse_error("PHONE_MIGRATE_", sent.error)) != null) {
-        proto.set_default_dc(mig_dc);
+        proto.default_dc = mig_dc;
         continue;
       } else if (sent.error == "AUTH_RESTART") {
         continue;

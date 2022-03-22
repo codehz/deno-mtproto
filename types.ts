@@ -1,6 +1,6 @@
 import type { ToUnderscore } from "mtproto/tl/types.ts";
-import type { DCIdentifier } from "mtproto/common/dc.ts";
 import type { MTStorage } from "mtproto/storage/types.ts";
+import type RPC from "./rpc/mod.ts";
 
 export type TransportEvents = {
   error: { code: number };
@@ -48,4 +48,5 @@ export interface MTProtoOptions {
   transport_factory: TransportFactory;
   storage?: MTStorage;
   ipv6_policy?: IPv6Policy;
+  setup_rpc?: (rpc: RPC) => void;
 }

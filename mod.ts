@@ -33,6 +33,7 @@ export default class MTProto {
   #connections = new Map<DCIdentifier, RPC>();
   #dclist: api.DcOption[] = [];
   #ipv6: IPv6Policy;
+  #setup_rpc?: (rpc: RPC) => void;
 
   #setting_get(key: string) {
     return this.#storage.get({ "_": "global" }).get(key);
@@ -56,6 +57,7 @@ export default class MTProto {
       environment,
       storage = new KVStorageAdapter(),
       ipv6_policy = "both",
+      setup_rpc,
     }: MTProtoOptions,
   ) {
     this.#api_id = api_id;
@@ -76,6 +78,7 @@ export default class MTProto {
       port: this.#initdc.port,
     });
     this.#ipv6 = ipv6_policy;
+    this.#setup_rpc = setup_rpc;
   }
 
   async init() {
@@ -84,7 +87,7 @@ export default class MTProto {
     this.#dclist = config.dc_options;
   }
 
-  set_default_dc(dcid: number) {
+  set default_dc(dcid: number) {
     let founds = this.#dclist.filter(
       ({ cdn, media_only, id, ipv6, tcpo_only }) => {
         if (id != dcid || tcpo_only) return false;
@@ -104,6 +107,10 @@ export default class MTProto {
     }
   }
 
+  get default_dc() {
+    return this.#initdc.id;
+  }
+
   get_dc_id(id: number, type: DCType = "main") {
     return toDCIdentifier({
       id,
@@ -113,7 +120,7 @@ export default class MTProto {
   }
 
   async rpc(
-    dcid: DCIdentifier = this.get_dc_id(this.#initdc.id),
+    dcid: DCIdentifier = this.get_dc_id(this.default_dc)
   ): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
@@ -144,7 +151,9 @@ export default class MTProto {
           this.#api_hash,
           this.#environment,
         );
+        rpc.once("terminate", () => this.#connections.delete(dcid));
         this.#connections.set(dcid, rpc);
+        this.#setup_rpc?.(rpc);
         return rpc;
       } catch (e) {
         lasterr = e;
