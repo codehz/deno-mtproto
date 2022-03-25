@@ -6,6 +6,7 @@ import {
   TransportFactory,
 } from "mtproto/types.ts";
 import { todv } from "mtproto/common/utils.ts";
+import { get_address } from "../dcmap.ts";
 
 class BufferSync {
   #buffer: Uint8Array | undefined;
@@ -104,8 +105,13 @@ export class WebSocketStreamTransport implements Transport {
 export default function createFactory(
   codec: () => PacketCodec,
 ): TransportFactory {
-  return async (ip, port) => {
-    const addr = (port == 443 ? "wss" : "ws") + "://" + ip + ":" + port;
+  return async ({ id, port, test }) => {
+    const addr = get_address(id, {
+      tls: port == 443,
+      test,
+      cors: true,
+      websocket: true,
+    });
     const stream = new WebSocketStream(addr);
     try {
       const conn = await stream.connection;

@@ -24,7 +24,7 @@ export interface PacketCodec {
   read_packet(reader: Deno.Reader): AsyncIterable<Uint8Array>;
 }
 
-export type TransportFactory = (ip: string, port: number) => Promise<Transport>;
+export type TransportFactory = (info: InitDC) => Promise<Transport>;
 
 export interface InitDC {
   test: boolean;

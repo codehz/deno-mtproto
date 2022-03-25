@@ -8,6 +8,7 @@ import {
 import { concat_array, todv } from "mtproto/common/utils.ts";
 
 import Resolver from "mtproto/common/resolver.ts";
+import { get_address } from "../dcmap.ts";
 
 class PendingRead {
   #buffer: Uint8Array;
@@ -43,6 +44,7 @@ class PendingRead {
 class WebSocketWrapper implements Deno.Reader {
   #buffer: Uint8Array | undefined;
   #conn: WebSocket;
+  #reject: ((e: any) => void) | undefined;
   #pending: PendingRead | undefined;
 
   constructor(conn: WebSocket) {
@@ -59,17 +61,18 @@ class WebSocketWrapper implements Deno.Reader {
         this.#buffer = u8;
       }
     };
-    this.#conn.onerror = (e) => {
-      this.#pending?.reject(e);
-    };
-    this.#conn.onclose = () => {
+    this.#conn.onclose = (e) => {
       this.#pending?.zero();
+      this.#reject?.(new Error("closed: " + e.code));
       this.#pending = undefined;
     };
   }
 
   connect(): Promise<void> {
-    return new Promise<void>((resolve) => this.#conn.onopen = () => resolve());
+    return new Promise<void>((resolve, reject) => {
+      this.#conn.onopen = () => resolve();
+      this.#reject = reject;
+    });
   }
 
   async read(p: Uint8Array): Promise<number | null> {
@@ -134,17 +137,22 @@ export class WebSocketTransport implements Transport {
 export default function createFactory(
   codec: () => PacketCodec,
 ): TransportFactory {
-  return async (ip, port) => {
-    const addr = (port == 443 ? "wss" : "ws") + "://" + ip + ":" + port;
+  return async ({ id, port, test }) => {
+    const addr = get_address(id, {
+      tls: port == 443,
+      test,
+      cors: true,
+      websocket: true,
+    });
     const conn = new WebSocketWrapper(new WebSocket(addr));
-    await conn.connect();
     try {
+      await conn.connect();
       const transport = new WebSocketTransport(conn, codec());
       await transport.init;
       return transport;
     } catch (e) {
       conn.close();
-      throw e;
+      throw new Error("Failed to connect " + addr, { cause: e });
     }
   };
 }

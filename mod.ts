@@ -23,6 +23,15 @@ const testdc: InitDC = {
   port: 443,
 };
 
+function toInitDC(dc: api.DcOption, test: boolean): InitDC {
+  return {
+    id: dc.id,
+    ip: dc.ip_address,
+    port: dc.port,
+    test,
+  };
+}
+
 export default class MTProto {
   #api_id: number;
   #api_hash: string;
@@ -120,7 +129,7 @@ export default class MTProto {
   }
 
   async rpc(
-    dcid: DCIdentifier = this.get_dc_id(this.default_dc)
+    dcid: DCIdentifier = this.get_dc_id(this.default_dc),
   ): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
@@ -140,8 +149,7 @@ export default class MTProto {
     for (const found of founds) {
       try {
         const connection = await this.#transport_factory(
-          found.ip_address,
-          found.port,
+          toInitDC(found, this.#initdc.test),
         );
         const rpc = new RPC(
           connection,

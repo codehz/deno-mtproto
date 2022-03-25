@@ -61,7 +61,7 @@ export class DenoTCP implements Transport {
 export default function createFactory(
   codec: () => PacketCodec,
 ): TransportFactory {
-  return async (ip, port) => {
+  return async ({ ip, port }) => {
     const conn = await Deno.connect({ hostname: ip, port });
     try {
       const transport = new DenoTCP(conn, codec());
