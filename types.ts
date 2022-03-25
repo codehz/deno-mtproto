@@ -19,6 +19,7 @@ export interface Transport extends Deno.Closer {
 export interface PacketCodec {
   readonly init?: Uint8Array;
   readonly obfuscate_tag?: Uint8Array;
+  readonly obfuscated?: true;
   encode_packet(data: Uint8Array): Iterable<Uint8Array>;
   read_packet(reader: Deno.Reader): AsyncIterable<Uint8Array>;
 }

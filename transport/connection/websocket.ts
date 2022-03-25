@@ -11,7 +11,7 @@ class BufferSync {
   #buffer: Uint8Array | undefined;
 
   get available() {
-    return this.#buffer == undefined;
+    return this.#buffer != undefined;
   }
 
   fill(output: Uint8Array) {
@@ -43,7 +43,7 @@ export class WebSocketTransport implements Transport {
   #codec: PacketCodec;
   #reader: ReadableStreamDefaultReader<string | Uint8Array>;
   #writer: WritableStreamDefaultWriter<string | Uint8Array>;
-  init?: Promise<any>;
+  init: Promise<any>;
 
   constructor(
     stream: WebSocketStream,
@@ -55,7 +55,10 @@ export class WebSocketTransport implements Transport {
     this.#codec = codec;
     this.#reader = this.#conn.readable.getReader();
     this.#writer = this.#conn.writable.getWriter();
-    if (this.#codec.init) this.init = this.#writer.write(this.#codec.init);
+    if (this.#codec.init == null || !this.#codec.obfuscated) {
+      throw new Error("Obfuscated codec is required for websocket");
+    }
+    this.init = this.#writer.write(this.#codec.init);
   }
 
   async send(packet: Uint8Array): Promise<void> {
@@ -92,6 +95,8 @@ export class WebSocketTransport implements Transport {
     }
   }
   close(): void {
+    if (this.#closed) return;
+    this.#closed = true;
     this.#stream.close();
   }
 }

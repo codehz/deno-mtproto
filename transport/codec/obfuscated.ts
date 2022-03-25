@@ -27,6 +27,7 @@ function gendcnumid(id: DCIdentifier) {
 
 export default class Obfuscated implements PacketCodec {
   init = new Uint8Array(64);
+  readonly obfuscated = true;
   #upper: PacketCodec;
   #enc_aes: CTR;
   #dec_aes: CTR;
