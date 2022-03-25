@@ -36,7 +36,7 @@ class BufferSync {
   }
 }
 
-export class WebSocketTransport implements Transport {
+export class WebSocketStreamTransport implements Transport {
   #closed = false;
   #stream: WebSocketStream;
   #conn: WebSocketConnection;
@@ -109,7 +109,7 @@ export default function createFactory(
     const stream = new WebSocketStream(addr);
     try {
       const conn = await stream.connection;
-      const transport = new WebSocketTransport(stream, conn, codec());
+      const transport = new WebSocketStreamTransport(stream, conn, codec());
       await transport.init;
       return transport;
     } catch (e) {
