@@ -107,47 +107,6 @@ export function frombig(value: bigint, little_endian = false) {
   return new Uint8Array(result);
 }
 
-export function frombig16(value: bigint, little_endian = false) {
-  const ret = new BigUint64Array(2);
-  if (little_endian) {
-    ret[0] = value;
-    ret[1] = value >> 64n;
-  } else {
-    ret[0] = value >> 64n;
-    ret[1] = value;
-  }
-  return new Uint8Array(ret.buffer, ret.byteOffset);
-}
-
-export function frombig32(value: bigint, little_endian = false) {
-  const ret = new BigUint64Array(4);
-  if (little_endian) {
-    ret[0] = value;
-    ret[1] = value >> 64n;
-    ret[2] = value >> 128n;
-    ret[3] = value >> 192n;
-  } else {
-    ret[0] = value >> 192n;
-    ret[1] = value >> 128n;
-    ret[2] = value >> 64n;
-    ret[3] = value;
-  }
-  return new Uint8Array(ret.buffer, ret.byteOffset);
-}
-
-export function frombig128(value: bigint, little_endian = false) {
-  const ret = new Uint8Array(128);
-  const view = todv(ret);
-  for (let i = 0; i < 16; i++) {
-    if (little_endian) {
-      view.setBigUint64(8 * i, value >> (BigInt(i) * 64n), true);
-    } else {
-      view.setBigUint64(8 * i, value >> ((15n - BigInt(i)) * 64n));
-    }
-  }
-  return ret;
-}
-
 export function frombig256(value: bigint, little_endian = false) {
   const ret = new Uint8Array(256);
   const view = todv(ret);
