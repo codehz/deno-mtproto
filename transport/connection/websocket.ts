@@ -144,7 +144,7 @@ export default function createFactory(
       cors: true,
       websocket: true,
     });
-    const conn = new WebSocketWrapper(new WebSocket(addr));
+    const conn = new WebSocketWrapper(new WebSocket(addr, 'binary'));
     try {
       await conn.connect();
       const transport = new WebSocketTransport(conn, codec());

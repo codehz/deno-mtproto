@@ -112,7 +112,7 @@ export default function createFactory(
       cors: true,
       websocket: true,
     });
-    const stream = new WebSocketStream(addr);
+    const stream = new WebSocketStream(addr, { protocols: ["binary"] });
     try {
       const conn = await stream.connection;
       const transport = new WebSocketStreamTransport(stream, conn, codec());
