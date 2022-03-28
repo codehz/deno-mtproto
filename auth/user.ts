@@ -61,32 +61,39 @@ export async function sendCode(
       }
     }
     const phone_code_hash = sent.value.phone_code_hash;
-    const phone_code = await ui.askCode();
-    const sign = await rpc.api.auth.signIn({
-      phone_number,
-      phone_code_hash,
-      phone_code,
-    });
-    if (!sign.ok) {
-      if (sign.error as string == "SESSION_PASSWORD_NEEDED") {
-        return await login2fa(rpc, ui);
-      } else if (sign.error == "PHONE_CODE_EXPIRED") {
-        continue;
-      } else {
-        throw new Error(sign.error);
-      }
-    }
-    if (sign.value._ == "auth.authorizationSignUpRequired") {
-      const signupinfo = await ui.askSignUp();
-      if (!signupinfo) throw new Error("need sign up");
-      const signup = (await rpc.api.auth.signUp({
+    try {
+      const phone_code = await ui.askCode();
+      const sign = await rpc.api.auth.signIn({
         phone_number,
         phone_code_hash,
-        ...signupinfo,
-      })).unwrap();
-      if (signup._ != "auth.authorization") throw new Error("failed to signup");
-      sign.value = signup;
+        phone_code,
+      });
+      if (!sign.ok) {
+        if (sign.error as string == "SESSION_PASSWORD_NEEDED") {
+          return await login2fa(rpc, ui);
+        } else if (sign.error == "PHONE_CODE_EXPIRED") {
+          continue;
+        } else {
+          throw new Error(sign.error);
+        }
+      }
+      if (sign.value._ == "auth.authorizationSignUpRequired") {
+        const signupinfo = await ui.askSignUp();
+        if (!signupinfo) throw new Error("need sign up");
+        const signup = (await rpc.api.auth.signUp({
+          phone_number,
+          phone_code_hash,
+          ...signupinfo,
+        })).unwrap();
+        if (signup._ != "auth.authorization") {
+          throw new Error("failed to signup");
+        }
+        sign.value = signup;
+      }
+      return sign.value;
+    } catch (e) {
+      await rpc.api.auth.cancelCode({ phone_number, phone_code_hash });
+      throw e;
     }
-    return sign.value;
   }
 }
