@@ -24,7 +24,7 @@ class PendingRead {
   }
 
   fill(input: Uint8Array): Uint8Array | undefined {
-    this.#buffer.set(input);
+    this.#buffer.set(input.subarray(0, this.#buffer.length));
     if (input.length > this.#buffer.length) {
       this.#wait.resolve(this.#buffer.length);
       return input.subarray(this.#buffer.length);
