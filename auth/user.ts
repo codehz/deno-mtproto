@@ -1,6 +1,6 @@
 import MTProto from "mtproto";
 import srp from "mtproto/crypto/srp.ts";
-import RPC from "mtproto/rpc/mod.ts";
+import RPC, { RPCError } from "mtproto/rpc/mod.ts";
 import parse_error from "mtproto/common/errparse.ts";
 
 export interface SendCodeUI {
@@ -10,7 +10,7 @@ export interface SendCodeUI {
 }
 
 async function login2fa(rpc: RPC, ui: SendCodeUI) {
-  const passinfo = (await rpc.api.account.getPassword()).unwrap();
+  const passinfo = await rpc.api.account.getPassword();
   if (
     !passinfo.current_algo ||
     passinfo.current_algo._ == "passwordKdfAlgoUnknown"
@@ -23,13 +23,13 @@ async function login2fa(rpc: RPC, ui: SendCodeUI) {
     gb: passinfo.srp_B,
     password,
   });
-  return (await rpc.api.auth.checkPassword({
+  return await rpc.api.auth.checkPassword({
     password: {
       _: "inputCheckPasswordSRP",
       srp_id: passinfo.srp_id!,
       ...srpres,
     },
-  })).unwrap();
+  });
 }
 
 export async function sendCode(
@@ -40,57 +40,67 @@ export async function sendCode(
 ) {
   while (true) {
     const rpc = await proto.rpc();
-    const sent = (await rpc.api.auth.sendCode({
-      phone_number,
-      settings: {
-        _: "codeSettings",
-        logout_tokens,
-      },
-    }));
-    if (!sent.ok) {
-      let mig_dc: number | null;
-      if (sent.error as string == "SESSION_PASSWORD_NEEDED") {
-        return await login2fa(rpc, ui);
-      } else if ((mig_dc = parse_error("PHONE_MIGRATE_", sent.error)) != null) {
-        proto.default_dc = mig_dc;
-        continue;
-      } else if (sent.error == "AUTH_RESTART") {
-        continue;
-      } else {
-        throw new Error(sent.error);
-      }
-    }
-    const phone_code_hash = sent.value.phone_code_hash;
+    let sent;
     try {
-      const phone_code = await ui.askCode();
-      const sign = await rpc.api.auth.signIn({
+      sent = await rpc.api.auth.sendCode({
         phone_number,
-        phone_code_hash,
-        phone_code,
+        settings: {
+          _: "codeSettings",
+          logout_tokens,
+        },
       });
-      if (!sign.ok) {
-        if (sign.error as string == "SESSION_PASSWORD_NEEDED") {
+    } catch (e) {
+      if (e instanceof RPCError) {
+        let mig_dc;
+        if (e.message == "SESSION_PASSWORD_NEEDED") {
           return await login2fa(rpc, ui);
-        } else if (sign.error == "PHONE_CODE_EXPIRED") {
+        } else if ((mig_dc = parse_error("PHONE_MIGRATE_", e.message)) != null) {
+          proto.default_dc = mig_dc;
+          continue;
+        } else if (e.message == "AUTH_RESTART") {
           continue;
         } else {
-          throw new Error(sign.error);
+          throw new Error("unknown error code", { cause: e });
         }
       }
-      if (sign.value._ == "auth.authorizationSignUpRequired") {
+      throw e;
+    }
+    const phone_code_hash = sent.phone_code_hash;
+    try {
+      const phone_code = await ui.askCode();
+      let sign;
+      try {
+        sign = await rpc.api.auth.signIn({
+          phone_number,
+          phone_code_hash,
+          phone_code,
+        });
+      } catch (e) {
+        if (e instanceof RPCError) {
+          if (e.message == "SESSION_PASSWORD_NEEDED") {
+            return await login2fa(rpc, ui);
+          } else if (e.message == "PHONE_CODE_EXPIRED") {
+            continue;
+          } else {
+            throw new Error("unknown error code", { cause: e });
+          }
+        }
+        throw e;
+      }
+      if (sign._ == "auth.authorizationSignUpRequired") {
         const signupinfo = await ui.askSignUp();
         if (!signupinfo) throw new Error("need sign up");
         const signup = (await rpc.api.auth.signUp({
           phone_number,
           phone_code_hash,
           ...signupinfo,
-        })).unwrap();
+        }));
         if (signup._ != "auth.authorization") {
           throw new Error("failed to signup");
         }
-        sign.value = signup;
+        sign = signup;
       }
-      return sign.value;
+      return sign;
     } catch (e) {
       await rpc.api.auth.cancelCode({ phone_number, phone_code_hash });
       throw e;

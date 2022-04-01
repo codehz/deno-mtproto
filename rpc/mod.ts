@@ -12,7 +12,6 @@ import {
 } from "mtproto/common/utils.ts";
 import Resolver from "mtproto/common/resolver.ts";
 import type { FilteredKeys } from "mtproto/common/magic.ts";
-import { err, ok, type Result } from "mtproto/common/result.ts";
 import TaskQueue from "mtproto/common/queue.ts";
 import cached from "mtproto/common/cached.ts";
 import * as aes from "mtproto/crypto/aes.ts";
@@ -29,14 +28,15 @@ import EventEmitter from "mtproto/common/event.ts";
 
 export type RPCState = "connecting" | "connected" | "disconnected";
 
+export class RPCError extends Error {}
+
 type GenApiMethods<T> = {
-  [K in FilteredKeys<T, TLApiMethod<any, any, any, any>>]: T[K] extends {
+  [K in FilteredKeys<T, TLApiMethod<any, any, any>>]: T[K] extends {
     (param: infer I): any;
-    __error: infer E;
     verify(param: infer R): any;
   } ? (
     param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
-  ) => Promise<Result<R, E>>
+  ) => Promise<R>
     : never;
 };
 
@@ -98,14 +98,14 @@ class Session {
   }
 }
 
-interface PendingCall<N extends string = string, T = any, R = any, E = any> {
-  method: TLApiMethod<N, T, R, E>;
+interface PendingCall<N extends string = string, T = any, R = any> {
+  method: TLApiMethod<N, T, R>;
   params: Omit<T, "api_id" | "api_hash">;
-  resolver: Resolver<Result<R, E>>;
+  resolver: Resolver<R>;
 }
 
-interface PendingResquest<T = any, E = any> {
-  resolver: Resolver<Result<T, E>>;
+interface PendingResquest<T = any> {
+  resolver: Resolver<T>;
   packet: Uint8Array;
   ack?: true;
 }
@@ -358,18 +358,18 @@ export default class RPC extends EventEmitter<Events> {
     return this.#aes_instance(msgkey, false).encrypt(data);
   }
 
-  async call<N extends string, R, E>(
-    method: TLApiMethod<N, void, R, E>,
-  ): Promise<Result<R, E>>;
-  async call<N extends string, T, R, E>(
-    method: TLApiMethod<N, T, R, E>,
+  async call<N extends string, R>(
+    method: TLApiMethod<N, void, R>,
+  ): Promise<R>;
+  async call<N extends string, T, R>(
+    method: TLApiMethod<N, T, R>,
     params: Omit<T, "api_id" | "api_hash">,
-  ): Promise<Result<R, E>>;
-  async call<N extends string, T, R, E>(
-    method: TLApiMethod<N, T, R, E>,
+  ): Promise<R>;
+  async call<N extends string, T, R>(
+    method: TLApiMethod<N, T, R>,
     params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
-  ): Promise<Result<R, E>> {
-    const resolver = new Resolver<Result<R, E>>();
+  ): Promise<R> {
+    const resolver = new Resolver<R>();
     this.#pending_calls.push({
       method,
       params: params ?? {},
@@ -554,9 +554,9 @@ export default class RPC extends EventEmitter<Events> {
               return;
             }
           }
-          msg.resolver.resolve(err(error_message));
+          msg.resolver.reject(new RPCError(error_message));
         } else {
-          msg.resolver.resolve(ok(res));
+          msg.resolver.resolve(res);
         }
         this.#waitlist.delete(data.req_msg_id);
         return;

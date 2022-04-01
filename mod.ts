@@ -92,7 +92,7 @@ export default class MTProto {
 
   async init() {
     const rpc = await this.rpc();
-    const config = (await rpc.api.help.getConfig()).unwrap();
+    const config = await rpc.api.help.getConfig();
     this.#dclist = config.dc_options;
   }
 

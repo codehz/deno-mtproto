@@ -8127,11 +8127,11 @@ export namespace mt {
 export const invokeAfterMsg: TLApiMethod<"invokeAfterMsg", {
   msg_id: bigint                          // long
   query: any                              // !X
-}, any, never>
+}, any>
 export const invokeAfterMsgs: TLApiMethod<"invokeAfterMsgs", {
   msg_ids: bigint[]                       // Vector<long>
   query: any                              // !X
-}, any, never>
+}, any>
 export const initConnection: TLApiMethod<"initConnection", {
   api_id: number                          // int
   device_model: string                    // string
@@ -8143,22 +8143,22 @@ export const initConnection: TLApiMethod<"initConnection", {
   proxy?: global.InputClientProxy         // flags.0?InputClientProxy
   params?: global.JSONValue               // flags.1?JSONValue
   query: any                              // !X
-}, any, `CONNECTION_LAYER_INVALID`>
+}, any>
 export const invokeWithLayer: TLApiMethod<"invokeWithLayer", {
   layer: number                           // int
   query: any                              // !X
-}, any, `AUTH_BYTES_INVALID` | `CDN_METHOD_INVALID` | `CONNECTION_API_ID_INVALID` | `INVITE_HASH_EXPIRED` | `CHAT_WRITE_FORBIDDEN`>
+}, any>
 export const invokeWithoutUpdates: TLApiMethod<"invokeWithoutUpdates", {
   query: any                              // !X
-}, any, never>
+}, any>
 export const invokeWithMessagesRange: TLApiMethod<"invokeWithMessagesRange", {
   range: global.MessageRange              // MessageRange
   query: any                              // !X
-}, any, never>
+}, any>
 export const invokeWithTakeout: TLApiMethod<"invokeWithTakeout", {
   takeout_id: bigint                      // long
   query: any                              // !X
-}, any, never>
+}, any>
 
 export namespace auth {
   export const sendCode: TLApiMethod<"auth.sendCode", {
@@ -8166,72 +8166,72 @@ export namespace auth {
     api_id: number                          // int
     api_hash: string                        // string
     settings: global.CodeSettings           // CodeSettings
-  }, SentCode, `API_ID_INVALID` | `API_ID_PUBLISHED_FLOOD` | `PHONE_NUMBER_APP_SIGNUP_FORBIDDEN` | `PHONE_NUMBER_BANNED` | `PHONE_NUMBER_FLOOD` | `PHONE_NUMBER_INVALID` | `PHONE_PASSWORD_PROTECTED` | `SMS_CODE_CREATE_FAILED` | `PHONE_NUMBER_INVALID` | `PHONE_PASSWORD_FLOOD` | `AUTH_RESTART`>
+  }, SentCode>
   export const signUp: TLApiMethod<"auth.signUp", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     first_name: string                      // string
     last_name: string                       // string
-  }, Authorization, `FIRSTNAME_INVALID` | `LASTNAME_INVALID` | `PHONE_CODE_EMPTY` | `PHONE_CODE_EXPIRED` | `PHONE_CODE_INVALID` | `PHONE_NUMBER_FLOOD` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_OCCUPIED` | `PHONE_NUMBER_INVALID`>
+  }, Authorization>
   export const signIn: TLApiMethod<"auth.signIn", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     phone_code: string                      // string
-  }, Authorization, `PHONE_CODE_EMPTY` | `PHONE_CODE_EXPIRED` | `PHONE_CODE_INVALID` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_UNOCCUPIED` | `PHONE_NUMBER_INVALID` | `SIGN_IN_FAILED`>
-  export const logOut: TLApiMethod<"auth.logOut", void, LoggedOut, never>
-  export const resetAuthorizations: TLApiMethod<"auth.resetAuthorizations", void, boolean, `FRESH_RESET_AUTHORISATION_FORBIDDEN`>
+  }, Authorization>
+  export const logOut: TLApiMethod<"auth.logOut", void, LoggedOut>
+  export const resetAuthorizations: TLApiMethod<"auth.resetAuthorizations", void, boolean>
   export const exportAuthorization: TLApiMethod<"auth.exportAuthorization", {
     dc_id: number                           // int
-  }, ExportedAuthorization, `DC_ID_INVALID`>
+  }, ExportedAuthorization>
   export const importAuthorization: TLApiMethod<"auth.importAuthorization", {
     id: bigint                              // long
     bytes: BufferSource                     // bytes
-  }, Authorization, `AUTH_BYTES_INVALID` | `USER_ID_INVALID`>
+  }, Authorization>
   export const bindTempAuthKey: TLApiMethod<"auth.bindTempAuthKey", {
     perm_auth_key_id: bigint                // long
     nonce: bigint                           // long
     expires_at: number                      // int
     encrypted_message: BufferSource         // bytes
-  }, boolean, `ENCRYPTED_MESSAGE_INVALID` | `TEMP_AUTH_KEY_ALREADY_BOUND` | `TEMP_AUTH_KEY_EMPTY`>
+  }, boolean>
   export const importBotAuthorization: TLApiMethod<"auth.importBotAuthorization", {
     flags: number                           // int
     api_id: number                          // int
     api_hash: string                        // string
     bot_auth_token: string                  // string
-  }, Authorization, `ACCESS_TOKEN_EXPIRED` | `ACCESS_TOKEN_INVALID` | `API_ID_INVALID` | `API_ID_PUBLISHED_FLOOD`>
+  }, Authorization>
   export const checkPassword: TLApiMethod<"auth.checkPassword", {
     password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
-  }, Authorization, `PASSWORD_HASH_INVALID` | `SRP_ID_INVALID` | `SRP_PASSWORD_CHANGED`>
-  export const requestPasswordRecovery: TLApiMethod<"auth.requestPasswordRecovery", void, PasswordRecovery, `PASSWORD_EMPTY` | `PASSWORD_RECOVERY_NA`>
+  }, Authorization>
+  export const requestPasswordRecovery: TLApiMethod<"auth.requestPasswordRecovery", void, PasswordRecovery>
   export const recoverPassword: TLApiMethod<"auth.recoverPassword", {
     code: string                            // string
     new_settings?: account.PasswordInputSettings // flags.0?account.PasswordInputSettings
-  }, Authorization, `CODE_EMPTY` | `NEW_SETTINGS_INVALID`>
+  }, Authorization>
   export const resendCode: TLApiMethod<"auth.resendCode", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
-  }, SentCode, `PHONE_CODE_EXPIRED` | `PHONE_CODE_HASH_EMPTY` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_INVALID` | `SEND_CODE_UNAVAILABLE`>
+  }, SentCode>
   export const cancelCode: TLApiMethod<"auth.cancelCode", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
-  }, boolean, `PHONE_CODE_EXPIRED` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_INVALID`>
+  }, boolean>
   export const dropTempAuthKeys: TLApiMethod<"auth.dropTempAuthKeys", {
     except_auth_keys: bigint[]              // Vector<long>
-  }, boolean, never>
+  }, boolean>
   export const exportLoginToken: TLApiMethod<"auth.exportLoginToken", {
     api_id: number                          // int
     api_hash: string                        // string
     except_ids: bigint[]                    // Vector<long>
-  }, LoginToken, `API_ID_INVALID`>
+  }, LoginToken>
   export const importLoginToken: TLApiMethod<"auth.importLoginToken", {
     token: BufferSource                     // bytes
-  }, LoginToken, `AUTH_TOKEN_ALREADY_ACCEPTED` | `AUTH_TOKEN_EXPIRED` | `AUTH_TOKEN_INVALID` | `AUTH_TOKEN_INVALIDX`>
+  }, LoginToken>
   export const acceptLoginToken: TLApiMethod<"auth.acceptLoginToken", {
     token: BufferSource                     // bytes
-  }, global.Authorization, `AUTH_TOKEN_EXPIRED` | `AUTH_TOKEN_INVALIDX`>
+  }, global.Authorization>
   export const checkRecoveryPassword: TLApiMethod<"auth.checkRecoveryPassword", {
     code: string                            // string
-  }, boolean, `PASSWORD_RECOVERY_EXPIRED`>
+  }, boolean>
 }
 
 export namespace account {
@@ -8242,136 +8242,136 @@ export namespace account {
     app_sandbox: boolean                    // Bool
     secret: BufferSource                    // bytes
     other_uids: bigint[]                    // Vector<long>
-  }, boolean, `TOKEN_INVALID` | `WEBPUSH_AUTH_INVALID` | `WEBPUSH_KEY_INVALID` | `WEBPUSH_TOKEN_INVALID`>
+  }, boolean>
   export const unregisterDevice: TLApiMethod<"account.unregisterDevice", {
     token_type: number                      // int
     token: string                           // string
     other_uids: bigint[]                    // Vector<long>
-  }, boolean, `TOKEN_INVALID`>
+  }, boolean>
   export const updateNotifySettings: TLApiMethod<"account.updateNotifySettings", {
     peer: global.InputNotifyPeer            // InputNotifyPeer
     settings: global.InputPeerNotifySettings // InputPeerNotifySettings
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `SETTINGS_INVALID`>
+  }, boolean>
   export const getNotifySettings: TLApiMethod<"account.getNotifySettings", {
     peer: global.InputNotifyPeer            // InputNotifyPeer
-  }, global.PeerNotifySettings, `PEER_ID_INVALID`>
-  export const resetNotifySettings: TLApiMethod<"account.resetNotifySettings", void, boolean, never>
+  }, global.PeerNotifySettings>
+  export const resetNotifySettings: TLApiMethod<"account.resetNotifySettings", void, boolean>
   export const updateProfile: TLApiMethod<"account.updateProfile", {
     first_name?: string                     // flags.0?string
     last_name?: string                      // flags.1?string
     about?: string                          // flags.2?string
-  }, global.User, `ABOUT_TOO_LONG` | `FIRSTNAME_INVALID`>
+  }, global.User>
   export const updateStatus: TLApiMethod<"account.updateStatus", {
     offline: boolean                        // Bool
-  }, boolean, never>
+  }, boolean>
   export const getWallPapers: TLApiMethod<"account.getWallPapers", {
     hash: bigint                            // long
-  }, WallPapers, never>
+  }, WallPapers>
   export const reportPeer: TLApiMethod<"account.reportPeer", {
     peer: global.InputPeer                  // InputPeer
     reason: global.ReportReason             // ReportReason
     message: string                         // string
-  }, boolean, `CHANNEL_PRIVATE` | `PEER_ID_INVALID`>
+  }, boolean>
   export const checkUsername: TLApiMethod<"account.checkUsername", {
     username: string                        // string
-  }, boolean, `USERNAME_INVALID`>
+  }, boolean>
   export const updateUsername: TLApiMethod<"account.updateUsername", {
     username: string                        // string
-  }, global.User, `USERNAME_INVALID` | `USERNAME_NOT_MODIFIED` | `USERNAME_OCCUPIED`>
+  }, global.User>
   export const getPrivacy: TLApiMethod<"account.getPrivacy", {
     key: global.InputPrivacyKey             // InputPrivacyKey
-  }, PrivacyRules, `PRIVACY_KEY_INVALID`>
+  }, PrivacyRules>
   export const setPrivacy: TLApiMethod<"account.setPrivacy", {
     key: global.InputPrivacyKey             // InputPrivacyKey
     rules: global.InputPrivacyRule[]        // Vector<InputPrivacyRule>
-  }, PrivacyRules, `PRIVACY_KEY_INVALID` | `PRIVACY_TOO_LONG` | `PRIVACY_VALUE_INVALID`>
+  }, PrivacyRules>
   export const deleteAccount: TLApiMethod<"account.deleteAccount", {
     reason: string                          // string
-  }, boolean, `2FA_CONFIRM_WAIT_${number}`>
-  export const getAccountTTL: TLApiMethod<"account.getAccountTTL", void, global.AccountDaysTTL, never>
+  }, boolean>
+  export const getAccountTTL: TLApiMethod<"account.getAccountTTL", void, global.AccountDaysTTL>
   export const setAccountTTL: TLApiMethod<"account.setAccountTTL", {
     ttl: global.AccountDaysTTL              // AccountDaysTTL
-  }, boolean, `TTL_DAYS_INVALID`>
+  }, boolean>
   export const sendChangePhoneCode: TLApiMethod<"account.sendChangePhoneCode", {
     phone_number: string                    // string
     settings: global.CodeSettings           // CodeSettings
-  }, auth.SentCode, `PHONE_NUMBER_BANNED` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_OCCUPIED` | `FRESH_CHANGE_PHONE_FORBIDDEN` | `PHONE_NUMBER_INVALID`>
+  }, auth.SentCode>
   export const changePhone: TLApiMethod<"account.changePhone", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     phone_code: string                      // string
-  }, global.User, `PHONE_CODE_EMPTY` | `PHONE_CODE_EXPIRED` | `PHONE_NUMBER_INVALID` | `PHONE_NUMBER_OCCUPIED` | `PHONE_NUMBER_INVALID`>
+  }, global.User>
   export const updateDeviceLocked: TLApiMethod<"account.updateDeviceLocked", {
     period: number                          // int
-  }, boolean, never>
-  export const getAuthorizations: TLApiMethod<"account.getAuthorizations", void, Authorizations, never>
+  }, boolean>
+  export const getAuthorizations: TLApiMethod<"account.getAuthorizations", void, Authorizations>
   export const resetAuthorization: TLApiMethod<"account.resetAuthorization", {
     hash: bigint                            // long
-  }, boolean, `HASH_INVALID` | `FRESH_RESET_AUTHORISATION_FORBIDDEN`>
-  export const getPassword: TLApiMethod<"account.getPassword", void, Password, never>
+  }, boolean>
+  export const getPassword: TLApiMethod<"account.getPassword", void, Password>
   export const getPasswordSettings: TLApiMethod<"account.getPasswordSettings", {
     password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
-  }, PasswordSettings, `PASSWORD_HASH_INVALID`>
+  }, PasswordSettings>
   export const updatePasswordSettings: TLApiMethod<"account.updatePasswordSettings", {
     password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
     new_settings: account.PasswordInputSettings // account.PasswordInputSettings
-  }, boolean, `EMAIL_UNCONFIRMED` | `EMAIL_UNCONFIRMED_${number}` | `NEW_SALT_INVALID` | `NEW_SETTINGS_INVALID` | `PASSWORD_HASH_INVALID` | `SRP_ID_INVALID` | `SRP_PASSWORD_CHANGED`>
+  }, boolean>
   export const sendConfirmPhoneCode: TLApiMethod<"account.sendConfirmPhoneCode", {
     hash: string                            // string
     settings: global.CodeSettings           // CodeSettings
-  }, auth.SentCode, `HASH_INVALID`>
+  }, auth.SentCode>
   export const confirmPhone: TLApiMethod<"account.confirmPhone", {
     phone_code_hash: string                 // string
     phone_code: string                      // string
-  }, boolean, `CODE_HASH_INVALID` | `PHONE_CODE_EMPTY`>
+  }, boolean>
   export const getTmpPassword: TLApiMethod<"account.getTmpPassword", {
     password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
     period: number                          // int
-  }, TmpPassword, `PASSWORD_HASH_INVALID` | `TMP_PASSWORD_DISABLED`>
-  export const getWebAuthorizations: TLApiMethod<"account.getWebAuthorizations", void, WebAuthorizations, never>
+  }, TmpPassword>
+  export const getWebAuthorizations: TLApiMethod<"account.getWebAuthorizations", void, WebAuthorizations>
   export const resetWebAuthorization: TLApiMethod<"account.resetWebAuthorization", {
     hash: bigint                            // long
-  }, boolean, `HASH_INVALID`>
-  export const resetWebAuthorizations: TLApiMethod<"account.resetWebAuthorizations", void, boolean, never>
-  export const getAllSecureValues: TLApiMethod<"account.getAllSecureValues", void, global.SecureValue[], never>
+  }, boolean>
+  export const resetWebAuthorizations: TLApiMethod<"account.resetWebAuthorizations", void, boolean>
+  export const getAllSecureValues: TLApiMethod<"account.getAllSecureValues", void, global.SecureValue[]>
   export const getSecureValue: TLApiMethod<"account.getSecureValue", {
     types: global.SecureValueType[]         // Vector<SecureValueType>
-  }, global.SecureValue[], never>
+  }, global.SecureValue[]>
   export const saveSecureValue: TLApiMethod<"account.saveSecureValue", {
     value: global.InputSecureValue          // InputSecureValue
     secure_secret_id: bigint                // long
-  }, global.SecureValue, `PASSWORD_REQUIRED`>
+  }, global.SecureValue>
   export const deleteSecureValue: TLApiMethod<"account.deleteSecureValue", {
     types: global.SecureValueType[]         // Vector<SecureValueType>
-  }, boolean, never>
+  }, boolean>
   export const getAuthorizationForm: TLApiMethod<"account.getAuthorizationForm", {
     bot_id: bigint                          // long
     scope: string                           // string
     public_key: string                      // string
-  }, AuthorizationForm, `PUBLIC_KEY_REQUIRED`>
+  }, AuthorizationForm>
   export const acceptAuthorization: TLApiMethod<"account.acceptAuthorization", {
     bot_id: bigint                          // long
     scope: string                           // string
     public_key: string                      // string
     value_hashes: global.SecureValueHash[]  // Vector<SecureValueHash>
     credentials: global.SecureCredentialsEncrypted // SecureCredentialsEncrypted
-  }, boolean, never>
+  }, boolean>
   export const sendVerifyPhoneCode: TLApiMethod<"account.sendVerifyPhoneCode", {
     phone_number: string                    // string
     settings: global.CodeSettings           // CodeSettings
-  }, auth.SentCode, `PHONE_NUMBER_INVALID`>
+  }, auth.SentCode>
   export const verifyPhone: TLApiMethod<"account.verifyPhone", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     phone_code: string                      // string
-  }, boolean, `PHONE_CODE_EMPTY` | `PHONE_CODE_EXPIRED` | `PHONE_NUMBER_INVALID`>
+  }, boolean>
   export const sendVerifyEmailCode: TLApiMethod<"account.sendVerifyEmailCode", {
     email: string                           // string
-  }, SentEmailCode, `EMAIL_INVALID`>
+  }, SentEmailCode>
   export const verifyEmail: TLApiMethod<"account.verifyEmail", {
     email: string                           // string
     code: string                            // string
-  }, boolean, `EMAIL_INVALID` | `EMAIL_VERIFY_EXPIRED`>
+  }, boolean>
   export const initTakeoutSession: TLApiMethod<"account.initTakeoutSession", {
     contacts?: true                         // flags.0?true
     message_users?: true                    // flags.1?true
@@ -8380,59 +8380,59 @@ export namespace account {
     message_channels?: true                 // flags.4?true
     files?: true                            // flags.5?true
     file_max_size?: number                  // flags.5?int
-  }, Takeout, `TAKEOUT_INIT_DELAY_${number}`>
+  }, Takeout>
   export const finishTakeoutSession: TLApiMethod<"account.finishTakeoutSession", {
     success?: true                          // flags.0?true
-  }, boolean, `TAKEOUT_REQUIRED`>
+  }, boolean>
   export const confirmPasswordEmail: TLApiMethod<"account.confirmPasswordEmail", {
     code: string                            // string
-  }, boolean, `CODE_INVALID` | `EMAIL_HASH_EXPIRED`>
-  export const resendPasswordEmail: TLApiMethod<"account.resendPasswordEmail", void, boolean, never>
-  export const cancelPasswordEmail: TLApiMethod<"account.cancelPasswordEmail", void, boolean, never>
-  export const getContactSignUpNotification: TLApiMethod<"account.getContactSignUpNotification", void, boolean, never>
+  }, boolean>
+  export const resendPasswordEmail: TLApiMethod<"account.resendPasswordEmail", void, boolean>
+  export const cancelPasswordEmail: TLApiMethod<"account.cancelPasswordEmail", void, boolean>
+  export const getContactSignUpNotification: TLApiMethod<"account.getContactSignUpNotification", void, boolean>
   export const setContactSignUpNotification: TLApiMethod<"account.setContactSignUpNotification", {
     silent: boolean                         // Bool
-  }, boolean, never>
+  }, boolean>
   export const getNotifyExceptions: TLApiMethod<"account.getNotifyExceptions", {
     compare_sound?: true                    // flags.1?true
     peer?: global.InputNotifyPeer           // flags.0?InputNotifyPeer
-  }, global.Updates, never>
+  }, global.Updates>
   export const getWallPaper: TLApiMethod<"account.getWallPaper", {
     wallpaper: global.InputWallPaper        // InputWallPaper
-  }, global.WallPaper, `WALLPAPER_INVALID`>
+  }, global.WallPaper>
   export const uploadWallPaper: TLApiMethod<"account.uploadWallPaper", {
     file: global.InputFile                  // InputFile
     mime_type: string                       // string
     settings: global.WallPaperSettings      // WallPaperSettings
-  }, global.WallPaper, `WALLPAPER_FILE_INVALID` | `WALLPAPER_MIME_INVALID`>
+  }, global.WallPaper>
   export const saveWallPaper: TLApiMethod<"account.saveWallPaper", {
     wallpaper: global.InputWallPaper        // InputWallPaper
     unsave: boolean                         // Bool
     settings: global.WallPaperSettings      // WallPaperSettings
-  }, boolean, `WALLPAPER_INVALID`>
+  }, boolean>
   export const installWallPaper: TLApiMethod<"account.installWallPaper", {
     wallpaper: global.InputWallPaper        // InputWallPaper
     settings: global.WallPaperSettings      // WallPaperSettings
-  }, boolean, `WALLPAPER_INVALID`>
-  export const resetWallPapers: TLApiMethod<"account.resetWallPapers", void, boolean, never>
-  export const getAutoDownloadSettings: TLApiMethod<"account.getAutoDownloadSettings", void, AutoDownloadSettings, never>
+  }, boolean>
+  export const resetWallPapers: TLApiMethod<"account.resetWallPapers", void, boolean>
+  export const getAutoDownloadSettings: TLApiMethod<"account.getAutoDownloadSettings", void, AutoDownloadSettings>
   export const saveAutoDownloadSettings: TLApiMethod<"account.saveAutoDownloadSettings", {
     low?: true                              // flags.0?true
     high?: true                             // flags.1?true
     settings: global.AutoDownloadSettings   // AutoDownloadSettings
-  }, boolean, never>
+  }, boolean>
   export const uploadTheme: TLApiMethod<"account.uploadTheme", {
     file: global.InputFile                  // InputFile
     thumb?: global.InputFile                // flags.0?InputFile
     file_name: string                       // string
     mime_type: string                       // string
-  }, global.Document, `THEME_FILE_INVALID`>
+  }, global.Document>
   export const createTheme: TLApiMethod<"account.createTheme", {
     slug: string                            // string
     title: string                           // string
     document?: global.InputDocument         // flags.2?InputDocument
     settings?: global.InputThemeSettings[]  // flags.3?Vector<InputThemeSettings>
-  }, global.Theme, `THEME_MIME_INVALID`>
+  }, global.Theme>
   export const updateTheme: TLApiMethod<"account.updateTheme", {
     format: string                          // string
     theme: global.InputTheme                // InputTheme
@@ -8440,105 +8440,105 @@ export namespace account {
     title?: string                          // flags.1?string
     document?: global.InputDocument         // flags.2?InputDocument
     settings?: global.InputThemeSettings[]  // flags.3?Vector<InputThemeSettings>
-  }, global.Theme, `THEME_INVALID`>
+  }, global.Theme>
   export const saveTheme: TLApiMethod<"account.saveTheme", {
     theme: global.InputTheme                // InputTheme
     unsave: boolean                         // Bool
-  }, boolean, never>
+  }, boolean>
   export const installTheme: TLApiMethod<"account.installTheme", {
     dark?: true                             // flags.0?true
     theme?: global.InputTheme               // flags.1?InputTheme
     format?: string                         // flags.2?string
     base_theme?: global.BaseTheme           // flags.3?BaseTheme
-  }, boolean, never>
+  }, boolean>
   export const getTheme: TLApiMethod<"account.getTheme", {
     format: string                          // string
     theme: global.InputTheme                // InputTheme
     document_id: bigint                     // long
-  }, global.Theme, `THEME_FORMAT_INVALID` | `THEME_INVALID`>
+  }, global.Theme>
   export const getThemes: TLApiMethod<"account.getThemes", {
     format: string                          // string
     hash: bigint                            // long
-  }, Themes, never>
+  }, Themes>
   export const setContentSettings: TLApiMethod<"account.setContentSettings", {
     sensitive_enabled?: true                // flags.0?true
-  }, boolean, `SENSITIVE_CHANGE_FORBIDDEN`>
-  export const getContentSettings: TLApiMethod<"account.getContentSettings", void, ContentSettings, never>
+  }, boolean>
+  export const getContentSettings: TLApiMethod<"account.getContentSettings", void, ContentSettings>
   export const getMultiWallPapers: TLApiMethod<"account.getMultiWallPapers", {
     wallpapers: global.InputWallPaper[]     // Vector<InputWallPaper>
-  }, global.WallPaper[], never>
-  export const getGlobalPrivacySettings: TLApiMethod<"account.getGlobalPrivacySettings", void, global.GlobalPrivacySettings, never>
+  }, global.WallPaper[]>
+  export const getGlobalPrivacySettings: TLApiMethod<"account.getGlobalPrivacySettings", void, global.GlobalPrivacySettings>
   export const setGlobalPrivacySettings: TLApiMethod<"account.setGlobalPrivacySettings", {
     settings: global.GlobalPrivacySettings  // GlobalPrivacySettings
-  }, global.GlobalPrivacySettings, `AUTOARCHIVE_NOT_AVAILABLE`>
+  }, global.GlobalPrivacySettings>
   export const reportProfilePhoto: TLApiMethod<"account.reportProfilePhoto", {
     peer: global.InputPeer                  // InputPeer
     photo_id: global.InputPhoto             // InputPhoto
     reason: global.ReportReason             // ReportReason
     message: string                         // string
-  }, boolean, never>
-  export const resetPassword: TLApiMethod<"account.resetPassword", void, ResetPasswordResult, never>
-  export const declinePasswordReset: TLApiMethod<"account.declinePasswordReset", void, boolean, `RESET_REQUEST_MISSING`>
+  }, boolean>
+  export const resetPassword: TLApiMethod<"account.resetPassword", void, ResetPasswordResult>
+  export const declinePasswordReset: TLApiMethod<"account.declinePasswordReset", void, boolean>
   export const getChatThemes: TLApiMethod<"account.getChatThemes", {
     hash: bigint                            // long
-  }, Themes, never>
+  }, Themes>
   export const setAuthorizationTTL: TLApiMethod<"account.setAuthorizationTTL", {
     authorization_ttl_days: number          // int
-  }, boolean, `FRESH_RESET_AUTHORISATION_FORBIDDEN`>
+  }, boolean>
   export const changeAuthorizationSettings: TLApiMethod<"account.changeAuthorizationSettings", {
     hash: bigint                            // long
     encrypted_requests_disabled?: boolean   // flags.0?Bool
     call_requests_disabled?: boolean        // flags.1?Bool
-  }, boolean, `HASH_INVALID`>
+  }, boolean>
 }
 
 export namespace users {
   export const getUsers: TLApiMethod<"users.getUsers", {
     id: global.InputUser[]                  // Vector<InputUser>
-  }, global.User[], `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `USER_BANNED_IN_CHANNEL`>
+  }, global.User[]>
   export const getFullUser: TLApiMethod<"users.getFullUser", {
     id: global.InputUser                    // InputUser
-  }, UserFull, `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `USER_ID_INVALID`>
+  }, UserFull>
   export const setSecureValueErrors: TLApiMethod<"users.setSecureValueErrors", {
     id: global.InputUser                    // InputUser
     errors: global.SecureValueError[]       // Vector<SecureValueError>
-  }, boolean, `USER_ID_INVALID`>
+  }, boolean>
 }
 
 export namespace contacts {
   export const getContactIDs: TLApiMethod<"contacts.getContactIDs", {
     hash: bigint                            // long
-  }, number[], never>
-  export const getStatuses: TLApiMethod<"contacts.getStatuses", void, global.ContactStatus[], never>
+  }, number[]>
+  export const getStatuses: TLApiMethod<"contacts.getStatuses", void, global.ContactStatus[]>
   export const getContacts: TLApiMethod<"contacts.getContacts", {
     hash: bigint                            // long
-  }, Contacts, never>
+  }, Contacts>
   export const importContacts: TLApiMethod<"contacts.importContacts", {
     contacts: global.InputContact[]         // Vector<InputContact>
-  }, ImportedContacts, never>
+  }, ImportedContacts>
   export const deleteContacts: TLApiMethod<"contacts.deleteContacts", {
     id: global.InputUser[]                  // Vector<InputUser>
-  }, global.Updates, never>
+  }, global.Updates>
   export const deleteByPhones: TLApiMethod<"contacts.deleteByPhones", {
     phones: string[]                        // Vector<string>
-  }, boolean, never>
+  }, boolean>
   export const block: TLApiMethod<"contacts.block", {
     id: global.InputPeer                    // InputPeer
-  }, boolean, `CONTACT_ID_INVALID` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, boolean>
   export const unblock: TLApiMethod<"contacts.unblock", {
     id: global.InputPeer                    // InputPeer
-  }, boolean, `CHANNEL_PRIVATE` | `CONTACT_ID_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, boolean>
   export const getBlocked: TLApiMethod<"contacts.getBlocked", {
     offset: number                          // int
     limit: number                           // int
-  }, Blocked, never>
+  }, Blocked>
   export const search: TLApiMethod<"contacts.search", {
     q: string                               // string
     limit: number                           // int
-  }, Found, `QUERY_TOO_SHORT` | `SEARCH_QUERY_EMPTY`>
+  }, Found>
   export const resolveUsername: TLApiMethod<"contacts.resolveUsername", {
     username: string                        // string
-  }, ResolvedPeer, `CONNECTION_LAYER_INVALID` | `USERNAME_INVALID` | `USERNAME_NOT_OCCUPIED`>
+  }, ResolvedPeer>
   export const getTopPeers: TLApiMethod<"contacts.getTopPeers", {
     correspondents?: true                   // flags.0?true
     bots_pm?: true                          // flags.1?true
@@ -8551,43 +8551,43 @@ export namespace contacts {
     offset: number                          // int
     limit: number                           // int
     hash: bigint                            // long
-  }, TopPeers, `TYPES_EMPTY`>
+  }, TopPeers>
   export const resetTopPeerRating: TLApiMethod<"contacts.resetTopPeerRating", {
     category: global.TopPeerCategory        // TopPeerCategory
     peer: global.InputPeer                  // InputPeer
-  }, boolean, `PEER_ID_INVALID`>
-  export const resetSaved: TLApiMethod<"contacts.resetSaved", void, boolean, never>
-  export const getSaved: TLApiMethod<"contacts.getSaved", void, global.SavedContact[], `TAKEOUT_REQUIRED` | `TAKEOUT_REQUIRED`>
+  }, boolean>
+  export const resetSaved: TLApiMethod<"contacts.resetSaved", void, boolean>
+  export const getSaved: TLApiMethod<"contacts.getSaved", void, global.SavedContact[]>
   export const toggleTopPeers: TLApiMethod<"contacts.toggleTopPeers", {
     enabled: boolean                        // Bool
-  }, boolean, never>
+  }, boolean>
   export const addContact: TLApiMethod<"contacts.addContact", {
     add_phone_privacy_exception?: true      // flags.0?true
     id: global.InputUser                    // InputUser
     first_name: string                      // string
     last_name: string                       // string
     phone: string                           // string
-  }, global.Updates, `CHANNEL_PRIVATE` | `CONTACT_ID_INVALID` | `CONTACT_NAME_EMPTY` | `MSG_ID_INVALID`>
+  }, global.Updates>
   export const acceptContact: TLApiMethod<"contacts.acceptContact", {
     id: global.InputUser                    // InputUser
-  }, global.Updates, `CONTACT_ADD_MISSING` | `CONTACT_ID_INVALID` | `CONTACT_REQ_MISSING` | `MSG_ID_INVALID`>
+  }, global.Updates>
   export const getLocated: TLApiMethod<"contacts.getLocated", {
     background?: true                       // flags.1?true
     geo_point: global.InputGeoPoint         // InputGeoPoint
     self_expires?: number                   // flags.0?int
-  }, global.Updates, `GEO_POINT_INVALID` | `USERPIC_UPLOAD_REQUIRED` | `USERPIC_PRIVACY_REQUIRED` | `USERPIC_UPLOAD_REQUIRED`>
+  }, global.Updates>
   export const blockFromReplies: TLApiMethod<"contacts.blockFromReplies", {
     delete_message?: true                   // flags.0?true
     delete_history?: true                   // flags.1?true
     report_spam?: true                      // flags.2?true
     msg_id: number                          // int
-  }, global.Updates, never>
+  }, global.Updates>
 }
 
 export namespace messages {
   export const getMessages: TLApiMethod<"messages.getMessages", {
     id: global.InputMessage[]               // Vector<InputMessage>
-  }, Messages, never>
+  }, Messages>
   export const getDialogs: TLApiMethod<"messages.getDialogs", {
     exclude_pinned?: true                   // flags.0?true
     folder_id?: number                      // flags.1?int
@@ -8596,7 +8596,7 @@ export namespace messages {
     offset_peer: global.InputPeer           // InputPeer
     limit: number                           // int
     hash: bigint                            // long
-  }, Dialogs, `FOLDER_ID_INVALID` | `OFFSET_PEER_ID_INVALID`>
+  }, Dialogs>
   export const getHistory: TLApiMethod<"messages.getHistory", {
     peer: global.InputPeer                  // InputPeer
     offset_id: number                       // int
@@ -8606,7 +8606,7 @@ export namespace messages {
     max_id: number                          // int
     min_id: number                          // int
     hash: bigint                            // long
-  }, Messages, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ID_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, Messages>
   export const search: TLApiMethod<"messages.search", {
     peer: global.InputPeer                  // InputPeer
     q: string                               // string
@@ -8621,11 +8621,11 @@ export namespace messages {
     max_id: number                          // int
     min_id: number                          // int
     hash: bigint                            // long
-  }, Messages, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `FROM_PEER_INVALID` | `INPUT_FILTER_INVALID` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `PEER_ID_NOT_SUPPORTED` | `SEARCH_QUERY_EMPTY` | `USER_ID_INVALID`>
+  }, Messages>
   export const readHistory: TLApiMethod<"messages.readHistory", {
     peer: global.InputPeer                  // InputPeer
     max_id: number                          // int
-  }, AffectedMessages, `CHANNEL_PRIVATE` | `CHAT_ID_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, AffectedMessages>
   export const deleteHistory: TLApiMethod<"messages.deleteHistory", {
     just_clear?: true                       // flags.0?true
     revoke?: true                           // flags.1?true
@@ -8633,19 +8633,19 @@ export namespace messages {
     max_id: number                          // int
     min_date?: number                       // flags.2?int
     max_date?: number                       // flags.3?int
-  }, AffectedHistory, `CHANNEL_PRIVATE` | `CHAT_ID_INVALID` | `MESSAGE_ID_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, AffectedHistory>
   export const deleteMessages: TLApiMethod<"messages.deleteMessages", {
     revoke?: true                           // flags.0?true
     id: number[]                            // Vector<int>
-  }, AffectedMessages, `MESSAGE_ID_INVALID` | `MESSAGE_DELETE_FORBIDDEN`>
+  }, AffectedMessages>
   export const receivedMessages: TLApiMethod<"messages.receivedMessages", {
     max_id: number                          // int
-  }, global.ReceivedNotifyMessage[], never>
+  }, global.ReceivedNotifyMessage[]>
   export const setTyping: TLApiMethod<"messages.setTyping", {
     peer: global.InputPeer                  // InputPeer
     top_msg_id?: number                     // flags.0?int
     action: global.SendMessageAction        // SendMessageAction
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `USER_BANNED_IN_CHANNEL` | `USER_IS_BLOCKED` | `USER_IS_BOT` | `CHAT_WRITE_FORBIDDEN` | `GROUPCALL_FORBIDDEN` | `USER_IS_BLOCKED`>
+  }, boolean>
   export const sendMessage: TLApiMethod<"messages.sendMessage", {
     no_webpage?: true                       // flags.1?true
     silent?: true                           // flags.5?true
@@ -8660,7 +8660,7 @@ export namespace messages {
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.10?int
     send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.Updates, `BOT_DOMAIN_INVALID` | `BOT_INVALID` | `BUTTON_DATA_INVALID` | `BUTTON_TYPE_INVALID` | `BUTTON_URL_INVALID` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `CHAT_RESTRICTED` | `ENCRYPTION_DECLINED` | `ENTITIES_TOO_LONG` | `ENTITY_MENTION_USER_INVALID` | `FROM_MESSAGE_BOT_DISABLED` | `INPUT_USER_DEACTIVATED` | `MESSAGE_EMPTY` | `MESSAGE_TOO_LONG` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `PINNED_DIALOGS_TOO_MUCH` | `POLL_OPTION_INVALID` | `REPLY_MARKUP_INVALID` | `REPLY_MARKUP_TOO_LONG` | `SCHEDULE_BOT_NOT_ALLOWED` | `SCHEDULE_DATE_TOO_LATE` | `SCHEDULE_STATUS_PRIVATE` | `SCHEDULE_TOO_MUCH` | `SEND_AS_PEER_INVALID` | `USER_BANNED_IN_CHANNEL` | `USER_IS_BLOCKED` | `USER_IS_BOT` | `YOU_BLOCKED_USER` | `CHAT_WRITE_FORBIDDEN` | `USER_IS_BLOCKED` | `SLOWMODE_WAIT_${number}` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const sendMedia: TLApiMethod<"messages.sendMedia", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -8675,7 +8675,7 @@ export namespace messages {
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.10?int
     send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.Updates, `BOT_PAYMENTS_DISABLED` | `BOT_POLLS_DISABLED` | `BROADCAST_PUBLIC_VOTERS_FORBIDDEN` | `BUTTON_DATA_INVALID` | `BUTTON_TYPE_INVALID` | `BUTTON_URL_INVALID` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_FORWARDS_RESTRICTED` | `CHAT_RESTRICTED` | `CURRENCY_TOTAL_AMOUNT_INVALID` | `EMOTICON_INVALID` | `EXTERNAL_URL_INVALID` | `FILE_PART_LENGTH_INVALID` | `FILE_PARTS_INVALID` | `FILE_REFERENCE_EMPTY` | `FILE_REFERENCE_EXPIRED` | `GAME_BOT_INVALID` | `IMAGE_PROCESS_FAILED` | `INPUT_USER_DEACTIVATED` | `MD5_CHECKSUM_INVALID` | `MEDIA_CAPTION_TOO_LONG` | `MEDIA_EMPTY` | `MEDIA_INVALID` | `MSG_ID_INVALID` | `PAYMENT_PROVIDER_INVALID` | `PEER_ID_INVALID` | `PHOTO_EXT_INVALID` | `PHOTO_INVALID_DIMENSIONS` | `PHOTO_SAVE_FILE_INVALID` | `POLL_ANSWER_INVALID` | `POLL_ANSWERS_INVALID` | `POLL_OPTION_DUPLICATE` | `POLL_OPTION_INVALID` | `POLL_QUESTION_INVALID` | `QUIZ_CORRECT_ANSWER_INVALID` | `QUIZ_CORRECT_ANSWERS_EMPTY` | `QUIZ_CORRECT_ANSWERS_TOO_MUCH` | `QUIZ_MULTIPLE_INVALID` | `REPLY_MARKUP_BUY_EMPTY` | `REPLY_MARKUP_INVALID` | `SCHEDULE_BOT_NOT_ALLOWED` | `SCHEDULE_DATE_TOO_LATE` | `SCHEDULE_TOO_MUCH` | `SEND_AS_PEER_INVALID` | `TTL_MEDIA_INVALID` | `USER_BANNED_IN_CHANNEL` | `USER_IS_BLOCKED` | `USER_IS_BOT` | `VIDEO_CONTENT_TYPE_INVALID` | `WEBPAGE_CURL_FAILED` | `WEBPAGE_MEDIA_EMPTY` | `YOU_BLOCKED_USER` | `CHAT_SEND_GIFS_FORBIDDEN` | `CHAT_SEND_MEDIA_FORBIDDEN` | `CHAT_SEND_POLL_FORBIDDEN` | `CHAT_SEND_STICKERS_FORBIDDEN` | `CHAT_WRITE_FORBIDDEN` | `USER_IS_BLOCKED` | `SLOWMODE_WAIT_${number}` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const forwardMessages: TLApiMethod<"messages.forwardMessages", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -8689,111 +8689,111 @@ export namespace messages {
     to_peer: global.InputPeer               // InputPeer
     schedule_date?: number                  // flags.10?int
     send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.Updates, `BROADCAST_PUBLIC_VOTERS_FORBIDDEN` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_FORWARDS_RESTRICTED` | `CHAT_ID_INVALID` | `CHAT_RESTRICTED` | `GROUPED_MEDIA_INVALID` | `INPUT_USER_DEACTIVATED` | `MEDIA_EMPTY` | `MESSAGE_ID_INVALID` | `MESSAGE_IDS_EMPTY` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `QUIZ_ANSWER_MISSING` | `RANDOM_ID_INVALID` | `SCHEDULE_DATE_TOO_LATE` | `SCHEDULE_TOO_MUCH` | `SEND_AS_PEER_INVALID` | `SLOWMODE_MULTI_MSGS_DISABLED` | `USER_BANNED_IN_CHANNEL` | `USER_IS_BLOCKED` | `USER_IS_BOT` | `YOU_BLOCKED_USER` | `CHAT_SEND_GAME_FORBIDDEN` | `CHAT_SEND_GIFS_FORBIDDEN` | `CHAT_SEND_MEDIA_FORBIDDEN` | `CHAT_SEND_POLL_FORBIDDEN` | `CHAT_SEND_STICKERS_FORBIDDEN` | `CHAT_WRITE_FORBIDDEN` | `USER_IS_BLOCKED` | `CHAT_FORWARDS_RESTRICTED` | `SLOWMODE_WAIT_${number}` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const reportSpam: TLApiMethod<"messages.reportSpam", {
     peer: global.InputPeer                  // InputPeer
-  }, boolean, `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, boolean>
   export const getPeerSettings: TLApiMethod<"messages.getPeerSettings", {
     peer: global.InputPeer                  // InputPeer
-  }, PeerSettings, `CHANNEL_INVALID` | `PEER_ID_INVALID`>
+  }, PeerSettings>
   export const report: TLApiMethod<"messages.report", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
     reason: global.ReportReason             // ReportReason
     message: string                         // string
-  }, boolean, `CHANNEL_PRIVATE` | `PEER_ID_INVALID`>
+  }, boolean>
   export const getChats: TLApiMethod<"messages.getChats", {
     id: bigint[]                            // Vector<long>
-  }, Chats, `CHAT_ID_INVALID` | `PEER_ID_INVALID`>
+  }, Chats>
   export const getFullChat: TLApiMethod<"messages.getFullChat", {
     chat_id: bigint                         // long
-  }, ChatFull, `CHAT_ID_INVALID` | `PEER_ID_INVALID`>
+  }, ChatFull>
   export const editChatTitle: TLApiMethod<"messages.editChatTitle", {
     chat_id: bigint                         // long
     title: string                           // string
-  }, global.Updates, `CHAT_ID_INVALID` | `CHAT_NOT_MODIFIED` | `CHAT_TITLE_EMPTY` | `PEER_ID_INVALID`>
+  }, global.Updates>
   export const editChatPhoto: TLApiMethod<"messages.editChatPhoto", {
     chat_id: bigint                         // long
     photo: global.InputChatPhoto            // InputChatPhoto
-  }, global.Updates, `CHAT_ID_INVALID` | `CHAT_NOT_MODIFIED` | `PEER_ID_INVALID` | `PHOTO_CROP_SIZE_SMALL` | `PHOTO_EXT_INVALID` | `PHOTO_INVALID`>
+  }, global.Updates>
   export const addChatUser: TLApiMethod<"messages.addChatUser", {
     chat_id: bigint                         // long
     user_id: global.InputUser               // InputUser
     fwd_limit: number                       // int
-  }, global.Updates, `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `INPUT_USER_DEACTIVATED` | `PEER_ID_INVALID` | `USER_ALREADY_PARTICIPANT` | `USER_ID_INVALID` | `USER_IS_BLOCKED` | `USER_NOT_MUTUAL_CONTACT` | `USERS_TOO_MUCH` | `YOU_BLOCKED_USER` | `CHAT_WRITE_FORBIDDEN` | `USER_NOT_MUTUAL_CONTACT` | `USER_PRIVACY_RESTRICTED`>
+  }, global.Updates>
   export const deleteChatUser: TLApiMethod<"messages.deleteChatUser", {
     revoke_history?: true                   // flags.0?true
     chat_id: bigint                         // long
     user_id: global.InputUser               // InputUser
-  }, global.Updates, `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `PEER_ID_INVALID` | `USER_ID_INVALID` | `USER_NOT_PARTICIPANT`>
+  }, global.Updates>
   export const createChat: TLApiMethod<"messages.createChat", {
     users: global.InputUser[]               // Vector<InputUser>
     title: string                           // string
-  }, global.Updates, `CHAT_INVALID` | `CHAT_TITLE_EMPTY` | `INPUT_USER_DEACTIVATED` | `USERS_TOO_FEW` | `USER_RESTRICTED` | `CHAT_ID_GENERATE_FAILED`>
+  }, global.Updates>
   export const getDhConfig: TLApiMethod<"messages.getDhConfig", {
     version: number                         // int
     random_length: number                   // int
-  }, DhConfig, `RANDOM_LENGTH_INVALID`>
+  }, DhConfig>
   export const requestEncryption: TLApiMethod<"messages.requestEncryption", {
     user_id: global.InputUser               // InputUser
     random_id: number                       // int
     g_a: BufferSource                       // bytes
-  }, global.EncryptedChat, `DH_G_A_INVALID` | `USER_ID_INVALID`>
+  }, global.EncryptedChat>
   export const acceptEncryption: TLApiMethod<"messages.acceptEncryption", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     g_b: BufferSource                       // bytes
     key_fingerprint: bigint                 // long
-  }, global.EncryptedChat, `CHAT_ID_INVALID` | `ENCRYPTION_ALREADY_ACCEPTED` | `ENCRYPTION_ALREADY_DECLINED`>
+  }, global.EncryptedChat>
   export const discardEncryption: TLApiMethod<"messages.discardEncryption", {
     delete_history?: true                   // flags.0?true
     chat_id: number                         // int
-  }, boolean, `CHAT_ID_EMPTY` | `ENCRYPTION_ALREADY_DECLINED` | `ENCRYPTION_ID_INVALID`>
+  }, boolean>
   export const setEncryptedTyping: TLApiMethod<"messages.setEncryptedTyping", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     typing: boolean                         // Bool
-  }, boolean, `CHAT_ID_INVALID`>
+  }, boolean>
   export const readEncryptedHistory: TLApiMethod<"messages.readEncryptedHistory", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     max_date: number                        // int
-  }, boolean, `MSG_WAIT_FAILED`>
+  }, boolean>
   export const sendEncrypted: TLApiMethod<"messages.sendEncrypted", {
     silent?: true                           // flags.0?true
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
     data: BufferSource                      // bytes
-  }, SentEncryptedMessage, `CHAT_ID_INVALID` | `DATA_INVALID` | `DATA_TOO_LONG` | `ENCRYPTION_DECLINED` | `MSG_WAIT_FAILED` | `USER_IS_BLOCKED`>
+  }, SentEncryptedMessage>
   export const sendEncryptedFile: TLApiMethod<"messages.sendEncryptedFile", {
     silent?: true                           // flags.0?true
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
     data: BufferSource                      // bytes
     file: global.InputEncryptedFile         // InputEncryptedFile
-  }, SentEncryptedMessage, `DATA_TOO_LONG` | `ENCRYPTION_DECLINED` | `FILE_EMTPY` | `MD5_CHECKSUM_INVALID` | `MSG_WAIT_FAILED`>
+  }, SentEncryptedMessage>
   export const sendEncryptedService: TLApiMethod<"messages.sendEncryptedService", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
     data: BufferSource                      // bytes
-  }, SentEncryptedMessage, `DATA_INVALID` | `ENCRYPTION_DECLINED` | `ENCRYPTION_ID_INVALID` | `MSG_WAIT_FAILED` | `USER_IS_BLOCKED` | `USER_DELETED` | `USER_IS_BLOCKED`>
+  }, SentEncryptedMessage>
   export const receivedQueue: TLApiMethod<"messages.receivedQueue", {
     max_qts: number                         // int
-  }, bigint[], `MAX_QTS_INVALID` | `MSG_WAIT_FAILED`>
+  }, bigint[]>
   export const reportEncryptedSpam: TLApiMethod<"messages.reportEncryptedSpam", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
-  }, boolean, `CHAT_ID_INVALID`>
+  }, boolean>
   export const readMessageContents: TLApiMethod<"messages.readMessageContents", {
     id: number[]                            // Vector<int>
-  }, AffectedMessages, never>
+  }, AffectedMessages>
   export const getStickers: TLApiMethod<"messages.getStickers", {
     emoticon: string                        // string
     hash: bigint                            // long
-  }, Stickers, `EMOTICON_EMPTY`>
+  }, Stickers>
   export const getAllStickers: TLApiMethod<"messages.getAllStickers", {
     hash: bigint                            // long
-  }, AllStickers, never>
+  }, AllStickers>
   export const getWebPagePreview: TLApiMethod<"messages.getWebPagePreview", {
     message: string                         // string
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
-  }, global.MessageMedia, `MESSAGE_EMPTY`>
+  }, global.MessageMedia>
   export const exportChatInvite: TLApiMethod<"messages.exportChatInvite", {
     legacy_revoke_permanent?: true          // flags.2?true
     request_needed?: true                   // flags.3?true
@@ -8801,43 +8801,43 @@ export namespace messages {
     expire_date?: number                    // flags.0?int
     usage_limit?: number                    // flags.1?int
     title?: string                          // flags.4?string
-  }, global.ExportedChatInvite, `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `EXPIRE_DATE_INVALID` | `PEER_ID_INVALID` | `USAGE_LIMIT_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.ExportedChatInvite>
   export const checkChatInvite: TLApiMethod<"messages.checkChatInvite", {
     hash: string                            // string
-  }, global.ChatInvite, `INVITE_HASH_EMPTY` | `INVITE_HASH_EXPIRED` | `INVITE_HASH_INVALID` | `CHANNEL_PRIVATE` | `INVITE_HASH_EXPIRED`>
+  }, global.ChatInvite>
   export const importChatInvite: TLApiMethod<"messages.importChatInvite", {
     hash: string                            // string
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHANNELS_TOO_MUCH` | `CHAT_INVALID` | `INVITE_HASH_EMPTY` | `INVITE_HASH_EXPIRED` | `INVITE_HASH_INVALID` | `INVITE_REQUEST_SENT` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `USER_ALREADY_PARTICIPANT` | `USER_CHANNELS_TOO_MUCH` | `USERS_TOO_MUCH` | `INVITE_HASH_EXPIRED`>
+  }, global.Updates>
   export const getStickerSet: TLApiMethod<"messages.getStickerSet", {
     stickerset: global.InputStickerSet      // InputStickerSet
     hash: number                            // int
-  }, StickerSet, `EMOTICON_STICKERPACK_MISSING` | `STICKERSET_INVALID` | `STICKERSET_INVALID`>
+  }, StickerSet>
   export const installStickerSet: TLApiMethod<"messages.installStickerSet", {
     stickerset: global.InputStickerSet      // InputStickerSet
     archived: boolean                       // Bool
-  }, StickerSetInstallResult, `STICKERSET_INVALID`>
+  }, StickerSetInstallResult>
   export const uninstallStickerSet: TLApiMethod<"messages.uninstallStickerSet", {
     stickerset: global.InputStickerSet      // InputStickerSet
-  }, boolean, `STICKERSET_INVALID`>
+  }, boolean>
   export const startBot: TLApiMethod<"messages.startBot", {
     bot: global.InputUser                   // InputUser
     peer: global.InputPeer                  // InputPeer
     random_id: bigint                       // long
     start_param: string                     // string
-  }, global.Updates, `BOT_INVALID` | `CHAT_ADMIN_REQUIRED` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `START_PARAM_EMPTY` | `START_PARAM_INVALID` | `START_PARAM_TOO_LONG` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const getMessagesViews: TLApiMethod<"messages.getMessagesViews", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
     increment: boolean                      // Bool
-  }, MessageViews, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ID_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, MessageViews>
   export const editChatAdmin: TLApiMethod<"messages.editChatAdmin", {
     chat_id: bigint                         // long
     user_id: global.InputUser               // InputUser
     is_admin: boolean                       // Bool
-  }, boolean, `CHAT_ID_INVALID` | `PEER_ID_INVALID` | `USER_ID_INVALID` | `USER_NOT_PARTICIPANT`>
+  }, boolean>
   export const migrateChat: TLApiMethod<"messages.migrateChat", {
     chat_id: bigint                         // long
-  }, global.Updates, `CHANNELS_TOO_MUCH` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `PEER_ID_INVALID` | `CHAT_ADMIN_REQUIRED`>
+  }, global.Updates>
   export const searchGlobal: TLApiMethod<"messages.searchGlobal", {
     folder_id?: number                      // flags.0?int
     q: string                               // string
@@ -8848,30 +8848,30 @@ export namespace messages {
     offset_peer: global.InputPeer           // InputPeer
     offset_id: number                       // int
     limit: number                           // int
-  }, Messages, `FOLDER_ID_INVALID` | `SEARCH_QUERY_EMPTY`>
+  }, Messages>
   export const reorderStickerSets: TLApiMethod<"messages.reorderStickerSets", {
     masks?: true                            // flags.0?true
     order: bigint[]                         // Vector<long>
-  }, boolean, never>
+  }, boolean>
   export const getDocumentByHash: TLApiMethod<"messages.getDocumentByHash", {
     sha256: BufferSource                    // bytes
     size: number                            // int
     mime_type: string                       // string
-  }, global.Document, `SHA256_HASH_INVALID`>
+  }, global.Document>
   export const getSavedGifs: TLApiMethod<"messages.getSavedGifs", {
     hash: bigint                            // long
-  }, SavedGifs, never>
+  }, SavedGifs>
   export const saveGif: TLApiMethod<"messages.saveGif", {
     id: global.InputDocument                // InputDocument
     unsave: boolean                         // Bool
-  }, boolean, `GIF_ID_INVALID`>
+  }, boolean>
   export const getInlineBotResults: TLApiMethod<"messages.getInlineBotResults", {
     bot: global.InputUser                   // InputUser
     peer: global.InputPeer                  // InputPeer
     geo_point?: global.InputGeoPoint        // flags.0?InputGeoPoint
     query: string                           // string
     offset: string                          // string
-  }, BotResults, `BOT_INLINE_DISABLED` | `BOT_INVALID` | `BOT_RESPONSE_TIMEOUT` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `Timeout`>
+  }, BotResults>
   export const setInlineBotResults: TLApiMethod<"messages.setInlineBotResults", {
     gallery?: true                          // flags.0?true
     private?: true                          // flags.1?true
@@ -8880,7 +8880,7 @@ export namespace messages {
     cache_time: number                      // int
     next_offset?: string                    // flags.2?string
     switch_pm?: global.InlineBotSwitchPM    // flags.3?InlineBotSwitchPM
-  }, boolean, `ARTICLE_TITLE_EMPTY` | `AUDIO_CONTENT_URL_EMPTY` | `AUDIO_TITLE_EMPTY` | `BUTTON_DATA_INVALID` | `BUTTON_TYPE_INVALID` | `BUTTON_URL_INVALID` | `DOCUMENT_INVALID` | `FILE_CONTENT_TYPE_INVALID` | `FILE_TITLE_EMPTY` | `GIF_CONTENT_TYPE_INVALID` | `MESSAGE_EMPTY` | `MESSAGE_TOO_LONG` | `NEXT_OFFSET_INVALID` | `PHOTO_CONTENT_TYPE_INVALID` | `PHOTO_CONTENT_URL_EMPTY` | `PHOTO_INVALID` | `PHOTO_THUMB_URL_EMPTY` | `QUERY_ID_INVALID` | `REPLY_MARKUP_INVALID` | `RESULT_ID_DUPLICATE` | `RESULT_TYPE_INVALID` | `RESULTS_TOO_MUCH` | `SEND_MESSAGE_MEDIA_INVALID` | `SEND_MESSAGE_TYPE_INVALID` | `START_PARAM_INVALID` | `STICKER_DOCUMENT_INVALID` | `URL_INVALID` | `USER_BOT_INVALID` | `VIDEO_TITLE_EMPTY` | `WEBDOCUMENT_INVALID` | `WEBDOCUMENT_MIME_INVALID` | `WEBDOCUMENT_SIZE_TOO_BIG` | `WEBDOCUMENT_URL_INVALID` | `USER_BOT_INVALID`>
+  }, boolean>
   export const sendInlineBotResult: TLApiMethod<"messages.sendInlineBotResult", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -8893,11 +8893,11 @@ export namespace messages {
     id: string                              // string
     schedule_date?: number                  // flags.10?int
     send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_RESTRICTED` | `CHAT_SEND_INLINE_FORBIDDEN` | `INLINE_RESULT_EXPIRED` | `INPUT_USER_DEACTIVATED` | `MEDIA_EMPTY` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `QUERY_ID_EMPTY` | `RESULT_ID_EMPTY` | `SCHEDULE_DATE_TOO_LATE` | `SCHEDULE_TOO_MUCH` | `USER_BANNED_IN_CHANNEL` | `WEBPAGE_CURL_FAILED` | `WEBPAGE_MEDIA_EMPTY` | `YOU_BLOCKED_USER` | `CHAT_SEND_GAME_FORBIDDEN` | `CHAT_SEND_GIFS_FORBIDDEN` | `CHAT_SEND_INLINE_FORBIDDEN` | `CHAT_SEND_MEDIA_FORBIDDEN` | `CHAT_SEND_STICKERS_FORBIDDEN` | `CHAT_WRITE_FORBIDDEN` | `SLOWMODE_WAIT_${number}` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const getMessageEditData: TLApiMethod<"messages.getMessageEditData", {
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
-  }, MessageEditData, `CHAT_ADMIN_REQUIRED` | `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `MESSAGE_AUTHOR_REQUIRED`>
+  }, MessageEditData>
   export const editMessage: TLApiMethod<"messages.editMessage", {
     no_webpage?: true                       // flags.1?true
     peer: global.InputPeer                  // InputPeer
@@ -8907,7 +8907,7 @@ export namespace messages {
     reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.15?int
-  }, global.Updates, `BUTTON_DATA_INVALID` | `BUTTON_TYPE_INVALID` | `BUTTON_URL_INVALID` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `ENTITIES_TOO_LONG` | `INPUT_USER_DEACTIVATED` | `MEDIA_CAPTION_TOO_LONG` | `MEDIA_GROUPED_INVALID` | `MEDIA_NEW_INVALID` | `MEDIA_PREV_INVALID` | `MESSAGE_EDIT_TIME_EXPIRED` | `MESSAGE_EMPTY` | `MESSAGE_ID_INVALID` | `MESSAGE_NOT_MODIFIED` | `MESSAGE_TOO_LONG` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `REPLY_MARKUP_INVALID` | `SCHEDULE_DATE_INVALID` | `USER_BANNED_IN_CHANNEL` | `CHAT_ADMIN_REQUIRED` | `CHAT_WRITE_FORBIDDEN` | `INLINE_BOT_REQUIRED` | `MESSAGE_AUTHOR_REQUIRED`>
+  }, global.Updates>
   export const editInlineBotMessage: TLApiMethod<"messages.editInlineBotMessage", {
     no_webpage?: true                       // flags.1?true
     id: global.InputBotInlineMessageID      // InputBotInlineMessageID
@@ -8915,61 +8915,61 @@ export namespace messages {
     media?: global.InputMedia               // flags.14?InputMedia
     reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
-  }, boolean, `MESSAGE_ID_INVALID` | `MESSAGE_NOT_MODIFIED`>
+  }, boolean>
   export const getBotCallbackAnswer: TLApiMethod<"messages.getBotCallbackAnswer", {
     game?: true                             // flags.1?true
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     data?: BufferSource                     // flags.0?bytes
     password?: global.InputCheckPasswordSRP // flags.2?InputCheckPasswordSRP
-  }, BotCallbackAnswer, `BOT_RESPONSE_TIMEOUT` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `DATA_INVALID` | `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `Timeout`>
+  }, BotCallbackAnswer>
   export const setBotCallbackAnswer: TLApiMethod<"messages.setBotCallbackAnswer", {
     alert?: true                            // flags.1?true
     query_id: bigint                        // long
     message?: string                        // flags.0?string
     url?: string                            // flags.2?string
     cache_time: number                      // int
-  }, boolean, `MESSAGE_TOO_LONG` | `QUERY_ID_INVALID` | `URL_INVALID`>
+  }, boolean>
   export const getPeerDialogs: TLApiMethod<"messages.getPeerDialogs", {
     peers: global.InputDialogPeer[]         // Vector<InputDialogPeer>
-  }, PeerDialogs, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, PeerDialogs>
   export const saveDraft: TLApiMethod<"messages.saveDraft", {
     no_webpage?: true                       // flags.1?true
     reply_to_msg_id?: number                // flags.0?int
     peer: global.InputPeer                  // InputPeer
     message: string                         // string
     entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
-  }, boolean, `MSG_ID_INVALID` | `PEER_ID_INVALID`>
-  export const getAllDrafts: TLApiMethod<"messages.getAllDrafts", void, global.Updates, never>
+  }, boolean>
+  export const getAllDrafts: TLApiMethod<"messages.getAllDrafts", void, global.Updates>
   export const getFeaturedStickers: TLApiMethod<"messages.getFeaturedStickers", {
     hash: bigint                            // long
-  }, FeaturedStickers, never>
+  }, FeaturedStickers>
   export const readFeaturedStickers: TLApiMethod<"messages.readFeaturedStickers", {
     id: bigint[]                            // Vector<long>
-  }, boolean, never>
+  }, boolean>
   export const getRecentStickers: TLApiMethod<"messages.getRecentStickers", {
     attached?: true                         // flags.0?true
     hash: bigint                            // long
-  }, RecentStickers, never>
+  }, RecentStickers>
   export const saveRecentSticker: TLApiMethod<"messages.saveRecentSticker", {
     attached?: true                         // flags.0?true
     id: global.InputDocument                // InputDocument
     unsave: boolean                         // Bool
-  }, boolean, `STICKER_ID_INVALID`>
+  }, boolean>
   export const clearRecentStickers: TLApiMethod<"messages.clearRecentStickers", {
     attached?: true                         // flags.0?true
-  }, boolean, never>
+  }, boolean>
   export const getArchivedStickers: TLApiMethod<"messages.getArchivedStickers", {
     masks?: true                            // flags.0?true
     offset_id: bigint                       // long
     limit: number                           // int
-  }, ArchivedStickers, never>
+  }, ArchivedStickers>
   export const getMaskStickers: TLApiMethod<"messages.getMaskStickers", {
     hash: bigint                            // long
-  }, AllStickers, never>
+  }, AllStickers>
   export const getAttachedStickers: TLApiMethod<"messages.getAttachedStickers", {
     media: global.InputStickeredMedia       // InputStickeredMedia
-  }, global.StickerSetCovered[], never>
+  }, global.StickerSetCovered[]>
   export const setGameScore: TLApiMethod<"messages.setGameScore", {
     edit_message?: true                     // flags.0?true
     force?: true                            // flags.1?true
@@ -8977,73 +8977,73 @@ export namespace messages {
     id: number                              // int
     user_id: global.InputUser               // InputUser
     score: number                           // int
-  }, global.Updates, `BOT_SCORE_NOT_MODIFIED` | `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `SCORE_INVALID` | `USER_BOT_REQUIRED`>
+  }, global.Updates>
   export const setInlineGameScore: TLApiMethod<"messages.setInlineGameScore", {
     edit_message?: true                     // flags.0?true
     force?: true                            // flags.1?true
     id: global.InputBotInlineMessageID      // InputBotInlineMessageID
     user_id: global.InputUser               // InputUser
     score: number                           // int
-  }, boolean, `MESSAGE_ID_INVALID` | `USER_BOT_REQUIRED`>
+  }, boolean>
   export const getGameHighScores: TLApiMethod<"messages.getGameHighScores", {
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
     user_id: global.InputUser               // InputUser
-  }, HighScores, `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `USER_BOT_REQUIRED`>
+  }, HighScores>
   export const getInlineGameHighScores: TLApiMethod<"messages.getInlineGameHighScores", {
     id: global.InputBotInlineMessageID      // InputBotInlineMessageID
     user_id: global.InputUser               // InputUser
-  }, HighScores, `MESSAGE_ID_INVALID` | `USER_BOT_REQUIRED`>
+  }, HighScores>
   export const getCommonChats: TLApiMethod<"messages.getCommonChats", {
     user_id: global.InputUser               // InputUser
     max_id: bigint                          // long
     limit: number                           // int
-  }, Chats, `MSG_ID_INVALID` | `USER_ID_INVALID`>
+  }, Chats>
   export const getAllChats: TLApiMethod<"messages.getAllChats", {
     except_ids: bigint[]                    // Vector<long>
-  }, Chats, never>
+  }, Chats>
   export const getWebPage: TLApiMethod<"messages.getWebPage", {
     url: string                             // string
     hash: number                            // int
-  }, global.WebPage, `WC_CONVERT_URL_INVALID`>
+  }, global.WebPage>
   export const toggleDialogPin: TLApiMethod<"messages.toggleDialogPin", {
     pinned?: true                           // flags.0?true
     peer: global.InputDialogPeer            // InputDialogPeer
-  }, boolean, `CHANNEL_PRIVATE` | `PEER_ID_INVALID` | `PINNED_DIALOGS_TOO_MUCH`>
+  }, boolean>
   export const reorderPinnedDialogs: TLApiMethod<"messages.reorderPinnedDialogs", {
     force?: true                            // flags.0?true
     folder_id: number                       // int
     order: global.InputDialogPeer[]         // Vector<InputDialogPeer>
-  }, boolean, `PEER_ID_INVALID`>
+  }, boolean>
   export const getPinnedDialogs: TLApiMethod<"messages.getPinnedDialogs", {
     folder_id: number                       // int
-  }, PeerDialogs, `FOLDER_ID_INVALID`>
+  }, PeerDialogs>
   export const setBotShippingResults: TLApiMethod<"messages.setBotShippingResults", {
     query_id: bigint                        // long
     error?: string                          // flags.0?string
     shipping_options?: global.ShippingOption[] // flags.1?Vector<ShippingOption>
-  }, boolean, `QUERY_ID_INVALID`>
+  }, boolean>
   export const setBotPrecheckoutResults: TLApiMethod<"messages.setBotPrecheckoutResults", {
     success?: true                          // flags.1?true
     query_id: bigint                        // long
     error?: string                          // flags.0?string
-  }, boolean, `ERROR_TEXT_EMPTY`>
+  }, boolean>
   export const uploadMedia: TLApiMethod<"messages.uploadMedia", {
     peer: global.InputPeer                  // InputPeer
     media: global.InputMedia                // InputMedia
-  }, global.MessageMedia, `BOT_MISSING` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_RESTRICTED` | `FILE_PARTS_INVALID` | `IMAGE_PROCESS_FAILED` | `INPUT_USER_DEACTIVATED` | `MEDIA_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `PHOTO_EXT_INVALID` | `PHOTO_INVALID_DIMENSIONS` | `PHOTO_SAVE_FILE_INVALID` | `USER_BANNED_IN_CHANNEL` | `WEBPAGE_CURL_FAILED` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.MessageMedia>
   export const sendScreenshotNotification: TLApiMethod<"messages.sendScreenshotNotification", {
     peer: global.InputPeer                  // InputPeer
     reply_to_msg_id: number                 // int
     random_id: bigint                       // long
-  }, global.Updates, `PEER_ID_INVALID` | `YOU_BLOCKED_USER`>
+  }, global.Updates>
   export const getFavedStickers: TLApiMethod<"messages.getFavedStickers", {
     hash: bigint                            // long
-  }, FavedStickers, never>
+  }, FavedStickers>
   export const faveSticker: TLApiMethod<"messages.faveSticker", {
     id: global.InputDocument                // InputDocument
     unfave: boolean                         // Bool
-  }, boolean, `STICKER_ID_INVALID`>
+  }, boolean>
   export const getUnreadMentions: TLApiMethod<"messages.getUnreadMentions", {
     peer: global.InputPeer                  // InputPeer
     offset_id: number                       // int
@@ -9051,15 +9051,15 @@ export namespace messages {
     limit: number                           // int
     max_id: number                          // int
     min_id: number                          // int
-  }, Messages, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, Messages>
   export const readMentions: TLApiMethod<"messages.readMentions", {
     peer: global.InputPeer                  // InputPeer
-  }, AffectedHistory, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, AffectedHistory>
   export const getRecentLocations: TLApiMethod<"messages.getRecentLocations", {
     peer: global.InputPeer                  // InputPeer
     limit: number                           // int
     hash: bigint                            // long
-  }, Messages, never>
+  }, Messages>
   export const sendMultiMedia: TLApiMethod<"messages.sendMultiMedia", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -9070,126 +9070,126 @@ export namespace messages {
     multi_media: global.InputSingleMedia[]  // Vector<InputSingleMedia>
     schedule_date?: number                  // flags.10?int
     send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.Updates, `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `MEDIA_CAPTION_TOO_LONG` | `MEDIA_EMPTY` | `MEDIA_INVALID` | `MULTI_MEDIA_TOO_LONG` | `PEER_ID_INVALID` | `RANDOM_ID_EMPTY` | `SCHEDULE_DATE_TOO_LATE` | `SCHEDULE_TOO_MUCH` | `CHAT_WRITE_FORBIDDEN` | `SLOWMODE_WAIT_${number}` | `RANDOM_ID_DUPLICATE`>
+  }, global.Updates>
   export const uploadEncryptedFile: TLApiMethod<"messages.uploadEncryptedFile", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     file: global.InputEncryptedFile         // InputEncryptedFile
-  }, global.EncryptedFile, never>
+  }, global.EncryptedFile>
   export const searchStickerSets: TLApiMethod<"messages.searchStickerSets", {
     exclude_featured?: true                 // flags.0?true
     q: string                               // string
     hash: bigint                            // long
-  }, FoundStickerSets, never>
-  export const getSplitRanges: TLApiMethod<"messages.getSplitRanges", void, global.MessageRange[], never>
+  }, FoundStickerSets>
+  export const getSplitRanges: TLApiMethod<"messages.getSplitRanges", void, global.MessageRange[]>
   export const markDialogUnread: TLApiMethod<"messages.markDialogUnread", {
     unread?: true                           // flags.0?true
     peer: global.InputDialogPeer            // InputDialogPeer
-  }, boolean, `PEER_ID_INVALID`>
-  export const getDialogUnreadMarks: TLApiMethod<"messages.getDialogUnreadMarks", void, global.DialogPeer[], never>
-  export const clearAllDrafts: TLApiMethod<"messages.clearAllDrafts", void, boolean, never>
+  }, boolean>
+  export const getDialogUnreadMarks: TLApiMethod<"messages.getDialogUnreadMarks", void, global.DialogPeer[]>
+  export const clearAllDrafts: TLApiMethod<"messages.clearAllDrafts", void, boolean>
   export const updatePinnedMessage: TLApiMethod<"messages.updatePinnedMessage", {
     silent?: true                           // flags.0?true
     unpin?: true                            // flags.1?true
     pm_oneside?: true                       // flags.2?true
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
-  }, global.Updates, `BOT_ONESIDE_NOT_AVAIL` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `PIN_RESTRICTED` | `USER_BANNED_IN_CHANNEL` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const sendVote: TLApiMethod<"messages.sendVote", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     options: BufferSource[]                 // Vector<bytes>
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MESSAGE_ID_INVALID` | `MESSAGE_POLL_CLOSED` | `OPTION_INVALID` | `OPTIONS_TOO_MUCH` | `PEER_ID_INVALID` | `REVOTE_NOT_ALLOWED`>
+  }, global.Updates>
   export const getPollResults: TLApiMethod<"messages.getPollResults", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-  }, global.Updates, `MESSAGE_ID_INVALID` | `PEER_ID_INVALID`>
+  }, global.Updates>
   export const getOnlines: TLApiMethod<"messages.getOnlines", {
     peer: global.InputPeer                  // InputPeer
-  }, global.ChatOnlines, `CHANNEL_PRIVATE` | `CHAT_ID_INVALID` | `PEER_ID_INVALID`>
+  }, global.ChatOnlines>
   export const editChatAbout: TLApiMethod<"messages.editChatAbout", {
     peer: global.InputPeer                  // InputPeer
     about: string                           // string
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ABOUT_NOT_MODIFIED` | `CHAT_ABOUT_TOO_LONG` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `CHAT_NOT_MODIFIED` | `PEER_ID_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, boolean>
   export const editChatDefaultBannedRights: TLApiMethod<"messages.editChatDefaultBannedRights", {
     peer: global.InputPeer                  // InputPeer
     banned_rights: global.ChatBannedRights  // ChatBannedRights
-  }, global.Updates, `BANNED_RIGHTS_INVALID` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `PEER_ID_INVALID` | `UNTIL_DATE_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const getEmojiKeywords: TLApiMethod<"messages.getEmojiKeywords", {
     lang_code: string                       // string
-  }, global.EmojiKeywordsDifference, never>
+  }, global.EmojiKeywordsDifference>
   export const getEmojiKeywordsDifference: TLApiMethod<"messages.getEmojiKeywordsDifference", {
     lang_code: string                       // string
     from_version: number                    // int
-  }, global.EmojiKeywordsDifference, never>
+  }, global.EmojiKeywordsDifference>
   export const getEmojiKeywordsLanguages: TLApiMethod<"messages.getEmojiKeywordsLanguages", {
     lang_codes: string[]                    // Vector<string>
-  }, global.EmojiLanguage[], never>
+  }, global.EmojiLanguage[]>
   export const getEmojiURL: TLApiMethod<"messages.getEmojiURL", {
     lang_code: string                       // string
-  }, global.EmojiURL, never>
+  }, global.EmojiURL>
   export const getSearchCounters: TLApiMethod<"messages.getSearchCounters", {
     peer: global.InputPeer                  // InputPeer
     filters: global.MessagesFilter[]        // Vector<MessagesFilter>
-  }, SearchCounter[], `PEER_ID_INVALID`>
+  }, SearchCounter[]>
   export const requestUrlAuth: TLApiMethod<"messages.requestUrlAuth", {
     peer?: global.InputPeer                 // flags.1?InputPeer
     msg_id?: number                         // flags.1?int
     button_id?: number                      // flags.1?int
     url?: string                            // flags.2?string
-  }, global.UrlAuthResult, never>
+  }, global.UrlAuthResult>
   export const acceptUrlAuth: TLApiMethod<"messages.acceptUrlAuth", {
     write_allowed?: true                    // flags.0?true
     peer?: global.InputPeer                 // flags.1?InputPeer
     msg_id?: number                         // flags.1?int
     button_id?: number                      // flags.1?int
     url?: string                            // flags.2?string
-  }, global.UrlAuthResult, never>
+  }, global.UrlAuthResult>
   export const hidePeerSettingsBar: TLApiMethod<"messages.hidePeerSettingsBar", {
     peer: global.InputPeer                  // InputPeer
-  }, boolean, never>
+  }, boolean>
   export const getScheduledHistory: TLApiMethod<"messages.getScheduledHistory", {
     peer: global.InputPeer                  // InputPeer
     hash: bigint                            // long
-  }, Messages, `CHAT_ADMIN_REQUIRED` | `PEER_ID_INVALID`>
+  }, Messages>
   export const getScheduledMessages: TLApiMethod<"messages.getScheduledMessages", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
-  }, Messages, `CHAT_ADMIN_REQUIRED` | `PEER_ID_INVALID`>
+  }, Messages>
   export const sendScheduledMessages: TLApiMethod<"messages.sendScheduledMessages", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates, `MESSAGE_ID_INVALID` | `PEER_ID_INVALID`>
+  }, global.Updates>
   export const deleteScheduledMessages: TLApiMethod<"messages.deleteScheduledMessages", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates, never>
+  }, global.Updates>
   export const getPollVotes: TLApiMethod<"messages.getPollVotes", {
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
     option?: BufferSource                   // flags.0?bytes
     offset?: string                         // flags.1?string
     limit: number                           // int
-  }, VotesList, `MSG_ID_INVALID` | `BROADCAST_FORBIDDEN` | `POLL_VOTE_REQUIRED`>
+  }, VotesList>
   export const toggleStickerSets: TLApiMethod<"messages.toggleStickerSets", {
     uninstall?: true                        // flags.0?true
     archive?: true                          // flags.1?true
     unarchive?: true                        // flags.2?true
     stickersets: global.InputStickerSet[]   // Vector<InputStickerSet>
-  }, boolean, never>
-  export const getDialogFilters: TLApiMethod<"messages.getDialogFilters", void, global.DialogFilter[], never>
-  export const getSuggestedDialogFilters: TLApiMethod<"messages.getSuggestedDialogFilters", void, global.DialogFilterSuggested[], never>
+  }, boolean>
+  export const getDialogFilters: TLApiMethod<"messages.getDialogFilters", void, global.DialogFilter[]>
+  export const getSuggestedDialogFilters: TLApiMethod<"messages.getSuggestedDialogFilters", void, global.DialogFilterSuggested[]>
   export const updateDialogFilter: TLApiMethod<"messages.updateDialogFilter", {
     id: number                              // int
     filter?: global.DialogFilter            // flags.0?DialogFilter
-  }, boolean, `FILTER_ID_INVALID` | `FILTER_INCLUDE_EMPTY` | `FILTER_TITLE_EMPTY`>
+  }, boolean>
   export const updateDialogFiltersOrder: TLApiMethod<"messages.updateDialogFiltersOrder", {
     order: number[]                         // Vector<int>
-  }, boolean, never>
+  }, boolean>
   export const getOldFeaturedStickers: TLApiMethod<"messages.getOldFeaturedStickers", {
     offset: number                          // int
     limit: number                           // int
     hash: bigint                            // long
-  }, FeaturedStickers, never>
+  }, FeaturedStickers>
   export const getReplies: TLApiMethod<"messages.getReplies", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
@@ -9200,43 +9200,43 @@ export namespace messages {
     max_id: number                          // int
     min_id: number                          // int
     hash: bigint                            // long
-  }, Messages, `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, Messages>
   export const getDiscussionMessage: TLApiMethod<"messages.getDiscussionMessage", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-  }, DiscussionMessage, `CHANNEL_INVALID` | `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, DiscussionMessage>
   export const readDiscussion: TLApiMethod<"messages.readDiscussion", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     read_max_id: number                     // int
-  }, boolean, `MSG_ID_INVALID` | `PEER_ID_INVALID`>
+  }, boolean>
   export const unpinAllMessages: TLApiMethod<"messages.unpinAllMessages", {
     peer: global.InputPeer                  // InputPeer
-  }, AffectedHistory, never>
+  }, AffectedHistory>
   export const deleteChat: TLApiMethod<"messages.deleteChat", {
     chat_id: bigint                         // long
-  }, boolean, `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `PEER_ID_INVALID`>
+  }, boolean>
   export const deletePhoneCallHistory: TLApiMethod<"messages.deletePhoneCallHistory", {
     revoke?: true                           // flags.0?true
-  }, AffectedFoundMessages, never>
+  }, AffectedFoundMessages>
   export const checkHistoryImport: TLApiMethod<"messages.checkHistoryImport", {
     import_head: string                     // string
-  }, HistoryImportParsed, never>
+  }, HistoryImportParsed>
   export const initHistoryImport: TLApiMethod<"messages.initHistoryImport", {
     peer: global.InputPeer                  // InputPeer
     file: global.InputFile                  // InputFile
     media_count: number                     // int
-  }, HistoryImport, `IMPORT_FILE_INVALID` | `IMPORT_FORMAT_UNRECOGNIZED` | `PREVIOUS_CHAT_IMPORT_ACTIVE_WAIT_${number}MIN`>
+  }, HistoryImport>
   export const uploadImportedMedia: TLApiMethod<"messages.uploadImportedMedia", {
     peer: global.InputPeer                  // InputPeer
     import_id: bigint                       // long
     file_name: string                       // string
     media: global.InputMedia                // InputMedia
-  }, global.MessageMedia, never>
+  }, global.MessageMedia>
   export const startHistoryImport: TLApiMethod<"messages.startHistoryImport", {
     peer: global.InputPeer                  // InputPeer
     import_id: bigint                       // long
-  }, boolean, `IMPORT_ID_INVALID`>
+  }, boolean>
   export const getExportedChatInvites: TLApiMethod<"messages.getExportedChatInvites", {
     revoked?: true                          // flags.3?true
     peer: global.InputPeer                  // InputPeer
@@ -9244,11 +9244,11 @@ export namespace messages {
     offset_date?: number                    // flags.2?int
     offset_link?: string                    // flags.2?string
     limit: number                           // int
-  }, ExportedChatInvites, `ADMIN_ID_INVALID` | `CHAT_ADMIN_REQUIRED` | `PEER_ID_INVALID`>
+  }, ExportedChatInvites>
   export const getExportedChatInvite: TLApiMethod<"messages.getExportedChatInvite", {
     peer: global.InputPeer                  // InputPeer
     link: string                            // string
-  }, ExportedChatInvite, `CHAT_ADMIN_REQUIRED` | `INVITE_HASH_EXPIRED` | `PEER_ID_INVALID`>
+  }, ExportedChatInvite>
   export const editExportedChatInvite: TLApiMethod<"messages.editExportedChatInvite", {
     revoked?: true                          // flags.2?true
     peer: global.InputPeer                  // InputPeer
@@ -9257,18 +9257,18 @@ export namespace messages {
     usage_limit?: number                    // flags.1?int
     request_needed?: boolean                // flags.3?Bool
     title?: string                          // flags.4?string
-  }, ExportedChatInvite, `PEER_ID_INVALID` | `EDIT_BOT_INVITE_FORBIDDEN`>
+  }, ExportedChatInvite>
   export const deleteRevokedExportedChatInvites: TLApiMethod<"messages.deleteRevokedExportedChatInvites", {
     peer: global.InputPeer                  // InputPeer
     admin_id: global.InputUser              // InputUser
-  }, boolean, never>
+  }, boolean>
   export const deleteExportedChatInvite: TLApiMethod<"messages.deleteExportedChatInvite", {
     peer: global.InputPeer                  // InputPeer
     link: string                            // string
-  }, boolean, `INVITE_REVOKED_MISSING`>
+  }, boolean>
   export const getAdminsWithInvites: TLApiMethod<"messages.getAdminsWithInvites", {
     peer: global.InputPeer                  // InputPeer
-  }, ChatAdminsWithInvites, `CHAT_ADMIN_REQUIRED` | `PEER_ID_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, ChatAdminsWithInvites>
   export const getChatInviteImporters: TLApiMethod<"messages.getChatInviteImporters", {
     requested?: true                        // flags.0?true
     peer: global.InputPeer                  // InputPeer
@@ -9277,86 +9277,86 @@ export namespace messages {
     offset_date: number                     // int
     offset_user: global.InputUser           // InputUser
     limit: number                           // int
-  }, ChatInviteImporters, `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `INVITE_HASH_EXPIRED` | `PEER_ID_INVALID` | `SEARCH_WITH_LINK_NOT_SUPPROTED`>
+  }, ChatInviteImporters>
   export const setHistoryTTL: TLApiMethod<"messages.setHistoryTTL", {
     peer: global.InputPeer                  // InputPeer
     period: number                          // int
-  }, global.Updates, `CHAT_NOT_MODIFIED` | `TTL_PERIOD_INVALID`>
+  }, global.Updates>
   export const checkHistoryImportPeer: TLApiMethod<"messages.checkHistoryImportPeer", {
     peer: global.InputPeer                  // InputPeer
-  }, CheckedHistoryImportPeer, `PEER_ID_INVALID` | `USER_NOT_MUTUAL_CONTACT`>
+  }, CheckedHistoryImportPeer>
   export const setChatTheme: TLApiMethod<"messages.setChatTheme", {
     peer: global.InputPeer                  // InputPeer
     emoticon: string                        // string
-  }, global.Updates, `EMOJI_INVALID` | `EMOJI_NOT_MODIFIED` | `PEER_ID_INVALID`>
+  }, global.Updates>
   export const getMessageReadParticipants: TLApiMethod<"messages.getMessageReadParticipants", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-  }, bigint[], `CHAT_TOO_BIG`>
+  }, bigint[]>
   export const getSearchResultsCalendar: TLApiMethod<"messages.getSearchResultsCalendar", {
     peer: global.InputPeer                  // InputPeer
     filter: global.MessagesFilter           // MessagesFilter
     offset_id: number                       // int
     offset_date: number                     // int
-  }, SearchResultsCalendar, `FILTER_NOT_SUPPORTED`>
+  }, SearchResultsCalendar>
   export const getSearchResultsPositions: TLApiMethod<"messages.getSearchResultsPositions", {
     peer: global.InputPeer                  // InputPeer
     filter: global.MessagesFilter           // MessagesFilter
     offset_id: number                       // int
     limit: number                           // int
-  }, SearchResultsPositions, never>
+  }, SearchResultsPositions>
   export const hideChatJoinRequest: TLApiMethod<"messages.hideChatJoinRequest", {
     approved?: true                         // flags.0?true
     peer: global.InputPeer                  // InputPeer
     user_id: global.InputUser               // InputUser
-  }, global.Updates, `PEER_ID_INVALID`>
+  }, global.Updates>
   export const hideAllChatJoinRequests: TLApiMethod<"messages.hideAllChatJoinRequests", {
     approved?: true                         // flags.0?true
     peer: global.InputPeer                  // InputPeer
     link?: string                           // flags.1?string
-  }, global.Updates, never>
+  }, global.Updates>
   export const toggleNoForwards: TLApiMethod<"messages.toggleNoForwards", {
     peer: global.InputPeer                  // InputPeer
     enabled: boolean                        // Bool
-  }, global.Updates, never>
+  }, global.Updates>
   export const saveDefaultSendAs: TLApiMethod<"messages.saveDefaultSendAs", {
     peer: global.InputPeer                  // InputPeer
     send_as: global.InputPeer               // InputPeer
-  }, boolean, `PEER_ID_INVALID`>
+  }, boolean>
   export const sendReaction: TLApiMethod<"messages.sendReaction", {
     big?: true                              // flags.1?true
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     reaction?: string                       // flags.0?string
-  }, global.Updates, `CHANNEL_PRIVATE` | `MESSAGE_ID_INVALID` | `PEER_ID_INVALID` | `REACTION_EMPTY` | `REACTION_INVALID`>
+  }, global.Updates>
   export const getMessagesReactions: TLApiMethod<"messages.getMessagesReactions", {
     peer: global.InputPeer                  // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates, never>
+  }, global.Updates>
   export const getMessageReactionsList: TLApiMethod<"messages.getMessageReactionsList", {
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
     reaction?: string                       // flags.0?string
     offset?: string                         // flags.1?string
     limit: number                           // int
-  }, MessageReactionsList, never>
+  }, MessageReactionsList>
   export const setChatAvailableReactions: TLApiMethod<"messages.setChatAvailableReactions", {
     peer: global.InputPeer                  // InputPeer
     available_reactions: string[]           // Vector<string>
-  }, global.Updates, never>
+  }, global.Updates>
   export const getAvailableReactions: TLApiMethod<"messages.getAvailableReactions", {
     hash: number                            // int
-  }, AvailableReactions, never>
+  }, AvailableReactions>
   export const setDefaultReaction: TLApiMethod<"messages.setDefaultReaction", {
     reaction: string                        // string
-  }, boolean, never>
+  }, boolean>
   export const translateText: TLApiMethod<"messages.translateText", {
     peer?: global.InputPeer                 // flags.0?InputPeer
     msg_id?: number                         // flags.0?int
     text?: string                           // flags.1?string
     from_lang?: string                      // flags.2?string
     to_lang: string                         // string
-  }, TranslatedText, never>
+  }, TranslatedText>
   export const getUnreadReactions: TLApiMethod<"messages.getUnreadReactions", {
     peer: global.InputPeer                  // InputPeer
     offset_id: number                       // int
@@ -9364,47 +9364,47 @@ export namespace messages {
     limit: number                           // int
     max_id: number                          // int
     min_id: number                          // int
-  }, Messages, never>
+  }, Messages>
   export const readReactions: TLApiMethod<"messages.readReactions", {
     peer: global.InputPeer                  // InputPeer
-  }, AffectedHistory, never>
+  }, AffectedHistory>
 }
 
 export namespace updates {
-  export const getState: TLApiMethod<"updates.getState", void, State, never>
+  export const getState: TLApiMethod<"updates.getState", void, State>
   export const getDifference: TLApiMethod<"updates.getDifference", {
     pts: number                             // int
     pts_total_limit?: number                // flags.0?int
     date: number                            // int
     qts: number                             // int
-  }, Difference, `CDN_METHOD_INVALID` | `CHANNEL_INVALID` | `DATE_EMPTY` | `MSG_ID_INVALID` | `PERSISTENT_TIMESTAMP_EMPTY` | `PERSISTENT_TIMESTAMP_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, Difference>
   export const getChannelDifference: TLApiMethod<"updates.getChannelDifference", {
     force?: true                            // flags.0?true
     channel: global.InputChannel            // InputChannel
     filter: global.ChannelMessagesFilter    // ChannelMessagesFilter
     pts: number                             // int
     limit: number                           // int
-  }, ChannelDifference, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `FROM_MESSAGE_BOT_DISABLED` | `MSG_ID_INVALID` | `PERSISTENT_TIMESTAMP_EMPTY` | `PERSISTENT_TIMESTAMP_INVALID` | `PINNED_DIALOGS_TOO_MUCH` | `RANGES_INVALID` | `USER_BANNED_IN_CHANNEL` | `CHANNEL_PUBLIC_GROUP_NA` | `CHAT_WRITE_FORBIDDEN` | `PERSISTENT_TIMESTAMP_OUTDATED`>
+  }, ChannelDifference>
 }
 
 export namespace photos {
   export const updateProfilePhoto: TLApiMethod<"photos.updateProfilePhoto", {
     id: global.InputPhoto                   // InputPhoto
-  }, Photo, `ALBUM_PHOTOS_TOO_MANY` | `FILE_PARTS_INVALID` | `IMAGE_PROCESS_FAILED` | `LOCATION_INVALID` | `PHOTO_CROP_SIZE_SMALL` | `PHOTO_EXT_INVALID` | `PHOTO_ID_INVALID`>
+  }, Photo>
   export const uploadProfilePhoto: TLApiMethod<"photos.uploadProfilePhoto", {
     file?: global.InputFile                 // flags.0?InputFile
     video?: global.InputFile                // flags.1?InputFile
     video_start_ts?: number                 // flags.2?double
-  }, Photo, `ALBUM_PHOTOS_TOO_MANY` | `FILE_PARTS_INVALID` | `IMAGE_PROCESS_FAILED` | `PHOTO_CROP_FILE_MISSING` | `PHOTO_CROP_SIZE_SMALL` | `PHOTO_EXT_INVALID` | `PHOTO_FILE_MISSING` | `VIDEO_FILE_INVALID`>
+  }, Photo>
   export const deletePhotos: TLApiMethod<"photos.deletePhotos", {
     id: global.InputPhoto[]                 // Vector<InputPhoto>
-  }, bigint[], never>
+  }, bigint[]>
   export const getUserPhotos: TLApiMethod<"photos.getUserPhotos", {
     user_id: global.InputUser               // InputUser
     offset: number                          // int
     max_id: bigint                          // long
     limit: number                           // int
-  }, Photos, `MAX_ID_INVALID` | `MSG_ID_INVALID` | `USER_ID_INVALID`>
+  }, Photos>
 }
 
 export namespace upload {
@@ -9412,135 +9412,135 @@ export namespace upload {
     file_id: bigint                         // long
     file_part: number                       // int
     bytes: BufferSource                     // bytes
-  }, boolean, `FILE_PART_EMPTY` | `FILE_PART_INVALID`>
+  }, boolean>
   export const getFile: TLApiMethod<"upload.getFile", {
     precise?: true                          // flags.0?true
     cdn_supported?: true                    // flags.1?true
     location: global.InputFileLocation      // InputFileLocation
     offset: number                          // int
     limit: number                           // int
-  }, File, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `FILE_ID_INVALID` | `FILE_REFERENCE_*` | `FILE_REFERENCE_EXPIRED` | `LIMIT_INVALID` | `LOCATION_INVALID` | `MSG_ID_INVALID` | `OFFSET_INVALID` | `PEER_ID_INVALID` | `FILEREF_UPGRADE_NEEDED`>
+  }, File>
   export const saveBigFilePart: TLApiMethod<"upload.saveBigFilePart", {
     file_id: bigint                         // long
     file_part: number                       // int
     file_total_parts: number                // int
     bytes: BufferSource                     // bytes
-  }, boolean, `FILE_PART_EMPTY` | `FILE_PART_INVALID` | `FILE_PART_SIZE_CHANGED` | `FILE_PART_SIZE_INVALID` | `FILE_PART_TOO_BIG` | `FILE_PARTS_INVALID`>
+  }, boolean>
   export const getWebFile: TLApiMethod<"upload.getWebFile", {
     location: global.InputWebFileLocation   // InputWebFileLocation
     offset: number                          // int
     limit: number                           // int
-  }, WebFile, `LOCATION_INVALID`>
+  }, WebFile>
   export const getCdnFile: TLApiMethod<"upload.getCdnFile", {
     file_token: BufferSource                // bytes
     offset: number                          // int
     limit: number                           // int
-  }, CdnFile, never>
+  }, CdnFile>
   export const reuploadCdnFile: TLApiMethod<"upload.reuploadCdnFile", {
     file_token: BufferSource                // bytes
     request_token: BufferSource             // bytes
-  }, global.FileHash[], `RSA_DECRYPT_FAILED`>
+  }, global.FileHash[]>
   export const getCdnFileHashes: TLApiMethod<"upload.getCdnFileHashes", {
     file_token: BufferSource                // bytes
     offset: number                          // int
-  }, global.FileHash[], `CDN_METHOD_INVALID` | `RSA_DECRYPT_FAILED`>
+  }, global.FileHash[]>
   export const getFileHashes: TLApiMethod<"upload.getFileHashes", {
     location: global.InputFileLocation      // InputFileLocation
     offset: number                          // int
-  }, global.FileHash[], `LOCATION_INVALID`>
+  }, global.FileHash[]>
 }
 
 export namespace help {
-  export const getConfig: TLApiMethod<"help.getConfig", void, global.Config, `CONNECTION_API_ID_INVALID` | `CONNECTION_APP_VERSION_EMPTY` | `CONNECTION_LAYER_INVALID` | `DATA_INVALID` | `MSG_ID_INVALID` | `USERNAME_INVALID` | `USER_PRIVACY_RESTRICTED`>
-  export const getNearestDc: TLApiMethod<"help.getNearestDc", void, global.NearestDc, never>
+  export const getConfig: TLApiMethod<"help.getConfig", void, global.Config>
+  export const getNearestDc: TLApiMethod<"help.getNearestDc", void, global.NearestDc>
   export const getAppUpdate: TLApiMethod<"help.getAppUpdate", {
     source: string                          // string
-  }, AppUpdate, never>
-  export const getInviteText: TLApiMethod<"help.getInviteText", void, InviteText, never>
-  export const getSupport: TLApiMethod<"help.getSupport", void, Support, never>
+  }, AppUpdate>
+  export const getInviteText: TLApiMethod<"help.getInviteText", void, InviteText>
+  export const getSupport: TLApiMethod<"help.getSupport", void, Support>
   export const getAppChangelog: TLApiMethod<"help.getAppChangelog", {
     prev_app_version: string                // string
-  }, global.Updates, never>
+  }, global.Updates>
   export const setBotUpdatesStatus: TLApiMethod<"help.setBotUpdatesStatus", {
     pending_updates_count: number           // int
     message: string                         // string
-  }, boolean, never>
-  export const getCdnConfig: TLApiMethod<"help.getCdnConfig", void, global.CdnConfig, never>
+  }, boolean>
+  export const getCdnConfig: TLApiMethod<"help.getCdnConfig", void, global.CdnConfig>
   export const getRecentMeUrls: TLApiMethod<"help.getRecentMeUrls", {
     referer: string                         // string
-  }, RecentMeUrls, never>
-  export const getTermsOfServiceUpdate: TLApiMethod<"help.getTermsOfServiceUpdate", void, TermsOfServiceUpdate, never>
+  }, RecentMeUrls>
+  export const getTermsOfServiceUpdate: TLApiMethod<"help.getTermsOfServiceUpdate", void, TermsOfServiceUpdate>
   export const acceptTermsOfService: TLApiMethod<"help.acceptTermsOfService", {
     id: global.DataJSON                     // DataJSON
-  }, boolean, never>
+  }, boolean>
   export const getDeepLinkInfo: TLApiMethod<"help.getDeepLinkInfo", {
     path: string                            // string
-  }, DeepLinkInfo, never>
-  export const getAppConfig: TLApiMethod<"help.getAppConfig", void, global.JSONValue, never>
+  }, DeepLinkInfo>
+  export const getAppConfig: TLApiMethod<"help.getAppConfig", void, global.JSONValue>
   export const saveAppLog: TLApiMethod<"help.saveAppLog", {
     events: global.InputAppEvent[]          // Vector<InputAppEvent>
-  }, boolean, never>
+  }, boolean>
   export const getPassportConfig: TLApiMethod<"help.getPassportConfig", {
     hash: number                            // int
-  }, PassportConfig, never>
-  export const getSupportName: TLApiMethod<"help.getSupportName", void, SupportName, `USER_INVALID` | `USER_INVALID`>
+  }, PassportConfig>
+  export const getSupportName: TLApiMethod<"help.getSupportName", void, SupportName>
   export const getUserInfo: TLApiMethod<"help.getUserInfo", {
     user_id: global.InputUser               // InputUser
-  }, UserInfo, `USER_INVALID` | `USER_INVALID`>
+  }, UserInfo>
   export const editUserInfo: TLApiMethod<"help.editUserInfo", {
     user_id: global.InputUser               // InputUser
     message: string                         // string
     entities: global.MessageEntity[]        // Vector<MessageEntity>
-  }, UserInfo, `USER_INVALID`>
-  export const getPromoData: TLApiMethod<"help.getPromoData", void, PromoData, never>
+  }, UserInfo>
+  export const getPromoData: TLApiMethod<"help.getPromoData", void, PromoData>
   export const hidePromoData: TLApiMethod<"help.hidePromoData", {
     peer: global.InputPeer                  // InputPeer
-  }, boolean, never>
+  }, boolean>
   export const dismissSuggestion: TLApiMethod<"help.dismissSuggestion", {
     peer: global.InputPeer                  // InputPeer
     suggestion: string                      // string
-  }, boolean, never>
+  }, boolean>
   export const getCountriesList: TLApiMethod<"help.getCountriesList", {
     lang_code: string                       // string
     hash: number                            // int
-  }, CountriesList, never>
+  }, CountriesList>
 }
 
 export namespace channels {
   export const readHistory: TLApiMethod<"channels.readHistory", {
     channel: global.InputChannel            // InputChannel
     max_id: number                          // int
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID`>
+  }, boolean>
   export const deleteMessages: TLApiMethod<"channels.deleteMessages", {
     channel: global.InputChannel            // InputChannel
     id: number[]                            // Vector<int>
-  }, messages.AffectedMessages, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `MESSAGE_DELETE_FORBIDDEN`>
+  }, messages.AffectedMessages>
   export const reportSpam: TLApiMethod<"channels.reportSpam", {
     channel: global.InputChannel            // InputChannel
     participant: global.InputPeer           // InputPeer
     id: number[]                            // Vector<int>
-  }, boolean, `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `INPUT_USER_DEACTIVATED` | `USER_ID_INVALID`>
+  }, boolean>
   export const getMessages: TLApiMethod<"channels.getMessages", {
     channel: global.InputChannel            // InputChannel
     id: global.InputMessage[]               // Vector<InputMessage>
-  }, messages.Messages, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MESSAGE_IDS_EMPTY` | `MSG_ID_INVALID` | `USER_BANNED_IN_CHANNEL`>
+  }, messages.Messages>
   export const getParticipants: TLApiMethod<"channels.getParticipants", {
     channel: global.InputChannel            // InputChannel
     filter: global.ChannelParticipantsFilter // ChannelParticipantsFilter
     offset: number                          // int
     limit: number                           // int
     hash: bigint                            // long
-  }, ChannelParticipants, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED`>
+  }, ChannelParticipants>
   export const getParticipant: TLApiMethod<"channels.getParticipant", {
     channel: global.InputChannel            // InputChannel
     participant: global.InputPeer           // InputPeer
-  }, ChannelParticipant, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `MSG_ID_INVALID` | `PARTICIPANT_ID_INVALID` | `USER_ID_INVALID` | `USER_NOT_PARTICIPANT`>
+  }, ChannelParticipant>
   export const getChannels: TLApiMethod<"channels.getChannels", {
     id: global.InputChannel[]               // Vector<InputChannel>
-  }, messages.Chats, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `USER_BANNED_IN_CHANNEL`>
+  }, messages.Chats>
   export const getFullChannel: TLApiMethod<"channels.getFullChannel", {
     channel: global.InputChannel            // InputChannel
-  }, messages.ChatFull, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_NOT_MODIFIED` | `MSG_ID_INVALID` | `CHANNEL_PUBLIC_GROUP_NA` | `CHANNEL_PRIVATE`>
+  }, messages.ChatFull>
   export const createChannel: TLApiMethod<"channels.createChannel", {
     broadcast?: true                        // flags.0?true
     megagroup?: true                        // flags.1?true
@@ -9549,61 +9549,61 @@ export namespace channels {
     about: string                           // string
     geo_point?: global.InputGeoPoint        // flags.2?InputGeoPoint
     address?: string                        // flags.2?string
-  }, global.Updates, `CHANNELS_ADMIN_LOCATED_TOO_MUCH` | `CHANNELS_TOO_MUCH` | `CHAT_ABOUT_TOO_LONG` | `CHAT_TITLE_EMPTY` | `USER_RESTRICTED` | `USER_RESTRICTED`>
+  }, global.Updates>
   export const editAdmin: TLApiMethod<"channels.editAdmin", {
     channel: global.InputChannel            // InputChannel
     user_id: global.InputUser               // InputUser
     admin_rights: global.ChatAdminRights    // ChatAdminRights
     rank: string                            // string
-  }, global.Updates, `ADMIN_RANK_EMOJI_NOT_ALLOWED` | `ADMIN_RANK_INVALID` | `ADMINS_TOO_MUCH` | `BOT_CHANNELS_NA` | `BOT_GROUPS_BLOCKED` | `BOTS_TOO_MUCH` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `FRESH_CHANGE_ADMINS_FORBIDDEN` | `INPUT_USER_DEACTIVATED` | `PEER_ID_INVALID` | `USER_BLOCKED` | `USER_CREATOR` | `USER_ID_INVALID` | `USER_NOT_MUTUAL_CONTACT` | `USERS_TOO_MUCH` | `CHAT_ADMIN_INVITE_REQUIRED` | `CHAT_WRITE_FORBIDDEN` | `RIGHT_FORBIDDEN` | `USER_CHANNELS_TOO_MUCH` | `USER_NOT_MUTUAL_CONTACT` | `USER_PRIVACY_RESTRICTED` | `USER_RESTRICTED` | `FRESH_CHANGE_ADMINS_FORBIDDEN`>
+  }, global.Updates>
   export const editTitle: TLApiMethod<"channels.editTitle", {
     channel: global.InputChannel            // InputChannel
     title: string                           // string
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `CHAT_TITLE_EMPTY` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const editPhoto: TLApiMethod<"channels.editPhoto", {
     channel: global.InputChannel            // InputChannel
     photo: global.InputChatPhoto            // InputChatPhoto
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `FILE_REFERENCE_INVALID` | `PHOTO_CROP_SIZE_SMALL` | `PHOTO_EXT_INVALID` | `PHOTO_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const checkUsername: TLApiMethod<"channels.checkUsername", {
     channel: global.InputChannel            // InputChannel
     username: string                        // string
-  }, boolean, `CHANNEL_INVALID` | `CHANNELS_ADMIN_PUBLIC_TOO_MUCH` | `CHAT_ID_INVALID` | `USERNAME_INVALID`>
+  }, boolean>
   export const updateUsername: TLApiMethod<"channels.updateUsername", {
     channel: global.InputChannel            // InputChannel
     username: string                        // string
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHANNELS_ADMIN_PUBLIC_TOO_MUCH` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `USERNAME_INVALID` | `USERNAME_NOT_MODIFIED` | `USERNAME_OCCUPIED` | `CHAT_WRITE_FORBIDDEN`>
+  }, boolean>
   export const joinChannel: TLApiMethod<"channels.joinChannel", {
     channel: global.InputChannel            // InputChannel
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHANNELS_TOO_MUCH` | `CHAT_INVALID` | `INVITE_HASH_EMPTY` | `INVITE_HASH_EXPIRED` | `INVITE_HASH_INVALID` | `INVITE_REQUEST_SENT` | `MSG_ID_INVALID` | `PEER_ID_INVALID` | `USER_ALREADY_PARTICIPANT` | `USER_CHANNELS_TOO_MUCH` | `USERS_TOO_MUCH` | `INVITE_HASH_EXPIRED`>
+  }, global.Updates>
   export const leaveChannel: TLApiMethod<"channels.leaveChannel", {
     channel: global.InputChannel            // InputChannel
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID` | `USER_BANNED_IN_CHANNEL` | `USER_CREATOR` | `USER_NOT_PARTICIPANT` | `CHANNEL_PUBLIC_GROUP_NA`>
+  }, global.Updates>
   export const inviteToChannel: TLApiMethod<"channels.inviteToChannel", {
     channel: global.InputChannel            // InputChannel
     users: global.InputUser[]               // Vector<InputUser>
-  }, global.Updates, `BOT_GROUPS_BLOCKED` | `BOTS_TOO_MUCH` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_INVALID` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `USER_BANNED_IN_CHANNEL` | `USER_BLOCKED` | `USER_BOT` | `USER_CHANNELS_TOO_MUCH` | `USER_ID_INVALID` | `USER_KICKED` | `USER_NOT_MUTUAL_CONTACT` | `USERS_TOO_MUCH` | `CHAT_WRITE_FORBIDDEN` | `USER_CHANNELS_TOO_MUCH` | `USER_NOT_MUTUAL_CONTACT` | `USER_PRIVACY_RESTRICTED`>
+  }, global.Updates>
   export const deleteChannel: TLApiMethod<"channels.deleteChannel", {
     channel: global.InputChannel            // InputChannel
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHANNEL_TOO_LARGE` | `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `CHAT_WRITE_FORBIDDEN` | `CHANNEL_TOO_LARGE`>
+  }, global.Updates>
   export const exportMessageLink: TLApiMethod<"channels.exportMessageLink", {
     grouped?: true                          // flags.0?true
     thread?: true                           // flags.1?true
     channel: global.InputChannel            // InputChannel
     id: number                              // int
-  }, global.ExportedMessageLink, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MESSAGE_ID_INVALID` | `MSG_ID_INVALID`>
+  }, global.ExportedMessageLink>
   export const toggleSignatures: TLApiMethod<"channels.toggleSignatures", {
     channel: global.InputChannel            // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates, `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID`>
+  }, global.Updates>
   export const getAdminedPublicChannels: TLApiMethod<"channels.getAdminedPublicChannels", {
     by_location?: true                      // flags.0?true
     check_limit?: true                      // flags.1?true
-  }, messages.Chats, `CHANNELS_ADMIN_LOCATED_TOO_MUCH` | `CHANNELS_ADMIN_PUBLIC_TOO_MUCH`>
+  }, messages.Chats>
   export const editBanned: TLApiMethod<"channels.editBanned", {
     channel: global.InputChannel            // InputChannel
     participant: global.InputPeer           // InputPeer
     banned_rights: global.ChatBannedRights  // ChatBannedRights
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `INPUT_USER_DEACTIVATED` | `MSG_ID_INVALID` | `PARTICIPANT_ID_INVALID` | `PEER_ID_INVALID` | `PINNED_DIALOGS_TOO_MUCH` | `USER_ADMIN_INVALID` | `USER_ID_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const getAdminLog: TLApiMethod<"channels.getAdminLog", {
     channel: global.InputChannel            // InputChannel
     q: string                               // string
@@ -9612,87 +9612,87 @@ export namespace channels {
     max_id: bigint                          // long
     min_id: bigint                          // long
     limit: number                           // int
-  }, AdminLogResults, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `MSG_ID_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, AdminLogResults>
   export const setStickers: TLApiMethod<"channels.setStickers", {
     channel: global.InputChannel            // InputChannel
     stickerset: global.InputStickerSet      // InputStickerSet
-  }, boolean, `CHANNEL_INVALID` | `PARTICIPANTS_TOO_FEW` | `STICKERSET_OWNER_ANONYMOUS`>
+  }, boolean>
   export const readMessageContents: TLApiMethod<"channels.readMessageContents", {
     channel: global.InputChannel            // InputChannel
     id: number[]                            // Vector<int>
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `MSG_ID_INVALID`>
+  }, boolean>
   export const deleteHistory: TLApiMethod<"channels.deleteHistory", {
     channel: global.InputChannel            // InputChannel
     max_id: number                          // int
-  }, boolean, `CHANNEL_INVALID` | `CHANNEL_PRIVATE`>
+  }, boolean>
   export const togglePreHistoryHidden: TLApiMethod<"channels.togglePreHistoryHidden", {
     channel: global.InputChannel            // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates, `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `CHAT_ID_INVALID` | `CHAT_LINK_EXISTS` | `CHAT_NOT_MODIFIED`>
+  }, global.Updates>
   export const getLeftChannels: TLApiMethod<"channels.getLeftChannels", {
     offset: number                          // int
-  }, messages.Chats, `TAKEOUT_REQUIRED`>
-  export const getGroupsForDiscussion: TLApiMethod<"channels.getGroupsForDiscussion", void, messages.Chats, never>
+  }, messages.Chats>
+  export const getGroupsForDiscussion: TLApiMethod<"channels.getGroupsForDiscussion", void, messages.Chats>
   export const setDiscussionGroup: TLApiMethod<"channels.setDiscussionGroup", {
     broadcast: global.InputChannel          // InputChannel
     group: global.InputChannel              // InputChannel
-  }, boolean, `BROADCAST_ID_INVALID` | `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `LINK_NOT_MODIFIED` | `MEGAGROUP_ID_INVALID` | `MEGAGROUP_PREHISTORY_HIDDEN`>
+  }, boolean>
   export const editCreator: TLApiMethod<"channels.editCreator", {
     channel: global.InputChannel            // InputChannel
     user_id: global.InputUser               // InputUser
     password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
-  }, global.Updates, `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED` | `PASSWORD_HASH_INVALID` | `PASSWORD_MISSING` | `PASSWORD_TOO_FRESH_${number}` | `SESSION_TOO_FRESH_${number}` | `SRP_ID_INVALID` | `USER_ID_INVALID` | `CHAT_WRITE_FORBIDDEN`>
+  }, global.Updates>
   export const editLocation: TLApiMethod<"channels.editLocation", {
     channel: global.InputChannel            // InputChannel
     geo_point: global.InputGeoPoint         // InputGeoPoint
     address: string                         // string
-  }, boolean, `MEGAGROUP_REQUIRED`>
+  }, boolean>
   export const toggleSlowMode: TLApiMethod<"channels.toggleSlowMode", {
     channel: global.InputChannel            // InputChannel
     seconds: number                         // int
-  }, global.Updates, `CHAT_ADMIN_REQUIRED` | `CHAT_NOT_MODIFIED` | `SECONDS_INVALID`>
-  export const getInactiveChannels: TLApiMethod<"channels.getInactiveChannels", void, messages.InactiveChats, never>
+  }, global.Updates>
+  export const getInactiveChannels: TLApiMethod<"channels.getInactiveChannels", void, messages.InactiveChats>
   export const convertToGigagroup: TLApiMethod<"channels.convertToGigagroup", {
     channel: global.InputChannel            // InputChannel
-  }, global.Updates, `CHAT_ADMIN_REQUIRED` | `PARTICIPANTS_TOO_FEW`>
+  }, global.Updates>
   export const viewSponsoredMessage: TLApiMethod<"channels.viewSponsoredMessage", {
     channel: global.InputChannel            // InputChannel
     random_id: BufferSource                 // bytes
-  }, boolean, `CHANNEL_INVALID`>
+  }, boolean>
   export const getSponsoredMessages: TLApiMethod<"channels.getSponsoredMessages", {
     channel: global.InputChannel            // InputChannel
-  }, messages.SponsoredMessages, `CHANNEL_PRIVATE`>
+  }, messages.SponsoredMessages>
   export const getSendAs: TLApiMethod<"channels.getSendAs", {
     peer: global.InputPeer                  // InputPeer
-  }, SendAsPeers, `PEER_ID_INVALID`>
+  }, SendAsPeers>
   export const deleteParticipantHistory: TLApiMethod<"channels.deleteParticipantHistory", {
     channel: global.InputChannel            // InputChannel
     participant: global.InputPeer           // InputPeer
-  }, messages.AffectedHistory, `CHAT_ADMIN_REQUIRED` | `MSG_ID_INVALID` | `PARTICIPANT_ID_INVALID`>
+  }, messages.AffectedHistory>
 }
 
 export namespace bots {
   export const sendCustomRequest: TLApiMethod<"bots.sendCustomRequest", {
     custom_method: string                   // string
     params: global.DataJSON                 // DataJSON
-  }, global.DataJSON, `METHOD_INVALID` | `USER_BOT_INVALID` | `USER_BOT_INVALID`>
+  }, global.DataJSON>
   export const answerWebhookJSONQuery: TLApiMethod<"bots.answerWebhookJSONQuery", {
     query_id: bigint                        // long
     data: global.DataJSON                   // DataJSON
-  }, boolean, `QUERY_ID_INVALID` | `USER_BOT_INVALID` | `USER_BOT_INVALID`>
+  }, boolean>
   export const setBotCommands: TLApiMethod<"bots.setBotCommands", {
     scope: global.BotCommandScope           // BotCommandScope
     lang_code: string                       // string
     commands: global.BotCommand[]           // Vector<BotCommand>
-  }, boolean, `BOT_COMMAND_DESCRIPTION_INVALID` | `BOT_COMMAND_INVALID` | `LANG_CODE_INVALID`>
+  }, boolean>
   export const resetBotCommands: TLApiMethod<"bots.resetBotCommands", {
     scope: global.BotCommandScope           // BotCommandScope
     lang_code: string                       // string
-  }, boolean, never>
+  }, boolean>
   export const getBotCommands: TLApiMethod<"bots.getBotCommands", {
     scope: global.BotCommandScope           // BotCommandScope
     lang_code: string                       // string
-  }, global.BotCommand[], never>
+  }, global.BotCommand[]>
 }
 
 export namespace payments {
@@ -9700,17 +9700,17 @@ export namespace payments {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     theme_params?: global.DataJSON          // flags.0?DataJSON
-  }, PaymentForm, `MESSAGE_ID_INVALID`>
+  }, PaymentForm>
   export const getPaymentReceipt: TLApiMethod<"payments.getPaymentReceipt", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-  }, PaymentReceipt, `MESSAGE_ID_INVALID`>
+  }, PaymentReceipt>
   export const validateRequestedInfo: TLApiMethod<"payments.validateRequestedInfo", {
     save?: true                             // flags.0?true
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
     info: global.PaymentRequestedInfo       // PaymentRequestedInfo
-  }, ValidatedRequestedInfo, `MESSAGE_ID_INVALID`>
+  }, ValidatedRequestedInfo>
   export const sendPaymentForm: TLApiMethod<"payments.sendPaymentForm", {
     form_id: bigint                         // long
     peer: global.InputPeer                  // InputPeer
@@ -9719,15 +9719,15 @@ export namespace payments {
     shipping_option_id?: string             // flags.1?string
     credentials: global.InputPaymentCredentials // InputPaymentCredentials
     tip_amount?: bigint                     // flags.2?long
-  }, PaymentResult, `MESSAGE_ID_INVALID`>
-  export const getSavedInfo: TLApiMethod<"payments.getSavedInfo", void, SavedInfo, never>
+  }, PaymentResult>
+  export const getSavedInfo: TLApiMethod<"payments.getSavedInfo", void, SavedInfo>
   export const clearSavedInfo: TLApiMethod<"payments.clearSavedInfo", {
     credentials?: true                      // flags.0?true
     info?: true                             // flags.1?true
-  }, boolean, never>
+  }, boolean>
   export const getBankCardData: TLApiMethod<"payments.getBankCardData", {
     number: string                          // string
-  }, BankCardData, `BANK_CARD_NUMBER_INVALID`>
+  }, BankCardData>
 }
 
 export namespace stickers {
@@ -9741,81 +9741,81 @@ export namespace stickers {
     thumb?: global.InputDocument            // flags.2?InputDocument
     stickers: global.InputStickerSetItem[]  // Vector<InputStickerSetItem>
     software?: string                       // flags.3?string
-  }, messages.StickerSet, `BOT_MISSING` | `PACK_SHORT_NAME_INVALID` | `PACK_SHORT_NAME_OCCUPIED` | `PACK_TITLE_INVALID` | `PEER_ID_INVALID` | `STICKER_EMOJI_INVALID` | `STICKER_FILE_INVALID` | `STICKER_GIF_DIMENSIONS` | `STICKER_PNG_DIMENSIONS` | `STICKER_PNG_NOPNG` | `STICKER_TGS_NODOC` | `STICKER_TGS_NOTGS` | `STICKER_THUMB_PNG_NOPNG` | `STICKER_THUMB_TGS_NOTGS` | `STICKER_VIDEO_BIG` | `STICKER_VIDEO_NOWEBM` | `STICKERS_EMPTY` | `USER_ID_INVALID`>
+  }, messages.StickerSet>
   export const removeStickerFromSet: TLApiMethod<"stickers.removeStickerFromSet", {
     sticker: global.InputDocument           // InputDocument
-  }, messages.StickerSet, `BOT_MISSING` | `STICKER_INVALID`>
+  }, messages.StickerSet>
   export const changeStickerPosition: TLApiMethod<"stickers.changeStickerPosition", {
     sticker: global.InputDocument           // InputDocument
     position: number                        // int
-  }, messages.StickerSet, `BOT_MISSING` | `STICKER_INVALID`>
+  }, messages.StickerSet>
   export const addStickerToSet: TLApiMethod<"stickers.addStickerToSet", {
     stickerset: global.InputStickerSet      // InputStickerSet
     sticker: global.InputStickerSetItem     // InputStickerSetItem
-  }, messages.StickerSet, `BOT_MISSING` | `STICKER_PNG_NOPNG` | `STICKER_TGS_NOTGS` | `STICKERPACK_STICKERS_TOO_MUCH` | `STICKERS_TOO_MUCH` | `STICKERSET_INVALID`>
+  }, messages.StickerSet>
   export const setStickerSetThumb: TLApiMethod<"stickers.setStickerSetThumb", {
     stickerset: global.InputStickerSet      // InputStickerSet
     thumb: global.InputDocument             // InputDocument
-  }, messages.StickerSet, `STICKER_THUMB_PNG_NOPNG` | `STICKER_THUMB_TGS_NOTGS` | `STICKERSET_INVALID`>
+  }, messages.StickerSet>
   export const checkShortName: TLApiMethod<"stickers.checkShortName", {
     short_name: string                      // string
-  }, boolean, `SHORT_NAME_INVALID` | `SHORT_NAME_OCCUPIED`>
+  }, boolean>
   export const suggestShortName: TLApiMethod<"stickers.suggestShortName", {
     title: string                           // string
-  }, SuggestedShortName, `TITLE_INVALID`>
+  }, SuggestedShortName>
 }
 
 export namespace phone {
-  export const getCallConfig: TLApiMethod<"phone.getCallConfig", void, global.DataJSON, never>
+  export const getCallConfig: TLApiMethod<"phone.getCallConfig", void, global.DataJSON>
   export const requestCall: TLApiMethod<"phone.requestCall", {
     video?: true                            // flags.0?true
     user_id: global.InputUser               // InputUser
     random_id: number                       // int
     g_a_hash: BufferSource                  // bytes
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
-  }, PhoneCall, `CALL_PROTOCOL_FLAGS_INVALID` | `INPUT_USER_DEACTIVATED` | `PARTICIPANT_VERSION_OUTDATED` | `USER_ID_INVALID` | `USER_IS_BLOCKED` | `USER_IS_BLOCKED` | `USER_PRIVACY_RESTRICTED` | `PARTICIPANT_CALL_FAILED`>
+  }, PhoneCall>
   export const acceptCall: TLApiMethod<"phone.acceptCall", {
     peer: global.InputPhoneCall             // InputPhoneCall
     g_b: BufferSource                       // bytes
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
-  }, PhoneCall, `CALL_ALREADY_ACCEPTED` | `CALL_ALREADY_DECLINED` | `CALL_PEER_INVALID` | `CALL_PROTOCOL_FLAGS_INVALID` | `CALL_OCCUPY_FAILED`>
+  }, PhoneCall>
   export const confirmCall: TLApiMethod<"phone.confirmCall", {
     peer: global.InputPhoneCall             // InputPhoneCall
     g_a: BufferSource                       // bytes
     key_fingerprint: bigint                 // long
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
-  }, PhoneCall, `CALL_ALREADY_DECLINED` | `CALL_PEER_INVALID`>
+  }, PhoneCall>
   export const receivedCall: TLApiMethod<"phone.receivedCall", {
     peer: global.InputPhoneCall             // InputPhoneCall
-  }, boolean, `CALL_ALREADY_DECLINED` | `CALL_PEER_INVALID`>
+  }, boolean>
   export const discardCall: TLApiMethod<"phone.discardCall", {
     video?: true                            // flags.0?true
     peer: global.InputPhoneCall             // InputPhoneCall
     duration: number                        // int
     reason: global.PhoneCallDiscardReason   // PhoneCallDiscardReason
     connection_id: bigint                   // long
-  }, global.Updates, `CALL_ALREADY_ACCEPTED` | `CALL_PEER_INVALID`>
+  }, global.Updates>
   export const setCallRating: TLApiMethod<"phone.setCallRating", {
     user_initiative?: true                  // flags.0?true
     peer: global.InputPhoneCall             // InputPhoneCall
     rating: number                          // int
     comment: string                         // string
-  }, global.Updates, `CALL_PEER_INVALID`>
+  }, global.Updates>
   export const saveCallDebug: TLApiMethod<"phone.saveCallDebug", {
     peer: global.InputPhoneCall             // InputPhoneCall
     debug: global.DataJSON                  // DataJSON
-  }, boolean, `CALL_PEER_INVALID` | `DATA_JSON_INVALID`>
+  }, boolean>
   export const sendSignalingData: TLApiMethod<"phone.sendSignalingData", {
     peer: global.InputPhoneCall             // InputPhoneCall
     data: BufferSource                      // bytes
-  }, boolean, never>
+  }, boolean>
   export const createGroupCall: TLApiMethod<"phone.createGroupCall", {
     rtmp_stream?: true                      // flags.2?true
     peer: global.InputPeer                  // InputPeer
     random_id: number                       // int
     title?: string                          // flags.0?string
     schedule_date?: number                  // flags.1?int
-  }, global.Updates, `CHAT_ADMIN_REQUIRED` | `PEER_ID_INVALID` | `SCHEDULE_DATE_INVALID`>
+  }, global.Updates>
   export const joinGroupCall: TLApiMethod<"phone.joinGroupCall", {
     muted?: true                            // flags.0?true
     video_stopped?: true                    // flags.2?true
@@ -9823,45 +9823,45 @@ export namespace phone {
     join_as: global.InputPeer               // InputPeer
     invite_hash?: string                    // flags.1?string
     params: global.DataJSON                 // DataJSON
-  }, global.Updates, `GROUPCALL_SSRC_DUPLICATE_MUCH`>
+  }, global.Updates>
   export const leaveGroupCall: TLApiMethod<"phone.leaveGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
     source: number                          // int
-  }, global.Updates, never>
+  }, global.Updates>
   export const inviteToGroupCall: TLApiMethod<"phone.inviteToGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
     users: global.InputUser[]               // Vector<InputUser>
-  }, global.Updates, `INVITE_FORBIDDEN_WITH_JOINAS` | `USER_ALREADY_INVITED` | `GROUPCALL_FORBIDDEN`>
+  }, global.Updates>
   export const discardGroupCall: TLApiMethod<"phone.discardGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates, never>
+  }, global.Updates>
   export const toggleGroupCallSettings: TLApiMethod<"phone.toggleGroupCallSettings", {
     reset_invite_hash?: true                // flags.1?true
     call: global.InputGroupCall             // InputGroupCall
     join_muted?: boolean                    // flags.0?Bool
-  }, global.Updates, `GROUPCALL_NOT_MODIFIED`>
+  }, global.Updates>
   export const getGroupCall: TLApiMethod<"phone.getGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
     limit: number                           // int
-  }, GroupCall, `GROUPCALL_INVALID`>
+  }, GroupCall>
   export const getGroupParticipants: TLApiMethod<"phone.getGroupParticipants", {
     call: global.InputGroupCall             // InputGroupCall
     ids: global.InputPeer[]                 // Vector<InputPeer>
     sources: number[]                       // Vector<int>
     offset: string                          // string
     limit: number                           // int
-  }, GroupParticipants, never>
+  }, GroupParticipants>
   export const checkGroupCall: TLApiMethod<"phone.checkGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
     sources: number[]                       // Vector<int>
-  }, number[], never>
+  }, number[]>
   export const toggleGroupCallRecord: TLApiMethod<"phone.toggleGroupCallRecord", {
     start?: true                            // flags.0?true
     video?: true                            // flags.2?true
     call: global.InputGroupCall             // InputGroupCall
     title?: string                          // flags.1?string
     video_portrait?: boolean                // flags.2?Bool
-  }, global.Updates, never>
+  }, global.Updates>
   export const editGroupCallParticipant: TLApiMethod<"phone.editGroupCallParticipant", {
     call: global.InputGroupCall             // InputGroupCall
     participant: global.InputPeer           // InputPeer
@@ -9871,84 +9871,84 @@ export namespace phone {
     video_stopped?: boolean                 // flags.3?Bool
     video_paused?: boolean                  // flags.4?Bool
     presentation_paused?: boolean           // flags.5?Bool
-  }, global.Updates, `USER_VOLUME_INVALID`>
+  }, global.Updates>
   export const editGroupCallTitle: TLApiMethod<"phone.editGroupCallTitle", {
     call: global.InputGroupCall             // InputGroupCall
     title: string                           // string
-  }, global.Updates, never>
+  }, global.Updates>
   export const getGroupCallJoinAs: TLApiMethod<"phone.getGroupCallJoinAs", {
     peer: global.InputPeer                  // InputPeer
-  }, JoinAsPeers, never>
+  }, JoinAsPeers>
   export const exportGroupCallInvite: TLApiMethod<"phone.exportGroupCallInvite", {
     can_self_unmute?: true                  // flags.0?true
     call: global.InputGroupCall             // InputGroupCall
-  }, ExportedGroupCallInvite, never>
+  }, ExportedGroupCallInvite>
   export const toggleGroupCallStartSubscription: TLApiMethod<"phone.toggleGroupCallStartSubscription", {
     call: global.InputGroupCall             // InputGroupCall
     subscribed: boolean                     // Bool
-  }, global.Updates, never>
+  }, global.Updates>
   export const startScheduledGroupCall: TLApiMethod<"phone.startScheduledGroupCall", {
     call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates, never>
+  }, global.Updates>
   export const saveDefaultGroupCallJoinAs: TLApiMethod<"phone.saveDefaultGroupCallJoinAs", {
     peer: global.InputPeer                  // InputPeer
     join_as: global.InputPeer               // InputPeer
-  }, boolean, never>
+  }, boolean>
   export const joinGroupCallPresentation: TLApiMethod<"phone.joinGroupCallPresentation", {
     call: global.InputGroupCall             // InputGroupCall
     params: global.DataJSON                 // DataJSON
-  }, global.Updates, `PARTICIPANT_JOIN_MISSING`>
+  }, global.Updates>
   export const leaveGroupCallPresentation: TLApiMethod<"phone.leaveGroupCallPresentation", {
     call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates, never>
+  }, global.Updates>
 }
 
 export namespace langpack {
   export const getLangPack: TLApiMethod<"langpack.getLangPack", {
     lang_pack: string                       // string
     lang_code: string                       // string
-  }, global.LangPackDifference, `LANG_PACK_INVALID`>
+  }, global.LangPackDifference>
   export const getStrings: TLApiMethod<"langpack.getStrings", {
     lang_pack: string                       // string
     lang_code: string                       // string
     keys: string[]                          // Vector<string>
-  }, global.LangPackString[], `LANG_PACK_INVALID`>
+  }, global.LangPackString[]>
   export const getDifference: TLApiMethod<"langpack.getDifference", {
     lang_pack: string                       // string
     lang_code: string                       // string
     from_version: number                    // int
-  }, global.LangPackDifference, `LANG_PACK_INVALID`>
+  }, global.LangPackDifference>
   export const getLanguages: TLApiMethod<"langpack.getLanguages", {
     lang_pack: string                       // string
-  }, global.LangPackLanguage[], `LANG_PACK_INVALID`>
+  }, global.LangPackLanguage[]>
   export const getLanguage: TLApiMethod<"langpack.getLanguage", {
     lang_pack: string                       // string
     lang_code: string                       // string
-  }, global.LangPackLanguage, never>
+  }, global.LangPackLanguage>
 }
 
 export namespace folders {
   export const editPeerFolders: TLApiMethod<"folders.editPeerFolders", {
     folder_peers: global.InputFolderPeer[]  // Vector<InputFolderPeer>
-  }, global.Updates, `CHAT_ID_INVALID` | `FOLDER_ID_INVALID`>
+  }, global.Updates>
   export const deleteFolder: TLApiMethod<"folders.deleteFolder", {
     folder_id: number                       // int
-  }, global.Updates, `FOLDER_ID_EMPTY` | `FOLDER_ID_INVALID`>
+  }, global.Updates>
 }
 
 export namespace stats {
   export const getBroadcastStats: TLApiMethod<"stats.getBroadcastStats", {
     dark?: true                             // flags.0?true
     channel: global.InputChannel            // InputChannel
-  }, BroadcastStats, `BROADCAST_REQUIRED` | `CHANNEL_INVALID` | `CHANNEL_PRIVATE` | `CHAT_ADMIN_REQUIRED`>
+  }, BroadcastStats>
   export const loadAsyncGraph: TLApiMethod<"stats.loadAsyncGraph", {
     token: string                           // string
     x?: bigint                              // flags.0?long
-  }, global.StatsGraph, `GRAPH_EXPIRED_RELOAD` | `GRAPH_INVALID_RELOAD` | `GRAPH_OUTDATED_RELOAD`>
+  }, global.StatsGraph>
   export const getMegagroupStats: TLApiMethod<"stats.getMegagroupStats", {
     dark?: true                             // flags.0?true
     channel: global.InputChannel            // InputChannel
-  }, MegagroupStats, `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `MEGAGROUP_REQUIRED`>
+  }, MegagroupStats>
   export const getMessagePublicForwards: TLApiMethod<"stats.getMessagePublicForwards", {
     channel: global.InputChannel            // InputChannel
     msg_id: number                          // int
@@ -9956,12 +9956,12 @@ export namespace stats {
     offset_peer: global.InputPeer           // InputPeer
     offset_id: number                       // int
     limit: number                           // int
-  }, messages.Messages, `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `MESSAGE_ID_INVALID`>
+  }, messages.Messages>
   export const getMessageStats: TLApiMethod<"stats.getMessageStats", {
     dark?: true                             // flags.0?true
     channel: global.InputChannel            // InputChannel
     msg_id: number                          // int
-  }, MessageStats, `CHANNEL_INVALID` | `CHAT_ADMIN_REQUIRED` | `MESSAGE_ID_INVALID`>
+  }, MessageStats>
 }
 
 // #endregion "method"

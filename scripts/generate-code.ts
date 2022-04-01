@@ -2,7 +2,6 @@ import {
   api,
   Constructor,
   Definition,
-  errors,
   Method,
   mtproto,
 } from "mtproto/gen/schemas.ts";
@@ -637,14 +636,8 @@ class DefinitionProcessor {
           tsfile.append
             `export const ${name}: TLMethod<${paramtypestr}, ${decl}>`;
         } else {
-          const errs = (errors as any)[origname] as string[] | undefined;
-          let errtypes = errs == null
-            ? "never"
-            : errs.map((x) => `\`${x.replace("%d", "${number}")}\``).join(
-              " | ",
-            );
           tsfile.append
-            `export const ${name}: TLApiMethod<"${origname}", ${paramtypestr}, ${decl}, ${errtypes}>`;
+            `export const ${name}: TLApiMethod<"${origname}", ${paramtypestr}, ${decl}>`;
         }
         const paramstext = params.length ? "_" : "";
         if (namespace) {
