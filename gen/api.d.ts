@@ -818,7 +818,6 @@ declare namespace global {
     },
     "chat": {
       creator?: true;                         // flags.0?true
-      kicked?: true;                          // flags.1?true
       left?: true;                            // flags.2?true
       deactivated?: true;                     // flags.5?true
       call_active?: true;                     // flags.23?true
@@ -856,6 +855,8 @@ declare namespace global {
       fake?: true;                            // flags.25?true
       gigagroup?: true;                       // flags.26?true
       noforwards?: true;                      // flags.27?true
+      join_to_send?: true;                    // flags.28?true
+      join_request?: true;                    // flags.29?true
       id: bigint;                             // long
       access_hash?: bigint;                   // flags.13?long
       title: string;                          // string
@@ -1488,6 +1489,8 @@ declare namespace global {
     "inputReportReasonCopyright": {}
     "inputReportReasonGeoIrrelevant": {}
     "inputReportReasonFake": {}
+    "inputReportReasonIllegalDrugs": {}
+    "inputReportReasonPersonalDetails": {}
   };
 
   export const inputReportReasonSpam: TLConstructorEmpty<"inputReportReasonSpam">;
@@ -1498,6 +1501,8 @@ declare namespace global {
   export const inputReportReasonCopyright: TLConstructorEmpty<"inputReportReasonCopyright">;
   export const inputReportReasonGeoIrrelevant: TLConstructorEmpty<"inputReportReasonGeoIrrelevant">;
   export const inputReportReasonFake: TLConstructorEmpty<"inputReportReasonFake">;
+  export const inputReportReasonIllegalDrugs: TLConstructorEmpty<"inputReportReasonIllegalDrugs">;
+  export const inputReportReasonPersonalDetails: TLConstructorEmpty<"inputReportReasonPersonalDetails">;
   export type UserFull<
     K extends keyof _UserFull = keyof _UserFull
   > = ToUnderscore<_UserFull, K>;
@@ -5707,6 +5712,7 @@ declare namespace global {
   > = ToUnderscore<_MessageReplyHeader, K>;
   export type _MessageReplyHeader = {
     "messageReplyHeader": {
+      reply_to_scheduled?: true;              // flags.2?true
       reply_to_msg_id: number;                // int
       reply_to_peer_id?: global.Peer;         // flags.0?Peer
       reply_to_top_id?: number;               // flags.1?int
@@ -6005,6 +6011,18 @@ declare namespace global {
   };
 
   export const messagePeerReaction: TLConstructor<_MessagePeerReaction, "messagePeerReaction">;
+  export type GroupCallStreamChannel<
+    K extends keyof _GroupCallStreamChannel = keyof _GroupCallStreamChannel
+  > = ToUnderscore<_GroupCallStreamChannel, K>;
+  export type _GroupCallStreamChannel = {
+    "groupCallStreamChannel": {
+      channel: number;                        // int
+      scale: number;                          // int
+      last_timestamp_ms: bigint;              // long
+    },
+  };
+
+  export const groupCallStreamChannel: TLConstructor<_GroupCallStreamChannel, "groupCallStreamChannel">;
 }
 
 export default global;
@@ -7617,6 +7635,27 @@ export namespace phone {
   };
 
   export const exportedGroupCallInvite: TLConstructor<_ExportedGroupCallInvite, "phone.exportedGroupCallInvite">;
+  export type GroupCallStreamChannels<
+    K extends keyof _GroupCallStreamChannels = keyof _GroupCallStreamChannels
+  > = ToUnderscore<_GroupCallStreamChannels, K>;
+  export type _GroupCallStreamChannels = {
+    "phone.groupCallStreamChannels": {
+      channels: global.GroupCallStreamChannel[]; // Vector<GroupCallStreamChannel>
+    },
+  };
+
+  export const groupCallStreamChannels: TLConstructor<_GroupCallStreamChannels, "phone.groupCallStreamChannels">;
+  export type GroupCallStreamRtmpUrl<
+    K extends keyof _GroupCallStreamRtmpUrl = keyof _GroupCallStreamRtmpUrl
+  > = ToUnderscore<_GroupCallStreamRtmpUrl, K>;
+  export type _GroupCallStreamRtmpUrl = {
+    "phone.groupCallStreamRtmpUrl": {
+      url: string;                            // string
+      key: string;                            // string
+    },
+  };
+
+  export const groupCallStreamRtmpUrl: TLConstructor<_GroupCallStreamRtmpUrl, "phone.groupCallStreamRtmpUrl">;
 }
 
 export namespace stats {
@@ -8074,7 +8113,10 @@ export type AnyObject =
   | global.AvailableReaction
   | messages.AvailableReactions
   | messages.TranslatedText
-  | global.MessagePeerReaction;
+  | global.MessagePeerReaction
+  | global.GroupCallStreamChannel
+  | phone.GroupCallStreamChannels
+  | phone.GroupCallStreamRtmpUrl;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
 export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
@@ -8582,6 +8624,9 @@ export namespace contacts {
     report_spam?: true                      // flags.2?true
     msg_id: number                          // int
   }, global.Updates>
+  export const resolvePhone: TLApiMethod<"contacts.resolvePhone", {
+    phone: string                           // string
+  }, ResolvedPeer>
 }
 
 export namespace messages {
@@ -9368,6 +9413,11 @@ export namespace messages {
   export const readReactions: TLApiMethod<"messages.readReactions", {
     peer: global.InputPeer                  // InputPeer
   }, AffectedHistory>
+  export const searchSentMedia: TLApiMethod<"messages.searchSentMedia", {
+    q: string                               // string
+    filter: global.MessagesFilter           // MessagesFilter
+    limit: number                           // int
+  }, Messages>
 }
 
 export namespace updates {
@@ -9901,6 +9951,13 @@ export namespace phone {
   export const leaveGroupCallPresentation: TLApiMethod<"phone.leaveGroupCallPresentation", {
     call: global.InputGroupCall             // InputGroupCall
   }, global.Updates>
+  export const getGroupCallStreamChannels: TLApiMethod<"phone.getGroupCallStreamChannels", {
+    call: global.InputGroupCall             // InputGroupCall
+  }, GroupCallStreamChannels>
+  export const getGroupCallStreamRtmpUrl: TLApiMethod<"phone.getGroupCallStreamRtmpUrl", {
+    peer: global.InputPeer                  // InputPeer
+    revoke: boolean                         // Bool
+  }, GroupCallStreamRtmpUrl>
 }
 
 export namespace langpack {

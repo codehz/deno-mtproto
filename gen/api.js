@@ -787,6 +787,12 @@ const global = {
   inputReportReasonFake() {
     return { _: "inputReportReasonFake" };
   },
+  inputReportReasonIllegalDrugs() {
+    return { _: "inputReportReasonIllegalDrugs" };
+  },
+  inputReportReasonPersonalDetails() {
+    return { _: "inputReportReasonPersonalDetails" };
+  },
 
   // type UserFull
   userFull(params) {
@@ -3027,6 +3033,11 @@ const global = {
     return { ...params, _: "messagePeerReaction" };
   },
 
+  // type GroupCallStreamChannel
+  groupCallStreamChannel(params) {
+    return { ...params, _: "groupCallStreamChannel" };
+  },
+
 };
 
 // type InputPeer
@@ -3238,6 +3249,8 @@ global.inputReportReasonOther.ref = "inputReportReasonOther";
 global.inputReportReasonCopyright.ref = "inputReportReasonCopyright";
 global.inputReportReasonGeoIrrelevant.ref = "inputReportReasonGeoIrrelevant";
 global.inputReportReasonFake.ref = "inputReportReasonFake";
+global.inputReportReasonIllegalDrugs.ref = "inputReportReasonIllegalDrugs";
+global.inputReportReasonPersonalDetails.ref = "inputReportReasonPersonalDetails";
 
 // type UserFull
 global.userFull.ref = "userFull";
@@ -4235,6 +4248,9 @@ global.availableReaction.ref = "availableReaction";
 
 // type MessagePeerReaction
 global.messagePeerReaction.ref = "messagePeerReaction";
+
+// type GroupCallStreamChannel
+global.groupCallStreamChannel.ref = "groupCallStreamChannel";
 
 export default global;
 
@@ -5393,6 +5409,16 @@ export const phone = {
     return { ...params, _: "phone.exportedGroupCallInvite" };
   },
 
+  // type GroupCallStreamChannels
+  groupCallStreamChannels(params) {
+    return { ...params, _: "phone.groupCallStreamChannels" };
+  },
+
+  // type GroupCallStreamRtmpUrl
+  groupCallStreamRtmpUrl(params) {
+    return { ...params, _: "phone.groupCallStreamRtmpUrl" };
+  },
+
 };
 
 // type PhoneCall
@@ -5409,6 +5435,12 @@ phone.joinAsPeers.ref = "phone.joinAsPeers";
 
 // type ExportedGroupCallInvite
 phone.exportedGroupCallInvite.ref = "phone.exportedGroupCallInvite";
+
+// type GroupCallStreamChannels
+phone.groupCallStreamChannels.ref = "phone.groupCallStreamChannels";
+
+// type GroupCallStreamRtmpUrl
+phone.groupCallStreamRtmpUrl.ref = "phone.groupCallStreamRtmpUrl";
 
 export const stats = {
   // type BroadcastStats
@@ -5888,7 +5920,6 @@ export const $encoder = {
     this.int32(1103884886);
     this.int32(
       (+(_.creator != null) << 0)
-      | (+(_.kicked != null) << 1)
       | (+(_.left != null) << 2)
       | (+(_.deactivated != null) << 5)
       | (+(_.call_active != null) << 23)
@@ -5900,8 +5931,6 @@ export const $encoder = {
     )
     if (_.creator != null)
       this.true(_.creator);                 // ?: true - flags.0?true
-    if (_.kicked != null)
-      this.true(_.kicked);                  // ?: true - flags.1?true
     if (_.left != null)
       this.true(_.left);                    // ?: true - flags.2?true
     if (_.deactivated != null)
@@ -8076,6 +8105,8 @@ export const $encoder = {
       | (+(_.fake != null) << 25)
       | (+(_.gigagroup != null) << 26)
       | (+(_.noforwards != null) << 27)
+      | (+(_.join_to_send != null) << 28)
+      | (+(_.join_request != null) << 29)
       | (+(_.access_hash != null) << 13)
       | (+(_.username != null) << 6)
       | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 9)
@@ -8118,6 +8149,10 @@ export const $encoder = {
       this.true(_.gigagroup);               // ?: true - flags.26?true
     if (_.noforwards != null)
       this.true(_.noforwards);              // ?: true - flags.27?true
+    if (_.join_to_send != null)
+      this.true(_.join_to_send);            // ?: true - flags.28?true
+    if (_.join_request != null)
+      this.true(_.join_request);            // ?: true - flags.29?true
     this.int64(_.id);                       // : bigint - long
     if (_.access_hash != null)
       this.int64(_.access_hash);            // ?: bigint - flags.13?long
@@ -12268,9 +12303,12 @@ export const $encoder = {
   ["messageReplyHeader"](_) {
     this.int32(-1495959709);
     this.int32(
-      (+(_.reply_to_peer_id != null) << 0)
+      (+(_.reply_to_scheduled != null) << 2)
+      | (+(_.reply_to_peer_id != null) << 0)
       | (+(_.reply_to_top_id != null) << 1)
     )
+    if (_.reply_to_scheduled != null)
+      this.true(_.reply_to_scheduled);      // ?: true - flags.2?true
     this.int32(_.reply_to_msg_id);          // : number - int
     if (_.reply_to_peer_id != null)
       this.object(_.reply_to_peer_id);      // ?: Peer - flags.0?Peer
@@ -13170,6 +13208,27 @@ export const $encoder = {
     this.object(_.peer_id);                 // : Peer - Peer
     this.string(_.reaction);                // : string - string
   },
+  ["groupCallStreamChannel"](_) {
+    this.int32(-2132064081);
+    this.int32(_.channel);                  // : number - int
+    this.int32(_.scale);                    // : number - int
+    this.int64(_.last_timestamp_ms);        // : bigint - long
+  },
+  ["phone.groupCallStreamChannels"](_) {
+    this.int32(-790330702);
+    this.vector(_.channels, this.object);   // : GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
+  },
+  ["inputReportReasonIllegalDrugs"](_) {
+    this.int32(177124030);
+  },
+  ["inputReportReasonPersonalDetails"](_) {
+    this.int32(-1631091139);
+  },
+  ["phone.groupCallStreamRtmpUrl"](_) {
+    this.int32(767505458);
+    this.string(_.url);                     // : string - string
+    this.string(_.key);                     // : string - string
+  },
 };
 
 export const $decoder = new Map([
@@ -13631,7 +13690,6 @@ export const $decoder = new Map([
     const _ = { _: "chat" }
     const flags = this.int32();
     if (flags & 1) _.creator = true         // ?: true - flags.0?true
-    if (flags & 2) _.kicked = true          // ?: true - flags.1?true
     if (flags & 4) _.left = true            // ?: true - flags.2?true
     if (flags & 32) _.deactivated = true    // ?: true - flags.5?true
     if (flags & 8388608) _.call_active = true // ?: true - flags.23?true
@@ -15382,6 +15440,8 @@ export const $decoder = new Map([
     if (flags & 33554432) _.fake = true     // ?: true - flags.25?true
     if (flags & 67108864) _.gigagroup = true // ?: true - flags.26?true
     if (flags & 134217728) _.noforwards = true // ?: true - flags.27?true
+    if (flags & 268435456) _.join_to_send = true // ?: true - flags.28?true
+    if (flags & 536870912) _.join_request = true // ?: true - flags.29?true
     _.id = this.int64();                    // : bigint - long
     if (flags & 8192) _.access_hash = this.int64() // ?: bigint - flags.13?long
     _.title = this.string();                // : string - string
@@ -19037,6 +19097,7 @@ export const $decoder = new Map([
   [-1495959709, function decode$messageReplyHeader() {
     const _ = { _: "messageReplyHeader" }
     const flags = this.int32();
+    if (flags & 4) _.reply_to_scheduled = true // ?: true - flags.2?true
     _.reply_to_msg_id = this.int32();       // : number - int
     if (flags & 1) _.reply_to_peer_id = this.object() // ?: global.Peer - flags.0?Peer
     if (flags & 2) _.reply_to_top_id = this.int32() // ?: number - flags.1?int
@@ -19841,6 +19902,30 @@ export const $decoder = new Map([
     if (flags & 2) _.unread = true          // ?: true - flags.1?true
     _.peer_id = this.object();              // : global.Peer - Peer
     _.reaction = this.string();             // : string - string
+    return _;
+  }],
+  [-2132064081, function decode$groupCallStreamChannel() {
+    const _ = { _: "groupCallStreamChannel" }
+    _.channel = this.int32();               // : number - int
+    _.scale = this.int32();                 // : number - int
+    _.last_timestamp_ms = this.int64();     // : bigint - long
+    return _;
+  }],
+  [-790330702, function decode$phone__groupCallStreamChannels() {
+    const _ = { _: "phone.groupCallStreamChannels" }
+    _.channels = this.vector(this.object);  // : global.GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
+    return _;
+  }],
+  [177124030, function decode$inputReportReasonIllegalDrugs() {
+    return { _: "inputReportReasonIllegalDrugs" }
+  }],
+  [-1631091139, function decode$inputReportReasonPersonalDetails() {
+    return { _: "inputReportReasonPersonalDetails" }
+  }],
+  [767505458, function decode$phone__groupCallStreamRtmpUrl() {
+    const _ = { _: "phone.groupCallStreamRtmpUrl" }
+    _.url = this.string();                  // : string - string
+    _.key = this.string();                  // : string - string
     return _;
   }],
 ]);
@@ -21770,6 +21855,19 @@ contacts.blockFromReplies.ref = "contacts.blockFromReplies";
 contacts.blockFromReplies.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+contacts.resolvePhone = function resolvePhone(_) {
+  return { ..._, _: "contacts.resolvePhone" }
+}
+$encoder["contacts.resolvePhone"] = function (_) {
+  this.int32(-1963375804);
+  this.string(_.phone);                   // : string - string
+};
+contacts.resolvePhone.ref = "contacts.resolvePhone";
+contacts.resolvePhone.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["contacts.resolvedPeer"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -24546,6 +24644,21 @@ messages.readReactions.verify = function($$) {
   if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
   return $$;
 };
+messages.searchSentMedia = function searchSentMedia(_) {
+  return { ..._, _: "messages.searchSentMedia" }
+}
+$encoder["messages.searchSentMedia"] = function (_) {
+  this.int32(276705696);
+  this.string(_.q);                       // : string - string
+  this.object(_.filter);                  // : MessagesFilter - MessagesFilter
+  this.int32(_.limit);                    // : number - int
+};
+messages.searchSentMedia.ref = "messages.searchSentMedia";
+messages.searchSentMedia.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 updates.getState = function getState() {
   return { _: "updates.getState" }
@@ -26458,6 +26571,33 @@ phone.leaveGroupCallPresentation.ref = "phone.leaveGroupCallPresentation";
 phone.leaveGroupCallPresentation.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+phone.getGroupCallStreamChannels = function getGroupCallStreamChannels(_) {
+  return { ..._, _: "phone.getGroupCallStreamChannels" }
+}
+$encoder["phone.getGroupCallStreamChannels"] = function (_) {
+  this.int32(447879488);
+  this.object(_.call);                    // : InputGroupCall - InputGroupCall
+};
+phone.getGroupCallStreamChannels.ref = "phone.getGroupCallStreamChannels";
+phone.getGroupCallStreamChannels.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["phone.groupCallStreamChannels"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+phone.getGroupCallStreamRtmpUrl = function getGroupCallStreamRtmpUrl(_) {
+  return { ..._, _: "phone.getGroupCallStreamRtmpUrl" }
+}
+$encoder["phone.getGroupCallStreamRtmpUrl"] = function (_) {
+  this.int32(-558650433);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.bool(_.revoke);                    // : boolean - Bool
+};
+phone.getGroupCallStreamRtmpUrl.ref = "phone.getGroupCallStreamRtmpUrl";
+phone.getGroupCallStreamRtmpUrl.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["phone.groupCallStreamRtmpUrl"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
