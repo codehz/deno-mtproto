@@ -1,5 +1,5 @@
 import RPC from "mtproto/rpc/mod.ts";
-import factory from "mtproto/transport/connection/deno-tcp.ts";
+import factory from "mtproto/transport/connection/websocket.ts";
 // import Padded from "mtproto/transport/codec/padded.ts";
 // import Full from "mtproto/transport/codec/full.ts";
 import Abridged from "mtproto/transport/codec/abridged.ts";
@@ -8,7 +8,12 @@ import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
 import { decode } from "mtproto/tl/json.ts";
 
 const create = factory(() => new Obfuscated(new Abridged()));
-const transport = await create("149.154.167.40", 80);
+const transport = await create({
+  id: 2,
+  test: true,
+  ip: "149.154.167.40",
+  port: 80,
+});
 
 console.log("connected");
 
@@ -48,9 +53,9 @@ const rpc = new RPC(transport, storage, "main-test-2", api_id, api_hash, {
 
 try {
   const cfg = await rpc.api.help.getConfig();
-  console.log(cfg.unwrap());
+  console.log(cfg);
   const appcfg = await rpc.api.help.getAppConfig();
-  console.log(decode(appcfg.value));
+  console.log(decode(appcfg));
 } finally {
   rpc.close();
 }
