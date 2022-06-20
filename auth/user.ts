@@ -54,7 +54,9 @@ export async function sendCode(
         let mig_dc;
         if (e.message == "SESSION_PASSWORD_NEEDED") {
           return await login2fa(rpc, ui);
-        } else if ((mig_dc = parse_error("PHONE_MIGRATE_", e.message)) != null) {
+        } else if (
+          (mig_dc = parse_error("PHONE_MIGRATE_", e.message)) != null
+        ) {
           proto.default_dc = mig_dc;
           continue;
         } else if (e.message == "AUTH_RESTART") {

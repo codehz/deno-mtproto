@@ -25,7 +25,7 @@ export class IGE {
       xor_array(block, this.#iv2p);
       ciphertext.set(block, i);
 
-      this.#ivp = view_arr(ciphertext, i,16);
+      this.#ivp = view_arr(ciphertext, i, 16);
       this.#iv2p = nextIv2p;
     }
 
@@ -47,7 +47,7 @@ export class IGE {
       plaintext.set(block, i);
 
       this.#ivp = nextIvp;
-      this.#iv2p = view_arr(plaintext, i,16);
+      this.#iv2p = view_arr(plaintext, i, 16);
     }
 
     return plaintext;

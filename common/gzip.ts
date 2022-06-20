@@ -7,7 +7,9 @@ export function decompress(buffer: BufferSource) {
   return gunzip(tou8(buffer));
 }
 
-export function decompressObject<T extends AnyObject = AnyObject>(obj: AnyObject): T {
+export function decompressObject<T extends AnyObject = AnyObject>(
+  obj: AnyObject,
+): T {
   if (obj._ == "mt.gzip_packed") {
     return deserialize<T>(decompress(obj.packed_data));
   }

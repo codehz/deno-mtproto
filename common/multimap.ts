@@ -18,7 +18,7 @@ export default class MultiMap<K, V> {
   }
 
   del(key: K, value: V) {
-    this.#map.get(key)?.delete(value)
+    this.#map.get(key)?.delete(value);
   }
 
   del_all(key: K) {

@@ -1,12 +1,10 @@
-MTProto for deno
-================
+# MTProto for deno
 
 Status: WIP
 
 basic usage:
 
 ```typescript
-
 import MTProto from "mtproto";
 import factory from "mtproto/transport/connection/deno-tcp.ts";
 import Abridged from "mtproto/transport/codec/abridged.ts";
@@ -56,5 +54,4 @@ await sendCode(proto, {
     }
   },
 }, await Input.prompt("Phone number"));
-
 ```
