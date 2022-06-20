@@ -218,7 +218,7 @@ export default class RPC extends EventEmitter<Events> {
         const { method, params, resolver } = list.shift()!;
         const packet = this.#session.first
           ? serialize(invokeWithLayer, {
-            layer: 138,
+            layer: 143,
             query: initConnection({
               ...this.#environment_information,
               api_id: this.#api_id,
@@ -556,6 +556,7 @@ export default class RPC extends EventEmitter<Events> {
           }
           msg.resolver.reject(new RPCError(error_message));
         } else {
+          // @ts-ignore
           msg.resolver.resolve(res);
         }
         this.#waitlist.delete(data.req_msg_id);

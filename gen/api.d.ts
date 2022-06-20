@@ -755,6 +755,9 @@ declare namespace global {
       scam?: true;                            // flags.24?true
       apply_min_photo?: true;                 // flags.25?true
       fake?: true;                            // flags.26?true
+      bot_attach_menu?: true;                 // flags.27?true
+      premium?: true;                         // flags.28?true
+      attach_menu_enabled?: true;             // flags.29?true
       id: bigint;                             // long
       access_hash?: bigint;                   // flags.0?long
       first_name?: string;                    // flags.1?string
@@ -917,6 +920,7 @@ declare namespace global {
       has_scheduled?: true;                   // flags.19?true
       can_view_stats?: true;                  // flags.20?true
       blocked?: true;                         // flags.22?true
+      can_delete_channel?: true;              // flags2.0?true
       id: bigint;                             // long
       about: string;                          // string
       participants_count?: number;            // flags.0?int
@@ -1092,6 +1096,7 @@ declare namespace global {
     },
     "messageMediaUnsupported": {}
     "messageMediaDocument": {
+      nopremium?: true;                       // flags.3?true
       document?: global.Document;             // flags.0?Document
       ttl_seconds?: number;                   // flags.2?int
     },
@@ -1191,6 +1196,8 @@ declare namespace global {
       score: number;                          // int
     },
     "messageActionPaymentSentMe": {
+      recurring_init?: true;                  // flags.2?true
+      recurring_used?: true;                  // flags.3?true
       currency: string;                       // string
       total_amount: bigint;                   // long
       payload: BufferSource;                  // bytes
@@ -1199,8 +1206,11 @@ declare namespace global {
       charge: global.PaymentCharge;           // PaymentCharge
     },
     "messageActionPaymentSent": {
+      recurring_init?: true;                  // flags.2?true
+      recurring_used?: true;                  // flags.3?true
       currency: string;                       // string
       total_amount: bigint;                   // long
+      invoice_slug?: string;                  // flags.0?string
     },
     "messageActionPhoneCall": {
       video?: true;                           // flags.2?true
@@ -1247,6 +1257,13 @@ declare namespace global {
       emoticon: string;                       // string
     },
     "messageActionChatJoinedByRequest": {}
+    "messageActionWebViewDataSentMe": {
+      text: string;                           // string
+      data: string;                           // string
+    },
+    "messageActionWebViewDataSent": {
+      text: string;                           // string
+    },
   };
 
   export const messageActionEmpty: TLConstructorEmpty<"messageActionEmpty">;
@@ -1279,6 +1296,8 @@ declare namespace global {
   export const messageActionGroupCallScheduled: TLConstructor<_MessageAction, "messageActionGroupCallScheduled">;
   export const messageActionSetChatTheme: TLConstructor<_MessageAction, "messageActionSetChatTheme">;
   export const messageActionChatJoinedByRequest: TLConstructorEmpty<"messageActionChatJoinedByRequest">;
+  export const messageActionWebViewDataSentMe: TLConstructor<_MessageAction, "messageActionWebViewDataSentMe">;
+  export const messageActionWebViewDataSent: TLConstructor<_MessageAction, "messageActionWebViewDataSent">;
   export type Dialog<
     K extends keyof _Dialog = keyof _Dialog
   > = ToUnderscore<_Dialog, K>;
@@ -1413,7 +1432,7 @@ declare namespace global {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
       mute_until?: number;                    // flags.2?int
-      sound?: string;                         // flags.3?string
+      sound?: global.NotificationSound;       // flags.3?NotificationSound
     },
   };
 
@@ -1426,7 +1445,9 @@ declare namespace global {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
       mute_until?: number;                    // flags.2?int
-      sound?: string;                         // flags.3?string
+      ios_sound?: global.NotificationSound;   // flags.3?NotificationSound
+      android_sound?: global.NotificationSound; // flags.4?NotificationSound
+      other_sound?: global.NotificationSound; // flags.5?NotificationSound
     },
   };
 
@@ -1526,6 +1547,8 @@ declare namespace global {
       ttl_period?: number;                    // flags.14?int
       theme_emoticon?: string;                // flags.15?string
       private_forward_name?: string;          // flags.16?string
+      bot_group_admin_rights?: global.ChatAdminRights; // flags.17?ChatAdminRights
+      bot_broadcast_admin_rights?: global.ChatAdminRights; // flags.18?ChatAdminRights
     },
   };
 
@@ -2051,6 +2074,22 @@ declare namespace global {
       msg_id: number;                         // int
       reactions: global.MessageReactions;     // MessageReactions
     },
+    "updateAttachMenuBots": {}
+    "updateWebViewResultSent": {
+      query_id: bigint;                       // long
+    },
+    "updateBotMenuButton": {
+      bot_id: bigint;                         // long
+      button: global.BotMenuButton;           // BotMenuButton
+    },
+    "updateSavedRingtones": {}
+    "updateTranscribedAudio": {
+      pending?: true;                         // flags.0?true
+      peer: global.Peer;                      // Peer
+      msg_id: number;                         // int
+      transcription_id: bigint;               // long
+      text: string;                           // string
+    },
   };
 
   export const updateNewMessage: TLConstructor<_Update, "updateNewMessage">;
@@ -2149,6 +2188,11 @@ declare namespace global {
   export const updatePendingJoinRequests: TLConstructor<_Update, "updatePendingJoinRequests">;
   export const updateBotChatInviteRequester: TLConstructor<_Update, "updateBotChatInviteRequester">;
   export const updateMessageReactions: TLConstructor<_Update, "updateMessageReactions">;
+  export const updateAttachMenuBots: TLConstructorEmpty<"updateAttachMenuBots">;
+  export const updateWebViewResultSent: TLConstructor<_Update, "updateWebViewResultSent">;
+  export const updateBotMenuButton: TLConstructor<_Update, "updateBotMenuButton">;
+  export const updateSavedRingtones: TLConstructorEmpty<"updateSavedRingtones">;
+  export const updateTranscribedAudio: TLConstructor<_Update, "updateTranscribedAudio">;
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
@@ -2237,6 +2281,7 @@ declare namespace global {
       tcpo_only?: true;                       // flags.2?true
       cdn?: true;                             // flags.3?true
       static?: true;                          // flags.4?true
+      this_port_only?: true;                  // flags.5?true
       id: number;                             // int
       ip_address: string;                     // string
       port: number;                           // int
@@ -2257,6 +2302,7 @@ declare namespace global {
       revoke_pm_inbox?: true;                 // flags.6?true
       blocked_mode?: true;                    // flags.8?true
       pfs_enabled?: true;                     // flags.13?true
+      force_try_ipv6?: true;                  // flags.14?true
       date: number;                           // int
       expires: number;                        // int
       test_mode: boolean;                     // Bool
@@ -2379,7 +2425,7 @@ declare namespace global {
     "encryptedFile": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      size: number;                           // int
+      size: bigint;                           // long
       dc_id: number;                          // int
       key_fingerprint: number;                // int
     },
@@ -2461,7 +2507,7 @@ declare namespace global {
       file_reference: BufferSource;           // bytes
       date: number;                           // int
       mime_type: string;                      // string
-      size: number;                           // int
+      size: bigint;                           // long
       thumbs?: global.PhotoSize[];            // flags.0?Vector<PhotoSize>
       video_thumbs?: global.VideoSize[];      // flags.1?Vector<VideoSize>
       dc_id: number;                          // int
@@ -2809,9 +2855,11 @@ declare namespace global {
       requested?: number;                     // flags.7?int
       title?: string;                         // flags.8?string
     },
+    "chatInvitePublicJoinRequests": {}
   };
 
   export const chatInviteExported: TLConstructor<_ExportedChatInvite, "chatInviteExported">;
+  export const chatInvitePublicJoinRequests: TLConstructorEmpty<"chatInvitePublicJoinRequests">;
   export type ChatInvite<
     K extends keyof _ChatInvite = keyof _ChatInvite
   > = ToUnderscore<_ChatInvite, K>;
@@ -2905,9 +2953,12 @@ declare namespace global {
   > = ToUnderscore<_BotInfo, K>;
   export type _BotInfo = {
     "botInfo": {
-      user_id: bigint;                        // long
-      description: string;                    // string
-      commands: global.BotCommand[];          // Vector<BotCommand>
+      user_id?: bigint;                       // flags.0?long
+      description?: string;                   // flags.1?string
+      description_photo?: global.Photo;       // flags.4?Photo
+      description_document?: global.Document; // flags.5?Document
+      commands?: global.BotCommand[];         // flags.2?Vector<BotCommand>
+      menu_button?: global.BotMenuButton;     // flags.3?BotMenuButton
     },
   };
 
@@ -2970,6 +3021,14 @@ declare namespace global {
       text: string;                           // string
       user_id: bigint;                        // long
     },
+    "keyboardButtonWebView": {
+      text: string;                           // string
+      url: string;                            // string
+    },
+    "keyboardButtonSimpleWebView": {
+      text: string;                           // string
+      url: string;                            // string
+    },
   };
 
   export const keyboardButton: TLConstructor<_KeyboardButton, "keyboardButton">;
@@ -2985,6 +3044,8 @@ declare namespace global {
   export const keyboardButtonRequestPoll: TLConstructor<_KeyboardButton, "keyboardButtonRequestPoll">;
   export const inputKeyboardButtonUserProfile: TLConstructor<_KeyboardButton, "inputKeyboardButtonUserProfile">;
   export const keyboardButtonUserProfile: TLConstructor<_KeyboardButton, "keyboardButtonUserProfile">;
+  export const keyboardButtonWebView: TLConstructor<_KeyboardButton, "keyboardButtonWebView">;
+  export const keyboardButtonSimpleWebView: TLConstructor<_KeyboardButton, "keyboardButtonSimpleWebView">;
   export type KeyboardButtonRow<
     K extends keyof _KeyboardButtonRow = keyof _KeyboardButtonRow
   > = ToUnderscore<_KeyboardButtonRow, K>;
@@ -3924,10 +3985,12 @@ declare namespace global {
       flexible?: true;                        // flags.5?true
       phone_to_provider?: true;               // flags.6?true
       email_to_provider?: true;               // flags.7?true
+      recurring?: true;                       // flags.9?true
       currency: string;                       // string
       prices: global.LabeledPrice[];          // Vector<LabeledPrice>
       max_tip_amount?: bigint;                // flags.8?long
       suggested_tip_amounts?: bigint[];       // flags.8?Vector<long>
+      recurring_terms_url?: string;           // flags.9?string
     },
   };
 
@@ -4167,6 +4230,7 @@ declare namespace global {
   > = ToUnderscore<_PhoneConnection, K>;
   export type _PhoneConnection = {
     "phoneConnection": {
+      tcp?: true;                             // flags.0?true
       id: bigint;                             // long
       ip: string;                             // string
       ipv6: string;                           // string
@@ -4607,7 +4671,7 @@ declare namespace global {
   > = ToUnderscore<_FileHash, K>;
   export type _FileHash = {
     "fileHash": {
-      offset: number;                         // int
+      offset: bigint;                         // long
       limit: number;                          // int
       hash: BufferSource;                     // bytes
     },
@@ -4652,7 +4716,7 @@ declare namespace global {
     "secureFile": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      size: number;                           // int
+      size: bigint;                           // long
       dc_id: number;                          // int
       date: number;                           // int
       file_hash: BufferSource;                // bytes
@@ -5258,8 +5322,8 @@ declare namespace global {
       audio_preload_next?: true;              // flags.2?true
       phonecalls_less_data?: true;            // flags.3?true
       photo_size_max: number;                 // int
-      video_size_max: number;                 // int
-      file_size_max: number;                  // int
+      video_size_max: bigint;                 // long
+      file_size_max: bigint;                  // long
       video_upload_maxbitrate: number;        // int
     },
   };
@@ -5557,9 +5621,11 @@ declare namespace global {
       include_peers: global.InputPeer[];      // Vector<InputPeer>
       exclude_peers: global.InputPeer[];      // Vector<InputPeer>
     },
+    "dialogFilterDefault": {}
   };
 
   export const dialogFilter: TLConstructor<_DialogFilter, "dialogFilter">;
+  export const dialogFilterDefault: TLConstructorEmpty<"dialogFilterDefault">;
   export type DialogFilterSuggested<
     K extends keyof _DialogFilterSuggested = keyof _DialogFilterSuggested
   > = ToUnderscore<_DialogFilterSuggested, K>;
@@ -5917,6 +5983,7 @@ declare namespace global {
   > = ToUnderscore<_SponsoredMessage, K>;
   export type _SponsoredMessage = {
     "sponsoredMessage": {
+      recommended?: true;                     // flags.5?true
       random_id: BufferSource;                // bytes
       from_id?: global.Peer;                  // flags.3?Peer
       chat_invite?: global.ChatInvite;        // flags.4?ChatInvite
@@ -5985,6 +6052,7 @@ declare namespace global {
   export type _AvailableReaction = {
     "availableReaction": {
       inactive?: true;                        // flags.0?true
+      premium?: true;                         // flags.2?true
       reaction: string;                       // string
       title: string;                          // string
       static_icon: global.Document;           // Document
@@ -6023,6 +6091,165 @@ declare namespace global {
   };
 
   export const groupCallStreamChannel: TLConstructor<_GroupCallStreamChannel, "groupCallStreamChannel">;
+  export type AttachMenuBotIconColor<
+    K extends keyof _AttachMenuBotIconColor = keyof _AttachMenuBotIconColor
+  > = ToUnderscore<_AttachMenuBotIconColor, K>;
+  export type _AttachMenuBotIconColor = {
+    "attachMenuBotIconColor": {
+      name: string;                           // string
+      color: number;                          // int
+    },
+  };
+
+  export const attachMenuBotIconColor: TLConstructor<_AttachMenuBotIconColor, "attachMenuBotIconColor">;
+  export type AttachMenuBotIcon<
+    K extends keyof _AttachMenuBotIcon = keyof _AttachMenuBotIcon
+  > = ToUnderscore<_AttachMenuBotIcon, K>;
+  export type _AttachMenuBotIcon = {
+    "attachMenuBotIcon": {
+      name: string;                           // string
+      icon: global.Document;                  // Document
+      colors?: global.AttachMenuBotIconColor[]; // flags.0?Vector<AttachMenuBotIconColor>
+    },
+  };
+
+  export const attachMenuBotIcon: TLConstructor<_AttachMenuBotIcon, "attachMenuBotIcon">;
+  export type AttachMenuBot<
+    K extends keyof _AttachMenuBot = keyof _AttachMenuBot
+  > = ToUnderscore<_AttachMenuBot, K>;
+  export type _AttachMenuBot = {
+    "attachMenuBot": {
+      inactive?: true;                        // flags.0?true
+      has_settings?: true;                    // flags.1?true
+      bot_id: bigint;                         // long
+      short_name: string;                     // string
+      peer_types: global.AttachMenuPeerType[]; // Vector<AttachMenuPeerType>
+      icons: global.AttachMenuBotIcon[];      // Vector<AttachMenuBotIcon>
+    },
+  };
+
+  export const attachMenuBot: TLConstructor<_AttachMenuBot, "attachMenuBot">;
+  export type AttachMenuBots<
+    K extends keyof _AttachMenuBots = keyof _AttachMenuBots
+  > = ToUnderscore<_AttachMenuBots, K>;
+  export type _AttachMenuBots = {
+    "attachMenuBotsNotModified": {}
+    "attachMenuBots": {
+      hash: bigint;                           // long
+      bots: global.AttachMenuBot[];           // Vector<AttachMenuBot>
+      users: global.User[];                   // Vector<User>
+    },
+  };
+
+  export const attachMenuBotsNotModified: TLConstructorEmpty<"attachMenuBotsNotModified">;
+  export const attachMenuBots: TLConstructor<_AttachMenuBots, "attachMenuBots">;
+  export type AttachMenuBotsBot<
+    K extends keyof _AttachMenuBotsBot = keyof _AttachMenuBotsBot
+  > = ToUnderscore<_AttachMenuBotsBot, K>;
+  export type _AttachMenuBotsBot = {
+    "attachMenuBotsBot": {
+      bot: global.AttachMenuBot;              // AttachMenuBot
+      users: global.User[];                   // Vector<User>
+    },
+  };
+
+  export const attachMenuBotsBot: TLConstructor<_AttachMenuBotsBot, "attachMenuBotsBot">;
+  export type WebViewResult<
+    K extends keyof _WebViewResult = keyof _WebViewResult
+  > = ToUnderscore<_WebViewResult, K>;
+  export type _WebViewResult = {
+    "webViewResultUrl": {
+      query_id: bigint;                       // long
+      url: string;                            // string
+    },
+  };
+
+  export const webViewResultUrl: TLConstructor<_WebViewResult, "webViewResultUrl">;
+  export type SimpleWebViewResult<
+    K extends keyof _SimpleWebViewResult = keyof _SimpleWebViewResult
+  > = ToUnderscore<_SimpleWebViewResult, K>;
+  export type _SimpleWebViewResult = {
+    "simpleWebViewResultUrl": {
+      url: string;                            // string
+    },
+  };
+
+  export const simpleWebViewResultUrl: TLConstructor<_SimpleWebViewResult, "simpleWebViewResultUrl">;
+  export type WebViewMessageSent<
+    K extends keyof _WebViewMessageSent = keyof _WebViewMessageSent
+  > = ToUnderscore<_WebViewMessageSent, K>;
+  export type _WebViewMessageSent = {
+    "webViewMessageSent": {
+      msg_id?: global.InputBotInlineMessageID; // flags.0?InputBotInlineMessageID
+    },
+  };
+
+  export const webViewMessageSent: TLConstructor<_WebViewMessageSent, "webViewMessageSent">;
+  export type BotMenuButton<
+    K extends keyof _BotMenuButton = keyof _BotMenuButton
+  > = ToUnderscore<_BotMenuButton, K>;
+  export type _BotMenuButton = {
+    "botMenuButtonDefault": {}
+    "botMenuButtonCommands": {}
+    "botMenuButton": {
+      text: string;                           // string
+      url: string;                            // string
+    },
+  };
+
+  export const botMenuButtonDefault: TLConstructorEmpty<"botMenuButtonDefault">;
+  export const botMenuButtonCommands: TLConstructorEmpty<"botMenuButtonCommands">;
+  export const botMenuButton: TLConstructor<_BotMenuButton, "botMenuButton">;
+  export type NotificationSound<
+    K extends keyof _NotificationSound = keyof _NotificationSound
+  > = ToUnderscore<_NotificationSound, K>;
+  export type _NotificationSound = {
+    "notificationSoundDefault": {}
+    "notificationSoundNone": {}
+    "notificationSoundLocal": {
+      title: string;                          // string
+      data: string;                           // string
+    },
+    "notificationSoundRingtone": {
+      id: bigint;                             // long
+    },
+  };
+
+  export const notificationSoundDefault: TLConstructorEmpty<"notificationSoundDefault">;
+  export const notificationSoundNone: TLConstructorEmpty<"notificationSoundNone">;
+  export const notificationSoundLocal: TLConstructor<_NotificationSound, "notificationSoundLocal">;
+  export const notificationSoundRingtone: TLConstructor<_NotificationSound, "notificationSoundRingtone">;
+  export type AttachMenuPeerType<
+    K extends keyof _AttachMenuPeerType = keyof _AttachMenuPeerType
+  > = ToUnderscore<_AttachMenuPeerType, K>;
+  export type _AttachMenuPeerType = {
+    "attachMenuPeerTypeSameBotPM": {}
+    "attachMenuPeerTypeBotPM": {}
+    "attachMenuPeerTypePM": {}
+    "attachMenuPeerTypeChat": {}
+    "attachMenuPeerTypeBroadcast": {}
+  };
+
+  export const attachMenuPeerTypeSameBotPM: TLConstructorEmpty<"attachMenuPeerTypeSameBotPM">;
+  export const attachMenuPeerTypeBotPM: TLConstructorEmpty<"attachMenuPeerTypeBotPM">;
+  export const attachMenuPeerTypePM: TLConstructorEmpty<"attachMenuPeerTypePM">;
+  export const attachMenuPeerTypeChat: TLConstructorEmpty<"attachMenuPeerTypeChat">;
+  export const attachMenuPeerTypeBroadcast: TLConstructorEmpty<"attachMenuPeerTypeBroadcast">;
+  export type InputInvoice<
+    K extends keyof _InputInvoice = keyof _InputInvoice
+  > = ToUnderscore<_InputInvoice, K>;
+  export type _InputInvoice = {
+    "inputInvoiceMessage": {
+      peer: global.InputPeer;                 // InputPeer
+      msg_id: number;                         // int
+    },
+    "inputInvoiceSlug": {
+      slug: string;                           // string
+    },
+  };
+
+  export const inputInvoiceMessage: TLConstructor<_InputInvoice, "inputInvoiceMessage">;
+  export const inputInvoiceSlug: TLConstructor<_InputInvoice, "inputInvoiceSlug">;
 }
 
 export default global;
@@ -6870,6 +7097,18 @@ export namespace messages {
 
   export const translateNoResult: TLConstructorEmpty<"messages.translateNoResult">;
   export const translateResultText: TLConstructor<_TranslatedText, "messages.translateResultText">;
+  export type TranscribedAudio<
+    K extends keyof _TranscribedAudio = keyof _TranscribedAudio
+  > = ToUnderscore<_TranscribedAudio, K>;
+  export type _TranscribedAudio = {
+    "messages.transcribedAudio": {
+      pending?: true;                         // flags.0?true
+      transcription_id: bigint;               // long
+      text: string;                           // string
+    },
+  };
+
+  export const transcribedAudio: TLConstructor<_TranscribedAudio, "messages.transcribedAudio">;
 }
 
 export namespace updates {
@@ -7228,6 +7467,22 @@ export namespace help {
 
   export const countriesListNotModified: TLConstructorEmpty<"help.countriesListNotModified">;
   export const countriesList: TLConstructor<_CountriesList, "help.countriesList">;
+  export type PremiumPromo<
+    K extends keyof _PremiumPromo = keyof _PremiumPromo
+  > = ToUnderscore<_PremiumPromo, K>;
+  export type _PremiumPromo = {
+    "help.premiumPromo": {
+      status_text: string;                    // string
+      status_entities: global.MessageEntity[]; // Vector<MessageEntity>
+      video_sections: string[];               // Vector<string>
+      videos: global.Document[];              // Vector<Document>
+      currency: string;                       // string
+      monthly_amount: bigint;                 // long
+      users: global.User[];                   // Vector<User>
+    },
+  };
+
+  export const premiumPromo: TLConstructor<_PremiumPromo, "help.premiumPromo">;
 }
 
 export namespace account {
@@ -7422,6 +7677,31 @@ export namespace account {
   export const resetPasswordFailedWait: TLConstructor<_ResetPasswordResult, "account.resetPasswordFailedWait">;
   export const resetPasswordRequestedWait: TLConstructor<_ResetPasswordResult, "account.resetPasswordRequestedWait">;
   export const resetPasswordOk: TLConstructorEmpty<"account.resetPasswordOk">;
+  export type SavedRingtones<
+    K extends keyof _SavedRingtones = keyof _SavedRingtones
+  > = ToUnderscore<_SavedRingtones, K>;
+  export type _SavedRingtones = {
+    "account.savedRingtonesNotModified": {}
+    "account.savedRingtones": {
+      hash: bigint;                           // long
+      ringtones: global.Document[];           // Vector<Document>
+    },
+  };
+
+  export const savedRingtonesNotModified: TLConstructorEmpty<"account.savedRingtonesNotModified">;
+  export const savedRingtones: TLConstructor<_SavedRingtones, "account.savedRingtones">;
+  export type SavedRingtone<
+    K extends keyof _SavedRingtone = keyof _SavedRingtone
+  > = ToUnderscore<_SavedRingtone, K>;
+  export type _SavedRingtone = {
+    "account.savedRingtone": {}
+    "account.savedRingtoneConverted": {
+      document: global.Document;              // Document
+    },
+  };
+
+  export const savedRingtone: TLConstructorEmpty<"account.savedRingtone">;
+  export const savedRingtoneConverted: TLConstructor<_SavedRingtone, "account.savedRingtoneConverted">;
 }
 
 export namespace channels {
@@ -7488,6 +7768,9 @@ export namespace payments {
       password_missing?: true;                // flags.3?true
       form_id: bigint;                        // long
       bot_id: bigint;                         // long
+      title: string;                          // string
+      description: string;                    // string
+      photo?: global.WebDocument;             // flags.5?WebDocument
       invoice: global.Invoice;                // Invoice
       provider_id: bigint;                    // long
       url: string;                            // string
@@ -7570,6 +7853,16 @@ export namespace payments {
   };
 
   export const bankCardData: TLConstructor<_BankCardData, "payments.bankCardData">;
+  export type ExportedInvoice<
+    K extends keyof _ExportedInvoice = keyof _ExportedInvoice
+  > = ToUnderscore<_ExportedInvoice, K>;
+  export type _ExportedInvoice = {
+    "payments.exportedInvoice": {
+      url: string;                            // string
+    },
+  };
+
+  export const exportedInvoice: TLConstructor<_ExportedInvoice, "payments.exportedInvoice">;
 }
 
 export namespace phone {
@@ -8116,7 +8409,24 @@ export type AnyObject =
   | global.MessagePeerReaction
   | global.GroupCallStreamChannel
   | phone.GroupCallStreamChannels
-  | phone.GroupCallStreamRtmpUrl;
+  | phone.GroupCallStreamRtmpUrl
+  | global.AttachMenuBotIconColor
+  | global.AttachMenuBotIcon
+  | global.AttachMenuBot
+  | global.AttachMenuBots
+  | global.AttachMenuBotsBot
+  | global.WebViewResult
+  | global.SimpleWebViewResult
+  | global.WebViewMessageSent
+  | global.BotMenuButton
+  | account.SavedRingtones
+  | global.NotificationSound
+  | account.SavedRingtone
+  | global.AttachMenuPeerType
+  | global.InputInvoice
+  | payments.ExportedInvoice
+  | messages.TranscribedAudio
+  | help.PremiumPromo;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
 export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
@@ -8421,7 +8731,7 @@ export namespace account {
     message_megagroups?: true               // flags.3?true
     message_channels?: true                 // flags.4?true
     files?: true                            // flags.5?true
-    file_max_size?: number                  // flags.5?int
+    file_max_size?: bigint                  // flags.5?long
   }, Takeout>
   export const finishTakeoutSession: TLApiMethod<"account.finishTakeoutSession", {
     success?: true                          // flags.0?true
@@ -8532,6 +8842,18 @@ export namespace account {
     encrypted_requests_disabled?: boolean   // flags.0?Bool
     call_requests_disabled?: boolean        // flags.1?Bool
   }, boolean>
+  export const getSavedRingtones: TLApiMethod<"account.getSavedRingtones", {
+    hash: bigint                            // long
+  }, SavedRingtones>
+  export const saveRingtone: TLApiMethod<"account.saveRingtone", {
+    id: global.InputDocument                // InputDocument
+    unsave: boolean                         // Bool
+  }, SavedRingtone>
+  export const uploadRingtone: TLApiMethod<"account.uploadRingtone", {
+    file: global.InputFile                  // InputFile
+    file_name: string                       // string
+    mime_type: string                       // string
+  }, global.Document>
 }
 
 export namespace users {
@@ -8900,7 +9222,7 @@ export namespace messages {
   }, boolean>
   export const getDocumentByHash: TLApiMethod<"messages.getDocumentByHash", {
     sha256: BufferSource                    // bytes
-    size: number                            // int
+    size: bigint                            // long
     mime_type: string                       // string
   }, global.Document>
   export const getSavedGifs: TLApiMethod<"messages.getSavedGifs", {
@@ -9418,6 +9740,60 @@ export namespace messages {
     filter: global.MessagesFilter           // MessagesFilter
     limit: number                           // int
   }, Messages>
+  export const getAttachMenuBots: TLApiMethod<"messages.getAttachMenuBots", {
+    hash: bigint                            // long
+  }, global.AttachMenuBots>
+  export const getAttachMenuBot: TLApiMethod<"messages.getAttachMenuBot", {
+    bot: global.InputUser                   // InputUser
+  }, global.AttachMenuBotsBot>
+  export const toggleBotInAttachMenu: TLApiMethod<"messages.toggleBotInAttachMenu", {
+    bot: global.InputUser                   // InputUser
+    enabled: boolean                        // Bool
+  }, boolean>
+  export const requestWebView: TLApiMethod<"messages.requestWebView", {
+    from_bot_menu?: true                    // flags.4?true
+    silent?: true                           // flags.5?true
+    peer: global.InputPeer                  // InputPeer
+    bot: global.InputUser                   // InputUser
+    url?: string                            // flags.1?string
+    start_param?: string                    // flags.3?string
+    theme_params?: global.DataJSON          // flags.2?DataJSON
+    reply_to_msg_id?: number                // flags.0?int
+    send_as?: global.InputPeer              // flags.13?InputPeer
+  }, global.WebViewResult>
+  export const prolongWebView: TLApiMethod<"messages.prolongWebView", {
+    silent?: true                           // flags.5?true
+    peer: global.InputPeer                  // InputPeer
+    bot: global.InputUser                   // InputUser
+    query_id: bigint                        // long
+    reply_to_msg_id?: number                // flags.0?int
+    send_as?: global.InputPeer              // flags.13?InputPeer
+  }, boolean>
+  export const requestSimpleWebView: TLApiMethod<"messages.requestSimpleWebView", {
+    bot: global.InputUser                   // InputUser
+    url: string                             // string
+    theme_params?: global.DataJSON          // flags.0?DataJSON
+  }, global.SimpleWebViewResult>
+  export const sendWebViewResultMessage: TLApiMethod<"messages.sendWebViewResultMessage", {
+    bot_query_id: string                    // string
+    result: global.InputBotInlineResult     // InputBotInlineResult
+  }, global.WebViewMessageSent>
+  export const sendWebViewData: TLApiMethod<"messages.sendWebViewData", {
+    bot: global.InputUser                   // InputUser
+    random_id: bigint                       // long
+    button_text: string                     // string
+    data: string                            // string
+  }, global.Updates>
+  export const transcribeAudio: TLApiMethod<"messages.transcribeAudio", {
+    peer: global.InputPeer                  // InputPeer
+    msg_id: number                          // int
+  }, TranscribedAudio>
+  export const rateTranscribedAudio: TLApiMethod<"messages.rateTranscribedAudio", {
+    peer: global.InputPeer                  // InputPeer
+    msg_id: number                          // int
+    transcription_id: bigint                // long
+    good: boolean                           // Bool
+  }, boolean>
 }
 
 export namespace updates {
@@ -9467,7 +9843,7 @@ export namespace upload {
     precise?: true                          // flags.0?true
     cdn_supported?: true                    // flags.1?true
     location: global.InputFileLocation      // InputFileLocation
-    offset: number                          // int
+    offset: bigint                          // long
     limit: number                           // int
   }, File>
   export const saveBigFilePart: TLApiMethod<"upload.saveBigFilePart", {
@@ -9483,7 +9859,7 @@ export namespace upload {
   }, WebFile>
   export const getCdnFile: TLApiMethod<"upload.getCdnFile", {
     file_token: BufferSource                // bytes
-    offset: number                          // int
+    offset: bigint                          // long
     limit: number                           // int
   }, CdnFile>
   export const reuploadCdnFile: TLApiMethod<"upload.reuploadCdnFile", {
@@ -9492,11 +9868,11 @@ export namespace upload {
   }, global.FileHash[]>
   export const getCdnFileHashes: TLApiMethod<"upload.getCdnFileHashes", {
     file_token: BufferSource                // bytes
-    offset: number                          // int
+    offset: bigint                          // long
   }, global.FileHash[]>
   export const getFileHashes: TLApiMethod<"upload.getFileHashes", {
     location: global.InputFileLocation      // InputFileLocation
-    offset: number                          // int
+    offset: bigint                          // long
   }, global.FileHash[]>
 }
 
@@ -9554,6 +9930,7 @@ export namespace help {
     lang_code: string                       // string
     hash: number                            // int
   }, CountriesList>
+  export const getPremiumPromo: TLApiMethod<"help.getPremiumPromo", void, PremiumPromo>
 }
 
 export namespace channels {
@@ -9672,9 +10049,10 @@ export namespace channels {
     id: number[]                            // Vector<int>
   }, boolean>
   export const deleteHistory: TLApiMethod<"channels.deleteHistory", {
+    for_everyone?: true                     // flags.0?true
     channel: global.InputChannel            // InputChannel
     max_id: number                          // int
-  }, boolean>
+  }, global.Updates>
   export const togglePreHistoryHidden: TLApiMethod<"channels.togglePreHistoryHidden", {
     channel: global.InputChannel            // InputChannel
     enabled: boolean                        // Bool
@@ -9719,6 +10097,14 @@ export namespace channels {
     channel: global.InputChannel            // InputChannel
     participant: global.InputPeer           // InputPeer
   }, messages.AffectedHistory>
+  export const toggleJoinToSend: TLApiMethod<"channels.toggleJoinToSend", {
+    channel: global.InputChannel            // InputChannel
+    enabled: boolean                        // Bool
+  }, global.Updates>
+  export const toggleJoinRequest: TLApiMethod<"channels.toggleJoinRequest", {
+    channel: global.InputChannel            // InputChannel
+    enabled: boolean                        // Bool
+  }, global.Updates>
 }
 
 export namespace bots {
@@ -9743,12 +10129,24 @@ export namespace bots {
     scope: global.BotCommandScope           // BotCommandScope
     lang_code: string                       // string
   }, global.BotCommand[]>
+  export const setBotMenuButton: TLApiMethod<"bots.setBotMenuButton", {
+    user_id: global.InputUser               // InputUser
+    button: global.BotMenuButton            // BotMenuButton
+  }, boolean>
+  export const getBotMenuButton: TLApiMethod<"bots.getBotMenuButton", {
+    user_id: global.InputUser               // InputUser
+  }, global.BotMenuButton>
+  export const setBotBroadcastDefaultAdminRights: TLApiMethod<"bots.setBotBroadcastDefaultAdminRights", {
+    admin_rights: global.ChatAdminRights    // ChatAdminRights
+  }, boolean>
+  export const setBotGroupDefaultAdminRights: TLApiMethod<"bots.setBotGroupDefaultAdminRights", {
+    admin_rights: global.ChatAdminRights    // ChatAdminRights
+  }, boolean>
 }
 
 export namespace payments {
   export const getPaymentForm: TLApiMethod<"payments.getPaymentForm", {
-    peer: global.InputPeer                  // InputPeer
-    msg_id: number                          // int
+    invoice: global.InputInvoice            // InputInvoice
     theme_params?: global.DataJSON          // flags.0?DataJSON
   }, PaymentForm>
   export const getPaymentReceipt: TLApiMethod<"payments.getPaymentReceipt", {
@@ -9757,14 +10155,12 @@ export namespace payments {
   }, PaymentReceipt>
   export const validateRequestedInfo: TLApiMethod<"payments.validateRequestedInfo", {
     save?: true                             // flags.0?true
-    peer: global.InputPeer                  // InputPeer
-    msg_id: number                          // int
+    invoice: global.InputInvoice            // InputInvoice
     info: global.PaymentRequestedInfo       // PaymentRequestedInfo
   }, ValidatedRequestedInfo>
   export const sendPaymentForm: TLApiMethod<"payments.sendPaymentForm", {
     form_id: bigint                         // long
-    peer: global.InputPeer                  // InputPeer
-    msg_id: number                          // int
+    invoice: global.InputInvoice            // InputInvoice
     requested_info_id?: string              // flags.0?string
     shipping_option_id?: string             // flags.1?string
     credentials: global.InputPaymentCredentials // InputPaymentCredentials
@@ -9778,6 +10174,26 @@ export namespace payments {
   export const getBankCardData: TLApiMethod<"payments.getBankCardData", {
     number: string                          // string
   }, BankCardData>
+  export const exportInvoice: TLApiMethod<"payments.exportInvoice", {
+    invoice_media: global.InputMedia        // InputMedia
+  }, ExportedInvoice>
+  export const assignAppStoreTransaction: TLApiMethod<"payments.assignAppStoreTransaction", {
+    restore?: true                          // flags.0?true
+    transaction_id: string                  // string
+    receipt: BufferSource                   // bytes
+  }, global.Updates>
+  export const assignPlayMarketTransaction: TLApiMethod<"payments.assignPlayMarketTransaction", {
+    purchase_token: string                  // string
+  }, global.Updates>
+  export const restorePlayMarketReceipt: TLApiMethod<"payments.restorePlayMarketReceipt", {
+    receipt: BufferSource                   // bytes
+  }, global.Updates>
+  export const canPurchasePremium: TLApiMethod<"payments.canPurchasePremium", void, boolean>
+  export const requestRecurringPayment: TLApiMethod<"payments.requestRecurringPayment", {
+    user_id: global.InputUser               // InputUser
+    recurring_init_charge: string           // string
+    invoice_media: global.InputMedia        // InputMedia
+  }, global.Updates>
 }
 
 export namespace stickers {
@@ -9958,6 +10374,10 @@ export namespace phone {
     peer: global.InputPeer                  // InputPeer
     revoke: boolean                         // Bool
   }, GroupCallStreamRtmpUrl>
+  export const saveCallLog: TLApiMethod<"phone.saveCallLog", {
+    peer: global.InputPhoneCall             // InputPhoneCall
+    file: global.InputFile                  // InputFile
+  }, boolean>
 }
 
 export namespace langpack {

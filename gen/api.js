@@ -680,6 +680,12 @@ const global = {
   messageActionChatJoinedByRequest() {
     return { _: "messageActionChatJoinedByRequest" };
   },
+  messageActionWebViewDataSentMe(params) {
+    return { ...params, _: "messageActionWebViewDataSentMe" };
+  },
+  messageActionWebViewDataSent(params) {
+    return { ...params, _: "messageActionWebViewDataSent" };
+  },
 
   // type Dialog
   dialog(params) {
@@ -1156,6 +1162,21 @@ const global = {
   updateMessageReactions(params) {
     return { ...params, _: "updateMessageReactions" };
   },
+  updateAttachMenuBots() {
+    return { _: "updateAttachMenuBots" };
+  },
+  updateWebViewResultSent(params) {
+    return { ...params, _: "updateWebViewResultSent" };
+  },
+  updateBotMenuButton(params) {
+    return { ...params, _: "updateBotMenuButton" };
+  },
+  updateSavedRingtones() {
+    return { _: "updateSavedRingtones" };
+  },
+  updateTranscribedAudio(params) {
+    return { ...params, _: "updateTranscribedAudio" };
+  },
 
   // type Updates
   updatesTooLong() {
@@ -1498,6 +1519,9 @@ const global = {
   chatInviteExported(params) {
     return { ...params, _: "chatInviteExported" };
   },
+  chatInvitePublicJoinRequests() {
+    return { _: "chatInvitePublicJoinRequests" };
+  },
 
   // type ChatInvite
   chatInviteAlready(params) {
@@ -1584,6 +1608,12 @@ const global = {
   },
   keyboardButtonUserProfile(params) {
     return { ...params, _: "keyboardButtonUserProfile" };
+  },
+  keyboardButtonWebView(params) {
+    return { ...params, _: "keyboardButtonWebView" };
+  },
+  keyboardButtonSimpleWebView(params) {
+    return { ...params, _: "keyboardButtonSimpleWebView" };
   },
 
   // type KeyboardButtonRow
@@ -2838,6 +2868,9 @@ const global = {
   dialogFilter(params) {
     return { ...params, _: "dialogFilter" };
   },
+  dialogFilterDefault() {
+    return { _: "dialogFilterDefault" };
+  },
 
   // type DialogFilterSuggested
   dialogFilterSuggested(params) {
@@ -3038,6 +3071,99 @@ const global = {
     return { ...params, _: "groupCallStreamChannel" };
   },
 
+  // type AttachMenuBotIconColor
+  attachMenuBotIconColor(params) {
+    return { ...params, _: "attachMenuBotIconColor" };
+  },
+
+  // type AttachMenuBotIcon
+  attachMenuBotIcon(params) {
+    return { ...params, _: "attachMenuBotIcon" };
+  },
+
+  // type AttachMenuBot
+  attachMenuBot(params) {
+    return { ...params, _: "attachMenuBot" };
+  },
+
+  // type AttachMenuBots
+  attachMenuBotsNotModified() {
+    return { _: "attachMenuBotsNotModified" };
+  },
+  attachMenuBots(params) {
+    return { ...params, _: "attachMenuBots" };
+  },
+
+  // type AttachMenuBotsBot
+  attachMenuBotsBot(params) {
+    return { ...params, _: "attachMenuBotsBot" };
+  },
+
+  // type WebViewResult
+  webViewResultUrl(params) {
+    return { ...params, _: "webViewResultUrl" };
+  },
+
+  // type SimpleWebViewResult
+  simpleWebViewResultUrl(params) {
+    return { ...params, _: "simpleWebViewResultUrl" };
+  },
+
+  // type WebViewMessageSent
+  webViewMessageSent(params) {
+    return { ...params, _: "webViewMessageSent" };
+  },
+
+  // type BotMenuButton
+  botMenuButtonDefault() {
+    return { _: "botMenuButtonDefault" };
+  },
+  botMenuButtonCommands() {
+    return { _: "botMenuButtonCommands" };
+  },
+  botMenuButton(params) {
+    return { ...params, _: "botMenuButton" };
+  },
+
+  // type NotificationSound
+  notificationSoundDefault() {
+    return { _: "notificationSoundDefault" };
+  },
+  notificationSoundNone() {
+    return { _: "notificationSoundNone" };
+  },
+  notificationSoundLocal(params) {
+    return { ...params, _: "notificationSoundLocal" };
+  },
+  notificationSoundRingtone(params) {
+    return { ...params, _: "notificationSoundRingtone" };
+  },
+
+  // type AttachMenuPeerType
+  attachMenuPeerTypeSameBotPM() {
+    return { _: "attachMenuPeerTypeSameBotPM" };
+  },
+  attachMenuPeerTypeBotPM() {
+    return { _: "attachMenuPeerTypeBotPM" };
+  },
+  attachMenuPeerTypePM() {
+    return { _: "attachMenuPeerTypePM" };
+  },
+  attachMenuPeerTypeChat() {
+    return { _: "attachMenuPeerTypeChat" };
+  },
+  attachMenuPeerTypeBroadcast() {
+    return { _: "attachMenuPeerTypeBroadcast" };
+  },
+
+  // type InputInvoice
+  inputInvoiceMessage(params) {
+    return { ...params, _: "inputInvoiceMessage" };
+  },
+  inputInvoiceSlug(params) {
+    return { ...params, _: "inputInvoiceSlug" };
+  },
+
 };
 
 // type InputPeer
@@ -3200,6 +3326,8 @@ global.messageActionSetMessagesTTL.ref = "messageActionSetMessagesTTL";
 global.messageActionGroupCallScheduled.ref = "messageActionGroupCallScheduled";
 global.messageActionSetChatTheme.ref = "messageActionSetChatTheme";
 global.messageActionChatJoinedByRequest.ref = "messageActionChatJoinedByRequest";
+global.messageActionWebViewDataSentMe.ref = "messageActionWebViewDataSentMe";
+global.messageActionWebViewDataSent.ref = "messageActionWebViewDataSent";
 
 // type Dialog
 global.dialog.ref = "dialog";
@@ -3380,6 +3508,11 @@ global.updateBotCommands.ref = "updateBotCommands";
 global.updatePendingJoinRequests.ref = "updatePendingJoinRequests";
 global.updateBotChatInviteRequester.ref = "updateBotChatInviteRequester";
 global.updateMessageReactions.ref = "updateMessageReactions";
+global.updateAttachMenuBots.ref = "updateAttachMenuBots";
+global.updateWebViewResultSent.ref = "updateWebViewResultSent";
+global.updateBotMenuButton.ref = "updateBotMenuButton";
+global.updateSavedRingtones.ref = "updateSavedRingtones";
+global.updateTranscribedAudio.ref = "updateTranscribedAudio";
 
 // type Updates
 global.updatesTooLong.ref = "updatesTooLong";
@@ -3526,6 +3659,7 @@ global.receivedNotifyMessage.ref = "receivedNotifyMessage";
 
 // type ExportedChatInvite
 global.chatInviteExported.ref = "chatInviteExported";
+global.chatInvitePublicJoinRequests.ref = "chatInvitePublicJoinRequests";
 
 // type ChatInvite
 global.chatInviteAlready.ref = "chatInviteAlready";
@@ -3563,6 +3697,8 @@ global.inputKeyboardButtonUrlAuth.ref = "inputKeyboardButtonUrlAuth";
 global.keyboardButtonRequestPoll.ref = "keyboardButtonRequestPoll";
 global.inputKeyboardButtonUserProfile.ref = "inputKeyboardButtonUserProfile";
 global.keyboardButtonUserProfile.ref = "keyboardButtonUserProfile";
+global.keyboardButtonWebView.ref = "keyboardButtonWebView";
+global.keyboardButtonSimpleWebView.ref = "keyboardButtonSimpleWebView";
 
 // type KeyboardButtonRow
 global.keyboardButtonRow.ref = "keyboardButtonRow";
@@ -4142,6 +4278,7 @@ global.bankCardOpenUrl.ref = "bankCardOpenUrl";
 
 // type DialogFilter
 global.dialogFilter.ref = "dialogFilter";
+global.dialogFilterDefault.ref = "dialogFilterDefault";
 
 // type DialogFilterSuggested
 global.dialogFilterSuggested.ref = "dialogFilterSuggested";
@@ -4251,6 +4388,53 @@ global.messagePeerReaction.ref = "messagePeerReaction";
 
 // type GroupCallStreamChannel
 global.groupCallStreamChannel.ref = "groupCallStreamChannel";
+
+// type AttachMenuBotIconColor
+global.attachMenuBotIconColor.ref = "attachMenuBotIconColor";
+
+// type AttachMenuBotIcon
+global.attachMenuBotIcon.ref = "attachMenuBotIcon";
+
+// type AttachMenuBot
+global.attachMenuBot.ref = "attachMenuBot";
+
+// type AttachMenuBots
+global.attachMenuBotsNotModified.ref = "attachMenuBotsNotModified";
+global.attachMenuBots.ref = "attachMenuBots";
+
+// type AttachMenuBotsBot
+global.attachMenuBotsBot.ref = "attachMenuBotsBot";
+
+// type WebViewResult
+global.webViewResultUrl.ref = "webViewResultUrl";
+
+// type SimpleWebViewResult
+global.simpleWebViewResultUrl.ref = "simpleWebViewResultUrl";
+
+// type WebViewMessageSent
+global.webViewMessageSent.ref = "webViewMessageSent";
+
+// type BotMenuButton
+global.botMenuButtonDefault.ref = "botMenuButtonDefault";
+global.botMenuButtonCommands.ref = "botMenuButtonCommands";
+global.botMenuButton.ref = "botMenuButton";
+
+// type NotificationSound
+global.notificationSoundDefault.ref = "notificationSoundDefault";
+global.notificationSoundNone.ref = "notificationSoundNone";
+global.notificationSoundLocal.ref = "notificationSoundLocal";
+global.notificationSoundRingtone.ref = "notificationSoundRingtone";
+
+// type AttachMenuPeerType
+global.attachMenuPeerTypeSameBotPM.ref = "attachMenuPeerTypeSameBotPM";
+global.attachMenuPeerTypeBotPM.ref = "attachMenuPeerTypeBotPM";
+global.attachMenuPeerTypePM.ref = "attachMenuPeerTypePM";
+global.attachMenuPeerTypeChat.ref = "attachMenuPeerTypeChat";
+global.attachMenuPeerTypeBroadcast.ref = "attachMenuPeerTypeBroadcast";
+
+// type InputInvoice
+global.inputInvoiceMessage.ref = "inputInvoiceMessage";
+global.inputInvoiceSlug.ref = "inputInvoiceSlug";
 
 export default global;
 
@@ -4751,6 +4935,11 @@ export const messages = {
     return { ...params, _: "messages.translateResultText" };
   },
 
+  // type TranscribedAudio
+  transcribedAudio(params) {
+    return { ...params, _: "messages.transcribedAudio" };
+  },
+
 };
 
 // type Dialogs
@@ -4901,6 +5090,9 @@ messages.availableReactions.ref = "messages.availableReactions";
 // type TranslatedText
 messages.translateNoResult.ref = "messages.translateNoResult";
 messages.translateResultText.ref = "messages.translateResultText";
+
+// type TranscribedAudio
+messages.transcribedAudio.ref = "messages.transcribedAudio";
 
 export const updates = {
   // type State
@@ -5099,6 +5291,11 @@ export const help = {
     return { ...params, _: "help.countriesList" };
   },
 
+  // type PremiumPromo
+  premiumPromo(params) {
+    return { ...params, _: "help.premiumPromo" };
+  },
+
 };
 
 // type AppUpdate
@@ -5149,6 +5346,9 @@ help.country.ref = "help.country";
 // type CountriesList
 help.countriesListNotModified.ref = "help.countriesListNotModified";
 help.countriesList.ref = "help.countriesList";
+
+// type PremiumPromo
+help.premiumPromo.ref = "help.premiumPromo";
 
 export const account = {
   // type PrivacyRules
@@ -5238,6 +5438,22 @@ export const account = {
     return { _: "account.resetPasswordOk" };
   },
 
+  // type SavedRingtones
+  savedRingtonesNotModified() {
+    return { _: "account.savedRingtonesNotModified" };
+  },
+  savedRingtones(params) {
+    return { ...params, _: "account.savedRingtones" };
+  },
+
+  // type SavedRingtone
+  savedRingtone() {
+    return { _: "account.savedRingtone" };
+  },
+  savedRingtoneConverted(params) {
+    return { ...params, _: "account.savedRingtoneConverted" };
+  },
+
 };
 
 // type PrivacyRules
@@ -5288,6 +5504,14 @@ account.contentSettings.ref = "account.contentSettings";
 account.resetPasswordFailedWait.ref = "account.resetPasswordFailedWait";
 account.resetPasswordRequestedWait.ref = "account.resetPasswordRequestedWait";
 account.resetPasswordOk.ref = "account.resetPasswordOk";
+
+// type SavedRingtones
+account.savedRingtonesNotModified.ref = "account.savedRingtonesNotModified";
+account.savedRingtones.ref = "account.savedRingtones";
+
+// type SavedRingtone
+account.savedRingtone.ref = "account.savedRingtone";
+account.savedRingtoneConverted.ref = "account.savedRingtoneConverted";
 
 export const channels = {
   // type ChannelParticipants
@@ -5362,6 +5586,11 @@ export const payments = {
     return { ...params, _: "payments.bankCardData" };
   },
 
+  // type ExportedInvoice
+  exportedInvoice(params) {
+    return { ...params, _: "payments.exportedInvoice" };
+  },
+
 };
 
 // type PaymentForm
@@ -5382,6 +5611,9 @@ payments.savedInfo.ref = "payments.savedInfo";
 
 // type BankCardData
 payments.bankCardData.ref = "payments.bankCardData";
+
+// type ExportedInvoice
+payments.exportedInvoice.ref = "payments.exportedInvoice";
 
 export const phone = {
   // type PhoneCall
@@ -5738,11 +5970,44 @@ export const $encoder = {
     this.int32(900291769);
     this.int64(_.chat_id);                  // : bigint - long
   },
+  ["inputPeerUser"](_) {
+    this.int32(-571955892);
+    this.int64(_.user_id);                  // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+  },
+  ["inputPeerChannel"](_) {
+    this.int32(666680316);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+  },
+  ["inputPeerUserFromMessage"](_) {
+    this.int32(-1468331492);
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int32(_.msg_id);                   // : number - int
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["inputPeerChannelFromMessage"](_) {
+    this.int32(-1121318848);
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int32(_.msg_id);                   // : number - int
+    this.int64(_.channel_id);               // : bigint - long
+  },
   ["inputUserEmpty"](_) {
     this.int32(-1182234929);
   },
   ["inputUserSelf"](_) {
     this.int32(-138301121);
+  },
+  ["inputUser"](_) {
+    this.int32(-233744186);
+    this.int64(_.user_id);                  // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+  },
+  ["inputUserFromMessage"](_) {
+    this.int32(497305826);
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int32(_.msg_id);                   // : number - int
+    this.int64(_.user_id);                  // : bigint - long
   },
   ["inputPhoneContact"](_) {
     this.int32(-208488460);
@@ -5757,6 +6022,12 @@ export const $encoder = {
     this.int32(_.parts);                    // : number - int
     this.string(_.name);                    // : string - string
     this.string(_.md5_checksum);            // : string - string
+  },
+  ["inputFileBig"](_) {
+    this.int32(-95482955);
+    this.int64(_.id);                       // : bigint - long
+    this.int32(_.parts);                    // : number - int
+    this.string(_.name);                    // : string - string
   },
   ["inputMediaEmpty"](_) {
     this.int32(-1771768449);
@@ -5792,6 +6063,126 @@ export const $encoder = {
     this.string(_.first_name);              // : string - string
     this.string(_.last_name);               // : string - string
     this.string(_.vcard);                   // : string - string
+  },
+  ["inputMediaUploadedDocument"](_) {
+    this.int32(1530447553);
+    this.int32(
+      (+(_.nosound_video != null) << 3)
+      | (+(_.force_file != null) << 4)
+      | (+(_.thumb != null) << 2)
+      | (+(_.stickers != null && _.stickers.length > 0) << 0)
+      | (+(_.ttl_seconds != null) << 1)
+    )
+    if (_.nosound_video != null)
+      this.true(_.nosound_video);           // ?: true - flags.3?true
+    if (_.force_file != null)
+      this.true(_.force_file);              // ?: true - flags.4?true
+    this.object(_.file);                    // : InputFile - InputFile
+    if (_.thumb != null)
+      this.object(_.thumb);                 // ?: InputFile - flags.2?InputFile
+    this.string(_.mime_type);               // : string - string
+    this.vector(_.attributes, this.object); // : DocumentAttribute[] - Vector<DocumentAttribute>
+    if (_.stickers != null && _.stickers.length > 0)
+      this.vector(_.stickers, this.object); // ?: InputDocument[] - flags.0?Vector<InputDocument>
+    if (_.ttl_seconds != null)
+      this.int32(_.ttl_seconds);            // ?: number - flags.1?int
+  },
+  ["inputMediaDocument"](_) {
+    this.int32(860303448);
+    this.int32(
+      (+(_.ttl_seconds != null) << 0)
+      | (+(_.query != null) << 1)
+    )
+    this.object(_.id);                      // : InputDocument - InputDocument
+    if (_.ttl_seconds != null)
+      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
+    if (_.query != null)
+      this.string(_.query);                 // ?: string - flags.1?string
+  },
+  ["inputMediaVenue"](_) {
+    this.int32(-1052959727);
+    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
+    this.string(_.title);                   // : string - string
+    this.string(_.address);                 // : string - string
+    this.string(_.provider);                // : string - string
+    this.string(_.venue_id);                // : string - string
+    this.string(_.venue_type);              // : string - string
+  },
+  ["inputMediaPhotoExternal"](_) {
+    this.int32(-440664550);
+    this.int32(
+      (+(_.ttl_seconds != null) << 0)
+    )
+    this.string(_.url);                     // : string - string
+    if (_.ttl_seconds != null)
+      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
+  },
+  ["inputMediaDocumentExternal"](_) {
+    this.int32(-78455655);
+    this.int32(
+      (+(_.ttl_seconds != null) << 0)
+    )
+    this.string(_.url);                     // : string - string
+    if (_.ttl_seconds != null)
+      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
+  },
+  ["inputMediaGame"](_) {
+    this.int32(-750828557);
+    this.object(_.id);                      // : InputGame - InputGame
+  },
+  ["inputMediaInvoice"](_) {
+    this.int32(-646342540);
+    this.int32(
+      (+(_.photo != null) << 0)
+      | (+(_.start_param != null) << 1)
+    )
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
+    this.object(_.invoice);                 // : Invoice - Invoice
+    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.string(_.provider);                // : string - string
+    this.object(_.provider_data);           // : DataJSON - DataJSON
+    if (_.start_param != null)
+      this.string(_.start_param);           // ?: string - flags.1?string
+  },
+  ["inputMediaGeoLive"](_) {
+    this.int32(-1759532989);
+    this.int32(
+      (+(_.stopped != null) << 0)
+      | (+(_.heading != null) << 2)
+      | (+(_.period != null) << 1)
+      | (+(_.proximity_notification_radius != null) << 3)
+    )
+    if (_.stopped != null)
+      this.true(_.stopped);                 // ?: true - flags.0?true
+    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
+    if (_.heading != null)
+      this.int32(_.heading);                // ?: number - flags.2?int
+    if (_.period != null)
+      this.int32(_.period);                 // ?: number - flags.1?int
+    if (_.proximity_notification_radius != null)
+      this.int32(_.proximity_notification_radius); // ?: number - flags.3?int
+  },
+  ["inputMediaPoll"](_) {
+    this.int32(261416433);
+    this.int32(
+      (+(_.correct_answers != null && _.correct_answers.length > 0) << 0)
+      | (+(_.solution != null) << 1)
+      | (+(_.solution_entities != null && _.solution_entities.length > 0) << 1)
+    )
+    this.object(_.poll);                    // : Poll - Poll
+    if (_.correct_answers != null && _.correct_answers.length > 0)
+      this.vector(_.correct_answers, this.bytes); // ?: BufferSource[] - flags.0?Vector<bytes>
+    if (_.solution != null)
+      this.string(_.solution);              // ?: string - flags.1?string
+    if (_.solution_entities != null && _.solution_entities.length > 0)
+      this.vector(_.solution_entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
+  },
+  ["inputMediaDice"](_) {
+    this.int32(-428884101);
+    this.string(_.emoticon);                // : string - string
   },
   ["inputChatPhotoEmpty"](_) {
     this.int32(480546647);
@@ -5843,6 +6234,71 @@ export const $encoder = {
     this.int64(_.secret);                   // : bigint - long
     this.bytes(_.file_reference);           // : BufferSource - bytes
   },
+  ["inputEncryptedFileLocation"](_) {
+    this.int32(-182231723);
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+  },
+  ["inputDocumentFileLocation"](_) {
+    this.int32(-1160743548);
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.string(_.thumb_size);              // : string - string
+  },
+  ["inputSecureFileLocation"](_) {
+    this.int32(-876089816);
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+  },
+  ["inputTakeoutFileLocation"](_) {
+    this.int32(700340377);
+  },
+  ["inputPhotoFileLocation"](_) {
+    this.int32(1075322878);
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.string(_.thumb_size);              // : string - string
+  },
+  ["inputPhotoLegacyFileLocation"](_) {
+    this.int32(-667654413);
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.int64(_.volume_id);                // : bigint - long
+    this.int32(_.local_id);                 // : number - int
+    this.int64(_.secret);                   // : bigint - long
+  },
+  ["inputPeerPhotoFileLocation"](_) {
+    this.int32(925204121);
+    this.int32(
+      (+(_.big != null) << 0)
+    )
+    if (_.big != null)
+      this.true(_.big);                     // ?: true - flags.0?true
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int64(_.photo_id);                 // : bigint - long
+  },
+  ["inputStickerSetThumb"](_) {
+    this.int32(-1652231205);
+    this.object(_.stickerset);              // : InputStickerSet - InputStickerSet
+    this.int32(_.thumb_version);            // : number - int
+  },
+  ["inputGroupCallStream"](_) {
+    this.int32(93890858);
+    this.int32(
+      (+(_.video_channel != null) << 0)
+      | (+(_.video_quality != null) << 0)
+    )
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+    this.int64(_.time_ms);                  // : bigint - long
+    this.int32(_.scale);                    // : number - int
+    if (_.video_channel != null)
+      this.int32(_.video_channel);          // ?: number - flags.0?int
+    if (_.video_quality != null)
+      this.int32(_.video_quality);          // ?: number - flags.0?int
+  },
   ["peerUser"](_) {
     this.int32(1498486562);
     this.int64(_.user_id);                  // : bigint - long
@@ -5850,6 +6306,10 @@ export const $encoder = {
   ["peerChat"](_) {
     this.int32(918946202);
     this.int64(_.chat_id);                  // : bigint - long
+  },
+  ["peerChannel"](_) {
+    this.int32(-1566230754);
+    this.int64(_.channel_id);               // : bigint - long
   },
   ["storage.fileUnknown"](_) {
     this.int32(-1432995067);
@@ -5885,6 +6345,99 @@ export const $encoder = {
     this.int32(-742634630);
     this.int64(_.id);                       // : bigint - long
   },
+  ["user"](_) {
+    this.int32(1073147056);
+    this.int32(
+      (+(_.self != null) << 10)
+      | (+(_.contact != null) << 11)
+      | (+(_.mutual_contact != null) << 12)
+      | (+(_.deleted != null) << 13)
+      | (+(_.bot != null) << 14)
+      | (+(_.bot_chat_history != null) << 15)
+      | (+(_.bot_nochats != null) << 16)
+      | (+(_.verified != null) << 17)
+      | (+(_.restricted != null) << 18)
+      | (+(_.min != null) << 20)
+      | (+(_.bot_inline_geo != null) << 21)
+      | (+(_.support != null) << 23)
+      | (+(_.scam != null) << 24)
+      | (+(_.apply_min_photo != null) << 25)
+      | (+(_.fake != null) << 26)
+      | (+(_.bot_attach_menu != null) << 27)
+      | (+(_.premium != null) << 28)
+      | (+(_.attach_menu_enabled != null) << 29)
+      | (+(_.access_hash != null) << 0)
+      | (+(_.first_name != null) << 1)
+      | (+(_.last_name != null) << 2)
+      | (+(_.username != null) << 3)
+      | (+(_.phone != null) << 4)
+      | (+(_.photo != null) << 5)
+      | (+(_.status != null) << 6)
+      | (+(_.bot_info_version != null) << 14)
+      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 18)
+      | (+(_.bot_inline_placeholder != null) << 19)
+      | (+(_.lang_code != null) << 22)
+    )
+    if (_.self != null)
+      this.true(_.self);                    // ?: true - flags.10?true
+    if (_.contact != null)
+      this.true(_.contact);                 // ?: true - flags.11?true
+    if (_.mutual_contact != null)
+      this.true(_.mutual_contact);          // ?: true - flags.12?true
+    if (_.deleted != null)
+      this.true(_.deleted);                 // ?: true - flags.13?true
+    if (_.bot != null)
+      this.true(_.bot);                     // ?: true - flags.14?true
+    if (_.bot_chat_history != null)
+      this.true(_.bot_chat_history);        // ?: true - flags.15?true
+    if (_.bot_nochats != null)
+      this.true(_.bot_nochats);             // ?: true - flags.16?true
+    if (_.verified != null)
+      this.true(_.verified);                // ?: true - flags.17?true
+    if (_.restricted != null)
+      this.true(_.restricted);              // ?: true - flags.18?true
+    if (_.min != null)
+      this.true(_.min);                     // ?: true - flags.20?true
+    if (_.bot_inline_geo != null)
+      this.true(_.bot_inline_geo);          // ?: true - flags.21?true
+    if (_.support != null)
+      this.true(_.support);                 // ?: true - flags.23?true
+    if (_.scam != null)
+      this.true(_.scam);                    // ?: true - flags.24?true
+    if (_.apply_min_photo != null)
+      this.true(_.apply_min_photo);         // ?: true - flags.25?true
+    if (_.fake != null)
+      this.true(_.fake);                    // ?: true - flags.26?true
+    if (_.bot_attach_menu != null)
+      this.true(_.bot_attach_menu);         // ?: true - flags.27?true
+    if (_.premium != null)
+      this.true(_.premium);                 // ?: true - flags.28?true
+    if (_.attach_menu_enabled != null)
+      this.true(_.attach_menu_enabled);     // ?: true - flags.29?true
+    this.int64(_.id);                       // : bigint - long
+    if (_.access_hash != null)
+      this.int64(_.access_hash);            // ?: bigint - flags.0?long
+    if (_.first_name != null)
+      this.string(_.first_name);            // ?: string - flags.1?string
+    if (_.last_name != null)
+      this.string(_.last_name);             // ?: string - flags.2?string
+    if (_.username != null)
+      this.string(_.username);              // ?: string - flags.3?string
+    if (_.phone != null)
+      this.string(_.phone);                 // ?: string - flags.4?string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: UserProfilePhoto - flags.5?UserProfilePhoto
+    if (_.status != null)
+      this.object(_.status);                // ?: UserStatus - flags.6?UserStatus
+    if (_.bot_info_version != null)
+      this.int32(_.bot_info_version);       // ?: number - flags.14?int
+    if (_.restriction_reason != null && _.restriction_reason.length > 0)
+      this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.18?Vector<RestrictionReason>
+    if (_.bot_inline_placeholder != null)
+      this.string(_.bot_inline_placeholder); // ?: string - flags.19?string
+    if (_.lang_code != null)
+      this.string(_.lang_code);             // ?: string - flags.22?string
+  },
   ["userProfilePhotoEmpty"](_) {
     this.int32(1326562017);
   },
@@ -5911,6 +6464,15 @@ export const $encoder = {
   ["userStatusOffline"](_) {
     this.int32(9203775);
     this.int32(_.was_online);               // : number - int
+  },
+  ["userStatusRecently"](_) {
+    this.int32(-496024847);
+  },
+  ["userStatusLastWeek"](_) {
+    this.int32(129960444);
+  },
+  ["userStatusLastMonth"](_) {
+    this.int32(2011940674);
   },
   ["chatEmpty"](_) {
     this.int32(693512293);
@@ -5958,6 +6520,110 @@ export const $encoder = {
     this.int32(1704108455);
     this.int64(_.id);                       // : bigint - long
     this.string(_.title);                   // : string - string
+  },
+  ["channel"](_) {
+    this.int32(-2107528095);
+    this.int32(
+      (+(_.creator != null) << 0)
+      | (+(_.left != null) << 2)
+      | (+(_.broadcast != null) << 5)
+      | (+(_.verified != null) << 7)
+      | (+(_.megagroup != null) << 8)
+      | (+(_.restricted != null) << 9)
+      | (+(_.signatures != null) << 11)
+      | (+(_.min != null) << 12)
+      | (+(_.scam != null) << 19)
+      | (+(_.has_link != null) << 20)
+      | (+(_.has_geo != null) << 21)
+      | (+(_.slowmode_enabled != null) << 22)
+      | (+(_.call_active != null) << 23)
+      | (+(_.call_not_empty != null) << 24)
+      | (+(_.fake != null) << 25)
+      | (+(_.gigagroup != null) << 26)
+      | (+(_.noforwards != null) << 27)
+      | (+(_.join_to_send != null) << 28)
+      | (+(_.join_request != null) << 29)
+      | (+(_.access_hash != null) << 13)
+      | (+(_.username != null) << 6)
+      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 9)
+      | (+(_.admin_rights != null) << 14)
+      | (+(_.banned_rights != null) << 15)
+      | (+(_.default_banned_rights != null) << 18)
+      | (+(_.participants_count != null) << 17)
+    )
+    if (_.creator != null)
+      this.true(_.creator);                 // ?: true - flags.0?true
+    if (_.left != null)
+      this.true(_.left);                    // ?: true - flags.2?true
+    if (_.broadcast != null)
+      this.true(_.broadcast);               // ?: true - flags.5?true
+    if (_.verified != null)
+      this.true(_.verified);                // ?: true - flags.7?true
+    if (_.megagroup != null)
+      this.true(_.megagroup);               // ?: true - flags.8?true
+    if (_.restricted != null)
+      this.true(_.restricted);              // ?: true - flags.9?true
+    if (_.signatures != null)
+      this.true(_.signatures);              // ?: true - flags.11?true
+    if (_.min != null)
+      this.true(_.min);                     // ?: true - flags.12?true
+    if (_.scam != null)
+      this.true(_.scam);                    // ?: true - flags.19?true
+    if (_.has_link != null)
+      this.true(_.has_link);                // ?: true - flags.20?true
+    if (_.has_geo != null)
+      this.true(_.has_geo);                 // ?: true - flags.21?true
+    if (_.slowmode_enabled != null)
+      this.true(_.slowmode_enabled);        // ?: true - flags.22?true
+    if (_.call_active != null)
+      this.true(_.call_active);             // ?: true - flags.23?true
+    if (_.call_not_empty != null)
+      this.true(_.call_not_empty);          // ?: true - flags.24?true
+    if (_.fake != null)
+      this.true(_.fake);                    // ?: true - flags.25?true
+    if (_.gigagroup != null)
+      this.true(_.gigagroup);               // ?: true - flags.26?true
+    if (_.noforwards != null)
+      this.true(_.noforwards);              // ?: true - flags.27?true
+    if (_.join_to_send != null)
+      this.true(_.join_to_send);            // ?: true - flags.28?true
+    if (_.join_request != null)
+      this.true(_.join_request);            // ?: true - flags.29?true
+    this.int64(_.id);                       // : bigint - long
+    if (_.access_hash != null)
+      this.int64(_.access_hash);            // ?: bigint - flags.13?long
+    this.string(_.title);                   // : string - string
+    if (_.username != null)
+      this.string(_.username);              // ?: string - flags.6?string
+    this.object(_.photo);                   // : ChatPhoto - ChatPhoto
+    this.int32(_.date);                     // : number - int
+    if (_.restriction_reason != null && _.restriction_reason.length > 0)
+      this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.9?Vector<RestrictionReason>
+    if (_.admin_rights != null)
+      this.object(_.admin_rights);          // ?: ChatAdminRights - flags.14?ChatAdminRights
+    if (_.banned_rights != null)
+      this.object(_.banned_rights);         // ?: ChatBannedRights - flags.15?ChatBannedRights
+    if (_.default_banned_rights != null)
+      this.object(_.default_banned_rights); // ?: ChatBannedRights - flags.18?ChatBannedRights
+    if (_.participants_count != null)
+      this.int32(_.participants_count);     // ?: number - flags.17?int
+  },
+  ["channelForbidden"](_) {
+    this.int32(399807445);
+    this.int32(
+      (+(_.broadcast != null) << 5)
+      | (+(_.megagroup != null) << 8)
+      | (+(_.until_date != null) << 16)
+    )
+    if (_.broadcast != null)
+      this.true(_.broadcast);               // ?: true - flags.5?true
+    if (_.megagroup != null)
+      this.true(_.megagroup);               // ?: true - flags.8?true
+    this.int64(_.id);                       // : bigint - long
+    this.int64(_.access_hash);              // : bigint - long
+    this.string(_.title);                   // : string - string
+    if (_.until_date != null)
+      this.int32(_.until_date);             // ?: number - flags.16?int
   },
   ["chatFull"](_) {
     this.int32(-779165146);
@@ -6010,8 +6676,139 @@ export const $encoder = {
     if (_.available_reactions != null && _.available_reactions.length > 0)
       this.vector(_.available_reactions, this.string); // ?: string[] - flags.18?Vector<string>
   },
+  ["channelFull"](_) {
+    this.int32(-362240487);
+    this.int32(
+      (+(_.can_view_participants != null) << 3)
+      | (+(_.can_set_username != null) << 6)
+      | (+(_.can_set_stickers != null) << 7)
+      | (+(_.hidden_prehistory != null) << 10)
+      | (+(_.can_set_location != null) << 16)
+      | (+(_.has_scheduled != null) << 19)
+      | (+(_.can_view_stats != null) << 20)
+      | (+(_.blocked != null) << 22)
+      | (+(_.participants_count != null) << 0)
+      | (+(_.admins_count != null) << 1)
+      | (+(_.kicked_count != null) << 2)
+      | (+(_.banned_count != null) << 2)
+      | (+(_.online_count != null) << 13)
+      | (+(_.exported_invite != null) << 23)
+      | (+(_.migrated_from_chat_id != null) << 4)
+      | (+(_.migrated_from_max_id != null) << 4)
+      | (+(_.pinned_msg_id != null) << 5)
+      | (+(_.stickerset != null) << 8)
+      | (+(_.available_min_id != null) << 9)
+      | (+(_.folder_id != null) << 11)
+      | (+(_.linked_chat_id != null) << 14)
+      | (+(_.location != null) << 15)
+      | (+(_.slowmode_seconds != null) << 17)
+      | (+(_.slowmode_next_send_date != null) << 18)
+      | (+(_.stats_dc != null) << 12)
+      | (+(_.call != null) << 21)
+      | (+(_.ttl_period != null) << 24)
+      | (+(_.pending_suggestions != null && _.pending_suggestions.length > 0) << 25)
+      | (+(_.groupcall_default_join_as != null) << 26)
+      | (+(_.theme_emoticon != null) << 27)
+      | (+(_.requests_pending != null) << 28)
+      | (+(_.recent_requesters != null && _.recent_requesters.length > 0) << 28)
+      | (+(_.default_send_as != null) << 29)
+      | (+(_.available_reactions != null && _.available_reactions.length > 0) << 30)
+    )
+    if (_.can_view_participants != null)
+      this.true(_.can_view_participants);   // ?: true - flags.3?true
+    if (_.can_set_username != null)
+      this.true(_.can_set_username);        // ?: true - flags.6?true
+    if (_.can_set_stickers != null)
+      this.true(_.can_set_stickers);        // ?: true - flags.7?true
+    if (_.hidden_prehistory != null)
+      this.true(_.hidden_prehistory);       // ?: true - flags.10?true
+    if (_.can_set_location != null)
+      this.true(_.can_set_location);        // ?: true - flags.16?true
+    if (_.has_scheduled != null)
+      this.true(_.has_scheduled);           // ?: true - flags.19?true
+    if (_.can_view_stats != null)
+      this.true(_.can_view_stats);          // ?: true - flags.20?true
+    if (_.blocked != null)
+      this.true(_.blocked);                 // ?: true - flags.22?true
+    this.int32(
+      (+(_.can_delete_channel != null) << 0)
+    )
+    if (_.can_delete_channel != null)
+      this.true(_.can_delete_channel);      // ?: true - flags2.0?true
+    this.int64(_.id);                       // : bigint - long
+    this.string(_.about);                   // : string - string
+    if (_.participants_count != null)
+      this.int32(_.participants_count);     // ?: number - flags.0?int
+    if (_.admins_count != null)
+      this.int32(_.admins_count);           // ?: number - flags.1?int
+    if (_.kicked_count != null)
+      this.int32(_.kicked_count);           // ?: number - flags.2?int
+    if (_.banned_count != null)
+      this.int32(_.banned_count);           // ?: number - flags.2?int
+    if (_.online_count != null)
+      this.int32(_.online_count);           // ?: number - flags.13?int
+    this.int32(_.read_inbox_max_id);        // : number - int
+    this.int32(_.read_outbox_max_id);       // : number - int
+    this.int32(_.unread_count);             // : number - int
+    this.object(_.chat_photo);              // : Photo - Photo
+    this.object(_.notify_settings);         // : PeerNotifySettings - PeerNotifySettings
+    if (_.exported_invite != null)
+      this.object(_.exported_invite);       // ?: ExportedChatInvite - flags.23?ExportedChatInvite
+    this.vector(_.bot_info, this.object);   // : BotInfo[] - Vector<BotInfo>
+    if (_.migrated_from_chat_id != null)
+      this.int64(_.migrated_from_chat_id);  // ?: bigint - flags.4?long
+    if (_.migrated_from_max_id != null)
+      this.int32(_.migrated_from_max_id);   // ?: number - flags.4?int
+    if (_.pinned_msg_id != null)
+      this.int32(_.pinned_msg_id);          // ?: number - flags.5?int
+    if (_.stickerset != null)
+      this.object(_.stickerset);            // ?: StickerSet - flags.8?StickerSet
+    if (_.available_min_id != null)
+      this.int32(_.available_min_id);       // ?: number - flags.9?int
+    if (_.folder_id != null)
+      this.int32(_.folder_id);              // ?: number - flags.11?int
+    if (_.linked_chat_id != null)
+      this.int64(_.linked_chat_id);         // ?: bigint - flags.14?long
+    if (_.location != null)
+      this.object(_.location);              // ?: ChannelLocation - flags.15?ChannelLocation
+    if (_.slowmode_seconds != null)
+      this.int32(_.slowmode_seconds);       // ?: number - flags.17?int
+    if (_.slowmode_next_send_date != null)
+      this.int32(_.slowmode_next_send_date); // ?: number - flags.18?int
+    if (_.stats_dc != null)
+      this.int32(_.stats_dc);               // ?: number - flags.12?int
+    this.int32(_.pts);                      // : number - int
+    if (_.call != null)
+      this.object(_.call);                  // ?: InputGroupCall - flags.21?InputGroupCall
+    if (_.ttl_period != null)
+      this.int32(_.ttl_period);             // ?: number - flags.24?int
+    if (_.pending_suggestions != null && _.pending_suggestions.length > 0)
+      this.vector(_.pending_suggestions, this.string); // ?: string[] - flags.25?Vector<string>
+    if (_.groupcall_default_join_as != null)
+      this.object(_.groupcall_default_join_as); // ?: Peer - flags.26?Peer
+    if (_.theme_emoticon != null)
+      this.string(_.theme_emoticon);        // ?: string - flags.27?string
+    if (_.requests_pending != null)
+      this.int32(_.requests_pending);       // ?: number - flags.28?int
+    if (_.recent_requesters != null && _.recent_requesters.length > 0)
+      this.vector(_.recent_requesters, this.int64); // ?: bigint[] - flags.28?Vector<long>
+    if (_.default_send_as != null)
+      this.object(_.default_send_as);       // ?: Peer - flags.29?Peer
+    if (_.available_reactions != null && _.available_reactions.length > 0)
+      this.vector(_.available_reactions, this.string); // ?: string[] - flags.30?Vector<string>
+  },
   ["chatParticipant"](_) {
     this.int32(-1070776313);
+    this.int64(_.user_id);                  // : bigint - long
+    this.int64(_.inviter_id);               // : bigint - long
+    this.int32(_.date);                     // : number - int
+  },
+  ["chatParticipantCreator"](_) {
+    this.int32(-462696732);
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["chatParticipantAdmin"](_) {
+    this.int32(-1600962725);
     this.int64(_.user_id);                  // : bigint - long
     this.int64(_.inviter_id);               // : bigint - long
     this.int32(_.date);                     // : number - int
@@ -6208,6 +7005,82 @@ export const $encoder = {
   ["messageMediaUnsupported"](_) {
     this.int32(-1618676578);
   },
+  ["messageMediaDocument"](_) {
+    this.int32(-1666158377);
+    this.int32(
+      (+(_.nopremium != null) << 3)
+      | (+(_.document != null) << 0)
+      | (+(_.ttl_seconds != null) << 2)
+    )
+    if (_.nopremium != null)
+      this.true(_.nopremium);               // ?: true - flags.3?true
+    if (_.document != null)
+      this.object(_.document);              // ?: Document - flags.0?Document
+    if (_.ttl_seconds != null)
+      this.int32(_.ttl_seconds);            // ?: number - flags.2?int
+  },
+  ["messageMediaWebPage"](_) {
+    this.int32(-1557277184);
+    this.object(_.webpage);                 // : WebPage - WebPage
+  },
+  ["messageMediaVenue"](_) {
+    this.int32(784356159);
+    this.object(_.geo);                     // : GeoPoint - GeoPoint
+    this.string(_.title);                   // : string - string
+    this.string(_.address);                 // : string - string
+    this.string(_.provider);                // : string - string
+    this.string(_.venue_id);                // : string - string
+    this.string(_.venue_type);              // : string - string
+  },
+  ["messageMediaGame"](_) {
+    this.int32(-38694904);
+    this.object(_.game);                    // : Game - Game
+  },
+  ["messageMediaInvoice"](_) {
+    this.int32(-2074799289);
+    this.int32(
+      (+(_.shipping_address_requested != null) << 1)
+      | (+(_.test != null) << 3)
+      | (+(_.photo != null) << 0)
+      | (+(_.receipt_msg_id != null) << 2)
+    )
+    if (_.shipping_address_requested != null)
+      this.true(_.shipping_address_requested); // ?: true - flags.1?true
+    if (_.test != null)
+      this.true(_.test);                    // ?: true - flags.3?true
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: WebDocument - flags.0?WebDocument
+    if (_.receipt_msg_id != null)
+      this.int32(_.receipt_msg_id);         // ?: number - flags.2?int
+    this.string(_.currency);                // : string - string
+    this.int64(_.total_amount);             // : bigint - long
+    this.string(_.start_param);             // : string - string
+  },
+  ["messageMediaGeoLive"](_) {
+    this.int32(-1186937242);
+    this.int32(
+      (+(_.heading != null) << 0)
+      | (+(_.proximity_notification_radius != null) << 1)
+    )
+    this.object(_.geo);                     // : GeoPoint - GeoPoint
+    if (_.heading != null)
+      this.int32(_.heading);                // ?: number - flags.0?int
+    this.int32(_.period);                   // : number - int
+    if (_.proximity_notification_radius != null)
+      this.int32(_.proximity_notification_radius); // ?: number - flags.1?int
+  },
+  ["messageMediaPoll"](_) {
+    this.int32(1272375192);
+    this.object(_.poll);                    // : Poll - Poll
+    this.object(_.results);                 // : PollResults - PollResults
+  },
+  ["messageMediaDice"](_) {
+    this.int32(1065280907);
+    this.int32(_.value);                    // : number - int
+    this.string(_.emoticon);                // : string - string
+  },
   ["messageActionEmpty"](_) {
     this.int32(-1230047312);
   },
@@ -6234,6 +7107,154 @@ export const $encoder = {
   ["messageActionChatDeleteUser"](_) {
     this.int32(-1539362612);
     this.int64(_.user_id);                  // : bigint - long
+  },
+  ["messageActionChatJoinedByLink"](_) {
+    this.int32(51520707);
+    this.int64(_.inviter_id);               // : bigint - long
+  },
+  ["messageActionChannelCreate"](_) {
+    this.int32(-1781355374);
+    this.string(_.title);                   // : string - string
+  },
+  ["messageActionChatMigrateTo"](_) {
+    this.int32(-519864430);
+    this.int64(_.channel_id);               // : bigint - long
+  },
+  ["messageActionChannelMigrateFrom"](_) {
+    this.int32(-365344535);
+    this.string(_.title);                   // : string - string
+    this.int64(_.chat_id);                  // : bigint - long
+  },
+  ["messageActionPinMessage"](_) {
+    this.int32(-1799538451);
+  },
+  ["messageActionHistoryClear"](_) {
+    this.int32(-1615153660);
+  },
+  ["messageActionGameScore"](_) {
+    this.int32(-1834538890);
+    this.int64(_.game_id);                  // : bigint - long
+    this.int32(_.score);                    // : number - int
+  },
+  ["messageActionPaymentSentMe"](_) {
+    this.int32(-1892568281);
+    this.int32(
+      (+(_.recurring_init != null) << 2)
+      | (+(_.recurring_used != null) << 3)
+      | (+(_.info != null) << 0)
+      | (+(_.shipping_option_id != null) << 1)
+    )
+    if (_.recurring_init != null)
+      this.true(_.recurring_init);          // ?: true - flags.2?true
+    if (_.recurring_used != null)
+      this.true(_.recurring_used);          // ?: true - flags.3?true
+    this.string(_.currency);                // : string - string
+    this.int64(_.total_amount);             // : bigint - long
+    this.bytes(_.payload);                  // : BufferSource - bytes
+    if (_.info != null)
+      this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (_.shipping_option_id != null)
+      this.string(_.shipping_option_id);    // ?: string - flags.1?string
+    this.object(_.charge);                  // : PaymentCharge - PaymentCharge
+  },
+  ["messageActionPaymentSent"](_) {
+    this.int32(-1776926890);
+    this.int32(
+      (+(_.recurring_init != null) << 2)
+      | (+(_.recurring_used != null) << 3)
+      | (+(_.invoice_slug != null) << 0)
+    )
+    if (_.recurring_init != null)
+      this.true(_.recurring_init);          // ?: true - flags.2?true
+    if (_.recurring_used != null)
+      this.true(_.recurring_used);          // ?: true - flags.3?true
+    this.string(_.currency);                // : string - string
+    this.int64(_.total_amount);             // : bigint - long
+    if (_.invoice_slug != null)
+      this.string(_.invoice_slug);          // ?: string - flags.0?string
+  },
+  ["messageActionPhoneCall"](_) {
+    this.int32(-2132731265);
+    this.int32(
+      (+(_.video != null) << 2)
+      | (+(_.reason != null) << 0)
+      | (+(_.duration != null) << 1)
+    )
+    if (_.video != null)
+      this.true(_.video);                   // ?: true - flags.2?true
+    this.int64(_.call_id);                  // : bigint - long
+    if (_.reason != null)
+      this.object(_.reason);                // ?: PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
+    if (_.duration != null)
+      this.int32(_.duration);               // ?: number - flags.1?int
+  },
+  ["messageActionScreenshotTaken"](_) {
+    this.int32(1200788123);
+  },
+  ["messageActionCustomAction"](_) {
+    this.int32(-85549226);
+    this.string(_.message);                 // : string - string
+  },
+  ["messageActionBotAllowed"](_) {
+    this.int32(-1410748418);
+    this.string(_.domain);                  // : string - string
+  },
+  ["messageActionSecureValuesSentMe"](_) {
+    this.int32(455635795);
+    this.vector(_.values, this.object);     // : SecureValue[] - Vector<SecureValue>
+    this.object(_.credentials);             // : SecureCredentialsEncrypted - SecureCredentialsEncrypted
+  },
+  ["messageActionSecureValuesSent"](_) {
+    this.int32(-648257196);
+    this.vector(_.types, this.object);      // : SecureValueType[] - Vector<SecureValueType>
+  },
+  ["messageActionContactSignUp"](_) {
+    this.int32(-202219658);
+  },
+  ["messageActionGeoProximityReached"](_) {
+    this.int32(-1730095465);
+    this.object(_.from_id);                 // : Peer - Peer
+    this.object(_.to_id);                   // : Peer - Peer
+    this.int32(_.distance);                 // : number - int
+  },
+  ["messageActionGroupCall"](_) {
+    this.int32(2047704898);
+    this.int32(
+      (+(_.duration != null) << 0)
+    )
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+    if (_.duration != null)
+      this.int32(_.duration);               // ?: number - flags.0?int
+  },
+  ["messageActionInviteToGroupCall"](_) {
+    this.int32(1345295095);
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+    this.vector(_.users, this.int64);       // : bigint[] - Vector<long>
+  },
+  ["messageActionSetMessagesTTL"](_) {
+    this.int32(-1441072131);
+    this.int32(_.period);                   // : number - int
+  },
+  ["messageActionGroupCallScheduled"](_) {
+    this.int32(-1281329567);
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+    this.int32(_.schedule_date);            // : number - int
+  },
+  ["messageActionSetChatTheme"](_) {
+    this.int32(-1434950843);
+    this.string(_.emoticon);                // : string - string
+  },
+  ["messageActionChatJoinedByRequest"](_) {
+    this.int32(-339958837);
+  },
+  ["messageActionWebViewDataSentMe"](_) {
+    this.int32(1205698681);
+    this.string(_.text);                    // : string - string
+    this.string(_.data);                    // : string - string
+  },
+  ["messageActionWebViewDataSent"](_) {
+    this.int32(-1262252875);
+    this.string(_.text);                    // : string - string
   },
   ["dialog"](_) {
     this.int32(-1460809483);
@@ -6262,6 +7283,21 @@ export const $encoder = {
       this.object(_.draft);                 // ?: DraftMessage - flags.1?DraftMessage
     if (_.folder_id != null)
       this.int32(_.folder_id);              // ?: number - flags.4?int
+  },
+  ["dialogFolder"](_) {
+    this.int32(1908216652);
+    this.int32(
+      (+(_.pinned != null) << 2)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.2?true
+    this.object(_.folder);                  // : Folder - Folder
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.top_message);              // : number - int
+    this.int32(_.unread_muted_peers_count); // : number - int
+    this.int32(_.unread_unmuted_peers_count); // : number - int
+    this.int32(_.unread_muted_messages_count); // : number - int
+    this.int32(_.unread_unmuted_messages_count); // : number - int
   },
   ["photoEmpty"](_) {
     this.int32(590459437);
@@ -6300,6 +7336,23 @@ export const $encoder = {
     this.string(_.type);                    // : string - string
     this.int32(_.w);                        // : number - int
     this.int32(_.h);                        // : number - int
+    this.bytes(_.bytes);                    // : BufferSource - bytes
+  },
+  ["photoStrippedSize"](_) {
+    this.int32(-525288402);
+    this.string(_.type);                    // : string - string
+    this.bytes(_.bytes);                    // : BufferSource - bytes
+  },
+  ["photoSizeProgressive"](_) {
+    this.int32(-96535659);
+    this.string(_.type);                    // : string - string
+    this.int32(_.w);                        // : number - int
+    this.int32(_.h);                        // : number - int
+    this.vector(_.sizes, this.int32);       // : number[] - Vector<int>
+  },
+  ["photoPathSize"](_) {
+    this.int32(-668906175);
+    this.string(_.type);                    // : string - string
     this.bytes(_.bytes);                    // : BufferSource - bytes
   },
   ["geoPointEmpty"](_) {
@@ -6344,6 +7397,14 @@ export const $encoder = {
       this.int32(_.tmp_sessions);           // ?: number - flags.0?int
     this.object(_.user);                    // : User - User
   },
+  ["auth.authorizationSignUpRequired"](_) {
+    this.int32(1148485274);
+    this.int32(
+      (+(_.terms_of_service != null) << 0)
+    )
+    if (_.terms_of_service != null)
+      this.object(_.terms_of_service);      // ?: help.TermsOfService - flags.0?help.TermsOfService
+  },
   ["auth.exportedAuthorization"](_) {
     this.int32(-1271602504);
     this.int64(_.id);                       // : bigint - long
@@ -6359,8 +7420,11 @@ export const $encoder = {
   ["inputNotifyChats"](_) {
     this.int32(1251338318);
   },
+  ["inputNotifyBroadcasts"](_) {
+    this.int32(-1311015810);
+  },
   ["inputPeerNotifySettings"](_) {
-    this.int32(-1673717362);
+    this.int32(-551616469);
     this.int32(
       (+(_.show_previews != null) << 0)
       | (+(_.silent != null) << 1)
@@ -6374,15 +7438,17 @@ export const $encoder = {
     if (_.mute_until != null)
       this.int32(_.mute_until);             // ?: number - flags.2?int
     if (_.sound != null)
-      this.string(_.sound);                 // ?: string - flags.3?string
+      this.object(_.sound);                 // ?: NotificationSound - flags.3?NotificationSound
   },
   ["peerNotifySettings"](_) {
-    this.int32(-1353671392);
+    this.int32(-1472527322);
     this.int32(
       (+(_.show_previews != null) << 0)
       | (+(_.silent != null) << 1)
       | (+(_.mute_until != null) << 2)
-      | (+(_.sound != null) << 3)
+      | (+(_.ios_sound != null) << 3)
+      | (+(_.android_sound != null) << 4)
+      | (+(_.other_sound != null) << 5)
     )
     if (_.show_previews != null)
       this.bool(_.show_previews);           // ?: boolean - flags.0?Bool
@@ -6390,8 +7456,12 @@ export const $encoder = {
       this.bool(_.silent);                  // ?: boolean - flags.1?Bool
     if (_.mute_until != null)
       this.int32(_.mute_until);             // ?: number - flags.2?int
-    if (_.sound != null)
-      this.string(_.sound);                 // ?: string - flags.3?string
+    if (_.ios_sound != null)
+      this.object(_.ios_sound);             // ?: NotificationSound - flags.3?NotificationSound
+    if (_.android_sound != null)
+      this.object(_.android_sound);         // ?: NotificationSound - flags.4?NotificationSound
+    if (_.other_sound != null)
+      this.object(_.other_sound);           // ?: NotificationSound - flags.5?NotificationSound
   },
   ["peerSettings"](_) {
     this.int32(-1525149427);
@@ -6458,6 +7528,21 @@ export const $encoder = {
     if (_.settings != null)
       this.object(_.settings);              // ?: WallPaperSettings - flags.2?WallPaperSettings
   },
+  ["wallPaperNoFile"](_) {
+    this.int32(-528465642);
+    this.int64(_.id);                       // : bigint - long
+    this.int32(
+      (+(_.default != null) << 1)
+      | (+(_.dark != null) << 4)
+      | (+(_.settings != null) << 2)
+    )
+    if (_.default != null)
+      this.true(_.default);                 // ?: true - flags.1?true
+    if (_.dark != null)
+      this.true(_.dark);                    // ?: true - flags.4?true
+    if (_.settings != null)
+      this.object(_.settings);              // ?: WallPaperSettings - flags.2?WallPaperSettings
+  },
   ["inputReportReasonSpam"](_) {
     this.int32(1490799288);
   },
@@ -6473,8 +7558,23 @@ export const $encoder = {
   ["inputReportReasonOther"](_) {
     this.int32(-1041980751);
   },
+  ["inputReportReasonCopyright"](_) {
+    this.int32(-1685456582);
+  },
+  ["inputReportReasonGeoIrrelevant"](_) {
+    this.int32(-606798099);
+  },
+  ["inputReportReasonFake"](_) {
+    this.int32(-170010905);
+  },
+  ["inputReportReasonIllegalDrugs"](_) {
+    this.int32(177124030);
+  },
+  ["inputReportReasonPersonalDetails"](_) {
+    this.int32(-1631091139);
+  },
   ["userFull"](_) {
-    this.int32(-818518751);
+    this.int32(-1938625919);
     this.int32(
       (+(_.blocked != null) << 0)
       | (+(_.phone_calls_available != null) << 4)
@@ -6490,6 +7590,8 @@ export const $encoder = {
       | (+(_.ttl_period != null) << 14)
       | (+(_.theme_emoticon != null) << 15)
       | (+(_.private_forward_name != null) << 16)
+      | (+(_.bot_group_admin_rights != null) << 17)
+      | (+(_.bot_broadcast_admin_rights != null) << 18)
     )
     if (_.blocked != null)
       this.true(_.blocked);                 // ?: true - flags.0?true
@@ -6523,6 +7625,10 @@ export const $encoder = {
       this.string(_.theme_emoticon);        // ?: string - flags.15?string
     if (_.private_forward_name != null)
       this.string(_.private_forward_name);  // ?: string - flags.16?string
+    if (_.bot_group_admin_rights != null)
+      this.object(_.bot_group_admin_rights); // ?: ChatAdminRights - flags.17?ChatAdminRights
+    if (_.bot_broadcast_admin_rights != null)
+      this.object(_.bot_broadcast_admin_rights); // ?: ChatAdminRights - flags.18?ChatAdminRights
   },
   ["contact"](_) {
     this.int32(341499403);
@@ -6583,6 +7689,10 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
+  ["messages.dialogsNotModified"](_) {
+    this.int32(-253500010);
+    this.int32(_.count);                    // : number - int
+  },
   ["messages.messages"](_) {
     this.int32(-1938715001);
     this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
@@ -6607,8 +7717,33 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
+  ["messages.channelMessages"](_) {
+    this.int32(1682413576);
+    this.int32(
+      (+(_.inexact != null) << 1)
+      | (+(_.offset_id_offset != null) << 2)
+    )
+    if (_.inexact != null)
+      this.true(_.inexact);                 // ?: true - flags.1?true
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.count);                    // : number - int
+    if (_.offset_id_offset != null)
+      this.int32(_.offset_id_offset);       // ?: number - flags.2?int
+    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.messagesNotModified"](_) {
+    this.int32(1951620897);
+    this.int32(_.count);                    // : number - int
+  },
   ["messages.chats"](_) {
     this.int32(1694474197);
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+  },
+  ["messages.chatsSlice"](_) {
+    this.int32(-1663561404);
+    this.int32(_.count);                    // : number - int
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
   },
   ["messages.chatFull"](_) {
@@ -6643,6 +7778,41 @@ export const $encoder = {
   },
   ["inputMessagesFilterGif"](_) {
     this.int32(-3644025);
+  },
+  ["inputMessagesFilterVoice"](_) {
+    this.int32(1358283666);
+  },
+  ["inputMessagesFilterMusic"](_) {
+    this.int32(928101534);
+  },
+  ["inputMessagesFilterChatPhotos"](_) {
+    this.int32(975236280);
+  },
+  ["inputMessagesFilterPhoneCalls"](_) {
+    this.int32(-2134272152);
+    this.int32(
+      (+(_.missed != null) << 0)
+    )
+    if (_.missed != null)
+      this.true(_.missed);                  // ?: true - flags.0?true
+  },
+  ["inputMessagesFilterRoundVoice"](_) {
+    this.int32(2054952868);
+  },
+  ["inputMessagesFilterRoundVideo"](_) {
+    this.int32(-1253451181);
+  },
+  ["inputMessagesFilterMyMentions"](_) {
+    this.int32(-1040652646);
+  },
+  ["inputMessagesFilterGeo"](_) {
+    this.int32(-419271411);
+  },
+  ["inputMessagesFilterContacts"](_) {
+    this.int32(-530392189);
+  },
+  ["inputMessagesFilterPinned"](_) {
+    this.int32(464520273);
   },
   ["updateNewMessage"](_) {
     this.int32(522914557);
@@ -6695,6 +7865,648 @@ export const $encoder = {
     this.object(_.photo);                   // : UserProfilePhoto - UserProfilePhoto
     this.bool(_.previous);                  // : boolean - Bool
   },
+  ["updateNewEncryptedMessage"](_) {
+    this.int32(314359194);
+    this.object(_.message);                 // : EncryptedMessage - EncryptedMessage
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateEncryptedChatTyping"](_) {
+    this.int32(386986326);
+    this.int32(_.chat_id);                  // : number - int
+  },
+  ["updateEncryption"](_) {
+    this.int32(-1264392051);
+    this.object(_.chat);                    // : EncryptedChat - EncryptedChat
+    this.int32(_.date);                     // : number - int
+  },
+  ["updateEncryptedMessagesRead"](_) {
+    this.int32(956179895);
+    this.int32(_.chat_id);                  // : number - int
+    this.int32(_.max_date);                 // : number - int
+    this.int32(_.date);                     // : number - int
+  },
+  ["updateChatParticipantAdd"](_) {
+    this.int32(1037718609);
+    this.int64(_.chat_id);                  // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.int64(_.inviter_id);               // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.int32(_.version);                  // : number - int
+  },
+  ["updateChatParticipantDelete"](_) {
+    this.int32(-483443337);
+    this.int64(_.chat_id);                  // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.int32(_.version);                  // : number - int
+  },
+  ["updateDcOptions"](_) {
+    this.int32(-1906403213);
+    this.vector(_.dc_options, this.object); // : DcOption[] - Vector<DcOption>
+  },
+  ["updateNotifySettings"](_) {
+    this.int32(-1094555409);
+    this.object(_.peer);                    // : NotifyPeer - NotifyPeer
+    this.object(_.notify_settings);         // : PeerNotifySettings - PeerNotifySettings
+  },
+  ["updateServiceNotification"](_) {
+    this.int32(-337352679);
+    this.int32(
+      (+(_.popup != null) << 0)
+      | (+(_.inbox_date != null) << 1)
+    )
+    if (_.popup != null)
+      this.true(_.popup);                   // ?: true - flags.0?true
+    if (_.inbox_date != null)
+      this.int32(_.inbox_date);             // ?: number - flags.1?int
+    this.string(_.type);                    // : string - string
+    this.string(_.message);                 // : string - string
+    this.object(_.media);                   // : MessageMedia - MessageMedia
+    this.vector(_.entities, this.object);   // : MessageEntity[] - Vector<MessageEntity>
+  },
+  ["updatePrivacy"](_) {
+    this.int32(-298113238);
+    this.object(_.key);                     // : PrivacyKey - PrivacyKey
+    this.vector(_.rules, this.object);      // : PrivacyRule[] - Vector<PrivacyRule>
+  },
+  ["updateUserPhone"](_) {
+    this.int32(88680979);
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.phone);                   // : string - string
+  },
+  ["updateReadHistoryInbox"](_) {
+    this.int32(-1667805217);
+    this.int32(
+      (+(_.folder_id != null) << 0)
+    )
+    if (_.folder_id != null)
+      this.int32(_.folder_id);              // ?: number - flags.0?int
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.max_id);                   // : number - int
+    this.int32(_.still_unread_count);       // : number - int
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateReadHistoryOutbox"](_) {
+    this.int32(791617983);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.max_id);                   // : number - int
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateWebPage"](_) {
+    this.int32(2139689491);
+    this.object(_.webpage);                 // : WebPage - WebPage
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateReadMessagesContents"](_) {
+    this.int32(1757493555);
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateChannelTooLong"](_) {
+    this.int32(277713951);
+    this.int32(
+      (+(_.pts != null) << 0)
+    )
+    this.int64(_.channel_id);               // : bigint - long
+    if (_.pts != null)
+      this.int32(_.pts);                    // ?: number - flags.0?int
+  },
+  ["updateChannel"](_) {
+    this.int32(1666927625);
+    this.int64(_.channel_id);               // : bigint - long
+  },
+  ["updateNewChannelMessage"](_) {
+    this.int32(1656358105);
+    this.object(_.message);                 // : Message - Message
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateReadChannelInbox"](_) {
+    this.int32(-1842450928);
+    this.int32(
+      (+(_.folder_id != null) << 0)
+    )
+    if (_.folder_id != null)
+      this.int32(_.folder_id);              // ?: number - flags.0?int
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.max_id);                   // : number - int
+    this.int32(_.still_unread_count);       // : number - int
+    this.int32(_.pts);                      // : number - int
+  },
+  ["updateDeleteChannelMessages"](_) {
+    this.int32(-1020437742);
+    this.int64(_.channel_id);               // : bigint - long
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateChannelMessageViews"](_) {
+    this.int32(-232346616);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.id);                       // : number - int
+    this.int32(_.views);                    // : number - int
+  },
+  ["updateChatParticipantAdmin"](_) {
+    this.int32(-674602590);
+    this.int64(_.chat_id);                  // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.bool(_.is_admin);                  // : boolean - Bool
+    this.int32(_.version);                  // : number - int
+  },
+  ["updateNewStickerSet"](_) {
+    this.int32(1753886890);
+    this.object(_.stickerset);              // : messages.StickerSet - messages.StickerSet
+  },
+  ["updateStickerSetsOrder"](_) {
+    this.int32(196268545);
+    this.int32(
+      (+(_.masks != null) << 0)
+    )
+    if (_.masks != null)
+      this.true(_.masks);                   // ?: true - flags.0?true
+    this.vector(_.order, this.int64);       // : bigint[] - Vector<long>
+  },
+  ["updateStickerSets"](_) {
+    this.int32(1135492588);
+  },
+  ["updateSavedGifs"](_) {
+    this.int32(-1821035490);
+  },
+  ["updateBotInlineQuery"](_) {
+    this.int32(1232025500);
+    this.int32(
+      (+(_.geo != null) << 0)
+      | (+(_.peer_type != null) << 1)
+    )
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.query);                   // : string - string
+    if (_.geo != null)
+      this.object(_.geo);                   // ?: GeoPoint - flags.0?GeoPoint
+    if (_.peer_type != null)
+      this.object(_.peer_type);             // ?: InlineQueryPeerType - flags.1?InlineQueryPeerType
+    this.string(_.offset);                  // : string - string
+  },
+  ["updateBotInlineSend"](_) {
+    this.int32(317794823);
+    this.int32(
+      (+(_.geo != null) << 0)
+      | (+(_.msg_id != null) << 1)
+    )
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.query);                   // : string - string
+    if (_.geo != null)
+      this.object(_.geo);                   // ?: GeoPoint - flags.0?GeoPoint
+    this.string(_.id);                      // : string - string
+    if (_.msg_id != null)
+      this.object(_.msg_id);                // ?: InputBotInlineMessageID - flags.1?InputBotInlineMessageID
+  },
+  ["updateEditChannelMessage"](_) {
+    this.int32(457133559);
+    this.object(_.message);                 // : Message - Message
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateBotCallbackQuery"](_) {
+    this.int32(-1177566067);
+    this.int32(
+      (+(_.data != null) << 0)
+      | (+(_.game_short_name != null) << 1)
+    )
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.int64(_.chat_instance);            // : bigint - long
+    if (_.data != null)
+      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
+    if (_.game_short_name != null)
+      this.string(_.game_short_name);       // ?: string - flags.1?string
+  },
+  ["updateEditMessage"](_) {
+    this.int32(-469536605);
+    this.object(_.message);                 // : Message - Message
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateInlineBotCallbackQuery"](_) {
+    this.int32(1763610706);
+    this.int32(
+      (+(_.data != null) << 0)
+      | (+(_.game_short_name != null) << 1)
+    )
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.object(_.msg_id);                  // : InputBotInlineMessageID - InputBotInlineMessageID
+    this.int64(_.chat_instance);            // : bigint - long
+    if (_.data != null)
+      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
+    if (_.game_short_name != null)
+      this.string(_.game_short_name);       // ?: string - flags.1?string
+  },
+  ["updateReadChannelOutbox"](_) {
+    this.int32(-1218471511);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.max_id);                   // : number - int
+  },
+  ["updateDraftMessage"](_) {
+    this.int32(-299124375);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.draft);                   // : DraftMessage - DraftMessage
+  },
+  ["updateReadFeaturedStickers"](_) {
+    this.int32(1461528386);
+  },
+  ["updateRecentStickers"](_) {
+    this.int32(-1706939360);
+  },
+  ["updateConfig"](_) {
+    this.int32(-1574314746);
+  },
+  ["updatePtsChanged"](_) {
+    this.int32(861169551);
+  },
+  ["updateChannelWebPage"](_) {
+    this.int32(791390623);
+    this.int64(_.channel_id);               // : bigint - long
+    this.object(_.webpage);                 // : WebPage - WebPage
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateDialogPinned"](_) {
+    this.int32(1852826908);
+    this.int32(
+      (+(_.pinned != null) << 0)
+      | (+(_.folder_id != null) << 1)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.0?true
+    if (_.folder_id != null)
+      this.int32(_.folder_id);              // ?: number - flags.1?int
+    this.object(_.peer);                    // : DialogPeer - DialogPeer
+  },
+  ["updatePinnedDialogs"](_) {
+    this.int32(-99664734);
+    this.int32(
+      (+(_.folder_id != null) << 1)
+      | (+(_.order != null && _.order.length > 0) << 0)
+    )
+    if (_.folder_id != null)
+      this.int32(_.folder_id);              // ?: number - flags.1?int
+    if (_.order != null && _.order.length > 0)
+      this.vector(_.order, this.object);    // ?: DialogPeer[] - flags.0?Vector<DialogPeer>
+  },
+  ["updateBotWebhookJSON"](_) {
+    this.int32(-2095595325);
+    this.object(_.data);                    // : DataJSON - DataJSON
+  },
+  ["updateBotWebhookJSONQuery"](_) {
+    this.int32(-1684914010);
+    this.int64(_.query_id);                 // : bigint - long
+    this.object(_.data);                    // : DataJSON - DataJSON
+    this.int32(_.timeout);                  // : number - int
+  },
+  ["updateBotShippingQuery"](_) {
+    this.int32(-1246823043);
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.object(_.shipping_address);        // : PostAddress - PostAddress
+  },
+  ["updateBotPrecheckoutQuery"](_) {
+    this.int32(-1934976362);
+    this.int32(
+      (+(_.info != null) << 0)
+      | (+(_.shipping_option_id != null) << 1)
+    )
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.bytes(_.payload);                  // : BufferSource - bytes
+    if (_.info != null)
+      this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (_.shipping_option_id != null)
+      this.string(_.shipping_option_id);    // ?: string - flags.1?string
+    this.string(_.currency);                // : string - string
+    this.int64(_.total_amount);             // : bigint - long
+  },
+  ["updatePhoneCall"](_) {
+    this.int32(-1425052898);
+    this.object(_.phone_call);              // : PhoneCall - PhoneCall
+  },
+  ["updateLangPackTooLong"](_) {
+    this.int32(1180041828);
+    this.string(_.lang_code);               // : string - string
+  },
+  ["updateLangPack"](_) {
+    this.int32(1442983757);
+    this.object(_.difference);              // : LangPackDifference - LangPackDifference
+  },
+  ["updateFavedStickers"](_) {
+    this.int32(-451831443);
+  },
+  ["updateChannelReadMessagesContents"](_) {
+    this.int32(1153291573);
+    this.int64(_.channel_id);               // : bigint - long
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+  },
+  ["updateContactsReset"](_) {
+    this.int32(1887741886);
+  },
+  ["updateChannelAvailableMessages"](_) {
+    this.int32(-1304443240);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.available_min_id);         // : number - int
+  },
+  ["updateDialogUnreadMark"](_) {
+    this.int32(-513517117);
+    this.int32(
+      (+(_.unread != null) << 0)
+    )
+    if (_.unread != null)
+      this.true(_.unread);                  // ?: true - flags.0?true
+    this.object(_.peer);                    // : DialogPeer - DialogPeer
+  },
+  ["updateMessagePoll"](_) {
+    this.int32(-1398708869);
+    this.int32(
+      (+(_.poll != null) << 0)
+    )
+    this.int64(_.poll_id);                  // : bigint - long
+    if (_.poll != null)
+      this.object(_.poll);                  // ?: Poll - flags.0?Poll
+    this.object(_.results);                 // : PollResults - PollResults
+  },
+  ["updateChatDefaultBannedRights"](_) {
+    this.int32(1421875280);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.default_banned_rights);   // : ChatBannedRights - ChatBannedRights
+    this.int32(_.version);                  // : number - int
+  },
+  ["updateFolderPeers"](_) {
+    this.int32(422972864);
+    this.vector(_.folder_peers, this.object); // : FolderPeer[] - Vector<FolderPeer>
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updatePeerSettings"](_) {
+    this.int32(1786671974);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.settings);                // : PeerSettings - PeerSettings
+  },
+  ["updatePeerLocated"](_) {
+    this.int32(-1263546448);
+    this.vector(_.peers, this.object);      // : PeerLocated[] - Vector<PeerLocated>
+  },
+  ["updateNewScheduledMessage"](_) {
+    this.int32(967122427);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["updateDeleteScheduledMessages"](_) {
+    this.int32(-1870238482);
+    this.object(_.peer);                    // : Peer - Peer
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+  },
+  ["updateTheme"](_) {
+    this.int32(-2112423005);
+    this.object(_.theme);                   // : Theme - Theme
+  },
+  ["updateGeoLiveViewed"](_) {
+    this.int32(-2027964103);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+  },
+  ["updateLoginToken"](_) {
+    this.int32(1448076945);
+  },
+  ["updateMessagePollVote"](_) {
+    this.int32(274961865);
+    this.int64(_.poll_id);                  // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.vector(_.options, this.bytes);     // : BufferSource[] - Vector<bytes>
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateDialogFilter"](_) {
+    this.int32(654302845);
+    this.int32(
+      (+(_.filter != null) << 0)
+    )
+    this.int32(_.id);                       // : number - int
+    if (_.filter != null)
+      this.object(_.filter);                // ?: DialogFilter - flags.0?DialogFilter
+  },
+  ["updateDialogFilterOrder"](_) {
+    this.int32(-1512627963);
+    this.vector(_.order, this.int32);       // : number[] - Vector<int>
+  },
+  ["updateDialogFilters"](_) {
+    this.int32(889491791);
+  },
+  ["updatePhoneCallSignalingData"](_) {
+    this.int32(643940105);
+    this.int64(_.phone_call_id);            // : bigint - long
+    this.bytes(_.data);                     // : BufferSource - bytes
+  },
+  ["updateChannelMessageForwards"](_) {
+    this.int32(-761649164);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.id);                       // : number - int
+    this.int32(_.forwards);                 // : number - int
+  },
+  ["updateReadChannelDiscussionInbox"](_) {
+    this.int32(-693004986);
+    this.int32(
+      (+(_.broadcast_id != null) << 0)
+      | (+(_.broadcast_post != null) << 0)
+    )
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.top_msg_id);               // : number - int
+    this.int32(_.read_max_id);              // : number - int
+    if (_.broadcast_id != null)
+      this.int64(_.broadcast_id);           // ?: bigint - flags.0?long
+    if (_.broadcast_post != null)
+      this.int32(_.broadcast_post);         // ?: number - flags.0?int
+  },
+  ["updateReadChannelDiscussionOutbox"](_) {
+    this.int32(1767677564);
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.top_msg_id);               // : number - int
+    this.int32(_.read_max_id);              // : number - int
+  },
+  ["updatePeerBlocked"](_) {
+    this.int32(610945826);
+    this.object(_.peer_id);                 // : Peer - Peer
+    this.bool(_.blocked);                   // : boolean - Bool
+  },
+  ["updateChannelUserTyping"](_) {
+    this.int32(-1937192669);
+    this.int32(
+      (+(_.top_msg_id != null) << 0)
+    )
+    this.int64(_.channel_id);               // : bigint - long
+    if (_.top_msg_id != null)
+      this.int32(_.top_msg_id);             // ?: number - flags.0?int
+    this.object(_.from_id);                 // : Peer - Peer
+    this.object(_.action);                  // : SendMessageAction - SendMessageAction
+  },
+  ["updatePinnedMessages"](_) {
+    this.int32(-309990731);
+    this.int32(
+      (+(_.pinned != null) << 0)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.0?true
+    this.object(_.peer);                    // : Peer - Peer
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updatePinnedChannelMessages"](_) {
+    this.int32(1538885128);
+    this.int32(
+      (+(_.pinned != null) << 0)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.0?true
+    this.int64(_.channel_id);               // : bigint - long
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+  },
+  ["updateChat"](_) {
+    this.int32(-124097970);
+    this.int64(_.chat_id);                  // : bigint - long
+  },
+  ["updateGroupCallParticipants"](_) {
+    this.int32(-219423922);
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+    this.vector(_.participants, this.object); // : GroupCallParticipant[] - Vector<GroupCallParticipant>
+    this.int32(_.version);                  // : number - int
+  },
+  ["updateGroupCall"](_) {
+    this.int32(347227392);
+    this.int64(_.chat_id);                  // : bigint - long
+    this.object(_.call);                    // : GroupCall - GroupCall
+  },
+  ["updatePeerHistoryTTL"](_) {
+    this.int32(-1147422299);
+    this.int32(
+      (+(_.ttl_period != null) << 0)
+    )
+    this.object(_.peer);                    // : Peer - Peer
+    if (_.ttl_period != null)
+      this.int32(_.ttl_period);             // ?: number - flags.0?int
+  },
+  ["updateChatParticipant"](_) {
+    this.int32(-796432838);
+    this.int32(
+      (+(_.prev_participant != null) << 0)
+      | (+(_.new_participant != null) << 1)
+      | (+(_.invite != null) << 2)
+    )
+    this.int64(_.chat_id);                  // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.int64(_.actor_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    if (_.prev_participant != null)
+      this.object(_.prev_participant);      // ?: ChatParticipant - flags.0?ChatParticipant
+    if (_.new_participant != null)
+      this.object(_.new_participant);       // ?: ChatParticipant - flags.1?ChatParticipant
+    if (_.invite != null)
+      this.object(_.invite);                // ?: ExportedChatInvite - flags.2?ExportedChatInvite
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateChannelParticipant"](_) {
+    this.int32(-1738720581);
+    this.int32(
+      (+(_.prev_participant != null) << 0)
+      | (+(_.new_participant != null) << 1)
+      | (+(_.invite != null) << 2)
+    )
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.int64(_.actor_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    if (_.prev_participant != null)
+      this.object(_.prev_participant);      // ?: ChannelParticipant - flags.0?ChannelParticipant
+    if (_.new_participant != null)
+      this.object(_.new_participant);       // ?: ChannelParticipant - flags.1?ChannelParticipant
+    if (_.invite != null)
+      this.object(_.invite);                // ?: ExportedChatInvite - flags.2?ExportedChatInvite
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateBotStopped"](_) {
+    this.int32(-997782967);
+    this.int64(_.user_id);                  // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.bool(_.stopped);                   // : boolean - Bool
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateGroupCallConnection"](_) {
+    this.int32(192428418);
+    this.int32(
+      (+(_.presentation != null) << 0)
+    )
+    if (_.presentation != null)
+      this.true(_.presentation);            // ?: true - flags.0?true
+    this.object(_.params);                  // : DataJSON - DataJSON
+  },
+  ["updateBotCommands"](_) {
+    this.int32(1299263278);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int64(_.bot_id);                   // : bigint - long
+    this.vector(_.commands, this.object);   // : BotCommand[] - Vector<BotCommand>
+  },
+  ["updatePendingJoinRequests"](_) {
+    this.int32(1885586395);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.requests_pending);         // : number - int
+    this.vector(_.recent_requesters, this.int64); // : bigint[] - Vector<long>
+  },
+  ["updateBotChatInviteRequester"](_) {
+    this.int32(299870598);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.date);                     // : number - int
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.about);                   // : string - string
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateMessageReactions"](_) {
+    this.int32(357013699);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.object(_.reactions);               // : MessageReactions - MessageReactions
+  },
+  ["updateAttachMenuBots"](_) {
+    this.int32(397910539);
+  },
+  ["updateWebViewResultSent"](_) {
+    this.int32(361936797);
+    this.int64(_.query_id);                 // : bigint - long
+  },
+  ["updateBotMenuButton"](_) {
+    this.int32(347625491);
+    this.int64(_.bot_id);                   // : bigint - long
+    this.object(_.button);                  // : BotMenuButton - BotMenuButton
+  },
+  ["updateSavedRingtones"](_) {
+    this.int32(1960361625);
+  },
+  ["updateTranscribedAudio"](_) {
+    this.int32(8703322);
+    this.int32(
+      (+(_.pending != null) << 0)
+    )
+    if (_.pending != null)
+      this.true(_.pending);                 // ?: true - flags.0?true
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.int64(_.transcription_id);         // : bigint - long
+    this.string(_.text);                    // : string - string
+  },
   ["updates.state"](_) {
     this.int32(-1519637954);
     this.int32(_.pts);                      // : number - int
@@ -6725,6 +8537,10 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
     this.object(_.intermediate_state);      // : updates.State - updates.State
+  },
+  ["updates.differenceTooLong"](_) {
+    this.int32(1258196845);
+    this.int32(_.pts);                      // : number - int
   },
   ["updatesTooLong"](_) {
     this.int32(-484987010);
@@ -6828,6 +8644,27 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int32(_.seq);                      // : number - int
   },
+  ["updateShortSentMessage"](_) {
+    this.int32(-1877614335);
+    this.int32(
+      (+(_.out != null) << 1)
+      | (+(_.media != null) << 9)
+      | (+(_.entities != null && _.entities.length > 0) << 7)
+      | (+(_.ttl_period != null) << 25)
+    )
+    if (_.out != null)
+      this.true(_.out);                     // ?: true - flags.1?true
+    this.int32(_.id);                       // : number - int
+    this.int32(_.pts);                      // : number - int
+    this.int32(_.pts_count);                // : number - int
+    this.int32(_.date);                     // : number - int
+    if (_.media != null)
+      this.object(_.media);                 // ?: MessageMedia - flags.9?MessageMedia
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (_.ttl_period != null)
+      this.int32(_.ttl_period);             // ?: number - flags.25?int
+  },
   ["photos.photos"](_) {
     this.int32(-1916114267);
     this.vector(_.photos, this.object);     // : Photo[] - Vector<Photo>
@@ -6850,6 +8687,14 @@ export const $encoder = {
     this.int32(_.mtime);                    // : number - int
     this.bytes(_.bytes);                    // : BufferSource - bytes
   },
+  ["upload.fileCdnRedirect"](_) {
+    this.int32(-242427324);
+    this.int32(_.dc_id);                    // : number - int
+    this.bytes(_.file_token);               // : BufferSource - bytes
+    this.bytes(_.encryption_key);           // : BufferSource - bytes
+    this.bytes(_.encryption_iv);            // : BufferSource - bytes
+    this.vector(_.file_hashes, this.object); // : FileHash[] - Vector<FileHash>
+  },
   ["dcOption"](_) {
     this.int32(414687501);
     this.int32(
@@ -6858,6 +8703,7 @@ export const $encoder = {
       | (+(_.tcpo_only != null) << 2)
       | (+(_.cdn != null) << 3)
       | (+(_.static != null) << 4)
+      | (+(_.this_port_only != null) << 5)
       | (+(_.secret != null) << 10)
     )
     if (_.ipv6 != null)
@@ -6870,6 +8716,8 @@ export const $encoder = {
       this.true(_.cdn);                     // ?: true - flags.3?true
     if (_.static != null)
       this.true(_.static);                  // ?: true - flags.4?true
+    if (_.this_port_only != null)
+      this.true(_.this_port_only);          // ?: true - flags.5?true
     this.int32(_.id);                       // : number - int
     this.string(_.ip_address);              // : string - string
     this.int32(_.port);                     // : number - int
@@ -6886,6 +8734,7 @@ export const $encoder = {
       | (+(_.revoke_pm_inbox != null) << 6)
       | (+(_.blocked_mode != null) << 8)
       | (+(_.pfs_enabled != null) << 13)
+      | (+(_.force_try_ipv6 != null) << 14)
       | (+(_.tmp_sessions != null) << 0)
       | (+(_.autoupdate_url_prefix != null) << 7)
       | (+(_.gif_search_username != null) << 9)
@@ -6910,6 +8759,8 @@ export const $encoder = {
       this.true(_.blocked_mode);            // ?: true - flags.8?true
     if (_.pfs_enabled != null)
       this.true(_.pfs_enabled);             // ?: true - flags.13?true
+    if (_.force_try_ipv6 != null)
+      this.true(_.force_try_ipv6);          // ?: true - flags.14?true
     this.int32(_.date);                     // : number - int
     this.int32(_.expires);                  // : number - int
     this.bool(_.test_mode);                 // : boolean - Bool
@@ -6998,26 +8849,6 @@ export const $encoder = {
     this.int32(415997816);
     this.string(_.message);                 // : string - string
   },
-  ["updateNewEncryptedMessage"](_) {
-    this.int32(314359194);
-    this.object(_.message);                 // : EncryptedMessage - EncryptedMessage
-    this.int32(_.qts);                      // : number - int
-  },
-  ["updateEncryptedChatTyping"](_) {
-    this.int32(386986326);
-    this.int32(_.chat_id);                  // : number - int
-  },
-  ["updateEncryption"](_) {
-    this.int32(-1264392051);
-    this.object(_.chat);                    // : EncryptedChat - EncryptedChat
-    this.int32(_.date);                     // : number - int
-  },
-  ["updateEncryptedMessagesRead"](_) {
-    this.int32(956179895);
-    this.int32(_.chat_id);                  // : number - int
-    this.int32(_.max_date);                 // : number - int
-    this.int32(_.date);                     // : number - int
-  },
   ["encryptedChatEmpty"](_) {
     this.int32(-1417756512);
     this.int32(_.id);                       // : number - int
@@ -7072,10 +8903,10 @@ export const $encoder = {
     this.int32(-1038136962);
   },
   ["encryptedFile"](_) {
-    this.int32(1248893260);
+    this.int32(-1476358952);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.int32(_.size);                     // : number - int
+    this.int64(_.size);                     // : bigint - long
     this.int32(_.dc_id);                    // : number - int
     this.int32(_.key_fingerprint);          // : number - int
   },
@@ -7094,10 +8925,11 @@ export const $encoder = {
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
   },
-  ["inputEncryptedFileLocation"](_) {
-    this.int32(-182231723);
+  ["inputEncryptedFileBigUploaded"](_) {
+    this.int32(767652808);
     this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
+    this.int32(_.parts);                    // : number - int
+    this.int32(_.key_fingerprint);          // : number - int
   },
   ["encryptedMessage"](_) {
     this.int32(-317144808);
@@ -7134,82 +8966,6 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.object(_.file);                    // : EncryptedFile - EncryptedFile
   },
-  ["inputFileBig"](_) {
-    this.int32(-95482955);
-    this.int64(_.id);                       // : bigint - long
-    this.int32(_.parts);                    // : number - int
-    this.string(_.name);                    // : string - string
-  },
-  ["inputEncryptedFileBigUploaded"](_) {
-    this.int32(767652808);
-    this.int64(_.id);                       // : bigint - long
-    this.int32(_.parts);                    // : number - int
-    this.int32(_.key_fingerprint);          // : number - int
-  },
-  ["updateChatParticipantAdd"](_) {
-    this.int32(1037718609);
-    this.int64(_.chat_id);                  // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.int64(_.inviter_id);               // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.int32(_.version);                  // : number - int
-  },
-  ["updateChatParticipantDelete"](_) {
-    this.int32(-483443337);
-    this.int64(_.chat_id);                  // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.int32(_.version);                  // : number - int
-  },
-  ["updateDcOptions"](_) {
-    this.int32(-1906403213);
-    this.vector(_.dc_options, this.object); // : DcOption[] - Vector<DcOption>
-  },
-  ["inputMediaUploadedDocument"](_) {
-    this.int32(1530447553);
-    this.int32(
-      (+(_.nosound_video != null) << 3)
-      | (+(_.force_file != null) << 4)
-      | (+(_.thumb != null) << 2)
-      | (+(_.stickers != null && _.stickers.length > 0) << 0)
-      | (+(_.ttl_seconds != null) << 1)
-    )
-    if (_.nosound_video != null)
-      this.true(_.nosound_video);           // ?: true - flags.3?true
-    if (_.force_file != null)
-      this.true(_.force_file);              // ?: true - flags.4?true
-    this.object(_.file);                    // : InputFile - InputFile
-    if (_.thumb != null)
-      this.object(_.thumb);                 // ?: InputFile - flags.2?InputFile
-    this.string(_.mime_type);               // : string - string
-    this.vector(_.attributes, this.object); // : DocumentAttribute[] - Vector<DocumentAttribute>
-    if (_.stickers != null && _.stickers.length > 0)
-      this.vector(_.stickers, this.object); // ?: InputDocument[] - flags.0?Vector<InputDocument>
-    if (_.ttl_seconds != null)
-      this.int32(_.ttl_seconds);            // ?: number - flags.1?int
-  },
-  ["inputMediaDocument"](_) {
-    this.int32(860303448);
-    this.int32(
-      (+(_.ttl_seconds != null) << 0)
-      | (+(_.query != null) << 1)
-    )
-    this.object(_.id);                      // : InputDocument - InputDocument
-    if (_.ttl_seconds != null)
-      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
-    if (_.query != null)
-      this.string(_.query);                 // ?: string - flags.1?string
-  },
-  ["messageMediaDocument"](_) {
-    this.int32(-1666158377);
-    this.int32(
-      (+(_.document != null) << 0)
-      | (+(_.ttl_seconds != null) << 2)
-    )
-    if (_.document != null)
-      this.object(_.document);              // ?: Document - flags.0?Document
-    if (_.ttl_seconds != null)
-      this.int32(_.ttl_seconds);            // ?: number - flags.2?int
-  },
   ["inputDocumentEmpty"](_) {
     this.int32(1928391342);
   },
@@ -7219,19 +8975,12 @@ export const $encoder = {
     this.int64(_.access_hash);              // : bigint - long
     this.bytes(_.file_reference);           // : BufferSource - bytes
   },
-  ["inputDocumentFileLocation"](_) {
-    this.int32(-1160743548);
-    this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
-    this.string(_.thumb_size);              // : string - string
-  },
   ["documentEmpty"](_) {
     this.int32(922273905);
     this.int64(_.id);                       // : bigint - long
   },
   ["document"](_) {
-    this.int32(512177195);
+    this.int32(-1881881384);
     this.int32(
       (+(_.thumbs != null && _.thumbs.length > 0) << 0)
       | (+(_.video_thumbs != null && _.video_thumbs.length > 0) << 1)
@@ -7241,7 +8990,7 @@ export const $encoder = {
     this.bytes(_.file_reference);           // : BufferSource - bytes
     this.int32(_.date);                     // : number - int
     this.string(_.mime_type);               // : string - string
-    this.int32(_.size);                     // : number - int
+    this.int64(_.size);                     // : bigint - long
     if (_.thumbs != null && _.thumbs.length > 0)
       this.vector(_.thumbs, this.object);   // ?: PhotoSize[] - flags.0?Vector<PhotoSize>
     if (_.video_thumbs != null && _.video_thumbs.length > 0)
@@ -7264,10 +9013,8 @@ export const $encoder = {
   ["notifyChats"](_) {
     this.int32(-1073230141);
   },
-  ["updateNotifySettings"](_) {
-    this.int32(-1094555409);
-    this.object(_.peer);                    // : NotifyPeer - NotifyPeer
-    this.object(_.notify_settings);         // : PeerNotifySettings - PeerNotifySettings
+  ["notifyBroadcasts"](_) {
+    this.int32(-703403793);
   },
   ["sendMessageTypingAction"](_) {
     this.int32(381645902);
@@ -7303,6 +9050,36 @@ export const $encoder = {
   ["sendMessageChooseContactAction"](_) {
     this.int32(1653390447);
   },
+  ["sendMessageGamePlayAction"](_) {
+    this.int32(-580219064);
+  },
+  ["sendMessageRecordRoundAction"](_) {
+    this.int32(-1997373508);
+  },
+  ["sendMessageUploadRoundAction"](_) {
+    this.int32(608050278);
+    this.int32(_.progress);                 // : number - int
+  },
+  ["speakingInGroupCallAction"](_) {
+    this.int32(-651419003);
+  },
+  ["sendMessageHistoryImportAction"](_) {
+    this.int32(-606432698);
+    this.int32(_.progress);                 // : number - int
+  },
+  ["sendMessageChooseStickerAction"](_) {
+    this.int32(-1336228175);
+  },
+  ["sendMessageEmojiInteraction"](_) {
+    this.int32(630664139);
+    this.string(_.emoticon);                // : string - string
+    this.int32(_.msg_id);                   // : number - int
+    this.object(_.interaction);             // : DataJSON - DataJSON
+  },
+  ["sendMessageEmojiInteractionSeen"](_) {
+    this.int32(-1234857938);
+    this.string(_.emoticon);                // : string - string
+  },
   ["contacts.found"](_) {
     this.int32(-1290580579);
     this.vector(_.my_results, this.object); // : Peer[] - Vector<Peer>
@@ -7310,40 +9087,53 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["updateServiceNotification"](_) {
-    this.int32(-337352679);
-    this.int32(
-      (+(_.popup != null) << 0)
-      | (+(_.inbox_date != null) << 1)
-    )
-    if (_.popup != null)
-      this.true(_.popup);                   // ?: true - flags.0?true
-    if (_.inbox_date != null)
-      this.int32(_.inbox_date);             // ?: number - flags.1?int
-    this.string(_.type);                    // : string - string
-    this.string(_.message);                 // : string - string
-    this.object(_.media);                   // : MessageMedia - MessageMedia
-    this.vector(_.entities, this.object);   // : MessageEntity[] - Vector<MessageEntity>
-  },
-  ["userStatusRecently"](_) {
-    this.int32(-496024847);
-  },
-  ["userStatusLastWeek"](_) {
-    this.int32(129960444);
-  },
-  ["userStatusLastMonth"](_) {
-    this.int32(2011940674);
-  },
-  ["updatePrivacy"](_) {
-    this.int32(-298113238);
-    this.object(_.key);                     // : PrivacyKey - PrivacyKey
-    this.vector(_.rules, this.object);      // : PrivacyRule[] - Vector<PrivacyRule>
-  },
   ["inputPrivacyKeyStatusTimestamp"](_) {
     this.int32(1335282456);
   },
+  ["inputPrivacyKeyChatInvite"](_) {
+    this.int32(-1107622874);
+  },
+  ["inputPrivacyKeyPhoneCall"](_) {
+    this.int32(-88417185);
+  },
+  ["inputPrivacyKeyPhoneP2P"](_) {
+    this.int32(-610373422);
+  },
+  ["inputPrivacyKeyForwards"](_) {
+    this.int32(-1529000952);
+  },
+  ["inputPrivacyKeyProfilePhoto"](_) {
+    this.int32(1461304012);
+  },
+  ["inputPrivacyKeyPhoneNumber"](_) {
+    this.int32(55761658);
+  },
+  ["inputPrivacyKeyAddedByPhone"](_) {
+    this.int32(-786326563);
+  },
   ["privacyKeyStatusTimestamp"](_) {
     this.int32(-1137792208);
+  },
+  ["privacyKeyChatInvite"](_) {
+    this.int32(1343122938);
+  },
+  ["privacyKeyPhoneCall"](_) {
+    this.int32(1030105979);
+  },
+  ["privacyKeyPhoneP2P"](_) {
+    this.int32(961092808);
+  },
+  ["privacyKeyForwards"](_) {
+    this.int32(1777096355);
+  },
+  ["privacyKeyProfilePhoto"](_) {
+    this.int32(-1777000467);
+  },
+  ["privacyKeyPhoneNumber"](_) {
+    this.int32(-778378131);
+  },
+  ["privacyKeyAddedByPhone"](_) {
+    this.int32(1124062251);
   },
   ["inputPrivacyValueAllowContacts"](_) {
     this.int32(218751099);
@@ -7365,6 +9155,14 @@ export const $encoder = {
     this.int32(-1877932953);
     this.vector(_.users, this.object);      // : InputUser[] - Vector<InputUser>
   },
+  ["inputPrivacyValueAllowChatParticipants"](_) {
+    this.int32(-2079962673);
+    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
+  },
+  ["inputPrivacyValueDisallowChatParticipants"](_) {
+    this.int32(-380694650);
+    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
+  },
   ["privacyValueAllowContacts"](_) {
     this.int32(-123988);
   },
@@ -7385,6 +9183,14 @@ export const $encoder = {
     this.int32(-463335103);
     this.vector(_.users, this.int64);       // : bigint[] - Vector<long>
   },
+  ["privacyValueAllowChatParticipants"](_) {
+    this.int32(1796427406);
+    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
+  },
+  ["privacyValueDisallowChatParticipants"](_) {
+    this.int32(1103656293);
+    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
+  },
   ["account.privacyRules"](_) {
     this.int32(1352683077);
     this.vector(_.rules, this.object);      // : PrivacyRule[] - Vector<PrivacyRule>
@@ -7394,11 +9200,6 @@ export const $encoder = {
   ["accountDaysTTL"](_) {
     this.int32(-1194283041);
     this.int32(_.days);                     // : number - int
-  },
-  ["updateUserPhone"](_) {
-    this.int32(88680979);
-    this.int64(_.user_id);                  // : bigint - long
-    this.string(_.phone);                   // : string - string
   },
   ["documentAttributeImageSize"](_) {
     this.int32(1815593308);
@@ -7457,6 +9258,9 @@ export const $encoder = {
     this.int32(358154344);
     this.string(_.file_name);               // : string - string
   },
+  ["documentAttributeHasStickers"](_) {
+    this.int32(-1744710921);
+  },
   ["messages.stickersNotModified"](_) {
     this.int32(-244016606);
   },
@@ -7478,34 +9282,8 @@ export const $encoder = {
     this.int64(_.hash);                     // : bigint - long
     this.vector(_.sets, this.object);       // : StickerSet[] - Vector<StickerSet>
   },
-  ["updateReadHistoryInbox"](_) {
-    this.int32(-1667805217);
-    this.int32(
-      (+(_.folder_id != null) << 0)
-    )
-    if (_.folder_id != null)
-      this.int32(_.folder_id);              // ?: number - flags.0?int
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.max_id);                   // : number - int
-    this.int32(_.still_unread_count);       // : number - int
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["updateReadHistoryOutbox"](_) {
-    this.int32(791617983);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.max_id);                   // : number - int
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
   ["messages.affectedMessages"](_) {
     this.int32(-2066640507);
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["updateWebPage"](_) {
-    this.int32(2139689491);
-    this.object(_.webpage);                 // : WebPage - WebPage
     this.int32(_.pts);                      // : number - int
     this.int32(_.pts_count);                // : number - int
   },
@@ -7569,9 +9347,13 @@ export const $encoder = {
     if (_.attributes != null && _.attributes.length > 0)
       this.vector(_.attributes, this.object); // ?: WebPageAttribute[] - flags.12?Vector<WebPageAttribute>
   },
-  ["messageMediaWebPage"](_) {
-    this.int32(-1557277184);
-    this.object(_.webpage);                 // : WebPage - WebPage
+  ["webPageNotModified"](_) {
+    this.int32(1930545681);
+    this.int32(
+      (+(_.cached_page_views != null) << 0)
+    )
+    if (_.cached_page_views != null)
+      this.int32(_.cached_page_views);      // ?: number - flags.0?int
   },
   ["authorization"](_) {
     this.int32(-1392388579);
@@ -7680,24 +9462,6 @@ export const $encoder = {
     this.int32(326715557);
     this.string(_.email_pattern);           // : string - string
   },
-  ["inputMediaVenue"](_) {
-    this.int32(-1052959727);
-    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
-    this.string(_.title);                   // : string - string
-    this.string(_.address);                 // : string - string
-    this.string(_.provider);                // : string - string
-    this.string(_.venue_id);                // : string - string
-    this.string(_.venue_type);              // : string - string
-  },
-  ["messageMediaVenue"](_) {
-    this.int32(784356159);
-    this.object(_.geo);                     // : GeoPoint - GeoPoint
-    this.string(_.title);                   // : string - string
-    this.string(_.address);                 // : string - string
-    this.string(_.provider);                // : string - string
-    this.string(_.venue_id);                // : string - string
-    this.string(_.venue_type);              // : string - string
-  },
   ["receivedNotifyMessage"](_) {
     this.int32(-1551583367);
     this.int32(_.id);                       // : number - int
@@ -7738,6 +9502,9 @@ export const $encoder = {
     if (_.title != null)
       this.string(_.title);                 // ?: string - flags.8?string
   },
+  ["chatInvitePublicJoinRequests"](_) {
+    this.int32(-317687113);
+  },
   ["chatInviteAlready"](_) {
     this.int32(1516793212);
     this.object(_.chat);                    // : Chat - Chat
@@ -7771,15 +9538,10 @@ export const $encoder = {
     if (_.participants != null && _.participants.length > 0)
       this.vector(_.participants, this.object); // ?: User[] - flags.4?Vector<User>
   },
-  ["messageActionChatJoinedByLink"](_) {
-    this.int32(51520707);
-    this.int64(_.inviter_id);               // : bigint - long
-  },
-  ["updateReadMessagesContents"](_) {
-    this.int32(1757493555);
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
+  ["chatInvitePeek"](_) {
+    this.int32(1634294960);
+    this.object(_.chat);                    // : Chat - Chat
+    this.int32(_.expires);                  // : number - int
   },
   ["inputStickerSetEmpty"](_) {
     this.int32(-4838507);
@@ -7792,6 +9554,16 @@ export const $encoder = {
   ["inputStickerSetShortName"](_) {
     this.int32(-2044933984);
     this.string(_.short_name);              // : string - string
+  },
+  ["inputStickerSetAnimatedEmoji"](_) {
+    this.int32(42402760);
+  },
+  ["inputStickerSetDice"](_) {
+    this.int32(-427863538);
+    this.string(_.emoticon);                // : string - string
+  },
+  ["inputStickerSetAnimatedEmojiAnimations"](_) {
+    this.int32(215889721);
   },
   ["stickerSet"](_) {
     this.int32(-673242758);
@@ -7837,89 +9609,8 @@ export const $encoder = {
     this.vector(_.packs, this.object);      // : StickerPack[] - Vector<StickerPack>
     this.vector(_.documents, this.object);  // : Document[] - Vector<Document>
   },
-  ["user"](_) {
-    this.int32(1073147056);
-    this.int32(
-      (+(_.self != null) << 10)
-      | (+(_.contact != null) << 11)
-      | (+(_.mutual_contact != null) << 12)
-      | (+(_.deleted != null) << 13)
-      | (+(_.bot != null) << 14)
-      | (+(_.bot_chat_history != null) << 15)
-      | (+(_.bot_nochats != null) << 16)
-      | (+(_.verified != null) << 17)
-      | (+(_.restricted != null) << 18)
-      | (+(_.min != null) << 20)
-      | (+(_.bot_inline_geo != null) << 21)
-      | (+(_.support != null) << 23)
-      | (+(_.scam != null) << 24)
-      | (+(_.apply_min_photo != null) << 25)
-      | (+(_.fake != null) << 26)
-      | (+(_.access_hash != null) << 0)
-      | (+(_.first_name != null) << 1)
-      | (+(_.last_name != null) << 2)
-      | (+(_.username != null) << 3)
-      | (+(_.phone != null) << 4)
-      | (+(_.photo != null) << 5)
-      | (+(_.status != null) << 6)
-      | (+(_.bot_info_version != null) << 14)
-      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 18)
-      | (+(_.bot_inline_placeholder != null) << 19)
-      | (+(_.lang_code != null) << 22)
-    )
-    if (_.self != null)
-      this.true(_.self);                    // ?: true - flags.10?true
-    if (_.contact != null)
-      this.true(_.contact);                 // ?: true - flags.11?true
-    if (_.mutual_contact != null)
-      this.true(_.mutual_contact);          // ?: true - flags.12?true
-    if (_.deleted != null)
-      this.true(_.deleted);                 // ?: true - flags.13?true
-    if (_.bot != null)
-      this.true(_.bot);                     // ?: true - flags.14?true
-    if (_.bot_chat_history != null)
-      this.true(_.bot_chat_history);        // ?: true - flags.15?true
-    if (_.bot_nochats != null)
-      this.true(_.bot_nochats);             // ?: true - flags.16?true
-    if (_.verified != null)
-      this.true(_.verified);                // ?: true - flags.17?true
-    if (_.restricted != null)
-      this.true(_.restricted);              // ?: true - flags.18?true
-    if (_.min != null)
-      this.true(_.min);                     // ?: true - flags.20?true
-    if (_.bot_inline_geo != null)
-      this.true(_.bot_inline_geo);          // ?: true - flags.21?true
-    if (_.support != null)
-      this.true(_.support);                 // ?: true - flags.23?true
-    if (_.scam != null)
-      this.true(_.scam);                    // ?: true - flags.24?true
-    if (_.apply_min_photo != null)
-      this.true(_.apply_min_photo);         // ?: true - flags.25?true
-    if (_.fake != null)
-      this.true(_.fake);                    // ?: true - flags.26?true
-    this.int64(_.id);                       // : bigint - long
-    if (_.access_hash != null)
-      this.int64(_.access_hash);            // ?: bigint - flags.0?long
-    if (_.first_name != null)
-      this.string(_.first_name);            // ?: string - flags.1?string
-    if (_.last_name != null)
-      this.string(_.last_name);             // ?: string - flags.2?string
-    if (_.username != null)
-      this.string(_.username);              // ?: string - flags.3?string
-    if (_.phone != null)
-      this.string(_.phone);                 // ?: string - flags.4?string
-    if (_.photo != null)
-      this.object(_.photo);                 // ?: UserProfilePhoto - flags.5?UserProfilePhoto
-    if (_.status != null)
-      this.object(_.status);                // ?: UserStatus - flags.6?UserStatus
-    if (_.bot_info_version != null)
-      this.int32(_.bot_info_version);       // ?: number - flags.14?int
-    if (_.restriction_reason != null && _.restriction_reason.length > 0)
-      this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.18?Vector<RestrictionReason>
-    if (_.bot_inline_placeholder != null)
-      this.string(_.bot_inline_placeholder); // ?: string - flags.19?string
-    if (_.lang_code != null)
-      this.string(_.lang_code);             // ?: string - flags.22?string
+  ["messages.stickerSetNotModified"](_) {
+    this.int32(-738646805);
   },
   ["botCommand"](_) {
     this.int32(-1032140601);
@@ -7927,14 +9618,126 @@ export const $encoder = {
     this.string(_.description);             // : string - string
   },
   ["botInfo"](_) {
-    this.int32(460632885);
-    this.int64(_.user_id);                  // : bigint - long
-    this.string(_.description);             // : string - string
-    this.vector(_.commands, this.object);   // : BotCommand[] - Vector<BotCommand>
+    this.int32(-1892676777);
+    this.int32(
+      (+(_.user_id != null) << 0)
+      | (+(_.description != null) << 1)
+      | (+(_.description_photo != null) << 4)
+      | (+(_.description_document != null) << 5)
+      | (+(_.commands != null && _.commands.length > 0) << 2)
+      | (+(_.menu_button != null) << 3)
+    )
+    if (_.user_id != null)
+      this.int64(_.user_id);                // ?: bigint - flags.0?long
+    if (_.description != null)
+      this.string(_.description);           // ?: string - flags.1?string
+    if (_.description_photo != null)
+      this.object(_.description_photo);     // ?: Photo - flags.4?Photo
+    if (_.description_document != null)
+      this.object(_.description_document);  // ?: Document - flags.5?Document
+    if (_.commands != null && _.commands.length > 0)
+      this.vector(_.commands, this.object); // ?: BotCommand[] - flags.2?Vector<BotCommand>
+    if (_.menu_button != null)
+      this.object(_.menu_button);           // ?: BotMenuButton - flags.3?BotMenuButton
   },
   ["keyboardButton"](_) {
     this.int32(-1560655744);
     this.string(_.text);                    // : string - string
+  },
+  ["keyboardButtonUrl"](_) {
+    this.int32(629866245);
+    this.string(_.text);                    // : string - string
+    this.string(_.url);                     // : string - string
+  },
+  ["keyboardButtonCallback"](_) {
+    this.int32(901503851);
+    this.int32(
+      (+(_.requires_password != null) << 0)
+    )
+    if (_.requires_password != null)
+      this.true(_.requires_password);       // ?: true - flags.0?true
+    this.string(_.text);                    // : string - string
+    this.bytes(_.data);                     // : BufferSource - bytes
+  },
+  ["keyboardButtonRequestPhone"](_) {
+    this.int32(-1318425559);
+    this.string(_.text);                    // : string - string
+  },
+  ["keyboardButtonRequestGeoLocation"](_) {
+    this.int32(-59151553);
+    this.string(_.text);                    // : string - string
+  },
+  ["keyboardButtonSwitchInline"](_) {
+    this.int32(90744648);
+    this.int32(
+      (+(_.same_peer != null) << 0)
+    )
+    if (_.same_peer != null)
+      this.true(_.same_peer);               // ?: true - flags.0?true
+    this.string(_.text);                    // : string - string
+    this.string(_.query);                   // : string - string
+  },
+  ["keyboardButtonGame"](_) {
+    this.int32(1358175439);
+    this.string(_.text);                    // : string - string
+  },
+  ["keyboardButtonBuy"](_) {
+    this.int32(-1344716869);
+    this.string(_.text);                    // : string - string
+  },
+  ["keyboardButtonUrlAuth"](_) {
+    this.int32(280464681);
+    this.int32(
+      (+(_.fwd_text != null) << 0)
+    )
+    this.string(_.text);                    // : string - string
+    if (_.fwd_text != null)
+      this.string(_.fwd_text);              // ?: string - flags.0?string
+    this.string(_.url);                     // : string - string
+    this.int32(_.button_id);                // : number - int
+  },
+  ["inputKeyboardButtonUrlAuth"](_) {
+    this.int32(-802258988);
+    this.int32(
+      (+(_.request_write_access != null) << 0)
+      | (+(_.fwd_text != null) << 1)
+    )
+    if (_.request_write_access != null)
+      this.true(_.request_write_access);    // ?: true - flags.0?true
+    this.string(_.text);                    // : string - string
+    if (_.fwd_text != null)
+      this.string(_.fwd_text);              // ?: string - flags.1?string
+    this.string(_.url);                     // : string - string
+    this.object(_.bot);                     // : InputUser - InputUser
+  },
+  ["keyboardButtonRequestPoll"](_) {
+    this.int32(-1144565411);
+    this.int32(
+      (+(_.quiz != null) << 0)
+    )
+    if (_.quiz != null)
+      this.bool(_.quiz);                    // ?: boolean - flags.0?Bool
+    this.string(_.text);                    // : string - string
+  },
+  ["inputKeyboardButtonUserProfile"](_) {
+    this.int32(-376962181);
+    this.string(_.text);                    // : string - string
+    this.object(_.user_id);                 // : InputUser - InputUser
+  },
+  ["keyboardButtonUserProfile"](_) {
+    this.int32(814112961);
+    this.string(_.text);                    // : string - string
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["keyboardButtonWebView"](_) {
+    this.int32(326529584);
+    this.string(_.text);                    // : string - string
+    this.string(_.url);                     // : string - string
+  },
+  ["keyboardButtonSimpleWebView"](_) {
+    this.int32(-1598009252);
+    this.string(_.text);                    // : string - string
+    this.string(_.url);                     // : string - string
   },
   ["keyboardButtonRow"](_) {
     this.int32(2002815875);
@@ -7980,15 +9783,9 @@ export const $encoder = {
     if (_.placeholder != null)
       this.string(_.placeholder);           // ?: string - flags.3?string
   },
-  ["inputPeerUser"](_) {
-    this.int32(-571955892);
-    this.int64(_.user_id);                  // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-  },
-  ["inputUser"](_) {
-    this.int32(-233744186);
-    this.int64(_.user_id);                  // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
+  ["replyInlineMarkup"](_) {
+    this.int32(1218642516);
+    this.vector(_.rows, this.object);       // : KeyboardButtonRow[] - Vector<KeyboardButtonRow>
   },
   ["messageEntityUnknown"](_) {
     this.int32(-1148011883);
@@ -8047,26 +9844,52 @@ export const $encoder = {
     this.int32(_.length);                   // : number - int
     this.string(_.url);                     // : string - string
   },
-  ["updateShortSentMessage"](_) {
-    this.int32(-1877614335);
-    this.int32(
-      (+(_.out != null) << 1)
-      | (+(_.media != null) << 9)
-      | (+(_.entities != null && _.entities.length > 0) << 7)
-      | (+(_.ttl_period != null) << 25)
-    )
-    if (_.out != null)
-      this.true(_.out);                     // ?: true - flags.1?true
-    this.int32(_.id);                       // : number - int
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-    this.int32(_.date);                     // : number - int
-    if (_.media != null)
-      this.object(_.media);                 // ?: MessageMedia - flags.9?MessageMedia
-    if (_.entities != null && _.entities.length > 0)
-      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.7?Vector<MessageEntity>
-    if (_.ttl_period != null)
-      this.int32(_.ttl_period);             // ?: number - flags.25?int
+  ["messageEntityMentionName"](_) {
+    this.int32(-595914432);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["inputMessageEntityMentionName"](_) {
+    this.int32(546203849);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+    this.object(_.user_id);                 // : InputUser - InputUser
+  },
+  ["messageEntityPhone"](_) {
+    this.int32(-1687559349);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityCashtag"](_) {
+    this.int32(1280209983);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityUnderline"](_) {
+    this.int32(-1672577397);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityStrike"](_) {
+    this.int32(-1090087980);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityBlockquote"](_) {
+    this.int32(34469328);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityBankCard"](_) {
+    this.int32(1981704948);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+  },
+  ["messageEntitySpoiler"](_) {
+    this.int32(852137487);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
   },
   ["inputChannelEmpty"](_) {
     this.int32(-292807034);
@@ -8076,118 +9899,11 @@ export const $encoder = {
     this.int64(_.channel_id);               // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
   },
-  ["peerChannel"](_) {
-    this.int32(-1566230754);
+  ["inputChannelFromMessage"](_) {
+    this.int32(1536380829);
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int32(_.msg_id);                   // : number - int
     this.int64(_.channel_id);               // : bigint - long
-  },
-  ["inputPeerChannel"](_) {
-    this.int32(666680316);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-  },
-  ["channel"](_) {
-    this.int32(-2107528095);
-    this.int32(
-      (+(_.creator != null) << 0)
-      | (+(_.left != null) << 2)
-      | (+(_.broadcast != null) << 5)
-      | (+(_.verified != null) << 7)
-      | (+(_.megagroup != null) << 8)
-      | (+(_.restricted != null) << 9)
-      | (+(_.signatures != null) << 11)
-      | (+(_.min != null) << 12)
-      | (+(_.scam != null) << 19)
-      | (+(_.has_link != null) << 20)
-      | (+(_.has_geo != null) << 21)
-      | (+(_.slowmode_enabled != null) << 22)
-      | (+(_.call_active != null) << 23)
-      | (+(_.call_not_empty != null) << 24)
-      | (+(_.fake != null) << 25)
-      | (+(_.gigagroup != null) << 26)
-      | (+(_.noforwards != null) << 27)
-      | (+(_.join_to_send != null) << 28)
-      | (+(_.join_request != null) << 29)
-      | (+(_.access_hash != null) << 13)
-      | (+(_.username != null) << 6)
-      | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 9)
-      | (+(_.admin_rights != null) << 14)
-      | (+(_.banned_rights != null) << 15)
-      | (+(_.default_banned_rights != null) << 18)
-      | (+(_.participants_count != null) << 17)
-    )
-    if (_.creator != null)
-      this.true(_.creator);                 // ?: true - flags.0?true
-    if (_.left != null)
-      this.true(_.left);                    // ?: true - flags.2?true
-    if (_.broadcast != null)
-      this.true(_.broadcast);               // ?: true - flags.5?true
-    if (_.verified != null)
-      this.true(_.verified);                // ?: true - flags.7?true
-    if (_.megagroup != null)
-      this.true(_.megagroup);               // ?: true - flags.8?true
-    if (_.restricted != null)
-      this.true(_.restricted);              // ?: true - flags.9?true
-    if (_.signatures != null)
-      this.true(_.signatures);              // ?: true - flags.11?true
-    if (_.min != null)
-      this.true(_.min);                     // ?: true - flags.12?true
-    if (_.scam != null)
-      this.true(_.scam);                    // ?: true - flags.19?true
-    if (_.has_link != null)
-      this.true(_.has_link);                // ?: true - flags.20?true
-    if (_.has_geo != null)
-      this.true(_.has_geo);                 // ?: true - flags.21?true
-    if (_.slowmode_enabled != null)
-      this.true(_.slowmode_enabled);        // ?: true - flags.22?true
-    if (_.call_active != null)
-      this.true(_.call_active);             // ?: true - flags.23?true
-    if (_.call_not_empty != null)
-      this.true(_.call_not_empty);          // ?: true - flags.24?true
-    if (_.fake != null)
-      this.true(_.fake);                    // ?: true - flags.25?true
-    if (_.gigagroup != null)
-      this.true(_.gigagroup);               // ?: true - flags.26?true
-    if (_.noforwards != null)
-      this.true(_.noforwards);              // ?: true - flags.27?true
-    if (_.join_to_send != null)
-      this.true(_.join_to_send);            // ?: true - flags.28?true
-    if (_.join_request != null)
-      this.true(_.join_request);            // ?: true - flags.29?true
-    this.int64(_.id);                       // : bigint - long
-    if (_.access_hash != null)
-      this.int64(_.access_hash);            // ?: bigint - flags.13?long
-    this.string(_.title);                   // : string - string
-    if (_.username != null)
-      this.string(_.username);              // ?: string - flags.6?string
-    this.object(_.photo);                   // : ChatPhoto - ChatPhoto
-    this.int32(_.date);                     // : number - int
-    if (_.restriction_reason != null && _.restriction_reason.length > 0)
-      this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.9?Vector<RestrictionReason>
-    if (_.admin_rights != null)
-      this.object(_.admin_rights);          // ?: ChatAdminRights - flags.14?ChatAdminRights
-    if (_.banned_rights != null)
-      this.object(_.banned_rights);         // ?: ChatBannedRights - flags.15?ChatBannedRights
-    if (_.default_banned_rights != null)
-      this.object(_.default_banned_rights); // ?: ChatBannedRights - flags.18?ChatBannedRights
-    if (_.participants_count != null)
-      this.int32(_.participants_count);     // ?: number - flags.17?int
-  },
-  ["channelForbidden"](_) {
-    this.int32(399807445);
-    this.int32(
-      (+(_.broadcast != null) << 5)
-      | (+(_.megagroup != null) << 8)
-      | (+(_.until_date != null) << 16)
-    )
-    if (_.broadcast != null)
-      this.true(_.broadcast);               // ?: true - flags.5?true
-    if (_.megagroup != null)
-      this.true(_.megagroup);               // ?: true - flags.8?true
-    this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-    this.string(_.title);                   // : string - string
-    if (_.until_date != null)
-      this.int32(_.until_date);             // ?: number - flags.16?int
   },
   ["contacts.resolvedPeer"](_) {
     this.int32(2131196633);
@@ -8195,190 +9911,10 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["channelFull"](_) {
-    this.int32(-516145888);
-    this.int32(
-      (+(_.can_view_participants != null) << 3)
-      | (+(_.can_set_username != null) << 6)
-      | (+(_.can_set_stickers != null) << 7)
-      | (+(_.hidden_prehistory != null) << 10)
-      | (+(_.can_set_location != null) << 16)
-      | (+(_.has_scheduled != null) << 19)
-      | (+(_.can_view_stats != null) << 20)
-      | (+(_.blocked != null) << 22)
-      | (+(_.participants_count != null) << 0)
-      | (+(_.admins_count != null) << 1)
-      | (+(_.kicked_count != null) << 2)
-      | (+(_.banned_count != null) << 2)
-      | (+(_.online_count != null) << 13)
-      | (+(_.exported_invite != null) << 23)
-      | (+(_.migrated_from_chat_id != null) << 4)
-      | (+(_.migrated_from_max_id != null) << 4)
-      | (+(_.pinned_msg_id != null) << 5)
-      | (+(_.stickerset != null) << 8)
-      | (+(_.available_min_id != null) << 9)
-      | (+(_.folder_id != null) << 11)
-      | (+(_.linked_chat_id != null) << 14)
-      | (+(_.location != null) << 15)
-      | (+(_.slowmode_seconds != null) << 17)
-      | (+(_.slowmode_next_send_date != null) << 18)
-      | (+(_.stats_dc != null) << 12)
-      | (+(_.call != null) << 21)
-      | (+(_.ttl_period != null) << 24)
-      | (+(_.pending_suggestions != null && _.pending_suggestions.length > 0) << 25)
-      | (+(_.groupcall_default_join_as != null) << 26)
-      | (+(_.theme_emoticon != null) << 27)
-      | (+(_.requests_pending != null) << 28)
-      | (+(_.recent_requesters != null && _.recent_requesters.length > 0) << 28)
-      | (+(_.default_send_as != null) << 29)
-      | (+(_.available_reactions != null && _.available_reactions.length > 0) << 30)
-    )
-    if (_.can_view_participants != null)
-      this.true(_.can_view_participants);   // ?: true - flags.3?true
-    if (_.can_set_username != null)
-      this.true(_.can_set_username);        // ?: true - flags.6?true
-    if (_.can_set_stickers != null)
-      this.true(_.can_set_stickers);        // ?: true - flags.7?true
-    if (_.hidden_prehistory != null)
-      this.true(_.hidden_prehistory);       // ?: true - flags.10?true
-    if (_.can_set_location != null)
-      this.true(_.can_set_location);        // ?: true - flags.16?true
-    if (_.has_scheduled != null)
-      this.true(_.has_scheduled);           // ?: true - flags.19?true
-    if (_.can_view_stats != null)
-      this.true(_.can_view_stats);          // ?: true - flags.20?true
-    if (_.blocked != null)
-      this.true(_.blocked);                 // ?: true - flags.22?true
-    this.int64(_.id);                       // : bigint - long
-    this.string(_.about);                   // : string - string
-    if (_.participants_count != null)
-      this.int32(_.participants_count);     // ?: number - flags.0?int
-    if (_.admins_count != null)
-      this.int32(_.admins_count);           // ?: number - flags.1?int
-    if (_.kicked_count != null)
-      this.int32(_.kicked_count);           // ?: number - flags.2?int
-    if (_.banned_count != null)
-      this.int32(_.banned_count);           // ?: number - flags.2?int
-    if (_.online_count != null)
-      this.int32(_.online_count);           // ?: number - flags.13?int
-    this.int32(_.read_inbox_max_id);        // : number - int
-    this.int32(_.read_outbox_max_id);       // : number - int
-    this.int32(_.unread_count);             // : number - int
-    this.object(_.chat_photo);              // : Photo - Photo
-    this.object(_.notify_settings);         // : PeerNotifySettings - PeerNotifySettings
-    if (_.exported_invite != null)
-      this.object(_.exported_invite);       // ?: ExportedChatInvite - flags.23?ExportedChatInvite
-    this.vector(_.bot_info, this.object);   // : BotInfo[] - Vector<BotInfo>
-    if (_.migrated_from_chat_id != null)
-      this.int64(_.migrated_from_chat_id);  // ?: bigint - flags.4?long
-    if (_.migrated_from_max_id != null)
-      this.int32(_.migrated_from_max_id);   // ?: number - flags.4?int
-    if (_.pinned_msg_id != null)
-      this.int32(_.pinned_msg_id);          // ?: number - flags.5?int
-    if (_.stickerset != null)
-      this.object(_.stickerset);            // ?: StickerSet - flags.8?StickerSet
-    if (_.available_min_id != null)
-      this.int32(_.available_min_id);       // ?: number - flags.9?int
-    if (_.folder_id != null)
-      this.int32(_.folder_id);              // ?: number - flags.11?int
-    if (_.linked_chat_id != null)
-      this.int64(_.linked_chat_id);         // ?: bigint - flags.14?long
-    if (_.location != null)
-      this.object(_.location);              // ?: ChannelLocation - flags.15?ChannelLocation
-    if (_.slowmode_seconds != null)
-      this.int32(_.slowmode_seconds);       // ?: number - flags.17?int
-    if (_.slowmode_next_send_date != null)
-      this.int32(_.slowmode_next_send_date); // ?: number - flags.18?int
-    if (_.stats_dc != null)
-      this.int32(_.stats_dc);               // ?: number - flags.12?int
-    this.int32(_.pts);                      // : number - int
-    if (_.call != null)
-      this.object(_.call);                  // ?: InputGroupCall - flags.21?InputGroupCall
-    if (_.ttl_period != null)
-      this.int32(_.ttl_period);             // ?: number - flags.24?int
-    if (_.pending_suggestions != null && _.pending_suggestions.length > 0)
-      this.vector(_.pending_suggestions, this.string); // ?: string[] - flags.25?Vector<string>
-    if (_.groupcall_default_join_as != null)
-      this.object(_.groupcall_default_join_as); // ?: Peer - flags.26?Peer
-    if (_.theme_emoticon != null)
-      this.string(_.theme_emoticon);        // ?: string - flags.27?string
-    if (_.requests_pending != null)
-      this.int32(_.requests_pending);       // ?: number - flags.28?int
-    if (_.recent_requesters != null && _.recent_requesters.length > 0)
-      this.vector(_.recent_requesters, this.int64); // ?: bigint[] - flags.28?Vector<long>
-    if (_.default_send_as != null)
-      this.object(_.default_send_as);       // ?: Peer - flags.29?Peer
-    if (_.available_reactions != null && _.available_reactions.length > 0)
-      this.vector(_.available_reactions, this.string); // ?: string[] - flags.30?Vector<string>
-  },
   ["messageRange"](_) {
     this.int32(182649427);
     this.int32(_.min_id);                   // : number - int
     this.int32(_.max_id);                   // : number - int
-  },
-  ["messages.channelMessages"](_) {
-    this.int32(1682413576);
-    this.int32(
-      (+(_.inexact != null) << 1)
-      | (+(_.offset_id_offset != null) << 2)
-    )
-    if (_.inexact != null)
-      this.true(_.inexact);                 // ?: true - flags.1?true
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.count);                    // : number - int
-    if (_.offset_id_offset != null)
-      this.int32(_.offset_id_offset);       // ?: number - flags.2?int
-    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
-    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
-    this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["messageActionChannelCreate"](_) {
-    this.int32(-1781355374);
-    this.string(_.title);                   // : string - string
-  },
-  ["updateChannelTooLong"](_) {
-    this.int32(277713951);
-    this.int32(
-      (+(_.pts != null) << 0)
-    )
-    this.int64(_.channel_id);               // : bigint - long
-    if (_.pts != null)
-      this.int32(_.pts);                    // ?: number - flags.0?int
-  },
-  ["updateChannel"](_) {
-    this.int32(1666927625);
-    this.int64(_.channel_id);               // : bigint - long
-  },
-  ["updateNewChannelMessage"](_) {
-    this.int32(1656358105);
-    this.object(_.message);                 // : Message - Message
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["updateReadChannelInbox"](_) {
-    this.int32(-1842450928);
-    this.int32(
-      (+(_.folder_id != null) << 0)
-    )
-    if (_.folder_id != null)
-      this.int32(_.folder_id);              // ?: number - flags.0?int
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.max_id);                   // : number - int
-    this.int32(_.still_unread_count);       // : number - int
-    this.int32(_.pts);                      // : number - int
-  },
-  ["updateDeleteChannelMessages"](_) {
-    this.int32(-1020437742);
-    this.int64(_.channel_id);               // : bigint - long
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["updateChannelMessageViews"](_) {
-    this.int32(-232346616);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.id);                       // : number - int
-    this.int32(_.views);                    // : number - int
   },
   ["updates.channelDifferenceEmpty"](_) {
     this.int32(1041346555);
@@ -8461,6 +9997,43 @@ export const $encoder = {
     if (_.rank != null)
       this.string(_.rank);                  // ?: string - flags.0?string
   },
+  ["channelParticipantAdmin"](_) {
+    this.int32(885242707);
+    this.int32(
+      (+(_.can_edit != null) << 0)
+      | (+(_.self != null) << 1)
+      | (+(_.inviter_id != null) << 1)
+      | (+(_.rank != null) << 2)
+    )
+    if (_.can_edit != null)
+      this.true(_.can_edit);                // ?: true - flags.0?true
+    if (_.self != null)
+      this.true(_.self);                    // ?: true - flags.1?true
+    this.int64(_.user_id);                  // : bigint - long
+    if (_.inviter_id != null)
+      this.int64(_.inviter_id);             // ?: bigint - flags.1?long
+    this.int64(_.promoted_by);              // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.object(_.admin_rights);            // : ChatAdminRights - ChatAdminRights
+    if (_.rank != null)
+      this.string(_.rank);                  // ?: string - flags.2?string
+  },
+  ["channelParticipantBanned"](_) {
+    this.int32(1844969806);
+    this.int32(
+      (+(_.left != null) << 0)
+    )
+    if (_.left != null)
+      this.true(_.left);                    // ?: true - flags.0?true
+    this.object(_.peer);                    // : Peer - Peer
+    this.int64(_.kicked_by);                // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.object(_.banned_rights);           // : ChatBannedRights - ChatBannedRights
+  },
+  ["channelParticipantLeft"](_) {
+    this.int32(453242886);
+    this.object(_.peer);                    // : Peer - Peer
+  },
   ["channelParticipantsRecent"](_) {
     this.int32(-566281095);
   },
@@ -8471,6 +10044,32 @@ export const $encoder = {
     this.int32(-1548400251);
     this.string(_.q);                       // : string - string
   },
+  ["channelParticipantsBots"](_) {
+    this.int32(-1328445861);
+  },
+  ["channelParticipantsBanned"](_) {
+    this.int32(338142689);
+    this.string(_.q);                       // : string - string
+  },
+  ["channelParticipantsSearch"](_) {
+    this.int32(106343499);
+    this.string(_.q);                       // : string - string
+  },
+  ["channelParticipantsContacts"](_) {
+    this.int32(-1150621555);
+    this.string(_.q);                       // : string - string
+  },
+  ["channelParticipantsMentions"](_) {
+    this.int32(-531931925);
+    this.int32(
+      (+(_.q != null) << 0)
+      | (+(_.top_msg_id != null) << 1)
+    )
+    if (_.q != null)
+      this.string(_.q);                     // ?: string - flags.0?string
+    if (_.top_msg_id != null)
+      this.int32(_.top_msg_id);             // ?: number - flags.1?int
+  },
   ["channels.channelParticipants"](_) {
     this.int32(-1699676497);
     this.int32(_.count);                    // : number - int
@@ -8478,40 +10077,14 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
+  ["channels.channelParticipantsNotModified"](_) {
+    this.int32(-266911767);
+  },
   ["channels.channelParticipant"](_) {
     this.int32(-541588713);
     this.object(_.participant);             // : ChannelParticipant - ChannelParticipant
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["chatParticipantCreator"](_) {
-    this.int32(-462696732);
-    this.int64(_.user_id);                  // : bigint - long
-  },
-  ["chatParticipantAdmin"](_) {
-    this.int32(-1600962725);
-    this.int64(_.user_id);                  // : bigint - long
-    this.int64(_.inviter_id);               // : bigint - long
-    this.int32(_.date);                     // : number - int
-  },
-  ["updateChatParticipantAdmin"](_) {
-    this.int32(-674602590);
-    this.int64(_.chat_id);                  // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.bool(_.is_admin);                  // : boolean - Bool
-    this.int32(_.version);                  // : number - int
-  },
-  ["messageActionChatMigrateTo"](_) {
-    this.int32(-519864430);
-    this.int64(_.channel_id);               // : bigint - long
-  },
-  ["messageActionChannelMigrateFrom"](_) {
-    this.int32(-365344535);
-    this.string(_.title);                   // : string - string
-    this.int64(_.chat_id);                  // : bigint - long
-  },
-  ["channelParticipantsBots"](_) {
-    this.int32(-1328445861);
   },
   ["help.termsOfService"](_) {
     this.int32(2013922064);
@@ -8527,22 +10100,6 @@ export const $encoder = {
     if (_.min_age_confirm != null)
       this.int32(_.min_age_confirm);        // ?: number - flags.1?int
   },
-  ["updateNewStickerSet"](_) {
-    this.int32(1753886890);
-    this.object(_.stickerset);              // : messages.StickerSet - messages.StickerSet
-  },
-  ["updateStickerSetsOrder"](_) {
-    this.int32(196268545);
-    this.int32(
-      (+(_.masks != null) << 0)
-    )
-    if (_.masks != null)
-      this.true(_.masks);                   // ?: true - flags.0?true
-    this.vector(_.order, this.int64);       // : bigint[] - Vector<long>
-  },
-  ["updateStickerSets"](_) {
-    this.int32(1135492588);
-  },
   ["messages.savedGifsNotModified"](_) {
     this.int32(-402498398);
   },
@@ -8550,9 +10107,6 @@ export const $encoder = {
     this.int32(-2069878259);
     this.int64(_.hash);                     // : bigint - long
     this.vector(_.gifs, this.object);       // : Document[] - Vector<Document>
-  },
-  ["updateSavedGifs"](_) {
-    this.int32(-1821035490);
   },
   ["inputBotInlineMessageMediaAuto"](_) {
     this.int32(864077702);
@@ -8580,295 +10134,6 @@ export const $encoder = {
       this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
     if (_.reply_markup != null)
       this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["inputBotInlineResult"](_) {
-    this.int32(-2000710887);
-    this.int32(
-      (+(_.title != null) << 1)
-      | (+(_.description != null) << 2)
-      | (+(_.url != null) << 3)
-      | (+(_.thumb != null) << 4)
-      | (+(_.content != null) << 5)
-    )
-    this.string(_.id);                      // : string - string
-    this.string(_.type);                    // : string - string
-    if (_.title != null)
-      this.string(_.title);                 // ?: string - flags.1?string
-    if (_.description != null)
-      this.string(_.description);           // ?: string - flags.2?string
-    if (_.url != null)
-      this.string(_.url);                   // ?: string - flags.3?string
-    if (_.thumb != null)
-      this.object(_.thumb);                 // ?: InputWebDocument - flags.4?InputWebDocument
-    if (_.content != null)
-      this.object(_.content);               // ?: InputWebDocument - flags.5?InputWebDocument
-    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
-  },
-  ["botInlineMessageMediaAuto"](_) {
-    this.int32(1984755728);
-    this.int32(
-      (+(_.entities != null && _.entities.length > 0) << 1)
-      | (+(_.reply_markup != null) << 2)
-    )
-    this.string(_.message);                 // : string - string
-    if (_.entities != null && _.entities.length > 0)
-      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (_.reply_markup != null)
-      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["botInlineMessageText"](_) {
-    this.int32(-1937807902);
-    this.int32(
-      (+(_.no_webpage != null) << 0)
-      | (+(_.entities != null && _.entities.length > 0) << 1)
-      | (+(_.reply_markup != null) << 2)
-    )
-    if (_.no_webpage != null)
-      this.true(_.no_webpage);              // ?: true - flags.0?true
-    this.string(_.message);                 // : string - string
-    if (_.entities != null && _.entities.length > 0)
-      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (_.reply_markup != null)
-      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["botInlineResult"](_) {
-    this.int32(295067450);
-    this.int32(
-      (+(_.title != null) << 1)
-      | (+(_.description != null) << 2)
-      | (+(_.url != null) << 3)
-      | (+(_.thumb != null) << 4)
-      | (+(_.content != null) << 5)
-    )
-    this.string(_.id);                      // : string - string
-    this.string(_.type);                    // : string - string
-    if (_.title != null)
-      this.string(_.title);                 // ?: string - flags.1?string
-    if (_.description != null)
-      this.string(_.description);           // ?: string - flags.2?string
-    if (_.url != null)
-      this.string(_.url);                   // ?: string - flags.3?string
-    if (_.thumb != null)
-      this.object(_.thumb);                 // ?: WebDocument - flags.4?WebDocument
-    if (_.content != null)
-      this.object(_.content);               // ?: WebDocument - flags.5?WebDocument
-    this.object(_.send_message);            // : BotInlineMessage - BotInlineMessage
-  },
-  ["messages.botResults"](_) {
-    this.int32(-1803769784);
-    this.int32(
-      (+(_.gallery != null) << 0)
-      | (+(_.next_offset != null) << 1)
-      | (+(_.switch_pm != null) << 2)
-    )
-    if (_.gallery != null)
-      this.true(_.gallery);                 // ?: true - flags.0?true
-    this.int64(_.query_id);                 // : bigint - long
-    if (_.next_offset != null)
-      this.string(_.next_offset);           // ?: string - flags.1?string
-    if (_.switch_pm != null)
-      this.object(_.switch_pm);             // ?: InlineBotSwitchPM - flags.2?InlineBotSwitchPM
-    this.vector(_.results, this.object);    // : BotInlineResult[] - Vector<BotInlineResult>
-    this.int32(_.cache_time);               // : number - int
-    this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["updateBotInlineQuery"](_) {
-    this.int32(1232025500);
-    this.int32(
-      (+(_.geo != null) << 0)
-      | (+(_.peer_type != null) << 1)
-    )
-    this.int64(_.query_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.string(_.query);                   // : string - string
-    if (_.geo != null)
-      this.object(_.geo);                   // ?: GeoPoint - flags.0?GeoPoint
-    if (_.peer_type != null)
-      this.object(_.peer_type);             // ?: InlineQueryPeerType - flags.1?InlineQueryPeerType
-    this.string(_.offset);                  // : string - string
-  },
-  ["updateBotInlineSend"](_) {
-    this.int32(317794823);
-    this.int32(
-      (+(_.geo != null) << 0)
-      | (+(_.msg_id != null) << 1)
-    )
-    this.int64(_.user_id);                  // : bigint - long
-    this.string(_.query);                   // : string - string
-    if (_.geo != null)
-      this.object(_.geo);                   // ?: GeoPoint - flags.0?GeoPoint
-    this.string(_.id);                      // : string - string
-    if (_.msg_id != null)
-      this.object(_.msg_id);                // ?: InputBotInlineMessageID - flags.1?InputBotInlineMessageID
-  },
-  ["inputMessagesFilterVoice"](_) {
-    this.int32(1358283666);
-  },
-  ["inputMessagesFilterMusic"](_) {
-    this.int32(928101534);
-  },
-  ["inputPrivacyKeyChatInvite"](_) {
-    this.int32(-1107622874);
-  },
-  ["privacyKeyChatInvite"](_) {
-    this.int32(1343122938);
-  },
-  ["exportedMessageLink"](_) {
-    this.int32(1571494644);
-    this.string(_.link);                    // : string - string
-    this.string(_.html);                    // : string - string
-  },
-  ["messageFwdHeader"](_) {
-    this.int32(1601666510);
-    this.int32(
-      (+(_.imported != null) << 7)
-      | (+(_.from_id != null) << 0)
-      | (+(_.from_name != null) << 5)
-      | (+(_.channel_post != null) << 2)
-      | (+(_.post_author != null) << 3)
-      | (+(_.saved_from_peer != null) << 4)
-      | (+(_.saved_from_msg_id != null) << 4)
-      | (+(_.psa_type != null) << 6)
-    )
-    if (_.imported != null)
-      this.true(_.imported);                // ?: true - flags.7?true
-    if (_.from_id != null)
-      this.object(_.from_id);               // ?: Peer - flags.0?Peer
-    if (_.from_name != null)
-      this.string(_.from_name);             // ?: string - flags.5?string
-    this.int32(_.date);                     // : number - int
-    if (_.channel_post != null)
-      this.int32(_.channel_post);           // ?: number - flags.2?int
-    if (_.post_author != null)
-      this.string(_.post_author);           // ?: string - flags.3?string
-    if (_.saved_from_peer != null)
-      this.object(_.saved_from_peer);       // ?: Peer - flags.4?Peer
-    if (_.saved_from_msg_id != null)
-      this.int32(_.saved_from_msg_id);      // ?: number - flags.4?int
-    if (_.psa_type != null)
-      this.string(_.psa_type);              // ?: string - flags.6?string
-  },
-  ["updateEditChannelMessage"](_) {
-    this.int32(457133559);
-    this.object(_.message);                 // : Message - Message
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["messageActionPinMessage"](_) {
-    this.int32(-1799538451);
-  },
-  ["auth.codeTypeSms"](_) {
-    this.int32(1923290508);
-  },
-  ["auth.codeTypeCall"](_) {
-    this.int32(1948046307);
-  },
-  ["auth.codeTypeFlashCall"](_) {
-    this.int32(577556219);
-  },
-  ["auth.sentCodeTypeApp"](_) {
-    this.int32(1035688326);
-    this.int32(_.length);                   // : number - int
-  },
-  ["auth.sentCodeTypeSms"](_) {
-    this.int32(-1073693790);
-    this.int32(_.length);                   // : number - int
-  },
-  ["auth.sentCodeTypeCall"](_) {
-    this.int32(1398007207);
-    this.int32(_.length);                   // : number - int
-  },
-  ["auth.sentCodeTypeFlashCall"](_) {
-    this.int32(-1425815847);
-    this.string(_.pattern);                 // : string - string
-  },
-  ["keyboardButtonUrl"](_) {
-    this.int32(629866245);
-    this.string(_.text);                    // : string - string
-    this.string(_.url);                     // : string - string
-  },
-  ["keyboardButtonCallback"](_) {
-    this.int32(901503851);
-    this.int32(
-      (+(_.requires_password != null) << 0)
-    )
-    if (_.requires_password != null)
-      this.true(_.requires_password);       // ?: true - flags.0?true
-    this.string(_.text);                    // : string - string
-    this.bytes(_.data);                     // : BufferSource - bytes
-  },
-  ["keyboardButtonRequestPhone"](_) {
-    this.int32(-1318425559);
-    this.string(_.text);                    // : string - string
-  },
-  ["keyboardButtonRequestGeoLocation"](_) {
-    this.int32(-59151553);
-    this.string(_.text);                    // : string - string
-  },
-  ["keyboardButtonSwitchInline"](_) {
-    this.int32(90744648);
-    this.int32(
-      (+(_.same_peer != null) << 0)
-    )
-    if (_.same_peer != null)
-      this.true(_.same_peer);               // ?: true - flags.0?true
-    this.string(_.text);                    // : string - string
-    this.string(_.query);                   // : string - string
-  },
-  ["replyInlineMarkup"](_) {
-    this.int32(1218642516);
-    this.vector(_.rows, this.object);       // : KeyboardButtonRow[] - Vector<KeyboardButtonRow>
-  },
-  ["messages.botCallbackAnswer"](_) {
-    this.int32(911761060);
-    this.int32(
-      (+(_.alert != null) << 1)
-      | (+(_.has_url != null) << 3)
-      | (+(_.native_ui != null) << 4)
-      | (+(_.message != null) << 0)
-      | (+(_.url != null) << 2)
-    )
-    if (_.alert != null)
-      this.true(_.alert);                   // ?: true - flags.1?true
-    if (_.has_url != null)
-      this.true(_.has_url);                 // ?: true - flags.3?true
-    if (_.native_ui != null)
-      this.true(_.native_ui);               // ?: true - flags.4?true
-    if (_.message != null)
-      this.string(_.message);               // ?: string - flags.0?string
-    if (_.url != null)
-      this.string(_.url);                   // ?: string - flags.2?string
-    this.int32(_.cache_time);               // : number - int
-  },
-  ["updateBotCallbackQuery"](_) {
-    this.int32(-1177566067);
-    this.int32(
-      (+(_.data != null) << 0)
-      | (+(_.game_short_name != null) << 1)
-    )
-    this.int64(_.query_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.msg_id);                   // : number - int
-    this.int64(_.chat_instance);            // : bigint - long
-    if (_.data != null)
-      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
-    if (_.game_short_name != null)
-      this.string(_.game_short_name);       // ?: string - flags.1?string
-  },
-  ["messages.messageEditData"](_) {
-    this.int32(649453030);
-    this.int32(
-      (+(_.caption != null) << 0)
-    )
-    if (_.caption != null)
-      this.true(_.caption);                 // ?: true - flags.0?true
-  },
-  ["updateEditMessage"](_) {
-    this.int32(-469536605);
-    this.object(_.message);                 // : Message - Message
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
   },
   ["inputBotInlineMessageMediaGeo"](_) {
     this.int32(-1768777083);
@@ -8911,6 +10176,109 @@ export const $encoder = {
     this.string(_.first_name);              // : string - string
     this.string(_.last_name);               // : string - string
     this.string(_.vcard);                   // : string - string
+    if (_.reply_markup != null)
+      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
+  },
+  ["inputBotInlineMessageGame"](_) {
+    this.int32(1262639204);
+    this.int32(
+      (+(_.reply_markup != null) << 2)
+    )
+    if (_.reply_markup != null)
+      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
+  },
+  ["inputBotInlineMessageMediaInvoice"](_) {
+    this.int32(-672693723);
+    this.int32(
+      (+(_.photo != null) << 0)
+      | (+(_.reply_markup != null) << 2)
+    )
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
+    this.object(_.invoice);                 // : Invoice - Invoice
+    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.string(_.provider);                // : string - string
+    this.object(_.provider_data);           // : DataJSON - DataJSON
+    if (_.reply_markup != null)
+      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
+  },
+  ["inputBotInlineResult"](_) {
+    this.int32(-2000710887);
+    this.int32(
+      (+(_.title != null) << 1)
+      | (+(_.description != null) << 2)
+      | (+(_.url != null) << 3)
+      | (+(_.thumb != null) << 4)
+      | (+(_.content != null) << 5)
+    )
+    this.string(_.id);                      // : string - string
+    this.string(_.type);                    // : string - string
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.1?string
+    if (_.description != null)
+      this.string(_.description);           // ?: string - flags.2?string
+    if (_.url != null)
+      this.string(_.url);                   // ?: string - flags.3?string
+    if (_.thumb != null)
+      this.object(_.thumb);                 // ?: InputWebDocument - flags.4?InputWebDocument
+    if (_.content != null)
+      this.object(_.content);               // ?: InputWebDocument - flags.5?InputWebDocument
+    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+  },
+  ["inputBotInlineResultPhoto"](_) {
+    this.int32(-1462213465);
+    this.string(_.id);                      // : string - string
+    this.string(_.type);                    // : string - string
+    this.object(_.photo);                   // : InputPhoto - InputPhoto
+    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+  },
+  ["inputBotInlineResultDocument"](_) {
+    this.int32(-459324);
+    this.int32(
+      (+(_.title != null) << 1)
+      | (+(_.description != null) << 2)
+    )
+    this.string(_.id);                      // : string - string
+    this.string(_.type);                    // : string - string
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.1?string
+    if (_.description != null)
+      this.string(_.description);           // ?: string - flags.2?string
+    this.object(_.document);                // : InputDocument - InputDocument
+    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+  },
+  ["inputBotInlineResultGame"](_) {
+    this.int32(1336154098);
+    this.string(_.id);                      // : string - string
+    this.string(_.short_name);              // : string - string
+    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+  },
+  ["botInlineMessageMediaAuto"](_) {
+    this.int32(1984755728);
+    this.int32(
+      (+(_.entities != null && _.entities.length > 0) << 1)
+      | (+(_.reply_markup != null) << 2)
+    )
+    this.string(_.message);                 // : string - string
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (_.reply_markup != null)
+      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
+  },
+  ["botInlineMessageText"](_) {
+    this.int32(-1937807902);
+    this.int32(
+      (+(_.no_webpage != null) << 0)
+      | (+(_.entities != null && _.entities.length > 0) << 1)
+      | (+(_.reply_markup != null) << 2)
+    )
+    if (_.no_webpage != null)
+      this.true(_.no_webpage);              // ?: true - flags.0?true
+    this.string(_.message);                 // : string - string
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
     if (_.reply_markup != null)
       this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
   },
@@ -8958,18 +10326,35 @@ export const $encoder = {
     if (_.reply_markup != null)
       this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
   },
-  ["inputBotInlineResultPhoto"](_) {
-    this.int32(-1462213465);
-    this.string(_.id);                      // : string - string
-    this.string(_.type);                    // : string - string
-    this.object(_.photo);                   // : InputPhoto - InputPhoto
-    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+  ["botInlineMessageMediaInvoice"](_) {
+    this.int32(894081801);
+    this.int32(
+      (+(_.shipping_address_requested != null) << 1)
+      | (+(_.test != null) << 3)
+      | (+(_.photo != null) << 0)
+      | (+(_.reply_markup != null) << 2)
+    )
+    if (_.shipping_address_requested != null)
+      this.true(_.shipping_address_requested); // ?: true - flags.1?true
+    if (_.test != null)
+      this.true(_.test);                    // ?: true - flags.3?true
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: WebDocument - flags.0?WebDocument
+    this.string(_.currency);                // : string - string
+    this.int64(_.total_amount);             // : bigint - long
+    if (_.reply_markup != null)
+      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
   },
-  ["inputBotInlineResultDocument"](_) {
-    this.int32(-459324);
+  ["botInlineResult"](_) {
+    this.int32(295067450);
     this.int32(
       (+(_.title != null) << 1)
       | (+(_.description != null) << 2)
+      | (+(_.url != null) << 3)
+      | (+(_.thumb != null) << 4)
+      | (+(_.content != null) << 5)
     )
     this.string(_.id);                      // : string - string
     this.string(_.type);                    // : string - string
@@ -8977,8 +10362,13 @@ export const $encoder = {
       this.string(_.title);                 // ?: string - flags.1?string
     if (_.description != null)
       this.string(_.description);           // ?: string - flags.2?string
-    this.object(_.document);                // : InputDocument - InputDocument
-    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
+    if (_.url != null)
+      this.string(_.url);                   // ?: string - flags.3?string
+    if (_.thumb != null)
+      this.object(_.thumb);                 // ?: WebDocument - flags.4?WebDocument
+    if (_.content != null)
+      this.object(_.content);               // ?: WebDocument - flags.5?WebDocument
+    this.object(_.send_message);            // : BotInlineMessage - BotInlineMessage
   },
   ["botInlineMediaResult"](_) {
     this.int32(400266251);
@@ -9000,26 +10390,133 @@ export const $encoder = {
       this.string(_.description);           // ?: string - flags.3?string
     this.object(_.send_message);            // : BotInlineMessage - BotInlineMessage
   },
+  ["messages.botResults"](_) {
+    this.int32(-1803769784);
+    this.int32(
+      (+(_.gallery != null) << 0)
+      | (+(_.next_offset != null) << 1)
+      | (+(_.switch_pm != null) << 2)
+    )
+    if (_.gallery != null)
+      this.true(_.gallery);                 // ?: true - flags.0?true
+    this.int64(_.query_id);                 // : bigint - long
+    if (_.next_offset != null)
+      this.string(_.next_offset);           // ?: string - flags.1?string
+    if (_.switch_pm != null)
+      this.object(_.switch_pm);             // ?: InlineBotSwitchPM - flags.2?InlineBotSwitchPM
+    this.vector(_.results, this.object);    // : BotInlineResult[] - Vector<BotInlineResult>
+    this.int32(_.cache_time);               // : number - int
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["exportedMessageLink"](_) {
+    this.int32(1571494644);
+    this.string(_.link);                    // : string - string
+    this.string(_.html);                    // : string - string
+  },
+  ["messageFwdHeader"](_) {
+    this.int32(1601666510);
+    this.int32(
+      (+(_.imported != null) << 7)
+      | (+(_.from_id != null) << 0)
+      | (+(_.from_name != null) << 5)
+      | (+(_.channel_post != null) << 2)
+      | (+(_.post_author != null) << 3)
+      | (+(_.saved_from_peer != null) << 4)
+      | (+(_.saved_from_msg_id != null) << 4)
+      | (+(_.psa_type != null) << 6)
+    )
+    if (_.imported != null)
+      this.true(_.imported);                // ?: true - flags.7?true
+    if (_.from_id != null)
+      this.object(_.from_id);               // ?: Peer - flags.0?Peer
+    if (_.from_name != null)
+      this.string(_.from_name);             // ?: string - flags.5?string
+    this.int32(_.date);                     // : number - int
+    if (_.channel_post != null)
+      this.int32(_.channel_post);           // ?: number - flags.2?int
+    if (_.post_author != null)
+      this.string(_.post_author);           // ?: string - flags.3?string
+    if (_.saved_from_peer != null)
+      this.object(_.saved_from_peer);       // ?: Peer - flags.4?Peer
+    if (_.saved_from_msg_id != null)
+      this.int32(_.saved_from_msg_id);      // ?: number - flags.4?int
+    if (_.psa_type != null)
+      this.string(_.psa_type);              // ?: string - flags.6?string
+  },
+  ["auth.codeTypeSms"](_) {
+    this.int32(1923290508);
+  },
+  ["auth.codeTypeCall"](_) {
+    this.int32(1948046307);
+  },
+  ["auth.codeTypeFlashCall"](_) {
+    this.int32(577556219);
+  },
+  ["auth.codeTypeMissedCall"](_) {
+    this.int32(-702884114);
+  },
+  ["auth.sentCodeTypeApp"](_) {
+    this.int32(1035688326);
+    this.int32(_.length);                   // : number - int
+  },
+  ["auth.sentCodeTypeSms"](_) {
+    this.int32(-1073693790);
+    this.int32(_.length);                   // : number - int
+  },
+  ["auth.sentCodeTypeCall"](_) {
+    this.int32(1398007207);
+    this.int32(_.length);                   // : number - int
+  },
+  ["auth.sentCodeTypeFlashCall"](_) {
+    this.int32(-1425815847);
+    this.string(_.pattern);                 // : string - string
+  },
+  ["auth.sentCodeTypeMissedCall"](_) {
+    this.int32(-2113903484);
+    this.string(_.prefix);                  // : string - string
+    this.int32(_.length);                   // : number - int
+  },
+  ["messages.botCallbackAnswer"](_) {
+    this.int32(911761060);
+    this.int32(
+      (+(_.alert != null) << 1)
+      | (+(_.has_url != null) << 3)
+      | (+(_.native_ui != null) << 4)
+      | (+(_.message != null) << 0)
+      | (+(_.url != null) << 2)
+    )
+    if (_.alert != null)
+      this.true(_.alert);                   // ?: true - flags.1?true
+    if (_.has_url != null)
+      this.true(_.has_url);                 // ?: true - flags.3?true
+    if (_.native_ui != null)
+      this.true(_.native_ui);               // ?: true - flags.4?true
+    if (_.message != null)
+      this.string(_.message);               // ?: string - flags.0?string
+    if (_.url != null)
+      this.string(_.url);                   // ?: string - flags.2?string
+    this.int32(_.cache_time);               // : number - int
+  },
+  ["messages.messageEditData"](_) {
+    this.int32(649453030);
+    this.int32(
+      (+(_.caption != null) << 0)
+    )
+    if (_.caption != null)
+      this.true(_.caption);                 // ?: true - flags.0?true
+  },
   ["inputBotInlineMessageID"](_) {
     this.int32(-1995686519);
     this.int32(_.dc_id);                    // : number - int
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
   },
-  ["updateInlineBotCallbackQuery"](_) {
-    this.int32(1763610706);
-    this.int32(
-      (+(_.data != null) << 0)
-      | (+(_.game_short_name != null) << 1)
-    )
-    this.int64(_.query_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.object(_.msg_id);                  // : InputBotInlineMessageID - InputBotInlineMessageID
-    this.int64(_.chat_instance);            // : bigint - long
-    if (_.data != null)
-      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
-    if (_.game_short_name != null)
-      this.string(_.game_short_name);       // ?: string - flags.1?string
+  ["inputBotInlineMessageID64"](_) {
+    this.int32(-1227287081);
+    this.int32(_.dc_id);                    // : number - int
+    this.int64(_.owner_id);                 // : bigint - long
+    this.int32(_.id);                       // : number - int
+    this.int64(_.access_hash);              // : bigint - long
   },
   ["inlineBotSwitchPM"](_) {
     this.int32(1008755359);
@@ -9054,6 +10551,15 @@ export const $encoder = {
   ["topPeerCategoryChannels"](_) {
     this.int32(371037736);
   },
+  ["topPeerCategoryPhoneCalls"](_) {
+    this.int32(511092620);
+  },
+  ["topPeerCategoryForwardUsers"](_) {
+    this.int32(-1472172887);
+  },
+  ["topPeerCategoryForwardChats"](_) {
+    this.int32(-68239120);
+  },
   ["topPeerCategoryPeers"](_) {
     this.int32(-75283823);
     this.object(_.category);                // : TopPeerCategory - TopPeerCategory
@@ -9069,30 +10575,8 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["messageEntityMentionName"](_) {
-    this.int32(-595914432);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-    this.int64(_.user_id);                  // : bigint - long
-  },
-  ["inputMessageEntityMentionName"](_) {
-    this.int32(546203849);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-    this.object(_.user_id);                 // : InputUser - InputUser
-  },
-  ["inputMessagesFilterChatPhotos"](_) {
-    this.int32(975236280);
-  },
-  ["updateReadChannelOutbox"](_) {
-    this.int32(-1218471511);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.max_id);                   // : number - int
-  },
-  ["updateDraftMessage"](_) {
-    this.int32(-299124375);
-    this.object(_.peer);                    // : Peer - Peer
-    this.object(_.draft);                   // : DraftMessage - DraftMessage
+  ["contacts.topPeersDisabled"](_) {
+    this.int32(-1255369827);
   },
   ["draftMessageEmpty"](_) {
     this.int32(453805082);
@@ -9118,9 +10602,6 @@ export const $encoder = {
       this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
     this.int32(_.date);                     // : number - int
   },
-  ["messageActionHistoryClear"](_) {
-    this.int32(-1615153660);
-  },
   ["messages.featuredStickersNotModified"](_) {
     this.int32(-958657434);
     this.int32(_.count);                    // : number - int
@@ -9132,9 +10613,6 @@ export const $encoder = {
     this.vector(_.sets, this.object);       // : StickerSetCovered[] - Vector<StickerSetCovered>
     this.vector(_.unread, this.int64);      // : bigint[] - Vector<long>
   },
-  ["updateReadFeaturedStickers"](_) {
-    this.int32(1461528386);
-  },
   ["messages.recentStickersNotModified"](_) {
     this.int32(186120336);
   },
@@ -9144,9 +10622,6 @@ export const $encoder = {
     this.vector(_.packs, this.object);      // : StickerPack[] - Vector<StickerPack>
     this.vector(_.stickers, this.object);   // : Document[] - Vector<Document>
     this.vector(_.dates, this.int32);       // : number[] - Vector<int>
-  },
-  ["updateRecentStickers"](_) {
-    this.int32(-1706939360);
   },
   ["messages.archivedStickers"](_) {
     this.int32(1338747336);
@@ -9165,30 +10640,6 @@ export const $encoder = {
     this.object(_.set);                     // : StickerSet - StickerSet
     this.object(_.cover);                   // : Document - Document
   },
-  ["updateConfig"](_) {
-    this.int32(-1574314746);
-  },
-  ["updatePtsChanged"](_) {
-    this.int32(861169551);
-  },
-  ["inputMediaPhotoExternal"](_) {
-    this.int32(-440664550);
-    this.int32(
-      (+(_.ttl_seconds != null) << 0)
-    )
-    this.string(_.url);                     // : string - string
-    if (_.ttl_seconds != null)
-      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
-  },
-  ["inputMediaDocumentExternal"](_) {
-    this.int32(-78455655);
-    this.int32(
-      (+(_.ttl_seconds != null) << 0)
-    )
-    this.string(_.url);                     // : string - string
-    if (_.ttl_seconds != null)
-      this.int32(_.ttl_seconds);            // ?: number - flags.0?int
-  },
   ["stickerSetMultiCovered"](_) {
     this.int32(872932635);
     this.object(_.set);                     // : StickerSet - StickerSet
@@ -9200,9 +10651,6 @@ export const $encoder = {
     this.double(_.x);                       // : number - double
     this.double(_.y);                       // : number - double
     this.double(_.zoom);                    // : number - double
-  },
-  ["documentAttributeHasStickers"](_) {
-    this.int32(-1744710921);
   },
   ["inputStickeredMediaPhoto"](_) {
     this.int32(1251549527);
@@ -9226,28 +10674,6 @@ export const $encoder = {
     if (_.document != null)
       this.object(_.document);              // ?: Document - flags.0?Document
   },
-  ["inputBotInlineResultGame"](_) {
-    this.int32(1336154098);
-    this.string(_.id);                      // : string - string
-    this.string(_.short_name);              // : string - string
-    this.object(_.send_message);            // : InputBotInlineMessage - InputBotInlineMessage
-  },
-  ["inputBotInlineMessageGame"](_) {
-    this.int32(1262639204);
-    this.int32(
-      (+(_.reply_markup != null) << 2)
-    )
-    if (_.reply_markup != null)
-      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["messageMediaGame"](_) {
-    this.int32(-38694904);
-    this.object(_.game);                    // : Game - Game
-  },
-  ["inputMediaGame"](_) {
-    this.int32(-750828557);
-    this.object(_.id);                      // : InputGame - InputGame
-  },
   ["inputGameID"](_) {
     this.int32(53231223);
     this.int64(_.id);                       // : bigint - long
@@ -9257,15 +10683,6 @@ export const $encoder = {
     this.int32(-1020139510);
     this.object(_.bot_id);                  // : InputUser - InputUser
     this.string(_.short_name);              // : string - string
-  },
-  ["keyboardButtonGame"](_) {
-    this.int32(1358175439);
-    this.string(_.text);                    // : string - string
-  },
-  ["messageActionGameScore"](_) {
-    this.int32(-1834538890);
-    this.int64(_.game_id);                  // : bigint - long
-    this.int32(_.score);                    // : number - int
   },
   ["highScore"](_) {
     this.int32(1940093419);
@@ -9277,22 +10694,6 @@ export const $encoder = {
     this.int32(-1707344487);
     this.vector(_.scores, this.object);     // : HighScore[] - Vector<HighScore>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["updates.differenceTooLong"](_) {
-    this.int32(1258196845);
-    this.int32(_.pts);                      // : number - int
-  },
-  ["updateChannelWebPage"](_) {
-    this.int32(791390623);
-    this.int64(_.channel_id);               // : bigint - long
-    this.object(_.webpage);                 // : WebPage - WebPage
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["messages.chatsSlice"](_) {
-    this.int32(-1663561404);
-    this.int32(_.count);                    // : number - int
-    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
   },
   ["textEmpty"](_) {
     this.int32(-599948721);
@@ -9335,6 +10736,34 @@ export const $encoder = {
   ["textConcat"](_) {
     this.int32(2120376535);
     this.vector(_.texts, this.object);      // : RichText[] - Vector<RichText>
+  },
+  ["textSubscript"](_) {
+    this.int32(-311786236);
+    this.object(_.text);                    // : RichText - RichText
+  },
+  ["textSuperscript"](_) {
+    this.int32(-939827711);
+    this.object(_.text);                    // : RichText - RichText
+  },
+  ["textMarked"](_) {
+    this.int32(55281185);
+    this.object(_.text);                    // : RichText - RichText
+  },
+  ["textPhone"](_) {
+    this.int32(483104362);
+    this.object(_.text);                    // : RichText - RichText
+    this.string(_.phone);                   // : string - string
+  },
+  ["textImage"](_) {
+    this.int32(136105807);
+    this.int64(_.document_id);              // : bigint - long
+    this.int32(_.w);                        // : number - int
+    this.int32(_.h);                        // : number - int
+  },
+  ["textAnchor"](_) {
+    this.int32(894777186);
+    this.object(_.text);                    // : RichText - RichText
+    this.string(_.name);                    // : string - string
   },
   ["pageBlockUnsupported"](_) {
     this.int32(324435594);
@@ -9471,22 +10900,58 @@ export const $encoder = {
     this.vector(_.items, this.object);      // : PageBlock[] - Vector<PageBlock>
     this.object(_.caption);                 // : PageCaption - PageCaption
   },
-  ["webPageNotModified"](_) {
-    this.int32(1930545681);
+  ["pageBlockChannel"](_) {
+    this.int32(-283684427);
+    this.object(_.channel);                 // : Chat - Chat
+  },
+  ["pageBlockAudio"](_) {
+    this.int32(-2143067670);
+    this.int64(_.audio_id);                 // : bigint - long
+    this.object(_.caption);                 // : PageCaption - PageCaption
+  },
+  ["pageBlockKicker"](_) {
+    this.int32(504660880);
+    this.object(_.text);                    // : RichText - RichText
+  },
+  ["pageBlockTable"](_) {
+    this.int32(-1085412734);
     this.int32(
-      (+(_.cached_page_views != null) << 0)
+      (+(_.bordered != null) << 0)
+      | (+(_.striped != null) << 1)
     )
-    if (_.cached_page_views != null)
-      this.int32(_.cached_page_views);      // ?: number - flags.0?int
+    if (_.bordered != null)
+      this.true(_.bordered);                // ?: true - flags.0?true
+    if (_.striped != null)
+      this.true(_.striped);                 // ?: true - flags.1?true
+    this.object(_.title);                   // : RichText - RichText
+    this.vector(_.rows, this.object);       // : PageTableRow[] - Vector<PageTableRow>
   },
-  ["inputPrivacyKeyPhoneCall"](_) {
-    this.int32(-88417185);
+  ["pageBlockOrderedList"](_) {
+    this.int32(-1702174239);
+    this.vector(_.items, this.object);      // : PageListOrderedItem[] - Vector<PageListOrderedItem>
   },
-  ["privacyKeyPhoneCall"](_) {
-    this.int32(1030105979);
+  ["pageBlockDetails"](_) {
+    this.int32(1987480557);
+    this.int32(
+      (+(_.open != null) << 0)
+    )
+    if (_.open != null)
+      this.true(_.open);                    // ?: true - flags.0?true
+    this.vector(_.blocks, this.object);     // : PageBlock[] - Vector<PageBlock>
+    this.object(_.title);                   // : RichText - RichText
   },
-  ["sendMessageGamePlayAction"](_) {
-    this.int32(-580219064);
+  ["pageBlockRelatedArticles"](_) {
+    this.int32(370236054);
+    this.object(_.title);                   // : RichText - RichText
+    this.vector(_.articles, this.object);   // : PageRelatedArticle[] - Vector<PageRelatedArticle>
+  },
+  ["pageBlockMap"](_) {
+    this.int32(-1538310410);
+    this.object(_.geo);                     // : GeoPoint - GeoPoint
+    this.int32(_.zoom);                     // : number - int
+    this.int32(_.w);                        // : number - int
+    this.int32(_.h);                        // : number - int
+    this.object(_.caption);                 // : PageCaption - PageCaption
   },
   ["phoneCallDiscardReasonMissed"](_) {
     this.int32(-2048646399);
@@ -9500,42 +10965,9 @@ export const $encoder = {
   ["phoneCallDiscardReasonBusy"](_) {
     this.int32(-84416311);
   },
-  ["updateDialogPinned"](_) {
-    this.int32(1852826908);
-    this.int32(
-      (+(_.pinned != null) << 0)
-      | (+(_.folder_id != null) << 1)
-    )
-    if (_.pinned != null)
-      this.true(_.pinned);                  // ?: true - flags.0?true
-    if (_.folder_id != null)
-      this.int32(_.folder_id);              // ?: number - flags.1?int
-    this.object(_.peer);                    // : DialogPeer - DialogPeer
-  },
-  ["updatePinnedDialogs"](_) {
-    this.int32(-99664734);
-    this.int32(
-      (+(_.folder_id != null) << 1)
-      | (+(_.order != null && _.order.length > 0) << 0)
-    )
-    if (_.folder_id != null)
-      this.int32(_.folder_id);              // ?: number - flags.1?int
-    if (_.order != null && _.order.length > 0)
-      this.vector(_.order, this.object);    // ?: DialogPeer[] - flags.0?Vector<DialogPeer>
-  },
   ["dataJSON"](_) {
     this.int32(2104790276);
     this.string(_.data);                    // : string - string
-  },
-  ["updateBotWebhookJSON"](_) {
-    this.int32(-2095595325);
-    this.object(_.data);                    // : DataJSON - DataJSON
-  },
-  ["updateBotWebhookJSONQuery"](_) {
-    this.int32(-1684914010);
-    this.int64(_.query_id);                 // : bigint - long
-    this.object(_.data);                    // : DataJSON - DataJSON
-    this.int32(_.timeout);                  // : number - int
   },
   ["labeledPrice"](_) {
     this.int32(-886477832);
@@ -9543,7 +10975,7 @@ export const $encoder = {
     this.int64(_.amount);                   // : bigint - long
   },
   ["invoice"](_) {
-    this.int32(215516896);
+    this.int32(1048946971);
     this.int32(
       (+(_.test != null) << 0)
       | (+(_.name_requested != null) << 1)
@@ -9553,8 +10985,10 @@ export const $encoder = {
       | (+(_.flexible != null) << 5)
       | (+(_.phone_to_provider != null) << 6)
       | (+(_.email_to_provider != null) << 7)
+      | (+(_.recurring != null) << 9)
       | (+(_.max_tip_amount != null) << 8)
       | (+(_.suggested_tip_amounts != null && _.suggested_tip_amounts.length > 0) << 8)
+      | (+(_.recurring_terms_url != null) << 9)
     )
     if (_.test != null)
       this.true(_.test);                    // ?: true - flags.0?true
@@ -9572,71 +11006,21 @@ export const $encoder = {
       this.true(_.phone_to_provider);       // ?: true - flags.6?true
     if (_.email_to_provider != null)
       this.true(_.email_to_provider);       // ?: true - flags.7?true
+    if (_.recurring != null)
+      this.true(_.recurring);               // ?: true - flags.9?true
     this.string(_.currency);                // : string - string
     this.vector(_.prices, this.object);     // : LabeledPrice[] - Vector<LabeledPrice>
     if (_.max_tip_amount != null)
       this.int64(_.max_tip_amount);         // ?: bigint - flags.8?long
     if (_.suggested_tip_amounts != null && _.suggested_tip_amounts.length > 0)
       this.vector(_.suggested_tip_amounts, this.int64); // ?: bigint[] - flags.8?Vector<long>
-  },
-  ["inputMediaInvoice"](_) {
-    this.int32(-646342540);
-    this.int32(
-      (+(_.photo != null) << 0)
-      | (+(_.start_param != null) << 1)
-    )
-    this.string(_.title);                   // : string - string
-    this.string(_.description);             // : string - string
-    if (_.photo != null)
-      this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
-    this.object(_.invoice);                 // : Invoice - Invoice
-    this.bytes(_.payload);                  // : BufferSource - bytes
-    this.string(_.provider);                // : string - string
-    this.object(_.provider_data);           // : DataJSON - DataJSON
-    if (_.start_param != null)
-      this.string(_.start_param);           // ?: string - flags.1?string
+    if (_.recurring_terms_url != null)
+      this.string(_.recurring_terms_url);   // ?: string - flags.9?string
   },
   ["paymentCharge"](_) {
     this.int32(-368917890);
     this.string(_.id);                      // : string - string
     this.string(_.provider_charge_id);      // : string - string
-  },
-  ["messageActionPaymentSentMe"](_) {
-    this.int32(-1892568281);
-    this.int32(
-      (+(_.info != null) << 0)
-      | (+(_.shipping_option_id != null) << 1)
-    )
-    this.string(_.currency);                // : string - string
-    this.int64(_.total_amount);             // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
-    if (_.info != null)
-      this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (_.shipping_option_id != null)
-      this.string(_.shipping_option_id);    // ?: string - flags.1?string
-    this.object(_.charge);                  // : PaymentCharge - PaymentCharge
-  },
-  ["messageMediaInvoice"](_) {
-    this.int32(-2074799289);
-    this.int32(
-      (+(_.shipping_address_requested != null) << 1)
-      | (+(_.test != null) << 3)
-      | (+(_.photo != null) << 0)
-      | (+(_.receipt_msg_id != null) << 2)
-    )
-    if (_.shipping_address_requested != null)
-      this.true(_.shipping_address_requested); // ?: true - flags.1?true
-    if (_.test != null)
-      this.true(_.test);                    // ?: true - flags.3?true
-    this.string(_.title);                   // : string - string
-    this.string(_.description);             // : string - string
-    if (_.photo != null)
-      this.object(_.photo);                 // ?: WebDocument - flags.0?WebDocument
-    if (_.receipt_msg_id != null)
-      this.int32(_.receipt_msg_id);         // ?: number - flags.2?int
-    this.string(_.currency);                // : string - string
-    this.int64(_.total_amount);             // : bigint - long
-    this.string(_.start_param);             // : string - string
   },
   ["postAddress"](_) {
     this.int32(512535275);
@@ -9664,15 +11048,6 @@ export const $encoder = {
     if (_.shipping_address != null)
       this.object(_.shipping_address);      // ?: PostAddress - flags.3?PostAddress
   },
-  ["keyboardButtonBuy"](_) {
-    this.int32(-1344716869);
-    this.string(_.text);                    // : string - string
-  },
-  ["messageActionPaymentSent"](_) {
-    this.int32(1080663248);
-    this.string(_.currency);                // : string - string
-    this.int64(_.total_amount);             // : bigint - long
-  },
   ["paymentSavedCredentialsCard"](_) {
     this.int32(-842892769);
     this.string(_.id);                      // : string - string
@@ -9682,6 +11057,13 @@ export const $encoder = {
     this.int32(475467473);
     this.string(_.url);                     // : string - string
     this.int64(_.access_hash);              // : bigint - long
+    this.int32(_.size);                     // : number - int
+    this.string(_.mime_type);               // : string - string
+    this.vector(_.attributes, this.object); // : DocumentAttribute[] - Vector<DocumentAttribute>
+  },
+  ["webDocumentNoProxy"](_) {
+    this.int32(-104284986);
+    this.string(_.url);                     // : string - string
     this.int32(_.size);                     // : number - int
     this.string(_.mime_type);               // : string - string
     this.vector(_.attributes, this.object); // : DocumentAttribute[] - Vector<DocumentAttribute>
@@ -9698,6 +11080,15 @@ export const $encoder = {
     this.string(_.url);                     // : string - string
     this.int64(_.access_hash);              // : bigint - long
   },
+  ["inputWebFileGeoPointLocation"](_) {
+    this.int32(-1625153079);
+    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
+    this.int64(_.access_hash);              // : bigint - long
+    this.int32(_.w);                        // : number - int
+    this.int32(_.h);                        // : number - int
+    this.int32(_.zoom);                     // : number - int
+    this.int32(_.scale);                    // : number - int
+  },
   ["upload.webFile"](_) {
     this.int32(568808380);
     this.int32(_.size);                     // : number - int
@@ -9707,10 +11098,11 @@ export const $encoder = {
     this.bytes(_.bytes);                    // : BufferSource - bytes
   },
   ["payments.paymentForm"](_) {
-    this.int32(378828315);
+    this.int32(-1340916937);
     this.int32(
       (+(_.can_save_credentials != null) << 2)
       | (+(_.password_missing != null) << 3)
+      | (+(_.photo != null) << 5)
       | (+(_.native_provider != null) << 4)
       | (+(_.native_params != null) << 4)
       | (+(_.saved_info != null) << 0)
@@ -9722,6 +11114,10 @@ export const $encoder = {
       this.true(_.password_missing);        // ?: true - flags.3?true
     this.int64(_.form_id);                  // : bigint - long
     this.int64(_.bot_id);                   // : bigint - long
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: WebDocument - flags.5?WebDocument
     this.object(_.invoice);                 // : Invoice - Invoice
     this.int64(_.provider_id);              // : bigint - long
     this.string(_.url);                     // : string - string
@@ -9749,6 +11145,10 @@ export const $encoder = {
   ["payments.paymentResult"](_) {
     this.int32(1314881805);
     this.object(_.updates);                 // : Updates - Updates
+  },
+  ["payments.paymentVerificationNeeded"](_) {
+    this.int32(-666824391);
+    this.string(_.url);                     // : string - string
   },
   ["payments.paymentReceipt"](_) {
     this.int32(1891958275);
@@ -9802,6 +11202,14 @@ export const $encoder = {
       this.true(_.save);                    // ?: true - flags.0?true
     this.object(_.data);                    // : DataJSON - DataJSON
   },
+  ["inputPaymentCredentialsApplePay"](_) {
+    this.int32(178373535);
+    this.object(_.payment_data);            // : DataJSON - DataJSON
+  },
+  ["inputPaymentCredentialsGooglePay"](_) {
+    this.int32(-1966921727);
+    this.object(_.payment_token);           // : DataJSON - DataJSON
+  },
   ["account.tmpPassword"](_) {
     this.int32(-614138572);
     this.bytes(_.tmp_password);             // : BufferSource - bytes
@@ -9813,29 +11221,6 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
     this.vector(_.prices, this.object);     // : LabeledPrice[] - Vector<LabeledPrice>
   },
-  ["updateBotShippingQuery"](_) {
-    this.int32(-1246823043);
-    this.int64(_.query_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
-    this.object(_.shipping_address);        // : PostAddress - PostAddress
-  },
-  ["updateBotPrecheckoutQuery"](_) {
-    this.int32(-1934976362);
-    this.int32(
-      (+(_.info != null) << 0)
-      | (+(_.shipping_option_id != null) << 1)
-    )
-    this.int64(_.query_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
-    if (_.info != null)
-      this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (_.shipping_option_id != null)
-      this.string(_.shipping_option_id);    // ?: string - flags.1?string
-    this.string(_.currency);                // : string - string
-    this.int64(_.total_amount);             // : bigint - long
-  },
   ["inputStickerSetItem"](_) {
     this.int32(-6249322);
     this.int32(
@@ -9845,10 +11230,6 @@ export const $encoder = {
     this.string(_.emoji);                   // : string - string
     if (_.mask_coords != null)
       this.object(_.mask_coords);           // ?: MaskCoords - flags.0?MaskCoords
-  },
-  ["updatePhoneCall"](_) {
-    this.int32(-1425052898);
-    this.object(_.phone_call);              // : PhoneCall - PhoneCall
   },
   ["inputPhoneCall"](_) {
     this.int32(506920429);
@@ -9949,12 +11330,34 @@ export const $encoder = {
       this.int32(_.duration);               // ?: number - flags.1?int
   },
   ["phoneConnection"](_) {
-    this.int32(-1655957568);
+    this.int32(-1665063993);
+    this.int32(
+      (+(_.tcp != null) << 0)
+    )
+    if (_.tcp != null)
+      this.true(_.tcp);                     // ?: true - flags.0?true
     this.int64(_.id);                       // : bigint - long
     this.string(_.ip);                      // : string - string
     this.string(_.ipv6);                    // : string - string
     this.int32(_.port);                     // : number - int
     this.bytes(_.peer_tag);                 // : BufferSource - bytes
+  },
+  ["phoneConnectionWebrtc"](_) {
+    this.int32(1667228533);
+    this.int32(
+      (+(_.turn != null) << 0)
+      | (+(_.stun != null) << 1)
+    )
+    if (_.turn != null)
+      this.true(_.turn);                    // ?: true - flags.0?true
+    if (_.stun != null)
+      this.true(_.stun);                    // ?: true - flags.1?true
+    this.int64(_.id);                       // : bigint - long
+    this.string(_.ip);                      // : string - string
+    this.string(_.ipv6);                    // : string - string
+    this.int32(_.port);                     // : number - int
+    this.string(_.username);                // : string - string
+    this.string(_.password);                // : string - string
   },
   ["phoneCallProtocol"](_) {
     this.int32(-58224696);
@@ -9975,50 +11378,6 @@ export const $encoder = {
     this.object(_.phone_call);              // : PhoneCall - PhoneCall
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["inputMessagesFilterPhoneCalls"](_) {
-    this.int32(-2134272152);
-    this.int32(
-      (+(_.missed != null) << 0)
-    )
-    if (_.missed != null)
-      this.true(_.missed);                  // ?: true - flags.0?true
-  },
-  ["messageActionPhoneCall"](_) {
-    this.int32(-2132731265);
-    this.int32(
-      (+(_.video != null) << 2)
-      | (+(_.reason != null) << 0)
-      | (+(_.duration != null) << 1)
-    )
-    if (_.video != null)
-      this.true(_.video);                   // ?: true - flags.2?true
-    this.int64(_.call_id);                  // : bigint - long
-    if (_.reason != null)
-      this.object(_.reason);                // ?: PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
-    if (_.duration != null)
-      this.int32(_.duration);               // ?: number - flags.1?int
-  },
-  ["inputMessagesFilterRoundVoice"](_) {
-    this.int32(2054952868);
-  },
-  ["inputMessagesFilterRoundVideo"](_) {
-    this.int32(-1253451181);
-  },
-  ["sendMessageRecordRoundAction"](_) {
-    this.int32(-1997373508);
-  },
-  ["sendMessageUploadRoundAction"](_) {
-    this.int32(608050278);
-    this.int32(_.progress);                 // : number - int
-  },
-  ["upload.fileCdnRedirect"](_) {
-    this.int32(-242427324);
-    this.int32(_.dc_id);                    // : number - int
-    this.bytes(_.file_token);               // : BufferSource - bytes
-    this.bytes(_.encryption_key);           // : BufferSource - bytes
-    this.bytes(_.encryption_iv);            // : BufferSource - bytes
-    this.vector(_.file_hashes, this.object); // : FileHash[] - Vector<FileHash>
-  },
   ["upload.cdnFileReuploadNeeded"](_) {
     this.int32(-290921362);
     this.bytes(_.request_token);            // : BufferSource - bytes
@@ -10035,10 +11394,6 @@ export const $encoder = {
   ["cdnConfig"](_) {
     this.int32(1462101002);
     this.vector(_.public_keys, this.object); // : CdnPublicKey[] - Vector<CdnPublicKey>
-  },
-  ["pageBlockChannel"](_) {
-    this.int32(-283684427);
-    this.object(_.channel);                 // : Chat - Chat
   },
   ["langPackString"](_) {
     this.int32(-892239370);
@@ -10102,55 +11457,6 @@ export const $encoder = {
     this.int32(_.translated_count);         // : number - int
     this.string(_.translations_url);        // : string - string
   },
-  ["updateLangPackTooLong"](_) {
-    this.int32(1180041828);
-    this.string(_.lang_code);               // : string - string
-  },
-  ["updateLangPack"](_) {
-    this.int32(1442983757);
-    this.object(_.difference);              // : LangPackDifference - LangPackDifference
-  },
-  ["channelParticipantAdmin"](_) {
-    this.int32(885242707);
-    this.int32(
-      (+(_.can_edit != null) << 0)
-      | (+(_.self != null) << 1)
-      | (+(_.inviter_id != null) << 1)
-      | (+(_.rank != null) << 2)
-    )
-    if (_.can_edit != null)
-      this.true(_.can_edit);                // ?: true - flags.0?true
-    if (_.self != null)
-      this.true(_.self);                    // ?: true - flags.1?true
-    this.int64(_.user_id);                  // : bigint - long
-    if (_.inviter_id != null)
-      this.int64(_.inviter_id);             // ?: bigint - flags.1?long
-    this.int64(_.promoted_by);              // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.object(_.admin_rights);            // : ChatAdminRights - ChatAdminRights
-    if (_.rank != null)
-      this.string(_.rank);                  // ?: string - flags.2?string
-  },
-  ["channelParticipantBanned"](_) {
-    this.int32(1844969806);
-    this.int32(
-      (+(_.left != null) << 0)
-    )
-    if (_.left != null)
-      this.true(_.left);                    // ?: true - flags.0?true
-    this.object(_.peer);                    // : Peer - Peer
-    this.int64(_.kicked_by);                // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.object(_.banned_rights);           // : ChatBannedRights - ChatBannedRights
-  },
-  ["channelParticipantsBanned"](_) {
-    this.int32(338142689);
-    this.string(_.q);                       // : string - string
-  },
-  ["channelParticipantsSearch"](_) {
-    this.int32(106343499);
-    this.string(_.q);                       // : string - string
-  },
   ["channelAdminLogEventActionChangeTitle"](_) {
     this.int32(-421545947);
     this.string(_.prev_value);              // : string - string
@@ -10211,6 +11517,103 @@ export const $encoder = {
     this.int32(-714643696);
     this.object(_.prev_participant);        // : ChannelParticipant - ChannelParticipant
     this.object(_.new_participant);         // : ChannelParticipant - ChannelParticipant
+  },
+  ["channelAdminLogEventActionChangeStickerSet"](_) {
+    this.int32(-1312568665);
+    this.object(_.prev_stickerset);         // : InputStickerSet - InputStickerSet
+    this.object(_.new_stickerset);          // : InputStickerSet - InputStickerSet
+  },
+  ["channelAdminLogEventActionTogglePreHistoryHidden"](_) {
+    this.int32(1599903217);
+    this.bool(_.new_value);                 // : boolean - Bool
+  },
+  ["channelAdminLogEventActionDefaultBannedRights"](_) {
+    this.int32(771095562);
+    this.object(_.prev_banned_rights);      // : ChatBannedRights - ChatBannedRights
+    this.object(_.new_banned_rights);       // : ChatBannedRights - ChatBannedRights
+  },
+  ["channelAdminLogEventActionStopPoll"](_) {
+    this.int32(-1895328189);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["channelAdminLogEventActionChangeLinkedChat"](_) {
+    this.int32(84703944);
+    this.int64(_.prev_value);               // : bigint - long
+    this.int64(_.new_value);                // : bigint - long
+  },
+  ["channelAdminLogEventActionChangeLocation"](_) {
+    this.int32(241923758);
+    this.object(_.prev_value);              // : ChannelLocation - ChannelLocation
+    this.object(_.new_value);               // : ChannelLocation - ChannelLocation
+  },
+  ["channelAdminLogEventActionToggleSlowMode"](_) {
+    this.int32(1401984889);
+    this.int32(_.prev_value);               // : number - int
+    this.int32(_.new_value);                // : number - int
+  },
+  ["channelAdminLogEventActionStartGroupCall"](_) {
+    this.int32(589338437);
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+  },
+  ["channelAdminLogEventActionDiscardGroupCall"](_) {
+    this.int32(-610299584);
+    this.object(_.call);                    // : InputGroupCall - InputGroupCall
+  },
+  ["channelAdminLogEventActionParticipantMute"](_) {
+    this.int32(-115071790);
+    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
+  },
+  ["channelAdminLogEventActionParticipantUnmute"](_) {
+    this.int32(-431740480);
+    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
+  },
+  ["channelAdminLogEventActionToggleGroupCallSetting"](_) {
+    this.int32(1456906823);
+    this.bool(_.join_muted);                // : boolean - Bool
+  },
+  ["channelAdminLogEventActionParticipantJoinByInvite"](_) {
+    this.int32(1557846647);
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+  },
+  ["channelAdminLogEventActionExportedInviteDelete"](_) {
+    this.int32(1515256996);
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+  },
+  ["channelAdminLogEventActionExportedInviteRevoke"](_) {
+    this.int32(1091179342);
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+  },
+  ["channelAdminLogEventActionExportedInviteEdit"](_) {
+    this.int32(-384910503);
+    this.object(_.prev_invite);             // : ExportedChatInvite - ExportedChatInvite
+    this.object(_.new_invite);              // : ExportedChatInvite - ExportedChatInvite
+  },
+  ["channelAdminLogEventActionParticipantVolume"](_) {
+    this.int32(1048537159);
+    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
+  },
+  ["channelAdminLogEventActionChangeHistoryTTL"](_) {
+    this.int32(1855199800);
+    this.int32(_.prev_value);               // : number - int
+    this.int32(_.new_value);                // : number - int
+  },
+  ["channelAdminLogEventActionParticipantJoinByRequest"](_) {
+    this.int32(-1347021750);
+    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
+    this.int64(_.approved_by);              // : bigint - long
+  },
+  ["channelAdminLogEventActionToggleNoForwards"](_) {
+    this.int32(-886388890);
+    this.bool(_.new_value);                 // : boolean - Bool
+  },
+  ["channelAdminLogEventActionSendMessage"](_) {
+    this.int32(663693416);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["channelAdminLogEventActionChangeAvailableReactions"](_) {
+    this.int32(-1661470870);
+    this.vector(_.prev_value, this.string); // : string[] - Vector<string>
+    this.vector(_.new_value, this.string);  // : string[] - Vector<string>
   },
   ["channelAdminLogEvent"](_) {
     this.int32(531458253);
@@ -10281,21 +11684,10 @@ export const $encoder = {
     if (_.send != null)
       this.true(_.send);                    // ?: true - flags.16?true
   },
-  ["topPeerCategoryPhoneCalls"](_) {
-    this.int32(511092620);
-  },
-  ["pageBlockAudio"](_) {
-    this.int32(-2143067670);
-    this.int64(_.audio_id);                 // : bigint - long
-    this.object(_.caption);                 // : PageCaption - PageCaption
-  },
   ["popularContact"](_) {
     this.int32(1558266229);
     this.int64(_.client_id);                // : bigint - long
     this.int32(_.importers);                // : number - int
-  },
-  ["messageActionScreenshotTaken"](_) {
-    this.int32(1200788123);
   },
   ["messages.favedStickersNotModified"](_) {
     this.int32(-1634752813);
@@ -10305,79 +11697,6 @@ export const $encoder = {
     this.int64(_.hash);                     // : bigint - long
     this.vector(_.packs, this.object);      // : StickerPack[] - Vector<StickerPack>
     this.vector(_.stickers, this.object);   // : Document[] - Vector<Document>
-  },
-  ["updateFavedStickers"](_) {
-    this.int32(-451831443);
-  },
-  ["updateChannelReadMessagesContents"](_) {
-    this.int32(1153291573);
-    this.int64(_.channel_id);               // : bigint - long
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-  },
-  ["inputMessagesFilterMyMentions"](_) {
-    this.int32(-1040652646);
-  },
-  ["updateContactsReset"](_) {
-    this.int32(1887741886);
-  },
-  ["channelAdminLogEventActionChangeStickerSet"](_) {
-    this.int32(-1312568665);
-    this.object(_.prev_stickerset);         // : InputStickerSet - InputStickerSet
-    this.object(_.new_stickerset);          // : InputStickerSet - InputStickerSet
-  },
-  ["messageActionCustomAction"](_) {
-    this.int32(-85549226);
-    this.string(_.message);                 // : string - string
-  },
-  ["inputPaymentCredentialsApplePay"](_) {
-    this.int32(178373535);
-    this.object(_.payment_data);            // : DataJSON - DataJSON
-  },
-  ["inputMessagesFilterGeo"](_) {
-    this.int32(-419271411);
-  },
-  ["inputMessagesFilterContacts"](_) {
-    this.int32(-530392189);
-  },
-  ["updateChannelAvailableMessages"](_) {
-    this.int32(-1304443240);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.available_min_id);         // : number - int
-  },
-  ["channelAdminLogEventActionTogglePreHistoryHidden"](_) {
-    this.int32(1599903217);
-    this.bool(_.new_value);                 // : boolean - Bool
-  },
-  ["inputMediaGeoLive"](_) {
-    this.int32(-1759532989);
-    this.int32(
-      (+(_.stopped != null) << 0)
-      | (+(_.heading != null) << 2)
-      | (+(_.period != null) << 1)
-      | (+(_.proximity_notification_radius != null) << 3)
-    )
-    if (_.stopped != null)
-      this.true(_.stopped);                 // ?: true - flags.0?true
-    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
-    if (_.heading != null)
-      this.int32(_.heading);                // ?: number - flags.2?int
-    if (_.period != null)
-      this.int32(_.period);                 // ?: number - flags.1?int
-    if (_.proximity_notification_radius != null)
-      this.int32(_.proximity_notification_radius); // ?: number - flags.3?int
-  },
-  ["messageMediaGeoLive"](_) {
-    this.int32(-1186937242);
-    this.int32(
-      (+(_.heading != null) << 0)
-      | (+(_.proximity_notification_radius != null) << 1)
-    )
-    this.object(_.geo);                     // : GeoPoint - GeoPoint
-    if (_.heading != null)
-      this.int32(_.heading);                // ?: number - flags.0?int
-    this.int32(_.period);                   // : number - int
-    if (_.proximity_notification_radius != null)
-      this.int32(_.proximity_notification_radius); // ?: number - flags.1?int
   },
   ["recentMeUrlUnknown"](_) {
     this.int32(1189204285);
@@ -10408,13 +11727,6 @@ export const $encoder = {
     this.vector(_.urls, this.object);       // : RecentMeUrl[] - Vector<RecentMeUrl>
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["channels.channelParticipantsNotModified"](_) {
-    this.int32(-266911767);
-  },
-  ["messages.messagesNotModified"](_) {
-    this.int32(1951620897);
-    this.int32(_.count);                    // : number - int
   },
   ["inputSingleMedia"](_) {
     this.int32(482797855);
@@ -10455,27 +11767,26 @@ export const $encoder = {
   ["inputMessagePinned"](_) {
     this.int32(-2037963464);
   },
-  ["messageEntityPhone"](_) {
-    this.int32(-1687559349);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["messageEntityCashtag"](_) {
-    this.int32(1280209983);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["messageActionBotAllowed"](_) {
-    this.int32(-1410748418);
-    this.string(_.domain);                  // : string - string
+  ["inputMessageCallbackQuery"](_) {
+    this.int32(-1392895362);
+    this.int32(_.id);                       // : number - int
+    this.int64(_.query_id);                 // : bigint - long
   },
   ["inputDialogPeer"](_) {
     this.int32(-55902537);
     this.object(_.peer);                    // : InputPeer - InputPeer
   },
+  ["inputDialogPeerFolder"](_) {
+    this.int32(1684014375);
+    this.int32(_.folder_id);                // : number - int
+  },
   ["dialogPeer"](_) {
     this.int32(-445792507);
     this.object(_.peer);                    // : Peer - Peer
+  },
+  ["dialogPeerFolder"](_) {
+    this.int32(1363483106);
+    this.int32(_.folder_id);                // : number - int
   },
   ["messages.foundStickerSetsNotModified"](_) {
     this.int32(223655517);
@@ -10486,17 +11797,10 @@ export const $encoder = {
     this.vector(_.sets, this.object);       // : StickerSetCovered[] - Vector<StickerSetCovered>
   },
   ["fileHash"](_) {
-    this.int32(1648543603);
-    this.int32(_.offset);                   // : number - int
+    this.int32(-207944868);
+    this.int64(_.offset);                   // : bigint - long
     this.int32(_.limit);                    // : number - int
     this.bytes(_.hash);                     // : BufferSource - bytes
-  },
-  ["webDocumentNoProxy"](_) {
-    this.int32(-104284986);
-    this.string(_.url);                     // : string - string
-    this.int32(_.size);                     // : number - int
-    this.string(_.mime_type);               // : string - string
-    this.vector(_.attributes, this.object); // : DocumentAttribute[] - Vector<DocumentAttribute>
   },
   ["inputClientProxy"](_) {
     this.int32(1968737087);
@@ -10525,19 +11829,14 @@ export const $encoder = {
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
   },
-  ["inputSecureFileLocation"](_) {
-    this.int32(-876089816);
-    this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-  },
   ["secureFileEmpty"](_) {
     this.int32(1679398724);
   },
   ["secureFile"](_) {
-    this.int32(-534283678);
+    this.int32(2097791614);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.int32(_.size);                     // : number - int
+    this.int64(_.size);                     // : bigint - long
     this.int32(_.dc_id);                    // : number - int
     this.int32(_.date);                     // : number - int
     this.bytes(_.file_hash);                // : BufferSource - bytes
@@ -10693,6 +11992,24 @@ export const $encoder = {
     this.vector(_.file_hash, this.bytes);   // : BufferSource[] - Vector<bytes>
     this.string(_.text);                    // : string - string
   },
+  ["secureValueError"](_) {
+    this.int32(-2036501105);
+    this.object(_.type);                    // : SecureValueType - SecureValueType
+    this.bytes(_.hash);                     // : BufferSource - bytes
+    this.string(_.text);                    // : string - string
+  },
+  ["secureValueErrorTranslationFile"](_) {
+    this.int32(-1592506512);
+    this.object(_.type);                    // : SecureValueType - SecureValueType
+    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.string(_.text);                    // : string - string
+  },
+  ["secureValueErrorTranslationFiles"](_) {
+    this.int32(878931416);
+    this.object(_.type);                    // : SecureValueType - SecureValueType
+    this.vector(_.file_hash, this.bytes);   // : BufferSource[] - Vector<bytes>
+    this.string(_.text);                    // : string - string
+  },
   ["secureCredentialsEncrypted"](_) {
     this.int32(871426631);
     this.bytes(_.data);                     // : BufferSource - bytes
@@ -10715,15 +12032,6 @@ export const $encoder = {
     this.int32(-2128640689);
     this.string(_.email_pattern);           // : string - string
     this.int32(_.length);                   // : number - int
-  },
-  ["messageActionSecureValuesSentMe"](_) {
-    this.int32(455635795);
-    this.vector(_.values, this.object);     // : SecureValue[] - Vector<SecureValue>
-    this.object(_.credentials);             // : SecureCredentialsEncrypted - SecureCredentialsEncrypted
-  },
-  ["messageActionSecureValuesSent"](_) {
-    this.int32(-648257196);
-    this.vector(_.types, this.object);      // : SecureValueType[] - Vector<SecureValueType>
   },
   ["help.deepLinkInfoEmpty"](_) {
     this.int32(1722786150);
@@ -10751,39 +12059,15 @@ export const $encoder = {
     this.int32(1304052993);
     this.int64(_.id);                       // : bigint - long
   },
-  ["inputTakeoutFileLocation"](_) {
-    this.int32(700340377);
-  },
-  ["updateDialogUnreadMark"](_) {
-    this.int32(-513517117);
-    this.int32(
-      (+(_.unread != null) << 0)
-    )
-    if (_.unread != null)
-      this.true(_.unread);                  // ?: true - flags.0?true
-    this.object(_.peer);                    // : DialogPeer - DialogPeer
-  },
-  ["messages.dialogsNotModified"](_) {
-    this.int32(-253500010);
-    this.int32(_.count);                    // : number - int
-  },
-  ["inputWebFileGeoPointLocation"](_) {
-    this.int32(-1625153079);
-    this.object(_.geo_point);               // : InputGeoPoint - InputGeoPoint
-    this.int64(_.access_hash);              // : bigint - long
-    this.int32(_.w);                        // : number - int
-    this.int32(_.h);                        // : number - int
-    this.int32(_.zoom);                     // : number - int
-    this.int32(_.scale);                    // : number - int
-  },
-  ["contacts.topPeersDisabled"](_) {
-    this.int32(-1255369827);
-  },
-  ["inputReportReasonCopyright"](_) {
-    this.int32(-1685456582);
-  },
   ["passwordKdfAlgoUnknown"](_) {
     this.int32(-732254058);
+  },
+  ["passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow"](_) {
+    this.int32(982592842);
+    this.bytes(_.salt1);                    // : BufferSource - bytes
+    this.bytes(_.salt2);                    // : BufferSource - bytes
+    this.int32(_.g);                        // : number - int
+    this.bytes(_.p);                        // : BufferSource - bytes
   },
   ["securePasswordKdfAlgoUnknown"](_) {
     this.int32(4883767);
@@ -10802,13 +12086,6 @@ export const $encoder = {
     this.bytes(_.secure_secret);            // : BufferSource - bytes
     this.int64(_.secure_secret_id);         // : bigint - long
   },
-  ["passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow"](_) {
-    this.int32(982592842);
-    this.bytes(_.salt1);                    // : BufferSource - bytes
-    this.bytes(_.salt2);                    // : BufferSource - bytes
-    this.int32(_.g);                        // : number - int
-    this.bytes(_.p);                        // : BufferSource - bytes
-  },
   ["inputCheckPasswordEmpty"](_) {
     this.int32(-1736378792);
   },
@@ -10817,24 +12094,6 @@ export const $encoder = {
     this.int64(_.srp_id);                   // : bigint - long
     this.bytes(_.A);                        // : BufferSource - bytes
     this.bytes(_.M1);                       // : BufferSource - bytes
-  },
-  ["secureValueError"](_) {
-    this.int32(-2036501105);
-    this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.hash);                     // : BufferSource - bytes
-    this.string(_.text);                    // : string - string
-  },
-  ["secureValueErrorTranslationFile"](_) {
-    this.int32(-1592506512);
-    this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
-    this.string(_.text);                    // : string - string
-  },
-  ["secureValueErrorTranslationFiles"](_) {
-    this.int32(878931416);
-    this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.vector(_.file_hash, this.bytes);   // : BufferSource[] - Vector<bytes>
-    this.string(_.text);                    // : string - string
   },
   ["secureRequiredType"](_) {
     this.int32(-2103600678);
@@ -10898,39 +12157,6 @@ export const $encoder = {
     this.int32(-1715350371);
     this.vector(_.value, this.object);      // : JSONObjectValue[] - Vector<JSONObjectValue>
   },
-  ["inputNotifyBroadcasts"](_) {
-    this.int32(-1311015810);
-  },
-  ["notifyBroadcasts"](_) {
-    this.int32(-703403793);
-  },
-  ["textSubscript"](_) {
-    this.int32(-311786236);
-    this.object(_.text);                    // : RichText - RichText
-  },
-  ["textSuperscript"](_) {
-    this.int32(-939827711);
-    this.object(_.text);                    // : RichText - RichText
-  },
-  ["textMarked"](_) {
-    this.int32(55281185);
-    this.object(_.text);                    // : RichText - RichText
-  },
-  ["textPhone"](_) {
-    this.int32(483104362);
-    this.object(_.text);                    // : RichText - RichText
-    this.string(_.phone);                   // : string - string
-  },
-  ["textImage"](_) {
-    this.int32(136105807);
-    this.int64(_.document_id);              // : bigint - long
-    this.int32(_.w);                        // : number - int
-    this.int32(_.h);                        // : number - int
-  },
-  ["pageBlockKicker"](_) {
-    this.int32(504660880);
-    this.object(_.text);                    // : RichText - RichText
-  },
   ["pageTableCell"](_) {
     this.int32(878078826);
     this.int32(
@@ -10964,19 +12190,6 @@ export const $encoder = {
     this.int32(-524237339);
     this.vector(_.cells, this.object);      // : PageTableCell[] - Vector<PageTableCell>
   },
-  ["pageBlockTable"](_) {
-    this.int32(-1085412734);
-    this.int32(
-      (+(_.bordered != null) << 0)
-      | (+(_.striped != null) << 1)
-    )
-    if (_.bordered != null)
-      this.true(_.bordered);                // ?: true - flags.0?true
-    if (_.striped != null)
-      this.true(_.striped);                 // ?: true - flags.1?true
-    this.object(_.title);                   // : RichText - RichText
-    this.vector(_.rows, this.object);       // : PageTableRow[] - Vector<PageTableRow>
-  },
   ["pageCaption"](_) {
     this.int32(1869903447);
     this.object(_.text);                    // : RichText - RichText
@@ -11000,20 +12213,6 @@ export const $encoder = {
     this.string(_.num);                     // : string - string
     this.vector(_.blocks, this.object);     // : PageBlock[] - Vector<PageBlock>
   },
-  ["pageBlockOrderedList"](_) {
-    this.int32(-1702174239);
-    this.vector(_.items, this.object);      // : PageListOrderedItem[] - Vector<PageListOrderedItem>
-  },
-  ["pageBlockDetails"](_) {
-    this.int32(1987480557);
-    this.int32(
-      (+(_.open != null) << 0)
-    )
-    if (_.open != null)
-      this.true(_.open);                    // ?: true - flags.0?true
-    this.vector(_.blocks, this.object);     // : PageBlock[] - Vector<PageBlock>
-    this.object(_.title);                   // : RichText - RichText
-  },
   ["pageRelatedArticle"](_) {
     this.int32(-1282352120);
     this.int32(
@@ -11036,19 +12235,6 @@ export const $encoder = {
     if (_.published_date != null)
       this.int32(_.published_date);         // ?: number - flags.4?int
   },
-  ["pageBlockRelatedArticles"](_) {
-    this.int32(370236054);
-    this.object(_.title);                   // : RichText - RichText
-    this.vector(_.articles, this.object);   // : PageRelatedArticle[] - Vector<PageRelatedArticle>
-  },
-  ["pageBlockMap"](_) {
-    this.int32(-1538310410);
-    this.object(_.geo);                     // : GeoPoint - GeoPoint
-    this.int32(_.zoom);                     // : number - int
-    this.int32(_.w);                        // : number - int
-    this.int32(_.h);                        // : number - int
-    this.object(_.caption);                 // : PageCaption - PageCaption
-  },
   ["page"](_) {
     this.int32(-1738178803);
     this.int32(
@@ -11070,17 +12256,6 @@ export const $encoder = {
     if (_.views != null)
       this.int32(_.views);                  // ?: number - flags.3?int
   },
-  ["inputPrivacyKeyPhoneP2P"](_) {
-    this.int32(-610373422);
-  },
-  ["privacyKeyPhoneP2P"](_) {
-    this.int32(961092808);
-  },
-  ["textAnchor"](_) {
-    this.int32(894777186);
-    this.object(_.text);                    // : RichText - RichText
-    this.string(_.name);                    // : string - string
-  },
   ["help.supportName"](_) {
     this.int32(-1945767479);
     this.string(_.name);                    // : string - string
@@ -11094,19 +12269,6 @@ export const $encoder = {
     this.vector(_.entities, this.object);   // : MessageEntity[] - Vector<MessageEntity>
     this.string(_.author);                  // : string - string
     this.int32(_.date);                     // : number - int
-  },
-  ["messageActionContactSignUp"](_) {
-    this.int32(-202219658);
-  },
-  ["updateMessagePoll"](_) {
-    this.int32(-1398708869);
-    this.int32(
-      (+(_.poll != null) << 0)
-    )
-    this.int64(_.poll_id);                  // : bigint - long
-    if (_.poll != null)
-      this.object(_.poll);                  // ?: Poll - flags.0?Poll
-    this.object(_.results);                 // : PollResults - PollResults
   },
   ["pollAnswer"](_) {
     this.int32(1823064809);
@@ -11175,26 +12337,6 @@ export const $encoder = {
     if (_.solution_entities != null && _.solution_entities.length > 0)
       this.vector(_.solution_entities, this.object); // ?: MessageEntity[] - flags.4?Vector<MessageEntity>
   },
-  ["inputMediaPoll"](_) {
-    this.int32(261416433);
-    this.int32(
-      (+(_.correct_answers != null && _.correct_answers.length > 0) << 0)
-      | (+(_.solution != null) << 1)
-      | (+(_.solution_entities != null && _.solution_entities.length > 0) << 1)
-    )
-    this.object(_.poll);                    // : Poll - Poll
-    if (_.correct_answers != null && _.correct_answers.length > 0)
-      this.vector(_.correct_answers, this.bytes); // ?: BufferSource[] - flags.0?Vector<bytes>
-    if (_.solution != null)
-      this.string(_.solution);              // ?: string - flags.1?string
-    if (_.solution_entities != null && _.solution_entities.length > 0)
-      this.vector(_.solution_entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
-  },
-  ["messageMediaPoll"](_) {
-    this.int32(1272375192);
-    this.object(_.poll);                    // : Poll - Poll
-    this.object(_.results);                 // : PollResults - PollResults
-  },
   ["chatOnlines"](_) {
     this.int32(-264117680);
     this.int32(_.onlines);                  // : number - int
@@ -11202,11 +12344,6 @@ export const $encoder = {
   ["statsURL"](_) {
     this.int32(1202287072);
     this.string(_.url);                     // : string - string
-  },
-  ["photoStrippedSize"](_) {
-    this.int32(-525288402);
-    this.string(_.type);                    // : string - string
-    this.bytes(_.bytes);                    // : BufferSource - bytes
   },
   ["chatAdminRights"](_) {
     this.int32(1605510357);
@@ -11288,12 +12425,6 @@ export const $encoder = {
       this.true(_.pin_messages);            // ?: true - flags.17?true
     this.int32(_.until_date);               // : number - int
   },
-  ["updateChatDefaultBannedRights"](_) {
-    this.int32(1421875280);
-    this.object(_.peer);                    // : Peer - Peer
-    this.object(_.default_banned_rights);   // : ChatBannedRights - ChatBannedRights
-    this.int32(_.version);                  // : number - int
-  },
   ["inputWallPaper"](_) {
     this.int32(-433014407);
     this.int64(_.id);                       // : bigint - long
@@ -11303,18 +12434,9 @@ export const $encoder = {
     this.int32(1913199744);
     this.string(_.slug);                    // : string - string
   },
-  ["channelParticipantsContacts"](_) {
-    this.int32(-1150621555);
-    this.string(_.q);                       // : string - string
-  },
-  ["channelAdminLogEventActionDefaultBannedRights"](_) {
-    this.int32(771095562);
-    this.object(_.prev_banned_rights);      // : ChatBannedRights - ChatBannedRights
-    this.object(_.new_banned_rights);       // : ChatBannedRights - ChatBannedRights
-  },
-  ["channelAdminLogEventActionStopPoll"](_) {
-    this.int32(-1895328189);
-    this.object(_.message);                 // : Message - Message
+  ["inputWallPaperNoFile"](_) {
+    this.int32(-1770371538);
+    this.int64(_.id);                       // : bigint - long
   },
   ["account.wallPapersNotModified"](_) {
     this.int32(471437699);
@@ -11374,7 +12496,7 @@ export const $encoder = {
       this.int32(_.rotation);               // ?: number - flags.4?int
   },
   ["autoDownloadSettings"](_) {
-    this.int32(-532532493);
+    this.int32(-1896171181);
     this.int32(
       (+(_.disabled != null) << 0)
       | (+(_.video_preload_large != null) << 1)
@@ -11390,8 +12512,8 @@ export const $encoder = {
     if (_.phonecalls_less_data != null)
       this.true(_.phonecalls_less_data);    // ?: true - flags.3?true
     this.int32(_.photo_size_max);           // : number - int
-    this.int32(_.video_size_max);           // : number - int
-    this.int32(_.file_size_max);            // : number - int
+    this.int64(_.video_size_max);           // : bigint - long
+    this.int64(_.file_size_max);            // : bigint - long
     this.int32(_.video_upload_maxbitrate);  // : number - int
   },
   ["account.autoDownloadSettings"](_) {
@@ -11425,49 +12547,6 @@ export const $encoder = {
     this.int32(-1275374751);
     this.string(_.lang_code);               // : string - string
   },
-  ["inputPrivacyKeyForwards"](_) {
-    this.int32(-1529000952);
-  },
-  ["privacyKeyForwards"](_) {
-    this.int32(1777096355);
-  },
-  ["inputPrivacyKeyProfilePhoto"](_) {
-    this.int32(1461304012);
-  },
-  ["privacyKeyProfilePhoto"](_) {
-    this.int32(-1777000467);
-  },
-  ["inputPhotoFileLocation"](_) {
-    this.int32(1075322878);
-    this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
-    this.string(_.thumb_size);              // : string - string
-  },
-  ["inputPhotoLegacyFileLocation"](_) {
-    this.int32(-667654413);
-    this.int64(_.id);                       // : bigint - long
-    this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
-    this.int64(_.volume_id);                // : bigint - long
-    this.int32(_.local_id);                 // : number - int
-    this.int64(_.secret);                   // : bigint - long
-  },
-  ["inputPeerPhotoFileLocation"](_) {
-    this.int32(925204121);
-    this.int32(
-      (+(_.big != null) << 0)
-    )
-    if (_.big != null)
-      this.true(_.big);                     // ?: true - flags.0?true
-    this.object(_.peer);                    // : InputPeer - InputPeer
-    this.int64(_.photo_id);                 // : bigint - long
-  },
-  ["inputStickerSetThumb"](_) {
-    this.int32(-1652231205);
-    this.object(_.stickerset);              // : InputStickerSet - InputStickerSet
-    this.int32(_.thumb_version);            // : number - int
-  },
   ["folder"](_) {
     this.int32(-11252123);
     this.int32(
@@ -11487,29 +12566,6 @@ export const $encoder = {
     if (_.photo != null)
       this.object(_.photo);                 // ?: ChatPhoto - flags.3?ChatPhoto
   },
-  ["dialogFolder"](_) {
-    this.int32(1908216652);
-    this.int32(
-      (+(_.pinned != null) << 2)
-    )
-    if (_.pinned != null)
-      this.true(_.pinned);                  // ?: true - flags.2?true
-    this.object(_.folder);                  // : Folder - Folder
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.top_message);              // : number - int
-    this.int32(_.unread_muted_peers_count); // : number - int
-    this.int32(_.unread_unmuted_peers_count); // : number - int
-    this.int32(_.unread_muted_messages_count); // : number - int
-    this.int32(_.unread_unmuted_messages_count); // : number - int
-  },
-  ["inputDialogPeerFolder"](_) {
-    this.int32(1684014375);
-    this.int32(_.folder_id);                // : number - int
-  },
-  ["dialogPeerFolder"](_) {
-    this.int32(1363483106);
-    this.int32(_.folder_id);                // : number - int
-  },
   ["inputFolderPeer"](_) {
     this.int32(-70073706);
     this.object(_.peer);                    // : InputPeer - InputPeer
@@ -11520,53 +12576,6 @@ export const $encoder = {
     this.object(_.peer);                    // : Peer - Peer
     this.int32(_.folder_id);                // : number - int
   },
-  ["updateFolderPeers"](_) {
-    this.int32(422972864);
-    this.vector(_.folder_peers, this.object); // : FolderPeer[] - Vector<FolderPeer>
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["inputUserFromMessage"](_) {
-    this.int32(497305826);
-    this.object(_.peer);                    // : InputPeer - InputPeer
-    this.int32(_.msg_id);                   // : number - int
-    this.int64(_.user_id);                  // : bigint - long
-  },
-  ["inputChannelFromMessage"](_) {
-    this.int32(1536380829);
-    this.object(_.peer);                    // : InputPeer - InputPeer
-    this.int32(_.msg_id);                   // : number - int
-    this.int64(_.channel_id);               // : bigint - long
-  },
-  ["inputPeerUserFromMessage"](_) {
-    this.int32(-1468331492);
-    this.object(_.peer);                    // : InputPeer - InputPeer
-    this.int32(_.msg_id);                   // : number - int
-    this.int64(_.user_id);                  // : bigint - long
-  },
-  ["inputPeerChannelFromMessage"](_) {
-    this.int32(-1121318848);
-    this.object(_.peer);                    // : InputPeer - InputPeer
-    this.int32(_.msg_id);                   // : number - int
-    this.int64(_.channel_id);               // : bigint - long
-  },
-  ["inputPrivacyKeyPhoneNumber"](_) {
-    this.int32(55761658);
-  },
-  ["privacyKeyPhoneNumber"](_) {
-    this.int32(-778378131);
-  },
-  ["topPeerCategoryForwardUsers"](_) {
-    this.int32(-1472172887);
-  },
-  ["topPeerCategoryForwardChats"](_) {
-    this.int32(-68239120);
-  },
-  ["channelAdminLogEventActionChangeLinkedChat"](_) {
-    this.int32(84703944);
-    this.int64(_.prev_value);               // : bigint - long
-    this.int64(_.new_value);                // : bigint - long
-  },
   ["messages.searchCounter"](_) {
     this.int32(-398136321);
     this.int32(
@@ -11576,31 +12585,6 @@ export const $encoder = {
       this.true(_.inexact);                 // ?: true - flags.1?true
     this.object(_.filter);                  // : MessagesFilter - MessagesFilter
     this.int32(_.count);                    // : number - int
-  },
-  ["keyboardButtonUrlAuth"](_) {
-    this.int32(280464681);
-    this.int32(
-      (+(_.fwd_text != null) << 0)
-    )
-    this.string(_.text);                    // : string - string
-    if (_.fwd_text != null)
-      this.string(_.fwd_text);              // ?: string - flags.0?string
-    this.string(_.url);                     // : string - string
-    this.int32(_.button_id);                // : number - int
-  },
-  ["inputKeyboardButtonUrlAuth"](_) {
-    this.int32(-802258988);
-    this.int32(
-      (+(_.request_write_access != null) << 0)
-      | (+(_.fwd_text != null) << 1)
-    )
-    if (_.request_write_access != null)
-      this.true(_.request_write_access);    // ?: true - flags.0?true
-    this.string(_.text);                    // : string - string
-    if (_.fwd_text != null)
-      this.string(_.fwd_text);              // ?: string - flags.1?string
-    this.string(_.url);                     // : string - string
-    this.object(_.bot);                     // : InputUser - InputUser
   },
   ["urlAuthResultRequest"](_) {
     this.int32(-1831650802);
@@ -11619,42 +12603,6 @@ export const $encoder = {
   ["urlAuthResultDefault"](_) {
     this.int32(-1445536993);
   },
-  ["inputPrivacyValueAllowChatParticipants"](_) {
-    this.int32(-2079962673);
-    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
-  },
-  ["inputPrivacyValueDisallowChatParticipants"](_) {
-    this.int32(-380694650);
-    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
-  },
-  ["privacyValueAllowChatParticipants"](_) {
-    this.int32(1796427406);
-    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
-  },
-  ["privacyValueDisallowChatParticipants"](_) {
-    this.int32(1103656293);
-    this.vector(_.chats, this.int64);       // : bigint[] - Vector<long>
-  },
-  ["messageEntityUnderline"](_) {
-    this.int32(-1672577397);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["messageEntityStrike"](_) {
-    this.int32(-1090087980);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["messageEntityBlockquote"](_) {
-    this.int32(34469328);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["updatePeerSettings"](_) {
-    this.int32(1786671974);
-    this.object(_.peer);                    // : Peer - Peer
-    this.object(_.settings);                // : PeerSettings - PeerSettings
-  },
   ["channelLocationEmpty"](_) {
     this.int32(-1078612597);
   },
@@ -11669,46 +12617,9 @@ export const $encoder = {
     this.int32(_.expires);                  // : number - int
     this.int32(_.distance);                 // : number - int
   },
-  ["updatePeerLocated"](_) {
-    this.int32(-1263546448);
-    this.vector(_.peers, this.object);      // : PeerLocated[] - Vector<PeerLocated>
-  },
-  ["channelAdminLogEventActionChangeLocation"](_) {
-    this.int32(241923758);
-    this.object(_.prev_value);              // : ChannelLocation - ChannelLocation
-    this.object(_.new_value);               // : ChannelLocation - ChannelLocation
-  },
-  ["inputReportReasonGeoIrrelevant"](_) {
-    this.int32(-606798099);
-  },
-  ["channelAdminLogEventActionToggleSlowMode"](_) {
-    this.int32(1401984889);
-    this.int32(_.prev_value);               // : number - int
-    this.int32(_.new_value);                // : number - int
-  },
-  ["auth.authorizationSignUpRequired"](_) {
-    this.int32(1148485274);
-    this.int32(
-      (+(_.terms_of_service != null) << 0)
-    )
-    if (_.terms_of_service != null)
-      this.object(_.terms_of_service);      // ?: help.TermsOfService - flags.0?help.TermsOfService
-  },
-  ["payments.paymentVerificationNeeded"](_) {
-    this.int32(-666824391);
-    this.string(_.url);                     // : string - string
-  },
-  ["inputStickerSetAnimatedEmoji"](_) {
-    this.int32(42402760);
-  },
-  ["updateNewScheduledMessage"](_) {
-    this.int32(967122427);
-    this.object(_.message);                 // : Message - Message
-  },
-  ["updateDeleteScheduledMessages"](_) {
-    this.int32(-1870238482);
-    this.object(_.peer);                    // : Peer - Peer
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+  ["peerSelfLocated"](_) {
+    this.int32(-118740917);
+    this.int32(_.expires);                  // : number - int
   },
   ["restrictionReason"](_) {
     this.int32(-797791052);
@@ -11763,24 +12674,6 @@ export const $encoder = {
     this.int64(_.hash);                     // : bigint - long
     this.vector(_.themes, this.object);     // : Theme[] - Vector<Theme>
   },
-  ["updateTheme"](_) {
-    this.int32(-2112423005);
-    this.object(_.theme);                   // : Theme - Theme
-  },
-  ["inputPrivacyKeyAddedByPhone"](_) {
-    this.int32(-786326563);
-  },
-  ["privacyKeyAddedByPhone"](_) {
-    this.int32(1124062251);
-  },
-  ["updateGeoLiveViewed"](_) {
-    this.int32(-2027964103);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.msg_id);                   // : number - int
-  },
-  ["updateLoginToken"](_) {
-    this.int32(1448076945);
-  },
   ["auth.loginToken"](_) {
     this.int32(1654593920);
     this.int32(_.expires);                  // : number - int
@@ -11826,25 +12719,6 @@ export const $encoder = {
   },
   ["baseThemeArctic"](_) {
     this.int32(1527845466);
-  },
-  ["inputWallPaperNoFile"](_) {
-    this.int32(-1770371538);
-    this.int64(_.id);                       // : bigint - long
-  },
-  ["wallPaperNoFile"](_) {
-    this.int32(-528465642);
-    this.int64(_.id);                       // : bigint - long
-    this.int32(
-      (+(_.default != null) << 1)
-      | (+(_.dark != null) << 4)
-      | (+(_.settings != null) << 2)
-    )
-    if (_.default != null)
-      this.true(_.default);                 // ?: true - flags.1?true
-    if (_.dark != null)
-      this.true(_.dark);                    // ?: true - flags.4?true
-    if (_.settings != null)
-      this.object(_.settings);              // ?: WallPaperSettings - flags.2?WallPaperSettings
   },
   ["inputThemeSettings"](_) {
     this.int32(-1881255857);
@@ -11898,13 +12772,6 @@ export const $encoder = {
     if (_.settings != null)
       this.object(_.settings);              // ?: ThemeSettings - flags.1?ThemeSettings
   },
-  ["updateMessagePollVote"](_) {
-    this.int32(274961865);
-    this.int64(_.poll_id);                  // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    this.vector(_.options, this.bytes);     // : BufferSource[] - Vector<bytes>
-    this.int32(_.qts);                      // : number - int
-  },
   ["messageUserVote"](_) {
     this.int32(886196148);
     this.int64(_.user_id);                  // : bigint - long
@@ -11933,20 +12800,6 @@ export const $encoder = {
     if (_.next_offset != null)
       this.string(_.next_offset);           // ?: string - flags.0?string
   },
-  ["keyboardButtonRequestPoll"](_) {
-    this.int32(-1144565411);
-    this.int32(
-      (+(_.quiz != null) << 0)
-    )
-    if (_.quiz != null)
-      this.bool(_.quiz);                    // ?: boolean - flags.0?Bool
-    this.string(_.text);                    // : string - string
-  },
-  ["messageEntityBankCard"](_) {
-    this.int32(1981704948);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
   ["bankCardOpenUrl"](_) {
     this.int32(-177732982);
     this.string(_.url);                     // : string - string
@@ -11956,10 +12809,6 @@ export const $encoder = {
     this.int32(1042605427);
     this.string(_.title);                   // : string - string
     this.vector(_.open_urls, this.object);  // : BankCardOpenUrl[] - Vector<BankCardOpenUrl>
-  },
-  ["peerSelfLocated"](_) {
-    this.int32(-118740917);
-    this.int32(_.expires);                  // : number - int
   },
   ["dialogFilter"](_) {
     this.int32(1949890536);
@@ -11998,26 +12847,13 @@ export const $encoder = {
     this.vector(_.include_peers, this.object); // : InputPeer[] - Vector<InputPeer>
     this.vector(_.exclude_peers, this.object); // : InputPeer[] - Vector<InputPeer>
   },
+  ["dialogFilterDefault"](_) {
+    this.int32(909284270);
+  },
   ["dialogFilterSuggested"](_) {
     this.int32(2004110666);
     this.object(_.filter);                  // : DialogFilter - DialogFilter
     this.string(_.description);             // : string - string
-  },
-  ["updateDialogFilter"](_) {
-    this.int32(654302845);
-    this.int32(
-      (+(_.filter != null) << 0)
-    )
-    this.int32(_.id);                       // : number - int
-    if (_.filter != null)
-      this.object(_.filter);                // ?: DialogFilter - flags.0?DialogFilter
-  },
-  ["updateDialogFilterOrder"](_) {
-    this.int32(-1512627963);
-    this.vector(_.order, this.int32);       // : number[] - Vector<int>
-  },
-  ["updateDialogFilters"](_) {
-    this.int32(889491791);
   },
   ["statsDateRangeDays"](_) {
     this.int32(-1237848657);
@@ -12075,19 +12911,6 @@ export const $encoder = {
     this.object(_.languages_graph);         // : StatsGraph - StatsGraph
     this.vector(_.recent_message_interactions, this.object); // : MessageInteractionCounters[] - Vector<MessageInteractionCounters>
   },
-  ["inputMediaDice"](_) {
-    this.int32(-428884101);
-    this.string(_.emoticon);                // : string - string
-  },
-  ["messageMediaDice"](_) {
-    this.int32(1065280907);
-    this.int32(_.value);                    // : number - int
-    this.string(_.emoticon);                // : string - string
-  },
-  ["inputStickerSetDice"](_) {
-    this.int32(-427863538);
-    this.string(_.emoticon);                // : string - string
-  },
   ["help.promoDataEmpty"](_) {
     this.int32(-1728664459);
     this.int32(_.expires);                  // : number - int
@@ -12121,16 +12944,6 @@ export const $encoder = {
     this.int32(_.size);                     // : number - int
     if (_.video_start_ts != null)
       this.double(_.video_start_ts);        // ?: number - flags.0?double
-  },
-  ["updatePhoneCallSignalingData"](_) {
-    this.int32(643940105);
-    this.int64(_.phone_call_id);            // : bigint - long
-    this.bytes(_.data);                     // : BufferSource - bytes
-  },
-  ["chatInvitePeek"](_) {
-    this.int32(1634294960);
-    this.object(_.chat);                    // : Chat - Chat
-    this.int32(_.expires);                  // : number - int
   },
   ["statsGroupTopPoster"](_) {
     this.int32(-1660637285);
@@ -12177,23 +12990,6 @@ export const $encoder = {
     )
     if (_.archive_and_mute_new_noncontact_peers != null)
       this.bool(_.archive_and_mute_new_noncontact_peers); // ?: boolean - flags.0?Bool
-  },
-  ["phoneConnectionWebrtc"](_) {
-    this.int32(1667228533);
-    this.int32(
-      (+(_.turn != null) << 0)
-      | (+(_.stun != null) << 1)
-    )
-    if (_.turn != null)
-      this.true(_.turn);                    // ?: true - flags.0?true
-    if (_.stun != null)
-      this.true(_.stun);                    // ?: true - flags.1?true
-    this.int64(_.id);                       // : bigint - long
-    this.string(_.ip);                      // : string - string
-    this.string(_.ipv6);                    // : string - string
-    this.int32(_.port);                     // : number - int
-    this.string(_.username);                // : string - string
-    this.string(_.password);                // : string - string
   },
   ["help.countryCode"](_) {
     this.int32(1107543535);
@@ -12243,44 +13039,11 @@ export const $encoder = {
     if (_.replies != null)
       this.object(_.replies);               // ?: MessageReplies - flags.2?MessageReplies
   },
-  ["updateChannelMessageForwards"](_) {
-    this.int32(-761649164);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.id);                       // : number - int
-    this.int32(_.forwards);                 // : number - int
-  },
-  ["photoSizeProgressive"](_) {
-    this.int32(-96535659);
-    this.string(_.type);                    // : string - string
-    this.int32(_.w);                        // : number - int
-    this.int32(_.h);                        // : number - int
-    this.vector(_.sizes, this.int32);       // : number[] - Vector<int>
-  },
   ["messages.messageViews"](_) {
     this.int32(-1228606141);
     this.vector(_.views, this.object);      // : MessageViews[] - Vector<MessageViews>
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["updateReadChannelDiscussionInbox"](_) {
-    this.int32(-693004986);
-    this.int32(
-      (+(_.broadcast_id != null) << 0)
-      | (+(_.broadcast_post != null) << 0)
-    )
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.top_msg_id);               // : number - int
-    this.int32(_.read_max_id);              // : number - int
-    if (_.broadcast_id != null)
-      this.int64(_.broadcast_id);           // ?: bigint - flags.0?long
-    if (_.broadcast_post != null)
-      this.int32(_.broadcast_post);         // ?: number - flags.0?int
-  },
-  ["updateReadChannelDiscussionOutbox"](_) {
-    this.int32(1767677564);
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.top_msg_id);               // : number - int
-    this.int32(_.read_max_id);              // : number - int
   },
   ["messages.discussionMessage"](_) {
     this.int32(-1506535550);
@@ -12337,91 +13100,14 @@ export const $encoder = {
     if (_.read_max_id != null)
       this.int32(_.read_max_id);            // ?: number - flags.3?int
   },
-  ["updatePeerBlocked"](_) {
-    this.int32(610945826);
-    this.object(_.peer_id);                 // : Peer - Peer
-    this.bool(_.blocked);                   // : boolean - Bool
-  },
   ["peerBlocked"](_) {
     this.int32(-386039788);
     this.object(_.peer_id);                 // : Peer - Peer
     this.int32(_.date);                     // : number - int
   },
-  ["updateChannelUserTyping"](_) {
-    this.int32(-1937192669);
-    this.int32(
-      (+(_.top_msg_id != null) << 0)
-    )
-    this.int64(_.channel_id);               // : bigint - long
-    if (_.top_msg_id != null)
-      this.int32(_.top_msg_id);             // ?: number - flags.0?int
-    this.object(_.from_id);                 // : Peer - Peer
-    this.object(_.action);                  // : SendMessageAction - SendMessageAction
-  },
-  ["inputMessageCallbackQuery"](_) {
-    this.int32(-1392895362);
-    this.int32(_.id);                       // : number - int
-    this.int64(_.query_id);                 // : bigint - long
-  },
-  ["channelParticipantLeft"](_) {
-    this.int32(453242886);
-    this.object(_.peer);                    // : Peer - Peer
-  },
-  ["channelParticipantsMentions"](_) {
-    this.int32(-531931925);
-    this.int32(
-      (+(_.q != null) << 0)
-      | (+(_.top_msg_id != null) << 1)
-    )
-    if (_.q != null)
-      this.string(_.q);                     // ?: string - flags.0?string
-    if (_.top_msg_id != null)
-      this.int32(_.top_msg_id);             // ?: number - flags.1?int
-  },
-  ["updatePinnedMessages"](_) {
-    this.int32(-309990731);
-    this.int32(
-      (+(_.pinned != null) << 0)
-    )
-    if (_.pinned != null)
-      this.true(_.pinned);                  // ?: true - flags.0?true
-    this.object(_.peer);                    // : Peer - Peer
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["updatePinnedChannelMessages"](_) {
-    this.int32(1538885128);
-    this.int32(
-      (+(_.pinned != null) << 0)
-    )
-    if (_.pinned != null)
-      this.true(_.pinned);                  // ?: true - flags.0?true
-    this.int64(_.channel_id);               // : bigint - long
-    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-    this.int32(_.pts);                      // : number - int
-    this.int32(_.pts_count);                // : number - int
-  },
-  ["inputMessagesFilterPinned"](_) {
-    this.int32(464520273);
-  },
   ["stats.messageStats"](_) {
     this.int32(-1986399595);
     this.object(_.views_graph);             // : StatsGraph - StatsGraph
-  },
-  ["messageActionGeoProximityReached"](_) {
-    this.int32(-1730095465);
-    this.object(_.from_id);                 // : Peer - Peer
-    this.object(_.to_id);                   // : Peer - Peer
-    this.int32(_.distance);                 // : number - int
-  },
-  ["photoPathSize"](_) {
-    this.int32(-668906175);
-    this.string(_.type);                    // : string - string
-    this.bytes(_.bytes);                    // : BufferSource - bytes
-  },
-  ["speakingInGroupCallAction"](_) {
-    this.int32(-651419003);
   },
   ["groupCallDiscarded"](_) {
     this.int32(2004925620);
@@ -12483,20 +13169,6 @@ export const $encoder = {
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
   },
-  ["messageActionGroupCall"](_) {
-    this.int32(2047704898);
-    this.int32(
-      (+(_.duration != null) << 0)
-    )
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-    if (_.duration != null)
-      this.int32(_.duration);               // ?: number - flags.0?int
-  },
-  ["messageActionInviteToGroupCall"](_) {
-    this.int32(1345295095);
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-    this.vector(_.users, this.int64);       // : bigint[] - Vector<long>
-  },
   ["groupCallParticipant"](_) {
     this.int32(-341428482);
     this.int32(
@@ -12553,21 +13225,6 @@ export const $encoder = {
     if (_.presentation != null)
       this.object(_.presentation);          // ?: GroupCallParticipantVideo - flags.14?GroupCallParticipantVideo
   },
-  ["updateChat"](_) {
-    this.int32(-124097970);
-    this.int64(_.chat_id);                  // : bigint - long
-  },
-  ["updateGroupCallParticipants"](_) {
-    this.int32(-219423922);
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-    this.vector(_.participants, this.object); // : GroupCallParticipant[] - Vector<GroupCallParticipant>
-    this.int32(_.version);                  // : number - int
-  },
-  ["updateGroupCall"](_) {
-    this.int32(347227392);
-    this.int64(_.chat_id);                  // : bigint - long
-    this.object(_.call);                    // : GroupCall - GroupCall
-  },
   ["phone.groupCall"](_) {
     this.int32(-1636664659);
     this.object(_.call);                    // : GroupCall - GroupCall
@@ -12600,37 +13257,9 @@ export const $encoder = {
   ["inlineQueryPeerTypeBroadcast"](_) {
     this.int32(1664413338);
   },
-  ["channelAdminLogEventActionStartGroupCall"](_) {
-    this.int32(589338437);
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-  },
-  ["channelAdminLogEventActionDiscardGroupCall"](_) {
-    this.int32(-610299584);
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-  },
-  ["channelAdminLogEventActionParticipantMute"](_) {
-    this.int32(-115071790);
-    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
-  },
-  ["channelAdminLogEventActionParticipantUnmute"](_) {
-    this.int32(-431740480);
-    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
-  },
-  ["channelAdminLogEventActionToggleGroupCallSetting"](_) {
-    this.int32(1456906823);
-    this.bool(_.join_muted);                // : boolean - Bool
-  },
-  ["inputPaymentCredentialsGooglePay"](_) {
-    this.int32(-1966921727);
-    this.object(_.payment_token);           // : DataJSON - DataJSON
-  },
   ["messages.historyImport"](_) {
     this.int32(375566091);
     this.int64(_.id);                       // : bigint - long
-  },
-  ["sendMessageHistoryImportAction"](_) {
-    this.int32(-606432698);
-    this.int32(_.progress);                 // : number - int
   },
   ["messages.historyImportParsed"](_) {
     this.int32(1578088377);
@@ -12646,73 +13275,12 @@ export const $encoder = {
     if (_.title != null)
       this.string(_.title);                 // ?: string - flags.2?string
   },
-  ["inputReportReasonFake"](_) {
-    this.int32(-170010905);
-  },
   ["messages.affectedFoundMessages"](_) {
     this.int32(-275956116);
     this.int32(_.pts);                      // : number - int
     this.int32(_.pts_count);                // : number - int
     this.int32(_.offset);                   // : number - int
     this.vector(_.messages, this.int32);    // : number[] - Vector<int>
-  },
-  ["messageActionSetMessagesTTL"](_) {
-    this.int32(-1441072131);
-    this.int32(_.period);                   // : number - int
-  },
-  ["updatePeerHistoryTTL"](_) {
-    this.int32(-1147422299);
-    this.int32(
-      (+(_.ttl_period != null) << 0)
-    )
-    this.object(_.peer);                    // : Peer - Peer
-    if (_.ttl_period != null)
-      this.int32(_.ttl_period);             // ?: number - flags.0?int
-  },
-  ["updateChatParticipant"](_) {
-    this.int32(-796432838);
-    this.int32(
-      (+(_.prev_participant != null) << 0)
-      | (+(_.new_participant != null) << 1)
-      | (+(_.invite != null) << 2)
-    )
-    this.int64(_.chat_id);                  // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.int64(_.actor_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    if (_.prev_participant != null)
-      this.object(_.prev_participant);      // ?: ChatParticipant - flags.0?ChatParticipant
-    if (_.new_participant != null)
-      this.object(_.new_participant);       // ?: ChatParticipant - flags.1?ChatParticipant
-    if (_.invite != null)
-      this.object(_.invite);                // ?: ExportedChatInvite - flags.2?ExportedChatInvite
-    this.int32(_.qts);                      // : number - int
-  },
-  ["updateChannelParticipant"](_) {
-    this.int32(-1738720581);
-    this.int32(
-      (+(_.prev_participant != null) << 0)
-      | (+(_.new_participant != null) << 1)
-      | (+(_.invite != null) << 2)
-    )
-    this.int64(_.channel_id);               // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.int64(_.actor_id);                 // : bigint - long
-    this.int64(_.user_id);                  // : bigint - long
-    if (_.prev_participant != null)
-      this.object(_.prev_participant);      // ?: ChannelParticipant - flags.0?ChannelParticipant
-    if (_.new_participant != null)
-      this.object(_.new_participant);       // ?: ChannelParticipant - flags.1?ChannelParticipant
-    if (_.invite != null)
-      this.object(_.invite);                // ?: ExportedChatInvite - flags.2?ExportedChatInvite
-    this.int32(_.qts);                      // : number - int
-  },
-  ["updateBotStopped"](_) {
-    this.int32(-997782967);
-    this.int64(_.user_id);                  // : bigint - long
-    this.int32(_.date);                     // : number - int
-    this.bool(_.stopped);                   // : boolean - Bool
-    this.int32(_.qts);                      // : number - int
   },
   ["chatInviteImporter"](_) {
     this.int32(-1940201511);
@@ -12764,49 +13332,9 @@ export const $encoder = {
     this.vector(_.admins, this.object);     // : ChatAdminWithInvites[] - Vector<ChatAdminWithInvites>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["channelAdminLogEventActionParticipantJoinByInvite"](_) {
-    this.int32(1557846647);
-    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
-  },
-  ["channelAdminLogEventActionExportedInviteDelete"](_) {
-    this.int32(1515256996);
-    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
-  },
-  ["channelAdminLogEventActionExportedInviteRevoke"](_) {
-    this.int32(1091179342);
-    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
-  },
-  ["channelAdminLogEventActionExportedInviteEdit"](_) {
-    this.int32(-384910503);
-    this.object(_.prev_invite);             // : ExportedChatInvite - ExportedChatInvite
-    this.object(_.new_invite);              // : ExportedChatInvite - ExportedChatInvite
-  },
-  ["channelAdminLogEventActionParticipantVolume"](_) {
-    this.int32(1048537159);
-    this.object(_.participant);             // : GroupCallParticipant - GroupCallParticipant
-  },
-  ["channelAdminLogEventActionChangeHistoryTTL"](_) {
-    this.int32(1855199800);
-    this.int32(_.prev_value);               // : number - int
-    this.int32(_.new_value);                // : number - int
-  },
   ["messages.checkedHistoryImportPeer"](_) {
     this.int32(-1571952873);
     this.string(_.confirm_text);            // : string - string
-  },
-  ["inputGroupCallStream"](_) {
-    this.int32(93890858);
-    this.int32(
-      (+(_.video_channel != null) << 0)
-      | (+(_.video_quality != null) << 0)
-    )
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-    this.int64(_.time_ms);                  // : bigint - long
-    this.int32(_.scale);                    // : number - int
-    if (_.video_channel != null)
-      this.int32(_.video_channel);          // ?: number - flags.0?int
-    if (_.video_quality != null)
-      this.int32(_.video_quality);          // ?: number - flags.0?int
   },
   ["phone.joinAsPeers"](_) {
     this.int32(-1343921601);
@@ -12817,49 +13345,6 @@ export const $encoder = {
   ["phone.exportedGroupCallInvite"](_) {
     this.int32(541839704);
     this.string(_.link);                    // : string - string
-  },
-  ["inputBotInlineMessageMediaInvoice"](_) {
-    this.int32(-672693723);
-    this.int32(
-      (+(_.photo != null) << 0)
-      | (+(_.reply_markup != null) << 2)
-    )
-    this.string(_.title);                   // : string - string
-    this.string(_.description);             // : string - string
-    if (_.photo != null)
-      this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
-    this.object(_.invoice);                 // : Invoice - Invoice
-    this.bytes(_.payload);                  // : BufferSource - bytes
-    this.string(_.provider);                // : string - string
-    this.object(_.provider_data);           // : DataJSON - DataJSON
-    if (_.reply_markup != null)
-      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["botInlineMessageMediaInvoice"](_) {
-    this.int32(894081801);
-    this.int32(
-      (+(_.shipping_address_requested != null) << 1)
-      | (+(_.test != null) << 3)
-      | (+(_.photo != null) << 0)
-      | (+(_.reply_markup != null) << 2)
-    )
-    if (_.shipping_address_requested != null)
-      this.true(_.shipping_address_requested); // ?: true - flags.1?true
-    if (_.test != null)
-      this.true(_.test);                    // ?: true - flags.3?true
-    this.string(_.title);                   // : string - string
-    this.string(_.description);             // : string - string
-    if (_.photo != null)
-      this.object(_.photo);                 // ?: WebDocument - flags.0?WebDocument
-    this.string(_.currency);                // : string - string
-    this.int64(_.total_amount);             // : bigint - long
-    if (_.reply_markup != null)
-      this.object(_.reply_markup);          // ?: ReplyMarkup - flags.2?ReplyMarkup
-  },
-  ["messageActionGroupCallScheduled"](_) {
-    this.int32(-1281329567);
-    this.object(_.call);                    // : InputGroupCall - InputGroupCall
-    this.int32(_.schedule_date);            // : number - int
   },
   ["groupCallParticipantVideoSourceGroup"](_) {
     this.int32(-592373577);
@@ -12878,15 +13363,6 @@ export const $encoder = {
     this.vector(_.source_groups, this.object); // : GroupCallParticipantVideoSourceGroup[] - Vector<GroupCallParticipantVideoSourceGroup>
     if (_.audio_source != null)
       this.int32(_.audio_source);           // ?: number - flags.1?int
-  },
-  ["updateGroupCallConnection"](_) {
-    this.int32(192428418);
-    this.int32(
-      (+(_.presentation != null) << 0)
-    )
-    if (_.presentation != null)
-      this.true(_.presentation);            // ?: true - flags.0?true
-    this.object(_.params);                  // : DataJSON - DataJSON
   },
   ["stickers.suggestedShortName"](_) {
     this.int32(-2046910401);
@@ -12928,29 +13404,19 @@ export const $encoder = {
   ["account.resetPasswordOk"](_) {
     this.int32(-383330754);
   },
-  ["updateBotCommands"](_) {
-    this.int32(1299263278);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int64(_.bot_id);                   // : bigint - long
-    this.vector(_.commands, this.object);   // : BotCommand[] - Vector<BotCommand>
-  },
-  ["messageActionSetChatTheme"](_) {
-    this.int32(-1434950843);
-    this.string(_.emoticon);                // : string - string
-  },
-  ["sendMessageChooseStickerAction"](_) {
-    this.int32(-1336228175);
-  },
   ["sponsoredMessage"](_) {
     this.int32(981691896);
     this.int32(
-      (+(_.from_id != null) << 3)
+      (+(_.recommended != null) << 5)
+      | (+(_.from_id != null) << 3)
       | (+(_.chat_invite != null) << 4)
       | (+(_.chat_invite_hash != null) << 4)
       | (+(_.channel_post != null) << 2)
       | (+(_.start_param != null) << 0)
       | (+(_.entities != null && _.entities.length > 0) << 1)
     )
+    if (_.recommended != null)
+      this.true(_.recommended);             // ?: true - flags.5?true
     this.bytes(_.random_id);                // : BufferSource - bytes
     if (_.from_id != null)
       this.object(_.from_id);               // ?: Peer - flags.3?Peer
@@ -12971,26 +13437,6 @@ export const $encoder = {
     this.vector(_.messages, this.object);   // : SponsoredMessage[] - Vector<SponsoredMessage>
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["inputStickerSetAnimatedEmojiAnimations"](_) {
-    this.int32(215889721);
-  },
-  ["sendMessageEmojiInteraction"](_) {
-    this.int32(630664139);
-    this.string(_.emoticon);                // : string - string
-    this.int32(_.msg_id);                   // : number - int
-    this.object(_.interaction);             // : DataJSON - DataJSON
-  },
-  ["sendMessageEmojiInteractionSeen"](_) {
-    this.int32(-1234857938);
-    this.string(_.emoticon);                // : string - string
-  },
-  ["inputBotInlineMessageID64"](_) {
-    this.int32(-1227287081);
-    this.int32(_.dc_id);                    // : number - int
-    this.int64(_.owner_id);                 // : bigint - long
-    this.int32(_.id);                       // : number - int
-    this.int64(_.access_hash);              // : bigint - long
   },
   ["searchResultsCalendarPeriod"](_) {
     this.int32(-911191137);
@@ -13028,51 +13474,11 @@ export const $encoder = {
     this.int32(_.count);                    // : number - int
     this.vector(_.positions, this.object);  // : SearchResultsPosition[] - Vector<SearchResultsPosition>
   },
-  ["messageActionChatJoinedByRequest"](_) {
-    this.int32(-339958837);
-  },
-  ["updatePendingJoinRequests"](_) {
-    this.int32(1885586395);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.requests_pending);         // : number - int
-    this.vector(_.recent_requesters, this.int64); // : bigint[] - Vector<long>
-  },
-  ["updateBotChatInviteRequester"](_) {
-    this.int32(299870598);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.date);                     // : number - int
-    this.int64(_.user_id);                  // : bigint - long
-    this.string(_.about);                   // : string - string
-    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
-    this.int32(_.qts);                      // : number - int
-  },
-  ["channelAdminLogEventActionParticipantJoinByRequest"](_) {
-    this.int32(-1347021750);
-    this.object(_.invite);                  // : ExportedChatInvite - ExportedChatInvite
-    this.int64(_.approved_by);              // : bigint - long
-  },
-  ["inputKeyboardButtonUserProfile"](_) {
-    this.int32(-376962181);
-    this.string(_.text);                    // : string - string
-    this.object(_.user_id);                 // : InputUser - InputUser
-  },
-  ["keyboardButtonUserProfile"](_) {
-    this.int32(814112961);
-    this.string(_.text);                    // : string - string
-    this.int64(_.user_id);                  // : bigint - long
-  },
   ["channels.sendAsPeers"](_) {
     this.int32(-2091463255);
     this.vector(_.peers, this.object);      // : Peer[] - Vector<Peer>
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
-  },
-  ["channelAdminLogEventActionToggleNoForwards"](_) {
-    this.int32(-886388890);
-    this.bool(_.new_value);                 // : boolean - Bool
-  },
-  ["messages.stickerSetNotModified"](_) {
-    this.int32(-738646805);
   },
   ["users.userFull"](_) {
     this.int32(997004590);
@@ -13086,18 +13492,6 @@ export const $encoder = {
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
-  ["channelAdminLogEventActionSendMessage"](_) {
-    this.int32(663693416);
-    this.object(_.message);                 // : Message - Message
-  },
-  ["auth.codeTypeMissedCall"](_) {
-    this.int32(-702884114);
-  },
-  ["auth.sentCodeTypeMissedCall"](_) {
-    this.int32(-2113903484);
-    this.string(_.prefix);                  // : string - string
-    this.int32(_.length);                   // : number - int
-  },
   ["auth.loggedOut"](_) {
     this.int32(-1012759713);
     this.int32(
@@ -13105,12 +13499,6 @@ export const $encoder = {
     )
     if (_.future_auth_token != null)
       this.bytes(_.future_auth_token);      // ?: BufferSource - flags.0?bytes
-  },
-  ["updateMessageReactions"](_) {
-    this.int32(357013699);
-    this.object(_.peer);                    // : Peer - Peer
-    this.int32(_.msg_id);                   // : number - int
-    this.object(_.reactions);               // : MessageReactions - MessageReactions
   },
   ["reactionCount"](_) {
     this.int32(1873957073);
@@ -13153,11 +13541,14 @@ export const $encoder = {
     this.int32(-1065882623);
     this.int32(
       (+(_.inactive != null) << 0)
+      | (+(_.premium != null) << 2)
       | (+(_.around_animation != null) << 1)
       | (+(_.center_icon != null) << 1)
     )
     if (_.inactive != null)
       this.true(_.inactive);                // ?: true - flags.0?true
+    if (_.premium != null)
+      this.true(_.premium);                 // ?: true - flags.2?true
     this.string(_.reaction);                // : string - string
     this.string(_.title);                   // : string - string
     this.object(_.static_icon);             // : Document - Document
@@ -13177,16 +13568,6 @@ export const $encoder = {
     this.int32(1989032621);
     this.int32(_.hash);                     // : number - int
     this.vector(_.reactions, this.object);  // : AvailableReaction[] - Vector<AvailableReaction>
-  },
-  ["messageEntitySpoiler"](_) {
-    this.int32(852137487);
-    this.int32(_.offset);                   // : number - int
-    this.int32(_.length);                   // : number - int
-  },
-  ["channelAdminLogEventActionChangeAvailableReactions"](_) {
-    this.int32(-1661470870);
-    this.vector(_.prev_value, this.string); // : string[] - Vector<string>
-    this.vector(_.new_value, this.string);  // : string[] - Vector<string>
   },
   ["messages.translateNoResult"](_) {
     this.int32(1741309751);
@@ -13218,16 +13599,160 @@ export const $encoder = {
     this.int32(-790330702);
     this.vector(_.channels, this.object);   // : GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
   },
-  ["inputReportReasonIllegalDrugs"](_) {
-    this.int32(177124030);
-  },
-  ["inputReportReasonPersonalDetails"](_) {
-    this.int32(-1631091139);
-  },
   ["phone.groupCallStreamRtmpUrl"](_) {
     this.int32(767505458);
     this.string(_.url);                     // : string - string
     this.string(_.key);                     // : string - string
+  },
+  ["attachMenuBotIconColor"](_) {
+    this.int32(1165423600);
+    this.string(_.name);                    // : string - string
+    this.int32(_.color);                    // : number - int
+  },
+  ["attachMenuBotIcon"](_) {
+    this.int32(-1297663893);
+    this.int32(
+      (+(_.colors != null && _.colors.length > 0) << 0)
+    )
+    this.string(_.name);                    // : string - string
+    this.object(_.icon);                    // : Document - Document
+    if (_.colors != null && _.colors.length > 0)
+      this.vector(_.colors, this.object);   // ?: AttachMenuBotIconColor[] - flags.0?Vector<AttachMenuBotIconColor>
+  },
+  ["attachMenuBot"](_) {
+    this.int32(-928371502);
+    this.int32(
+      (+(_.inactive != null) << 0)
+      | (+(_.has_settings != null) << 1)
+    )
+    if (_.inactive != null)
+      this.true(_.inactive);                // ?: true - flags.0?true
+    if (_.has_settings != null)
+      this.true(_.has_settings);            // ?: true - flags.1?true
+    this.int64(_.bot_id);                   // : bigint - long
+    this.string(_.short_name);              // : string - string
+    this.vector(_.peer_types, this.object); // : AttachMenuPeerType[] - Vector<AttachMenuPeerType>
+    this.vector(_.icons, this.object);      // : AttachMenuBotIcon[] - Vector<AttachMenuBotIcon>
+  },
+  ["attachMenuBotsNotModified"](_) {
+    this.int32(-237467044);
+  },
+  ["attachMenuBots"](_) {
+    this.int32(1011024320);
+    this.int64(_.hash);                     // : bigint - long
+    this.vector(_.bots, this.object);       // : AttachMenuBot[] - Vector<AttachMenuBot>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["attachMenuBotsBot"](_) {
+    this.int32(-1816172929);
+    this.object(_.bot);                     // : AttachMenuBot - AttachMenuBot
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["webViewResultUrl"](_) {
+    this.int32(202659196);
+    this.int64(_.query_id);                 // : bigint - long
+    this.string(_.url);                     // : string - string
+  },
+  ["simpleWebViewResultUrl"](_) {
+    this.int32(-2010155333);
+    this.string(_.url);                     // : string - string
+  },
+  ["webViewMessageSent"](_) {
+    this.int32(211046684);
+    this.int32(
+      (+(_.msg_id != null) << 0)
+    )
+    if (_.msg_id != null)
+      this.object(_.msg_id);                // ?: InputBotInlineMessageID - flags.0?InputBotInlineMessageID
+  },
+  ["botMenuButtonDefault"](_) {
+    this.int32(1966318984);
+  },
+  ["botMenuButtonCommands"](_) {
+    this.int32(1113113093);
+  },
+  ["botMenuButton"](_) {
+    this.int32(-944407322);
+    this.string(_.text);                    // : string - string
+    this.string(_.url);                     // : string - string
+  },
+  ["account.savedRingtonesNotModified"](_) {
+    this.int32(-67704655);
+  },
+  ["account.savedRingtones"](_) {
+    this.int32(-1041683259);
+    this.int64(_.hash);                     // : bigint - long
+    this.vector(_.ringtones, this.object);  // : Document[] - Vector<Document>
+  },
+  ["notificationSoundDefault"](_) {
+    this.int32(-1746354498);
+  },
+  ["notificationSoundNone"](_) {
+    this.int32(1863070943);
+  },
+  ["notificationSoundLocal"](_) {
+    this.int32(-2096391452);
+    this.string(_.title);                   // : string - string
+    this.string(_.data);                    // : string - string
+  },
+  ["notificationSoundRingtone"](_) {
+    this.int32(-9666487);
+    this.int64(_.id);                       // : bigint - long
+  },
+  ["account.savedRingtone"](_) {
+    this.int32(-1222230163);
+  },
+  ["account.savedRingtoneConverted"](_) {
+    this.int32(523271863);
+    this.object(_.document);                // : Document - Document
+  },
+  ["attachMenuPeerTypeSameBotPM"](_) {
+    this.int32(2104224014);
+  },
+  ["attachMenuPeerTypeBotPM"](_) {
+    this.int32(-1020528102);
+  },
+  ["attachMenuPeerTypePM"](_) {
+    this.int32(-247016673);
+  },
+  ["attachMenuPeerTypeChat"](_) {
+    this.int32(84480319);
+  },
+  ["attachMenuPeerTypeBroadcast"](_) {
+    this.int32(2080104188);
+  },
+  ["inputInvoiceMessage"](_) {
+    this.int32(-977967015);
+    this.object(_.peer);                    // : InputPeer - InputPeer
+    this.int32(_.msg_id);                   // : number - int
+  },
+  ["inputInvoiceSlug"](_) {
+    this.int32(-1020867857);
+    this.string(_.slug);                    // : string - string
+  },
+  ["payments.exportedInvoice"](_) {
+    this.int32(-1362048039);
+    this.string(_.url);                     // : string - string
+  },
+  ["messages.transcribedAudio"](_) {
+    this.int32(-1821037486);
+    this.int32(
+      (+(_.pending != null) << 0)
+    )
+    if (_.pending != null)
+      this.true(_.pending);                 // ?: true - flags.0?true
+    this.int64(_.transcription_id);         // : bigint - long
+    this.string(_.text);                    // : string - string
+  },
+  ["help.premiumPromo"](_) {
+    this.int32(-1974518743);
+    this.string(_.status_text);             // : string - string
+    this.vector(_.status_entities, this.object); // : MessageEntity[] - Vector<MessageEntity>
+    this.vector(_.video_sections, this.string); // : string[] - Vector<string>
+    this.vector(_.videos, this.object);     // : Document[] - Vector<Document>
+    this.string(_.currency);                // : string - string
+    this.int64(_.monthly_amount);           // : bigint - long
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
 };
 
@@ -13513,11 +14038,50 @@ export const $decoder = new Map([
     _.chat_id = this.int64();               // : bigint - long
     return _;
   }],
+  [-571955892, function decode$inputPeerUser() {
+    const _ = { _: "inputPeerUser" }
+    _.user_id = this.int64();               // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [666680316, function decode$inputPeerChannel() {
+    const _ = { _: "inputPeerChannel" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [-1468331492, function decode$inputPeerUserFromMessage() {
+    const _ = { _: "inputPeerUserFromMessage" }
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.msg_id = this.int32();                // : number - int
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-1121318848, function decode$inputPeerChannelFromMessage() {
+    const _ = { _: "inputPeerChannelFromMessage" }
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.msg_id = this.int32();                // : number - int
+    _.channel_id = this.int64();            // : bigint - long
+    return _;
+  }],
   [-1182234929, function decode$inputUserEmpty() {
     return { _: "inputUserEmpty" }
   }],
   [-138301121, function decode$inputUserSelf() {
     return { _: "inputUserSelf" }
+  }],
+  [-233744186, function decode$inputUser() {
+    const _ = { _: "inputUser" }
+    _.user_id = this.int64();               // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [497305826, function decode$inputUserFromMessage() {
+    const _ = { _: "inputUserFromMessage" }
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.msg_id = this.int32();                // : number - int
+    _.user_id = this.int64();               // : bigint - long
+    return _;
   }],
   [-208488460, function decode$inputPhoneContact() {
     const _ = { _: "inputPhoneContact" }
@@ -13533,6 +14097,13 @@ export const $decoder = new Map([
     _.parts = this.int32();                 // : number - int
     _.name = this.string();                 // : string - string
     _.md5_checksum = this.string();         // : string - string
+    return _;
+  }],
+  [-95482955, function decode$inputFileBig() {
+    const _ = { _: "inputFileBig" }
+    _.id = this.int64();                    // : bigint - long
+    _.parts = this.int32();                 // : number - int
+    _.name = this.string();                 // : string - string
     return _;
   }],
   [-1771768449, function decode$inputMediaEmpty() {
@@ -13564,6 +14135,93 @@ export const $decoder = new Map([
     _.first_name = this.string();           // : string - string
     _.last_name = this.string();            // : string - string
     _.vcard = this.string();                // : string - string
+    return _;
+  }],
+  [1530447553, function decode$inputMediaUploadedDocument() {
+    const _ = { _: "inputMediaUploadedDocument" }
+    const flags = this.int32();
+    if (flags & 8) _.nosound_video = true   // ?: true - flags.3?true
+    if (flags & 16) _.force_file = true     // ?: true - flags.4?true
+    _.file = this.object();                 // : global.InputFile - InputFile
+    if (flags & 4) _.thumb = this.object()  // ?: global.InputFile - flags.2?InputFile
+    _.mime_type = this.string();            // : string - string
+    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    if (flags & 1) _.stickers = this.vector(this.object) // ?: global.InputDocument[] - flags.0?Vector<InputDocument>
+    if (flags & 2) _.ttl_seconds = this.int32() // ?: number - flags.1?int
+    return _;
+  }],
+  [860303448, function decode$inputMediaDocument() {
+    const _ = { _: "inputMediaDocument" }
+    const flags = this.int32();
+    _.id = this.object();                   // : global.InputDocument - InputDocument
+    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
+    if (flags & 2) _.query = this.string()  // ?: string - flags.1?string
+    return _;
+  }],
+  [-1052959727, function decode$inputMediaVenue() {
+    const _ = { _: "inputMediaVenue" }
+    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.title = this.string();                // : string - string
+    _.address = this.string();              // : string - string
+    _.provider = this.string();             // : string - string
+    _.venue_id = this.string();             // : string - string
+    _.venue_type = this.string();           // : string - string
+    return _;
+  }],
+  [-440664550, function decode$inputMediaPhotoExternal() {
+    const _ = { _: "inputMediaPhotoExternal" }
+    const flags = this.int32();
+    _.url = this.string();                  // : string - string
+    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
+  [-78455655, function decode$inputMediaDocumentExternal() {
+    const _ = { _: "inputMediaDocumentExternal" }
+    const flags = this.int32();
+    _.url = this.string();                  // : string - string
+    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
+  [-750828557, function decode$inputMediaGame() {
+    const _ = { _: "inputMediaGame" }
+    _.id = this.object();                   // : global.InputGame - InputGame
+    return _;
+  }],
+  [-646342540, function decode$inputMediaInvoice() {
+    const _ = { _: "inputMediaInvoice" }
+    const flags = this.int32();
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
+    _.invoice = this.object();              // : global.Invoice - Invoice
+    _.payload = this.bytes();               // : BufferSource - bytes
+    _.provider = this.string();             // : string - string
+    _.provider_data = this.object();        // : global.DataJSON - DataJSON
+    if (flags & 2) _.start_param = this.string() // ?: string - flags.1?string
+    return _;
+  }],
+  [-1759532989, function decode$inputMediaGeoLive() {
+    const _ = { _: "inputMediaGeoLive" }
+    const flags = this.int32();
+    if (flags & 1) _.stopped = true         // ?: true - flags.0?true
+    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    if (flags & 4) _.heading = this.int32() // ?: number - flags.2?int
+    if (flags & 2) _.period = this.int32()  // ?: number - flags.1?int
+    if (flags & 8) _.proximity_notification_radius = this.int32() // ?: number - flags.3?int
+    return _;
+  }],
+  [261416433, function decode$inputMediaPoll() {
+    const _ = { _: "inputMediaPoll" }
+    const flags = this.int32();
+    _.poll = this.object();                 // : global.Poll - Poll
+    if (flags & 1) _.correct_answers = this.vector(this.bytes) // ?: BufferSource[] - flags.0?Vector<bytes>
+    if (flags & 2) _.solution = this.string() // ?: string - flags.1?string
+    if (flags & 2) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    return _;
+  }],
+  [-428884101, function decode$inputMediaDice() {
+    const _ = { _: "inputMediaDice" }
+    _.emoticon = this.string();             // : string - string
     return _;
   }],
   [480546647, function decode$inputChatPhotoEmpty() {
@@ -13611,6 +14269,71 @@ export const $decoder = new Map([
     _.file_reference = this.bytes();        // : BufferSource - bytes
     return _;
   }],
+  [-182231723, function decode$inputEncryptedFileLocation() {
+    const _ = { _: "inputEncryptedFileLocation" }
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [-1160743548, function decode$inputDocumentFileLocation() {
+    const _ = { _: "inputDocumentFileLocation" }
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.thumb_size = this.string();           // : string - string
+    return _;
+  }],
+  [-876089816, function decode$inputSecureFileLocation() {
+    const _ = { _: "inputSecureFileLocation" }
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    return _;
+  }],
+  [700340377, function decode$inputTakeoutFileLocation() {
+    return { _: "inputTakeoutFileLocation" }
+  }],
+  [1075322878, function decode$inputPhotoFileLocation() {
+    const _ = { _: "inputPhotoFileLocation" }
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.thumb_size = this.string();           // : string - string
+    return _;
+  }],
+  [-667654413, function decode$inputPhotoLegacyFileLocation() {
+    const _ = { _: "inputPhotoLegacyFileLocation" }
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.volume_id = this.int64();             // : bigint - long
+    _.local_id = this.int32();              // : number - int
+    _.secret = this.int64();                // : bigint - long
+    return _;
+  }],
+  [925204121, function decode$inputPeerPhotoFileLocation() {
+    const _ = { _: "inputPeerPhotoFileLocation" }
+    const flags = this.int32();
+    if (flags & 1) _.big = true             // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.photo_id = this.int64();              // : bigint - long
+    return _;
+  }],
+  [-1652231205, function decode$inputStickerSetThumb() {
+    const _ = { _: "inputStickerSetThumb" }
+    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
+    _.thumb_version = this.int32();         // : number - int
+    return _;
+  }],
+  [93890858, function decode$inputGroupCallStream() {
+    const _ = { _: "inputGroupCallStream" }
+    const flags = this.int32();
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.time_ms = this.int64();               // : bigint - long
+    _.scale = this.int32();                 // : number - int
+    if (flags & 1) _.video_channel = this.int32() // ?: number - flags.0?int
+    if (flags & 1) _.video_quality = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
   [1498486562, function decode$peerUser() {
     const _ = { _: "peerUser" }
     _.user_id = this.int64();               // : bigint - long
@@ -13619,6 +14342,11 @@ export const $decoder = new Map([
   [918946202, function decode$peerChat() {
     const _ = { _: "peerChat" }
     _.chat_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-1566230754, function decode$peerChannel() {
+    const _ = { _: "peerChannel" }
+    _.channel_id = this.int64();            // : bigint - long
     return _;
   }],
   [-1432995067, function decode$storage__fileUnknown() {
@@ -13656,6 +14384,41 @@ export const $decoder = new Map([
     _.id = this.int64();                    // : bigint - long
     return _;
   }],
+  [1073147056, function decode$user() {
+    const _ = { _: "user" }
+    const flags = this.int32();
+    if (flags & 1024) _.self = true         // ?: true - flags.10?true
+    if (flags & 2048) _.contact = true      // ?: true - flags.11?true
+    if (flags & 4096) _.mutual_contact = true // ?: true - flags.12?true
+    if (flags & 8192) _.deleted = true      // ?: true - flags.13?true
+    if (flags & 16384) _.bot = true         // ?: true - flags.14?true
+    if (flags & 32768) _.bot_chat_history = true // ?: true - flags.15?true
+    if (flags & 65536) _.bot_nochats = true // ?: true - flags.16?true
+    if (flags & 131072) _.verified = true   // ?: true - flags.17?true
+    if (flags & 262144) _.restricted = true // ?: true - flags.18?true
+    if (flags & 1048576) _.min = true       // ?: true - flags.20?true
+    if (flags & 2097152) _.bot_inline_geo = true // ?: true - flags.21?true
+    if (flags & 8388608) _.support = true   // ?: true - flags.23?true
+    if (flags & 16777216) _.scam = true     // ?: true - flags.24?true
+    if (flags & 33554432) _.apply_min_photo = true // ?: true - flags.25?true
+    if (flags & 67108864) _.fake = true     // ?: true - flags.26?true
+    if (flags & 134217728) _.bot_attach_menu = true // ?: true - flags.27?true
+    if (flags & 268435456) _.premium = true // ?: true - flags.28?true
+    if (flags & 536870912) _.attach_menu_enabled = true // ?: true - flags.29?true
+    _.id = this.int64();                    // : bigint - long
+    if (flags & 1) _.access_hash = this.int64() // ?: bigint - flags.0?long
+    if (flags & 2) _.first_name = this.string() // ?: string - flags.1?string
+    if (flags & 4) _.last_name = this.string() // ?: string - flags.2?string
+    if (flags & 8) _.username = this.string() // ?: string - flags.3?string
+    if (flags & 16) _.phone = this.string() // ?: string - flags.4?string
+    if (flags & 32) _.photo = this.object() // ?: global.UserProfilePhoto - flags.5?UserProfilePhoto
+    if (flags & 64) _.status = this.object() // ?: global.UserStatus - flags.6?UserStatus
+    if (flags & 16384) _.bot_info_version = this.int32() // ?: number - flags.14?int
+    if (flags & 262144) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.18?Vector<RestrictionReason>
+    if (flags & 524288) _.bot_inline_placeholder = this.string() // ?: string - flags.19?string
+    if (flags & 4194304) _.lang_code = this.string() // ?: string - flags.22?string
+    return _;
+  }],
   [1326562017, function decode$userProfilePhotoEmpty() {
     return { _: "userProfilePhotoEmpty" }
   }],
@@ -13680,6 +14443,15 @@ export const $decoder = new Map([
     const _ = { _: "userStatusOffline" }
     _.was_online = this.int32();            // : number - int
     return _;
+  }],
+  [-496024847, function decode$userStatusRecently() {
+    return { _: "userStatusRecently" }
+  }],
+  [129960444, function decode$userStatusLastWeek() {
+    return { _: "userStatusLastWeek" }
+  }],
+  [2011940674, function decode$userStatusLastMonth() {
+    return { _: "userStatusLastMonth" }
   }],
   [693512293, function decode$chatEmpty() {
     const _ = { _: "chatEmpty" }
@@ -13712,6 +14484,52 @@ export const $decoder = new Map([
     _.title = this.string();                // : string - string
     return _;
   }],
+  [-2107528095, function decode$channel() {
+    const _ = { _: "channel" }
+    const flags = this.int32();
+    if (flags & 1) _.creator = true         // ?: true - flags.0?true
+    if (flags & 4) _.left = true            // ?: true - flags.2?true
+    if (flags & 32) _.broadcast = true      // ?: true - flags.5?true
+    if (flags & 128) _.verified = true      // ?: true - flags.7?true
+    if (flags & 256) _.megagroup = true     // ?: true - flags.8?true
+    if (flags & 512) _.restricted = true    // ?: true - flags.9?true
+    if (flags & 2048) _.signatures = true   // ?: true - flags.11?true
+    if (flags & 4096) _.min = true          // ?: true - flags.12?true
+    if (flags & 524288) _.scam = true       // ?: true - flags.19?true
+    if (flags & 1048576) _.has_link = true  // ?: true - flags.20?true
+    if (flags & 2097152) _.has_geo = true   // ?: true - flags.21?true
+    if (flags & 4194304) _.slowmode_enabled = true // ?: true - flags.22?true
+    if (flags & 8388608) _.call_active = true // ?: true - flags.23?true
+    if (flags & 16777216) _.call_not_empty = true // ?: true - flags.24?true
+    if (flags & 33554432) _.fake = true     // ?: true - flags.25?true
+    if (flags & 67108864) _.gigagroup = true // ?: true - flags.26?true
+    if (flags & 134217728) _.noforwards = true // ?: true - flags.27?true
+    if (flags & 268435456) _.join_to_send = true // ?: true - flags.28?true
+    if (flags & 536870912) _.join_request = true // ?: true - flags.29?true
+    _.id = this.int64();                    // : bigint - long
+    if (flags & 8192) _.access_hash = this.int64() // ?: bigint - flags.13?long
+    _.title = this.string();                // : string - string
+    if (flags & 64) _.username = this.string() // ?: string - flags.6?string
+    _.photo = this.object();                // : global.ChatPhoto - ChatPhoto
+    _.date = this.int32();                  // : number - int
+    if (flags & 512) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.9?Vector<RestrictionReason>
+    if (flags & 16384) _.admin_rights = this.object() // ?: global.ChatAdminRights - flags.14?ChatAdminRights
+    if (flags & 32768) _.banned_rights = this.object() // ?: global.ChatBannedRights - flags.15?ChatBannedRights
+    if (flags & 262144) _.default_banned_rights = this.object() // ?: global.ChatBannedRights - flags.18?ChatBannedRights
+    if (flags & 131072) _.participants_count = this.int32() // ?: number - flags.17?int
+    return _;
+  }],
+  [399807445, function decode$channelForbidden() {
+    const _ = { _: "channelForbidden" }
+    const flags = this.int32();
+    if (flags & 32) _.broadcast = true      // ?: true - flags.5?true
+    if (flags & 256) _.megagroup = true     // ?: true - flags.8?true
+    _.id = this.int64();                    // : bigint - long
+    _.access_hash = this.int64();           // : bigint - long
+    _.title = this.string();                // : string - string
+    if (flags & 65536) _.until_date = this.int32() // ?: number - flags.16?int
+    return _;
+  }],
   [-779165146, function decode$chatFull() {
     const _ = { _: "chatFull" }
     const flags = this.int32();
@@ -13735,8 +14553,70 @@ export const $decoder = new Map([
     if (flags & 262144) _.available_reactions = this.vector(this.string) // ?: string[] - flags.18?Vector<string>
     return _;
   }],
+  [-362240487, function decode$channelFull() {
+    const _ = { _: "channelFull" }
+    const flags = this.int32();
+    if (flags & 8) _.can_view_participants = true // ?: true - flags.3?true
+    if (flags & 64) _.can_set_username = true // ?: true - flags.6?true
+    if (flags & 128) _.can_set_stickers = true // ?: true - flags.7?true
+    if (flags & 1024) _.hidden_prehistory = true // ?: true - flags.10?true
+    if (flags & 65536) _.can_set_location = true // ?: true - flags.16?true
+    if (flags & 524288) _.has_scheduled = true // ?: true - flags.19?true
+    if (flags & 1048576) _.can_view_stats = true // ?: true - flags.20?true
+    if (flags & 4194304) _.blocked = true   // ?: true - flags.22?true
+    const flags2 = this.int32();
+    if (flags2 & 1) _.can_delete_channel = true // ?: true - flags2.0?true
+    _.id = this.int64();                    // : bigint - long
+    _.about = this.string();                // : string - string
+    if (flags & 1) _.participants_count = this.int32() // ?: number - flags.0?int
+    if (flags & 2) _.admins_count = this.int32() // ?: number - flags.1?int
+    if (flags & 4) _.kicked_count = this.int32() // ?: number - flags.2?int
+    if (flags & 4) _.banned_count = this.int32() // ?: number - flags.2?int
+    if (flags & 8192) _.online_count = this.int32() // ?: number - flags.13?int
+    _.read_inbox_max_id = this.int32();     // : number - int
+    _.read_outbox_max_id = this.int32();    // : number - int
+    _.unread_count = this.int32();          // : number - int
+    _.chat_photo = this.object();           // : global.Photo - Photo
+    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
+    if (flags & 8388608) _.exported_invite = this.object() // ?: global.ExportedChatInvite - flags.23?ExportedChatInvite
+    _.bot_info = this.vector(this.object);  // : global.BotInfo[] - Vector<BotInfo>
+    if (flags & 16) _.migrated_from_chat_id = this.int64() // ?: bigint - flags.4?long
+    if (flags & 16) _.migrated_from_max_id = this.int32() // ?: number - flags.4?int
+    if (flags & 32) _.pinned_msg_id = this.int32() // ?: number - flags.5?int
+    if (flags & 256) _.stickerset = this.object() // ?: global.StickerSet - flags.8?StickerSet
+    if (flags & 512) _.available_min_id = this.int32() // ?: number - flags.9?int
+    if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
+    if (flags & 16384) _.linked_chat_id = this.int64() // ?: bigint - flags.14?long
+    if (flags & 32768) _.location = this.object() // ?: global.ChannelLocation - flags.15?ChannelLocation
+    if (flags & 131072) _.slowmode_seconds = this.int32() // ?: number - flags.17?int
+    if (flags & 262144) _.slowmode_next_send_date = this.int32() // ?: number - flags.18?int
+    if (flags & 4096) _.stats_dc = this.int32() // ?: number - flags.12?int
+    _.pts = this.int32();                   // : number - int
+    if (flags & 2097152) _.call = this.object() // ?: global.InputGroupCall - flags.21?InputGroupCall
+    if (flags & 16777216) _.ttl_period = this.int32() // ?: number - flags.24?int
+    if (flags & 33554432) _.pending_suggestions = this.vector(this.string) // ?: string[] - flags.25?Vector<string>
+    if (flags & 67108864) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.26?Peer
+    if (flags & 134217728) _.theme_emoticon = this.string() // ?: string - flags.27?string
+    if (flags & 268435456) _.requests_pending = this.int32() // ?: number - flags.28?int
+    if (flags & 268435456) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.28?Vector<long>
+    if (flags & 536870912) _.default_send_as = this.object() // ?: global.Peer - flags.29?Peer
+    if (flags & 1073741824) _.available_reactions = this.vector(this.string) // ?: string[] - flags.30?Vector<string>
+    return _;
+  }],
   [-1070776313, function decode$chatParticipant() {
     const _ = { _: "chatParticipant" }
+    _.user_id = this.int64();               // : bigint - long
+    _.inviter_id = this.int64();            // : bigint - long
+    _.date = this.int32();                  // : number - int
+    return _;
+  }],
+  [-462696732, function decode$chatParticipantCreator() {
+    const _ = { _: "chatParticipantCreator" }
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-1600962725, function decode$chatParticipantAdmin() {
+    const _ = { _: "chatParticipantAdmin" }
     _.user_id = this.int64();               // : bigint - long
     _.inviter_id = this.int64();            // : bigint - long
     _.date = this.int32();                  // : number - int
@@ -13855,6 +14735,69 @@ export const $decoder = new Map([
   [-1618676578, function decode$messageMediaUnsupported() {
     return { _: "messageMediaUnsupported" }
   }],
+  [-1666158377, function decode$messageMediaDocument() {
+    const _ = { _: "messageMediaDocument" }
+    const flags = this.int32();
+    if (flags & 8) _.nopremium = true       // ?: true - flags.3?true
+    if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
+    if (flags & 4) _.ttl_seconds = this.int32() // ?: number - flags.2?int
+    return _;
+  }],
+  [-1557277184, function decode$messageMediaWebPage() {
+    const _ = { _: "messageMediaWebPage" }
+    _.webpage = this.object();              // : global.WebPage - WebPage
+    return _;
+  }],
+  [784356159, function decode$messageMediaVenue() {
+    const _ = { _: "messageMediaVenue" }
+    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.title = this.string();                // : string - string
+    _.address = this.string();              // : string - string
+    _.provider = this.string();             // : string - string
+    _.venue_id = this.string();             // : string - string
+    _.venue_type = this.string();           // : string - string
+    return _;
+  }],
+  [-38694904, function decode$messageMediaGame() {
+    const _ = { _: "messageMediaGame" }
+    _.game = this.object();                 // : global.Game - Game
+    return _;
+  }],
+  [-2074799289, function decode$messageMediaInvoice() {
+    const _ = { _: "messageMediaInvoice" }
+    const flags = this.int32();
+    if (flags & 2) _.shipping_address_requested = true // ?: true - flags.1?true
+    if (flags & 8) _.test = true            // ?: true - flags.3?true
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
+    if (flags & 4) _.receipt_msg_id = this.int32() // ?: number - flags.2?int
+    _.currency = this.string();             // : string - string
+    _.total_amount = this.int64();          // : bigint - long
+    _.start_param = this.string();          // : string - string
+    return _;
+  }],
+  [-1186937242, function decode$messageMediaGeoLive() {
+    const _ = { _: "messageMediaGeoLive" }
+    const flags = this.int32();
+    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    if (flags & 1) _.heading = this.int32() // ?: number - flags.0?int
+    _.period = this.int32();                // : number - int
+    if (flags & 2) _.proximity_notification_radius = this.int32() // ?: number - flags.1?int
+    return _;
+  }],
+  [1272375192, function decode$messageMediaPoll() {
+    const _ = { _: "messageMediaPoll" }
+    _.poll = this.object();                 // : global.Poll - Poll
+    _.results = this.object();              // : global.PollResults - PollResults
+    return _;
+  }],
+  [1065280907, function decode$messageMediaDice() {
+    const _ = { _: "messageMediaDice" }
+    _.value = this.int32();                 // : number - int
+    _.emoticon = this.string();             // : string - string
+    return _;
+  }],
   [-1230047312, function decode$messageActionEmpty() {
     return { _: "messageActionEmpty" }
   }],
@@ -13887,6 +14830,148 @@ export const $decoder = new Map([
     _.user_id = this.int64();               // : bigint - long
     return _;
   }],
+  [51520707, function decode$messageActionChatJoinedByLink() {
+    const _ = { _: "messageActionChatJoinedByLink" }
+    _.inviter_id = this.int64();            // : bigint - long
+    return _;
+  }],
+  [-1781355374, function decode$messageActionChannelCreate() {
+    const _ = { _: "messageActionChannelCreate" }
+    _.title = this.string();                // : string - string
+    return _;
+  }],
+  [-519864430, function decode$messageActionChatMigrateTo() {
+    const _ = { _: "messageActionChatMigrateTo" }
+    _.channel_id = this.int64();            // : bigint - long
+    return _;
+  }],
+  [-365344535, function decode$messageActionChannelMigrateFrom() {
+    const _ = { _: "messageActionChannelMigrateFrom" }
+    _.title = this.string();                // : string - string
+    _.chat_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-1799538451, function decode$messageActionPinMessage() {
+    return { _: "messageActionPinMessage" }
+  }],
+  [-1615153660, function decode$messageActionHistoryClear() {
+    return { _: "messageActionHistoryClear" }
+  }],
+  [-1834538890, function decode$messageActionGameScore() {
+    const _ = { _: "messageActionGameScore" }
+    _.game_id = this.int64();               // : bigint - long
+    _.score = this.int32();                 // : number - int
+    return _;
+  }],
+  [-1892568281, function decode$messageActionPaymentSentMe() {
+    const _ = { _: "messageActionPaymentSentMe" }
+    const flags = this.int32();
+    if (flags & 4) _.recurring_init = true  // ?: true - flags.2?true
+    if (flags & 8) _.recurring_used = true  // ?: true - flags.3?true
+    _.currency = this.string();             // : string - string
+    _.total_amount = this.int64();          // : bigint - long
+    _.payload = this.bytes();               // : BufferSource - bytes
+    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
+    _.charge = this.object();               // : global.PaymentCharge - PaymentCharge
+    return _;
+  }],
+  [-1776926890, function decode$messageActionPaymentSent() {
+    const _ = { _: "messageActionPaymentSent" }
+    const flags = this.int32();
+    if (flags & 4) _.recurring_init = true  // ?: true - flags.2?true
+    if (flags & 8) _.recurring_used = true  // ?: true - flags.3?true
+    _.currency = this.string();             // : string - string
+    _.total_amount = this.int64();          // : bigint - long
+    if (flags & 1) _.invoice_slug = this.string() // ?: string - flags.0?string
+    return _;
+  }],
+  [-2132731265, function decode$messageActionPhoneCall() {
+    const _ = { _: "messageActionPhoneCall" }
+    const flags = this.int32();
+    if (flags & 4) _.video = true           // ?: true - flags.2?true
+    _.call_id = this.int64();               // : bigint - long
+    if (flags & 1) _.reason = this.object() // ?: global.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
+    if (flags & 2) _.duration = this.int32() // ?: number - flags.1?int
+    return _;
+  }],
+  [1200788123, function decode$messageActionScreenshotTaken() {
+    return { _: "messageActionScreenshotTaken" }
+  }],
+  [-85549226, function decode$messageActionCustomAction() {
+    const _ = { _: "messageActionCustomAction" }
+    _.message = this.string();              // : string - string
+    return _;
+  }],
+  [-1410748418, function decode$messageActionBotAllowed() {
+    const _ = { _: "messageActionBotAllowed" }
+    _.domain = this.string();               // : string - string
+    return _;
+  }],
+  [455635795, function decode$messageActionSecureValuesSentMe() {
+    const _ = { _: "messageActionSecureValuesSentMe" }
+    _.values = this.vector(this.object);    // : global.SecureValue[] - Vector<SecureValue>
+    _.credentials = this.object();          // : global.SecureCredentialsEncrypted - SecureCredentialsEncrypted
+    return _;
+  }],
+  [-648257196, function decode$messageActionSecureValuesSent() {
+    const _ = { _: "messageActionSecureValuesSent" }
+    _.types = this.vector(this.object);     // : global.SecureValueType[] - Vector<SecureValueType>
+    return _;
+  }],
+  [-202219658, function decode$messageActionContactSignUp() {
+    return { _: "messageActionContactSignUp" }
+  }],
+  [-1730095465, function decode$messageActionGeoProximityReached() {
+    const _ = { _: "messageActionGeoProximityReached" }
+    _.from_id = this.object();              // : global.Peer - Peer
+    _.to_id = this.object();                // : global.Peer - Peer
+    _.distance = this.int32();              // : number - int
+    return _;
+  }],
+  [2047704898, function decode$messageActionGroupCall() {
+    const _ = { _: "messageActionGroupCall" }
+    const flags = this.int32();
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    if (flags & 1) _.duration = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
+  [1345295095, function decode$messageActionInviteToGroupCall() {
+    const _ = { _: "messageActionInviteToGroupCall" }
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.users = this.vector(this.int64);      // : bigint[] - Vector<long>
+    return _;
+  }],
+  [-1441072131, function decode$messageActionSetMessagesTTL() {
+    const _ = { _: "messageActionSetMessagesTTL" }
+    _.period = this.int32();                // : number - int
+    return _;
+  }],
+  [-1281329567, function decode$messageActionGroupCallScheduled() {
+    const _ = { _: "messageActionGroupCallScheduled" }
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.schedule_date = this.int32();         // : number - int
+    return _;
+  }],
+  [-1434950843, function decode$messageActionSetChatTheme() {
+    const _ = { _: "messageActionSetChatTheme" }
+    _.emoticon = this.string();             // : string - string
+    return _;
+  }],
+  [-339958837, function decode$messageActionChatJoinedByRequest() {
+    return { _: "messageActionChatJoinedByRequest" }
+  }],
+  [1205698681, function decode$messageActionWebViewDataSentMe() {
+    const _ = { _: "messageActionWebViewDataSentMe" }
+    _.text = this.string();                 // : string - string
+    _.data = this.string();                 // : string - string
+    return _;
+  }],
+  [-1262252875, function decode$messageActionWebViewDataSent() {
+    const _ = { _: "messageActionWebViewDataSent" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
   [-1460809483, function decode$dialog() {
     const _ = { _: "dialog" }
     const flags = this.int32();
@@ -13903,6 +14988,19 @@ export const $decoder = new Map([
     if (flags & 1) _.pts = this.int32()     // ?: number - flags.0?int
     if (flags & 2) _.draft = this.object()  // ?: global.DraftMessage - flags.1?DraftMessage
     if (flags & 16) _.folder_id = this.int32() // ?: number - flags.4?int
+    return _;
+  }],
+  [1908216652, function decode$dialogFolder() {
+    const _ = { _: "dialogFolder" }
+    const flags = this.int32();
+    if (flags & 4) _.pinned = true          // ?: true - flags.2?true
+    _.folder = this.object();               // : global.Folder - Folder
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.top_message = this.int32();           // : number - int
+    _.unread_muted_peers_count = this.int32(); // : number - int
+    _.unread_unmuted_peers_count = this.int32(); // : number - int
+    _.unread_muted_messages_count = this.int32(); // : number - int
+    _.unread_unmuted_messages_count = this.int32(); // : number - int
     return _;
   }],
   [590459437, function decode$photoEmpty() {
@@ -13944,6 +15042,26 @@ export const $decoder = new Map([
     _.bytes = this.bytes();                 // : BufferSource - bytes
     return _;
   }],
+  [-525288402, function decode$photoStrippedSize() {
+    const _ = { _: "photoStrippedSize" }
+    _.type = this.string();                 // : string - string
+    _.bytes = this.bytes();                 // : BufferSource - bytes
+    return _;
+  }],
+  [-96535659, function decode$photoSizeProgressive() {
+    const _ = { _: "photoSizeProgressive" }
+    _.type = this.string();                 // : string - string
+    _.w = this.int32();                     // : number - int
+    _.h = this.int32();                     // : number - int
+    _.sizes = this.vector(this.int32);      // : number[] - Vector<int>
+    return _;
+  }],
+  [-668906175, function decode$photoPathSize() {
+    const _ = { _: "photoPathSize" }
+    _.type = this.string();                 // : string - string
+    _.bytes = this.bytes();                 // : BufferSource - bytes
+    return _;
+  }],
   [286776671, function decode$geoPointEmpty() {
     return { _: "geoPointEmpty" }
   }],
@@ -13974,6 +15092,12 @@ export const $decoder = new Map([
     _.user = this.object();                 // : global.User - User
     return _;
   }],
+  [1148485274, function decode$auth__authorizationSignUpRequired() {
+    const _ = { _: "auth.authorizationSignUpRequired" }
+    const flags = this.int32();
+    if (flags & 1) _.terms_of_service = this.object() // ?: help.TermsOfService - flags.0?help.TermsOfService
+    return _;
+  }],
   [-1271602504, function decode$auth__exportedAuthorization() {
     const _ = { _: "auth.exportedAuthorization" }
     _.id = this.int64();                    // : bigint - long
@@ -13991,22 +15115,27 @@ export const $decoder = new Map([
   [1251338318, function decode$inputNotifyChats() {
     return { _: "inputNotifyChats" }
   }],
-  [-1673717362, function decode$inputPeerNotifySettings() {
+  [-1311015810, function decode$inputNotifyBroadcasts() {
+    return { _: "inputNotifyBroadcasts" }
+  }],
+  [-551616469, function decode$inputPeerNotifySettings() {
     const _ = { _: "inputPeerNotifySettings" }
     const flags = this.int32();
     if (flags & 1) _.show_previews = this.bool() // ?: boolean - flags.0?Bool
     if (flags & 2) _.silent = this.bool()   // ?: boolean - flags.1?Bool
     if (flags & 4) _.mute_until = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.sound = this.string()  // ?: string - flags.3?string
+    if (flags & 8) _.sound = this.object()  // ?: global.NotificationSound - flags.3?NotificationSound
     return _;
   }],
-  [-1353671392, function decode$peerNotifySettings() {
+  [-1472527322, function decode$peerNotifySettings() {
     const _ = { _: "peerNotifySettings" }
     const flags = this.int32();
     if (flags & 1) _.show_previews = this.bool() // ?: boolean - flags.0?Bool
     if (flags & 2) _.silent = this.bool()   // ?: boolean - flags.1?Bool
     if (flags & 4) _.mute_until = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.sound = this.string()  // ?: string - flags.3?string
+    if (flags & 8) _.ios_sound = this.object() // ?: global.NotificationSound - flags.3?NotificationSound
+    if (flags & 16) _.android_sound = this.object() // ?: global.NotificationSound - flags.4?NotificationSound
+    if (flags & 32) _.other_sound = this.object() // ?: global.NotificationSound - flags.5?NotificationSound
     return _;
   }],
   [-1525149427, function decode$peerSettings() {
@@ -14040,6 +15169,15 @@ export const $decoder = new Map([
     if (flags & 4) _.settings = this.object() // ?: global.WallPaperSettings - flags.2?WallPaperSettings
     return _;
   }],
+  [-528465642, function decode$wallPaperNoFile() {
+    const _ = { _: "wallPaperNoFile" }
+    _.id = this.int64();                    // : bigint - long
+    const flags = this.int32();
+    if (flags & 2) _.default = true         // ?: true - flags.1?true
+    if (flags & 16) _.dark = true           // ?: true - flags.4?true
+    if (flags & 4) _.settings = this.object() // ?: global.WallPaperSettings - flags.2?WallPaperSettings
+    return _;
+  }],
   [1490799288, function decode$inputReportReasonSpam() {
     return { _: "inputReportReasonSpam" }
   }],
@@ -14055,7 +15193,22 @@ export const $decoder = new Map([
   [-1041980751, function decode$inputReportReasonOther() {
     return { _: "inputReportReasonOther" }
   }],
-  [-818518751, function decode$userFull() {
+  [-1685456582, function decode$inputReportReasonCopyright() {
+    return { _: "inputReportReasonCopyright" }
+  }],
+  [-606798099, function decode$inputReportReasonGeoIrrelevant() {
+    return { _: "inputReportReasonGeoIrrelevant" }
+  }],
+  [-170010905, function decode$inputReportReasonFake() {
+    return { _: "inputReportReasonFake" }
+  }],
+  [177124030, function decode$inputReportReasonIllegalDrugs() {
+    return { _: "inputReportReasonIllegalDrugs" }
+  }],
+  [-1631091139, function decode$inputReportReasonPersonalDetails() {
+    return { _: "inputReportReasonPersonalDetails" }
+  }],
+  [-1938625919, function decode$userFull() {
     const _ = { _: "userFull" }
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
@@ -14076,6 +15229,8 @@ export const $decoder = new Map([
     if (flags & 16384) _.ttl_period = this.int32() // ?: number - flags.14?int
     if (flags & 32768) _.theme_emoticon = this.string() // ?: string - flags.15?string
     if (flags & 65536) _.private_forward_name = this.string() // ?: string - flags.16?string
+    if (flags & 131072) _.bot_group_admin_rights = this.object() // ?: global.ChatAdminRights - flags.17?ChatAdminRights
+    if (flags & 262144) _.bot_broadcast_admin_rights = this.object() // ?: global.ChatAdminRights - flags.18?ChatAdminRights
     return _;
   }],
   [341499403, function decode$contact() {
@@ -14146,6 +15301,11 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
+  [-253500010, function decode$messages__dialogsNotModified() {
+    const _ = { _: "messages.dialogsNotModified" }
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
   [-1938715001, function decode$messages__messages() {
     const _ = { _: "messages.messages" }
     _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
@@ -14165,8 +15325,31 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
+  [1682413576, function decode$messages__channelMessages() {
+    const _ = { _: "messages.channelMessages" }
+    const flags = this.int32();
+    if (flags & 2) _.inexact = true         // ?: true - flags.1?true
+    _.pts = this.int32();                   // : number - int
+    _.count = this.int32();                 // : number - int
+    if (flags & 4) _.offset_id_offset = this.int32() // ?: number - flags.2?int
+    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1951620897, function decode$messages__messagesNotModified() {
+    const _ = { _: "messages.messagesNotModified" }
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
   [1694474197, function decode$messages__chats() {
     const _ = { _: "messages.chats" }
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    return _;
+  }],
+  [-1663561404, function decode$messages__chatsSlice() {
+    const _ = { _: "messages.chatsSlice" }
+    _.count = this.int32();                 // : number - int
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     return _;
   }],
@@ -14204,6 +15387,39 @@ export const $decoder = new Map([
   }],
   [-3644025, function decode$inputMessagesFilterGif() {
     return { _: "inputMessagesFilterGif" }
+  }],
+  [1358283666, function decode$inputMessagesFilterVoice() {
+    return { _: "inputMessagesFilterVoice" }
+  }],
+  [928101534, function decode$inputMessagesFilterMusic() {
+    return { _: "inputMessagesFilterMusic" }
+  }],
+  [975236280, function decode$inputMessagesFilterChatPhotos() {
+    return { _: "inputMessagesFilterChatPhotos" }
+  }],
+  [-2134272152, function decode$inputMessagesFilterPhoneCalls() {
+    const _ = { _: "inputMessagesFilterPhoneCalls" }
+    const flags = this.int32();
+    if (flags & 1) _.missed = true          // ?: true - flags.0?true
+    return _;
+  }],
+  [2054952868, function decode$inputMessagesFilterRoundVoice() {
+    return { _: "inputMessagesFilterRoundVoice" }
+  }],
+  [-1253451181, function decode$inputMessagesFilterRoundVideo() {
+    return { _: "inputMessagesFilterRoundVideo" }
+  }],
+  [-1040652646, function decode$inputMessagesFilterMyMentions() {
+    return { _: "inputMessagesFilterMyMentions" }
+  }],
+  [-419271411, function decode$inputMessagesFilterGeo() {
+    return { _: "inputMessagesFilterGeo" }
+  }],
+  [-530392189, function decode$inputMessagesFilterContacts() {
+    return { _: "inputMessagesFilterContacts" }
+  }],
+  [464520273, function decode$inputMessagesFilterPinned() {
+    return { _: "inputMessagesFilterPinned" }
   }],
   [522914557, function decode$updateNewMessage() {
     const _ = { _: "updateNewMessage" }
@@ -14265,6 +15481,630 @@ export const $decoder = new Map([
     _.previous = this.bool();               // : boolean - Bool
     return _;
   }],
+  [314359194, function decode$updateNewEncryptedMessage() {
+    const _ = { _: "updateNewEncryptedMessage" }
+    _.message = this.object();              // : global.EncryptedMessage - EncryptedMessage
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [386986326, function decode$updateEncryptedChatTyping() {
+    const _ = { _: "updateEncryptedChatTyping" }
+    _.chat_id = this.int32();               // : number - int
+    return _;
+  }],
+  [-1264392051, function decode$updateEncryption() {
+    const _ = { _: "updateEncryption" }
+    _.chat = this.object();                 // : global.EncryptedChat - EncryptedChat
+    _.date = this.int32();                  // : number - int
+    return _;
+  }],
+  [956179895, function decode$updateEncryptedMessagesRead() {
+    const _ = { _: "updateEncryptedMessagesRead" }
+    _.chat_id = this.int32();               // : number - int
+    _.max_date = this.int32();              // : number - int
+    _.date = this.int32();                  // : number - int
+    return _;
+  }],
+  [1037718609, function decode$updateChatParticipantAdd() {
+    const _ = { _: "updateChatParticipantAdd" }
+    _.chat_id = this.int64();               // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.inviter_id = this.int64();            // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.version = this.int32();               // : number - int
+    return _;
+  }],
+  [-483443337, function decode$updateChatParticipantDelete() {
+    const _ = { _: "updateChatParticipantDelete" }
+    _.chat_id = this.int64();               // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.version = this.int32();               // : number - int
+    return _;
+  }],
+  [-1906403213, function decode$updateDcOptions() {
+    const _ = { _: "updateDcOptions" }
+    _.dc_options = this.vector(this.object); // : global.DcOption[] - Vector<DcOption>
+    return _;
+  }],
+  [-1094555409, function decode$updateNotifySettings() {
+    const _ = { _: "updateNotifySettings" }
+    _.peer = this.object();                 // : global.NotifyPeer - NotifyPeer
+    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
+    return _;
+  }],
+  [-337352679, function decode$updateServiceNotification() {
+    const _ = { _: "updateServiceNotification" }
+    const flags = this.int32();
+    if (flags & 1) _.popup = true           // ?: true - flags.0?true
+    if (flags & 2) _.inbox_date = this.int32() // ?: number - flags.1?int
+    _.type = this.string();                 // : string - string
+    _.message = this.string();              // : string - string
+    _.media = this.object();                // : global.MessageMedia - MessageMedia
+    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
+    return _;
+  }],
+  [-298113238, function decode$updatePrivacy() {
+    const _ = { _: "updatePrivacy" }
+    _.key = this.object();                  // : global.PrivacyKey - PrivacyKey
+    _.rules = this.vector(this.object);     // : global.PrivacyRule[] - Vector<PrivacyRule>
+    return _;
+  }],
+  [88680979, function decode$updateUserPhone() {
+    const _ = { _: "updateUserPhone" }
+    _.user_id = this.int64();               // : bigint - long
+    _.phone = this.string();                // : string - string
+    return _;
+  }],
+  [-1667805217, function decode$updateReadHistoryInbox() {
+    const _ = { _: "updateReadHistoryInbox" }
+    const flags = this.int32();
+    if (flags & 1) _.folder_id = this.int32() // ?: number - flags.0?int
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.max_id = this.int32();                // : number - int
+    _.still_unread_count = this.int32();    // : number - int
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [791617983, function decode$updateReadHistoryOutbox() {
+    const _ = { _: "updateReadHistoryOutbox" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.max_id = this.int32();                // : number - int
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [2139689491, function decode$updateWebPage() {
+    const _ = { _: "updateWebPage" }
+    _.webpage = this.object();              // : global.WebPage - WebPage
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [1757493555, function decode$updateReadMessagesContents() {
+    const _ = { _: "updateReadMessagesContents" }
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [277713951, function decode$updateChannelTooLong() {
+    const _ = { _: "updateChannelTooLong" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    if (flags & 1) _.pts = this.int32()     // ?: number - flags.0?int
+    return _;
+  }],
+  [1666927625, function decode$updateChannel() {
+    const _ = { _: "updateChannel" }
+    _.channel_id = this.int64();            // : bigint - long
+    return _;
+  }],
+  [1656358105, function decode$updateNewChannelMessage() {
+    const _ = { _: "updateNewChannelMessage" }
+    _.message = this.object();              // : global.Message - Message
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [-1842450928, function decode$updateReadChannelInbox() {
+    const _ = { _: "updateReadChannelInbox" }
+    const flags = this.int32();
+    if (flags & 1) _.folder_id = this.int32() // ?: number - flags.0?int
+    _.channel_id = this.int64();            // : bigint - long
+    _.max_id = this.int32();                // : number - int
+    _.still_unread_count = this.int32();    // : number - int
+    _.pts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1020437742, function decode$updateDeleteChannelMessages() {
+    const _ = { _: "updateDeleteChannelMessages" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [-232346616, function decode$updateChannelMessageViews() {
+    const _ = { _: "updateChannelMessageViews" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.id = this.int32();                    // : number - int
+    _.views = this.int32();                 // : number - int
+    return _;
+  }],
+  [-674602590, function decode$updateChatParticipantAdmin() {
+    const _ = { _: "updateChatParticipantAdmin" }
+    _.chat_id = this.int64();               // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.is_admin = this.bool();               // : boolean - Bool
+    _.version = this.int32();               // : number - int
+    return _;
+  }],
+  [1753886890, function decode$updateNewStickerSet() {
+    const _ = { _: "updateNewStickerSet" }
+    _.stickerset = this.object();           // : messages.StickerSet - messages.StickerSet
+    return _;
+  }],
+  [196268545, function decode$updateStickerSetsOrder() {
+    const _ = { _: "updateStickerSetsOrder" }
+    const flags = this.int32();
+    if (flags & 1) _.masks = true           // ?: true - flags.0?true
+    _.order = this.vector(this.int64);      // : bigint[] - Vector<long>
+    return _;
+  }],
+  [1135492588, function decode$updateStickerSets() {
+    return { _: "updateStickerSets" }
+  }],
+  [-1821035490, function decode$updateSavedGifs() {
+    return { _: "updateSavedGifs" }
+  }],
+  [1232025500, function decode$updateBotInlineQuery() {
+    const _ = { _: "updateBotInlineQuery" }
+    const flags = this.int32();
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.query = this.string();                // : string - string
+    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
+    if (flags & 2) _.peer_type = this.object() // ?: global.InlineQueryPeerType - flags.1?InlineQueryPeerType
+    _.offset = this.string();               // : string - string
+    return _;
+  }],
+  [317794823, function decode$updateBotInlineSend() {
+    const _ = { _: "updateBotInlineSend" }
+    const flags = this.int32();
+    _.user_id = this.int64();               // : bigint - long
+    _.query = this.string();                // : string - string
+    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
+    _.id = this.string();                   // : string - string
+    if (flags & 2) _.msg_id = this.object() // ?: global.InputBotInlineMessageID - flags.1?InputBotInlineMessageID
+    return _;
+  }],
+  [457133559, function decode$updateEditChannelMessage() {
+    const _ = { _: "updateEditChannelMessage" }
+    _.message = this.object();              // : global.Message - Message
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [-1177566067, function decode$updateBotCallbackQuery() {
+    const _ = { _: "updateBotCallbackQuery" }
+    const flags = this.int32();
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.chat_instance = this.int64();         // : bigint - long
+    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
+    if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
+    return _;
+  }],
+  [-469536605, function decode$updateEditMessage() {
+    const _ = { _: "updateEditMessage" }
+    _.message = this.object();              // : global.Message - Message
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [1763610706, function decode$updateInlineBotCallbackQuery() {
+    const _ = { _: "updateInlineBotCallbackQuery" }
+    const flags = this.int32();
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.msg_id = this.object();               // : global.InputBotInlineMessageID - InputBotInlineMessageID
+    _.chat_instance = this.int64();         // : bigint - long
+    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
+    if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
+    return _;
+  }],
+  [-1218471511, function decode$updateReadChannelOutbox() {
+    const _ = { _: "updateReadChannelOutbox" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.max_id = this.int32();                // : number - int
+    return _;
+  }],
+  [-299124375, function decode$updateDraftMessage() {
+    const _ = { _: "updateDraftMessage" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.draft = this.object();                // : global.DraftMessage - DraftMessage
+    return _;
+  }],
+  [1461528386, function decode$updateReadFeaturedStickers() {
+    return { _: "updateReadFeaturedStickers" }
+  }],
+  [-1706939360, function decode$updateRecentStickers() {
+    return { _: "updateRecentStickers" }
+  }],
+  [-1574314746, function decode$updateConfig() {
+    return { _: "updateConfig" }
+  }],
+  [861169551, function decode$updatePtsChanged() {
+    return { _: "updatePtsChanged" }
+  }],
+  [791390623, function decode$updateChannelWebPage() {
+    const _ = { _: "updateChannelWebPage" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.webpage = this.object();              // : global.WebPage - WebPage
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [1852826908, function decode$updateDialogPinned() {
+    const _ = { _: "updateDialogPinned" }
+    const flags = this.int32();
+    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
+    if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
+    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    return _;
+  }],
+  [-99664734, function decode$updatePinnedDialogs() {
+    const _ = { _: "updatePinnedDialogs" }
+    const flags = this.int32();
+    if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
+    if (flags & 1) _.order = this.vector(this.object) // ?: global.DialogPeer[] - flags.0?Vector<DialogPeer>
+    return _;
+  }],
+  [-2095595325, function decode$updateBotWebhookJSON() {
+    const _ = { _: "updateBotWebhookJSON" }
+    _.data = this.object();                 // : global.DataJSON - DataJSON
+    return _;
+  }],
+  [-1684914010, function decode$updateBotWebhookJSONQuery() {
+    const _ = { _: "updateBotWebhookJSONQuery" }
+    _.query_id = this.int64();              // : bigint - long
+    _.data = this.object();                 // : global.DataJSON - DataJSON
+    _.timeout = this.int32();               // : number - int
+    return _;
+  }],
+  [-1246823043, function decode$updateBotShippingQuery() {
+    const _ = { _: "updateBotShippingQuery" }
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.payload = this.bytes();               // : BufferSource - bytes
+    _.shipping_address = this.object();     // : global.PostAddress - PostAddress
+    return _;
+  }],
+  [-1934976362, function decode$updateBotPrecheckoutQuery() {
+    const _ = { _: "updateBotPrecheckoutQuery" }
+    const flags = this.int32();
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.payload = this.bytes();               // : BufferSource - bytes
+    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
+    _.currency = this.string();             // : string - string
+    _.total_amount = this.int64();          // : bigint - long
+    return _;
+  }],
+  [-1425052898, function decode$updatePhoneCall() {
+    const _ = { _: "updatePhoneCall" }
+    _.phone_call = this.object();           // : global.PhoneCall - PhoneCall
+    return _;
+  }],
+  [1180041828, function decode$updateLangPackTooLong() {
+    const _ = { _: "updateLangPackTooLong" }
+    _.lang_code = this.string();            // : string - string
+    return _;
+  }],
+  [1442983757, function decode$updateLangPack() {
+    const _ = { _: "updateLangPack" }
+    _.difference = this.object();           // : global.LangPackDifference - LangPackDifference
+    return _;
+  }],
+  [-451831443, function decode$updateFavedStickers() {
+    return { _: "updateFavedStickers" }
+  }],
+  [1153291573, function decode$updateChannelReadMessagesContents() {
+    const _ = { _: "updateChannelReadMessagesContents" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    return _;
+  }],
+  [1887741886, function decode$updateContactsReset() {
+    return { _: "updateContactsReset" }
+  }],
+  [-1304443240, function decode$updateChannelAvailableMessages() {
+    const _ = { _: "updateChannelAvailableMessages" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.available_min_id = this.int32();      // : number - int
+    return _;
+  }],
+  [-513517117, function decode$updateDialogUnreadMark() {
+    const _ = { _: "updateDialogUnreadMark" }
+    const flags = this.int32();
+    if (flags & 1) _.unread = true          // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    return _;
+  }],
+  [-1398708869, function decode$updateMessagePoll() {
+    const _ = { _: "updateMessagePoll" }
+    const flags = this.int32();
+    _.poll_id = this.int64();               // : bigint - long
+    if (flags & 1) _.poll = this.object()   // ?: global.Poll - flags.0?Poll
+    _.results = this.object();              // : global.PollResults - PollResults
+    return _;
+  }],
+  [1421875280, function decode$updateChatDefaultBannedRights() {
+    const _ = { _: "updateChatDefaultBannedRights" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.default_banned_rights = this.object(); // : global.ChatBannedRights - ChatBannedRights
+    _.version = this.int32();               // : number - int
+    return _;
+  }],
+  [422972864, function decode$updateFolderPeers() {
+    const _ = { _: "updateFolderPeers" }
+    _.folder_peers = this.vector(this.object); // : global.FolderPeer[] - Vector<FolderPeer>
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [1786671974, function decode$updatePeerSettings() {
+    const _ = { _: "updatePeerSettings" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.settings = this.object();             // : global.PeerSettings - PeerSettings
+    return _;
+  }],
+  [-1263546448, function decode$updatePeerLocated() {
+    const _ = { _: "updatePeerLocated" }
+    _.peers = this.vector(this.object);     // : global.PeerLocated[] - Vector<PeerLocated>
+    return _;
+  }],
+  [967122427, function decode$updateNewScheduledMessage() {
+    const _ = { _: "updateNewScheduledMessage" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-1870238482, function decode$updateDeleteScheduledMessages() {
+    const _ = { _: "updateDeleteScheduledMessages" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    return _;
+  }],
+  [-2112423005, function decode$updateTheme() {
+    const _ = { _: "updateTheme" }
+    _.theme = this.object();                // : global.Theme - Theme
+    return _;
+  }],
+  [-2027964103, function decode$updateGeoLiveViewed() {
+    const _ = { _: "updateGeoLiveViewed" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    return _;
+  }],
+  [1448076945, function decode$updateLoginToken() {
+    return { _: "updateLoginToken" }
+  }],
+  [274961865, function decode$updateMessagePollVote() {
+    const _ = { _: "updateMessagePollVote" }
+    _.poll_id = this.int64();               // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.options = this.vector(this.bytes);    // : BufferSource[] - Vector<bytes>
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [654302845, function decode$updateDialogFilter() {
+    const _ = { _: "updateDialogFilter" }
+    const flags = this.int32();
+    _.id = this.int32();                    // : number - int
+    if (flags & 1) _.filter = this.object() // ?: global.DialogFilter - flags.0?DialogFilter
+    return _;
+  }],
+  [-1512627963, function decode$updateDialogFilterOrder() {
+    const _ = { _: "updateDialogFilterOrder" }
+    _.order = this.vector(this.int32);      // : number[] - Vector<int>
+    return _;
+  }],
+  [889491791, function decode$updateDialogFilters() {
+    return { _: "updateDialogFilters" }
+  }],
+  [643940105, function decode$updatePhoneCallSignalingData() {
+    const _ = { _: "updatePhoneCallSignalingData" }
+    _.phone_call_id = this.int64();         // : bigint - long
+    _.data = this.bytes();                  // : BufferSource - bytes
+    return _;
+  }],
+  [-761649164, function decode$updateChannelMessageForwards() {
+    const _ = { _: "updateChannelMessageForwards" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.id = this.int32();                    // : number - int
+    _.forwards = this.int32();              // : number - int
+    return _;
+  }],
+  [-693004986, function decode$updateReadChannelDiscussionInbox() {
+    const _ = { _: "updateReadChannelDiscussionInbox" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    _.top_msg_id = this.int32();            // : number - int
+    _.read_max_id = this.int32();           // : number - int
+    if (flags & 1) _.broadcast_id = this.int64() // ?: bigint - flags.0?long
+    if (flags & 1) _.broadcast_post = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
+  [1767677564, function decode$updateReadChannelDiscussionOutbox() {
+    const _ = { _: "updateReadChannelDiscussionOutbox" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.top_msg_id = this.int32();            // : number - int
+    _.read_max_id = this.int32();           // : number - int
+    return _;
+  }],
+  [610945826, function decode$updatePeerBlocked() {
+    const _ = { _: "updatePeerBlocked" }
+    _.peer_id = this.object();              // : global.Peer - Peer
+    _.blocked = this.bool();                // : boolean - Bool
+    return _;
+  }],
+  [-1937192669, function decode$updateChannelUserTyping() {
+    const _ = { _: "updateChannelUserTyping" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
+    _.from_id = this.object();              // : global.Peer - Peer
+    _.action = this.object();               // : global.SendMessageAction - SendMessageAction
+    return _;
+  }],
+  [-309990731, function decode$updatePinnedMessages() {
+    const _ = { _: "updatePinnedMessages" }
+    const flags = this.int32();
+    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [1538885128, function decode$updatePinnedChannelMessages() {
+    const _ = { _: "updatePinnedChannelMessages" }
+    const flags = this.int32();
+    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
+    _.channel_id = this.int64();            // : bigint - long
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    return _;
+  }],
+  [-124097970, function decode$updateChat() {
+    const _ = { _: "updateChat" }
+    _.chat_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [-219423922, function decode$updateGroupCallParticipants() {
+    const _ = { _: "updateGroupCallParticipants" }
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.participants = this.vector(this.object); // : global.GroupCallParticipant[] - Vector<GroupCallParticipant>
+    _.version = this.int32();               // : number - int
+    return _;
+  }],
+  [347227392, function decode$updateGroupCall() {
+    const _ = { _: "updateGroupCall" }
+    _.chat_id = this.int64();               // : bigint - long
+    _.call = this.object();                 // : global.GroupCall - GroupCall
+    return _;
+  }],
+  [-1147422299, function decode$updatePeerHistoryTTL() {
+    const _ = { _: "updatePeerHistoryTTL" }
+    const flags = this.int32();
+    _.peer = this.object();                 // : global.Peer - Peer
+    if (flags & 1) _.ttl_period = this.int32() // ?: number - flags.0?int
+    return _;
+  }],
+  [-796432838, function decode$updateChatParticipant() {
+    const _ = { _: "updateChatParticipant" }
+    const flags = this.int32();
+    _.chat_id = this.int64();               // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.actor_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    if (flags & 1) _.prev_participant = this.object() // ?: global.ChatParticipant - flags.0?ChatParticipant
+    if (flags & 2) _.new_participant = this.object() // ?: global.ChatParticipant - flags.1?ChatParticipant
+    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1738720581, function decode$updateChannelParticipant() {
+    const _ = { _: "updateChannelParticipant" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.actor_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    if (flags & 1) _.prev_participant = this.object() // ?: global.ChannelParticipant - flags.0?ChannelParticipant
+    if (flags & 2) _.new_participant = this.object() // ?: global.ChannelParticipant - flags.1?ChannelParticipant
+    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-997782967, function decode$updateBotStopped() {
+    const _ = { _: "updateBotStopped" }
+    _.user_id = this.int64();               // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.stopped = this.bool();                // : boolean - Bool
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [192428418, function decode$updateGroupCallConnection() {
+    const _ = { _: "updateGroupCallConnection" }
+    const flags = this.int32();
+    if (flags & 1) _.presentation = true    // ?: true - flags.0?true
+    _.params = this.object();               // : global.DataJSON - DataJSON
+    return _;
+  }],
+  [1299263278, function decode$updateBotCommands() {
+    const _ = { _: "updateBotCommands" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.bot_id = this.int64();                // : bigint - long
+    _.commands = this.vector(this.object);  // : global.BotCommand[] - Vector<BotCommand>
+    return _;
+  }],
+  [1885586395, function decode$updatePendingJoinRequests() {
+    const _ = { _: "updatePendingJoinRequests" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.requests_pending = this.int32();      // : number - int
+    _.recent_requesters = this.vector(this.int64); // : bigint[] - Vector<long>
+    return _;
+  }],
+  [299870598, function decode$updateBotChatInviteRequester() {
+    const _ = { _: "updateBotChatInviteRequester" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.date = this.int32();                  // : number - int
+    _.user_id = this.int64();               // : bigint - long
+    _.about = this.string();                // : string - string
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [357013699, function decode$updateMessageReactions() {
+    const _ = { _: "updateMessageReactions" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.reactions = this.object();            // : global.MessageReactions - MessageReactions
+    return _;
+  }],
+  [397910539, function decode$updateAttachMenuBots() {
+    return { _: "updateAttachMenuBots" }
+  }],
+  [361936797, function decode$updateWebViewResultSent() {
+    const _ = { _: "updateWebViewResultSent" }
+    _.query_id = this.int64();              // : bigint - long
+    return _;
+  }],
+  [347625491, function decode$updateBotMenuButton() {
+    const _ = { _: "updateBotMenuButton" }
+    _.bot_id = this.int64();                // : bigint - long
+    _.button = this.object();               // : global.BotMenuButton - BotMenuButton
+    return _;
+  }],
+  [1960361625, function decode$updateSavedRingtones() {
+    return { _: "updateSavedRingtones" }
+  }],
+  [8703322, function decode$updateTranscribedAudio() {
+    const _ = { _: "updateTranscribedAudio" }
+    const flags = this.int32();
+    if (flags & 1) _.pending = true         // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.transcription_id = this.int64();      // : bigint - long
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
   [-1519637954, function decode$updates__state() {
     const _ = { _: "updates.state" }
     _.pts = this.int32();                   // : number - int
@@ -14298,6 +16138,11 @@ export const $decoder = new Map([
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     _.intermediate_state = this.object();   // : updates.State - updates.State
+    return _;
+  }],
+  [1258196845, function decode$updates__differenceTooLong() {
+    const _ = { _: "updates.differenceTooLong" }
+    _.pts = this.int32();                   // : number - int
     return _;
   }],
   [-484987010, function decode$updatesTooLong() {
@@ -14369,6 +16214,19 @@ export const $decoder = new Map([
     _.seq = this.int32();                   // : number - int
     return _;
   }],
+  [-1877614335, function decode$updateShortSentMessage() {
+    const _ = { _: "updateShortSentMessage" }
+    const flags = this.int32();
+    if (flags & 2) _.out = true             // ?: true - flags.1?true
+    _.id = this.int32();                    // : number - int
+    _.pts = this.int32();                   // : number - int
+    _.pts_count = this.int32();             // : number - int
+    _.date = this.int32();                  // : number - int
+    if (flags & 512) _.media = this.object() // ?: global.MessageMedia - flags.9?MessageMedia
+    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
+    return _;
+  }],
   [-1916114267, function decode$photos__photos() {
     const _ = { _: "photos.photos" }
     _.photos = this.vector(this.object);    // : global.Photo[] - Vector<Photo>
@@ -14395,6 +16253,15 @@ export const $decoder = new Map([
     _.bytes = this.bytes();                 // : BufferSource - bytes
     return _;
   }],
+  [-242427324, function decode$upload__fileCdnRedirect() {
+    const _ = { _: "upload.fileCdnRedirect" }
+    _.dc_id = this.int32();                 // : number - int
+    _.file_token = this.bytes();            // : BufferSource - bytes
+    _.encryption_key = this.bytes();        // : BufferSource - bytes
+    _.encryption_iv = this.bytes();         // : BufferSource - bytes
+    _.file_hashes = this.vector(this.object); // : global.FileHash[] - Vector<FileHash>
+    return _;
+  }],
   [414687501, function decode$dcOption() {
     const _ = { _: "dcOption" }
     const flags = this.int32();
@@ -14403,6 +16270,7 @@ export const $decoder = new Map([
     if (flags & 4) _.tcpo_only = true       // ?: true - flags.2?true
     if (flags & 8) _.cdn = true             // ?: true - flags.3?true
     if (flags & 16) _.static = true         // ?: true - flags.4?true
+    if (flags & 32) _.this_port_only = true // ?: true - flags.5?true
     _.id = this.int32();                    // : number - int
     _.ip_address = this.string();           // : string - string
     _.port = this.int32();                  // : number - int
@@ -14419,6 +16287,7 @@ export const $decoder = new Map([
     if (flags & 64) _.revoke_pm_inbox = true // ?: true - flags.6?true
     if (flags & 256) _.blocked_mode = true  // ?: true - flags.8?true
     if (flags & 8192) _.pfs_enabled = true  // ?: true - flags.13?true
+    if (flags & 16384) _.force_try_ipv6 = true // ?: true - flags.14?true
     _.date = this.int32();                  // : number - int
     _.expires = this.int32();               // : number - int
     _.test_mode = this.bool();              // : boolean - Bool
@@ -14493,30 +16362,6 @@ export const $decoder = new Map([
     _.message = this.string();              // : string - string
     return _;
   }],
-  [314359194, function decode$updateNewEncryptedMessage() {
-    const _ = { _: "updateNewEncryptedMessage" }
-    _.message = this.object();              // : global.EncryptedMessage - EncryptedMessage
-    _.qts = this.int32();                   // : number - int
-    return _;
-  }],
-  [386986326, function decode$updateEncryptedChatTyping() {
-    const _ = { _: "updateEncryptedChatTyping" }
-    _.chat_id = this.int32();               // : number - int
-    return _;
-  }],
-  [-1264392051, function decode$updateEncryption() {
-    const _ = { _: "updateEncryption" }
-    _.chat = this.object();                 // : global.EncryptedChat - EncryptedChat
-    _.date = this.int32();                  // : number - int
-    return _;
-  }],
-  [956179895, function decode$updateEncryptedMessagesRead() {
-    const _ = { _: "updateEncryptedMessagesRead" }
-    _.chat_id = this.int32();               // : number - int
-    _.max_date = this.int32();              // : number - int
-    _.date = this.int32();                  // : number - int
-    return _;
-  }],
   [-1417756512, function decode$encryptedChatEmpty() {
     const _ = { _: "encryptedChatEmpty" }
     _.id = this.int32();                    // : number - int
@@ -14570,11 +16415,11 @@ export const $decoder = new Map([
   [-1038136962, function decode$encryptedFileEmpty() {
     return { _: "encryptedFileEmpty" }
   }],
-  [1248893260, function decode$encryptedFile() {
+  [-1476358952, function decode$encryptedFile() {
     const _ = { _: "encryptedFile" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.size = this.int32();                  // : number - int
+    _.size = this.int64();                  // : bigint - long
     _.dc_id = this.int32();                 // : number - int
     _.key_fingerprint = this.int32();       // : number - int
     return _;
@@ -14596,10 +16441,11 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
-  [-182231723, function decode$inputEncryptedFileLocation() {
-    const _ = { _: "inputEncryptedFileLocation" }
+  [767652808, function decode$inputEncryptedFileBigUploaded() {
+    const _ = { _: "inputEncryptedFileBigUploaded" }
     _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
+    _.parts = this.int32();                 // : number - int
+    _.key_fingerprint = this.int32();       // : number - int
     return _;
   }],
   [-317144808, function decode$encryptedMessage() {
@@ -14643,69 +16489,6 @@ export const $decoder = new Map([
     _.file = this.object();                 // : global.EncryptedFile - EncryptedFile
     return _;
   }],
-  [-95482955, function decode$inputFileBig() {
-    const _ = { _: "inputFileBig" }
-    _.id = this.int64();                    // : bigint - long
-    _.parts = this.int32();                 // : number - int
-    _.name = this.string();                 // : string - string
-    return _;
-  }],
-  [767652808, function decode$inputEncryptedFileBigUploaded() {
-    const _ = { _: "inputEncryptedFileBigUploaded" }
-    _.id = this.int64();                    // : bigint - long
-    _.parts = this.int32();                 // : number - int
-    _.key_fingerprint = this.int32();       // : number - int
-    return _;
-  }],
-  [1037718609, function decode$updateChatParticipantAdd() {
-    const _ = { _: "updateChatParticipantAdd" }
-    _.chat_id = this.int64();               // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.inviter_id = this.int64();            // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.version = this.int32();               // : number - int
-    return _;
-  }],
-  [-483443337, function decode$updateChatParticipantDelete() {
-    const _ = { _: "updateChatParticipantDelete" }
-    _.chat_id = this.int64();               // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.version = this.int32();               // : number - int
-    return _;
-  }],
-  [-1906403213, function decode$updateDcOptions() {
-    const _ = { _: "updateDcOptions" }
-    _.dc_options = this.vector(this.object); // : global.DcOption[] - Vector<DcOption>
-    return _;
-  }],
-  [1530447553, function decode$inputMediaUploadedDocument() {
-    const _ = { _: "inputMediaUploadedDocument" }
-    const flags = this.int32();
-    if (flags & 8) _.nosound_video = true   // ?: true - flags.3?true
-    if (flags & 16) _.force_file = true     // ?: true - flags.4?true
-    _.file = this.object();                 // : global.InputFile - InputFile
-    if (flags & 4) _.thumb = this.object()  // ?: global.InputFile - flags.2?InputFile
-    _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
-    if (flags & 1) _.stickers = this.vector(this.object) // ?: global.InputDocument[] - flags.0?Vector<InputDocument>
-    if (flags & 2) _.ttl_seconds = this.int32() // ?: number - flags.1?int
-    return _;
-  }],
-  [860303448, function decode$inputMediaDocument() {
-    const _ = { _: "inputMediaDocument" }
-    const flags = this.int32();
-    _.id = this.object();                   // : global.InputDocument - InputDocument
-    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
-    if (flags & 2) _.query = this.string()  // ?: string - flags.1?string
-    return _;
-  }],
-  [-1666158377, function decode$messageMediaDocument() {
-    const _ = { _: "messageMediaDocument" }
-    const flags = this.int32();
-    if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
-    if (flags & 4) _.ttl_seconds = this.int32() // ?: number - flags.2?int
-    return _;
-  }],
   [1928391342, function decode$inputDocumentEmpty() {
     return { _: "inputDocumentEmpty" }
   }],
@@ -14716,20 +16499,12 @@ export const $decoder = new Map([
     _.file_reference = this.bytes();        // : BufferSource - bytes
     return _;
   }],
-  [-1160743548, function decode$inputDocumentFileLocation() {
-    const _ = { _: "inputDocumentFileLocation" }
-    _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
-    _.thumb_size = this.string();           // : string - string
-    return _;
-  }],
   [922273905, function decode$documentEmpty() {
     const _ = { _: "documentEmpty" }
     _.id = this.int64();                    // : bigint - long
     return _;
   }],
-  [512177195, function decode$document() {
+  [-1881881384, function decode$document() {
     const _ = { _: "document" }
     const flags = this.int32();
     _.id = this.int64();                    // : bigint - long
@@ -14737,7 +16512,7 @@ export const $decoder = new Map([
     _.file_reference = this.bytes();        // : BufferSource - bytes
     _.date = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
-    _.size = this.int32();                  // : number - int
+    _.size = this.int64();                  // : bigint - long
     if (flags & 1) _.thumbs = this.vector(this.object) // ?: global.PhotoSize[] - flags.0?Vector<PhotoSize>
     if (flags & 2) _.video_thumbs = this.vector(this.object) // ?: global.VideoSize[] - flags.1?Vector<VideoSize>
     _.dc_id = this.int32();                 // : number - int
@@ -14761,11 +16536,8 @@ export const $decoder = new Map([
   [-1073230141, function decode$notifyChats() {
     return { _: "notifyChats" }
   }],
-  [-1094555409, function decode$updateNotifySettings() {
-    const _ = { _: "updateNotifySettings" }
-    _.peer = this.object();                 // : global.NotifyPeer - NotifyPeer
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    return _;
+  [-703403793, function decode$notifyBroadcasts() {
+    return { _: "notifyBroadcasts" }
   }],
   [381645902, function decode$sendMessageTypingAction() {
     return { _: "sendMessageTypingAction" }
@@ -14805,6 +16577,40 @@ export const $decoder = new Map([
   [1653390447, function decode$sendMessageChooseContactAction() {
     return { _: "sendMessageChooseContactAction" }
   }],
+  [-580219064, function decode$sendMessageGamePlayAction() {
+    return { _: "sendMessageGamePlayAction" }
+  }],
+  [-1997373508, function decode$sendMessageRecordRoundAction() {
+    return { _: "sendMessageRecordRoundAction" }
+  }],
+  [608050278, function decode$sendMessageUploadRoundAction() {
+    const _ = { _: "sendMessageUploadRoundAction" }
+    _.progress = this.int32();              // : number - int
+    return _;
+  }],
+  [-651419003, function decode$speakingInGroupCallAction() {
+    return { _: "speakingInGroupCallAction" }
+  }],
+  [-606432698, function decode$sendMessageHistoryImportAction() {
+    const _ = { _: "sendMessageHistoryImportAction" }
+    _.progress = this.int32();              // : number - int
+    return _;
+  }],
+  [-1336228175, function decode$sendMessageChooseStickerAction() {
+    return { _: "sendMessageChooseStickerAction" }
+  }],
+  [630664139, function decode$sendMessageEmojiInteraction() {
+    const _ = { _: "sendMessageEmojiInteraction" }
+    _.emoticon = this.string();             // : string - string
+    _.msg_id = this.int32();                // : number - int
+    _.interaction = this.object();          // : global.DataJSON - DataJSON
+    return _;
+  }],
+  [-1234857938, function decode$sendMessageEmojiInteractionSeen() {
+    const _ = { _: "sendMessageEmojiInteractionSeen" }
+    _.emoticon = this.string();             // : string - string
+    return _;
+  }],
   [-1290580579, function decode$contacts__found() {
     const _ = { _: "contacts.found" }
     _.my_results = this.vector(this.object); // : global.Peer[] - Vector<Peer>
@@ -14813,37 +16619,53 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [-337352679, function decode$updateServiceNotification() {
-    const _ = { _: "updateServiceNotification" }
-    const flags = this.int32();
-    if (flags & 1) _.popup = true           // ?: true - flags.0?true
-    if (flags & 2) _.inbox_date = this.int32() // ?: number - flags.1?int
-    _.type = this.string();                 // : string - string
-    _.message = this.string();              // : string - string
-    _.media = this.object();                // : global.MessageMedia - MessageMedia
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
-    return _;
-  }],
-  [-496024847, function decode$userStatusRecently() {
-    return { _: "userStatusRecently" }
-  }],
-  [129960444, function decode$userStatusLastWeek() {
-    return { _: "userStatusLastWeek" }
-  }],
-  [2011940674, function decode$userStatusLastMonth() {
-    return { _: "userStatusLastMonth" }
-  }],
-  [-298113238, function decode$updatePrivacy() {
-    const _ = { _: "updatePrivacy" }
-    _.key = this.object();                  // : global.PrivacyKey - PrivacyKey
-    _.rules = this.vector(this.object);     // : global.PrivacyRule[] - Vector<PrivacyRule>
-    return _;
-  }],
   [1335282456, function decode$inputPrivacyKeyStatusTimestamp() {
     return { _: "inputPrivacyKeyStatusTimestamp" }
   }],
+  [-1107622874, function decode$inputPrivacyKeyChatInvite() {
+    return { _: "inputPrivacyKeyChatInvite" }
+  }],
+  [-88417185, function decode$inputPrivacyKeyPhoneCall() {
+    return { _: "inputPrivacyKeyPhoneCall" }
+  }],
+  [-610373422, function decode$inputPrivacyKeyPhoneP2P() {
+    return { _: "inputPrivacyKeyPhoneP2P" }
+  }],
+  [-1529000952, function decode$inputPrivacyKeyForwards() {
+    return { _: "inputPrivacyKeyForwards" }
+  }],
+  [1461304012, function decode$inputPrivacyKeyProfilePhoto() {
+    return { _: "inputPrivacyKeyProfilePhoto" }
+  }],
+  [55761658, function decode$inputPrivacyKeyPhoneNumber() {
+    return { _: "inputPrivacyKeyPhoneNumber" }
+  }],
+  [-786326563, function decode$inputPrivacyKeyAddedByPhone() {
+    return { _: "inputPrivacyKeyAddedByPhone" }
+  }],
   [-1137792208, function decode$privacyKeyStatusTimestamp() {
     return { _: "privacyKeyStatusTimestamp" }
+  }],
+  [1343122938, function decode$privacyKeyChatInvite() {
+    return { _: "privacyKeyChatInvite" }
+  }],
+  [1030105979, function decode$privacyKeyPhoneCall() {
+    return { _: "privacyKeyPhoneCall" }
+  }],
+  [961092808, function decode$privacyKeyPhoneP2P() {
+    return { _: "privacyKeyPhoneP2P" }
+  }],
+  [1777096355, function decode$privacyKeyForwards() {
+    return { _: "privacyKeyForwards" }
+  }],
+  [-1777000467, function decode$privacyKeyProfilePhoto() {
+    return { _: "privacyKeyProfilePhoto" }
+  }],
+  [-778378131, function decode$privacyKeyPhoneNumber() {
+    return { _: "privacyKeyPhoneNumber" }
+  }],
+  [1124062251, function decode$privacyKeyAddedByPhone() {
+    return { _: "privacyKeyAddedByPhone" }
   }],
   [218751099, function decode$inputPrivacyValueAllowContacts() {
     return { _: "inputPrivacyValueAllowContacts" }
@@ -14865,6 +16687,16 @@ export const $decoder = new Map([
   [-1877932953, function decode$inputPrivacyValueDisallowUsers() {
     const _ = { _: "inputPrivacyValueDisallowUsers" }
     _.users = this.vector(this.object);     // : global.InputUser[] - Vector<InputUser>
+    return _;
+  }],
+  [-2079962673, function decode$inputPrivacyValueAllowChatParticipants() {
+    const _ = { _: "inputPrivacyValueAllowChatParticipants" }
+    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
+    return _;
+  }],
+  [-380694650, function decode$inputPrivacyValueDisallowChatParticipants() {
+    const _ = { _: "inputPrivacyValueDisallowChatParticipants" }
+    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
     return _;
   }],
   [-123988, function decode$privacyValueAllowContacts() {
@@ -14889,6 +16721,16 @@ export const $decoder = new Map([
     _.users = this.vector(this.int64);      // : bigint[] - Vector<long>
     return _;
   }],
+  [1796427406, function decode$privacyValueAllowChatParticipants() {
+    const _ = { _: "privacyValueAllowChatParticipants" }
+    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
+    return _;
+  }],
+  [1103656293, function decode$privacyValueDisallowChatParticipants() {
+    const _ = { _: "privacyValueDisallowChatParticipants" }
+    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
+    return _;
+  }],
   [1352683077, function decode$account__privacyRules() {
     const _ = { _: "account.privacyRules" }
     _.rules = this.vector(this.object);     // : global.PrivacyRule[] - Vector<PrivacyRule>
@@ -14899,12 +16741,6 @@ export const $decoder = new Map([
   [-1194283041, function decode$accountDaysTTL() {
     const _ = { _: "accountDaysTTL" }
     _.days = this.int32();                  // : number - int
-    return _;
-  }],
-  [88680979, function decode$updateUserPhone() {
-    const _ = { _: "updateUserPhone" }
-    _.user_id = this.int64();               // : bigint - long
-    _.phone = this.string();                // : string - string
     return _;
   }],
   [1815593308, function decode$documentAttributeImageSize() {
@@ -14950,6 +16786,9 @@ export const $decoder = new Map([
     _.file_name = this.string();            // : string - string
     return _;
   }],
+  [-1744710921, function decode$documentAttributeHasStickers() {
+    return { _: "documentAttributeHasStickers" }
+  }],
   [-244016606, function decode$messages__stickersNotModified() {
     return { _: "messages.stickersNotModified" }
   }],
@@ -14974,34 +16813,8 @@ export const $decoder = new Map([
     _.sets = this.vector(this.object);      // : global.StickerSet[] - Vector<StickerSet>
     return _;
   }],
-  [-1667805217, function decode$updateReadHistoryInbox() {
-    const _ = { _: "updateReadHistoryInbox" }
-    const flags = this.int32();
-    if (flags & 1) _.folder_id = this.int32() // ?: number - flags.0?int
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.max_id = this.int32();                // : number - int
-    _.still_unread_count = this.int32();    // : number - int
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [791617983, function decode$updateReadHistoryOutbox() {
-    const _ = { _: "updateReadHistoryOutbox" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.max_id = this.int32();                // : number - int
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
   [-2066640507, function decode$messages__affectedMessages() {
     const _ = { _: "messages.affectedMessages" }
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [2139689491, function decode$updateWebPage() {
-    const _ = { _: "updateWebPage" }
-    _.webpage = this.object();              // : global.WebPage - WebPage
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -15040,9 +16853,10 @@ export const $decoder = new Map([
     if (flags & 4096) _.attributes = this.vector(this.object) // ?: global.WebPageAttribute[] - flags.12?Vector<WebPageAttribute>
     return _;
   }],
-  [-1557277184, function decode$messageMediaWebPage() {
-    const _ = { _: "messageMediaWebPage" }
-    _.webpage = this.object();              // : global.WebPage - WebPage
+  [1930545681, function decode$webPageNotModified() {
+    const _ = { _: "webPageNotModified" }
+    const flags = this.int32();
+    if (flags & 1) _.cached_page_views = this.int32() // ?: number - flags.0?int
     return _;
   }],
   [-1392388579, function decode$authorization() {
@@ -15112,26 +16926,6 @@ export const $decoder = new Map([
     _.email_pattern = this.string();        // : string - string
     return _;
   }],
-  [-1052959727, function decode$inputMediaVenue() {
-    const _ = { _: "inputMediaVenue" }
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
-    _.title = this.string();                // : string - string
-    _.address = this.string();              // : string - string
-    _.provider = this.string();             // : string - string
-    _.venue_id = this.string();             // : string - string
-    _.venue_type = this.string();           // : string - string
-    return _;
-  }],
-  [784356159, function decode$messageMediaVenue() {
-    const _ = { _: "messageMediaVenue" }
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
-    _.title = this.string();                // : string - string
-    _.address = this.string();              // : string - string
-    _.provider = this.string();             // : string - string
-    _.venue_id = this.string();             // : string - string
-    _.venue_type = this.string();           // : string - string
-    return _;
-  }],
   [-1551583367, function decode$receivedNotifyMessage() {
     const _ = { _: "receivedNotifyMessage" }
     _.id = this.int32();                    // : number - int
@@ -15155,6 +16949,9 @@ export const $decoder = new Map([
     if (flags & 256) _.title = this.string() // ?: string - flags.8?string
     return _;
   }],
+  [-317687113, function decode$chatInvitePublicJoinRequests() {
+    return { _: "chatInvitePublicJoinRequests" }
+  }],
   [1516793212, function decode$chatInviteAlready() {
     const _ = { _: "chatInviteAlready" }
     _.chat = this.object();                 // : global.Chat - Chat
@@ -15175,16 +16972,10 @@ export const $decoder = new Map([
     if (flags & 16) _.participants = this.vector(this.object) // ?: global.User[] - flags.4?Vector<User>
     return _;
   }],
-  [51520707, function decode$messageActionChatJoinedByLink() {
-    const _ = { _: "messageActionChatJoinedByLink" }
-    _.inviter_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [1757493555, function decode$updateReadMessagesContents() {
-    const _ = { _: "updateReadMessagesContents" }
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
+  [1634294960, function decode$chatInvitePeek() {
+    const _ = { _: "chatInvitePeek" }
+    _.chat = this.object();                 // : global.Chat - Chat
+    _.expires = this.int32();               // : number - int
     return _;
   }],
   [-4838507, function decode$inputStickerSetEmpty() {
@@ -15200,6 +16991,17 @@ export const $decoder = new Map([
     const _ = { _: "inputStickerSetShortName" }
     _.short_name = this.string();           // : string - string
     return _;
+  }],
+  [42402760, function decode$inputStickerSetAnimatedEmoji() {
+    return { _: "inputStickerSetAnimatedEmoji" }
+  }],
+  [-427863538, function decode$inputStickerSetDice() {
+    const _ = { _: "inputStickerSetDice" }
+    _.emoticon = this.string();             // : string - string
+    return _;
+  }],
+  [215889721, function decode$inputStickerSetAnimatedEmojiAnimations() {
+    return { _: "inputStickerSetAnimatedEmojiAnimations" }
   }],
   [-673242758, function decode$stickerSet() {
     const _ = { _: "stickerSet" }
@@ -15228,37 +17030,8 @@ export const $decoder = new Map([
     _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
     return _;
   }],
-  [1073147056, function decode$user() {
-    const _ = { _: "user" }
-    const flags = this.int32();
-    if (flags & 1024) _.self = true         // ?: true - flags.10?true
-    if (flags & 2048) _.contact = true      // ?: true - flags.11?true
-    if (flags & 4096) _.mutual_contact = true // ?: true - flags.12?true
-    if (flags & 8192) _.deleted = true      // ?: true - flags.13?true
-    if (flags & 16384) _.bot = true         // ?: true - flags.14?true
-    if (flags & 32768) _.bot_chat_history = true // ?: true - flags.15?true
-    if (flags & 65536) _.bot_nochats = true // ?: true - flags.16?true
-    if (flags & 131072) _.verified = true   // ?: true - flags.17?true
-    if (flags & 262144) _.restricted = true // ?: true - flags.18?true
-    if (flags & 1048576) _.min = true       // ?: true - flags.20?true
-    if (flags & 2097152) _.bot_inline_geo = true // ?: true - flags.21?true
-    if (flags & 8388608) _.support = true   // ?: true - flags.23?true
-    if (flags & 16777216) _.scam = true     // ?: true - flags.24?true
-    if (flags & 33554432) _.apply_min_photo = true // ?: true - flags.25?true
-    if (flags & 67108864) _.fake = true     // ?: true - flags.26?true
-    _.id = this.int64();                    // : bigint - long
-    if (flags & 1) _.access_hash = this.int64() // ?: bigint - flags.0?long
-    if (flags & 2) _.first_name = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.last_name = this.string() // ?: string - flags.2?string
-    if (flags & 8) _.username = this.string() // ?: string - flags.3?string
-    if (flags & 16) _.phone = this.string() // ?: string - flags.4?string
-    if (flags & 32) _.photo = this.object() // ?: global.UserProfilePhoto - flags.5?UserProfilePhoto
-    if (flags & 64) _.status = this.object() // ?: global.UserStatus - flags.6?UserStatus
-    if (flags & 16384) _.bot_info_version = this.int32() // ?: number - flags.14?int
-    if (flags & 262144) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.18?Vector<RestrictionReason>
-    if (flags & 524288) _.bot_inline_placeholder = this.string() // ?: string - flags.19?string
-    if (flags & 4194304) _.lang_code = this.string() // ?: string - flags.22?string
-    return _;
+  [-738646805, function decode$messages__stickerSetNotModified() {
+    return { _: "messages.stickerSetNotModified" }
   }],
   [-1032140601, function decode$botCommand() {
     const _ = { _: "botCommand" }
@@ -15266,16 +17039,112 @@ export const $decoder = new Map([
     _.description = this.string();          // : string - string
     return _;
   }],
-  [460632885, function decode$botInfo() {
+  [-1892676777, function decode$botInfo() {
     const _ = { _: "botInfo" }
-    _.user_id = this.int64();               // : bigint - long
-    _.description = this.string();          // : string - string
-    _.commands = this.vector(this.object);  // : global.BotCommand[] - Vector<BotCommand>
+    const flags = this.int32();
+    if (flags & 1) _.user_id = this.int64() // ?: bigint - flags.0?long
+    if (flags & 2) _.description = this.string() // ?: string - flags.1?string
+    if (flags & 16) _.description_photo = this.object() // ?: global.Photo - flags.4?Photo
+    if (flags & 32) _.description_document = this.object() // ?: global.Document - flags.5?Document
+    if (flags & 4) _.commands = this.vector(this.object) // ?: global.BotCommand[] - flags.2?Vector<BotCommand>
+    if (flags & 8) _.menu_button = this.object() // ?: global.BotMenuButton - flags.3?BotMenuButton
     return _;
   }],
   [-1560655744, function decode$keyboardButton() {
     const _ = { _: "keyboardButton" }
     _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [629866245, function decode$keyboardButtonUrl() {
+    const _ = { _: "keyboardButtonUrl" }
+    _.text = this.string();                 // : string - string
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [901503851, function decode$keyboardButtonCallback() {
+    const _ = { _: "keyboardButtonCallback" }
+    const flags = this.int32();
+    if (flags & 1) _.requires_password = true // ?: true - flags.0?true
+    _.text = this.string();                 // : string - string
+    _.data = this.bytes();                  // : BufferSource - bytes
+    return _;
+  }],
+  [-1318425559, function decode$keyboardButtonRequestPhone() {
+    const _ = { _: "keyboardButtonRequestPhone" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [-59151553, function decode$keyboardButtonRequestGeoLocation() {
+    const _ = { _: "keyboardButtonRequestGeoLocation" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [90744648, function decode$keyboardButtonSwitchInline() {
+    const _ = { _: "keyboardButtonSwitchInline" }
+    const flags = this.int32();
+    if (flags & 1) _.same_peer = true       // ?: true - flags.0?true
+    _.text = this.string();                 // : string - string
+    _.query = this.string();                // : string - string
+    return _;
+  }],
+  [1358175439, function decode$keyboardButtonGame() {
+    const _ = { _: "keyboardButtonGame" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [-1344716869, function decode$keyboardButtonBuy() {
+    const _ = { _: "keyboardButtonBuy" }
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [280464681, function decode$keyboardButtonUrlAuth() {
+    const _ = { _: "keyboardButtonUrlAuth" }
+    const flags = this.int32();
+    _.text = this.string();                 // : string - string
+    if (flags & 1) _.fwd_text = this.string() // ?: string - flags.0?string
+    _.url = this.string();                  // : string - string
+    _.button_id = this.int32();             // : number - int
+    return _;
+  }],
+  [-802258988, function decode$inputKeyboardButtonUrlAuth() {
+    const _ = { _: "inputKeyboardButtonUrlAuth" }
+    const flags = this.int32();
+    if (flags & 1) _.request_write_access = true // ?: true - flags.0?true
+    _.text = this.string();                 // : string - string
+    if (flags & 2) _.fwd_text = this.string() // ?: string - flags.1?string
+    _.url = this.string();                  // : string - string
+    _.bot = this.object();                  // : global.InputUser - InputUser
+    return _;
+  }],
+  [-1144565411, function decode$keyboardButtonRequestPoll() {
+    const _ = { _: "keyboardButtonRequestPoll" }
+    const flags = this.int32();
+    if (flags & 1) _.quiz = this.bool()     // ?: boolean - flags.0?Bool
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [-376962181, function decode$inputKeyboardButtonUserProfile() {
+    const _ = { _: "inputKeyboardButtonUserProfile" }
+    _.text = this.string();                 // : string - string
+    _.user_id = this.object();              // : global.InputUser - InputUser
+    return _;
+  }],
+  [814112961, function decode$keyboardButtonUserProfile() {
+    const _ = { _: "keyboardButtonUserProfile" }
+    _.text = this.string();                 // : string - string
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [326529584, function decode$keyboardButtonWebView() {
+    const _ = { _: "keyboardButtonWebView" }
+    _.text = this.string();                 // : string - string
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [-1598009252, function decode$keyboardButtonSimpleWebView() {
+    const _ = { _: "keyboardButtonSimpleWebView" }
+    _.text = this.string();                 // : string - string
+    _.url = this.string();                  // : string - string
     return _;
   }],
   [2002815875, function decode$keyboardButtonRow() {
@@ -15307,16 +17176,9 @@ export const $decoder = new Map([
     if (flags & 8) _.placeholder = this.string() // ?: string - flags.3?string
     return _;
   }],
-  [-571955892, function decode$inputPeerUser() {
-    const _ = { _: "inputPeerUser" }
-    _.user_id = this.int64();               // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    return _;
-  }],
-  [-233744186, function decode$inputUser() {
-    const _ = { _: "inputUser" }
-    _.user_id = this.int64();               // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
+  [1218642516, function decode$replyInlineMarkup() {
+    const _ = { _: "replyInlineMarkup" }
+    _.rows = this.vector(this.object);      // : global.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
     return _;
   }],
   [-1148011883, function decode$messageEntityUnknown() {
@@ -15387,17 +17249,60 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     return _;
   }],
-  [-1877614335, function decode$updateShortSentMessage() {
-    const _ = { _: "updateShortSentMessage" }
-    const flags = this.int32();
-    if (flags & 2) _.out = true             // ?: true - flags.1?true
-    _.id = this.int32();                    // : number - int
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    _.date = this.int32();                  // : number - int
-    if (flags & 512) _.media = this.object() // ?: global.MessageMedia - flags.9?MessageMedia
-    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
-    if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
+  [-595914432, function decode$messageEntityMentionName() {
+    const _ = { _: "messageEntityMentionName" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [546203849, function decode$inputMessageEntityMentionName() {
+    const _ = { _: "inputMessageEntityMentionName" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    _.user_id = this.object();              // : global.InputUser - InputUser
+    return _;
+  }],
+  [-1687559349, function decode$messageEntityPhone() {
+    const _ = { _: "messageEntityPhone" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [1280209983, function decode$messageEntityCashtag() {
+    const _ = { _: "messageEntityCashtag" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1672577397, function decode$messageEntityUnderline() {
+    const _ = { _: "messageEntityUnderline" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1090087980, function decode$messageEntityStrike() {
+    const _ = { _: "messageEntityStrike" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [34469328, function decode$messageEntityBlockquote() {
+    const _ = { _: "messageEntityBlockquote" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [1981704948, function decode$messageEntityBankCard() {
+    const _ = { _: "messageEntityBankCard" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [852137487, function decode$messageEntitySpoiler() {
+    const _ = { _: "messageEntitySpoiler" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
     return _;
   }],
   [-292807034, function decode$inputChannelEmpty() {
@@ -15409,61 +17314,11 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
-  [-1566230754, function decode$peerChannel() {
-    const _ = { _: "peerChannel" }
+  [1536380829, function decode$inputChannelFromMessage() {
+    const _ = { _: "inputChannelFromMessage" }
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.msg_id = this.int32();                // : number - int
     _.channel_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [666680316, function decode$inputPeerChannel() {
-    const _ = { _: "inputPeerChannel" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    return _;
-  }],
-  [-2107528095, function decode$channel() {
-    const _ = { _: "channel" }
-    const flags = this.int32();
-    if (flags & 1) _.creator = true         // ?: true - flags.0?true
-    if (flags & 4) _.left = true            // ?: true - flags.2?true
-    if (flags & 32) _.broadcast = true      // ?: true - flags.5?true
-    if (flags & 128) _.verified = true      // ?: true - flags.7?true
-    if (flags & 256) _.megagroup = true     // ?: true - flags.8?true
-    if (flags & 512) _.restricted = true    // ?: true - flags.9?true
-    if (flags & 2048) _.signatures = true   // ?: true - flags.11?true
-    if (flags & 4096) _.min = true          // ?: true - flags.12?true
-    if (flags & 524288) _.scam = true       // ?: true - flags.19?true
-    if (flags & 1048576) _.has_link = true  // ?: true - flags.20?true
-    if (flags & 2097152) _.has_geo = true   // ?: true - flags.21?true
-    if (flags & 4194304) _.slowmode_enabled = true // ?: true - flags.22?true
-    if (flags & 8388608) _.call_active = true // ?: true - flags.23?true
-    if (flags & 16777216) _.call_not_empty = true // ?: true - flags.24?true
-    if (flags & 33554432) _.fake = true     // ?: true - flags.25?true
-    if (flags & 67108864) _.gigagroup = true // ?: true - flags.26?true
-    if (flags & 134217728) _.noforwards = true // ?: true - flags.27?true
-    if (flags & 268435456) _.join_to_send = true // ?: true - flags.28?true
-    if (flags & 536870912) _.join_request = true // ?: true - flags.29?true
-    _.id = this.int64();                    // : bigint - long
-    if (flags & 8192) _.access_hash = this.int64() // ?: bigint - flags.13?long
-    _.title = this.string();                // : string - string
-    if (flags & 64) _.username = this.string() // ?: string - flags.6?string
-    _.photo = this.object();                // : global.ChatPhoto - ChatPhoto
-    _.date = this.int32();                  // : number - int
-    if (flags & 512) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.9?Vector<RestrictionReason>
-    if (flags & 16384) _.admin_rights = this.object() // ?: global.ChatAdminRights - flags.14?ChatAdminRights
-    if (flags & 32768) _.banned_rights = this.object() // ?: global.ChatBannedRights - flags.15?ChatBannedRights
-    if (flags & 262144) _.default_banned_rights = this.object() // ?: global.ChatBannedRights - flags.18?ChatBannedRights
-    if (flags & 131072) _.participants_count = this.int32() // ?: number - flags.17?int
-    return _;
-  }],
-  [399807445, function decode$channelForbidden() {
-    const _ = { _: "channelForbidden" }
-    const flags = this.int32();
-    if (flags & 32) _.broadcast = true      // ?: true - flags.5?true
-    if (flags & 256) _.megagroup = true     // ?: true - flags.8?true
-    _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    _.title = this.string();                // : string - string
-    if (flags & 65536) _.until_date = this.int32() // ?: number - flags.16?int
     return _;
   }],
   [2131196633, function decode$contacts__resolvedPeer() {
@@ -15473,119 +17328,10 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [-516145888, function decode$channelFull() {
-    const _ = { _: "channelFull" }
-    const flags = this.int32();
-    if (flags & 8) _.can_view_participants = true // ?: true - flags.3?true
-    if (flags & 64) _.can_set_username = true // ?: true - flags.6?true
-    if (flags & 128) _.can_set_stickers = true // ?: true - flags.7?true
-    if (flags & 1024) _.hidden_prehistory = true // ?: true - flags.10?true
-    if (flags & 65536) _.can_set_location = true // ?: true - flags.16?true
-    if (flags & 524288) _.has_scheduled = true // ?: true - flags.19?true
-    if (flags & 1048576) _.can_view_stats = true // ?: true - flags.20?true
-    if (flags & 4194304) _.blocked = true   // ?: true - flags.22?true
-    _.id = this.int64();                    // : bigint - long
-    _.about = this.string();                // : string - string
-    if (flags & 1) _.participants_count = this.int32() // ?: number - flags.0?int
-    if (flags & 2) _.admins_count = this.int32() // ?: number - flags.1?int
-    if (flags & 4) _.kicked_count = this.int32() // ?: number - flags.2?int
-    if (flags & 4) _.banned_count = this.int32() // ?: number - flags.2?int
-    if (flags & 8192) _.online_count = this.int32() // ?: number - flags.13?int
-    _.read_inbox_max_id = this.int32();     // : number - int
-    _.read_outbox_max_id = this.int32();    // : number - int
-    _.unread_count = this.int32();          // : number - int
-    _.chat_photo = this.object();           // : global.Photo - Photo
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    if (flags & 8388608) _.exported_invite = this.object() // ?: global.ExportedChatInvite - flags.23?ExportedChatInvite
-    _.bot_info = this.vector(this.object);  // : global.BotInfo[] - Vector<BotInfo>
-    if (flags & 16) _.migrated_from_chat_id = this.int64() // ?: bigint - flags.4?long
-    if (flags & 16) _.migrated_from_max_id = this.int32() // ?: number - flags.4?int
-    if (flags & 32) _.pinned_msg_id = this.int32() // ?: number - flags.5?int
-    if (flags & 256) _.stickerset = this.object() // ?: global.StickerSet - flags.8?StickerSet
-    if (flags & 512) _.available_min_id = this.int32() // ?: number - flags.9?int
-    if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
-    if (flags & 16384) _.linked_chat_id = this.int64() // ?: bigint - flags.14?long
-    if (flags & 32768) _.location = this.object() // ?: global.ChannelLocation - flags.15?ChannelLocation
-    if (flags & 131072) _.slowmode_seconds = this.int32() // ?: number - flags.17?int
-    if (flags & 262144) _.slowmode_next_send_date = this.int32() // ?: number - flags.18?int
-    if (flags & 4096) _.stats_dc = this.int32() // ?: number - flags.12?int
-    _.pts = this.int32();                   // : number - int
-    if (flags & 2097152) _.call = this.object() // ?: global.InputGroupCall - flags.21?InputGroupCall
-    if (flags & 16777216) _.ttl_period = this.int32() // ?: number - flags.24?int
-    if (flags & 33554432) _.pending_suggestions = this.vector(this.string) // ?: string[] - flags.25?Vector<string>
-    if (flags & 67108864) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.26?Peer
-    if (flags & 134217728) _.theme_emoticon = this.string() // ?: string - flags.27?string
-    if (flags & 268435456) _.requests_pending = this.int32() // ?: number - flags.28?int
-    if (flags & 268435456) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.28?Vector<long>
-    if (flags & 536870912) _.default_send_as = this.object() // ?: global.Peer - flags.29?Peer
-    if (flags & 1073741824) _.available_reactions = this.vector(this.string) // ?: string[] - flags.30?Vector<string>
-    return _;
-  }],
   [182649427, function decode$messageRange() {
     const _ = { _: "messageRange" }
     _.min_id = this.int32();                // : number - int
     _.max_id = this.int32();                // : number - int
-    return _;
-  }],
-  [1682413576, function decode$messages__channelMessages() {
-    const _ = { _: "messages.channelMessages" }
-    const flags = this.int32();
-    if (flags & 2) _.inexact = true         // ?: true - flags.1?true
-    _.pts = this.int32();                   // : number - int
-    _.count = this.int32();                 // : number - int
-    if (flags & 4) _.offset_id_offset = this.int32() // ?: number - flags.2?int
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [-1781355374, function decode$messageActionChannelCreate() {
-    const _ = { _: "messageActionChannelCreate" }
-    _.title = this.string();                // : string - string
-    return _;
-  }],
-  [277713951, function decode$updateChannelTooLong() {
-    const _ = { _: "updateChannelTooLong" }
-    const flags = this.int32();
-    _.channel_id = this.int64();            // : bigint - long
-    if (flags & 1) _.pts = this.int32()     // ?: number - flags.0?int
-    return _;
-  }],
-  [1666927625, function decode$updateChannel() {
-    const _ = { _: "updateChannel" }
-    _.channel_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [1656358105, function decode$updateNewChannelMessage() {
-    const _ = { _: "updateNewChannelMessage" }
-    _.message = this.object();              // : global.Message - Message
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [-1842450928, function decode$updateReadChannelInbox() {
-    const _ = { _: "updateReadChannelInbox" }
-    const flags = this.int32();
-    if (flags & 1) _.folder_id = this.int32() // ?: number - flags.0?int
-    _.channel_id = this.int64();            // : bigint - long
-    _.max_id = this.int32();                // : number - int
-    _.still_unread_count = this.int32();    // : number - int
-    _.pts = this.int32();                   // : number - int
-    return _;
-  }],
-  [-1020437742, function decode$updateDeleteChannelMessages() {
-    const _ = { _: "updateDeleteChannelMessages" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [-232346616, function decode$updateChannelMessageViews() {
-    const _ = { _: "updateChannelMessageViews" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.id = this.int32();                    // : number - int
-    _.views = this.int32();                 // : number - int
     return _;
   }],
   [1041346555, function decode$updates__channelDifferenceEmpty() {
@@ -15652,6 +17398,34 @@ export const $decoder = new Map([
     if (flags & 1) _.rank = this.string()   // ?: string - flags.0?string
     return _;
   }],
+  [885242707, function decode$channelParticipantAdmin() {
+    const _ = { _: "channelParticipantAdmin" }
+    const flags = this.int32();
+    if (flags & 1) _.can_edit = true        // ?: true - flags.0?true
+    if (flags & 2) _.self = true            // ?: true - flags.1?true
+    _.user_id = this.int64();               // : bigint - long
+    if (flags & 2) _.inviter_id = this.int64() // ?: bigint - flags.1?long
+    _.promoted_by = this.int64();           // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.admin_rights = this.object();         // : global.ChatAdminRights - ChatAdminRights
+    if (flags & 4) _.rank = this.string()   // ?: string - flags.2?string
+    return _;
+  }],
+  [1844969806, function decode$channelParticipantBanned() {
+    const _ = { _: "channelParticipantBanned" }
+    const flags = this.int32();
+    if (flags & 1) _.left = true            // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.kicked_by = this.int64();             // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.banned_rights = this.object();        // : global.ChatBannedRights - ChatBannedRights
+    return _;
+  }],
+  [453242886, function decode$channelParticipantLeft() {
+    const _ = { _: "channelParticipantLeft" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    return _;
+  }],
   [-566281095, function decode$channelParticipantsRecent() {
     return { _: "channelParticipantsRecent" }
   }],
@@ -15663,6 +17437,31 @@ export const $decoder = new Map([
     _.q = this.string();                    // : string - string
     return _;
   }],
+  [-1328445861, function decode$channelParticipantsBots() {
+    return { _: "channelParticipantsBots" }
+  }],
+  [338142689, function decode$channelParticipantsBanned() {
+    const _ = { _: "channelParticipantsBanned" }
+    _.q = this.string();                    // : string - string
+    return _;
+  }],
+  [106343499, function decode$channelParticipantsSearch() {
+    const _ = { _: "channelParticipantsSearch" }
+    _.q = this.string();                    // : string - string
+    return _;
+  }],
+  [-1150621555, function decode$channelParticipantsContacts() {
+    const _ = { _: "channelParticipantsContacts" }
+    _.q = this.string();                    // : string - string
+    return _;
+  }],
+  [-531931925, function decode$channelParticipantsMentions() {
+    const _ = { _: "channelParticipantsMentions" }
+    const flags = this.int32();
+    if (flags & 1) _.q = this.string()      // ?: string - flags.0?string
+    if (flags & 2) _.top_msg_id = this.int32() // ?: number - flags.1?int
+    return _;
+  }],
   [-1699676497, function decode$channels__channelParticipants() {
     const _ = { _: "channels.channelParticipants" }
     _.count = this.int32();                 // : number - int
@@ -15671,46 +17470,15 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
+  [-266911767, function decode$channels__channelParticipantsNotModified() {
+    return { _: "channels.channelParticipantsNotModified" }
+  }],
   [-541588713, function decode$channels__channelParticipant() {
     const _ = { _: "channels.channelParticipant" }
     _.participant = this.object();          // : global.ChannelParticipant - ChannelParticipant
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
-  }],
-  [-462696732, function decode$chatParticipantCreator() {
-    const _ = { _: "chatParticipantCreator" }
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [-1600962725, function decode$chatParticipantAdmin() {
-    const _ = { _: "chatParticipantAdmin" }
-    _.user_id = this.int64();               // : bigint - long
-    _.inviter_id = this.int64();            // : bigint - long
-    _.date = this.int32();                  // : number - int
-    return _;
-  }],
-  [-674602590, function decode$updateChatParticipantAdmin() {
-    const _ = { _: "updateChatParticipantAdmin" }
-    _.chat_id = this.int64();               // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.is_admin = this.bool();               // : boolean - Bool
-    _.version = this.int32();               // : number - int
-    return _;
-  }],
-  [-519864430, function decode$messageActionChatMigrateTo() {
-    const _ = { _: "messageActionChatMigrateTo" }
-    _.channel_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [-365344535, function decode$messageActionChannelMigrateFrom() {
-    const _ = { _: "messageActionChannelMigrateFrom" }
-    _.title = this.string();                // : string - string
-    _.chat_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [-1328445861, function decode$channelParticipantsBots() {
-    return { _: "channelParticipantsBots" }
   }],
   [2013922064, function decode$help__termsOfService() {
     const _ = { _: "help.termsOfService" }
@@ -15722,21 +17490,6 @@ export const $decoder = new Map([
     if (flags & 2) _.min_age_confirm = this.int32() // ?: number - flags.1?int
     return _;
   }],
-  [1753886890, function decode$updateNewStickerSet() {
-    const _ = { _: "updateNewStickerSet" }
-    _.stickerset = this.object();           // : messages.StickerSet - messages.StickerSet
-    return _;
-  }],
-  [196268545, function decode$updateStickerSetsOrder() {
-    const _ = { _: "updateStickerSetsOrder" }
-    const flags = this.int32();
-    if (flags & 1) _.masks = true           // ?: true - flags.0?true
-    _.order = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
-  [1135492588, function decode$updateStickerSets() {
-    return { _: "updateStickerSets" }
-  }],
   [-402498398, function decode$messages__savedGifsNotModified() {
     return { _: "messages.savedGifsNotModified" }
   }],
@@ -15745,9 +17498,6 @@ export const $decoder = new Map([
     _.hash = this.int64();                  // : bigint - long
     _.gifs = this.vector(this.object);      // : global.Document[] - Vector<Document>
     return _;
-  }],
-  [-1821035490, function decode$updateSavedGifs() {
-    return { _: "updateSavedGifs" }
   }],
   [864077702, function decode$inputBotInlineMessageMediaAuto() {
     const _ = { _: "inputBotInlineMessageMediaAuto" }
@@ -15764,226 +17514,6 @@ export const $decoder = new Map([
     _.message = this.string();              // : string - string
     if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
     if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [-2000710887, function decode$inputBotInlineResult() {
-    const _ = { _: "inputBotInlineResult" }
-    const flags = this.int32();
-    _.id = this.string();                   // : string - string
-    _.type = this.string();                 // : string - string
-    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
-    if (flags & 4) _.description = this.string() // ?: string - flags.2?string
-    if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
-    if (flags & 16) _.thumb = this.object() // ?: global.InputWebDocument - flags.4?InputWebDocument
-    if (flags & 32) _.content = this.object() // ?: global.InputWebDocument - flags.5?InputWebDocument
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
-    return _;
-  }],
-  [1984755728, function decode$botInlineMessageMediaAuto() {
-    const _ = { _: "botInlineMessageMediaAuto" }
-    const flags = this.int32();
-    _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [-1937807902, function decode$botInlineMessageText() {
-    const _ = { _: "botInlineMessageText" }
-    const flags = this.int32();
-    if (flags & 1) _.no_webpage = true      // ?: true - flags.0?true
-    _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [295067450, function decode$botInlineResult() {
-    const _ = { _: "botInlineResult" }
-    const flags = this.int32();
-    _.id = this.string();                   // : string - string
-    _.type = this.string();                 // : string - string
-    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
-    if (flags & 4) _.description = this.string() // ?: string - flags.2?string
-    if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
-    if (flags & 16) _.thumb = this.object() // ?: global.WebDocument - flags.4?WebDocument
-    if (flags & 32) _.content = this.object() // ?: global.WebDocument - flags.5?WebDocument
-    _.send_message = this.object();         // : global.BotInlineMessage - BotInlineMessage
-    return _;
-  }],
-  [-1803769784, function decode$messages__botResults() {
-    const _ = { _: "messages.botResults" }
-    const flags = this.int32();
-    if (flags & 1) _.gallery = true         // ?: true - flags.0?true
-    _.query_id = this.int64();              // : bigint - long
-    if (flags & 2) _.next_offset = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.switch_pm = this.object() // ?: global.InlineBotSwitchPM - flags.2?InlineBotSwitchPM
-    _.results = this.vector(this.object);   // : global.BotInlineResult[] - Vector<BotInlineResult>
-    _.cache_time = this.int32();            // : number - int
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [1232025500, function decode$updateBotInlineQuery() {
-    const _ = { _: "updateBotInlineQuery" }
-    const flags = this.int32();
-    _.query_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.query = this.string();                // : string - string
-    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
-    if (flags & 2) _.peer_type = this.object() // ?: global.InlineQueryPeerType - flags.1?InlineQueryPeerType
-    _.offset = this.string();               // : string - string
-    return _;
-  }],
-  [317794823, function decode$updateBotInlineSend() {
-    const _ = { _: "updateBotInlineSend" }
-    const flags = this.int32();
-    _.user_id = this.int64();               // : bigint - long
-    _.query = this.string();                // : string - string
-    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
-    _.id = this.string();                   // : string - string
-    if (flags & 2) _.msg_id = this.object() // ?: global.InputBotInlineMessageID - flags.1?InputBotInlineMessageID
-    return _;
-  }],
-  [1358283666, function decode$inputMessagesFilterVoice() {
-    return { _: "inputMessagesFilterVoice" }
-  }],
-  [928101534, function decode$inputMessagesFilterMusic() {
-    return { _: "inputMessagesFilterMusic" }
-  }],
-  [-1107622874, function decode$inputPrivacyKeyChatInvite() {
-    return { _: "inputPrivacyKeyChatInvite" }
-  }],
-  [1343122938, function decode$privacyKeyChatInvite() {
-    return { _: "privacyKeyChatInvite" }
-  }],
-  [1571494644, function decode$exportedMessageLink() {
-    const _ = { _: "exportedMessageLink" }
-    _.link = this.string();                 // : string - string
-    _.html = this.string();                 // : string - string
-    return _;
-  }],
-  [1601666510, function decode$messageFwdHeader() {
-    const _ = { _: "messageFwdHeader" }
-    const flags = this.int32();
-    if (flags & 128) _.imported = true      // ?: true - flags.7?true
-    if (flags & 1) _.from_id = this.object() // ?: global.Peer - flags.0?Peer
-    if (flags & 32) _.from_name = this.string() // ?: string - flags.5?string
-    _.date = this.int32();                  // : number - int
-    if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.post_author = this.string() // ?: string - flags.3?string
-    if (flags & 16) _.saved_from_peer = this.object() // ?: global.Peer - flags.4?Peer
-    if (flags & 16) _.saved_from_msg_id = this.int32() // ?: number - flags.4?int
-    if (flags & 64) _.psa_type = this.string() // ?: string - flags.6?string
-    return _;
-  }],
-  [457133559, function decode$updateEditChannelMessage() {
-    const _ = { _: "updateEditChannelMessage" }
-    _.message = this.object();              // : global.Message - Message
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [-1799538451, function decode$messageActionPinMessage() {
-    return { _: "messageActionPinMessage" }
-  }],
-  [1923290508, function decode$auth__codeTypeSms() {
-    return { _: "auth.codeTypeSms" }
-  }],
-  [1948046307, function decode$auth__codeTypeCall() {
-    return { _: "auth.codeTypeCall" }
-  }],
-  [577556219, function decode$auth__codeTypeFlashCall() {
-    return { _: "auth.codeTypeFlashCall" }
-  }],
-  [1035688326, function decode$auth__sentCodeTypeApp() {
-    const _ = { _: "auth.sentCodeTypeApp" }
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [-1073693790, function decode$auth__sentCodeTypeSms() {
-    const _ = { _: "auth.sentCodeTypeSms" }
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [1398007207, function decode$auth__sentCodeTypeCall() {
-    const _ = { _: "auth.sentCodeTypeCall" }
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [-1425815847, function decode$auth__sentCodeTypeFlashCall() {
-    const _ = { _: "auth.sentCodeTypeFlashCall" }
-    _.pattern = this.string();              // : string - string
-    return _;
-  }],
-  [629866245, function decode$keyboardButtonUrl() {
-    const _ = { _: "keyboardButtonUrl" }
-    _.text = this.string();                 // : string - string
-    _.url = this.string();                  // : string - string
-    return _;
-  }],
-  [901503851, function decode$keyboardButtonCallback() {
-    const _ = { _: "keyboardButtonCallback" }
-    const flags = this.int32();
-    if (flags & 1) _.requires_password = true // ?: true - flags.0?true
-    _.text = this.string();                 // : string - string
-    _.data = this.bytes();                  // : BufferSource - bytes
-    return _;
-  }],
-  [-1318425559, function decode$keyboardButtonRequestPhone() {
-    const _ = { _: "keyboardButtonRequestPhone" }
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [-59151553, function decode$keyboardButtonRequestGeoLocation() {
-    const _ = { _: "keyboardButtonRequestGeoLocation" }
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [90744648, function decode$keyboardButtonSwitchInline() {
-    const _ = { _: "keyboardButtonSwitchInline" }
-    const flags = this.int32();
-    if (flags & 1) _.same_peer = true       // ?: true - flags.0?true
-    _.text = this.string();                 // : string - string
-    _.query = this.string();                // : string - string
-    return _;
-  }],
-  [1218642516, function decode$replyInlineMarkup() {
-    const _ = { _: "replyInlineMarkup" }
-    _.rows = this.vector(this.object);      // : global.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
-    return _;
-  }],
-  [911761060, function decode$messages__botCallbackAnswer() {
-    const _ = { _: "messages.botCallbackAnswer" }
-    const flags = this.int32();
-    if (flags & 2) _.alert = true           // ?: true - flags.1?true
-    if (flags & 8) _.has_url = true         // ?: true - flags.3?true
-    if (flags & 16) _.native_ui = true      // ?: true - flags.4?true
-    if (flags & 1) _.message = this.string() // ?: string - flags.0?string
-    if (flags & 4) _.url = this.string()    // ?: string - flags.2?string
-    _.cache_time = this.int32();            // : number - int
-    return _;
-  }],
-  [-1177566067, function decode$updateBotCallbackQuery() {
-    const _ = { _: "updateBotCallbackQuery" }
-    const flags = this.int32();
-    _.query_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.msg_id = this.int32();                // : number - int
-    _.chat_instance = this.int64();         // : bigint - long
-    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
-    if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
-    return _;
-  }],
-  [649453030, function decode$messages__messageEditData() {
-    const _ = { _: "messages.messageEditData" }
-    const flags = this.int32();
-    if (flags & 1) _.caption = true         // ?: true - flags.0?true
-    return _;
-  }],
-  [-469536605, function decode$updateEditMessage() {
-    const _ = { _: "updateEditMessage" }
-    _.message = this.object();              // : global.Message - Message
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
     return _;
   }],
   [-1768777083, function decode$inputBotInlineMessageMediaGeo() {
@@ -16015,6 +17545,81 @@ export const $decoder = new Map([
     _.first_name = this.string();           // : string - string
     _.last_name = this.string();            // : string - string
     _.vcard = this.string();                // : string - string
+    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    return _;
+  }],
+  [1262639204, function decode$inputBotInlineMessageGame() {
+    const _ = { _: "inputBotInlineMessageGame" }
+    const flags = this.int32();
+    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    return _;
+  }],
+  [-672693723, function decode$inputBotInlineMessageMediaInvoice() {
+    const _ = { _: "inputBotInlineMessageMediaInvoice" }
+    const flags = this.int32();
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
+    _.invoice = this.object();              // : global.Invoice - Invoice
+    _.payload = this.bytes();               // : BufferSource - bytes
+    _.provider = this.string();             // : string - string
+    _.provider_data = this.object();        // : global.DataJSON - DataJSON
+    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    return _;
+  }],
+  [-2000710887, function decode$inputBotInlineResult() {
+    const _ = { _: "inputBotInlineResult" }
+    const flags = this.int32();
+    _.id = this.string();                   // : string - string
+    _.type = this.string();                 // : string - string
+    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
+    if (flags & 4) _.description = this.string() // ?: string - flags.2?string
+    if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
+    if (flags & 16) _.thumb = this.object() // ?: global.InputWebDocument - flags.4?InputWebDocument
+    if (flags & 32) _.content = this.object() // ?: global.InputWebDocument - flags.5?InputWebDocument
+    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    return _;
+  }],
+  [-1462213465, function decode$inputBotInlineResultPhoto() {
+    const _ = { _: "inputBotInlineResultPhoto" }
+    _.id = this.string();                   // : string - string
+    _.type = this.string();                 // : string - string
+    _.photo = this.object();                // : global.InputPhoto - InputPhoto
+    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    return _;
+  }],
+  [-459324, function decode$inputBotInlineResultDocument() {
+    const _ = { _: "inputBotInlineResultDocument" }
+    const flags = this.int32();
+    _.id = this.string();                   // : string - string
+    _.type = this.string();                 // : string - string
+    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
+    if (flags & 4) _.description = this.string() // ?: string - flags.2?string
+    _.document = this.object();             // : global.InputDocument - InputDocument
+    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    return _;
+  }],
+  [1336154098, function decode$inputBotInlineResultGame() {
+    const _ = { _: "inputBotInlineResultGame" }
+    _.id = this.string();                   // : string - string
+    _.short_name = this.string();           // : string - string
+    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    return _;
+  }],
+  [1984755728, function decode$botInlineMessageMediaAuto() {
+    const _ = { _: "botInlineMessageMediaAuto" }
+    const flags = this.int32();
+    _.message = this.string();              // : string - string
+    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    return _;
+  }],
+  [-1937807902, function decode$botInlineMessageText() {
+    const _ = { _: "botInlineMessageText" }
+    const flags = this.int32();
+    if (flags & 1) _.no_webpage = true      // ?: true - flags.0?true
+    _.message = this.string();              // : string - string
+    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
     if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
@@ -16050,23 +17655,30 @@ export const $decoder = new Map([
     if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
-  [-1462213465, function decode$inputBotInlineResultPhoto() {
-    const _ = { _: "inputBotInlineResultPhoto" }
-    _.id = this.string();                   // : string - string
-    _.type = this.string();                 // : string - string
-    _.photo = this.object();                // : global.InputPhoto - InputPhoto
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+  [894081801, function decode$botInlineMessageMediaInvoice() {
+    const _ = { _: "botInlineMessageMediaInvoice" }
+    const flags = this.int32();
+    if (flags & 2) _.shipping_address_requested = true // ?: true - flags.1?true
+    if (flags & 8) _.test = true            // ?: true - flags.3?true
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
+    _.currency = this.string();             // : string - string
+    _.total_amount = this.int64();          // : bigint - long
+    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
-  [-459324, function decode$inputBotInlineResultDocument() {
-    const _ = { _: "inputBotInlineResultDocument" }
+  [295067450, function decode$botInlineResult() {
+    const _ = { _: "botInlineResult" }
     const flags = this.int32();
     _.id = this.string();                   // : string - string
     _.type = this.string();                 // : string - string
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.description = this.string() // ?: string - flags.2?string
-    _.document = this.object();             // : global.InputDocument - InputDocument
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
+    if (flags & 16) _.thumb = this.object() // ?: global.WebDocument - flags.4?WebDocument
+    if (flags & 32) _.content = this.object() // ?: global.WebDocument - flags.5?WebDocument
+    _.send_message = this.object();         // : global.BotInlineMessage - BotInlineMessage
     return _;
   }],
   [400266251, function decode$botInlineMediaResult() {
@@ -16081,6 +17693,93 @@ export const $decoder = new Map([
     _.send_message = this.object();         // : global.BotInlineMessage - BotInlineMessage
     return _;
   }],
+  [-1803769784, function decode$messages__botResults() {
+    const _ = { _: "messages.botResults" }
+    const flags = this.int32();
+    if (flags & 1) _.gallery = true         // ?: true - flags.0?true
+    _.query_id = this.int64();              // : bigint - long
+    if (flags & 2) _.next_offset = this.string() // ?: string - flags.1?string
+    if (flags & 4) _.switch_pm = this.object() // ?: global.InlineBotSwitchPM - flags.2?InlineBotSwitchPM
+    _.results = this.vector(this.object);   // : global.BotInlineResult[] - Vector<BotInlineResult>
+    _.cache_time = this.int32();            // : number - int
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1571494644, function decode$exportedMessageLink() {
+    const _ = { _: "exportedMessageLink" }
+    _.link = this.string();                 // : string - string
+    _.html = this.string();                 // : string - string
+    return _;
+  }],
+  [1601666510, function decode$messageFwdHeader() {
+    const _ = { _: "messageFwdHeader" }
+    const flags = this.int32();
+    if (flags & 128) _.imported = true      // ?: true - flags.7?true
+    if (flags & 1) _.from_id = this.object() // ?: global.Peer - flags.0?Peer
+    if (flags & 32) _.from_name = this.string() // ?: string - flags.5?string
+    _.date = this.int32();                  // : number - int
+    if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
+    if (flags & 8) _.post_author = this.string() // ?: string - flags.3?string
+    if (flags & 16) _.saved_from_peer = this.object() // ?: global.Peer - flags.4?Peer
+    if (flags & 16) _.saved_from_msg_id = this.int32() // ?: number - flags.4?int
+    if (flags & 64) _.psa_type = this.string() // ?: string - flags.6?string
+    return _;
+  }],
+  [1923290508, function decode$auth__codeTypeSms() {
+    return { _: "auth.codeTypeSms" }
+  }],
+  [1948046307, function decode$auth__codeTypeCall() {
+    return { _: "auth.codeTypeCall" }
+  }],
+  [577556219, function decode$auth__codeTypeFlashCall() {
+    return { _: "auth.codeTypeFlashCall" }
+  }],
+  [-702884114, function decode$auth__codeTypeMissedCall() {
+    return { _: "auth.codeTypeMissedCall" }
+  }],
+  [1035688326, function decode$auth__sentCodeTypeApp() {
+    const _ = { _: "auth.sentCodeTypeApp" }
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1073693790, function decode$auth__sentCodeTypeSms() {
+    const _ = { _: "auth.sentCodeTypeSms" }
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [1398007207, function decode$auth__sentCodeTypeCall() {
+    const _ = { _: "auth.sentCodeTypeCall" }
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-1425815847, function decode$auth__sentCodeTypeFlashCall() {
+    const _ = { _: "auth.sentCodeTypeFlashCall" }
+    _.pattern = this.string();              // : string - string
+    return _;
+  }],
+  [-2113903484, function decode$auth__sentCodeTypeMissedCall() {
+    const _ = { _: "auth.sentCodeTypeMissedCall" }
+    _.prefix = this.string();               // : string - string
+    _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [911761060, function decode$messages__botCallbackAnswer() {
+    const _ = { _: "messages.botCallbackAnswer" }
+    const flags = this.int32();
+    if (flags & 2) _.alert = true           // ?: true - flags.1?true
+    if (flags & 8) _.has_url = true         // ?: true - flags.3?true
+    if (flags & 16) _.native_ui = true      // ?: true - flags.4?true
+    if (flags & 1) _.message = this.string() // ?: string - flags.0?string
+    if (flags & 4) _.url = this.string()    // ?: string - flags.2?string
+    _.cache_time = this.int32();            // : number - int
+    return _;
+  }],
+  [649453030, function decode$messages__messageEditData() {
+    const _ = { _: "messages.messageEditData" }
+    const flags = this.int32();
+    if (flags & 1) _.caption = true         // ?: true - flags.0?true
+    return _;
+  }],
   [-1995686519, function decode$inputBotInlineMessageID() {
     const _ = { _: "inputBotInlineMessageID" }
     _.dc_id = this.int32();                 // : number - int
@@ -16088,15 +17787,12 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
-  [1763610706, function decode$updateInlineBotCallbackQuery() {
-    const _ = { _: "updateInlineBotCallbackQuery" }
-    const flags = this.int32();
-    _.query_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.msg_id = this.object();               // : global.InputBotInlineMessageID - InputBotInlineMessageID
-    _.chat_instance = this.int64();         // : bigint - long
-    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
-    if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
+  [-1227287081, function decode$inputBotInlineMessageID64() {
+    const _ = { _: "inputBotInlineMessageID64" }
+    _.dc_id = this.int32();                 // : number - int
+    _.owner_id = this.int64();              // : bigint - long
+    _.id = this.int32();                    // : number - int
+    _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
   [1008755359, function decode$inlineBotSwitchPM() {
@@ -16135,6 +17831,15 @@ export const $decoder = new Map([
   [371037736, function decode$topPeerCategoryChannels() {
     return { _: "topPeerCategoryChannels" }
   }],
+  [511092620, function decode$topPeerCategoryPhoneCalls() {
+    return { _: "topPeerCategoryPhoneCalls" }
+  }],
+  [-1472172887, function decode$topPeerCategoryForwardUsers() {
+    return { _: "topPeerCategoryForwardUsers" }
+  }],
+  [-68239120, function decode$topPeerCategoryForwardChats() {
+    return { _: "topPeerCategoryForwardChats" }
+  }],
   [-75283823, function decode$topPeerCategoryPeers() {
     const _ = { _: "topPeerCategoryPeers" }
     _.category = this.object();             // : global.TopPeerCategory - TopPeerCategory
@@ -16152,34 +17857,8 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [-595914432, function decode$messageEntityMentionName() {
-    const _ = { _: "messageEntityMentionName" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [546203849, function decode$inputMessageEntityMentionName() {
-    const _ = { _: "inputMessageEntityMentionName" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    _.user_id = this.object();              // : global.InputUser - InputUser
-    return _;
-  }],
-  [975236280, function decode$inputMessagesFilterChatPhotos() {
-    return { _: "inputMessagesFilterChatPhotos" }
-  }],
-  [-1218471511, function decode$updateReadChannelOutbox() {
-    const _ = { _: "updateReadChannelOutbox" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.max_id = this.int32();                // : number - int
-    return _;
-  }],
-  [-299124375, function decode$updateDraftMessage() {
-    const _ = { _: "updateDraftMessage" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.draft = this.object();                // : global.DraftMessage - DraftMessage
-    return _;
+  [-1255369827, function decode$contacts__topPeersDisabled() {
+    return { _: "contacts.topPeersDisabled" }
   }],
   [453805082, function decode$draftMessageEmpty() {
     const _ = { _: "draftMessageEmpty" }
@@ -16197,9 +17876,6 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     return _;
   }],
-  [-1615153660, function decode$messageActionHistoryClear() {
-    return { _: "messageActionHistoryClear" }
-  }],
   [-958657434, function decode$messages__featuredStickersNotModified() {
     const _ = { _: "messages.featuredStickersNotModified" }
     _.count = this.int32();                 // : number - int
@@ -16213,9 +17889,6 @@ export const $decoder = new Map([
     _.unread = this.vector(this.int64);     // : bigint[] - Vector<long>
     return _;
   }],
-  [1461528386, function decode$updateReadFeaturedStickers() {
-    return { _: "updateReadFeaturedStickers" }
-  }],
   [186120336, function decode$messages__recentStickersNotModified() {
     return { _: "messages.recentStickersNotModified" }
   }],
@@ -16226,9 +17899,6 @@ export const $decoder = new Map([
     _.stickers = this.vector(this.object);  // : global.Document[] - Vector<Document>
     _.dates = this.vector(this.int32);      // : number[] - Vector<int>
     return _;
-  }],
-  [-1706939360, function decode$updateRecentStickers() {
-    return { _: "updateRecentStickers" }
   }],
   [1338747336, function decode$messages__archivedStickers() {
     const _ = { _: "messages.archivedStickers" }
@@ -16250,26 +17920,6 @@ export const $decoder = new Map([
     _.cover = this.object();                // : global.Document - Document
     return _;
   }],
-  [-1574314746, function decode$updateConfig() {
-    return { _: "updateConfig" }
-  }],
-  [861169551, function decode$updatePtsChanged() {
-    return { _: "updatePtsChanged" }
-  }],
-  [-440664550, function decode$inputMediaPhotoExternal() {
-    const _ = { _: "inputMediaPhotoExternal" }
-    const flags = this.int32();
-    _.url = this.string();                  // : string - string
-    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
-    return _;
-  }],
-  [-78455655, function decode$inputMediaDocumentExternal() {
-    const _ = { _: "inputMediaDocumentExternal" }
-    const flags = this.int32();
-    _.url = this.string();                  // : string - string
-    if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
-    return _;
-  }],
   [872932635, function decode$stickerSetMultiCovered() {
     const _ = { _: "stickerSetMultiCovered" }
     _.set = this.object();                  // : global.StickerSet - StickerSet
@@ -16283,9 +17933,6 @@ export const $decoder = new Map([
     _.y = this.double();                    // : number - double
     _.zoom = this.double();                 // : number - double
     return _;
-  }],
-  [-1744710921, function decode$documentAttributeHasStickers() {
-    return { _: "documentAttributeHasStickers" }
   }],
   [1251549527, function decode$inputStickeredMediaPhoto() {
     const _ = { _: "inputStickeredMediaPhoto" }
@@ -16309,29 +17956,6 @@ export const $decoder = new Map([
     if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
     return _;
   }],
-  [1336154098, function decode$inputBotInlineResultGame() {
-    const _ = { _: "inputBotInlineResultGame" }
-    _.id = this.string();                   // : string - string
-    _.short_name = this.string();           // : string - string
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
-    return _;
-  }],
-  [1262639204, function decode$inputBotInlineMessageGame() {
-    const _ = { _: "inputBotInlineMessageGame" }
-    const flags = this.int32();
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [-38694904, function decode$messageMediaGame() {
-    const _ = { _: "messageMediaGame" }
-    _.game = this.object();                 // : global.Game - Game
-    return _;
-  }],
-  [-750828557, function decode$inputMediaGame() {
-    const _ = { _: "inputMediaGame" }
-    _.id = this.object();                   // : global.InputGame - InputGame
-    return _;
-  }],
   [53231223, function decode$inputGameID() {
     const _ = { _: "inputGameID" }
     _.id = this.int64();                    // : bigint - long
@@ -16342,17 +17966,6 @@ export const $decoder = new Map([
     const _ = { _: "inputGameShortName" }
     _.bot_id = this.object();               // : global.InputUser - InputUser
     _.short_name = this.string();           // : string - string
-    return _;
-  }],
-  [1358175439, function decode$keyboardButtonGame() {
-    const _ = { _: "keyboardButtonGame" }
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [-1834538890, function decode$messageActionGameScore() {
-    const _ = { _: "messageActionGameScore" }
-    _.game_id = this.int64();               // : bigint - long
-    _.score = this.int32();                 // : number - int
     return _;
   }],
   [1940093419, function decode$highScore() {
@@ -16366,25 +17979,6 @@ export const $decoder = new Map([
     const _ = { _: "messages.highScores" }
     _.scores = this.vector(this.object);    // : global.HighScore[] - Vector<HighScore>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [1258196845, function decode$updates__differenceTooLong() {
-    const _ = { _: "updates.differenceTooLong" }
-    _.pts = this.int32();                   // : number - int
-    return _;
-  }],
-  [791390623, function decode$updateChannelWebPage() {
-    const _ = { _: "updateChannelWebPage" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.webpage = this.object();              // : global.WebPage - WebPage
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [-1663561404, function decode$messages__chatsSlice() {
-    const _ = { _: "messages.chatsSlice" }
-    _.count = this.int32();                 // : number - int
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     return _;
   }],
   [-599948721, function decode$textEmpty() {
@@ -16436,6 +18030,40 @@ export const $decoder = new Map([
   [2120376535, function decode$textConcat() {
     const _ = { _: "textConcat" }
     _.texts = this.vector(this.object);     // : global.RichText[] - Vector<RichText>
+    return _;
+  }],
+  [-311786236, function decode$textSubscript() {
+    const _ = { _: "textSubscript" }
+    _.text = this.object();                 // : global.RichText - RichText
+    return _;
+  }],
+  [-939827711, function decode$textSuperscript() {
+    const _ = { _: "textSuperscript" }
+    _.text = this.object();                 // : global.RichText - RichText
+    return _;
+  }],
+  [55281185, function decode$textMarked() {
+    const _ = { _: "textMarked" }
+    _.text = this.object();                 // : global.RichText - RichText
+    return _;
+  }],
+  [483104362, function decode$textPhone() {
+    const _ = { _: "textPhone" }
+    _.text = this.object();                 // : global.RichText - RichText
+    _.phone = this.string();                // : string - string
+    return _;
+  }],
+  [136105807, function decode$textImage() {
+    const _ = { _: "textImage" }
+    _.document_id = this.int64();           // : bigint - long
+    _.w = this.int32();                     // : number - int
+    _.h = this.int32();                     // : number - int
+    return _;
+  }],
+  [894777186, function decode$textAnchor() {
+    const _ = { _: "textAnchor" }
+    _.text = this.object();                 // : global.RichText - RichText
+    _.name = this.string();                 // : string - string
     return _;
   }],
   [324435594, function decode$pageBlockUnsupported() {
@@ -16567,20 +18195,58 @@ export const $decoder = new Map([
     _.caption = this.object();              // : global.PageCaption - PageCaption
     return _;
   }],
-  [1930545681, function decode$webPageNotModified() {
-    const _ = { _: "webPageNotModified" }
-    const flags = this.int32();
-    if (flags & 1) _.cached_page_views = this.int32() // ?: number - flags.0?int
+  [-283684427, function decode$pageBlockChannel() {
+    const _ = { _: "pageBlockChannel" }
+    _.channel = this.object();              // : global.Chat - Chat
     return _;
   }],
-  [-88417185, function decode$inputPrivacyKeyPhoneCall() {
-    return { _: "inputPrivacyKeyPhoneCall" }
+  [-2143067670, function decode$pageBlockAudio() {
+    const _ = { _: "pageBlockAudio" }
+    _.audio_id = this.int64();              // : bigint - long
+    _.caption = this.object();              // : global.PageCaption - PageCaption
+    return _;
   }],
-  [1030105979, function decode$privacyKeyPhoneCall() {
-    return { _: "privacyKeyPhoneCall" }
+  [504660880, function decode$pageBlockKicker() {
+    const _ = { _: "pageBlockKicker" }
+    _.text = this.object();                 // : global.RichText - RichText
+    return _;
   }],
-  [-580219064, function decode$sendMessageGamePlayAction() {
-    return { _: "sendMessageGamePlayAction" }
+  [-1085412734, function decode$pageBlockTable() {
+    const _ = { _: "pageBlockTable" }
+    const flags = this.int32();
+    if (flags & 1) _.bordered = true        // ?: true - flags.0?true
+    if (flags & 2) _.striped = true         // ?: true - flags.1?true
+    _.title = this.object();                // : global.RichText - RichText
+    _.rows = this.vector(this.object);      // : global.PageTableRow[] - Vector<PageTableRow>
+    return _;
+  }],
+  [-1702174239, function decode$pageBlockOrderedList() {
+    const _ = { _: "pageBlockOrderedList" }
+    _.items = this.vector(this.object);     // : global.PageListOrderedItem[] - Vector<PageListOrderedItem>
+    return _;
+  }],
+  [1987480557, function decode$pageBlockDetails() {
+    const _ = { _: "pageBlockDetails" }
+    const flags = this.int32();
+    if (flags & 1) _.open = true            // ?: true - flags.0?true
+    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
+    _.title = this.object();                // : global.RichText - RichText
+    return _;
+  }],
+  [370236054, function decode$pageBlockRelatedArticles() {
+    const _ = { _: "pageBlockRelatedArticles" }
+    _.title = this.object();                // : global.RichText - RichText
+    _.articles = this.vector(this.object);  // : global.PageRelatedArticle[] - Vector<PageRelatedArticle>
+    return _;
+  }],
+  [-1538310410, function decode$pageBlockMap() {
+    const _ = { _: "pageBlockMap" }
+    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.zoom = this.int32();                  // : number - int
+    _.w = this.int32();                     // : number - int
+    _.h = this.int32();                     // : number - int
+    _.caption = this.object();              // : global.PageCaption - PageCaption
+    return _;
   }],
   [-2048646399, function decode$phoneCallDiscardReasonMissed() {
     return { _: "phoneCallDiscardReasonMissed" }
@@ -16594,36 +18260,9 @@ export const $decoder = new Map([
   [-84416311, function decode$phoneCallDiscardReasonBusy() {
     return { _: "phoneCallDiscardReasonBusy" }
   }],
-  [1852826908, function decode$updateDialogPinned() {
-    const _ = { _: "updateDialogPinned" }
-    const flags = this.int32();
-    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
-    if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
-    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
-    return _;
-  }],
-  [-99664734, function decode$updatePinnedDialogs() {
-    const _ = { _: "updatePinnedDialogs" }
-    const flags = this.int32();
-    if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
-    if (flags & 1) _.order = this.vector(this.object) // ?: global.DialogPeer[] - flags.0?Vector<DialogPeer>
-    return _;
-  }],
   [2104790276, function decode$dataJSON() {
     const _ = { _: "dataJSON" }
     _.data = this.string();                 // : string - string
-    return _;
-  }],
-  [-2095595325, function decode$updateBotWebhookJSON() {
-    const _ = { _: "updateBotWebhookJSON" }
-    _.data = this.object();                 // : global.DataJSON - DataJSON
-    return _;
-  }],
-  [-1684914010, function decode$updateBotWebhookJSONQuery() {
-    const _ = { _: "updateBotWebhookJSONQuery" }
-    _.query_id = this.int64();              // : bigint - long
-    _.data = this.object();                 // : global.DataJSON - DataJSON
-    _.timeout = this.int32();               // : number - int
     return _;
   }],
   [-886477832, function decode$labeledPrice() {
@@ -16632,7 +18271,7 @@ export const $decoder = new Map([
     _.amount = this.int64();                // : bigint - long
     return _;
   }],
-  [215516896, function decode$invoice() {
+  [1048946971, function decode$invoice() {
     const _ = { _: "invoice" }
     const flags = this.int32();
     if (flags & 1) _.test = true            // ?: true - flags.0?true
@@ -16643,54 +18282,18 @@ export const $decoder = new Map([
     if (flags & 32) _.flexible = true       // ?: true - flags.5?true
     if (flags & 64) _.phone_to_provider = true // ?: true - flags.6?true
     if (flags & 128) _.email_to_provider = true // ?: true - flags.7?true
+    if (flags & 512) _.recurring = true     // ?: true - flags.9?true
     _.currency = this.string();             // : string - string
     _.prices = this.vector(this.object);    // : global.LabeledPrice[] - Vector<LabeledPrice>
     if (flags & 256) _.max_tip_amount = this.int64() // ?: bigint - flags.8?long
     if (flags & 256) _.suggested_tip_amounts = this.vector(this.int64) // ?: bigint[] - flags.8?Vector<long>
-    return _;
-  }],
-  [-646342540, function decode$inputMediaInvoice() {
-    const _ = { _: "inputMediaInvoice" }
-    const flags = this.int32();
-    _.title = this.string();                // : string - string
-    _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
-    _.payload = this.bytes();               // : BufferSource - bytes
-    _.provider = this.string();             // : string - string
-    _.provider_data = this.object();        // : global.DataJSON - DataJSON
-    if (flags & 2) _.start_param = this.string() // ?: string - flags.1?string
+    if (flags & 512) _.recurring_terms_url = this.string() // ?: string - flags.9?string
     return _;
   }],
   [-368917890, function decode$paymentCharge() {
     const _ = { _: "paymentCharge" }
     _.id = this.string();                   // : string - string
     _.provider_charge_id = this.string();   // : string - string
-    return _;
-  }],
-  [-1892568281, function decode$messageActionPaymentSentMe() {
-    const _ = { _: "messageActionPaymentSentMe" }
-    const flags = this.int32();
-    _.currency = this.string();             // : string - string
-    _.total_amount = this.int64();          // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
-    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
-    _.charge = this.object();               // : global.PaymentCharge - PaymentCharge
-    return _;
-  }],
-  [-2074799289, function decode$messageMediaInvoice() {
-    const _ = { _: "messageMediaInvoice" }
-    const flags = this.int32();
-    if (flags & 2) _.shipping_address_requested = true // ?: true - flags.1?true
-    if (flags & 8) _.test = true            // ?: true - flags.3?true
-    _.title = this.string();                // : string - string
-    _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
-    if (flags & 4) _.receipt_msg_id = this.int32() // ?: number - flags.2?int
-    _.currency = this.string();             // : string - string
-    _.total_amount = this.int64();          // : bigint - long
-    _.start_param = this.string();          // : string - string
     return _;
   }],
   [512535275, function decode$postAddress() {
@@ -16712,17 +18315,6 @@ export const $decoder = new Map([
     if (flags & 8) _.shipping_address = this.object() // ?: global.PostAddress - flags.3?PostAddress
     return _;
   }],
-  [-1344716869, function decode$keyboardButtonBuy() {
-    const _ = { _: "keyboardButtonBuy" }
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [1080663248, function decode$messageActionPaymentSent() {
-    const _ = { _: "messageActionPaymentSent" }
-    _.currency = this.string();             // : string - string
-    _.total_amount = this.int64();          // : bigint - long
-    return _;
-  }],
   [-842892769, function decode$paymentSavedCredentialsCard() {
     const _ = { _: "paymentSavedCredentialsCard" }
     _.id = this.string();                   // : string - string
@@ -16733,6 +18325,14 @@ export const $decoder = new Map([
     const _ = { _: "webDocument" }
     _.url = this.string();                  // : string - string
     _.access_hash = this.int64();           // : bigint - long
+    _.size = this.int32();                  // : number - int
+    _.mime_type = this.string();            // : string - string
+    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    return _;
+  }],
+  [-104284986, function decode$webDocumentNoProxy() {
+    const _ = { _: "webDocumentNoProxy" }
+    _.url = this.string();                  // : string - string
     _.size = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
     _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
@@ -16752,6 +18352,16 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
+  [-1625153079, function decode$inputWebFileGeoPointLocation() {
+    const _ = { _: "inputWebFileGeoPointLocation" }
+    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.access_hash = this.int64();           // : bigint - long
+    _.w = this.int32();                     // : number - int
+    _.h = this.int32();                     // : number - int
+    _.zoom = this.int32();                  // : number - int
+    _.scale = this.int32();                 // : number - int
+    return _;
+  }],
   [568808380, function decode$upload__webFile() {
     const _ = { _: "upload.webFile" }
     _.size = this.int32();                  // : number - int
@@ -16761,13 +18371,16 @@ export const $decoder = new Map([
     _.bytes = this.bytes();                 // : BufferSource - bytes
     return _;
   }],
-  [378828315, function decode$payments__paymentForm() {
+  [-1340916937, function decode$payments__paymentForm() {
     const _ = { _: "payments.paymentForm" }
     const flags = this.int32();
     if (flags & 4) _.can_save_credentials = true // ?: true - flags.2?true
     if (flags & 8) _.password_missing = true // ?: true - flags.3?true
     _.form_id = this.int64();               // : bigint - long
     _.bot_id = this.int64();                // : bigint - long
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 32) _.photo = this.object() // ?: global.WebDocument - flags.5?WebDocument
     _.invoice = this.object();              // : global.Invoice - Invoice
     _.provider_id = this.int64();           // : bigint - long
     _.url = this.string();                  // : string - string
@@ -16788,6 +18401,11 @@ export const $decoder = new Map([
   [1314881805, function decode$payments__paymentResult() {
     const _ = { _: "payments.paymentResult" }
     _.updates = this.object();              // : global.Updates - Updates
+    return _;
+  }],
+  [-666824391, function decode$payments__paymentVerificationNeeded() {
+    const _ = { _: "payments.paymentVerificationNeeded" }
+    _.url = this.string();                  // : string - string
     return _;
   }],
   [1891958275, function decode$payments__paymentReceipt() {
@@ -16829,6 +18447,16 @@ export const $decoder = new Map([
     _.data = this.object();                 // : global.DataJSON - DataJSON
     return _;
   }],
+  [178373535, function decode$inputPaymentCredentialsApplePay() {
+    const _ = { _: "inputPaymentCredentialsApplePay" }
+    _.payment_data = this.object();         // : global.DataJSON - DataJSON
+    return _;
+  }],
+  [-1966921727, function decode$inputPaymentCredentialsGooglePay() {
+    const _ = { _: "inputPaymentCredentialsGooglePay" }
+    _.payment_token = this.object();        // : global.DataJSON - DataJSON
+    return _;
+  }],
   [-614138572, function decode$account__tmpPassword() {
     const _ = { _: "account.tmpPassword" }
     _.tmp_password = this.bytes();          // : BufferSource - bytes
@@ -16842,37 +18470,12 @@ export const $decoder = new Map([
     _.prices = this.vector(this.object);    // : global.LabeledPrice[] - Vector<LabeledPrice>
     return _;
   }],
-  [-1246823043, function decode$updateBotShippingQuery() {
-    const _ = { _: "updateBotShippingQuery" }
-    _.query_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
-    _.shipping_address = this.object();     // : global.PostAddress - PostAddress
-    return _;
-  }],
-  [-1934976362, function decode$updateBotPrecheckoutQuery() {
-    const _ = { _: "updateBotPrecheckoutQuery" }
-    const flags = this.int32();
-    _.query_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
-    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
-    _.currency = this.string();             // : string - string
-    _.total_amount = this.int64();          // : bigint - long
-    return _;
-  }],
   [-6249322, function decode$inputStickerSetItem() {
     const _ = { _: "inputStickerSetItem" }
     const flags = this.int32();
     _.document = this.object();             // : global.InputDocument - InputDocument
     _.emoji = this.string();                // : string - string
     if (flags & 1) _.mask_coords = this.object() // ?: global.MaskCoords - flags.0?MaskCoords
-    return _;
-  }],
-  [-1425052898, function decode$updatePhoneCall() {
-    const _ = { _: "updatePhoneCall" }
-    _.phone_call = this.object();           // : global.PhoneCall - PhoneCall
     return _;
   }],
   [506920429, function decode$inputPhoneCall() {
@@ -16953,13 +18556,28 @@ export const $decoder = new Map([
     if (flags & 2) _.duration = this.int32() // ?: number - flags.1?int
     return _;
   }],
-  [-1655957568, function decode$phoneConnection() {
+  [-1665063993, function decode$phoneConnection() {
     const _ = { _: "phoneConnection" }
+    const flags = this.int32();
+    if (flags & 1) _.tcp = true             // ?: true - flags.0?true
     _.id = this.int64();                    // : bigint - long
     _.ip = this.string();                   // : string - string
     _.ipv6 = this.string();                 // : string - string
     _.port = this.int32();                  // : number - int
     _.peer_tag = this.bytes();              // : BufferSource - bytes
+    return _;
+  }],
+  [1667228533, function decode$phoneConnectionWebrtc() {
+    const _ = { _: "phoneConnectionWebrtc" }
+    const flags = this.int32();
+    if (flags & 1) _.turn = true            // ?: true - flags.0?true
+    if (flags & 2) _.stun = true            // ?: true - flags.1?true
+    _.id = this.int64();                    // : bigint - long
+    _.ip = this.string();                   // : string - string
+    _.ipv6 = this.string();                 // : string - string
+    _.port = this.int32();                  // : number - int
+    _.username = this.string();             // : string - string
+    _.password = this.string();             // : string - string
     return _;
   }],
   [-58224696, function decode$phoneCallProtocol() {
@@ -16976,44 +18594,6 @@ export const $decoder = new Map([
     const _ = { _: "phone.phoneCall" }
     _.phone_call = this.object();           // : global.PhoneCall - PhoneCall
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [-2134272152, function decode$inputMessagesFilterPhoneCalls() {
-    const _ = { _: "inputMessagesFilterPhoneCalls" }
-    const flags = this.int32();
-    if (flags & 1) _.missed = true          // ?: true - flags.0?true
-    return _;
-  }],
-  [-2132731265, function decode$messageActionPhoneCall() {
-    const _ = { _: "messageActionPhoneCall" }
-    const flags = this.int32();
-    if (flags & 4) _.video = true           // ?: true - flags.2?true
-    _.call_id = this.int64();               // : bigint - long
-    if (flags & 1) _.reason = this.object() // ?: global.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
-    if (flags & 2) _.duration = this.int32() // ?: number - flags.1?int
-    return _;
-  }],
-  [2054952868, function decode$inputMessagesFilterRoundVoice() {
-    return { _: "inputMessagesFilterRoundVoice" }
-  }],
-  [-1253451181, function decode$inputMessagesFilterRoundVideo() {
-    return { _: "inputMessagesFilterRoundVideo" }
-  }],
-  [-1997373508, function decode$sendMessageRecordRoundAction() {
-    return { _: "sendMessageRecordRoundAction" }
-  }],
-  [608050278, function decode$sendMessageUploadRoundAction() {
-    const _ = { _: "sendMessageUploadRoundAction" }
-    _.progress = this.int32();              // : number - int
-    return _;
-  }],
-  [-242427324, function decode$upload__fileCdnRedirect() {
-    const _ = { _: "upload.fileCdnRedirect" }
-    _.dc_id = this.int32();                 // : number - int
-    _.file_token = this.bytes();            // : BufferSource - bytes
-    _.encryption_key = this.bytes();        // : BufferSource - bytes
-    _.encryption_iv = this.bytes();         // : BufferSource - bytes
-    _.file_hashes = this.vector(this.object); // : global.FileHash[] - Vector<FileHash>
     return _;
   }],
   [-290921362, function decode$upload__cdnFileReuploadNeeded() {
@@ -17035,11 +18615,6 @@ export const $decoder = new Map([
   [1462101002, function decode$cdnConfig() {
     const _ = { _: "cdnConfig" }
     _.public_keys = this.vector(this.object); // : global.CdnPublicKey[] - Vector<CdnPublicKey>
-    return _;
-  }],
-  [-283684427, function decode$pageBlockChannel() {
-    const _ = { _: "pageBlockChannel" }
-    _.channel = this.object();              // : global.Chat - Chat
     return _;
   }],
   [-892239370, function decode$langPackString() {
@@ -17087,49 +18662,6 @@ export const $decoder = new Map([
     _.strings_count = this.int32();         // : number - int
     _.translated_count = this.int32();      // : number - int
     _.translations_url = this.string();     // : string - string
-    return _;
-  }],
-  [1180041828, function decode$updateLangPackTooLong() {
-    const _ = { _: "updateLangPackTooLong" }
-    _.lang_code = this.string();            // : string - string
-    return _;
-  }],
-  [1442983757, function decode$updateLangPack() {
-    const _ = { _: "updateLangPack" }
-    _.difference = this.object();           // : global.LangPackDifference - LangPackDifference
-    return _;
-  }],
-  [885242707, function decode$channelParticipantAdmin() {
-    const _ = { _: "channelParticipantAdmin" }
-    const flags = this.int32();
-    if (flags & 1) _.can_edit = true        // ?: true - flags.0?true
-    if (flags & 2) _.self = true            // ?: true - flags.1?true
-    _.user_id = this.int64();               // : bigint - long
-    if (flags & 2) _.inviter_id = this.int64() // ?: bigint - flags.1?long
-    _.promoted_by = this.int64();           // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.admin_rights = this.object();         // : global.ChatAdminRights - ChatAdminRights
-    if (flags & 4) _.rank = this.string()   // ?: string - flags.2?string
-    return _;
-  }],
-  [1844969806, function decode$channelParticipantBanned() {
-    const _ = { _: "channelParticipantBanned" }
-    const flags = this.int32();
-    if (flags & 1) _.left = true            // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.kicked_by = this.int64();             // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.banned_rights = this.object();        // : global.ChatBannedRights - ChatBannedRights
-    return _;
-  }],
-  [338142689, function decode$channelParticipantsBanned() {
-    const _ = { _: "channelParticipantsBanned" }
-    _.q = this.string();                    // : string - string
-    return _;
-  }],
-  [106343499, function decode$channelParticipantsSearch() {
-    const _ = { _: "channelParticipantsSearch" }
-    _.q = this.string();                    // : string - string
     return _;
   }],
   [-421545947, function decode$channelAdminLogEventActionChangeTitle() {
@@ -17205,6 +18737,125 @@ export const $decoder = new Map([
     _.new_participant = this.object();      // : global.ChannelParticipant - ChannelParticipant
     return _;
   }],
+  [-1312568665, function decode$channelAdminLogEventActionChangeStickerSet() {
+    const _ = { _: "channelAdminLogEventActionChangeStickerSet" }
+    _.prev_stickerset = this.object();      // : global.InputStickerSet - InputStickerSet
+    _.new_stickerset = this.object();       // : global.InputStickerSet - InputStickerSet
+    return _;
+  }],
+  [1599903217, function decode$channelAdminLogEventActionTogglePreHistoryHidden() {
+    const _ = { _: "channelAdminLogEventActionTogglePreHistoryHidden" }
+    _.new_value = this.bool();              // : boolean - Bool
+    return _;
+  }],
+  [771095562, function decode$channelAdminLogEventActionDefaultBannedRights() {
+    const _ = { _: "channelAdminLogEventActionDefaultBannedRights" }
+    _.prev_banned_rights = this.object();   // : global.ChatBannedRights - ChatBannedRights
+    _.new_banned_rights = this.object();    // : global.ChatBannedRights - ChatBannedRights
+    return _;
+  }],
+  [-1895328189, function decode$channelAdminLogEventActionStopPoll() {
+    const _ = { _: "channelAdminLogEventActionStopPoll" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [84703944, function decode$channelAdminLogEventActionChangeLinkedChat() {
+    const _ = { _: "channelAdminLogEventActionChangeLinkedChat" }
+    _.prev_value = this.int64();            // : bigint - long
+    _.new_value = this.int64();             // : bigint - long
+    return _;
+  }],
+  [241923758, function decode$channelAdminLogEventActionChangeLocation() {
+    const _ = { _: "channelAdminLogEventActionChangeLocation" }
+    _.prev_value = this.object();           // : global.ChannelLocation - ChannelLocation
+    _.new_value = this.object();            // : global.ChannelLocation - ChannelLocation
+    return _;
+  }],
+  [1401984889, function decode$channelAdminLogEventActionToggleSlowMode() {
+    const _ = { _: "channelAdminLogEventActionToggleSlowMode" }
+    _.prev_value = this.int32();            // : number - int
+    _.new_value = this.int32();             // : number - int
+    return _;
+  }],
+  [589338437, function decode$channelAdminLogEventActionStartGroupCall() {
+    const _ = { _: "channelAdminLogEventActionStartGroupCall" }
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    return _;
+  }],
+  [-610299584, function decode$channelAdminLogEventActionDiscardGroupCall() {
+    const _ = { _: "channelAdminLogEventActionDiscardGroupCall" }
+    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    return _;
+  }],
+  [-115071790, function decode$channelAdminLogEventActionParticipantMute() {
+    const _ = { _: "channelAdminLogEventActionParticipantMute" }
+    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    return _;
+  }],
+  [-431740480, function decode$channelAdminLogEventActionParticipantUnmute() {
+    const _ = { _: "channelAdminLogEventActionParticipantUnmute" }
+    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    return _;
+  }],
+  [1456906823, function decode$channelAdminLogEventActionToggleGroupCallSetting() {
+    const _ = { _: "channelAdminLogEventActionToggleGroupCallSetting" }
+    _.join_muted = this.bool();             // : boolean - Bool
+    return _;
+  }],
+  [1557846647, function decode$channelAdminLogEventActionParticipantJoinByInvite() {
+    const _ = { _: "channelAdminLogEventActionParticipantJoinByInvite" }
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    return _;
+  }],
+  [1515256996, function decode$channelAdminLogEventActionExportedInviteDelete() {
+    const _ = { _: "channelAdminLogEventActionExportedInviteDelete" }
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    return _;
+  }],
+  [1091179342, function decode$channelAdminLogEventActionExportedInviteRevoke() {
+    const _ = { _: "channelAdminLogEventActionExportedInviteRevoke" }
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    return _;
+  }],
+  [-384910503, function decode$channelAdminLogEventActionExportedInviteEdit() {
+    const _ = { _: "channelAdminLogEventActionExportedInviteEdit" }
+    _.prev_invite = this.object();          // : global.ExportedChatInvite - ExportedChatInvite
+    _.new_invite = this.object();           // : global.ExportedChatInvite - ExportedChatInvite
+    return _;
+  }],
+  [1048537159, function decode$channelAdminLogEventActionParticipantVolume() {
+    const _ = { _: "channelAdminLogEventActionParticipantVolume" }
+    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    return _;
+  }],
+  [1855199800, function decode$channelAdminLogEventActionChangeHistoryTTL() {
+    const _ = { _: "channelAdminLogEventActionChangeHistoryTTL" }
+    _.prev_value = this.int32();            // : number - int
+    _.new_value = this.int32();             // : number - int
+    return _;
+  }],
+  [-1347021750, function decode$channelAdminLogEventActionParticipantJoinByRequest() {
+    const _ = { _: "channelAdminLogEventActionParticipantJoinByRequest" }
+    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.approved_by = this.int64();           // : bigint - long
+    return _;
+  }],
+  [-886388890, function decode$channelAdminLogEventActionToggleNoForwards() {
+    const _ = { _: "channelAdminLogEventActionToggleNoForwards" }
+    _.new_value = this.bool();              // : boolean - Bool
+    return _;
+  }],
+  [663693416, function decode$channelAdminLogEventActionSendMessage() {
+    const _ = { _: "channelAdminLogEventActionSendMessage" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-1661470870, function decode$channelAdminLogEventActionChangeAvailableReactions() {
+    const _ = { _: "channelAdminLogEventActionChangeAvailableReactions" }
+    _.prev_value = this.vector(this.string); // : string[] - Vector<string>
+    _.new_value = this.vector(this.string); // : string[] - Vector<string>
+    return _;
+  }],
   [531458253, function decode$channelAdminLogEvent() {
     const _ = { _: "channelAdminLogEvent" }
     _.id = this.int64();                    // : bigint - long
@@ -17242,23 +18893,11 @@ export const $decoder = new Map([
     if (flags & 65536) _.send = true        // ?: true - flags.16?true
     return _;
   }],
-  [511092620, function decode$topPeerCategoryPhoneCalls() {
-    return { _: "topPeerCategoryPhoneCalls" }
-  }],
-  [-2143067670, function decode$pageBlockAudio() {
-    const _ = { _: "pageBlockAudio" }
-    _.audio_id = this.int64();              // : bigint - long
-    _.caption = this.object();              // : global.PageCaption - PageCaption
-    return _;
-  }],
   [1558266229, function decode$popularContact() {
     const _ = { _: "popularContact" }
     _.client_id = this.int64();             // : bigint - long
     _.importers = this.int32();             // : number - int
     return _;
-  }],
-  [1200788123, function decode$messageActionScreenshotTaken() {
-    return { _: "messageActionScreenshotTaken" }
   }],
   [-1634752813, function decode$messages__favedStickersNotModified() {
     return { _: "messages.favedStickersNotModified" }
@@ -17268,73 +18907,6 @@ export const $decoder = new Map([
     _.hash = this.int64();                  // : bigint - long
     _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
     _.stickers = this.vector(this.object);  // : global.Document[] - Vector<Document>
-    return _;
-  }],
-  [-451831443, function decode$updateFavedStickers() {
-    return { _: "updateFavedStickers" }
-  }],
-  [1153291573, function decode$updateChannelReadMessagesContents() {
-    const _ = { _: "updateChannelReadMessagesContents" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    return _;
-  }],
-  [-1040652646, function decode$inputMessagesFilterMyMentions() {
-    return { _: "inputMessagesFilterMyMentions" }
-  }],
-  [1887741886, function decode$updateContactsReset() {
-    return { _: "updateContactsReset" }
-  }],
-  [-1312568665, function decode$channelAdminLogEventActionChangeStickerSet() {
-    const _ = { _: "channelAdminLogEventActionChangeStickerSet" }
-    _.prev_stickerset = this.object();      // : global.InputStickerSet - InputStickerSet
-    _.new_stickerset = this.object();       // : global.InputStickerSet - InputStickerSet
-    return _;
-  }],
-  [-85549226, function decode$messageActionCustomAction() {
-    const _ = { _: "messageActionCustomAction" }
-    _.message = this.string();              // : string - string
-    return _;
-  }],
-  [178373535, function decode$inputPaymentCredentialsApplePay() {
-    const _ = { _: "inputPaymentCredentialsApplePay" }
-    _.payment_data = this.object();         // : global.DataJSON - DataJSON
-    return _;
-  }],
-  [-419271411, function decode$inputMessagesFilterGeo() {
-    return { _: "inputMessagesFilterGeo" }
-  }],
-  [-530392189, function decode$inputMessagesFilterContacts() {
-    return { _: "inputMessagesFilterContacts" }
-  }],
-  [-1304443240, function decode$updateChannelAvailableMessages() {
-    const _ = { _: "updateChannelAvailableMessages" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.available_min_id = this.int32();      // : number - int
-    return _;
-  }],
-  [1599903217, function decode$channelAdminLogEventActionTogglePreHistoryHidden() {
-    const _ = { _: "channelAdminLogEventActionTogglePreHistoryHidden" }
-    _.new_value = this.bool();              // : boolean - Bool
-    return _;
-  }],
-  [-1759532989, function decode$inputMediaGeoLive() {
-    const _ = { _: "inputMediaGeoLive" }
-    const flags = this.int32();
-    if (flags & 1) _.stopped = true         // ?: true - flags.0?true
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
-    if (flags & 4) _.heading = this.int32() // ?: number - flags.2?int
-    if (flags & 2) _.period = this.int32()  // ?: number - flags.1?int
-    if (flags & 8) _.proximity_notification_radius = this.int32() // ?: number - flags.3?int
-    return _;
-  }],
-  [-1186937242, function decode$messageMediaGeoLive() {
-    const _ = { _: "messageMediaGeoLive" }
-    const flags = this.int32();
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
-    if (flags & 1) _.heading = this.int32() // ?: number - flags.0?int
-    _.period = this.int32();                // : number - int
-    if (flags & 2) _.proximity_notification_radius = this.int32() // ?: number - flags.1?int
     return _;
   }],
   [1189204285, function decode$recentMeUrlUnknown() {
@@ -17371,14 +18943,6 @@ export const $decoder = new Map([
     _.urls = this.vector(this.object);      // : global.RecentMeUrl[] - Vector<RecentMeUrl>
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [-266911767, function decode$channels__channelParticipantsNotModified() {
-    return { _: "channels.channelParticipantsNotModified" }
-  }],
-  [1951620897, function decode$messages__messagesNotModified() {
-    const _ = { _: "messages.messagesNotModified" }
-    _.count = this.int32();                 // : number - int
     return _;
   }],
   [482797855, function decode$inputSingleMedia() {
@@ -17422,21 +18986,10 @@ export const $decoder = new Map([
   [-2037963464, function decode$inputMessagePinned() {
     return { _: "inputMessagePinned" }
   }],
-  [-1687559349, function decode$messageEntityPhone() {
-    const _ = { _: "messageEntityPhone" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [1280209983, function decode$messageEntityCashtag() {
-    const _ = { _: "messageEntityCashtag" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [-1410748418, function decode$messageActionBotAllowed() {
-    const _ = { _: "messageActionBotAllowed" }
-    _.domain = this.string();               // : string - string
+  [-1392895362, function decode$inputMessageCallbackQuery() {
+    const _ = { _: "inputMessageCallbackQuery" }
+    _.id = this.int32();                    // : number - int
+    _.query_id = this.int64();              // : bigint - long
     return _;
   }],
   [-55902537, function decode$inputDialogPeer() {
@@ -17444,9 +18997,19 @@ export const $decoder = new Map([
     _.peer = this.object();                 // : global.InputPeer - InputPeer
     return _;
   }],
+  [1684014375, function decode$inputDialogPeerFolder() {
+    const _ = { _: "inputDialogPeerFolder" }
+    _.folder_id = this.int32();             // : number - int
+    return _;
+  }],
   [-445792507, function decode$dialogPeer() {
     const _ = { _: "dialogPeer" }
     _.peer = this.object();                 // : global.Peer - Peer
+    return _;
+  }],
+  [1363483106, function decode$dialogPeerFolder() {
+    const _ = { _: "dialogPeerFolder" }
+    _.folder_id = this.int32();             // : number - int
     return _;
   }],
   [223655517, function decode$messages__foundStickerSetsNotModified() {
@@ -17458,19 +19021,11 @@ export const $decoder = new Map([
     _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
     return _;
   }],
-  [1648543603, function decode$fileHash() {
+  [-207944868, function decode$fileHash() {
     const _ = { _: "fileHash" }
-    _.offset = this.int32();                // : number - int
+    _.offset = this.int64();                // : bigint - long
     _.limit = this.int32();                 // : number - int
     _.hash = this.bytes();                  // : BufferSource - bytes
-    return _;
-  }],
-  [-104284986, function decode$webDocumentNoProxy() {
-    const _ = { _: "webDocumentNoProxy" }
-    _.url = this.string();                  // : string - string
-    _.size = this.int32();                  // : number - int
-    _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
     return _;
   }],
   [1968737087, function decode$inputClientProxy() {
@@ -17505,20 +19060,14 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
-  [-876089816, function decode$inputSecureFileLocation() {
-    const _ = { _: "inputSecureFileLocation" }
-    _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    return _;
-  }],
   [1679398724, function decode$secureFileEmpty() {
     return { _: "secureFileEmpty" }
   }],
-  [-534283678, function decode$secureFile() {
+  [2097791614, function decode$secureFile() {
     const _ = { _: "secureFile" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.size = this.int32();                  // : number - int
+    _.size = this.int64();                  // : bigint - long
     _.dc_id = this.int32();                 // : number - int
     _.date = this.int32();                  // : number - int
     _.file_hash = this.bytes();             // : BufferSource - bytes
@@ -17657,6 +19206,27 @@ export const $decoder = new Map([
     _.text = this.string();                 // : string - string
     return _;
   }],
+  [-2036501105, function decode$secureValueError() {
+    const _ = { _: "secureValueError" }
+    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.hash = this.bytes();                  // : BufferSource - bytes
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [-1592506512, function decode$secureValueErrorTranslationFile() {
+    const _ = { _: "secureValueErrorTranslationFile" }
+    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [878931416, function decode$secureValueErrorTranslationFiles() {
+    const _ = { _: "secureValueErrorTranslationFiles" }
+    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.file_hash = this.vector(this.bytes);  // : BufferSource[] - Vector<bytes>
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
   [871426631, function decode$secureCredentialsEncrypted() {
     const _ = { _: "secureCredentialsEncrypted" }
     _.data = this.bytes();                  // : BufferSource - bytes
@@ -17678,17 +19248,6 @@ export const $decoder = new Map([
     const _ = { _: "account.sentEmailCode" }
     _.email_pattern = this.string();        // : string - string
     _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [455635795, function decode$messageActionSecureValuesSentMe() {
-    const _ = { _: "messageActionSecureValuesSentMe" }
-    _.values = this.vector(this.object);    // : global.SecureValue[] - Vector<SecureValue>
-    _.credentials = this.object();          // : global.SecureCredentialsEncrypted - SecureCredentialsEncrypted
-    return _;
-  }],
-  [-648257196, function decode$messageActionSecureValuesSent() {
-    const _ = { _: "messageActionSecureValuesSent" }
-    _.types = this.vector(this.object);     // : global.SecureValueType[] - Vector<SecureValueType>
     return _;
   }],
   [1722786150, function decode$help__deepLinkInfoEmpty() {
@@ -17715,39 +19274,16 @@ export const $decoder = new Map([
     _.id = this.int64();                    // : bigint - long
     return _;
   }],
-  [700340377, function decode$inputTakeoutFileLocation() {
-    return { _: "inputTakeoutFileLocation" }
-  }],
-  [-513517117, function decode$updateDialogUnreadMark() {
-    const _ = { _: "updateDialogUnreadMark" }
-    const flags = this.int32();
-    if (flags & 1) _.unread = true          // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
-    return _;
-  }],
-  [-253500010, function decode$messages__dialogsNotModified() {
-    const _ = { _: "messages.dialogsNotModified" }
-    _.count = this.int32();                 // : number - int
-    return _;
-  }],
-  [-1625153079, function decode$inputWebFileGeoPointLocation() {
-    const _ = { _: "inputWebFileGeoPointLocation" }
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
-    _.access_hash = this.int64();           // : bigint - long
-    _.w = this.int32();                     // : number - int
-    _.h = this.int32();                     // : number - int
-    _.zoom = this.int32();                  // : number - int
-    _.scale = this.int32();                 // : number - int
-    return _;
-  }],
-  [-1255369827, function decode$contacts__topPeersDisabled() {
-    return { _: "contacts.topPeersDisabled" }
-  }],
-  [-1685456582, function decode$inputReportReasonCopyright() {
-    return { _: "inputReportReasonCopyright" }
-  }],
   [-732254058, function decode$passwordKdfAlgoUnknown() {
     return { _: "passwordKdfAlgoUnknown" }
+  }],
+  [982592842, function decode$passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow() {
+    const _ = { _: "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow" }
+    _.salt1 = this.bytes();                 // : BufferSource - bytes
+    _.salt2 = this.bytes();                 // : BufferSource - bytes
+    _.g = this.int32();                     // : number - int
+    _.p = this.bytes();                     // : BufferSource - bytes
+    return _;
   }],
   [4883767, function decode$securePasswordKdfAlgoUnknown() {
     return { _: "securePasswordKdfAlgoUnknown" }
@@ -17769,14 +19305,6 @@ export const $decoder = new Map([
     _.secure_secret_id = this.int64();      // : bigint - long
     return _;
   }],
-  [982592842, function decode$passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow() {
-    const _ = { _: "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow" }
-    _.salt1 = this.bytes();                 // : BufferSource - bytes
-    _.salt2 = this.bytes();                 // : BufferSource - bytes
-    _.g = this.int32();                     // : number - int
-    _.p = this.bytes();                     // : BufferSource - bytes
-    return _;
-  }],
   [-1736378792, function decode$inputCheckPasswordEmpty() {
     return { _: "inputCheckPasswordEmpty" }
   }],
@@ -17785,27 +19313,6 @@ export const $decoder = new Map([
     _.srp_id = this.int64();                // : bigint - long
     _.A = this.bytes();                     // : BufferSource - bytes
     _.M1 = this.bytes();                    // : BufferSource - bytes
-    return _;
-  }],
-  [-2036501105, function decode$secureValueError() {
-    const _ = { _: "secureValueError" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.hash = this.bytes();                  // : BufferSource - bytes
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [-1592506512, function decode$secureValueErrorTranslationFile() {
-    const _ = { _: "secureValueErrorTranslationFile" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [878931416, function decode$secureValueErrorTranslationFiles() {
-    const _ = { _: "secureValueErrorTranslationFiles" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.vector(this.bytes);  // : BufferSource[] - Vector<bytes>
-    _.text = this.string();                 // : string - string
     return _;
   }],
   [-2103600678, function decode$secureRequiredType() {
@@ -17873,45 +19380,6 @@ export const $decoder = new Map([
     _.value = this.vector(this.object);     // : global.JSONObjectValue[] - Vector<JSONObjectValue>
     return _;
   }],
-  [-1311015810, function decode$inputNotifyBroadcasts() {
-    return { _: "inputNotifyBroadcasts" }
-  }],
-  [-703403793, function decode$notifyBroadcasts() {
-    return { _: "notifyBroadcasts" }
-  }],
-  [-311786236, function decode$textSubscript() {
-    const _ = { _: "textSubscript" }
-    _.text = this.object();                 // : global.RichText - RichText
-    return _;
-  }],
-  [-939827711, function decode$textSuperscript() {
-    const _ = { _: "textSuperscript" }
-    _.text = this.object();                 // : global.RichText - RichText
-    return _;
-  }],
-  [55281185, function decode$textMarked() {
-    const _ = { _: "textMarked" }
-    _.text = this.object();                 // : global.RichText - RichText
-    return _;
-  }],
-  [483104362, function decode$textPhone() {
-    const _ = { _: "textPhone" }
-    _.text = this.object();                 // : global.RichText - RichText
-    _.phone = this.string();                // : string - string
-    return _;
-  }],
-  [136105807, function decode$textImage() {
-    const _ = { _: "textImage" }
-    _.document_id = this.int64();           // : bigint - long
-    _.w = this.int32();                     // : number - int
-    _.h = this.int32();                     // : number - int
-    return _;
-  }],
-  [504660880, function decode$pageBlockKicker() {
-    const _ = { _: "pageBlockKicker" }
-    _.text = this.object();                 // : global.RichText - RichText
-    return _;
-  }],
   [878078826, function decode$pageTableCell() {
     const _ = { _: "pageTableCell" }
     const flags = this.int32();
@@ -17928,15 +19396,6 @@ export const $decoder = new Map([
   [-524237339, function decode$pageTableRow() {
     const _ = { _: "pageTableRow" }
     _.cells = this.vector(this.object);     // : global.PageTableCell[] - Vector<PageTableCell>
-    return _;
-  }],
-  [-1085412734, function decode$pageBlockTable() {
-    const _ = { _: "pageBlockTable" }
-    const flags = this.int32();
-    if (flags & 1) _.bordered = true        // ?: true - flags.0?true
-    if (flags & 2) _.striped = true         // ?: true - flags.1?true
-    _.title = this.object();                // : global.RichText - RichText
-    _.rows = this.vector(this.object);      // : global.PageTableRow[] - Vector<PageTableRow>
     return _;
   }],
   [1869903447, function decode$pageCaption() {
@@ -17967,19 +19426,6 @@ export const $decoder = new Map([
     _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
     return _;
   }],
-  [-1702174239, function decode$pageBlockOrderedList() {
-    const _ = { _: "pageBlockOrderedList" }
-    _.items = this.vector(this.object);     // : global.PageListOrderedItem[] - Vector<PageListOrderedItem>
-    return _;
-  }],
-  [1987480557, function decode$pageBlockDetails() {
-    const _ = { _: "pageBlockDetails" }
-    const flags = this.int32();
-    if (flags & 1) _.open = true            // ?: true - flags.0?true
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
-    _.title = this.object();                // : global.RichText - RichText
-    return _;
-  }],
   [-1282352120, function decode$pageRelatedArticle() {
     const _ = { _: "pageRelatedArticle" }
     const flags = this.int32();
@@ -17990,21 +19436,6 @@ export const $decoder = new Map([
     if (flags & 4) _.photo_id = this.int64() // ?: bigint - flags.2?long
     if (flags & 8) _.author = this.string() // ?: string - flags.3?string
     if (flags & 16) _.published_date = this.int32() // ?: number - flags.4?int
-    return _;
-  }],
-  [370236054, function decode$pageBlockRelatedArticles() {
-    const _ = { _: "pageBlockRelatedArticles" }
-    _.title = this.object();                // : global.RichText - RichText
-    _.articles = this.vector(this.object);  // : global.PageRelatedArticle[] - Vector<PageRelatedArticle>
-    return _;
-  }],
-  [-1538310410, function decode$pageBlockMap() {
-    const _ = { _: "pageBlockMap" }
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
-    _.zoom = this.int32();                  // : number - int
-    _.w = this.int32();                     // : number - int
-    _.h = this.int32();                     // : number - int
-    _.caption = this.object();              // : global.PageCaption - PageCaption
     return _;
   }],
   [-1738178803, function decode$page() {
@@ -18018,18 +19449,6 @@ export const $decoder = new Map([
     _.photos = this.vector(this.object);    // : global.Photo[] - Vector<Photo>
     _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
     if (flags & 8) _.views = this.int32()   // ?: number - flags.3?int
-    return _;
-  }],
-  [-610373422, function decode$inputPrivacyKeyPhoneP2P() {
-    return { _: "inputPrivacyKeyPhoneP2P" }
-  }],
-  [961092808, function decode$privacyKeyPhoneP2P() {
-    return { _: "privacyKeyPhoneP2P" }
-  }],
-  [894777186, function decode$textAnchor() {
-    const _ = { _: "textAnchor" }
-    _.text = this.object();                 // : global.RichText - RichText
-    _.name = this.string();                 // : string - string
     return _;
   }],
   [-1945767479, function decode$help__supportName() {
@@ -18046,17 +19465,6 @@ export const $decoder = new Map([
     _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
     _.author = this.string();               // : string - string
     _.date = this.int32();                  // : number - int
-    return _;
-  }],
-  [-202219658, function decode$messageActionContactSignUp() {
-    return { _: "messageActionContactSignUp" }
-  }],
-  [-1398708869, function decode$updateMessagePoll() {
-    const _ = { _: "updateMessagePoll" }
-    const flags = this.int32();
-    _.poll_id = this.int64();               // : bigint - long
-    if (flags & 1) _.poll = this.object()   // ?: global.Poll - flags.0?Poll
-    _.results = this.object();              // : global.PollResults - PollResults
     return _;
   }],
   [1823064809, function decode$pollAnswer() {
@@ -18099,21 +19507,6 @@ export const $decoder = new Map([
     if (flags & 16) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.4?Vector<MessageEntity>
     return _;
   }],
-  [261416433, function decode$inputMediaPoll() {
-    const _ = { _: "inputMediaPoll" }
-    const flags = this.int32();
-    _.poll = this.object();                 // : global.Poll - Poll
-    if (flags & 1) _.correct_answers = this.vector(this.bytes) // ?: BufferSource[] - flags.0?Vector<bytes>
-    if (flags & 2) _.solution = this.string() // ?: string - flags.1?string
-    if (flags & 2) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    return _;
-  }],
-  [1272375192, function decode$messageMediaPoll() {
-    const _ = { _: "messageMediaPoll" }
-    _.poll = this.object();                 // : global.Poll - Poll
-    _.results = this.object();              // : global.PollResults - PollResults
-    return _;
-  }],
   [-264117680, function decode$chatOnlines() {
     const _ = { _: "chatOnlines" }
     _.onlines = this.int32();               // : number - int
@@ -18122,12 +19515,6 @@ export const $decoder = new Map([
   [1202287072, function decode$statsURL() {
     const _ = { _: "statsURL" }
     _.url = this.string();                  // : string - string
-    return _;
-  }],
-  [-525288402, function decode$photoStrippedSize() {
-    const _ = { _: "photoStrippedSize" }
-    _.type = this.string();                 // : string - string
-    _.bytes = this.bytes();                 // : BufferSource - bytes
     return _;
   }],
   [1605510357, function decode$chatAdminRights() {
@@ -18164,13 +19551,6 @@ export const $decoder = new Map([
     _.until_date = this.int32();            // : number - int
     return _;
   }],
-  [1421875280, function decode$updateChatDefaultBannedRights() {
-    const _ = { _: "updateChatDefaultBannedRights" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.default_banned_rights = this.object(); // : global.ChatBannedRights - ChatBannedRights
-    _.version = this.int32();               // : number - int
-    return _;
-  }],
   [-433014407, function decode$inputWallPaper() {
     const _ = { _: "inputWallPaper" }
     _.id = this.int64();                    // : bigint - long
@@ -18182,20 +19562,9 @@ export const $decoder = new Map([
     _.slug = this.string();                 // : string - string
     return _;
   }],
-  [-1150621555, function decode$channelParticipantsContacts() {
-    const _ = { _: "channelParticipantsContacts" }
-    _.q = this.string();                    // : string - string
-    return _;
-  }],
-  [771095562, function decode$channelAdminLogEventActionDefaultBannedRights() {
-    const _ = { _: "channelAdminLogEventActionDefaultBannedRights" }
-    _.prev_banned_rights = this.object();   // : global.ChatBannedRights - ChatBannedRights
-    _.new_banned_rights = this.object();    // : global.ChatBannedRights - ChatBannedRights
-    return _;
-  }],
-  [-1895328189, function decode$channelAdminLogEventActionStopPoll() {
-    const _ = { _: "channelAdminLogEventActionStopPoll" }
-    _.message = this.object();              // : global.Message - Message
+  [-1770371538, function decode$inputWallPaperNoFile() {
+    const _ = { _: "inputWallPaperNoFile" }
+    _.id = this.int64();                    // : bigint - long
     return _;
   }],
   [471437699, function decode$account__wallPapersNotModified() {
@@ -18230,7 +19599,7 @@ export const $decoder = new Map([
     if (flags & 16) _.rotation = this.int32() // ?: number - flags.4?int
     return _;
   }],
-  [-532532493, function decode$autoDownloadSettings() {
+  [-1896171181, function decode$autoDownloadSettings() {
     const _ = { _: "autoDownloadSettings" }
     const flags = this.int32();
     if (flags & 1) _.disabled = true        // ?: true - flags.0?true
@@ -18238,8 +19607,8 @@ export const $decoder = new Map([
     if (flags & 4) _.audio_preload_next = true // ?: true - flags.2?true
     if (flags & 8) _.phonecalls_less_data = true // ?: true - flags.3?true
     _.photo_size_max = this.int32();        // : number - int
-    _.video_size_max = this.int32();        // : number - int
-    _.file_size_max = this.int32();         // : number - int
+    _.video_size_max = this.int64();        // : bigint - long
+    _.file_size_max = this.int64();         // : bigint - long
     _.video_upload_maxbitrate = this.int32(); // : number - int
     return _;
   }],
@@ -18280,50 +19649,6 @@ export const $decoder = new Map([
     _.lang_code = this.string();            // : string - string
     return _;
   }],
-  [-1529000952, function decode$inputPrivacyKeyForwards() {
-    return { _: "inputPrivacyKeyForwards" }
-  }],
-  [1777096355, function decode$privacyKeyForwards() {
-    return { _: "privacyKeyForwards" }
-  }],
-  [1461304012, function decode$inputPrivacyKeyProfilePhoto() {
-    return { _: "inputPrivacyKeyProfilePhoto" }
-  }],
-  [-1777000467, function decode$privacyKeyProfilePhoto() {
-    return { _: "privacyKeyProfilePhoto" }
-  }],
-  [1075322878, function decode$inputPhotoFileLocation() {
-    const _ = { _: "inputPhotoFileLocation" }
-    _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
-    _.thumb_size = this.string();           // : string - string
-    return _;
-  }],
-  [-667654413, function decode$inputPhotoLegacyFileLocation() {
-    const _ = { _: "inputPhotoLegacyFileLocation" }
-    _.id = this.int64();                    // : bigint - long
-    _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
-    _.volume_id = this.int64();             // : bigint - long
-    _.local_id = this.int32();              // : number - int
-    _.secret = this.int64();                // : bigint - long
-    return _;
-  }],
-  [925204121, function decode$inputPeerPhotoFileLocation() {
-    const _ = { _: "inputPeerPhotoFileLocation" }
-    const flags = this.int32();
-    if (flags & 1) _.big = true             // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.photo_id = this.int64();              // : bigint - long
-    return _;
-  }],
-  [-1652231205, function decode$inputStickerSetThumb() {
-    const _ = { _: "inputStickerSetThumb" }
-    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
-    _.thumb_version = this.int32();         // : number - int
-    return _;
-  }],
   [-11252123, function decode$folder() {
     const _ = { _: "folder" }
     const flags = this.int32();
@@ -18333,29 +19658,6 @@ export const $decoder = new Map([
     _.id = this.int32();                    // : number - int
     _.title = this.string();                // : string - string
     if (flags & 8) _.photo = this.object()  // ?: global.ChatPhoto - flags.3?ChatPhoto
-    return _;
-  }],
-  [1908216652, function decode$dialogFolder() {
-    const _ = { _: "dialogFolder" }
-    const flags = this.int32();
-    if (flags & 4) _.pinned = true          // ?: true - flags.2?true
-    _.folder = this.object();               // : global.Folder - Folder
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.top_message = this.int32();           // : number - int
-    _.unread_muted_peers_count = this.int32(); // : number - int
-    _.unread_unmuted_peers_count = this.int32(); // : number - int
-    _.unread_muted_messages_count = this.int32(); // : number - int
-    _.unread_unmuted_messages_count = this.int32(); // : number - int
-    return _;
-  }],
-  [1684014375, function decode$inputDialogPeerFolder() {
-    const _ = { _: "inputDialogPeerFolder" }
-    _.folder_id = this.int32();             // : number - int
-    return _;
-  }],
-  [1363483106, function decode$dialogPeerFolder() {
-    const _ = { _: "dialogPeerFolder" }
-    _.folder_id = this.int32();             // : number - int
     return _;
   }],
   [-70073706, function decode$inputFolderPeer() {
@@ -18370,84 +19672,12 @@ export const $decoder = new Map([
     _.folder_id = this.int32();             // : number - int
     return _;
   }],
-  [422972864, function decode$updateFolderPeers() {
-    const _ = { _: "updateFolderPeers" }
-    _.folder_peers = this.vector(this.object); // : global.FolderPeer[] - Vector<FolderPeer>
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [497305826, function decode$inputUserFromMessage() {
-    const _ = { _: "inputUserFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.msg_id = this.int32();                // : number - int
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [1536380829, function decode$inputChannelFromMessage() {
-    const _ = { _: "inputChannelFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.msg_id = this.int32();                // : number - int
-    _.channel_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [-1468331492, function decode$inputPeerUserFromMessage() {
-    const _ = { _: "inputPeerUserFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.msg_id = this.int32();                // : number - int
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [-1121318848, function decode$inputPeerChannelFromMessage() {
-    const _ = { _: "inputPeerChannelFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.msg_id = this.int32();                // : number - int
-    _.channel_id = this.int64();            // : bigint - long
-    return _;
-  }],
-  [55761658, function decode$inputPrivacyKeyPhoneNumber() {
-    return { _: "inputPrivacyKeyPhoneNumber" }
-  }],
-  [-778378131, function decode$privacyKeyPhoneNumber() {
-    return { _: "privacyKeyPhoneNumber" }
-  }],
-  [-1472172887, function decode$topPeerCategoryForwardUsers() {
-    return { _: "topPeerCategoryForwardUsers" }
-  }],
-  [-68239120, function decode$topPeerCategoryForwardChats() {
-    return { _: "topPeerCategoryForwardChats" }
-  }],
-  [84703944, function decode$channelAdminLogEventActionChangeLinkedChat() {
-    const _ = { _: "channelAdminLogEventActionChangeLinkedChat" }
-    _.prev_value = this.int64();            // : bigint - long
-    _.new_value = this.int64();             // : bigint - long
-    return _;
-  }],
   [-398136321, function decode$messages__searchCounter() {
     const _ = { _: "messages.searchCounter" }
     const flags = this.int32();
     if (flags & 2) _.inexact = true         // ?: true - flags.1?true
     _.filter = this.object();               // : global.MessagesFilter - MessagesFilter
     _.count = this.int32();                 // : number - int
-    return _;
-  }],
-  [280464681, function decode$keyboardButtonUrlAuth() {
-    const _ = { _: "keyboardButtonUrlAuth" }
-    const flags = this.int32();
-    _.text = this.string();                 // : string - string
-    if (flags & 1) _.fwd_text = this.string() // ?: string - flags.0?string
-    _.url = this.string();                  // : string - string
-    _.button_id = this.int32();             // : number - int
-    return _;
-  }],
-  [-802258988, function decode$inputKeyboardButtonUrlAuth() {
-    const _ = { _: "inputKeyboardButtonUrlAuth" }
-    const flags = this.int32();
-    if (flags & 1) _.request_write_access = true // ?: true - flags.0?true
-    _.text = this.string();                 // : string - string
-    if (flags & 2) _.fwd_text = this.string() // ?: string - flags.1?string
-    _.url = this.string();                  // : string - string
-    _.bot = this.object();                  // : global.InputUser - InputUser
     return _;
   }],
   [-1831650802, function decode$urlAuthResultRequest() {
@@ -18466,50 +19696,6 @@ export const $decoder = new Map([
   [-1445536993, function decode$urlAuthResultDefault() {
     return { _: "urlAuthResultDefault" }
   }],
-  [-2079962673, function decode$inputPrivacyValueAllowChatParticipants() {
-    const _ = { _: "inputPrivacyValueAllowChatParticipants" }
-    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
-  [-380694650, function decode$inputPrivacyValueDisallowChatParticipants() {
-    const _ = { _: "inputPrivacyValueDisallowChatParticipants" }
-    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
-  [1796427406, function decode$privacyValueAllowChatParticipants() {
-    const _ = { _: "privacyValueAllowChatParticipants" }
-    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
-  [1103656293, function decode$privacyValueDisallowChatParticipants() {
-    const _ = { _: "privacyValueDisallowChatParticipants" }
-    _.chats = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
-  [-1672577397, function decode$messageEntityUnderline() {
-    const _ = { _: "messageEntityUnderline" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [-1090087980, function decode$messageEntityStrike() {
-    const _ = { _: "messageEntityStrike" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [34469328, function decode$messageEntityBlockquote() {
-    const _ = { _: "messageEntityBlockquote" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [1786671974, function decode$updatePeerSettings() {
-    const _ = { _: "updatePeerSettings" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.settings = this.object();             // : global.PeerSettings - PeerSettings
-    return _;
-  }],
   [-1078612597, function decode$channelLocationEmpty() {
     return { _: "channelLocationEmpty" }
   }],
@@ -18526,49 +19712,9 @@ export const $decoder = new Map([
     _.distance = this.int32();              // : number - int
     return _;
   }],
-  [-1263546448, function decode$updatePeerLocated() {
-    const _ = { _: "updatePeerLocated" }
-    _.peers = this.vector(this.object);     // : global.PeerLocated[] - Vector<PeerLocated>
-    return _;
-  }],
-  [241923758, function decode$channelAdminLogEventActionChangeLocation() {
-    const _ = { _: "channelAdminLogEventActionChangeLocation" }
-    _.prev_value = this.object();           // : global.ChannelLocation - ChannelLocation
-    _.new_value = this.object();            // : global.ChannelLocation - ChannelLocation
-    return _;
-  }],
-  [-606798099, function decode$inputReportReasonGeoIrrelevant() {
-    return { _: "inputReportReasonGeoIrrelevant" }
-  }],
-  [1401984889, function decode$channelAdminLogEventActionToggleSlowMode() {
-    const _ = { _: "channelAdminLogEventActionToggleSlowMode" }
-    _.prev_value = this.int32();            // : number - int
-    _.new_value = this.int32();             // : number - int
-    return _;
-  }],
-  [1148485274, function decode$auth__authorizationSignUpRequired() {
-    const _ = { _: "auth.authorizationSignUpRequired" }
-    const flags = this.int32();
-    if (flags & 1) _.terms_of_service = this.object() // ?: help.TermsOfService - flags.0?help.TermsOfService
-    return _;
-  }],
-  [-666824391, function decode$payments__paymentVerificationNeeded() {
-    const _ = { _: "payments.paymentVerificationNeeded" }
-    _.url = this.string();                  // : string - string
-    return _;
-  }],
-  [42402760, function decode$inputStickerSetAnimatedEmoji() {
-    return { _: "inputStickerSetAnimatedEmoji" }
-  }],
-  [967122427, function decode$updateNewScheduledMessage() {
-    const _ = { _: "updateNewScheduledMessage" }
-    _.message = this.object();              // : global.Message - Message
-    return _;
-  }],
-  [-1870238482, function decode$updateDeleteScheduledMessages() {
-    const _ = { _: "updateDeleteScheduledMessages" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+  [-118740917, function decode$peerSelfLocated() {
+    const _ = { _: "peerSelfLocated" }
+    _.expires = this.int32();               // : number - int
     return _;
   }],
   [-797791052, function decode$restrictionReason() {
@@ -18613,26 +19759,6 @@ export const $decoder = new Map([
     _.hash = this.int64();                  // : bigint - long
     _.themes = this.vector(this.object);    // : global.Theme[] - Vector<Theme>
     return _;
-  }],
-  [-2112423005, function decode$updateTheme() {
-    const _ = { _: "updateTheme" }
-    _.theme = this.object();                // : global.Theme - Theme
-    return _;
-  }],
-  [-786326563, function decode$inputPrivacyKeyAddedByPhone() {
-    return { _: "inputPrivacyKeyAddedByPhone" }
-  }],
-  [1124062251, function decode$privacyKeyAddedByPhone() {
-    return { _: "privacyKeyAddedByPhone" }
-  }],
-  [-2027964103, function decode$updateGeoLiveViewed() {
-    const _ = { _: "updateGeoLiveViewed" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.msg_id = this.int32();                // : number - int
-    return _;
-  }],
-  [1448076945, function decode$updateLoginToken() {
-    return { _: "updateLoginToken" }
   }],
   [1654593920, function decode$auth__loginToken() {
     const _ = { _: "auth.loginToken" }
@@ -18680,20 +19806,6 @@ export const $decoder = new Map([
   [1527845466, function decode$baseThemeArctic() {
     return { _: "baseThemeArctic" }
   }],
-  [-1770371538, function decode$inputWallPaperNoFile() {
-    const _ = { _: "inputWallPaperNoFile" }
-    _.id = this.int64();                    // : bigint - long
-    return _;
-  }],
-  [-528465642, function decode$wallPaperNoFile() {
-    const _ = { _: "wallPaperNoFile" }
-    _.id = this.int64();                    // : bigint - long
-    const flags = this.int32();
-    if (flags & 2) _.default = true         // ?: true - flags.1?true
-    if (flags & 16) _.dark = true           // ?: true - flags.4?true
-    if (flags & 4) _.settings = this.object() // ?: global.WallPaperSettings - flags.2?WallPaperSettings
-    return _;
-  }],
   [-1881255857, function decode$inputThemeSettings() {
     const _ = { _: "inputThemeSettings" }
     const flags = this.int32();
@@ -18722,14 +19834,6 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.documents = this.vector(this.object) // ?: global.Document[] - flags.0?Vector<Document>
     if (flags & 2) _.settings = this.object() // ?: global.ThemeSettings - flags.1?ThemeSettings
-    return _;
-  }],
-  [274961865, function decode$updateMessagePollVote() {
-    const _ = { _: "updateMessagePollVote" }
-    _.poll_id = this.int64();               // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    _.options = this.vector(this.bytes);    // : BufferSource[] - Vector<bytes>
-    _.qts = this.int32();                   // : number - int
     return _;
   }],
   [886196148, function decode$messageUserVote() {
@@ -18761,19 +19865,6 @@ export const $decoder = new Map([
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
   }],
-  [-1144565411, function decode$keyboardButtonRequestPoll() {
-    const _ = { _: "keyboardButtonRequestPoll" }
-    const flags = this.int32();
-    if (flags & 1) _.quiz = this.bool()     // ?: boolean - flags.0?Bool
-    _.text = this.string();                 // : string - string
-    return _;
-  }],
-  [1981704948, function decode$messageEntityBankCard() {
-    const _ = { _: "messageEntityBankCard" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
   [-177732982, function decode$bankCardOpenUrl() {
     const _ = { _: "bankCardOpenUrl" }
     _.url = this.string();                  // : string - string
@@ -18784,11 +19875,6 @@ export const $decoder = new Map([
     const _ = { _: "payments.bankCardData" }
     _.title = this.string();                // : string - string
     _.open_urls = this.vector(this.object); // : global.BankCardOpenUrl[] - Vector<BankCardOpenUrl>
-    return _;
-  }],
-  [-118740917, function decode$peerSelfLocated() {
-    const _ = { _: "peerSelfLocated" }
-    _.expires = this.int32();               // : number - int
     return _;
   }],
   [1949890536, function decode$dialogFilter() {
@@ -18810,26 +19896,14 @@ export const $decoder = new Map([
     _.exclude_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
     return _;
   }],
+  [909284270, function decode$dialogFilterDefault() {
+    return { _: "dialogFilterDefault" }
+  }],
   [2004110666, function decode$dialogFilterSuggested() {
     const _ = { _: "dialogFilterSuggested" }
     _.filter = this.object();               // : global.DialogFilter - DialogFilter
     _.description = this.string();          // : string - string
     return _;
-  }],
-  [654302845, function decode$updateDialogFilter() {
-    const _ = { _: "updateDialogFilter" }
-    const flags = this.int32();
-    _.id = this.int32();                    // : number - int
-    if (flags & 1) _.filter = this.object() // ?: global.DialogFilter - flags.0?DialogFilter
-    return _;
-  }],
-  [-1512627963, function decode$updateDialogFilterOrder() {
-    const _ = { _: "updateDialogFilterOrder" }
-    _.order = this.vector(this.int32);      // : number[] - Vector<int>
-    return _;
-  }],
-  [889491791, function decode$updateDialogFilters() {
-    return { _: "updateDialogFilters" }
   }],
   [-1237848657, function decode$statsDateRangeDays() {
     const _ = { _: "statsDateRangeDays" }
@@ -18892,22 +19966,6 @@ export const $decoder = new Map([
     _.recent_message_interactions = this.vector(this.object); // : global.MessageInteractionCounters[] - Vector<MessageInteractionCounters>
     return _;
   }],
-  [-428884101, function decode$inputMediaDice() {
-    const _ = { _: "inputMediaDice" }
-    _.emoticon = this.string();             // : string - string
-    return _;
-  }],
-  [1065280907, function decode$messageMediaDice() {
-    const _ = { _: "messageMediaDice" }
-    _.value = this.int32();                 // : number - int
-    _.emoticon = this.string();             // : string - string
-    return _;
-  }],
-  [-427863538, function decode$inputStickerSetDice() {
-    const _ = { _: "inputStickerSetDice" }
-    _.emoticon = this.string();             // : string - string
-    return _;
-  }],
   [-1728664459, function decode$help__promoDataEmpty() {
     const _ = { _: "help.promoDataEmpty" }
     _.expires = this.int32();               // : number - int
@@ -18933,18 +19991,6 @@ export const $decoder = new Map([
     _.h = this.int32();                     // : number - int
     _.size = this.int32();                  // : number - int
     if (flags & 1) _.video_start_ts = this.double() // ?: number - flags.0?double
-    return _;
-  }],
-  [643940105, function decode$updatePhoneCallSignalingData() {
-    const _ = { _: "updatePhoneCallSignalingData" }
-    _.phone_call_id = this.int64();         // : bigint - long
-    _.data = this.bytes();                  // : BufferSource - bytes
-    return _;
-  }],
-  [1634294960, function decode$chatInvitePeek() {
-    const _ = { _: "chatInvitePeek" }
-    _.chat = this.object();                 // : global.Chat - Chat
-    _.expires = this.int32();               // : number - int
     return _;
   }],
   [-1660637285, function decode$statsGroupTopPoster() {
@@ -18995,19 +20041,6 @@ export const $decoder = new Map([
     if (flags & 1) _.archive_and_mute_new_noncontact_peers = this.bool() // ?: boolean - flags.0?Bool
     return _;
   }],
-  [1667228533, function decode$phoneConnectionWebrtc() {
-    const _ = { _: "phoneConnectionWebrtc" }
-    const flags = this.int32();
-    if (flags & 1) _.turn = true            // ?: true - flags.0?true
-    if (flags & 2) _.stun = true            // ?: true - flags.1?true
-    _.id = this.int64();                    // : bigint - long
-    _.ip = this.string();                   // : string - string
-    _.ipv6 = this.string();                 // : string - string
-    _.port = this.int32();                  // : number - int
-    _.username = this.string();             // : string - string
-    _.password = this.string();             // : string - string
-    return _;
-  }],
   [1107543535, function decode$help__countryCode() {
     const _ = { _: "help.countryCode" }
     const flags = this.int32();
@@ -19043,43 +20076,11 @@ export const $decoder = new Map([
     if (flags & 4) _.replies = this.object() // ?: global.MessageReplies - flags.2?MessageReplies
     return _;
   }],
-  [-761649164, function decode$updateChannelMessageForwards() {
-    const _ = { _: "updateChannelMessageForwards" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.id = this.int32();                    // : number - int
-    _.forwards = this.int32();              // : number - int
-    return _;
-  }],
-  [-96535659, function decode$photoSizeProgressive() {
-    const _ = { _: "photoSizeProgressive" }
-    _.type = this.string();                 // : string - string
-    _.w = this.int32();                     // : number - int
-    _.h = this.int32();                     // : number - int
-    _.sizes = this.vector(this.int32);      // : number[] - Vector<int>
-    return _;
-  }],
   [-1228606141, function decode$messages__messageViews() {
     const _ = { _: "messages.messageViews" }
     _.views = this.vector(this.object);     // : global.MessageViews[] - Vector<MessageViews>
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [-693004986, function decode$updateReadChannelDiscussionInbox() {
-    const _ = { _: "updateReadChannelDiscussionInbox" }
-    const flags = this.int32();
-    _.channel_id = this.int64();            // : bigint - long
-    _.top_msg_id = this.int32();            // : number - int
-    _.read_max_id = this.int32();           // : number - int
-    if (flags & 1) _.broadcast_id = this.int64() // ?: bigint - flags.0?long
-    if (flags & 1) _.broadcast_post = this.int32() // ?: number - flags.0?int
-    return _;
-  }],
-  [1767677564, function decode$updateReadChannelDiscussionOutbox() {
-    const _ = { _: "updateReadChannelDiscussionOutbox" }
-    _.channel_id = this.int64();            // : bigint - long
-    _.top_msg_id = this.int32();            // : number - int
-    _.read_max_id = this.int32();           // : number - int
     return _;
   }],
   [-1506535550, function decode$messages__discussionMessage() {
@@ -19115,88 +20116,16 @@ export const $decoder = new Map([
     if (flags & 8) _.read_max_id = this.int32() // ?: number - flags.3?int
     return _;
   }],
-  [610945826, function decode$updatePeerBlocked() {
-    const _ = { _: "updatePeerBlocked" }
-    _.peer_id = this.object();              // : global.Peer - Peer
-    _.blocked = this.bool();                // : boolean - Bool
-    return _;
-  }],
   [-386039788, function decode$peerBlocked() {
     const _ = { _: "peerBlocked" }
     _.peer_id = this.object();              // : global.Peer - Peer
     _.date = this.int32();                  // : number - int
     return _;
   }],
-  [-1937192669, function decode$updateChannelUserTyping() {
-    const _ = { _: "updateChannelUserTyping" }
-    const flags = this.int32();
-    _.channel_id = this.int64();            // : bigint - long
-    if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.action = this.object();               // : global.SendMessageAction - SendMessageAction
-    return _;
-  }],
-  [-1392895362, function decode$inputMessageCallbackQuery() {
-    const _ = { _: "inputMessageCallbackQuery" }
-    _.id = this.int32();                    // : number - int
-    _.query_id = this.int64();              // : bigint - long
-    return _;
-  }],
-  [453242886, function decode$channelParticipantLeft() {
-    const _ = { _: "channelParticipantLeft" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    return _;
-  }],
-  [-531931925, function decode$channelParticipantsMentions() {
-    const _ = { _: "channelParticipantsMentions" }
-    const flags = this.int32();
-    if (flags & 1) _.q = this.string()      // ?: string - flags.0?string
-    if (flags & 2) _.top_msg_id = this.int32() // ?: number - flags.1?int
-    return _;
-  }],
-  [-309990731, function decode$updatePinnedMessages() {
-    const _ = { _: "updatePinnedMessages" }
-    const flags = this.int32();
-    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [1538885128, function decode$updatePinnedChannelMessages() {
-    const _ = { _: "updatePinnedChannelMessages" }
-    const flags = this.int32();
-    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
-    _.channel_id = this.int64();            // : bigint - long
-    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    _.pts = this.int32();                   // : number - int
-    _.pts_count = this.int32();             // : number - int
-    return _;
-  }],
-  [464520273, function decode$inputMessagesFilterPinned() {
-    return { _: "inputMessagesFilterPinned" }
-  }],
   [-1986399595, function decode$stats__messageStats() {
     const _ = { _: "stats.messageStats" }
     _.views_graph = this.object();          // : global.StatsGraph - StatsGraph
     return _;
-  }],
-  [-1730095465, function decode$messageActionGeoProximityReached() {
-    const _ = { _: "messageActionGeoProximityReached" }
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.to_id = this.object();                // : global.Peer - Peer
-    _.distance = this.int32();              // : number - int
-    return _;
-  }],
-  [-668906175, function decode$photoPathSize() {
-    const _ = { _: "photoPathSize" }
-    _.type = this.string();                 // : string - string
-    _.bytes = this.bytes();                 // : BufferSource - bytes
-    return _;
-  }],
-  [-651419003, function decode$speakingInGroupCallAction() {
-    return { _: "speakingInGroupCallAction" }
   }],
   [2004925620, function decode$groupCallDiscarded() {
     const _ = { _: "groupCallDiscarded" }
@@ -19234,19 +20163,6 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
-  [2047704898, function decode$messageActionGroupCall() {
-    const _ = { _: "messageActionGroupCall" }
-    const flags = this.int32();
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    if (flags & 1) _.duration = this.int32() // ?: number - flags.0?int
-    return _;
-  }],
-  [1345295095, function decode$messageActionInviteToGroupCall() {
-    const _ = { _: "messageActionInviteToGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    _.users = this.vector(this.int64);      // : bigint[] - Vector<long>
-    return _;
-  }],
   [-341428482, function decode$groupCallParticipant() {
     const _ = { _: "groupCallParticipant" }
     const flags = this.int32();
@@ -19269,24 +20185,6 @@ export const $decoder = new Map([
     if (flags & 8192) _.raise_hand_rating = this.int64() // ?: bigint - flags.13?long
     if (flags & 64) _.video = this.object() // ?: global.GroupCallParticipantVideo - flags.6?GroupCallParticipantVideo
     if (flags & 16384) _.presentation = this.object() // ?: global.GroupCallParticipantVideo - flags.14?GroupCallParticipantVideo
-    return _;
-  }],
-  [-124097970, function decode$updateChat() {
-    const _ = { _: "updateChat" }
-    _.chat_id = this.int64();               // : bigint - long
-    return _;
-  }],
-  [-219423922, function decode$updateGroupCallParticipants() {
-    const _ = { _: "updateGroupCallParticipants" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    _.participants = this.vector(this.object); // : global.GroupCallParticipant[] - Vector<GroupCallParticipant>
-    _.version = this.int32();               // : number - int
-    return _;
-  }],
-  [347227392, function decode$updateGroupCall() {
-    const _ = { _: "updateGroupCall" }
-    _.chat_id = this.int64();               // : bigint - long
-    _.call = this.object();                 // : global.GroupCall - GroupCall
     return _;
   }],
   [-1636664659, function decode$phone__groupCall() {
@@ -19323,44 +20221,9 @@ export const $decoder = new Map([
   [1664413338, function decode$inlineQueryPeerTypeBroadcast() {
     return { _: "inlineQueryPeerTypeBroadcast" }
   }],
-  [589338437, function decode$channelAdminLogEventActionStartGroupCall() {
-    const _ = { _: "channelAdminLogEventActionStartGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    return _;
-  }],
-  [-610299584, function decode$channelAdminLogEventActionDiscardGroupCall() {
-    const _ = { _: "channelAdminLogEventActionDiscardGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    return _;
-  }],
-  [-115071790, function decode$channelAdminLogEventActionParticipantMute() {
-    const _ = { _: "channelAdminLogEventActionParticipantMute" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
-    return _;
-  }],
-  [-431740480, function decode$channelAdminLogEventActionParticipantUnmute() {
-    const _ = { _: "channelAdminLogEventActionParticipantUnmute" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
-    return _;
-  }],
-  [1456906823, function decode$channelAdminLogEventActionToggleGroupCallSetting() {
-    const _ = { _: "channelAdminLogEventActionToggleGroupCallSetting" }
-    _.join_muted = this.bool();             // : boolean - Bool
-    return _;
-  }],
-  [-1966921727, function decode$inputPaymentCredentialsGooglePay() {
-    const _ = { _: "inputPaymentCredentialsGooglePay" }
-    _.payment_token = this.object();        // : global.DataJSON - DataJSON
-    return _;
-  }],
   [375566091, function decode$messages__historyImport() {
     const _ = { _: "messages.historyImport" }
     _.id = this.int64();                    // : bigint - long
-    return _;
-  }],
-  [-606432698, function decode$sendMessageHistoryImportAction() {
-    const _ = { _: "sendMessageHistoryImportAction" }
-    _.progress = this.int32();              // : number - int
     return _;
   }],
   [1578088377, function decode$messages__historyImportParsed() {
@@ -19371,61 +20234,12 @@ export const $decoder = new Map([
     if (flags & 4) _.title = this.string()  // ?: string - flags.2?string
     return _;
   }],
-  [-170010905, function decode$inputReportReasonFake() {
-    return { _: "inputReportReasonFake" }
-  }],
   [-275956116, function decode$messages__affectedFoundMessages() {
     const _ = { _: "messages.affectedFoundMessages" }
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     _.offset = this.int32();                // : number - int
     _.messages = this.vector(this.int32);   // : number[] - Vector<int>
-    return _;
-  }],
-  [-1441072131, function decode$messageActionSetMessagesTTL() {
-    const _ = { _: "messageActionSetMessagesTTL" }
-    _.period = this.int32();                // : number - int
-    return _;
-  }],
-  [-1147422299, function decode$updatePeerHistoryTTL() {
-    const _ = { _: "updatePeerHistoryTTL" }
-    const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
-    if (flags & 1) _.ttl_period = this.int32() // ?: number - flags.0?int
-    return _;
-  }],
-  [-796432838, function decode$updateChatParticipant() {
-    const _ = { _: "updateChatParticipant" }
-    const flags = this.int32();
-    _.chat_id = this.int64();               // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.actor_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    if (flags & 1) _.prev_participant = this.object() // ?: global.ChatParticipant - flags.0?ChatParticipant
-    if (flags & 2) _.new_participant = this.object() // ?: global.ChatParticipant - flags.1?ChatParticipant
-    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
-    _.qts = this.int32();                   // : number - int
-    return _;
-  }],
-  [-1738720581, function decode$updateChannelParticipant() {
-    const _ = { _: "updateChannelParticipant" }
-    const flags = this.int32();
-    _.channel_id = this.int64();            // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.actor_id = this.int64();              // : bigint - long
-    _.user_id = this.int64();               // : bigint - long
-    if (flags & 1) _.prev_participant = this.object() // ?: global.ChannelParticipant - flags.0?ChannelParticipant
-    if (flags & 2) _.new_participant = this.object() // ?: global.ChannelParticipant - flags.1?ChannelParticipant
-    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
-    _.qts = this.int32();                   // : number - int
-    return _;
-  }],
-  [-997782967, function decode$updateBotStopped() {
-    const _ = { _: "updateBotStopped" }
-    _.user_id = this.int64();               // : bigint - long
-    _.date = this.int32();                  // : number - int
-    _.stopped = this.bool();                // : boolean - Bool
-    _.qts = this.int32();                   // : number - int
     return _;
   }],
   [-1940201511, function decode$chatInviteImporter() {
@@ -19478,51 +20292,9 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [1557846647, function decode$channelAdminLogEventActionParticipantJoinByInvite() {
-    const _ = { _: "channelAdminLogEventActionParticipantJoinByInvite" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    return _;
-  }],
-  [1515256996, function decode$channelAdminLogEventActionExportedInviteDelete() {
-    const _ = { _: "channelAdminLogEventActionExportedInviteDelete" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    return _;
-  }],
-  [1091179342, function decode$channelAdminLogEventActionExportedInviteRevoke() {
-    const _ = { _: "channelAdminLogEventActionExportedInviteRevoke" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    return _;
-  }],
-  [-384910503, function decode$channelAdminLogEventActionExportedInviteEdit() {
-    const _ = { _: "channelAdminLogEventActionExportedInviteEdit" }
-    _.prev_invite = this.object();          // : global.ExportedChatInvite - ExportedChatInvite
-    _.new_invite = this.object();           // : global.ExportedChatInvite - ExportedChatInvite
-    return _;
-  }],
-  [1048537159, function decode$channelAdminLogEventActionParticipantVolume() {
-    const _ = { _: "channelAdminLogEventActionParticipantVolume" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
-    return _;
-  }],
-  [1855199800, function decode$channelAdminLogEventActionChangeHistoryTTL() {
-    const _ = { _: "channelAdminLogEventActionChangeHistoryTTL" }
-    _.prev_value = this.int32();            // : number - int
-    _.new_value = this.int32();             // : number - int
-    return _;
-  }],
   [-1571952873, function decode$messages__checkedHistoryImportPeer() {
     const _ = { _: "messages.checkedHistoryImportPeer" }
     _.confirm_text = this.string();         // : string - string
-    return _;
-  }],
-  [93890858, function decode$inputGroupCallStream() {
-    const _ = { _: "inputGroupCallStream" }
-    const flags = this.int32();
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    _.time_ms = this.int64();               // : bigint - long
-    _.scale = this.int32();                 // : number - int
-    if (flags & 1) _.video_channel = this.int32() // ?: number - flags.0?int
-    if (flags & 1) _.video_quality = this.int32() // ?: number - flags.0?int
     return _;
   }],
   [-1343921601, function decode$phone__joinAsPeers() {
@@ -19535,38 +20307,6 @@ export const $decoder = new Map([
   [541839704, function decode$phone__exportedGroupCallInvite() {
     const _ = { _: "phone.exportedGroupCallInvite" }
     _.link = this.string();                 // : string - string
-    return _;
-  }],
-  [-672693723, function decode$inputBotInlineMessageMediaInvoice() {
-    const _ = { _: "inputBotInlineMessageMediaInvoice" }
-    const flags = this.int32();
-    _.title = this.string();                // : string - string
-    _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
-    _.payload = this.bytes();               // : BufferSource - bytes
-    _.provider = this.string();             // : string - string
-    _.provider_data = this.object();        // : global.DataJSON - DataJSON
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [894081801, function decode$botInlineMessageMediaInvoice() {
-    const _ = { _: "botInlineMessageMediaInvoice" }
-    const flags = this.int32();
-    if (flags & 2) _.shipping_address_requested = true // ?: true - flags.1?true
-    if (flags & 8) _.test = true            // ?: true - flags.3?true
-    _.title = this.string();                // : string - string
-    _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
-    _.currency = this.string();             // : string - string
-    _.total_amount = this.int64();          // : bigint - long
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
-    return _;
-  }],
-  [-1281329567, function decode$messageActionGroupCallScheduled() {
-    const _ = { _: "messageActionGroupCallScheduled" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    _.schedule_date = this.int32();         // : number - int
     return _;
   }],
   [-592373577, function decode$groupCallParticipantVideoSourceGroup() {
@@ -19582,13 +20322,6 @@ export const $decoder = new Map([
     _.endpoint = this.string();             // : string - string
     _.source_groups = this.vector(this.object); // : global.GroupCallParticipantVideoSourceGroup[] - Vector<GroupCallParticipantVideoSourceGroup>
     if (flags & 2) _.audio_source = this.int32() // ?: number - flags.1?int
-    return _;
-  }],
-  [192428418, function decode$updateGroupCallConnection() {
-    const _ = { _: "updateGroupCallConnection" }
-    const flags = this.int32();
-    if (flags & 1) _.presentation = true    // ?: true - flags.0?true
-    _.params = this.object();               // : global.DataJSON - DataJSON
     return _;
   }],
   [-2046910401, function decode$stickers__suggestedShortName() {
@@ -19637,24 +20370,10 @@ export const $decoder = new Map([
   [-383330754, function decode$account__resetPasswordOk() {
     return { _: "account.resetPasswordOk" }
   }],
-  [1299263278, function decode$updateBotCommands() {
-    const _ = { _: "updateBotCommands" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.bot_id = this.int64();                // : bigint - long
-    _.commands = this.vector(this.object);  // : global.BotCommand[] - Vector<BotCommand>
-    return _;
-  }],
-  [-1434950843, function decode$messageActionSetChatTheme() {
-    const _ = { _: "messageActionSetChatTheme" }
-    _.emoticon = this.string();             // : string - string
-    return _;
-  }],
-  [-1336228175, function decode$sendMessageChooseStickerAction() {
-    return { _: "sendMessageChooseStickerAction" }
-  }],
   [981691896, function decode$sponsoredMessage() {
     const _ = { _: "sponsoredMessage" }
     const flags = this.int32();
+    if (flags & 32) _.recommended = true    // ?: true - flags.5?true
     _.random_id = this.bytes();             // : BufferSource - bytes
     if (flags & 8) _.from_id = this.object() // ?: global.Peer - flags.3?Peer
     if (flags & 16) _.chat_invite = this.object() // ?: global.ChatInvite - flags.4?ChatInvite
@@ -19670,29 +20389,6 @@ export const $decoder = new Map([
     _.messages = this.vector(this.object);  // : global.SponsoredMessage[] - Vector<SponsoredMessage>
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    return _;
-  }],
-  [215889721, function decode$inputStickerSetAnimatedEmojiAnimations() {
-    return { _: "inputStickerSetAnimatedEmojiAnimations" }
-  }],
-  [630664139, function decode$sendMessageEmojiInteraction() {
-    const _ = { _: "sendMessageEmojiInteraction" }
-    _.emoticon = this.string();             // : string - string
-    _.msg_id = this.int32();                // : number - int
-    _.interaction = this.object();          // : global.DataJSON - DataJSON
-    return _;
-  }],
-  [-1234857938, function decode$sendMessageEmojiInteractionSeen() {
-    const _ = { _: "sendMessageEmojiInteractionSeen" }
-    _.emoticon = this.string();             // : string - string
-    return _;
-  }],
-  [-1227287081, function decode$inputBotInlineMessageID64() {
-    const _ = { _: "inputBotInlineMessageID64" }
-    _.dc_id = this.int32();                 // : number - int
-    _.owner_id = this.int64();              // : bigint - long
-    _.id = this.int32();                    // : number - int
-    _.access_hash = this.int64();           // : bigint - long
     return _;
   }],
   [-911191137, function decode$searchResultsCalendarPeriod() {
@@ -19730,58 +20426,12 @@ export const $decoder = new Map([
     _.positions = this.vector(this.object); // : global.SearchResultsPosition[] - Vector<SearchResultsPosition>
     return _;
   }],
-  [-339958837, function decode$messageActionChatJoinedByRequest() {
-    return { _: "messageActionChatJoinedByRequest" }
-  }],
-  [1885586395, function decode$updatePendingJoinRequests() {
-    const _ = { _: "updatePendingJoinRequests" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.requests_pending = this.int32();      // : number - int
-    _.recent_requesters = this.vector(this.int64); // : bigint[] - Vector<long>
-    return _;
-  }],
-  [299870598, function decode$updateBotChatInviteRequester() {
-    const _ = { _: "updateBotChatInviteRequester" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.date = this.int32();                  // : number - int
-    _.user_id = this.int64();               // : bigint - long
-    _.about = this.string();                // : string - string
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    _.qts = this.int32();                   // : number - int
-    return _;
-  }],
-  [-1347021750, function decode$channelAdminLogEventActionParticipantJoinByRequest() {
-    const _ = { _: "channelAdminLogEventActionParticipantJoinByRequest" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    _.approved_by = this.int64();           // : bigint - long
-    return _;
-  }],
-  [-376962181, function decode$inputKeyboardButtonUserProfile() {
-    const _ = { _: "inputKeyboardButtonUserProfile" }
-    _.text = this.string();                 // : string - string
-    _.user_id = this.object();              // : global.InputUser - InputUser
-    return _;
-  }],
-  [814112961, function decode$keyboardButtonUserProfile() {
-    const _ = { _: "keyboardButtonUserProfile" }
-    _.text = this.string();                 // : string - string
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
   [-2091463255, function decode$channels__sendAsPeers() {
     const _ = { _: "channels.sendAsPeers" }
     _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
-  }],
-  [-886388890, function decode$channelAdminLogEventActionToggleNoForwards() {
-    const _ = { _: "channelAdminLogEventActionToggleNoForwards" }
-    _.new_value = this.bool();              // : boolean - Bool
-    return _;
-  }],
-  [-738646805, function decode$messages__stickerSetNotModified() {
-    return { _: "messages.stickerSetNotModified" }
   }],
   [997004590, function decode$users__userFull() {
     const _ = { _: "users.userFull" }
@@ -19797,31 +20447,10 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [663693416, function decode$channelAdminLogEventActionSendMessage() {
-    const _ = { _: "channelAdminLogEventActionSendMessage" }
-    _.message = this.object();              // : global.Message - Message
-    return _;
-  }],
-  [-702884114, function decode$auth__codeTypeMissedCall() {
-    return { _: "auth.codeTypeMissedCall" }
-  }],
-  [-2113903484, function decode$auth__sentCodeTypeMissedCall() {
-    const _ = { _: "auth.sentCodeTypeMissedCall" }
-    _.prefix = this.string();               // : string - string
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
   [-1012759713, function decode$auth__loggedOut() {
     const _ = { _: "auth.loggedOut" }
     const flags = this.int32();
     if (flags & 1) _.future_auth_token = this.bytes() // ?: BufferSource - flags.0?bytes
-    return _;
-  }],
-  [357013699, function decode$updateMessageReactions() {
-    const _ = { _: "updateMessageReactions" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.msg_id = this.int32();                // : number - int
-    _.reactions = this.object();            // : global.MessageReactions - MessageReactions
     return _;
   }],
   [1873957073, function decode$reactionCount() {
@@ -19855,6 +20484,7 @@ export const $decoder = new Map([
     const _ = { _: "availableReaction" }
     const flags = this.int32();
     if (flags & 1) _.inactive = true        // ?: true - flags.0?true
+    if (flags & 4) _.premium = true         // ?: true - flags.2?true
     _.reaction = this.string();             // : string - string
     _.title = this.string();                // : string - string
     _.static_icon = this.object();          // : global.Document - Document
@@ -19873,18 +20503,6 @@ export const $decoder = new Map([
     const _ = { _: "messages.availableReactions" }
     _.hash = this.int32();                  // : number - int
     _.reactions = this.vector(this.object); // : global.AvailableReaction[] - Vector<AvailableReaction>
-    return _;
-  }],
-  [852137487, function decode$messageEntitySpoiler() {
-    const _ = { _: "messageEntitySpoiler" }
-    _.offset = this.int32();                // : number - int
-    _.length = this.int32();                // : number - int
-    return _;
-  }],
-  [-1661470870, function decode$channelAdminLogEventActionChangeAvailableReactions() {
-    const _ = { _: "channelAdminLogEventActionChangeAvailableReactions" }
-    _.prev_value = this.vector(this.string); // : string[] - Vector<string>
-    _.new_value = this.vector(this.string); // : string[] - Vector<string>
     return _;
   }],
   [1741309751, function decode$messages__translateNoResult() {
@@ -19916,16 +20534,164 @@ export const $decoder = new Map([
     _.channels = this.vector(this.object);  // : global.GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
     return _;
   }],
-  [177124030, function decode$inputReportReasonIllegalDrugs() {
-    return { _: "inputReportReasonIllegalDrugs" }
-  }],
-  [-1631091139, function decode$inputReportReasonPersonalDetails() {
-    return { _: "inputReportReasonPersonalDetails" }
-  }],
   [767505458, function decode$phone__groupCallStreamRtmpUrl() {
     const _ = { _: "phone.groupCallStreamRtmpUrl" }
     _.url = this.string();                  // : string - string
     _.key = this.string();                  // : string - string
+    return _;
+  }],
+  [1165423600, function decode$attachMenuBotIconColor() {
+    const _ = { _: "attachMenuBotIconColor" }
+    _.name = this.string();                 // : string - string
+    _.color = this.int32();                 // : number - int
+    return _;
+  }],
+  [-1297663893, function decode$attachMenuBotIcon() {
+    const _ = { _: "attachMenuBotIcon" }
+    const flags = this.int32();
+    _.name = this.string();                 // : string - string
+    _.icon = this.object();                 // : global.Document - Document
+    if (flags & 1) _.colors = this.vector(this.object) // ?: global.AttachMenuBotIconColor[] - flags.0?Vector<AttachMenuBotIconColor>
+    return _;
+  }],
+  [-928371502, function decode$attachMenuBot() {
+    const _ = { _: "attachMenuBot" }
+    const flags = this.int32();
+    if (flags & 1) _.inactive = true        // ?: true - flags.0?true
+    if (flags & 2) _.has_settings = true    // ?: true - flags.1?true
+    _.bot_id = this.int64();                // : bigint - long
+    _.short_name = this.string();           // : string - string
+    _.peer_types = this.vector(this.object); // : global.AttachMenuPeerType[] - Vector<AttachMenuPeerType>
+    _.icons = this.vector(this.object);     // : global.AttachMenuBotIcon[] - Vector<AttachMenuBotIcon>
+    return _;
+  }],
+  [-237467044, function decode$attachMenuBotsNotModified() {
+    return { _: "attachMenuBotsNotModified" }
+  }],
+  [1011024320, function decode$attachMenuBots() {
+    const _ = { _: "attachMenuBots" }
+    _.hash = this.int64();                  // : bigint - long
+    _.bots = this.vector(this.object);      // : global.AttachMenuBot[] - Vector<AttachMenuBot>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-1816172929, function decode$attachMenuBotsBot() {
+    const _ = { _: "attachMenuBotsBot" }
+    _.bot = this.object();                  // : global.AttachMenuBot - AttachMenuBot
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [202659196, function decode$webViewResultUrl() {
+    const _ = { _: "webViewResultUrl" }
+    _.query_id = this.int64();              // : bigint - long
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [-2010155333, function decode$simpleWebViewResultUrl() {
+    const _ = { _: "simpleWebViewResultUrl" }
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [211046684, function decode$webViewMessageSent() {
+    const _ = { _: "webViewMessageSent" }
+    const flags = this.int32();
+    if (flags & 1) _.msg_id = this.object() // ?: global.InputBotInlineMessageID - flags.0?InputBotInlineMessageID
+    return _;
+  }],
+  [1966318984, function decode$botMenuButtonDefault() {
+    return { _: "botMenuButtonDefault" }
+  }],
+  [1113113093, function decode$botMenuButtonCommands() {
+    return { _: "botMenuButtonCommands" }
+  }],
+  [-944407322, function decode$botMenuButton() {
+    const _ = { _: "botMenuButton" }
+    _.text = this.string();                 // : string - string
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [-67704655, function decode$account__savedRingtonesNotModified() {
+    return { _: "account.savedRingtonesNotModified" }
+  }],
+  [-1041683259, function decode$account__savedRingtones() {
+    const _ = { _: "account.savedRingtones" }
+    _.hash = this.int64();                  // : bigint - long
+    _.ringtones = this.vector(this.object); // : global.Document[] - Vector<Document>
+    return _;
+  }],
+  [-1746354498, function decode$notificationSoundDefault() {
+    return { _: "notificationSoundDefault" }
+  }],
+  [1863070943, function decode$notificationSoundNone() {
+    return { _: "notificationSoundNone" }
+  }],
+  [-2096391452, function decode$notificationSoundLocal() {
+    const _ = { _: "notificationSoundLocal" }
+    _.title = this.string();                // : string - string
+    _.data = this.string();                 // : string - string
+    return _;
+  }],
+  [-9666487, function decode$notificationSoundRingtone() {
+    const _ = { _: "notificationSoundRingtone" }
+    _.id = this.int64();                    // : bigint - long
+    return _;
+  }],
+  [-1222230163, function decode$account__savedRingtone() {
+    return { _: "account.savedRingtone" }
+  }],
+  [523271863, function decode$account__savedRingtoneConverted() {
+    const _ = { _: "account.savedRingtoneConverted" }
+    _.document = this.object();             // : global.Document - Document
+    return _;
+  }],
+  [2104224014, function decode$attachMenuPeerTypeSameBotPM() {
+    return { _: "attachMenuPeerTypeSameBotPM" }
+  }],
+  [-1020528102, function decode$attachMenuPeerTypeBotPM() {
+    return { _: "attachMenuPeerTypeBotPM" }
+  }],
+  [-247016673, function decode$attachMenuPeerTypePM() {
+    return { _: "attachMenuPeerTypePM" }
+  }],
+  [84480319, function decode$attachMenuPeerTypeChat() {
+    return { _: "attachMenuPeerTypeChat" }
+  }],
+  [2080104188, function decode$attachMenuPeerTypeBroadcast() {
+    return { _: "attachMenuPeerTypeBroadcast" }
+  }],
+  [-977967015, function decode$inputInvoiceMessage() {
+    const _ = { _: "inputInvoiceMessage" }
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.msg_id = this.int32();                // : number - int
+    return _;
+  }],
+  [-1020867857, function decode$inputInvoiceSlug() {
+    const _ = { _: "inputInvoiceSlug" }
+    _.slug = this.string();                 // : string - string
+    return _;
+  }],
+  [-1362048039, function decode$payments__exportedInvoice() {
+    const _ = { _: "payments.exportedInvoice" }
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [-1821037486, function decode$messages__transcribedAudio() {
+    const _ = { _: "messages.transcribedAudio" }
+    const flags = this.int32();
+    if (flags & 1) _.pending = true         // ?: true - flags.0?true
+    _.transcription_id = this.int64();      // : bigint - long
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [-1974518743, function decode$help__premiumPromo() {
+    const _ = { _: "help.premiumPromo" }
+    _.status_text = this.string();          // : string - string
+    _.status_entities = this.vector(this.object); // : global.MessageEntity[] - Vector<MessageEntity>
+    _.video_sections = this.vector(this.string); // : string[] - Vector<string>
+    _.videos = this.vector(this.object);    // : global.Document[] - Vector<Document>
+    _.currency = this.string();             // : string - string
+    _.monthly_amount = this.int64();        // : bigint - long
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
 ]);
@@ -20970,7 +21736,7 @@ account.initTakeoutSession = function initTakeoutSession(_) {
   return { ..._, _: "account.initTakeoutSession" }
 }
 $encoder["account.initTakeoutSession"] = function (_) {
-  this.int32(-262453244);
+  this.int32(-1896617296);
   this.int32(
     (+(_.contacts != null) << 0)
     | (+(_.message_users != null) << 1)
@@ -20993,7 +21759,7 @@ $encoder["account.initTakeoutSession"] = function (_) {
   if (_.files != null)
     this.true(_.files);                   // ?: true - flags.5?true
   if (_.file_max_size != null)
-    this.int32(_.file_max_size);          // ?: number - flags.5?int
+    this.int64(_.file_max_size);          // ?: bigint - flags.5?long
 };
 account.initTakeoutSession.ref = "account.initTakeoutSession";
 account.initTakeoutSession.verify = function($$) {
@@ -21494,6 +22260,48 @@ account.changeAuthorizationSettings.ref = "account.changeAuthorizationSettings";
 account.changeAuthorizationSettings.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.getSavedRingtones = function getSavedRingtones(_) {
+  return { ..._, _: "account.getSavedRingtones" }
+}
+$encoder["account.getSavedRingtones"] = function (_) {
+  this.int32(-510647672);
+  this.int64(_.hash);                     // : bigint - long
+};
+account.getSavedRingtones.ref = "account.getSavedRingtones";
+account.getSavedRingtones.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.savedRingtonesNotModified", "account.savedRingtones"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.saveRingtone = function saveRingtone(_) {
+  return { ..._, _: "account.saveRingtone" }
+}
+$encoder["account.saveRingtone"] = function (_) {
+  this.int32(1038768899);
+  this.object(_.id);                      // : InputDocument - InputDocument
+  this.bool(_.unsave);                    // : boolean - Bool
+};
+account.saveRingtone.ref = "account.saveRingtone";
+account.saveRingtone.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.savedRingtone", "account.savedRingtoneConverted"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.uploadRingtone = function uploadRingtone(_) {
+  return { ..._, _: "account.uploadRingtone" }
+}
+$encoder["account.uploadRingtone"] = function (_) {
+  this.int32(-2095414366);
+  this.object(_.file);                    // : InputFile - InputFile
+  this.string(_.file_name);               // : string - string
+  this.string(_.mime_type);               // : string - string
+};
+account.uploadRingtone.ref = "account.uploadRingtone";
+account.uploadRingtone.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["documentEmpty", "document"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -22589,7 +23397,7 @@ $encoder["messages.exportChatInvite"] = function (_) {
 messages.exportChatInvite.ref = "messages.exportChatInvite";
 messages.exportChatInvite.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["chatInviteExported"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["chatInviteExported", "chatInvitePublicJoinRequests"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.checkChatInvite = function checkChatInvite(_) {
@@ -22765,9 +23573,9 @@ messages.getDocumentByHash = function getDocumentByHash(_) {
   return { ..._, _: "messages.getDocumentByHash" }
 }
 $encoder["messages.getDocumentByHash"] = function (_) {
-  this.int32(864953444);
+  this.int32(-1309538785);
   this.bytes(_.sha256);                   // : BufferSource - bytes
-  this.int32(_.size);                     // : number - int
+  this.int64(_.size);                     // : bigint - long
   this.string(_.mime_type);               // : string - string
 };
 messages.getDocumentByHash.ref = "messages.getDocumentByHash";
@@ -23979,7 +24787,7 @@ messages.getDialogFilters.ref = "messages.getDialogFilters";
 messages.getDialogFilters.verify = function($$) {
   if (!Array.isArray($$)) throw new TypeError("require array");
   for (const $ of $$)
-    if (!(typeof $ == "object" && ["dialogFilter"].includes($._))) throw new TypeError("array element");
+    if (!(typeof $ == "object" && ["dialogFilter", "dialogFilterDefault"].includes($._))) throw new TypeError("array element");
   return $$;
 };
 messages.getSuggestedDialogFilters = function getSuggestedDialogFilters() {
@@ -24659,6 +25467,188 @@ messages.searchSentMedia.verify = function($$) {
   if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
+messages.getAttachMenuBots = function getAttachMenuBots(_) {
+  return { ..._, _: "messages.getAttachMenuBots" }
+}
+$encoder["messages.getAttachMenuBots"] = function (_) {
+  this.int32(385663691);
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getAttachMenuBots.ref = "messages.getAttachMenuBots";
+messages.getAttachMenuBots.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["attachMenuBotsNotModified", "attachMenuBots"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getAttachMenuBot = function getAttachMenuBot(_) {
+  return { ..._, _: "messages.getAttachMenuBot" }
+}
+$encoder["messages.getAttachMenuBot"] = function (_) {
+  this.int32(1998676370);
+  this.object(_.bot);                     // : InputUser - InputUser
+};
+messages.getAttachMenuBot.ref = "messages.getAttachMenuBot";
+messages.getAttachMenuBot.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["attachMenuBotsBot"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.toggleBotInAttachMenu = function toggleBotInAttachMenu(_) {
+  return { ..._, _: "messages.toggleBotInAttachMenu" }
+}
+$encoder["messages.toggleBotInAttachMenu"] = function (_) {
+  this.int32(451818415);
+  this.object(_.bot);                     // : InputUser - InputUser
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+messages.toggleBotInAttachMenu.ref = "messages.toggleBotInAttachMenu";
+messages.toggleBotInAttachMenu.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.requestWebView = function requestWebView(_) {
+  return { ..._, _: "messages.requestWebView" }
+}
+$encoder["messages.requestWebView"] = function (_) {
+  this.int32(-1850648527);
+  this.int32(
+    (+(_.from_bot_menu != null) << 4)
+    | (+(_.silent != null) << 5)
+    | (+(_.url != null) << 1)
+    | (+(_.start_param != null) << 3)
+    | (+(_.theme_params != null) << 2)
+    | (+(_.reply_to_msg_id != null) << 0)
+    | (+(_.send_as != null) << 13)
+  )
+  if (_.from_bot_menu != null)
+    this.true(_.from_bot_menu);           // ?: true - flags.4?true
+  if (_.silent != null)
+    this.true(_.silent);                  // ?: true - flags.5?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.bot);                     // : InputUser - InputUser
+  if (_.url != null)
+    this.string(_.url);                   // ?: string - flags.1?string
+  if (_.start_param != null)
+    this.string(_.start_param);           // ?: string - flags.3?string
+  if (_.theme_params != null)
+    this.object(_.theme_params);          // ?: DataJSON - flags.2?DataJSON
+  if (_.reply_to_msg_id != null)
+    this.int32(_.reply_to_msg_id);        // ?: number - flags.0?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+};
+messages.requestWebView.ref = "messages.requestWebView";
+messages.requestWebView.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["webViewResultUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.prolongWebView = function prolongWebView(_) {
+  return { ..._, _: "messages.prolongWebView" }
+}
+$encoder["messages.prolongWebView"] = function (_) {
+  this.int32(-362824498);
+  this.int32(
+    (+(_.silent != null) << 5)
+    | (+(_.reply_to_msg_id != null) << 0)
+    | (+(_.send_as != null) << 13)
+  )
+  if (_.silent != null)
+    this.true(_.silent);                  // ?: true - flags.5?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.bot);                     // : InputUser - InputUser
+  this.int64(_.query_id);                 // : bigint - long
+  if (_.reply_to_msg_id != null)
+    this.int32(_.reply_to_msg_id);        // ?: number - flags.0?int
+  if (_.send_as != null)
+    this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+};
+messages.prolongWebView.ref = "messages.prolongWebView";
+messages.prolongWebView.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.requestSimpleWebView = function requestSimpleWebView(_) {
+  return { ..._, _: "messages.requestSimpleWebView" }
+}
+$encoder["messages.requestSimpleWebView"] = function (_) {
+  this.int32(1790652275);
+  this.int32(
+    (+(_.theme_params != null) << 0)
+  )
+  this.object(_.bot);                     // : InputUser - InputUser
+  this.string(_.url);                     // : string - string
+  if (_.theme_params != null)
+    this.object(_.theme_params);          // ?: DataJSON - flags.0?DataJSON
+};
+messages.requestSimpleWebView.ref = "messages.requestSimpleWebView";
+messages.requestSimpleWebView.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["simpleWebViewResultUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.sendWebViewResultMessage = function sendWebViewResultMessage(_) {
+  return { ..._, _: "messages.sendWebViewResultMessage" }
+}
+$encoder["messages.sendWebViewResultMessage"] = function (_) {
+  this.int32(172168437);
+  this.string(_.bot_query_id);            // : string - string
+  this.object(_.result);                  // : InputBotInlineResult - InputBotInlineResult
+};
+messages.sendWebViewResultMessage.ref = "messages.sendWebViewResultMessage";
+messages.sendWebViewResultMessage.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["webViewMessageSent"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.sendWebViewData = function sendWebViewData(_) {
+  return { ..._, _: "messages.sendWebViewData" }
+}
+$encoder["messages.sendWebViewData"] = function (_) {
+  this.int32(-603831608);
+  this.object(_.bot);                     // : InputUser - InputUser
+  this.int64(_.random_id);                // : bigint - long
+  this.string(_.button_text);             // : string - string
+  this.string(_.data);                    // : string - string
+};
+messages.sendWebViewData.ref = "messages.sendWebViewData";
+messages.sendWebViewData.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.transcribeAudio = function transcribeAudio(_) {
+  return { ..._, _: "messages.transcribeAudio" }
+}
+$encoder["messages.transcribeAudio"] = function (_) {
+  this.int32(647928393);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.msg_id);                   // : number - int
+};
+messages.transcribeAudio.ref = "messages.transcribeAudio";
+messages.transcribeAudio.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.transcribedAudio"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.rateTranscribedAudio = function rateTranscribedAudio(_) {
+  return { ..._, _: "messages.rateTranscribedAudio" }
+}
+$encoder["messages.rateTranscribedAudio"] = function (_) {
+  this.int32(2132608815);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.msg_id);                   // : number - int
+  this.int64(_.transcription_id);         // : bigint - long
+  this.bool(_.good);                      // : boolean - Bool
+};
+messages.rateTranscribedAudio.ref = "messages.rateTranscribedAudio";
+messages.rateTranscribedAudio.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
 
 updates.getState = function getState() {
   return { _: "updates.getState" }
@@ -24800,7 +25790,7 @@ upload.getFile = function getFile(_) {
   return { ..._, _: "upload.getFile" }
 }
 $encoder["upload.getFile"] = function (_) {
-  this.int32(-1319462148);
+  this.int32(-1101843010);
   this.int32(
     (+(_.precise != null) << 0)
     | (+(_.cdn_supported != null) << 1)
@@ -24810,7 +25800,7 @@ $encoder["upload.getFile"] = function (_) {
   if (_.cdn_supported != null)
     this.true(_.cdn_supported);           // ?: true - flags.1?true
   this.object(_.location);                // : InputFileLocation - InputFileLocation
-  this.int32(_.offset);                   // : number - int
+  this.int64(_.offset);                   // : bigint - long
   this.int32(_.limit);                    // : number - int
 };
 upload.getFile.ref = "upload.getFile";
@@ -24854,9 +25844,9 @@ upload.getCdnFile = function getCdnFile(_) {
   return { ..._, _: "upload.getCdnFile" }
 }
 $encoder["upload.getCdnFile"] = function (_) {
-  this.int32(536919235);
+  this.int32(962554330);
   this.bytes(_.file_token);               // : BufferSource - bytes
-  this.int32(_.offset);                   // : number - int
+  this.int64(_.offset);                   // : bigint - long
   this.int32(_.limit);                    // : number - int
 };
 upload.getCdnFile.ref = "upload.getCdnFile";
@@ -24884,9 +25874,9 @@ upload.getCdnFileHashes = function getCdnFileHashes(_) {
   return { ..._, _: "upload.getCdnFileHashes" }
 }
 $encoder["upload.getCdnFileHashes"] = function (_) {
-  this.int32(1302676017);
+  this.int32(-1847836879);
   this.bytes(_.file_token);               // : BufferSource - bytes
-  this.int32(_.offset);                   // : number - int
+  this.int64(_.offset);                   // : bigint - long
 };
 upload.getCdnFileHashes.ref = "upload.getCdnFileHashes";
 upload.getCdnFileHashes.verify = function($$) {
@@ -24899,9 +25889,9 @@ upload.getFileHashes = function getFileHashes(_) {
   return { ..._, _: "upload.getFileHashes" }
 }
 $encoder["upload.getFileHashes"] = function (_) {
-  this.int32(-956147407);
+  this.int32(-1856595926);
   this.object(_.location);                // : InputFileLocation - InputFileLocation
-  this.int32(_.offset);                   // : number - int
+  this.int64(_.offset);                   // : bigint - long
 };
 upload.getFileHashes.ref = "upload.getFileHashes";
 upload.getFileHashes.verify = function($$) {
@@ -25191,6 +26181,18 @@ help.getCountriesList.ref = "help.getCountriesList";
 help.getCountriesList.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["help.countriesListNotModified", "help.countriesList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+help.getPremiumPromo = function getPremiumPromo() {
+  return { _: "help.getPremiumPromo" }
+}
+$encoder["help.getPremiumPromo"] = function (_) {
+  this.int32(-1206152236);
+};
+help.getPremiumPromo.ref = "help.getPremiumPromo";
+help.getPremiumPromo.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["help.premiumPromo"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -25592,14 +26594,19 @@ channels.deleteHistory = function deleteHistory(_) {
   return { ..._, _: "channels.deleteHistory" }
 }
 $encoder["channels.deleteHistory"] = function (_) {
-  this.int32(-1355375294);
+  this.int32(-1683319225);
+  this.int32(
+    (+(_.for_everyone != null) << 0)
+  )
+  if (_.for_everyone != null)
+    this.true(_.for_everyone);            // ?: true - flags.0?true
   this.object(_.channel);                 // : InputChannel - InputChannel
   this.int32(_.max_id);                   // : number - int
 };
 channels.deleteHistory.ref = "channels.deleteHistory";
 channels.deleteHistory.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
   return $$;
 };
 channels.togglePreHistoryHidden = function togglePreHistoryHidden(_) {
@@ -25778,6 +26785,34 @@ channels.deleteParticipantHistory.verify = function($$) {
   if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
   return $$;
 };
+channels.toggleJoinToSend = function toggleJoinToSend(_) {
+  return { ..._, _: "channels.toggleJoinToSend" }
+}
+$encoder["channels.toggleJoinToSend"] = function (_) {
+  this.int32(-456419968);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+channels.toggleJoinToSend.ref = "channels.toggleJoinToSend";
+channels.toggleJoinToSend.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.toggleJoinRequest = function toggleJoinRequest(_) {
+  return { ..._, _: "channels.toggleJoinRequest" }
+}
+$encoder["channels.toggleJoinRequest"] = function (_) {
+  this.int32(1277789622);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+channels.toggleJoinRequest.ref = "channels.toggleJoinRequest";
+channels.toggleJoinRequest.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 export const bots = {};
 bots.sendCustomRequest = function sendCustomRequest(_) {
@@ -25852,17 +26887,69 @@ bots.getBotCommands.verify = function($$) {
     if (!(typeof $ == "object" && ["botCommand"].includes($._))) throw new TypeError("array element");
   return $$;
 };
+bots.setBotMenuButton = function setBotMenuButton(_) {
+  return { ..._, _: "bots.setBotMenuButton" }
+}
+$encoder["bots.setBotMenuButton"] = function (_) {
+  this.int32(1157944655);
+  this.object(_.user_id);                 // : InputUser - InputUser
+  this.object(_.button);                  // : BotMenuButton - BotMenuButton
+};
+bots.setBotMenuButton.ref = "bots.setBotMenuButton";
+bots.setBotMenuButton.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+bots.getBotMenuButton = function getBotMenuButton(_) {
+  return { ..._, _: "bots.getBotMenuButton" }
+}
+$encoder["bots.getBotMenuButton"] = function (_) {
+  this.int32(-1671369944);
+  this.object(_.user_id);                 // : InputUser - InputUser
+};
+bots.getBotMenuButton.ref = "bots.getBotMenuButton";
+bots.getBotMenuButton.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["botMenuButtonDefault", "botMenuButtonCommands", "botMenuButton"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+bots.setBotBroadcastDefaultAdminRights = function setBotBroadcastDefaultAdminRights(_) {
+  return { ..._, _: "bots.setBotBroadcastDefaultAdminRights" }
+}
+$encoder["bots.setBotBroadcastDefaultAdminRights"] = function (_) {
+  this.int32(2021942497);
+  this.object(_.admin_rights);            // : ChatAdminRights - ChatAdminRights
+};
+bots.setBotBroadcastDefaultAdminRights.ref = "bots.setBotBroadcastDefaultAdminRights";
+bots.setBotBroadcastDefaultAdminRights.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+bots.setBotGroupDefaultAdminRights = function setBotGroupDefaultAdminRights(_) {
+  return { ..._, _: "bots.setBotGroupDefaultAdminRights" }
+}
+$encoder["bots.setBotGroupDefaultAdminRights"] = function (_) {
+  this.int32(-1839281686);
+  this.object(_.admin_rights);            // : ChatAdminRights - ChatAdminRights
+};
+bots.setBotGroupDefaultAdminRights.ref = "bots.setBotGroupDefaultAdminRights";
+bots.setBotGroupDefaultAdminRights.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
 
 payments.getPaymentForm = function getPaymentForm(_) {
   return { ..._, _: "payments.getPaymentForm" }
 }
 $encoder["payments.getPaymentForm"] = function (_) {
-  this.int32(-1976353651);
+  this.int32(924093883);
   this.int32(
     (+(_.theme_params != null) << 0)
   )
-  this.object(_.peer);                    // : InputPeer - InputPeer
-  this.int32(_.msg_id);                   // : number - int
+  this.object(_.invoice);                 // : InputInvoice - InputInvoice
   if (_.theme_params != null)
     this.object(_.theme_params);          // ?: DataJSON - flags.0?DataJSON
 };
@@ -25890,14 +26977,13 @@ payments.validateRequestedInfo = function validateRequestedInfo(_) {
   return { ..._, _: "payments.validateRequestedInfo" }
 }
 $encoder["payments.validateRequestedInfo"] = function (_) {
-  this.int32(-619695760);
+  this.int32(-1228345045);
   this.int32(
     (+(_.save != null) << 0)
   )
   if (_.save != null)
     this.true(_.save);                    // ?: true - flags.0?true
-  this.object(_.peer);                    // : InputPeer - InputPeer
-  this.int32(_.msg_id);                   // : number - int
+  this.object(_.invoice);                 // : InputInvoice - InputInvoice
   this.object(_.info);                    // : PaymentRequestedInfo - PaymentRequestedInfo
 };
 payments.validateRequestedInfo.ref = "payments.validateRequestedInfo";
@@ -25910,15 +26996,14 @@ payments.sendPaymentForm = function sendPaymentForm(_) {
   return { ..._, _: "payments.sendPaymentForm" }
 }
 $encoder["payments.sendPaymentForm"] = function (_) {
-  this.int32(818134173);
+  this.int32(755192367);
   this.int32(
     (+(_.requested_info_id != null) << 0)
     | (+(_.shipping_option_id != null) << 1)
     | (+(_.tip_amount != null) << 2)
   )
   this.int64(_.form_id);                  // : bigint - long
-  this.object(_.peer);                    // : InputPeer - InputPeer
-  this.int32(_.msg_id);                   // : number - int
+  this.object(_.invoice);                 // : InputInvoice - InputInvoice
   if (_.requested_info_id != null)
     this.string(_.requested_info_id);     // ?: string - flags.0?string
   if (_.shipping_option_id != null)
@@ -25976,6 +27061,91 @@ payments.getBankCardData.ref = "payments.getBankCardData";
 payments.getBankCardData.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["payments.bankCardData"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.exportInvoice = function exportInvoice(_) {
+  return { ..._, _: "payments.exportInvoice" }
+}
+$encoder["payments.exportInvoice"] = function (_) {
+  this.int32(261206117);
+  this.object(_.invoice_media);           // : InputMedia - InputMedia
+};
+payments.exportInvoice.ref = "payments.exportInvoice";
+payments.exportInvoice.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["payments.exportedInvoice"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.assignAppStoreTransaction = function assignAppStoreTransaction(_) {
+  return { ..._, _: "payments.assignAppStoreTransaction" }
+}
+$encoder["payments.assignAppStoreTransaction"] = function (_) {
+  this.int32(267129798);
+  this.int32(
+    (+(_.restore != null) << 0)
+  )
+  if (_.restore != null)
+    this.true(_.restore);                 // ?: true - flags.0?true
+  this.string(_.transaction_id);          // : string - string
+  this.bytes(_.receipt);                  // : BufferSource - bytes
+};
+payments.assignAppStoreTransaction.ref = "payments.assignAppStoreTransaction";
+payments.assignAppStoreTransaction.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.assignPlayMarketTransaction = function assignPlayMarketTransaction(_) {
+  return { ..._, _: "payments.assignPlayMarketTransaction" }
+}
+$encoder["payments.assignPlayMarketTransaction"] = function (_) {
+  this.int32(1336560365);
+  this.string(_.purchase_token);          // : string - string
+};
+payments.assignPlayMarketTransaction.ref = "payments.assignPlayMarketTransaction";
+payments.assignPlayMarketTransaction.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.restorePlayMarketReceipt = function restorePlayMarketReceipt(_) {
+  return { ..._, _: "payments.restorePlayMarketReceipt" }
+}
+$encoder["payments.restorePlayMarketReceipt"] = function (_) {
+  this.int32(-781917334);
+  this.bytes(_.receipt);                  // : BufferSource - bytes
+};
+payments.restorePlayMarketReceipt.ref = "payments.restorePlayMarketReceipt";
+payments.restorePlayMarketReceipt.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.canPurchasePremium = function canPurchasePremium() {
+  return { _: "payments.canPurchasePremium" }
+}
+$encoder["payments.canPurchasePremium"] = function (_) {
+  this.int32(-1435856696);
+};
+payments.canPurchasePremium.ref = "payments.canPurchasePremium";
+payments.canPurchasePremium.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+payments.requestRecurringPayment = function requestRecurringPayment(_) {
+  return { ..._, _: "payments.requestRecurringPayment" }
+}
+$encoder["payments.requestRecurringPayment"] = function (_) {
+  this.int32(342791565);
+  this.object(_.user_id);                 // : InputUser - InputUser
+  this.string(_.recurring_init_charge);   // : string - string
+  this.object(_.invoice_media);           // : InputMedia - InputMedia
+};
+payments.requestRecurringPayment.ref = "payments.requestRecurringPayment";
+payments.requestRecurringPayment.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -26598,6 +27768,20 @@ phone.getGroupCallStreamRtmpUrl.ref = "phone.getGroupCallStreamRtmpUrl";
 phone.getGroupCallStreamRtmpUrl.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["phone.groupCallStreamRtmpUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+phone.saveCallLog = function saveCallLog(_) {
+  return { ..._, _: "phone.saveCallLog" }
+}
+$encoder["phone.saveCallLog"] = function (_) {
+  this.int32(1092913030);
+  this.object(_.peer);                    // : InputPhoneCall - InputPhoneCall
+  this.object(_.file);                    // : InputFile - InputFile
+};
+phone.saveCallLog.ref = "phone.saveCallLog";
+phone.saveCallLog.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
 

@@ -35,20 +35,28 @@ const builtintypes = ["Bool", "True", "Null", "Error"];
 
 type ParamType = {
   type: string;
-  flag?: number;
+  flag?: {
+    name: string;
+    pos: number;
+  };
   vector: boolean;
   bare: boolean;
 };
 
 function parseParamType(name: string): ParamType {
   const matched = name.match(
-    /(?:flags.(?<flag>\d+)\?)?(?<vector>[Vv]ector<)?(?<bare>%)?(?<base>(?:\w|\.)+|#)>?/,
+    /(?:(?<id>flags\d?)\.(?<pos>\d+)\?)?(?<vector>[Vv]ector<)?(?<bare>%)?(?<base>(?:\w|\.)+|#)>?/,
   );
   if (!matched || !matched.groups) {
     throw new Error(`Type ${name} could not parsed`);
   }
-  let flag: number | undefined;
-  if (matched.groups.flag != null) flag = +matched.groups.flag;
+  let flag: { name: string; pos: number } | undefined;
+  if (matched.groups.id != null) {
+    flag = {
+      name: matched.groups.id,
+      pos: +matched.groups.pos,
+    };
+  }
   const vector = matched.groups.vector != null;
   let type = matched.groups.base;
   if (type in typemaps) type = (typemaps as any)[type];
@@ -496,12 +504,12 @@ class DefinitionProcessor {
           const flags = params.map(({ name, type }) => ({
             name,
             type: parseParamType(type),
-          })).filter(({ type }) => type.flag != null).map((
+          })).filter(({ type }) => type.flag?.name === name).map((
             { name, type: { flag, vector } },
           ) =>
             vector
-              ? `(+(_.${name} != null && _.${name}.length > 0) << ${flag})`
-              : `(+(_.${name} != null) << ${flag})`
+              ? `(+(_.${name} != null && _.${name}.length > 0) << ${flag!.pos})`
+              : `(+(_.${name} != null) << ${flag!.pos})`
           ).join("\n| ");
           jsfile.append`${flags}`;
           jsfile.indent--;
@@ -535,7 +543,7 @@ class DefinitionProcessor {
       jsfile.append`const _ = { _: "${predicate}" }`;
       for (const { name, type } of params) {
         if (type == "#") {
-          jsfile.append`const flags = this.int32();`;
+          jsfile.append`const ${name} = this.int32();`;
           continue;
         }
         const parsed = this.resolve_global_type(type);
@@ -570,11 +578,12 @@ class DefinitionProcessor {
             base = `${base}()`;
           }
           if (parsed.flag != null) {
+            const cond = `${parsed.flag.name} & ${1 << parsed.flag.pos}`;
             if (parsed.type == "true") {
               console.assert(!parsed.vector);
-              base = `if (flags & ${1 << parsed.flag}) _.${name} = true`;
+              base = `if (${cond}) _.${name} = true`;
             } else {
-              base = `if (flags & ${1 << parsed.flag}) _.${name} = ${base}`;
+              base = `if (${cond}) _.${name} = ${base}`;
             }
           } else {
             base = `_.${name} = ${base};`;
@@ -666,9 +675,9 @@ class DefinitionProcessor {
             const flags = params.map(({ name, type }) => ({
               name,
               type: parseParamType(type),
-            })).filter(({ type }) => type.flag != null).map((
+            })).filter(({ type }) => type.flag?.name === name).map((
               { name, type: { flag } },
-            ) => `(+(_.${name} != null) << ${flag})`).join("\n| ");
+            ) => `(+(_.${name} != null) << ${flag!.pos})`).join("\n| ");
             jsfile.append`${flags}`;
             jsfile.indent--;
             jsfile.append`)`;
