@@ -21995,7 +21995,7 @@ $encoder["account.createTheme"] = function (_) {
   this.int32(1697530880);
   this.int32(
     (+(_.document != null) << 2)
-    | (+(_.settings != null) << 3)
+    | (+(_.settings != null && _.settings.length > 0) << 3)
   )
   this.string(_.slug);                    // : string - string
   this.string(_.title);                   // : string - string
@@ -22019,7 +22019,7 @@ $encoder["account.updateTheme"] = function (_) {
     (+(_.slug != null) << 0)
     | (+(_.title != null) << 1)
     | (+(_.document != null) << 2)
-    | (+(_.settings != null) << 3)
+    | (+(_.settings != null && _.settings.length > 0) << 3)
   )
   this.string(_.format);                  // : string - string
   this.object(_.theme);                   // : InputTheme - InputTheme
@@ -22874,7 +22874,7 @@ $encoder["messages.sendMessage"] = function (_) {
     | (+(_.noforwards != null) << 14)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.reply_markup != null) << 2)
-    | (+(_.entities != null) << 3)
+    | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
   )
@@ -22920,7 +22920,7 @@ $encoder["messages.sendMedia"] = function (_) {
     | (+(_.noforwards != null) << 14)
     | (+(_.reply_to_msg_id != null) << 0)
     | (+(_.reply_markup != null) << 2)
-    | (+(_.entities != null) << 3)
+    | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
   )
@@ -23358,7 +23358,7 @@ messages.getWebPagePreview = function getWebPagePreview(_) {
 $encoder["messages.getWebPagePreview"] = function (_) {
   this.int32(-1956073268);
   this.int32(
-    (+(_.entities != null) << 3)
+    (+(_.entities != null && _.entities.length > 0) << 3)
   )
   this.string(_.message);                 // : string - string
   if (_.entities != null && _.entities.length > 0)
@@ -23724,7 +23724,7 @@ $encoder["messages.editMessage"] = function (_) {
     | (+(_.message != null) << 11)
     | (+(_.media != null) << 14)
     | (+(_.reply_markup != null) << 2)
-    | (+(_.entities != null) << 3)
+    | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 15)
   )
   if (_.no_webpage != null)
@@ -23758,7 +23758,7 @@ $encoder["messages.editInlineBotMessage"] = function (_) {
     | (+(_.message != null) << 11)
     | (+(_.media != null) << 14)
     | (+(_.reply_markup != null) << 2)
-    | (+(_.entities != null) << 3)
+    | (+(_.entities != null && _.entities.length > 0) << 3)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -23849,7 +23849,7 @@ $encoder["messages.saveDraft"] = function (_) {
   this.int32(
     (+(_.no_webpage != null) << 1)
     | (+(_.reply_to_msg_id != null) << 0)
-    | (+(_.entities != null) << 3)
+    | (+(_.entities != null && _.entities.length > 0) << 3)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -24179,7 +24179,7 @@ $encoder["messages.setBotShippingResults"] = function (_) {
   this.int32(-436833542);
   this.int32(
     (+(_.error != null) << 0)
-    | (+(_.shipping_options != null) << 1)
+    | (+(_.shipping_options != null && _.shipping_options.length > 0) << 1)
   )
   this.int64(_.query_id);                 // : bigint - long
   if (_.error != null)
@@ -26544,7 +26544,7 @@ $encoder["channels.getAdminLog"] = function (_) {
   this.int32(870184064);
   this.int32(
     (+(_.events_filter != null) << 0)
-    | (+(_.admins != null) << 1)
+    | (+(_.admins != null && _.admins.length > 0) << 1)
   )
   this.object(_.channel);                 // : InputChannel - InputChannel
   this.string(_.q);                       // : string - string

@@ -676,8 +676,14 @@ class DefinitionProcessor {
               name,
               type: parseParamType(type),
             })).filter(({ type }) => type.flag?.name === name).map((
-              { name, type: { flag } },
-            ) => `(+(_.${name} != null) << ${flag!.pos})`).join("\n| ");
+              { name, type: { flag, vector } },
+            ) =>
+              vector
+                ? `(+(_.${name} != null && _.${name}.length > 0) << ${
+                  flag!.pos
+                })`
+                : `(+(_.${name} != null) << ${flag!.pos})`
+            ).join("\n| ");
             jsfile.append`${flags}`;
             jsfile.indent--;
             jsfile.append`)`;
