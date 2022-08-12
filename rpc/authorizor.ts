@@ -104,13 +104,14 @@ async function generate_dh(
     throw new Error(`The server nonce are not equal in client dh step`);
   }
   switch (dh_ans._) {
-    case "mt.dh_gen_ok":
+    case "mt.dh_gen_ok": {
       const hash1 = view_arr(sha1(new_nonce, [1], auxhash), 4, 16);
       if (!eq_array(hash1, dh_ans.new_nonce_hash1)) {
         throw new Error(`Invalid hash in dh_gen_ok`);
       }
       return { auth, salt };
-    case "mt.dh_gen_retry":
+    }
+    case "mt.dh_gen_retry": {
       const hash2 = view_arr(sha1(new_nonce, [2], auxhash), 4, 16);
       if (!eq_array(hash2, dh_ans.new_nonce_hash2)) {
         throw new Error(`Invalid hash in dh_gen_retry`);
@@ -124,14 +125,16 @@ async function generate_dh(
         server_nonce,
         tobig(auxhash, true),
       );
-    case "mt.dh_gen_fail":
+    }
+    case "mt.dh_gen_fail": {
       const hash3 = view_arr(sha1(new_nonce, [3], auxhash), 4, 16);
       if (!eq_array(hash3, dh_ans.new_nonce_hash3)) {
         throw new Error(`Invalid hash in dh_gen_fail`);
       }
       throw new Error(`dh_gen_fail`);
+    }
     default:
-      // @ts-ignore
+      // @ts-ignore: for unexpected response
       throw new Error(`invalid response: ${dh_ans._}`);
   }
 }

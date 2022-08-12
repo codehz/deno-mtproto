@@ -10,7 +10,7 @@ export default class Abridged implements PacketCodec {
   #lengthbuf = new Uint8Array(4);
 
   *encode_packet(data: Uint8Array): Iterable<Uint8Array> {
-    let length = data.length >> 2;
+    const length = data.length >> 2;
     if (length < 127) {
       this.#lengthbuf[0] = length;
       yield view_arr(this.#lengthbuf, 0, 1);

@@ -75,14 +75,14 @@ class WebSocketWrapper implements Deno.Reader {
     });
   }
 
-  async read(p: Uint8Array): Promise<number | null> {
-    if (this.#conn.readyState > 1) return null;
+  read(p: Uint8Array): Promise<number | null> {
+    if (this.#conn.readyState > 1) return Promise.resolve(null);
     if (this.#buffer) {
       const len = Math.min(p.length, this.#buffer.length);
       p.set(this.#buffer.subarray(0, len));
       this.#buffer = this.#buffer.subarray(len);
       if (this.#buffer.length == 0) this.#buffer = undefined;
-      return len;
+      return Promise.resolve(len);
     }
     return (this.#pending = new PendingRead(p)).promise;
   }
@@ -111,8 +111,9 @@ export class WebSocketTransport implements Transport {
     this.#conn.send(this.#codec.init);
   }
 
-  async send(packet: Uint8Array): Promise<void> {
+  send(packet: Uint8Array): Promise<void> {
     this.#conn.send(concat_array(...this.#codec.encode_packet(packet)));
+    return Promise.resolve()
   }
 
   async *[Symbol.asyncIterator](): AsyncIterator<

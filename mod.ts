@@ -97,7 +97,7 @@ export default class MTProto {
   }
 
   set default_dc(dcid: number) {
-    let founds = this.#dclist.filter(
+    const founds = this.#dclist.filter(
       ({ cdn, media_only, id, ipv6, tcpo_only }) => {
         if (id != dcid || tcpo_only) return false;
         if (this.#ipv6 == "ipv4" && ipv6) return false;
@@ -135,7 +135,7 @@ export default class MTProto {
       return this.#connections.get(dcid)!;
     }
     const { type, id: nid } = toDCInfo(dcid);
-    let founds = this.#dclist.filter(
+    const founds = this.#dclist.filter(
       ({ cdn, media_only, id, ipv6, tcpo_only }) => {
         if (id != nid || tcpo_only) return false;
         if (this.#ipv6 == "ipv4" && ipv6) return false;

@@ -2,6 +2,7 @@ import type { ToUnderscore } from "mtproto/common/magic.ts";
 import { type DCInfo, toDCIdentifier } from "mtproto/common/dc.ts";
 
 type StorageKinds = {
+  // deno-lint-ignore ban-types
   global: {};
   dc: DCInfo;
 };

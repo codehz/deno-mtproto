@@ -26,6 +26,8 @@ import { DCIdentifier } from "mtproto/common/dc.ts";
 import { KVStorage } from "mtproto/storage/types.ts";
 import EventEmitter from "mtproto/common/event.ts";
 
+const API_LAYER = 144;
+
 export type RPCState = "connecting" | "connected" | "disconnected";
 
 export class RPCError extends Error {}
@@ -35,8 +37,8 @@ type GenApiMethods<T> = {
     (param: infer I): any;
     verify(param: infer R): any;
   } ? (
-    param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
-  ) => Promise<R>
+      param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
+    ) => Promise<R>
     : never;
 };
 
@@ -114,7 +116,7 @@ class QueueHandler<T> {
   #handler: (t: T[]) => Promise<void>;
   #errhandler: (err: any) => void;
   #queue: T[] = [];
-  #blocked: boolean = true;
+  #blocked = true;
   #next: number | undefined;
   wait?: Promise<void>;
 
@@ -166,7 +168,7 @@ class QueueHandler<T> {
 }
 
 type Events = api._Update & {
-  terminate: {};
+  terminate: Record<never, never>;
   authorize: { resolve?: Promise<void> };
 };
 
@@ -180,7 +182,7 @@ export default class RPC extends EventEmitter<Events> {
   #auth!: Uint8Array;
   #salt!: Uint8Array;
   #state: RPCState = "connecting";
-  #handle?: (this: RPC, data: Uint8Array) => Promise<void>;
+  #handle?: (this: RPC, data: Uint8Array) => Promise<void> | void;
   #session = new Session();
   #waitlist = new Map<bigint, PendingResquest>();
   #flood_wait = 0;
@@ -218,7 +220,7 @@ export default class RPC extends EventEmitter<Events> {
         const { method, params, resolver } = list.shift()!;
         const packet = this.#session.first
           ? serialize(invokeWithLayer, {
-            layer: 143,
+            layer: API_LAYER,
             query: initConnection({
               ...this.#environment_information,
               api_id: this.#api_id,
@@ -358,14 +360,14 @@ export default class RPC extends EventEmitter<Events> {
     return this.#aes_instance(msgkey, false).encrypt(data);
   }
 
-  async call<N extends string, R>(
+  call<N extends string, R>(
     method: TLApiMethod<N, void, R>,
   ): Promise<R>;
-  async call<N extends string, T, R>(
+  call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
     params: Omit<T, "api_id" | "api_hash">,
   ): Promise<R>;
-  async call<N extends string, T, R>(
+  call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
     params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
   ): Promise<R> {
@@ -538,7 +540,7 @@ export default class RPC extends EventEmitter<Events> {
             })();
             return;
           } else if (error_message === "AUTH_KEY_UNREGISTERED") {
-            let obj: { resolve?: Promise<void> } = {};
+            const obj: { resolve?: Promise<void> } = {};
             this.emit("authorize", obj);
             if (obj.resolve) {
               (async (resolve) => {
@@ -556,7 +558,7 @@ export default class RPC extends EventEmitter<Events> {
           }
           msg.resolver.reject(new RPCError(error_message));
         } else {
-          // @ts-ignore
+          // @ts-ignore: too complex type
           msg.resolver.resolve(res);
         }
         this.#waitlist.delete(data.req_msg_id);
@@ -611,14 +613,14 @@ export default class RPC extends EventEmitter<Events> {
         });
         return new Promise((resolve, reject) => {
           this.#send(payload).catch(reject);
-          this.#handle = async function (data) {
+          this.#handle = function (data) {
             this.#handle = undefined;
             try {
               const deserializer = new Deserializer(data);
               deserializer.int64();
               deserializer.int64();
               deserializer.int32();
-              // @ts-ignore
+              // @ts-ignore: type too complex
               resolve(fn.verify(deserializer.object()));
             } catch (e) {
               reject(e);

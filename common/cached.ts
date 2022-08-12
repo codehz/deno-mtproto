@@ -1,4 +1,4 @@
-export default function cached<T extends Record<string, object>>(
+export default function cached<T extends Record<string, any>>(
   create: (name: string) => T[string] | void,
 ): T {
   return new Proxy({} as T, {

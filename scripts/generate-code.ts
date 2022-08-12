@@ -103,8 +103,8 @@ function parseNamespace(input: string) {
 }
 
 class DocumentWriter {
-  #data: string = "";
-  indent: number = 0;
+  #data = "";
+  indent = 0;
 
   writeraw(text: string) {
     this.#data += text;

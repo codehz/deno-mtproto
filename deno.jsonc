@@ -3,5 +3,24 @@
     "allowJs": true,
     "checkJs": false
   },
+  "lint": {
+    "files": {
+      "exclude": [
+        "gen/"
+      ]
+    },
+    "rules": {
+      "exclude": [
+        "no-explicit-any"
+      ]
+    }
+  },
+  "fmt": {
+    "files": {
+      "exclude": [
+        "gen/"
+      ]
+    }
+  },
   "importMap": "./import_map.json"
 }

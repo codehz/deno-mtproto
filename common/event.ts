@@ -1,3 +1,4 @@
+// deno-lint-ignore-file ban-types
 import MultiMap from "./multimap.ts";
 
 export default interface EventEmitter<T> {

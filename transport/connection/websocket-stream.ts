@@ -71,7 +71,7 @@ export class WebSocketStreamTransport implements Transport {
   async *[Symbol.asyncIterator](): AsyncIterator<
     TransportEvent<keyof TransportEvents>
   > {
-    let sync = new BufferSync();
+    const sync = new BufferSync();
     for await (
       const piece of this.#codec.read_packet({
         read: async (buf: Uint8Array) => {

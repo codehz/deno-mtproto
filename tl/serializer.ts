@@ -74,7 +74,7 @@ export class Serializer implements BaseSerializer {
     fn: (this: BaseSerializer, ...params: any) => any,
     ...params: any
   ) {
-    // @ts-ignore
+    // @ts-ignore: fix ref
     if (fn.ref in $encoder) fn = $encoder[fn.ref];
     const counter = new Counter();
     fn.call(counter, ...params);

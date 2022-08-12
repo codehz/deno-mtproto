@@ -14,7 +14,7 @@ export function depq(pq: bigint): { p: bigint; q: bigint } {
   let r = 1n;
   let q = 1n;
   let x = 0n;
-  let ys: bigint = 0n;
+  let ys = 0n;
 
   while (g == 1n) {
     x = y;

@@ -20,6 +20,7 @@ console.log("connected");
 const api_id = 4;
 const api_hash = "014b35b6184100b085b0d0572f9b5103";
 
+// deno-lint-ignore no-constant-condition
 if (0) {
   localStorage.clear();
 }

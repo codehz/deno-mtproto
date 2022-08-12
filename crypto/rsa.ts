@@ -39,6 +39,6 @@ export function find(fingerprints: Iterable<bigint>): {
 
 export function encrypt(mod: bigint, data: BufferSource): Uint8Array {
   const bytes = tou8(data);
-  let input = tobig(bytes);
+  const input = tobig(bytes);
   return frombig256(modpow(input, 65537n, mod));
 }

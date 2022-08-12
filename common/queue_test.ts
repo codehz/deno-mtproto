@@ -1,3 +1,4 @@
+// deno-lint-ignore-file require-await
 import TaskQueue from "./queue.ts";
 import {
   assertEquals,
@@ -56,9 +57,6 @@ Deno.test(async function change() {
 
 Deno.test(async function block() {
   const queue = new TaskQueue<() => Promise<void>>((f) => f());
-  let state = 0;
-  await wait(0);
-  queue.enqueue(async () => assertEquals(state, 0));
   await wait(0);
   queue.unblock();
   await wait(0);
