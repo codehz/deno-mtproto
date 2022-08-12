@@ -41,7 +41,7 @@ export class IGE {
 
       block.set(nextIvp);
       xor_array(block, this.#iv2p);
-      // @ts-ignore
+      // @ts-ignore: external types
       block = this.#aes.decrypt(block) as Uint8Array;
       xor_array(block, this.#ivp);
       plaintext.set(block, i);
