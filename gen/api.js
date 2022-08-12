@@ -686,6 +686,9 @@ const global = {
   messageActionWebViewDataSent(params) {
     return { ...params, _: "messageActionWebViewDataSent" };
   },
+  messageActionGiftPremium(params) {
+    return { ...params, _: "messageActionGiftPremium" };
+  },
 
   // type Dialog
   dialog(params) {
@@ -1177,6 +1180,9 @@ const global = {
   updateTranscribedAudio(params) {
     return { ...params, _: "updateTranscribedAudio" };
   },
+  updateReadFeaturedEmojiStickers() {
+    return { _: "updateReadFeaturedEmojiStickers" };
+  },
 
   // type Updates
   updatesTooLong() {
@@ -1379,6 +1385,9 @@ const global = {
   inputPrivacyKeyAddedByPhone() {
     return { _: "inputPrivacyKeyAddedByPhone" };
   },
+  inputPrivacyKeyVoiceMessages() {
+    return { _: "inputPrivacyKeyVoiceMessages" };
+  },
 
   // type PrivacyKey
   privacyKeyStatusTimestamp() {
@@ -1404,6 +1413,9 @@ const global = {
   },
   privacyKeyAddedByPhone() {
     return { _: "privacyKeyAddedByPhone" };
+  },
+  privacyKeyVoiceMessages() {
+    return { _: "privacyKeyVoiceMessages" };
   },
 
   // type InputPrivacyRule
@@ -1485,6 +1497,9 @@ const global = {
   documentAttributeHasStickers() {
     return { _: "documentAttributeHasStickers" };
   },
+  documentAttributeCustomEmoji(params) {
+    return { ...params, _: "documentAttributeCustomEmoji" };
+  },
 
   // type StickerPack
   stickerPack(params) {
@@ -1552,6 +1567,9 @@ const global = {
   },
   inputStickerSetAnimatedEmojiAnimations() {
     return { _: "inputStickerSetAnimatedEmojiAnimations" };
+  },
+  inputStickerSetPremiumGifts() {
+    return { _: "inputStickerSetPremiumGifts" };
   },
 
   // type StickerSet
@@ -1695,6 +1713,9 @@ const global = {
   },
   messageEntitySpoiler(params) {
     return { ...params, _: "messageEntitySpoiler" };
+  },
+  messageEntityCustomEmoji(params) {
+    return { ...params, _: "messageEntityCustomEmoji" };
   },
 
   // type InputChannel
@@ -1905,6 +1926,9 @@ const global = {
   },
   stickerSetMultiCovered(params) {
     return { ...params, _: "stickerSetMultiCovered" };
+  },
+  stickerSetFullCovered(params) {
+    return { ...params, _: "stickerSetFullCovered" };
   },
 
   // type MaskCoords
@@ -2145,6 +2169,9 @@ const global = {
   },
   inputWebFileGeoPointLocation(params) {
     return { ...params, _: "inputWebFileGeoPointLocation" };
+  },
+  inputWebFileAudioAlbumThumbLocation(params) {
+    return { ...params, _: "inputWebFileAudioAlbumThumbLocation" };
   },
 
   // type InputPaymentCredentials
@@ -3164,6 +3191,24 @@ const global = {
     return { ...params, _: "inputInvoiceSlug" };
   },
 
+  // type InputStorePaymentPurpose
+  inputStorePaymentPremiumSubscription(params) {
+    return { ...params, _: "inputStorePaymentPremiumSubscription" };
+  },
+  inputStorePaymentGiftPremium(params) {
+    return { ...params, _: "inputStorePaymentGiftPremium" };
+  },
+
+  // type PremiumGiftOption
+  premiumGiftOption(params) {
+    return { ...params, _: "premiumGiftOption" };
+  },
+
+  // type PaymentFormMethod
+  paymentFormMethod(params) {
+    return { ...params, _: "paymentFormMethod" };
+  },
+
 };
 
 // type InputPeer
@@ -3328,6 +3373,7 @@ global.messageActionSetChatTheme.ref = "messageActionSetChatTheme";
 global.messageActionChatJoinedByRequest.ref = "messageActionChatJoinedByRequest";
 global.messageActionWebViewDataSentMe.ref = "messageActionWebViewDataSentMe";
 global.messageActionWebViewDataSent.ref = "messageActionWebViewDataSent";
+global.messageActionGiftPremium.ref = "messageActionGiftPremium";
 
 // type Dialog
 global.dialog.ref = "dialog";
@@ -3513,6 +3559,7 @@ global.updateWebViewResultSent.ref = "updateWebViewResultSent";
 global.updateBotMenuButton.ref = "updateBotMenuButton";
 global.updateSavedRingtones.ref = "updateSavedRingtones";
 global.updateTranscribedAudio.ref = "updateTranscribedAudio";
+global.updateReadFeaturedEmojiStickers.ref = "updateReadFeaturedEmojiStickers";
 
 // type Updates
 global.updatesTooLong.ref = "updatesTooLong";
@@ -3599,6 +3646,7 @@ global.inputPrivacyKeyForwards.ref = "inputPrivacyKeyForwards";
 global.inputPrivacyKeyProfilePhoto.ref = "inputPrivacyKeyProfilePhoto";
 global.inputPrivacyKeyPhoneNumber.ref = "inputPrivacyKeyPhoneNumber";
 global.inputPrivacyKeyAddedByPhone.ref = "inputPrivacyKeyAddedByPhone";
+global.inputPrivacyKeyVoiceMessages.ref = "inputPrivacyKeyVoiceMessages";
 
 // type PrivacyKey
 global.privacyKeyStatusTimestamp.ref = "privacyKeyStatusTimestamp";
@@ -3609,6 +3657,7 @@ global.privacyKeyForwards.ref = "privacyKeyForwards";
 global.privacyKeyProfilePhoto.ref = "privacyKeyProfilePhoto";
 global.privacyKeyPhoneNumber.ref = "privacyKeyPhoneNumber";
 global.privacyKeyAddedByPhone.ref = "privacyKeyAddedByPhone";
+global.privacyKeyVoiceMessages.ref = "privacyKeyVoiceMessages";
 
 // type InputPrivacyRule
 global.inputPrivacyValueAllowContacts.ref = "inputPrivacyValueAllowContacts";
@@ -3641,6 +3690,7 @@ global.documentAttributeVideo.ref = "documentAttributeVideo";
 global.documentAttributeAudio.ref = "documentAttributeAudio";
 global.documentAttributeFilename.ref = "documentAttributeFilename";
 global.documentAttributeHasStickers.ref = "documentAttributeHasStickers";
+global.documentAttributeCustomEmoji.ref = "documentAttributeCustomEmoji";
 
 // type StickerPack
 global.stickerPack.ref = "stickerPack";
@@ -3673,6 +3723,7 @@ global.inputStickerSetShortName.ref = "inputStickerSetShortName";
 global.inputStickerSetAnimatedEmoji.ref = "inputStickerSetAnimatedEmoji";
 global.inputStickerSetDice.ref = "inputStickerSetDice";
 global.inputStickerSetAnimatedEmojiAnimations.ref = "inputStickerSetAnimatedEmojiAnimations";
+global.inputStickerSetPremiumGifts.ref = "inputStickerSetPremiumGifts";
 
 // type StickerSet
 global.stickerSet.ref = "stickerSet";
@@ -3730,6 +3781,7 @@ global.messageEntityStrike.ref = "messageEntityStrike";
 global.messageEntityBlockquote.ref = "messageEntityBlockquote";
 global.messageEntityBankCard.ref = "messageEntityBankCard";
 global.messageEntitySpoiler.ref = "messageEntitySpoiler";
+global.messageEntityCustomEmoji.ref = "messageEntityCustomEmoji";
 
 // type InputChannel
 global.inputChannelEmpty.ref = "inputChannelEmpty";
@@ -3824,6 +3876,7 @@ global.draftMessage.ref = "draftMessage";
 // type StickerSetCovered
 global.stickerSetCovered.ref = "stickerSetCovered";
 global.stickerSetMultiCovered.ref = "stickerSetMultiCovered";
+global.stickerSetFullCovered.ref = "stickerSetFullCovered";
 
 // type MaskCoords
 global.maskCoords.ref = "maskCoords";
@@ -3928,6 +3981,7 @@ global.inputWebDocument.ref = "inputWebDocument";
 // type InputWebFileLocation
 global.inputWebFileLocation.ref = "inputWebFileLocation";
 global.inputWebFileGeoPointLocation.ref = "inputWebFileGeoPointLocation";
+global.inputWebFileAudioAlbumThumbLocation.ref = "inputWebFileAudioAlbumThumbLocation";
 
 // type InputPaymentCredentials
 global.inputPaymentCredentialsSaved.ref = "inputPaymentCredentialsSaved";
@@ -4435,6 +4489,16 @@ global.attachMenuPeerTypeBroadcast.ref = "attachMenuPeerTypeBroadcast";
 // type InputInvoice
 global.inputInvoiceMessage.ref = "inputInvoiceMessage";
 global.inputInvoiceSlug.ref = "inputInvoiceSlug";
+
+// type InputStorePaymentPurpose
+global.inputStorePaymentPremiumSubscription.ref = "inputStorePaymentPremiumSubscription";
+global.inputStorePaymentGiftPremium.ref = "inputStorePaymentGiftPremium";
+
+// type PremiumGiftOption
+global.premiumGiftOption.ref = "premiumGiftOption";
+
+// type PaymentFormMethod
+global.paymentFormMethod.ref = "paymentFormMethod";
 
 export default global;
 
@@ -7256,6 +7320,12 @@ export const $encoder = {
     this.int32(-1262252875);
     this.string(_.text);                    // : string - string
   },
+  ["messageActionGiftPremium"](_) {
+    this.int32(-1415514682);
+    this.string(_.currency);                // : string - string
+    this.int64(_.amount);                   // : bigint - long
+    this.int32(_.months);                   // : number - int
+  },
   ["dialog"](_) {
     this.int32(-1460809483);
     this.int32(
@@ -7574,7 +7644,7 @@ export const $encoder = {
     this.int32(-1631091139);
   },
   ["userFull"](_) {
-    this.int32(-1938625919);
+    this.int32(-994968513);
     this.int32(
       (+(_.blocked != null) << 0)
       | (+(_.phone_calls_available != null) << 4)
@@ -7582,6 +7652,7 @@ export const $encoder = {
       | (+(_.can_pin_message != null) << 7)
       | (+(_.has_scheduled != null) << 12)
       | (+(_.video_calls_available != null) << 13)
+      | (+(_.voice_messages_forbidden != null) << 20)
       | (+(_.about != null) << 1)
       | (+(_.profile_photo != null) << 2)
       | (+(_.bot_info != null) << 3)
@@ -7592,6 +7663,7 @@ export const $encoder = {
       | (+(_.private_forward_name != null) << 16)
       | (+(_.bot_group_admin_rights != null) << 17)
       | (+(_.bot_broadcast_admin_rights != null) << 18)
+      | (+(_.premium_gifts != null && _.premium_gifts.length > 0) << 19)
     )
     if (_.blocked != null)
       this.true(_.blocked);                 // ?: true - flags.0?true
@@ -7605,6 +7677,8 @@ export const $encoder = {
       this.true(_.has_scheduled);           // ?: true - flags.12?true
     if (_.video_calls_available != null)
       this.true(_.video_calls_available);   // ?: true - flags.13?true
+    if (_.voice_messages_forbidden != null)
+      this.true(_.voice_messages_forbidden); // ?: true - flags.20?true
     this.int64(_.id);                       // : bigint - long
     if (_.about != null)
       this.string(_.about);                 // ?: string - flags.1?string
@@ -7629,6 +7703,8 @@ export const $encoder = {
       this.object(_.bot_group_admin_rights); // ?: ChatAdminRights - flags.17?ChatAdminRights
     if (_.bot_broadcast_admin_rights != null)
       this.object(_.bot_broadcast_admin_rights); // ?: ChatAdminRights - flags.18?ChatAdminRights
+    if (_.premium_gifts != null && _.premium_gifts.length > 0)
+      this.vector(_.premium_gifts, this.object); // ?: PremiumGiftOption[] - flags.19?Vector<PremiumGiftOption>
   },
   ["contact"](_) {
     this.int32(341499403);
@@ -8024,9 +8100,12 @@ export const $encoder = {
     this.int32(196268545);
     this.int32(
       (+(_.masks != null) << 0)
+      | (+(_.emojis != null) << 1)
     )
     if (_.masks != null)
       this.true(_.masks);                   // ?: true - flags.0?true
+    if (_.emojis != null)
+      this.true(_.emojis);                  // ?: true - flags.1?true
     this.vector(_.order, this.int64);       // : bigint[] - Vector<long>
   },
   ["updateStickerSets"](_) {
@@ -8506,6 +8585,9 @@ export const $encoder = {
     this.int32(_.msg_id);                   // : number - int
     this.int64(_.transcription_id);         // : bigint - long
     this.string(_.text);                    // : string - string
+  },
+  ["updateReadFeaturedEmojiStickers"](_) {
+    this.int32(-78886548);
   },
   ["updates.state"](_) {
     this.int32(-1519637954);
@@ -9111,6 +9193,9 @@ export const $encoder = {
   ["inputPrivacyKeyAddedByPhone"](_) {
     this.int32(-786326563);
   },
+  ["inputPrivacyKeyVoiceMessages"](_) {
+    this.int32(-1360618136);
+  },
   ["privacyKeyStatusTimestamp"](_) {
     this.int32(-1137792208);
   },
@@ -9134,6 +9219,9 @@ export const $encoder = {
   },
   ["privacyKeyAddedByPhone"](_) {
     this.int32(1124062251);
+  },
+  ["privacyKeyVoiceMessages"](_) {
+    this.int32(110621716);
   },
   ["inputPrivacyValueAllowContacts"](_) {
     this.int32(218751099);
@@ -9260,6 +9348,16 @@ export const $encoder = {
   },
   ["documentAttributeHasStickers"](_) {
     this.int32(-1744710921);
+  },
+  ["documentAttributeCustomEmoji"](_) {
+    this.int32(-48981863);
+    this.int32(
+      (+(_.free != null) << 0)
+    )
+    if (_.free != null)
+      this.true(_.free);                    // ?: true - flags.0?true
+    this.string(_.alt);                     // : string - string
+    this.object(_.stickerset);              // : InputStickerSet - InputStickerSet
   },
   ["messages.stickersNotModified"](_) {
     this.int32(-244016606);
@@ -9565,18 +9663,23 @@ export const $encoder = {
   ["inputStickerSetAnimatedEmojiAnimations"](_) {
     this.int32(215889721);
   },
+  ["inputStickerSetPremiumGifts"](_) {
+    this.int32(-930399486);
+  },
   ["stickerSet"](_) {
-    this.int32(-673242758);
+    this.int32(768691932);
     this.int32(
       (+(_.archived != null) << 1)
       | (+(_.official != null) << 2)
       | (+(_.masks != null) << 3)
       | (+(_.animated != null) << 5)
       | (+(_.videos != null) << 6)
+      | (+(_.emojis != null) << 7)
       | (+(_.installed_date != null) << 0)
       | (+(_.thumbs != null && _.thumbs.length > 0) << 4)
       | (+(_.thumb_dc_id != null) << 4)
       | (+(_.thumb_version != null) << 4)
+      | (+(_.thumb_document_id != null) << 8)
     )
     if (_.archived != null)
       this.true(_.archived);                // ?: true - flags.1?true
@@ -9588,6 +9691,8 @@ export const $encoder = {
       this.true(_.animated);                // ?: true - flags.5?true
     if (_.videos != null)
       this.true(_.videos);                  // ?: true - flags.6?true
+    if (_.emojis != null)
+      this.true(_.emojis);                  // ?: true - flags.7?true
     if (_.installed_date != null)
       this.int32(_.installed_date);         // ?: number - flags.0?int
     this.int64(_.id);                       // : bigint - long
@@ -9600,6 +9705,8 @@ export const $encoder = {
       this.int32(_.thumb_dc_id);            // ?: number - flags.4?int
     if (_.thumb_version != null)
       this.int32(_.thumb_version);          // ?: number - flags.4?int
+    if (_.thumb_document_id != null)
+      this.int64(_.thumb_document_id);      // ?: bigint - flags.8?long
     this.int32(_.count);                    // : number - int
     this.int32(_.hash);                     // : number - int
   },
@@ -9890,6 +9997,12 @@ export const $encoder = {
     this.int32(852137487);
     this.int32(_.offset);                   // : number - int
     this.int32(_.length);                   // : number - int
+  },
+  ["messageEntityCustomEmoji"](_) {
+    this.int32(-925956616);
+    this.int32(_.offset);                   // : number - int
+    this.int32(_.length);                   // : number - int
+    this.int64(_.document_id);              // : bigint - long
   },
   ["inputChannelEmpty"](_) {
     this.int32(-292807034);
@@ -10607,7 +10720,12 @@ export const $encoder = {
     this.int32(_.count);                    // : number - int
   },
   ["messages.featuredStickers"](_) {
-    this.int32(-2067782896);
+    this.int32(-1103615738);
+    this.int32(
+      (+(_.premium != null) << 0)
+    )
+    if (_.premium != null)
+      this.true(_.premium);                 // ?: true - flags.0?true
     this.int64(_.hash);                     // : bigint - long
     this.int32(_.count);                    // : number - int
     this.vector(_.sets, this.object);       // : StickerSetCovered[] - Vector<StickerSetCovered>
@@ -10644,6 +10762,12 @@ export const $encoder = {
     this.int32(872932635);
     this.object(_.set);                     // : StickerSet - StickerSet
     this.vector(_.covers, this.object);     // : Document[] - Vector<Document>
+  },
+  ["stickerSetFullCovered"](_) {
+    this.int32(451763941);
+    this.object(_.set);                     // : StickerSet - StickerSet
+    this.vector(_.packs, this.object);      // : StickerPack[] - Vector<StickerPack>
+    this.vector(_.documents, this.object);  // : Document[] - Vector<Document>
   },
   ["maskCoords"](_) {
     this.int32(-1361650766);
@@ -11089,6 +11213,23 @@ export const $encoder = {
     this.int32(_.zoom);                     // : number - int
     this.int32(_.scale);                    // : number - int
   },
+  ["inputWebFileAudioAlbumThumbLocation"](_) {
+    this.int32(-193992412);
+    this.int32(
+      (+(_.small != null) << 2)
+      | (+(_.document != null) << 0)
+      | (+(_.title != null) << 1)
+      | (+(_.performer != null) << 1)
+    )
+    if (_.small != null)
+      this.true(_.small);                   // ?: true - flags.2?true
+    if (_.document != null)
+      this.object(_.document);              // ?: InputDocument - flags.0?InputDocument
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.1?string
+    if (_.performer != null)
+      this.string(_.performer);             // ?: string - flags.1?string
+  },
   ["upload.webFile"](_) {
     this.int32(568808380);
     this.int32(_.size);                     // : number - int
@@ -11098,15 +11239,16 @@ export const $encoder = {
     this.bytes(_.bytes);                    // : BufferSource - bytes
   },
   ["payments.paymentForm"](_) {
-    this.int32(-1340916937);
+    this.int32(-1610250415);
     this.int32(
       (+(_.can_save_credentials != null) << 2)
       | (+(_.password_missing != null) << 3)
       | (+(_.photo != null) << 5)
       | (+(_.native_provider != null) << 4)
       | (+(_.native_params != null) << 4)
+      | (+(_.additional_methods != null && _.additional_methods.length > 0) << 6)
       | (+(_.saved_info != null) << 0)
-      | (+(_.saved_credentials != null) << 1)
+      | (+(_.saved_credentials != null && _.saved_credentials.length > 0) << 1)
     )
     if (_.can_save_credentials != null)
       this.true(_.can_save_credentials);    // ?: true - flags.2?true
@@ -11125,10 +11267,12 @@ export const $encoder = {
       this.string(_.native_provider);       // ?: string - flags.4?string
     if (_.native_params != null)
       this.object(_.native_params);         // ?: DataJSON - flags.4?DataJSON
+    if (_.additional_methods != null && _.additional_methods.length > 0)
+      this.vector(_.additional_methods, this.object); // ?: PaymentFormMethod[] - flags.6?Vector<PaymentFormMethod>
     if (_.saved_info != null)
       this.object(_.saved_info);            // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (_.saved_credentials != null)
-      this.object(_.saved_credentials);     // ?: PaymentSavedCredentials - flags.1?PaymentSavedCredentials
+    if (_.saved_credentials != null && _.saved_credentials.length > 0)
+      this.vector(_.saved_credentials, this.object); // ?: PaymentSavedCredentials[] - flags.1?Vector<PaymentSavedCredentials>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["payments.validatedRequestedInfo"](_) {
@@ -13754,6 +13898,37 @@ export const $encoder = {
     this.int64(_.monthly_amount);           // : bigint - long
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
+  ["inputStorePaymentPremiumSubscription"](_) {
+    this.int32(-1502273946);
+    this.int32(
+      (+(_.restore != null) << 0)
+    )
+    if (_.restore != null)
+      this.true(_.restore);                 // ?: true - flags.0?true
+  },
+  ["inputStorePaymentGiftPremium"](_) {
+    this.int32(1634697192);
+    this.object(_.user_id);                 // : InputUser - InputUser
+    this.string(_.currency);                // : string - string
+    this.int64(_.amount);                   // : bigint - long
+  },
+  ["premiumGiftOption"](_) {
+    this.int32(1958953753);
+    this.int32(
+      (+(_.store_product != null) << 0)
+    )
+    this.int32(_.months);                   // : number - int
+    this.string(_.currency);                // : string - string
+    this.int64(_.amount);                   // : bigint - long
+    this.string(_.bot_url);                 // : string - string
+    if (_.store_product != null)
+      this.string(_.store_product);         // ?: string - flags.0?string
+  },
+  ["paymentFormMethod"](_) {
+    this.int32(-1996951013);
+    this.string(_.url);                     // : string - string
+    this.string(_.title);                   // : string - string
+  },
 };
 
 export const $decoder = new Map([
@@ -14972,6 +15147,13 @@ export const $decoder = new Map([
     _.text = this.string();                 // : string - string
     return _;
   }],
+  [-1415514682, function decode$messageActionGiftPremium() {
+    const _ = { _: "messageActionGiftPremium" }
+    _.currency = this.string();             // : string - string
+    _.amount = this.int64();                // : bigint - long
+    _.months = this.int32();                // : number - int
+    return _;
+  }],
   [-1460809483, function decode$dialog() {
     const _ = { _: "dialog" }
     const flags = this.int32();
@@ -15208,7 +15390,7 @@ export const $decoder = new Map([
   [-1631091139, function decode$inputReportReasonPersonalDetails() {
     return { _: "inputReportReasonPersonalDetails" }
   }],
-  [-1938625919, function decode$userFull() {
+  [-994968513, function decode$userFull() {
     const _ = { _: "userFull" }
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
@@ -15217,6 +15399,7 @@ export const $decoder = new Map([
     if (flags & 128) _.can_pin_message = true // ?: true - flags.7?true
     if (flags & 4096) _.has_scheduled = true // ?: true - flags.12?true
     if (flags & 8192) _.video_calls_available = true // ?: true - flags.13?true
+    if (flags & 1048576) _.voice_messages_forbidden = true // ?: true - flags.20?true
     _.id = this.int64();                    // : bigint - long
     if (flags & 2) _.about = this.string()  // ?: string - flags.1?string
     _.settings = this.object();             // : global.PeerSettings - PeerSettings
@@ -15231,6 +15414,7 @@ export const $decoder = new Map([
     if (flags & 65536) _.private_forward_name = this.string() // ?: string - flags.16?string
     if (flags & 131072) _.bot_group_admin_rights = this.object() // ?: global.ChatAdminRights - flags.17?ChatAdminRights
     if (flags & 262144) _.bot_broadcast_admin_rights = this.object() // ?: global.ChatAdminRights - flags.18?ChatAdminRights
+    if (flags & 524288) _.premium_gifts = this.vector(this.object) // ?: global.PremiumGiftOption[] - flags.19?Vector<PremiumGiftOption>
     return _;
   }],
   [341499403, function decode$contact() {
@@ -15649,6 +15833,7 @@ export const $decoder = new Map([
     const _ = { _: "updateStickerSetsOrder" }
     const flags = this.int32();
     if (flags & 1) _.masks = true           // ?: true - flags.0?true
+    if (flags & 2) _.emojis = true          // ?: true - flags.1?true
     _.order = this.vector(this.int64);      // : bigint[] - Vector<long>
     return _;
   }],
@@ -16104,6 +16289,9 @@ export const $decoder = new Map([
     _.transcription_id = this.int64();      // : bigint - long
     _.text = this.string();                 // : string - string
     return _;
+  }],
+  [-78886548, function decode$updateReadFeaturedEmojiStickers() {
+    return { _: "updateReadFeaturedEmojiStickers" }
   }],
   [-1519637954, function decode$updates__state() {
     const _ = { _: "updates.state" }
@@ -16643,6 +16831,9 @@ export const $decoder = new Map([
   [-786326563, function decode$inputPrivacyKeyAddedByPhone() {
     return { _: "inputPrivacyKeyAddedByPhone" }
   }],
+  [-1360618136, function decode$inputPrivacyKeyVoiceMessages() {
+    return { _: "inputPrivacyKeyVoiceMessages" }
+  }],
   [-1137792208, function decode$privacyKeyStatusTimestamp() {
     return { _: "privacyKeyStatusTimestamp" }
   }],
@@ -16666,6 +16857,9 @@ export const $decoder = new Map([
   }],
   [1124062251, function decode$privacyKeyAddedByPhone() {
     return { _: "privacyKeyAddedByPhone" }
+  }],
+  [110621716, function decode$privacyKeyVoiceMessages() {
+    return { _: "privacyKeyVoiceMessages" }
   }],
   [218751099, function decode$inputPrivacyValueAllowContacts() {
     return { _: "inputPrivacyValueAllowContacts" }
@@ -16788,6 +16982,14 @@ export const $decoder = new Map([
   }],
   [-1744710921, function decode$documentAttributeHasStickers() {
     return { _: "documentAttributeHasStickers" }
+  }],
+  [-48981863, function decode$documentAttributeCustomEmoji() {
+    const _ = { _: "documentAttributeCustomEmoji" }
+    const flags = this.int32();
+    if (flags & 1) _.free = true            // ?: true - flags.0?true
+    _.alt = this.string();                  // : string - string
+    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
+    return _;
   }],
   [-244016606, function decode$messages__stickersNotModified() {
     return { _: "messages.stickersNotModified" }
@@ -17003,7 +17205,10 @@ export const $decoder = new Map([
   [215889721, function decode$inputStickerSetAnimatedEmojiAnimations() {
     return { _: "inputStickerSetAnimatedEmojiAnimations" }
   }],
-  [-673242758, function decode$stickerSet() {
+  [-930399486, function decode$inputStickerSetPremiumGifts() {
+    return { _: "inputStickerSetPremiumGifts" }
+  }],
+  [768691932, function decode$stickerSet() {
     const _ = { _: "stickerSet" }
     const flags = this.int32();
     if (flags & 2) _.archived = true        // ?: true - flags.1?true
@@ -17011,6 +17216,7 @@ export const $decoder = new Map([
     if (flags & 8) _.masks = true           // ?: true - flags.3?true
     if (flags & 32) _.animated = true       // ?: true - flags.5?true
     if (flags & 64) _.videos = true         // ?: true - flags.6?true
+    if (flags & 128) _.emojis = true        // ?: true - flags.7?true
     if (flags & 1) _.installed_date = this.int32() // ?: number - flags.0?int
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
@@ -17019,6 +17225,7 @@ export const $decoder = new Map([
     if (flags & 16) _.thumbs = this.vector(this.object) // ?: global.PhotoSize[] - flags.4?Vector<PhotoSize>
     if (flags & 16) _.thumb_dc_id = this.int32() // ?: number - flags.4?int
     if (flags & 16) _.thumb_version = this.int32() // ?: number - flags.4?int
+    if (flags & 256) _.thumb_document_id = this.int64() // ?: bigint - flags.8?long
     _.count = this.int32();                 // : number - int
     _.hash = this.int32();                  // : number - int
     return _;
@@ -17303,6 +17510,13 @@ export const $decoder = new Map([
     const _ = { _: "messageEntitySpoiler" }
     _.offset = this.int32();                // : number - int
     _.length = this.int32();                // : number - int
+    return _;
+  }],
+  [-925956616, function decode$messageEntityCustomEmoji() {
+    const _ = { _: "messageEntityCustomEmoji" }
+    _.offset = this.int32();                // : number - int
+    _.length = this.int32();                // : number - int
+    _.document_id = this.int64();           // : bigint - long
     return _;
   }],
   [-292807034, function decode$inputChannelEmpty() {
@@ -17881,8 +18095,10 @@ export const $decoder = new Map([
     _.count = this.int32();                 // : number - int
     return _;
   }],
-  [-2067782896, function decode$messages__featuredStickers() {
+  [-1103615738, function decode$messages__featuredStickers() {
     const _ = { _: "messages.featuredStickers" }
+    const flags = this.int32();
+    if (flags & 1) _.premium = true         // ?: true - flags.0?true
     _.hash = this.int64();                  // : bigint - long
     _.count = this.int32();                 // : number - int
     _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
@@ -17924,6 +18140,13 @@ export const $decoder = new Map([
     const _ = { _: "stickerSetMultiCovered" }
     _.set = this.object();                  // : global.StickerSet - StickerSet
     _.covers = this.vector(this.object);    // : global.Document[] - Vector<Document>
+    return _;
+  }],
+  [451763941, function decode$stickerSetFullCovered() {
+    const _ = { _: "stickerSetFullCovered" }
+    _.set = this.object();                  // : global.StickerSet - StickerSet
+    _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
+    _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
     return _;
   }],
   [-1361650766, function decode$maskCoords() {
@@ -18362,6 +18585,15 @@ export const $decoder = new Map([
     _.scale = this.int32();                 // : number - int
     return _;
   }],
+  [-193992412, function decode$inputWebFileAudioAlbumThumbLocation() {
+    const _ = { _: "inputWebFileAudioAlbumThumbLocation" }
+    const flags = this.int32();
+    if (flags & 4) _.small = true           // ?: true - flags.2?true
+    if (flags & 1) _.document = this.object() // ?: global.InputDocument - flags.0?InputDocument
+    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
+    if (flags & 2) _.performer = this.string() // ?: string - flags.1?string
+    return _;
+  }],
   [568808380, function decode$upload__webFile() {
     const _ = { _: "upload.webFile" }
     _.size = this.int32();                  // : number - int
@@ -18371,7 +18603,7 @@ export const $decoder = new Map([
     _.bytes = this.bytes();                 // : BufferSource - bytes
     return _;
   }],
-  [-1340916937, function decode$payments__paymentForm() {
+  [-1610250415, function decode$payments__paymentForm() {
     const _ = { _: "payments.paymentForm" }
     const flags = this.int32();
     if (flags & 4) _.can_save_credentials = true // ?: true - flags.2?true
@@ -18386,8 +18618,9 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     if (flags & 16) _.native_provider = this.string() // ?: string - flags.4?string
     if (flags & 16) _.native_params = this.object() // ?: global.DataJSON - flags.4?DataJSON
+    if (flags & 64) _.additional_methods = this.vector(this.object) // ?: global.PaymentFormMethod[] - flags.6?Vector<PaymentFormMethod>
     if (flags & 1) _.saved_info = this.object() // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (flags & 2) _.saved_credentials = this.object() // ?: global.PaymentSavedCredentials - flags.1?PaymentSavedCredentials
+    if (flags & 2) _.saved_credentials = this.vector(this.object) // ?: global.PaymentSavedCredentials[] - flags.1?Vector<PaymentSavedCredentials>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
@@ -20694,6 +20927,35 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
+  [-1502273946, function decode$inputStorePaymentPremiumSubscription() {
+    const _ = { _: "inputStorePaymentPremiumSubscription" }
+    const flags = this.int32();
+    if (flags & 1) _.restore = true         // ?: true - flags.0?true
+    return _;
+  }],
+  [1634697192, function decode$inputStorePaymentGiftPremium() {
+    const _ = { _: "inputStorePaymentGiftPremium" }
+    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.currency = this.string();             // : string - string
+    _.amount = this.int64();                // : bigint - long
+    return _;
+  }],
+  [1958953753, function decode$premiumGiftOption() {
+    const _ = { _: "premiumGiftOption" }
+    const flags = this.int32();
+    _.months = this.int32();                // : number - int
+    _.currency = this.string();             // : string - string
+    _.amount = this.int64();                // : bigint - long
+    _.bot_url = this.string();              // : string - string
+    if (flags & 1) _.store_product = this.string() // ?: string - flags.0?string
+    return _;
+  }],
+  [-1996951013, function decode$paymentFormMethod() {
+    const _ = { _: "paymentFormMethod" }
+    _.url = this.string();                  // : string - string
+    _.title = this.string();                // : string - string
+    return _;
+  }],
 ]);
 
 // #region "method"
@@ -21371,8 +21633,13 @@ account.deleteAccount = function deleteAccount(_) {
   return { ..._, _: "account.deleteAccount" }
 }
 $encoder["account.deleteAccount"] = function (_) {
-  this.int32(1099779595);
+  this.int32(-1564422284);
+  this.int32(
+    (+(_.password != null) << 0)
+  )
   this.string(_.reason);                  // : string - string
+  if (_.password != null)
+    this.object(_.password);              // ?: InputCheckPasswordSRP - flags.0?InputCheckPasswordSRP
 };
 account.deleteAccount.ref = "account.deleteAccount";
 account.deleteAccount.verify = function($$) {
@@ -23558,9 +23825,12 @@ $encoder["messages.reorderStickerSets"] = function (_) {
   this.int32(2016638777);
   this.int32(
     (+(_.masks != null) << 0)
+    | (+(_.emojis != null) << 1)
   )
   if (_.masks != null)
     this.true(_.masks);                   // ?: true - flags.0?true
+  if (_.emojis != null)
+    this.true(_.emojis);                  // ?: true - flags.1?true
   this.vector(_.order, this.int64);       // : bigint[] - Vector<long>
 };
 messages.reorderStickerSets.ref = "messages.reorderStickerSets";
@@ -23965,9 +24235,12 @@ $encoder["messages.getArchivedStickers"] = function (_) {
   this.int32(1475442322);
   this.int32(
     (+(_.masks != null) << 0)
+    | (+(_.emojis != null) << 1)
   )
   if (_.masks != null)
     this.true(_.masks);                   // ?: true - flags.0?true
+  if (_.emojis != null)
+    this.true(_.emojis);                  // ?: true - flags.1?true
   this.int64(_.offset_id);                // : bigint - long
   this.int32(_.limit);                    // : number - int
 };
@@ -24001,7 +24274,7 @@ messages.getAttachedStickers.ref = "messages.getAttachedStickers";
 messages.getAttachedStickers.verify = function($$) {
   if (!Array.isArray($$)) throw new TypeError("require array");
   for (const $ of $$)
-    if (!(typeof $ == "object" && ["stickerSetCovered", "stickerSetMultiCovered"].includes($._))) throw new TypeError("array element");
+    if (!(typeof $ == "object" && ["stickerSetCovered", "stickerSetMultiCovered", "stickerSetFullCovered"].includes($._))) throw new TypeError("array element");
   return $$;
 };
 messages.setGameScore = function setGameScore(_) {
@@ -25649,6 +25922,46 @@ messages.rateTranscribedAudio.verify = function($$) {
   if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
+messages.getCustomEmojiDocuments = function getCustomEmojiDocuments(_) {
+  return { ..._, _: "messages.getCustomEmojiDocuments" }
+}
+$encoder["messages.getCustomEmojiDocuments"] = function (_) {
+  this.int32(-643100844);
+  this.vector(_.document_id, this.int64); // : bigint[] - Vector<long>
+};
+messages.getCustomEmojiDocuments.ref = "messages.getCustomEmojiDocuments";
+messages.getCustomEmojiDocuments.verify = function($$) {
+  if (!Array.isArray($$)) throw new TypeError("require array");
+  for (const $ of $$)
+    if (!(typeof $ == "object" && ["documentEmpty", "document"].includes($._))) throw new TypeError("array element");
+  return $$;
+};
+messages.getEmojiStickers = function getEmojiStickers(_) {
+  return { ..._, _: "messages.getEmojiStickers" }
+}
+$encoder["messages.getEmojiStickers"] = function (_) {
+  this.int32(-67329649);
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getEmojiStickers.ref = "messages.getEmojiStickers";
+messages.getEmojiStickers.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.allStickersNotModified", "messages.allStickers"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getFeaturedEmojiStickers = function getFeaturedEmojiStickers(_) {
+  return { ..._, _: "messages.getFeaturedEmojiStickers" }
+}
+$encoder["messages.getFeaturedEmojiStickers"] = function (_) {
+  this.int32(248473398);
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getFeaturedEmojiStickers.ref = "messages.getFeaturedEmojiStickers";
+messages.getFeaturedEmojiStickers.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.featuredStickersNotModified", "messages.featuredStickers"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 updates.getState = function getState() {
   return { _: "updates.getState" }
@@ -27080,14 +27393,9 @@ payments.assignAppStoreTransaction = function assignAppStoreTransaction(_) {
   return { ..._, _: "payments.assignAppStoreTransaction" }
 }
 $encoder["payments.assignAppStoreTransaction"] = function (_) {
-  this.int32(267129798);
-  this.int32(
-    (+(_.restore != null) << 0)
-  )
-  if (_.restore != null)
-    this.true(_.restore);                 // ?: true - flags.0?true
-  this.string(_.transaction_id);          // : string - string
+  this.int32(-2131921795);
   this.bytes(_.receipt);                  // : BufferSource - bytes
+  this.object(_.purpose);                 // : InputStorePaymentPurpose - InputStorePaymentPurpose
 };
 payments.assignAppStoreTransaction.ref = "payments.assignAppStoreTransaction";
 payments.assignAppStoreTransaction.verify = function($$) {
@@ -27099,8 +27407,9 @@ payments.assignPlayMarketTransaction = function assignPlayMarketTransaction(_) {
   return { ..._, _: "payments.assignPlayMarketTransaction" }
 }
 $encoder["payments.assignPlayMarketTransaction"] = function (_) {
-  this.int32(1336560365);
-  this.string(_.purchase_token);          // : string - string
+  this.int32(-537046829);
+  this.object(_.receipt);                 // : DataJSON - DataJSON
+  this.object(_.purpose);                 // : InputStorePaymentPurpose - InputStorePaymentPurpose
 };
 payments.assignPlayMarketTransaction.ref = "payments.assignPlayMarketTransaction";
 payments.assignPlayMarketTransaction.verify = function($$) {
@@ -27108,24 +27417,12 @@ payments.assignPlayMarketTransaction.verify = function($$) {
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
   return $$;
 };
-payments.restorePlayMarketReceipt = function restorePlayMarketReceipt(_) {
-  return { ..._, _: "payments.restorePlayMarketReceipt" }
-}
-$encoder["payments.restorePlayMarketReceipt"] = function (_) {
-  this.int32(-781917334);
-  this.bytes(_.receipt);                  // : BufferSource - bytes
-};
-payments.restorePlayMarketReceipt.ref = "payments.restorePlayMarketReceipt";
-payments.restorePlayMarketReceipt.verify = function($$) {
-  const $ = $$;
-  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
-  return $$;
-};
-payments.canPurchasePremium = function canPurchasePremium() {
-  return { _: "payments.canPurchasePremium" }
+payments.canPurchasePremium = function canPurchasePremium(_) {
+  return { ..._, _: "payments.canPurchasePremium" }
 }
 $encoder["payments.canPurchasePremium"] = function (_) {
-  this.int32(-1435856696);
+  this.int32(-1614700874);
+  this.object(_.purpose);                 // : InputStorePaymentPurpose - InputStorePaymentPurpose
 };
 payments.canPurchasePremium.ref = "payments.canPurchasePremium";
 payments.canPurchasePremium.verify = function($$) {

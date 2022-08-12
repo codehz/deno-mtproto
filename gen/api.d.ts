@@ -1264,6 +1264,11 @@ declare namespace global {
     "messageActionWebViewDataSent": {
       text: string;                           // string
     },
+    "messageActionGiftPremium": {
+      currency: string;                       // string
+      amount: bigint;                         // long
+      months: number;                         // int
+    },
   };
 
   export const messageActionEmpty: TLConstructorEmpty<"messageActionEmpty">;
@@ -1298,6 +1303,7 @@ declare namespace global {
   export const messageActionChatJoinedByRequest: TLConstructorEmpty<"messageActionChatJoinedByRequest">;
   export const messageActionWebViewDataSentMe: TLConstructor<_MessageAction, "messageActionWebViewDataSentMe">;
   export const messageActionWebViewDataSent: TLConstructor<_MessageAction, "messageActionWebViewDataSent">;
+  export const messageActionGiftPremium: TLConstructor<_MessageAction, "messageActionGiftPremium">;
   export type Dialog<
     K extends keyof _Dialog = keyof _Dialog
   > = ToUnderscore<_Dialog, K>;
@@ -1535,6 +1541,7 @@ declare namespace global {
       can_pin_message?: true;                 // flags.7?true
       has_scheduled?: true;                   // flags.12?true
       video_calls_available?: true;           // flags.13?true
+      voice_messages_forbidden?: true;        // flags.20?true
       id: bigint;                             // long
       about?: string;                         // flags.1?string
       settings: global.PeerSettings;          // PeerSettings
@@ -1549,6 +1556,7 @@ declare namespace global {
       private_forward_name?: string;          // flags.16?string
       bot_group_admin_rights?: global.ChatAdminRights; // flags.17?ChatAdminRights
       bot_broadcast_admin_rights?: global.ChatAdminRights; // flags.18?ChatAdminRights
+      premium_gifts?: global.PremiumGiftOption[]; // flags.19?Vector<PremiumGiftOption>
     },
   };
 
@@ -1790,6 +1798,7 @@ declare namespace global {
     },
     "updateStickerSetsOrder": {
       masks?: true;                           // flags.0?true
+      emojis?: true;                          // flags.1?true
       order: bigint[];                        // Vector<long>
     },
     "updateStickerSets": {}
@@ -2090,6 +2099,7 @@ declare namespace global {
       transcription_id: bigint;               // long
       text: string;                           // string
     },
+    "updateReadFeaturedEmojiStickers": {}
   };
 
   export const updateNewMessage: TLConstructor<_Update, "updateNewMessage">;
@@ -2193,6 +2203,7 @@ declare namespace global {
   export const updateBotMenuButton: TLConstructor<_Update, "updateBotMenuButton">;
   export const updateSavedRingtones: TLConstructorEmpty<"updateSavedRingtones">;
   export const updateTranscribedAudio: TLConstructor<_Update, "updateTranscribedAudio">;
+  export const updateReadFeaturedEmojiStickers: TLConstructorEmpty<"updateReadFeaturedEmojiStickers">;
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
@@ -2605,6 +2616,7 @@ declare namespace global {
     "inputPrivacyKeyProfilePhoto": {}
     "inputPrivacyKeyPhoneNumber": {}
     "inputPrivacyKeyAddedByPhone": {}
+    "inputPrivacyKeyVoiceMessages": {}
   };
 
   export const inputPrivacyKeyStatusTimestamp: TLConstructorEmpty<"inputPrivacyKeyStatusTimestamp">;
@@ -2615,6 +2627,7 @@ declare namespace global {
   export const inputPrivacyKeyProfilePhoto: TLConstructorEmpty<"inputPrivacyKeyProfilePhoto">;
   export const inputPrivacyKeyPhoneNumber: TLConstructorEmpty<"inputPrivacyKeyPhoneNumber">;
   export const inputPrivacyKeyAddedByPhone: TLConstructorEmpty<"inputPrivacyKeyAddedByPhone">;
+  export const inputPrivacyKeyVoiceMessages: TLConstructorEmpty<"inputPrivacyKeyVoiceMessages">;
   export type PrivacyKey<
     K extends keyof _PrivacyKey = keyof _PrivacyKey
   > = ToUnderscore<_PrivacyKey, K>;
@@ -2627,6 +2640,7 @@ declare namespace global {
     "privacyKeyProfilePhoto": {}
     "privacyKeyPhoneNumber": {}
     "privacyKeyAddedByPhone": {}
+    "privacyKeyVoiceMessages": {}
   };
 
   export const privacyKeyStatusTimestamp: TLConstructorEmpty<"privacyKeyStatusTimestamp">;
@@ -2637,6 +2651,7 @@ declare namespace global {
   export const privacyKeyProfilePhoto: TLConstructorEmpty<"privacyKeyProfilePhoto">;
   export const privacyKeyPhoneNumber: TLConstructorEmpty<"privacyKeyPhoneNumber">;
   export const privacyKeyAddedByPhone: TLConstructorEmpty<"privacyKeyAddedByPhone">;
+  export const privacyKeyVoiceMessages: TLConstructorEmpty<"privacyKeyVoiceMessages">;
   export type InputPrivacyRule<
     K extends keyof _InputPrivacyRule = keyof _InputPrivacyRule
   > = ToUnderscore<_InputPrivacyRule, K>;
@@ -2740,6 +2755,11 @@ declare namespace global {
       file_name: string;                      // string
     },
     "documentAttributeHasStickers": {}
+    "documentAttributeCustomEmoji": {
+      free?: true;                            // flags.0?true
+      alt: string;                            // string
+      stickerset: global.InputStickerSet;     // InputStickerSet
+    },
   };
 
   export const documentAttributeImageSize: TLConstructor<_DocumentAttribute, "documentAttributeImageSize">;
@@ -2749,6 +2769,7 @@ declare namespace global {
   export const documentAttributeAudio: TLConstructor<_DocumentAttribute, "documentAttributeAudio">;
   export const documentAttributeFilename: TLConstructor<_DocumentAttribute, "documentAttributeFilename">;
   export const documentAttributeHasStickers: TLConstructorEmpty<"documentAttributeHasStickers">;
+  export const documentAttributeCustomEmoji: TLConstructor<_DocumentAttribute, "documentAttributeCustomEmoji">;
   export type StickerPack<
     K extends keyof _StickerPack = keyof _StickerPack
   > = ToUnderscore<_StickerPack, K>;
@@ -2905,6 +2926,7 @@ declare namespace global {
       emoticon: string;                       // string
     },
     "inputStickerSetAnimatedEmojiAnimations": {}
+    "inputStickerSetPremiumGifts": {}
   };
 
   export const inputStickerSetEmpty: TLConstructorEmpty<"inputStickerSetEmpty">;
@@ -2913,6 +2935,7 @@ declare namespace global {
   export const inputStickerSetAnimatedEmoji: TLConstructorEmpty<"inputStickerSetAnimatedEmoji">;
   export const inputStickerSetDice: TLConstructor<_InputStickerSet, "inputStickerSetDice">;
   export const inputStickerSetAnimatedEmojiAnimations: TLConstructorEmpty<"inputStickerSetAnimatedEmojiAnimations">;
+  export const inputStickerSetPremiumGifts: TLConstructorEmpty<"inputStickerSetPremiumGifts">;
   export type StickerSet<
     K extends keyof _StickerSet = keyof _StickerSet
   > = ToUnderscore<_StickerSet, K>;
@@ -2923,6 +2946,7 @@ declare namespace global {
       masks?: true;                           // flags.3?true
       animated?: true;                        // flags.5?true
       videos?: true;                          // flags.6?true
+      emojis?: true;                          // flags.7?true
       installed_date?: number;                // flags.0?int
       id: bigint;                             // long
       access_hash: bigint;                    // long
@@ -2931,6 +2955,7 @@ declare namespace global {
       thumbs?: global.PhotoSize[];            // flags.4?Vector<PhotoSize>
       thumb_dc_id?: number;                   // flags.4?int
       thumb_version?: number;                 // flags.4?int
+      thumb_document_id?: bigint;             // flags.8?long
       count: number;                          // int
       hash: number;                           // int
     },
@@ -3172,6 +3197,11 @@ declare namespace global {
       offset: number;                         // int
       length: number;                         // int
     },
+    "messageEntityCustomEmoji": {
+      offset: number;                         // int
+      length: number;                         // int
+      document_id: bigint;                    // long
+    },
   };
 
   export const messageEntityUnknown: TLConstructor<_MessageEntity, "messageEntityUnknown">;
@@ -3194,6 +3224,7 @@ declare namespace global {
   export const messageEntityBlockquote: TLConstructor<_MessageEntity, "messageEntityBlockquote">;
   export const messageEntityBankCard: TLConstructor<_MessageEntity, "messageEntityBankCard">;
   export const messageEntitySpoiler: TLConstructor<_MessageEntity, "messageEntitySpoiler">;
+  export const messageEntityCustomEmoji: TLConstructor<_MessageEntity, "messageEntityCustomEmoji">;
   export type InputChannel<
     K extends keyof _InputChannel = keyof _InputChannel
   > = ToUnderscore<_InputChannel, K>;
@@ -3633,10 +3664,16 @@ declare namespace global {
       set: global.StickerSet;                 // StickerSet
       covers: global.Document[];              // Vector<Document>
     },
+    "stickerSetFullCovered": {
+      set: global.StickerSet;                 // StickerSet
+      packs: global.StickerPack[];            // Vector<StickerPack>
+      documents: global.Document[];           // Vector<Document>
+    },
   };
 
   export const stickerSetCovered: TLConstructor<_StickerSetCovered, "stickerSetCovered">;
   export const stickerSetMultiCovered: TLConstructor<_StickerSetCovered, "stickerSetMultiCovered">;
+  export const stickerSetFullCovered: TLConstructor<_StickerSetCovered, "stickerSetFullCovered">;
   export type MaskCoords<
     K extends keyof _MaskCoords = keyof _MaskCoords
   > = ToUnderscore<_MaskCoords, K>;
@@ -4095,10 +4132,17 @@ declare namespace global {
       zoom: number;                           // int
       scale: number;                          // int
     },
+    "inputWebFileAudioAlbumThumbLocation": {
+      small?: true;                           // flags.2?true
+      document?: global.InputDocument;        // flags.0?InputDocument
+      title?: string;                         // flags.1?string
+      performer?: string;                     // flags.1?string
+    },
   };
 
   export const inputWebFileLocation: TLConstructor<_InputWebFileLocation, "inputWebFileLocation">;
   export const inputWebFileGeoPointLocation: TLConstructor<_InputWebFileLocation, "inputWebFileGeoPointLocation">;
+  export const inputWebFileAudioAlbumThumbLocation: TLConstructor<_InputWebFileLocation, "inputWebFileAudioAlbumThumbLocation">;
   export type InputPaymentCredentials<
     K extends keyof _InputPaymentCredentials = keyof _InputPaymentCredentials
   > = ToUnderscore<_InputPaymentCredentials, K>;
@@ -6250,6 +6294,47 @@ declare namespace global {
 
   export const inputInvoiceMessage: TLConstructor<_InputInvoice, "inputInvoiceMessage">;
   export const inputInvoiceSlug: TLConstructor<_InputInvoice, "inputInvoiceSlug">;
+  export type InputStorePaymentPurpose<
+    K extends keyof _InputStorePaymentPurpose = keyof _InputStorePaymentPurpose
+  > = ToUnderscore<_InputStorePaymentPurpose, K>;
+  export type _InputStorePaymentPurpose = {
+    "inputStorePaymentPremiumSubscription": {
+      restore?: true;                         // flags.0?true
+    },
+    "inputStorePaymentGiftPremium": {
+      user_id: global.InputUser;              // InputUser
+      currency: string;                       // string
+      amount: bigint;                         // long
+    },
+  };
+
+  export const inputStorePaymentPremiumSubscription: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentPremiumSubscription">;
+  export const inputStorePaymentGiftPremium: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentGiftPremium">;
+  export type PremiumGiftOption<
+    K extends keyof _PremiumGiftOption = keyof _PremiumGiftOption
+  > = ToUnderscore<_PremiumGiftOption, K>;
+  export type _PremiumGiftOption = {
+    "premiumGiftOption": {
+      months: number;                         // int
+      currency: string;                       // string
+      amount: bigint;                         // long
+      bot_url: string;                        // string
+      store_product?: string;                 // flags.0?string
+    },
+  };
+
+  export const premiumGiftOption: TLConstructor<_PremiumGiftOption, "premiumGiftOption">;
+  export type PaymentFormMethod<
+    K extends keyof _PaymentFormMethod = keyof _PaymentFormMethod
+  > = ToUnderscore<_PaymentFormMethod, K>;
+  export type _PaymentFormMethod = {
+    "paymentFormMethod": {
+      url: string;                            // string
+      title: string;                          // string
+    },
+  };
+
+  export const paymentFormMethod: TLConstructor<_PaymentFormMethod, "paymentFormMethod">;
 }
 
 export default global;
@@ -6758,6 +6843,7 @@ export namespace messages {
       count: number;                          // int
     },
     "messages.featuredStickers": {
+      premium?: true;                         // flags.0?true
       hash: bigint;                           // long
       count: number;                          // int
       sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
@@ -7776,8 +7862,9 @@ export namespace payments {
       url: string;                            // string
       native_provider?: string;               // flags.4?string
       native_params?: global.DataJSON;        // flags.4?DataJSON
+      additional_methods?: global.PaymentFormMethod[]; // flags.6?Vector<PaymentFormMethod>
       saved_info?: global.PaymentRequestedInfo; // flags.0?PaymentRequestedInfo
-      saved_credentials?: global.PaymentSavedCredentials; // flags.1?PaymentSavedCredentials
+      saved_credentials?: global.PaymentSavedCredentials[]; // flags.1?Vector<PaymentSavedCredentials>
       users: global.User[];                   // Vector<User>
     },
   };
@@ -8426,7 +8513,10 @@ export type AnyObject =
   | global.InputInvoice
   | payments.ExportedInvoice
   | messages.TranscribedAudio
-  | help.PremiumPromo;
+  | help.PremiumPromo
+  | global.InputStorePaymentPurpose
+  | global.PremiumGiftOption
+  | global.PaymentFormMethod;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
 export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
@@ -8639,6 +8729,7 @@ export namespace account {
   }, PrivacyRules>
   export const deleteAccount: TLApiMethod<"account.deleteAccount", {
     reason: string                          // string
+    password?: global.InputCheckPasswordSRP // flags.0?InputCheckPasswordSRP
   }, boolean>
   export const getAccountTTL: TLApiMethod<"account.getAccountTTL", void, global.AccountDaysTTL>
   export const setAccountTTL: TLApiMethod<"account.setAccountTTL", {
@@ -9218,6 +9309,7 @@ export namespace messages {
   }, Messages>
   export const reorderStickerSets: TLApiMethod<"messages.reorderStickerSets", {
     masks?: true                            // flags.0?true
+    emojis?: true                           // flags.1?true
     order: bigint[]                         // Vector<long>
   }, boolean>
   export const getDocumentByHash: TLApiMethod<"messages.getDocumentByHash", {
@@ -9328,6 +9420,7 @@ export namespace messages {
   }, boolean>
   export const getArchivedStickers: TLApiMethod<"messages.getArchivedStickers", {
     masks?: true                            // flags.0?true
+    emojis?: true                           // flags.1?true
     offset_id: bigint                       // long
     limit: number                           // int
   }, ArchivedStickers>
@@ -9794,6 +9887,15 @@ export namespace messages {
     transcription_id: bigint                // long
     good: boolean                           // Bool
   }, boolean>
+  export const getCustomEmojiDocuments: TLApiMethod<"messages.getCustomEmojiDocuments", {
+    document_id: bigint[]                   // Vector<long>
+  }, global.Document[]>
+  export const getEmojiStickers: TLApiMethod<"messages.getEmojiStickers", {
+    hash: bigint                            // long
+  }, AllStickers>
+  export const getFeaturedEmojiStickers: TLApiMethod<"messages.getFeaturedEmojiStickers", {
+    hash: bigint                            // long
+  }, FeaturedStickers>
 }
 
 export namespace updates {
@@ -10178,17 +10280,16 @@ export namespace payments {
     invoice_media: global.InputMedia        // InputMedia
   }, ExportedInvoice>
   export const assignAppStoreTransaction: TLApiMethod<"payments.assignAppStoreTransaction", {
-    restore?: true                          // flags.0?true
-    transaction_id: string                  // string
     receipt: BufferSource                   // bytes
+    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
   }, global.Updates>
   export const assignPlayMarketTransaction: TLApiMethod<"payments.assignPlayMarketTransaction", {
-    purchase_token: string                  // string
+    receipt: global.DataJSON                // DataJSON
+    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
   }, global.Updates>
-  export const restorePlayMarketReceipt: TLApiMethod<"payments.restorePlayMarketReceipt", {
-    receipt: BufferSource                   // bytes
-  }, global.Updates>
-  export const canPurchasePremium: TLApiMethod<"payments.canPurchasePremium", void, boolean>
+  export const canPurchasePremium: TLApiMethod<"payments.canPurchasePremium", {
+    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
+  }, boolean>
   export const requestRecurringPayment: TLApiMethod<"payments.requestRecurringPayment", {
     user_id: global.InputUser               // InputUser
     recurring_init_charge: string           // string
