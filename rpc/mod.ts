@@ -170,6 +170,7 @@ class QueueHandler<T> {
 type Events = api._Update & {
   terminate: Record<never, never>;
   authorize: { resolve?: Promise<void> };
+  sent: api._Updates["updateShortSentMessage"];
 };
 
 export default class RPC extends EventEmitter<Events> {
@@ -482,7 +483,8 @@ export default class RPC extends EventEmitter<Events> {
       | mt.RpcResult
       | mt.Object
       | mt.Pong
-      | api.Update,
+      | api.Update
+      | api.Updates,
     msgid: bigint,
   ): Promise<void> {
     switch (data._) {
@@ -587,6 +589,56 @@ export default class RPC extends EventEmitter<Events> {
             this.#waitlist.delete(data.bad_msg_id);
           }
         }
+        return;
+      case "updates":
+      case "updatesCombined":
+        this.#ack_queue.push(msgid);
+        data.updates.forEach((update) => this.emit(update._, update));
+        return;
+      case "updatesTooLong":
+        this.#ack_queue.push(msgid);
+        return;
+      case "updateShort":
+        this.#ack_queue.push(msgid);
+        this.emit(data.update._, data.update);
+        return;
+      case "updateShortMessage":
+        this.#ack_queue.push(msgid);
+        this.emit("updateNewMessage", {
+          message: {
+            ...data,
+            _: "message",
+            peer_id: {
+              _: "peerUser",
+              user_id: data.user_id,
+            },
+          },
+          pts: data.pts,
+          pts_count: data.pts_count,
+        });
+        return;
+      case "updateShortChatMessage":
+        this.#ack_queue.push(msgid);
+        this.emit("updateNewMessage", {
+          message: {
+            ...data,
+            _: "message",
+            from_id: {
+              _: "peerUser",
+              user_id: data.from_id,
+            },
+            peer_id: {
+              _: "peerChat",
+              chat_id: data.chat_id,
+            },
+          },
+          pts: data.pts,
+          pts_count: data.pts_count,
+        });
+        return;
+      case "updateShortSentMessage":
+        this.#ack_queue.push(msgid);
+        this.emit("sent", data);
         return;
     }
     this.#ack_queue.push(msgid);
