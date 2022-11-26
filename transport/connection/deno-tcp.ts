@@ -45,6 +45,7 @@ export class DenoTCP implements Transport {
         }
       }
     } catch (e) {
+      console.error(e);
       if (e instanceof Deno.errors.BadResource && this.#closed) {
         return;
       }
@@ -59,7 +60,7 @@ export class DenoTCP implements Transport {
 }
 
 export default function createFactory(
-  codec: () => PacketCodec,
+  codec: () => PacketCodec
 ): TransportFactory {
   return async ({ ip, port }) => {
     const conn = await Deno.connect({ hostname: ip, port });

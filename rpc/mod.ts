@@ -19,7 +19,10 @@ import { serialize } from "../tl/serializer.ts";
 import { Deserializer } from "../tl/deserializer.ts";
 import { rand_array, rand_bigint, rand_int } from "../common/utils.ts";
 import { max } from "../common/alg.ts";
-import { decode as debase64, encode as base64 } from "https://deno.land/std@0.166.0/encoding/base64.ts";
+import {
+  decode as debase64,
+  encode as base64,
+} from "https://deno.land/std@0.166.0/encoding/base64.ts";
 import authorize from "../rpc/authorizor.ts";
 import { decompressObject } from "../common/gzip.ts";
 import { DCIdentifier } from "../common/dc.ts";
@@ -36,9 +39,10 @@ type GenApiMethods<T> = {
   [K in FilteredKeys<T, TLApiMethod<any, any, any>>]: T[K] extends {
     (param: infer I): any;
     verify(param: infer R): any;
-  } ? (
-      param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
-    ) => Promise<R>
+  }
+    ? (
+        param: void extends I ? void : Omit<I, "api_id" | "api_hash">
+      ) => Promise<R>
     : never;
 };
 
@@ -92,11 +96,13 @@ class Session {
     const timeMSec = timeTicks % 1000;
     const random = rand_int(0xffff);
 
-    return this.#lastmsgid = max(
+    return (this.#lastmsgid = max(
       this.#lastmsgid + 4n,
-      (BigInt(timeSec) << 32n) | (BigInt(timeMSec) << 21n) |
-        (BigInt(random) << 3n) | 4n,
-    );
+      (BigInt(timeSec) << 32n) |
+        (BigInt(timeMSec) << 21n) |
+        (BigInt(random) << 3n) |
+        4n
+    ));
   }
 }
 
@@ -123,7 +129,7 @@ class QueueHandler<T> {
   constructor(
     handler: (t: T[]) => Promise<void>,
     errhandler: (err: any) => void,
-    blocked = true,
+    blocked = true
   ) {
     this.#handler = handler;
     this.#errhandler = errhandler;
@@ -215,12 +221,11 @@ export default class RPC extends EventEmitter<Events> {
     msg_ids.length = 0;
     await this.#send_encrypted(packet, { content_related: false });
   }, this.#handleerr);
-  #pending_calls = new QueueHandler<PendingCall>(
-    async (list) => {
-      while (list.length) {
-        const { method, params, resolver } = list.shift()!;
-        const packet = this.#session.first
-          ? serialize(invokeWithLayer, {
+  #pending_calls = new QueueHandler<PendingCall>(async (list) => {
+    while (list.length) {
+      const { method, params, resolver } = list.shift()!;
+      const packet = this.#session.first
+        ? serialize(invokeWithLayer, {
             layer: API_LAYER,
             query: initConnection({
               ...this.#environment_information,
@@ -235,17 +240,15 @@ export default class RPC extends EventEmitter<Events> {
               }),
             }),
           })
-          : serialize(method, {
+        : serialize(method, {
             ...params,
             api_id: this.#api_id,
             api_hash: this.#api_hash,
           });
-        const msgid = await this.#send_encrypted(packet);
-        this.#waitlist.set(msgid, { resolver, packet });
-      }
-    },
-    this.#handleerr,
-  );
+      const msgid = await this.#send_encrypted(packet);
+      this.#waitlist.set(msgid, { resolver, packet });
+    }
+  }, this.#handleerr);
 
   get state() {
     return this.#state;
@@ -257,7 +260,7 @@ export default class RPC extends EventEmitter<Events> {
     dcid: DCIdentifier,
     api_id: number,
     api_hash: string,
-    environment_information: EnvironmentInformation,
+    environment_information: EnvironmentInformation
   ) {
     super();
     this.#transport = transport;
@@ -267,7 +270,7 @@ export default class RPC extends EventEmitter<Events> {
     this.#api_hash = api_hash;
     this.#environment_information = environment_information;
     this.#send_queue.unblock();
-    this.#recv_loop();
+    this.#recv_loop().catch(this.#handleerr);
     this.#connect().catch(this.#handleerr);
   }
 
@@ -301,23 +304,19 @@ export default class RPC extends EventEmitter<Events> {
   }
 
   async #recv_loop() {
-    try {
-      for await (const event of this.#transport) {
-        switch (event._) {
-          case "error":
-            await this.#error(event.code);
-            break;
-          case "message":
-            if (this.#handle == null) throw new Error("no message handler");
-            await this.#handle(event.data);
-            break;
-        }
+    for await (const event of this.#transport) {
+      switch (event._) {
+        case "error":
+          await this.#error(event.code);
+          break;
+        case "message":
+          if (this.#handle == null) throw new Error("no message handler");
+          await this.#handle(event.data);
+          break;
       }
-      if (this.#state != "disconnected") {
-        this.#handleerr("connection ended");
-      }
-    } catch (e) {
-      this.#handleerr(e);
+    }
+    if (this.#state != "disconnected") {
+      this.#handleerr("connection ended");
     }
   }
 
@@ -343,12 +342,12 @@ export default class RPC extends EventEmitter<Events> {
     const key = concat_array(
       a.subarray(0, 8),
       view_arr(b, 8, 16),
-      view_arr(a, 24, 8),
+      view_arr(a, 24, 8)
     );
     const iv = concat_array(
       b.subarray(0, 8),
       view_arr(a, 8, 16),
-      view_arr(b, 24, 8),
+      view_arr(b, 24, 8)
     );
     return new aes.IGE(key, iv);
   }
@@ -361,16 +360,14 @@ export default class RPC extends EventEmitter<Events> {
     return this.#aes_instance(msgkey, false).encrypt(data);
   }
 
-  call<N extends string, R>(
-    method: TLApiMethod<N, void, R>,
+  call<N extends string, R>(method: TLApiMethod<N, void, R>): Promise<R>;
+  call<N extends string, T, R>(
+    method: TLApiMethod<N, T, R>,
+    params: Omit<T, "api_id" | "api_hash">
   ): Promise<R>;
   call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
-    params: Omit<T, "api_id" | "api_hash">,
-  ): Promise<R>;
-  call<N extends string, T, R>(
-    method: TLApiMethod<N, T, R>,
-    params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
+    params: T extends void ? void : Omit<T, "api_id" | "api_hash">
   ): Promise<R> {
     const resolver = new Resolver<R>();
     this.#pending_calls.push({
@@ -383,7 +380,9 @@ export default class RPC extends EventEmitter<Events> {
 
   readonly api: GenApi<typeof apiset> = cached((name) => {
     if (
-      name in apiset && !name.startsWith("$") && name != "mt" &&
+      name in apiset &&
+      !name.startsWith("$") &&
+      name != "mt" &&
       name != "default"
     ) {
       const obj = (apiset as any)[name];
@@ -403,7 +402,7 @@ export default class RPC extends EventEmitter<Events> {
     }: {
       content_related?: boolean;
       msgid?: bigint;
-    } = {},
+    } = {}
   ) {
     const salt = this.#salt;
     const seqno = content_related
@@ -426,7 +425,7 @@ export default class RPC extends EventEmitter<Events> {
     const msgkey = view_arr(
       sha256(view_arr(this.#auth, 88, 32), payload),
       8,
-      16,
+      16
     );
     const encrypted = this.#aes_encrypt(msgkey, payload);
     const authkeyid = sha1(this.#auth).subarray(-8);
@@ -445,13 +444,13 @@ export default class RPC extends EventEmitter<Events> {
         msgkey,
         encrypted_payload.subarray(
           0,
-          encrypted_payload.length - encrypted_payload.length % 16,
-        ),
+          encrypted_payload.length - (encrypted_payload.length % 16)
+        )
       );
       const computed_msgkey = view_arr(
         sha256(view_arr(this.#auth, 96, 32), decrypted_payload),
         8,
-        16,
+        16
       );
       if (!eq_array(msgkey, computed_msgkey)) {
         throw new Error(`Incorrect msgkey`);
@@ -485,7 +484,7 @@ export default class RPC extends EventEmitter<Events> {
       | mt.Pong
       | api.Update
       | api.Updates,
-    msgid: bigint,
+    msgid: bigint
   ): Promise<void> {
     switch (data._) {
       case "mt.pong":
@@ -511,7 +510,7 @@ export default class RPC extends EventEmitter<Events> {
         this.#ack_queue.push(msgid);
         this.#setitem(
           "salt",
-          base64(this.#salt = frombig(data.server_salt, true)),
+          base64((this.#salt = frombig(data.server_salt, true)))
         );
         return;
       case "mt.rpc_result": {
@@ -569,14 +568,14 @@ export default class RPC extends EventEmitter<Events> {
       case "mt.bad_server_salt":
         this.#setitem(
           "salt",
-          base64(this.#salt = frombig(data.new_server_salt, true)),
+          base64((this.#salt = frombig(data.new_server_salt, true)))
         );
         await this.#resend_packet(data.bad_msg_id);
         return;
       case "mt.bad_msg_notification":
         if ([16, 17].includes(data.error_code)) {
           const server_time = +(msgid >> 32n).toString();
-          const offset = (Date.now() / 1000) - server_time;
+          const offset = Date.now() / 1000 - server_time;
           this.#setitem("time_offset", (this.#session.offset = offset) + "");
           this.#resend_packet(data.bad_msg_id).catch(this.#handleerr);
           return;
@@ -683,12 +682,12 @@ export default class RPC extends EventEmitter<Events> {
       set_timeoffset: (offset) => {
         this.#setitem(
           "time_offset",
-          (this.#session.offset = offset).toString(),
+          (this.#session.offset = offset).toString()
         );
       },
     });
-    this.#setitem("auth", base64(this.#auth = auth));
-    this.#setitem("salt", base64(this.#salt = salt));
+    this.#setitem("auth", base64((this.#auth = auth)));
+    this.#setitem("salt", base64((this.#salt = salt)));
   }
 
   async #error(code: number) {
