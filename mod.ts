@@ -37,7 +37,7 @@ export default class MTProto {
   #connections = new Map<DCIdentifier, RPC>();
   #dclist: api.DcOption[] = [];
   #ipv6: IPv6Policy;
-  #setup_rpc?: (rpc: RPC) => void;
+  setup_rpc?: (rpc: RPC) => void;
 
   #setting_get(key: string) {
     return this.#storage.get({ _: "global" }).get(key);
@@ -80,11 +80,7 @@ export default class MTProto {
       port: this.#initdc.port,
     });
     this.#ipv6 = ipv6_policy;
-    this.#setup_rpc = setup_rpc;
-  }
-
-  set setup_rpc(value: ((rpc: RPC) => void) | undefined) {
-    this.#setup_rpc = value;
+    this.setup_rpc = setup_rpc;
   }
 
   async init() {
@@ -158,7 +154,7 @@ export default class MTProto {
         );
         rpc.once("terminate", () => this.#connections.delete(dcid));
         this.#connections.set(dcid, rpc);
-        this.#setup_rpc?.(rpc);
+        this.setup_rpc?.(rpc);
         return rpc;
       } catch (e) {
         lasterr = e;
