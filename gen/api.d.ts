@@ -2146,8 +2146,13 @@ declare namespace global {
       extended_media: global.MessageExtendedMedia; // MessageExtendedMedia
     },
     "updateChannelPinnedTopic": {
+      pinned?: true;                          // flags.0?true
       channel_id: bigint;                     // long
-      topic_id?: number;                      // flags.0?int
+      topic_id: number;                       // int
+    },
+    "updateChannelPinnedTopics": {
+      channel_id: bigint;                     // long
+      order?: number[];                       // flags.0?Vector<int>
     },
   };
 
@@ -2259,6 +2264,7 @@ declare namespace global {
   export const updateMoveStickerSetToTop: TLConstructor<_Update, "updateMoveStickerSetToTop">;
   export const updateMessageExtendedMedia: TLConstructor<_Update, "updateMessageExtendedMedia">;
   export const updateChannelPinnedTopic: TLConstructor<_Update, "updateChannelPinnedTopic">;
+  export const updateChannelPinnedTopics: TLConstructor<_Update, "updateChannelPinnedTopics">;
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
@@ -6595,6 +6601,7 @@ declare namespace global {
       my?: true;                              // flags.1?true
       closed?: true;                          // flags.2?true
       pinned?: true;                          // flags.3?true
+      short?: true;                           // flags.5?true
       id: number;                             // int
       date: number;                           // int
       title: string;                          // string
@@ -6925,6 +6932,7 @@ export namespace messages {
       count: number;                          // int
       offset_id_offset?: number;              // flags.2?int
       messages: global.Message[];             // Vector<Message>
+      topics: global.ForumTopic[];            // Vector<ForumTopic>
       chats: global.Chat[];                   // Vector<Chat>
       users: global.User[];                   // Vector<User>
     },
@@ -10683,6 +10691,11 @@ export namespace channels {
     channel: global.InputChannel            // InputChannel
     top_msg_id: number                      // int
   }, messages.AffectedHistory>
+  export const reorderPinnedForumTopics: TLApiMethod<"channels.reorderPinnedForumTopics", {
+    force?: true                            // flags.0?true
+    channel: global.InputChannel            // InputChannel
+    order: number[]                         // Vector<int>
+  }, global.Updates>
 }
 
 export namespace bots {

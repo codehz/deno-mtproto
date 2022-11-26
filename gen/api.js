@@ -1210,6 +1210,9 @@ const global = {
   updateChannelPinnedTopic(params) {
     return { ...params, _: "updateChannelPinnedTopic" };
   },
+  updateChannelPinnedTopics(params) {
+    return { ...params, _: "updateChannelPinnedTopics" };
+  },
 
   // type Updates
   updatesTooLong() {
@@ -3717,6 +3720,7 @@ global.updateRecentReactions.ref = "updateRecentReactions";
 global.updateMoveStickerSetToTop.ref = "updateMoveStickerSetToTop";
 global.updateMessageExtendedMedia.ref = "updateMessageExtendedMedia";
 global.updateChannelPinnedTopic.ref = "updateChannelPinnedTopic";
+global.updateChannelPinnedTopics.ref = "updateChannelPinnedTopics";
 
 // type Updates
 global.updatesTooLong.ref = "updatesTooLong";
@@ -8113,7 +8117,7 @@ export const $encoder = {
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["messages.channelMessages"](_) {
-    this.int32(1682413576);
+    this.int32(-948520370);
     this.int32(
       (+(_.inexact != null) << 1)
       | (+(_.offset_id_offset != null) << 2)
@@ -8125,6 +8129,7 @@ export const $encoder = {
     if (_.offset_id_offset != null)
       this.int32(_.offset_id_offset);       // ?: number - flags.2?int
     this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.topics, this.object);     // : ForumTopic[] - Vector<ForumTopic>
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
@@ -8961,13 +8966,23 @@ export const $encoder = {
     this.object(_.extended_media);          // : MessageExtendedMedia - MessageExtendedMedia
   },
   ["updateChannelPinnedTopic"](_) {
-    this.int32(-158027602);
+    this.int32(422509539);
     this.int32(
-      (+(_.topic_id != null) << 0)
+      (+(_.pinned != null) << 0)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.0?true
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.topic_id);                 // : number - int
+  },
+  ["updateChannelPinnedTopics"](_) {
+    this.int32(-31881726);
+    this.int32(
+      (+(_.order != null && _.order.length > 0) << 0)
     )
     this.int64(_.channel_id);               // : bigint - long
-    if (_.topic_id != null)
-      this.int32(_.topic_id);               // ?: number - flags.0?int
+    if (_.order != null && _.order.length > 0)
+      this.vector(_.order, this.int32);     // ?: number[] - flags.0?Vector<int>
   },
   ["updates.state"](_) {
     this.int32(-1519637954);
@@ -14574,6 +14589,7 @@ export const $encoder = {
       (+(_.my != null) << 1)
       | (+(_.closed != null) << 2)
       | (+(_.pinned != null) << 3)
+      | (+(_.short != null) << 5)
       | (+(_.icon_emoji_id != null) << 0)
       | (+(_.draft != null) << 4)
     )
@@ -14583,6 +14599,8 @@ export const $encoder = {
       this.true(_.closed);                  // ?: true - flags.2?true
     if (_.pinned != null)
       this.true(_.pinned);                  // ?: true - flags.3?true
+    if (_.short != null)
+      this.true(_.short);                   // ?: true - flags.5?true
     this.int32(_.id);                       // : number - int
     this.int32(_.date);                     // : number - int
     this.string(_.title);                   // : string - string
@@ -16224,7 +16242,7 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [1682413576, function decode$messages__channelMessages() {
+  [-948520370, function decode$messages__channelMessages() {
     const _ = { _: "messages.channelMessages" }
     const flags = this.int32();
     if (flags & 2) _.inexact = true         // ?: true - flags.1?true
@@ -16232,6 +16250,7 @@ export const $decoder = new Map([
     _.count = this.int32();                 // : number - int
     if (flags & 4) _.offset_id_offset = this.int32() // ?: number - flags.2?int
     _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.topics = this.vector(this.object);    // : global.ForumTopic[] - Vector<ForumTopic>
     _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
@@ -17045,11 +17064,19 @@ export const $decoder = new Map([
     _.extended_media = this.object();       // : global.MessageExtendedMedia - MessageExtendedMedia
     return _;
   }],
-  [-158027602, function decode$updateChannelPinnedTopic() {
+  [422509539, function decode$updateChannelPinnedTopic() {
     const _ = { _: "updateChannelPinnedTopic" }
     const flags = this.int32();
+    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
     _.channel_id = this.int64();            // : bigint - long
-    if (flags & 1) _.topic_id = this.int32() // ?: number - flags.0?int
+    _.topic_id = this.int32();              // : number - int
+    return _;
+  }],
+  [-31881726, function decode$updateChannelPinnedTopics() {
+    const _ = { _: "updateChannelPinnedTopics" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    if (flags & 1) _.order = this.vector(this.int32) // ?: number[] - flags.0?Vector<int>
     return _;
   }],
   [-1519637954, function decode$updates__state() {
@@ -21949,6 +21976,7 @@ export const $decoder = new Map([
     if (flags & 2) _.my = true              // ?: true - flags.1?true
     if (flags & 4) _.closed = true          // ?: true - flags.2?true
     if (flags & 8) _.pinned = true          // ?: true - flags.3?true
+    if (flags & 32) _.short = true          // ?: true - flags.5?true
     _.id = this.int32();                    // : number - int
     _.date = this.int32();                  // : number - int
     _.title = this.string();                // : string - string
@@ -28539,6 +28567,25 @@ channels.deleteTopicHistory.ref = "channels.deleteTopicHistory";
 channels.deleteTopicHistory.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.reorderPinnedForumTopics = function reorderPinnedForumTopics(_) {
+  return { ..._, _: "channels.reorderPinnedForumTopics" }
+}
+$encoder["channels.reorderPinnedForumTopics"] = function (_) {
+  this.int32(693150095);
+  this.int32(
+    (+(_.force != null) << 0)
+  )
+  if (_.force != null)
+    this.true(_.force);                   // ?: true - flags.0?true
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.vector(_.order, this.int32);       // : number[] - Vector<int>
+};
+channels.reorderPinnedForumTopics.ref = "channels.reorderPinnedForumTopics";
+channels.reorderPinnedForumTopics.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
   return $$;
 };
 

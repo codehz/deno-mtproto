@@ -26,7 +26,7 @@ import { DCIdentifier } from "mtproto/common/dc.ts";
 import { KVStorage } from "mtproto/storage/types.ts";
 import EventEmitter from "mtproto/common/event.ts";
 
-const API_LAYER = 148;
+const API_LAYER = 149;
 
 export type RPCState = "connecting" | "connected" | "disconnected";
 
