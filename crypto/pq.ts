@@ -1,4 +1,4 @@
-import { abs, gcd, min, modpow } from "mtproto/common/alg.ts";
+import { abs, gcd, min, modpow } from "../common/alg.ts";
 
 function rand(max: bigint) {
   return BigInt(Math.random() * +max.toString() | 0);

@@ -4,8 +4,8 @@ import {
   TransportEvent,
   TransportEvents,
   TransportFactory,
-} from "mtproto/types.ts";
-import { todv } from "mtproto/common/utils.ts";
+} from "../../types.ts";
+import { todv } from "../../common/utils.ts";
 
 export class DenoTCP implements Transport {
   #closed = false;

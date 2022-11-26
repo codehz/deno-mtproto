@@ -7,7 +7,7 @@ import type {
   TLApiMethod,
   TLConstructor,
   TLConstructorEmpty,
-} from "mtproto/tl/types.ts";
+} from "../tl/types.ts";
 
 // #region "constructors"
 

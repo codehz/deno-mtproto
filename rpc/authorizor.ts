@@ -1,4 +1,4 @@
-import { TLMethod } from "mtproto/tl/types.ts";
+import { TLMethod } from "../tl/types.ts";
 import {
   concat_array,
   dump_u8arr,
@@ -11,14 +11,14 @@ import {
   tou8,
   view_arr,
   xor_array,
-} from "mtproto/common/utils.ts";
-import { mt } from "mtproto/gen/api.js";
-import * as rsa from "mtproto/crypto/rsa.ts";
-import * as aes from "mtproto/crypto/aes.ts";
-import { depq } from "mtproto/crypto/pq.ts";
-import { serialize } from "mtproto/tl/serializer.ts";
-import { Deserializer } from "mtproto/tl/deserializer.ts";
-import { modpow } from "mtproto/common/alg.ts";
+} from "../common/utils.ts";
+import { mt } from "../gen/api.js";
+import * as rsa from "../crypto/rsa.ts";
+import * as aes from "../crypto/aes.ts";
+import { depq } from "../crypto/pq.ts";
+import { serialize } from "../tl/serializer.ts";
+import { Deserializer } from "../tl/deserializer.ts";
+import { modpow } from "../common/alg.ts";
 
 type DhParams = {
   prime: bigint;

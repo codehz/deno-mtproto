@@ -1,5 +1,5 @@
-import type { ToUnderscore } from "mtproto/tl/types.ts";
-import type { MTStorage } from "mtproto/storage/types.ts";
+import type { ToUnderscore } from "./tl/types.ts";
+import type { MTStorage } from "./storage/types.ts";
 import type RPC from "./rpc/mod.ts";
 
 export type TransportEvents = {

@@ -4,7 +4,7 @@ import {
   Definition,
   Method,
   mtproto,
-} from "mtproto/gen/schemas.ts";
+} from "../gen/schemas.ts";
 
 const typemaps = {
   "#": "int32",
@@ -277,7 +277,7 @@ class DefinitionProcessor {
     tsfile.append`TLConstructor,`;
     tsfile.append`TLConstructorEmpty,`;
     tsfile.indent--;
-    tsfile.append`} from "mtproto/tl/types.ts";`;
+    tsfile.append`} from "../tl/types.ts";`;
     tsfile.empty();
   }
 

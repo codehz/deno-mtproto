@@ -21,6 +21,5 @@
         "gen/"
       ]
     }
-  },
-  "importMap": "./import_map.json"
+  }
 }

@@ -1,6 +1,6 @@
-import MTProto from "mtproto/mod.ts";
-import parse_error from "mtproto/common/errparse.ts";
-import { RPCError } from "mtproto/rpc/mod.ts";
+import MTProto from "../mod.ts";
+import parse_error from "../common/errparse.ts";
+import { RPCError } from "../rpc/mod.ts";
 
 export async function loginAsBot(proto: MTProto, token: string) {
   while (true) {

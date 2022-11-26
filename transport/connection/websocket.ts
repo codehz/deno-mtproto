@@ -4,10 +4,10 @@ import {
   TransportEvent,
   TransportEvents,
   TransportFactory,
-} from "mtproto/types.ts";
-import { concat_array, todv } from "mtproto/common/utils.ts";
+} from "../../types.ts";
+import { concat_array, todv } from "../../common/utils.ts";
 
-import Resolver from "mtproto/common/resolver.ts";
+import Resolver from "../../common/resolver.ts";
 import { get_address } from "../dcmap.ts";
 
 class PendingRead {

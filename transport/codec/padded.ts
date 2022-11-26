@@ -1,10 +1,10 @@
-import { PacketCodec } from "mtproto/types.ts";
+import { PacketCodec } from "../../types.ts";
 import {
   concat_array,
   rand_int,
   todv,
   view_arr,
-} from "mtproto/common/utils.ts";
+} from "../../common/utils.ts";
 
 const init = new Uint8Array([0xdd, 0xdd, 0xdd, 0xdd]);
 

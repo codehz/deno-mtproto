@@ -1,4 +1,4 @@
-import api from "mtproto/gen/api.js";
+import api from "../gen/api.js";
 
 export function decode(obj: api.JSONValue): unknown {
   switch (obj._) {

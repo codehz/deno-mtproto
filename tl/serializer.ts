@@ -1,6 +1,6 @@
-import { $encoder } from "mtproto/gen/api.js";
-import { BaseSerializer, GenericObject } from "mtproto/tl/types.ts";
-import { todv, tou8 } from "mtproto/common/utils.ts";
+import { $encoder } from "../gen/api.js";
+import { BaseSerializer, GenericObject } from "../tl/types.ts";
+import { todv, tou8 } from "../common/utils.ts";
 
 class Counter implements BaseSerializer {
   #count = 0;

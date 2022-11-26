@@ -4,7 +4,7 @@ import {
   assertEquals,
   assertIsError,
   unreachable,
-} from "std/testing/asserts.ts";
+} from "https://deno.land/std@0.166.0/testing/asserts.ts";
 
 function wait(msec: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, msec));

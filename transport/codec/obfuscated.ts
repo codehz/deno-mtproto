@@ -1,7 +1,7 @@
-import { CTR } from "mtproto/crypto/aes.ts";
-import { sha256, todv, view_arr } from "mtproto/common/utils.ts";
-import { type PacketCodec } from "mtproto/types.ts";
-import { type DCIdentifier, toDCInfo } from "mtproto/common/dc.ts";
+import { CTR } from "../../crypto/aes.ts";
+import { sha256, todv, view_arr } from "../../common/utils.ts";
+import { type PacketCodec } from "../../types.ts";
+import { type DCIdentifier, toDCInfo } from "../../common/dc.ts";
 
 const badpatterns = [
   0x44414548,

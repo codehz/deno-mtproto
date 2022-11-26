@@ -4,17 +4,17 @@ import type {
   IPv6Policy,
   MTProtoOptions,
   TransportFactory,
-} from "mtproto/types.ts";
-import RPC from "mtproto/rpc/mod.ts";
-import type api from "mtproto/gen/api.js";
+} from "./types.ts";
+import RPC from "./rpc/mod.ts";
+import type api from "./gen/api.js";
 import {
   DCIdentifier,
   DCType,
   toDCIdentifier,
   toDCInfo,
-} from "mtproto/common/dc.ts";
-import type { MTStorage } from "mtproto/storage/types.ts";
-import KVStorageAdapter from "mtproto/storage/kv.ts";
+} from "./common/dc.ts";
+import type { MTStorage } from "./storage/types.ts";
+import KVStorageAdapter from "./storage/kv.ts";
 
 const testdc: InitDC = {
   test: true,

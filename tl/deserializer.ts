@@ -1,6 +1,6 @@
-import { $decoder } from "mtproto/gen/api.js";
-import { BaseDeserializer } from "mtproto/tl/types.ts";
-import { sha1, tobig, todv, tou8, view_arr } from "mtproto/common/utils.ts";
+import { $decoder } from "../gen/api.js";
+import { BaseDeserializer } from "../tl/types.ts";
+import { sha1, tobig, todv, tou8, view_arr } from "../common/utils.ts";
 
 export class Deserializer implements BaseDeserializer {
   #buffer: Uint8Array;

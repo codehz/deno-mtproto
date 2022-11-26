@@ -1,4 +1,4 @@
-import type { ToUnderscore } from "mtproto/common/magic.ts";
+import type { ToUnderscore } from "../common/magic.ts";
 export type { ToUnderscore };
 
 export type GenericObject = { _: string } & Record<string, any>;

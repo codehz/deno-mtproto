@@ -5,10 +5,10 @@ import {
   tobig,
   tou8,
   xor_array,
-} from "mtproto/common/utils.ts";
-import { modpow } from "mtproto/common/alg.ts";
+} from "../common/utils.ts";
+import { modpow } from "../common/alg.ts";
 
-import api from "mtproto/gen/api.js";
+import api from "../gen/api.js";
 
 const H = async (...bytes: Uint8Array[]) =>
   tou8(await crypto.subtle.digest("SHA-256", concat_array(...bytes)));

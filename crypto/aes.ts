@@ -1,13 +1,13 @@
-import { AES, Counter, ModeOfOperation } from "aes";
-import { tou8, view_arr, xor_array } from "mtproto/common/utils.ts";
+import aesjs from "npm:aes-js";
+import { tou8, view_arr, xor_array } from "../common/utils.ts";
 
 export class IGE {
-  #aes: AES;
+  #aes: aesjs.AES;
   #ivp: Uint8Array;
   #iv2p: Uint8Array;
 
   constructor(key: Uint8Array, iv: Uint8Array) {
-    this.#aes = new AES(key);
+    this.#aes = new aesjs.AES(key);
     this.#ivp = iv.subarray(0, 16);
     this.#iv2p = view_arr(iv, 16, 16);
   }
@@ -55,11 +55,11 @@ export class IGE {
 }
 
 export class CTR {
-  #internal: ModeOfOperation.ModeOfOperationCTR;
+  #internal: aesjs.ModeOfOperation.ModeOfOperationCTR;
   constructor(key: Uint8Array, iv: Uint8Array) {
-    this.#internal = new ModeOfOperation.ctr(
+    this.#internal = new aesjs.ModeOfOperation.ctr(
       key,
-      new Counter(iv),
+      new aesjs.Counter(iv),
     );
   }
 

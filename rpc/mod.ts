@@ -1,7 +1,7 @@
-import { EnvironmentInformation, Transport } from "mtproto/types.ts";
-import { TLApiMethod, TLMethod } from "mtproto/tl/types.ts";
-import api, { initConnection, invokeWithLayer, mt } from "mtproto/gen/api.js";
-import * as apiset from "mtproto/gen/api.js";
+import { EnvironmentInformation, Transport } from "../types.ts";
+import { TLApiMethod, TLMethod } from "../tl/types.ts";
+import api, { initConnection, invokeWithLayer, mt } from "../gen/api.js";
+import * as apiset from "../gen/api.js";
 import {
   concat_array,
   eq_array,
@@ -9,22 +9,22 @@ import {
   sha1,
   sha256,
   view_arr,
-} from "mtproto/common/utils.ts";
-import Resolver from "mtproto/common/resolver.ts";
-import type { FilteredKeys } from "mtproto/common/magic.ts";
-import TaskQueue from "mtproto/common/queue.ts";
-import cached from "mtproto/common/cached.ts";
-import * as aes from "mtproto/crypto/aes.ts";
-import { serialize } from "mtproto/tl/serializer.ts";
-import { Deserializer } from "mtproto/tl/deserializer.ts";
-import { rand_array, rand_bigint, rand_int } from "mtproto/common/utils.ts";
-import { max } from "mtproto/common/alg.ts";
-import { decode as debase64, encode as base64 } from "std/encoding/base64.ts";
-import authorize from "mtproto/rpc/authorizor.ts";
-import { decompressObject } from "mtproto/common/gzip.ts";
-import { DCIdentifier } from "mtproto/common/dc.ts";
-import { KVStorage } from "mtproto/storage/types.ts";
-import EventEmitter from "mtproto/common/event.ts";
+} from "../common/utils.ts";
+import Resolver from "../common/resolver.ts";
+import type { FilteredKeys } from "../common/magic.ts";
+import TaskQueue from "../common/queue.ts";
+import cached from "../common/cached.ts";
+import * as aes from "../crypto/aes.ts";
+import { serialize } from "../tl/serializer.ts";
+import { Deserializer } from "../tl/deserializer.ts";
+import { rand_array, rand_bigint, rand_int } from "../common/utils.ts";
+import { max } from "../common/alg.ts";
+import { decode as debase64, encode as base64 } from "https://deno.land/std@0.166.0/encoding/base64.ts";
+import authorize from "../rpc/authorizor.ts";
+import { decompressObject } from "../common/gzip.ts";
+import { DCIdentifier } from "../common/dc.ts";
+import { KVStorage } from "../storage/types.ts";
+import EventEmitter from "../common/event.ts";
 
 const API_LAYER = 149;
 

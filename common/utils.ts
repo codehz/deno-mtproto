@@ -1,6 +1,6 @@
-import { Sha1 } from "std/hash/sha1.ts";
-import { Sha256 } from "std/hash/sha256.ts";
-import * as hex from "std/encoding/hex.ts";
+import { Sha1 } from "../crypto/sha1.ts";
+import { Sha256 } from "../crypto/sha256.ts";
+import * as hex from "https://deno.land/std@0.166.0/encoding/hex.ts";
 
 export function rand_int(max: number) {
   return Math.random() * max | 0;

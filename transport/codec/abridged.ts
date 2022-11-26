@@ -1,5 +1,5 @@
-import { PacketCodec } from "mtproto/types.ts";
-import { concat_array, view_arr } from "mtproto/common/utils.ts";
+import { PacketCodec } from "../../types.ts";
+import { concat_array, view_arr } from "../../common/utils.ts";
 
 const init = new Uint8Array([0xef]);
 const obfuscate_tag = new Uint8Array([0xef, 0xef, 0xef, 0xef]);

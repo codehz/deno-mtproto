@@ -5,11 +5,11 @@ Status: WIP
 basic usage:
 
 ```typescript
-import MTProto from "mtproto";
-import factory from "mtproto/transport/connection/deno-tcp.ts";
-import Abridged from "mtproto/transport/codec/abridged.ts";
-import JsonDB from "mtproto/storage/jsondb.ts";
-import { sendCode } from "mtproto/auth/user.ts";
+import MTProto from "https://deno.land/x/mtproto/mod.ts";
+import factory from "https://deno.land/x/mtproto/transport/connection/deno-tcp.ts";
+import Abridged from "https://deno.land/x/mtproto/transport/codec/abridged.ts";
+import JsonDB from "https://deno.land/x/mtproto/storage/jsondb.ts";
+import { sendCode } from "https://deno.land/x/mtproto/auth/user.ts";
 import {
   Confirm,
   Input,

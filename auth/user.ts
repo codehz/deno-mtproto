@@ -1,7 +1,7 @@
-import MTProto from "mtproto";
-import srp from "mtproto/crypto/srp.ts";
-import RPC, { RPCError } from "mtproto/rpc/mod.ts";
-import parse_error from "mtproto/common/errparse.ts";
+import MTProto from "../mod.ts";
+import srp from "../crypto/srp.ts";
+import RPC, { RPCError } from "../rpc/mod.ts";
+import parse_error from "../common/errparse.ts";
 
 export interface SendCodeUI {
   askCode(): Promise<string>;
@@ -36,7 +36,7 @@ export async function sendCode(
   proto: MTProto,
   ui: SendCodeUI,
   phone_number: string,
-  logout_tokens: BufferSource[] = [],
+  logout_tokens: BufferSource[] = []
 ) {
   while (true) {
     const rpc = await proto.rpc();
@@ -92,11 +92,11 @@ export async function sendCode(
       if (sign._ == "auth.authorizationSignUpRequired") {
         const signupinfo = await ui.askSignUp();
         if (!signupinfo) throw new Error("need sign up");
-        const signup = (await rpc.api.auth.signUp({
+        const signup = await rpc.api.auth.signUp({
           phone_number,
           phone_code_hash,
           ...signupinfo,
-        }));
+        });
         if (signup._ != "auth.authorization") {
           throw new Error("failed to signup");
         }

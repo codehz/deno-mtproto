@@ -1,11 +1,11 @@
-import RPC from "mtproto/rpc/mod.ts";
-import factory from "mtproto/transport/connection/websocket.ts";
-// import Padded from "mtproto/transport/codec/padded.ts";
-// import Full from "mtproto/transport/codec/full.ts";
-import Abridged from "mtproto/transport/codec/abridged.ts";
-// import Intermediate from "mtproto/transport/codec/intermediate.ts";
-import Obfuscated from "mtproto/transport/codec/obfuscated.ts";
-import { decode } from "mtproto/tl/json.ts";
+import RPC from "../rpc/mod.ts";
+import factory from "../transport/connection/deno-tcp.ts";
+// import Padded from "../transport/codec/padded.ts";
+// import Full from "../transport/codec/full.ts";
+import Abridged from "../transport/codec/abridged.ts";
+// import Intermediate from "../transport/codec/intermediate.ts";
+import Obfuscated from "../transport/codec/obfuscated.ts";
+import { decode } from "../tl/json.ts";
 
 const create = factory(() => new Obfuscated(new Abridged()));
 const transport = await create({

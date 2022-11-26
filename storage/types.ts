@@ -1,5 +1,5 @@
-import type { ToUnderscore } from "mtproto/common/magic.ts";
-import { type DCInfo, toDCIdentifier } from "mtproto/common/dc.ts";
+import type { ToUnderscore } from "../common/magic.ts";
+import { type DCInfo, toDCIdentifier } from "../common/dc.ts";
 
 type StorageKinds = {
   // deno-lint-ignore ban-types
