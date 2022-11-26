@@ -7,12 +7,7 @@ import type {
 } from "./types.ts";
 import RPC from "./rpc/mod.ts";
 import type api from "./gen/api.js";
-import {
-  DCIdentifier,
-  DCType,
-  toDCIdentifier,
-  toDCInfo,
-} from "./common/dc.ts";
+import { DCIdentifier, DCType, toDCIdentifier, toDCInfo } from "./common/dc.ts";
 import type { MTStorage } from "./storage/types.ts";
 import KVStorageAdapter from "./storage/kv.ts";
 
@@ -45,11 +40,11 @@ export default class MTProto {
   #setup_rpc?: (rpc: RPC) => void;
 
   #setting_get(key: string) {
-    return this.#storage.get({ "_": "global" }).get(key);
+    return this.#storage.get({ _: "global" }).get(key);
   }
 
   #setting_put(key: string, value: string | undefined) {
-    const view = this.#storage.get({ "_": "global" });
+    const view = this.#storage.get({ _: "global" });
     if (value == null) {
       view.delete(key);
     } else {
@@ -57,18 +52,16 @@ export default class MTProto {
     }
   }
 
-  constructor(
-    {
-      api_id,
-      api_hash,
-      initdc,
-      transport_factory,
-      environment,
-      storage = new KVStorageAdapter(),
-      ipv6_policy = "both",
-      setup_rpc,
-    }: MTProtoOptions,
-  ) {
+  constructor({
+    api_id,
+    api_hash,
+    initdc,
+    transport_factory,
+    environment,
+    storage = new KVStorageAdapter(),
+    ipv6_policy = "both",
+    setup_rpc,
+  }: MTProtoOptions) {
     this.#api_id = api_id;
     this.#api_hash = api_hash;
     this.#storage = storage;
@@ -90,6 +83,10 @@ export default class MTProto {
     this.#setup_rpc = setup_rpc;
   }
 
+  set setup_rpc(value: ((rpc: RPC) => void) | undefined) {
+    this.#setup_rpc = value;
+  }
+
   async init() {
     const rpc = await this.rpc();
     const config = await rpc.api.help.getConfig();
@@ -103,7 +100,7 @@ export default class MTProto {
         if (this.#ipv6 == "ipv4" && ipv6) return false;
         if (this.#ipv6 == "ipv6" && !ipv6) return false;
         return !cdn && !media_only;
-      },
+      }
     );
     if (founds.length) {
       const { id, ip_address, port } = founds[0];
@@ -129,7 +126,7 @@ export default class MTProto {
   }
 
   async rpc(
-    dcid: DCIdentifier = this.get_dc_id(this.default_dc),
+    dcid: DCIdentifier = this.get_dc_id(this.default_dc)
   ): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
@@ -143,13 +140,13 @@ export default class MTProto {
         if (type == "cdn") return cdn;
         if (type == "media") return media_only;
         return true;
-      },
+      }
     );
     let lasterr: Error | undefined;
     for (const found of founds) {
       try {
         const connection = await this.#transport_factory(
-          toInitDC(found, this.#initdc.test),
+          toInitDC(found, this.#initdc.test)
         );
         const rpc = new RPC(
           connection,
@@ -157,7 +154,7 @@ export default class MTProto {
           dcid,
           this.#api_id,
           this.#api_hash,
-          this.#environment,
+          this.#environment
         );
         rpc.once("terminate", () => this.#connections.delete(dcid));
         this.#connections.set(dcid, rpc);
