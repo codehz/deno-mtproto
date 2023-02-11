@@ -22,7 +22,7 @@ import { max } from "../common/alg.ts";
 import {
   decode as debase64,
   encode as base64,
-} from "https://deno.land/std@0.166.0/encoding/base64.ts";
+} from "https://deno.land/std@0.177.0/encoding/base64.ts";
 import authorize from "../rpc/authorizor.ts";
 import { decompressObject } from "../common/gzip.ts";
 import { DCIdentifier } from "../common/dc.ts";
