@@ -55,8 +55,8 @@ const rpc = new RPC(transport, storage, "main-test-2", api_id, api_hash, {
 try {
   const cfg = await rpc.api.help.getConfig();
   console.log(cfg);
-  const appcfg = await rpc.api.help.getAppConfig();
-  console.log(decode(appcfg));
+  const appcfg = await rpc.api.help.getAppConfig({ hash: 1 });
+  if (appcfg._ === "help.appConfig") console.log(decode(appcfg.config));
 } finally {
   rpc.close();
 }

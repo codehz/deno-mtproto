@@ -16,4 +16,4 @@ async function download_to_file(url: string, target: string) {
   log("DOWNLOAD", "green")`saved to ${target}`;
 }
 
-await download_to_file("https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/Resources/tl/api.tl", "gen/api.tl");
+await download_to_file("https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/SourceFiles/mtproto/scheme/api.tl", "gen/api.tl");
