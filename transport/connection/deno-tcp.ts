@@ -45,10 +45,10 @@ export class DenoTCP implements Transport {
         }
       }
     } catch (e) {
-      console.error(e);
       if (e instanceof Deno.errors.BadResource && this.#closed) {
         return;
       }
+      console.error(e);
       throw e;
     }
   }
