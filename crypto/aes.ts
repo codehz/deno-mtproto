@@ -1,4 +1,4 @@
-import aesjs from "npm:aes-js";
+import aesjs from "https://esm.sh/aes-js@3.1.2";
 import { tou8, view_arr, xor_array } from "../common/utils.ts";
 
 export class IGE {
