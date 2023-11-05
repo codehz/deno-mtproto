@@ -1,7 +1,7 @@
 import { abs, gcd, min, modpow } from "../common/alg.ts";
 
 function rand(max: bigint) {
-  return BigInt(Math.random() * +max.toString() | 0);
+  return BigInt((Math.random() * +max.toString()) | 0);
 }
 
 export function depq(pq: bigint): { p: bigint; q: bigint } {
@@ -27,7 +27,7 @@ export function depq(pq: bigint): { p: bigint; q: bigint } {
       const condition = min(m, r - k);
       for (let i = 0; i < condition; i++) {
         y = (modpow(y, 2n, pq) + c) % pq;
-        q = q * abs(x - y) % pq;
+        q = (q * abs(x - y)) % pq;
       }
       g = gcd(q, pq);
       k += m;

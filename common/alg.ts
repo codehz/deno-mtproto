@@ -1,9 +1,12 @@
-const wasmcode =
-  `data:application/wasm;base64,AGFzbQEAAAABBwFgAn5+AX4DAgEABQMBAAAHEAIDZ2NkAAAGbWVtb3J5AgAKJAEiAQF+A0AgAUIAUgRAIAAgAYIhAiABIQAgAiEBDAELCyAACw`;
-const { instance: { exports } } = await WebAssembly.instantiateStreaming(
-  fetch(wasmcode),
-);
-export const gcd = exports.gcd as (a: bigint, b: bigint) => bigint;
+export function gcd(a: bigint, b: bigint) {
+  while (b > 0n) {
+    const q = a / b;
+    const r = a - q * b;
+    a = b;
+    b = r;
+  }
+  return a;
+}
 
 export function modpow(a: bigint, b: bigint, n: bigint): bigint {
   a %= n;
