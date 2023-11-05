@@ -29,7 +29,7 @@ import { DCIdentifier } from "../common/dc.ts";
 import { KVStorage } from "../storage/types.ts";
 import EventEmitter from "../common/event.ts";
 
-const API_LAYER = 152;
+const API_LAYER = 166;
 
 export type RPCState = "connecting" | "connected" | "disconnected";
 
