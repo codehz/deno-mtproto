@@ -1,3 +1,4 @@
+import { todv } from "../../common/utils.ts";
 import {
   PacketCodec,
   Transport,
@@ -5,7 +6,6 @@ import {
   TransportEvents,
   TransportFactory,
 } from "../../types.ts";
-import { todv } from "../../common/utils.ts";
 
 export class DenoTCP implements Transport {
   #closed = false;
@@ -45,7 +45,11 @@ export class DenoTCP implements Transport {
         }
       }
     } catch (e) {
-      if (e instanceof Deno.errors.BadResource && this.#closed) {
+      if (
+        (e instanceof Deno.errors.BadResource ||
+          e instanceof Deno.errors.Interrupted) &&
+        this.#closed
+      ) {
         return;
       }
       console.error(e);
