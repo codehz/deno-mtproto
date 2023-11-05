@@ -1,14 +1,14 @@
-import { deserialize } from "../tl/deserializer.ts";
+import { gunzipSync } from "https://esm.sh/fflate@0.8.1";
 import { tou8 } from "../common/utils.ts";
 import { AnyObject } from "../gen/api.js";
-import { gunzip } from "https://deno.land/x/denoflate@1.2.1/mod.ts";
+import { deserialize } from "../tl/deserializer.ts";
 
 export function decompress(buffer: BufferSource) {
-  return gunzip(tou8(buffer));
+  return gunzipSync(tou8(buffer));
 }
 
 export function decompressObject<T extends AnyObject = AnyObject>(
-  obj: AnyObject,
+  obj: AnyObject
 ): T {
   if (obj._ == "mt.gzip_packed") {
     return deserialize<T>(decompress(obj.packed_data));
