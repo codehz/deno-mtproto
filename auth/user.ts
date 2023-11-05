@@ -67,45 +67,53 @@ export async function sendCode(
       }
       throw e;
     }
-    const phone_code_hash = sent.phone_code_hash;
-    try {
-      const phone_code = await ui.askCode();
-      let sign;
+    if (sent._ === "auth.sentCodeSuccess") {
+      if (sent.authorization._ === "auth.authorizationSignUpRequired") {
+        throw new Error("need sign up");
+      } else {
+        return sent.authorization;
+      }
+    } else {
+      const phone_code_hash = sent.phone_code_hash;
       try {
-        sign = await rpc.api.auth.signIn({
-          phone_number,
-          phone_code_hash,
-          phone_code,
-        });
-      } catch (e) {
-        if (e instanceof RPCError) {
-          if (e.message == "SESSION_PASSWORD_NEEDED") {
-            return await login2fa(rpc, ui);
-          } else if (e.message == "PHONE_CODE_EXPIRED") {
-            continue;
-          } else {
-            throw new Error("unknown error code", { cause: e });
+        const phone_code = await ui.askCode();
+        let sign;
+        try {
+          sign = await rpc.api.auth.signIn({
+            phone_number,
+            phone_code_hash,
+            phone_code,
+          });
+        } catch (e) {
+          if (e instanceof RPCError) {
+            if (e.message == "SESSION_PASSWORD_NEEDED") {
+              return await login2fa(rpc, ui);
+            } else if (e.message == "PHONE_CODE_EXPIRED") {
+              continue;
+            } else {
+              throw new Error("unknown error code", { cause: e });
+            }
           }
+          throw e;
         }
+        if (sign._ == "auth.authorizationSignUpRequired") {
+          const signupinfo = await ui.askSignUp();
+          if (!signupinfo) throw new Error("need sign up");
+          const signup = await rpc.api.auth.signUp({
+            phone_number,
+            phone_code_hash,
+            ...signupinfo,
+          });
+          if (signup._ != "auth.authorization") {
+            throw new Error("failed to signup");
+          }
+          sign = signup;
+        }
+        return sign;
+      } catch (e) {
+        await rpc.api.auth.cancelCode({ phone_number, phone_code_hash });
         throw e;
       }
-      if (sign._ == "auth.authorizationSignUpRequired") {
-        const signupinfo = await ui.askSignUp();
-        if (!signupinfo) throw new Error("need sign up");
-        const signup = await rpc.api.auth.signUp({
-          phone_number,
-          phone_code_hash,
-          ...signupinfo,
-        });
-        if (signup._ != "auth.authorization") {
-          throw new Error("failed to signup");
-        }
-        sign = signup;
-      }
-      return sign;
-    } catch (e) {
-      await rpc.api.auth.cancelCode({ phone_number, phone_code_hash });
-      throw e;
     }
   }
 }
