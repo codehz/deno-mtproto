@@ -24,7 +24,7 @@ const tstypemaps = {
   int128: "Uint8Array",
   int256: "Uint8Array",
   double: "number",
-  bytes: "BufferSource",
+  bytes: "Uint8Array",
   string: "string",
   X: "any",
 } as const;
@@ -433,16 +433,16 @@ class DefinitionProcessor {
           const { name, constructor: { predicate, params } } of constructors
         ) {
           if (params.length == 0) {
-            tsfile.append
-              `export const ${name}: TLConstructorEmpty<"${predicate}">;`;
+            tsfile
+              .append`export const ${name}: TLConstructorEmpty<"${predicate}">;`;
             jsfile.append`${name}() {`;
             jsfile.indent++;
             jsfile.append`return { _: "${predicate}" };`;
             jsfile.indent--;
             jsfile.append`},`;
           } else {
-            tsfile.append
-              `export const ${name}: TLConstructor<_${typename}, "${predicate}">;`;
+            tsfile
+              .append`export const ${name}: TLConstructor<_${typename}, "${predicate}">;`;
             jsfile.append`${name}(params) {`;
             jsfile.indent++;
             jsfile.append`return { ...params, _: "${predicate}" };`;
@@ -489,8 +489,8 @@ class DefinitionProcessor {
     tsfile.indent--;
     tsfile.empty();
 
-    tsfile.append
-      `export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;`;
+    tsfile
+      .append`export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;`;
     jsfile.append`export const $encoder = {`;
     jsfile.indent++;
     for (const { predicate, params, id } of filtered) {
@@ -525,8 +525,8 @@ class DefinitionProcessor {
     jsfile.append`};`;
     jsfile.empty();
 
-    tsfile.append
-      `export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;`;
+    tsfile
+      .append`export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;`;
     jsfile.append`export const $decoder = new Map([`;
     jsfile.indent++;
     for (const { predicate, params, id } of filtered) {
@@ -642,16 +642,16 @@ class DefinitionProcessor {
           decl = "unknown";
         }
         if (namespace == "mt") {
-          tsfile.append
-            `export const ${name}: TLMethod<${paramtypestr}, ${decl}>`;
+          tsfile
+            .append`export const ${name}: TLMethod<${paramtypestr}, ${decl}>`;
         } else {
-          tsfile.append
-            `export const ${name}: TLApiMethod<"${origname}", ${paramtypestr}, ${decl}>`;
+          tsfile
+            .append`export const ${name}: TLApiMethod<"${origname}", ${paramtypestr}, ${decl}>`;
         }
         const paramstext = params.length ? "_" : "";
         if (namespace) {
-          jsfile.append
-            `${namespace}.${name} = function ${name}(${paramstext}) {`;
+          jsfile
+            .append`${namespace}.${name} = function ${name}(${paramstext}) {`;
         } else {
           jsfile.append`export function ${name}(${paramstext}) {`;
         }
@@ -733,12 +733,12 @@ class DefinitionProcessor {
             }
           }
           if (parsed.vector) {
-            jsfile.append
-              `if (!Array.isArray($$)) throw new TypeError("require array");`;
+            jsfile
+              .append`if (!Array.isArray($$)) throw new TypeError("require array");`;
             jsfile.append`for (const $ of $$)`;
             jsfile.indent++;
-            jsfile.append
-              `if (!(${base})) throw new TypeError("array element");`;
+            jsfile
+              .append`if (!(${base})) throw new TypeError("array element");`;
             jsfile.indent--;
           } else {
             jsfile.append`const $ = $$;`;

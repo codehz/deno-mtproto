@@ -1,6 +1,6 @@
+import { todv } from "../common/utils.ts";
 import { $encoder } from "../gen/api.js";
 import { BaseSerializer, GenericObject } from "../tl/types.ts";
-import { todv, tou8 } from "../common/utils.ts";
 
 class Counter implements BaseSerializer {
   #count = 0;
@@ -27,7 +27,7 @@ class Counter implements BaseSerializer {
   double(_value: number): void {
     this.#count += 8;
   }
-  bytes(value: BufferSource): void {
+  bytes(value: Uint8Array): void {
     const length = value.byteLength;
 
     if (length <= 253) {
@@ -44,7 +44,7 @@ class Counter implements BaseSerializer {
     const bytes = new TextEncoder().encode(value);
     this.bytes(bytes);
   }
-  raw(value: BufferSource): void {
+  raw(value: Uint8Array): void {
     this.#count += value.byteLength;
   }
   vector<T>(
@@ -123,8 +123,7 @@ export class Serializer implements BaseSerializer {
     this.#view.setFloat64(this.#offset, value, true);
     this.#offset += 4;
   }
-  bytes(value: BufferSource): void {
-    const u8 = tou8(value);
+  bytes(u8: Uint8Array): void {
     const length = u8.length;
     if (length <= 253) {
       this.#data[this.#offset++] = length;
@@ -143,8 +142,7 @@ export class Serializer implements BaseSerializer {
   string(value: string): void {
     this.bytes(new TextEncoder().encode(value));
   }
-  raw(value: BufferSource): void {
-    const u8 = tou8(value);
+  raw(u8: Uint8Array): void {
     this.#data.set(u8, this.#offset);
     this.#offset += u8.length;
   }

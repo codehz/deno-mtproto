@@ -19,7 +19,7 @@ export namespace mt {
     "mt.resPQ": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
-      pq: BufferSource;                       // bytes
+      pq: Uint8Array;                         // bytes
       server_public_key_fingerprints: bigint[]; // Vector<long>
     },
   };
@@ -30,26 +30,26 @@ export namespace mt {
   > = ToUnderscore<_P_Q_inner_data, K>;
   export type _P_Q_inner_data = {
     "mt.p_q_inner_data": {
-      pq: BufferSource;                       // bytes
-      p: BufferSource;                        // bytes
-      q: BufferSource;                        // bytes
+      pq: Uint8Array;                         // bytes
+      p: Uint8Array;                          // bytes
+      q: Uint8Array;                          // bytes
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       new_nonce: Uint8Array;                  // int256
     },
     "mt.p_q_inner_data_dc": {
-      pq: BufferSource;                       // bytes
-      p: BufferSource;                        // bytes
-      q: BufferSource;                        // bytes
+      pq: Uint8Array;                         // bytes
+      p: Uint8Array;                          // bytes
+      q: Uint8Array;                          // bytes
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       new_nonce: Uint8Array;                  // int256
       dc: number;                             // int
     },
     "mt.p_q_inner_data_temp": {
-      pq: BufferSource;                       // bytes
-      p: BufferSource;                        // bytes
-      q: BufferSource;                        // bytes
+      pq: Uint8Array;                         // bytes
+      p: Uint8Array;                          // bytes
+      q: Uint8Array;                          // bytes
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       new_nonce: Uint8Array;                  // int256
@@ -65,9 +65,9 @@ export namespace mt {
   > = ToUnderscore<_P_Q_inner_d, K>;
   export type _P_Q_inner_d = {
     "mt.p_q_inner_data_temp_dc": {
-      pq: BufferSource;                       // bytes
-      p: BufferSource;                        // bytes
-      q: BufferSource;                        // bytes
+      pq: Uint8Array;                         // bytes
+      p: Uint8Array;                          // bytes
+      q: Uint8Array;                          // bytes
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       new_nonce: Uint8Array;                  // int256
@@ -89,7 +89,7 @@ export namespace mt {
     "mt.server_DH_params_ok": {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
-      encrypted_answer: BufferSource;         // bytes
+      encrypted_answer: Uint8Array;           // bytes
     },
   };
 
@@ -103,8 +103,8 @@ export namespace mt {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       g: number;                              // int
-      dh_prime: BufferSource;                 // bytes
-      g_a: BufferSource;                      // bytes
+      dh_prime: Uint8Array;                   // bytes
+      g_a: Uint8Array;                        // bytes
       server_time: number;                    // int
     },
   };
@@ -118,7 +118,7 @@ export namespace mt {
       nonce: Uint8Array;                      // int128
       server_nonce: Uint8Array;               // int128
       retry_id: bigint;                       // long
-      g_b: BufferSource;                      // bytes
+      g_b: Uint8Array;                        // bytes
     },
   };
 
@@ -270,7 +270,7 @@ export namespace mt {
   > = ToUnderscore<_Object, K>;
   export type _Object = {
     "mt.gzip_packed": {
-      packed_data: BufferSource;              // bytes
+      packed_data: Uint8Array;                // bytes
     },
   };
 
@@ -334,7 +334,7 @@ export namespace mt {
   export type _MsgsStateInfo = {
     "mt.msgs_state_info": {
       req_msg_id: bigint;                     // long
-      info: BufferSource;                     // bytes
+      info: Uint8Array;                       // bytes
     },
   };
 
@@ -345,7 +345,7 @@ export namespace mt {
   export type _MsgsAllInfo = {
     "mt.msgs_all_info": {
       msg_ids: bigint[];                      // Vector<long>
-      info: BufferSource;                     // bytes
+      info: Uint8Array;                       // bytes
     },
   };
 
@@ -569,7 +569,7 @@ declare namespace global {
       description: string;                    // string
       photo?: global.InputWebDocument;        // flags.0?InputWebDocument
       invoice: global.Invoice;                // Invoice
-      payload: BufferSource;                  // bytes
+      payload: Uint8Array;                    // bytes
       provider: string;                       // string
       provider_data: global.DataJSON;         // DataJSON
       start_param?: string;                   // flags.1?string
@@ -584,7 +584,7 @@ declare namespace global {
     },
     "inputMediaPoll": {
       poll: global.Poll;                      // Poll
-      correct_answers?: BufferSource[];       // flags.0?Vector<bytes>
+      correct_answers?: Uint8Array[];         // flags.0?Vector<bytes>
       solution?: string;                      // flags.1?string
       solution_entities?: global.MessageEntity[]; // flags.1?Vector<MessageEntity>
     },
@@ -661,7 +661,7 @@ declare namespace global {
     "inputPhoto": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
     },
   };
 
@@ -675,7 +675,7 @@ declare namespace global {
       volume_id: bigint;                      // long
       local_id: number;                       // int
       secret: bigint;                         // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
     },
     "inputEncryptedFileLocation": {
       id: bigint;                             // long
@@ -684,7 +684,7 @@ declare namespace global {
     "inputDocumentFileLocation": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
       thumb_size: string;                     // string
     },
     "inputSecureFileLocation": {
@@ -695,13 +695,13 @@ declare namespace global {
     "inputPhotoFileLocation": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
       thumb_size: string;                     // string
     },
     "inputPhotoLegacyFileLocation": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
       volume_id: bigint;                      // long
       local_id: number;                       // int
       secret: bigint;                         // long
@@ -813,7 +813,7 @@ declare namespace global {
       has_video?: true;                       // flags.0?true
       personal?: true;                        // flags.2?true
       photo_id: bigint;                       // long
-      stripped_thumb?: BufferSource;          // flags.1?bytes
+      stripped_thumb?: Uint8Array;            // flags.1?bytes
       dc_id: number;                          // int
     },
   };
@@ -1052,7 +1052,7 @@ declare namespace global {
     "chatPhoto": {
       has_video?: true;                       // flags.0?true
       photo_id: bigint;                       // long
-      stripped_thumb?: BufferSource;          // flags.1?bytes
+      stripped_thumb?: Uint8Array;            // flags.1?bytes
       dc_id: number;                          // int
     },
   };
@@ -1269,7 +1269,7 @@ declare namespace global {
       recurring_used?: true;                  // flags.3?true
       currency: string;                       // string
       total_amount: bigint;                   // long
-      payload: BufferSource;                  // bytes
+      payload: Uint8Array;                    // bytes
       info?: global.PaymentRequestedInfo;     // flags.0?PaymentRequestedInfo
       shipping_option_id?: string;            // flags.1?string
       charge: global.PaymentCharge;           // PaymentCharge
@@ -1464,7 +1464,7 @@ declare namespace global {
       has_stickers?: true;                    // flags.0?true
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
       date: number;                           // int
       sizes: global.PhotoSize[];              // Vector<PhotoSize>
       video_sizes?: global.VideoSize[];       // flags.1?Vector<VideoSize>
@@ -1491,11 +1491,11 @@ declare namespace global {
       type: string;                           // string
       w: number;                              // int
       h: number;                              // int
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
     "photoStrippedSize": {
       type: string;                           // string
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
     "photoSizeProgressive": {
       type: string;                           // string
@@ -1505,7 +1505,7 @@ declare namespace global {
     },
     "photoPathSize": {
       type: string;                           // string
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
   };
 
@@ -1971,7 +1971,7 @@ declare namespace global {
       peer: global.Peer;                      // Peer
       msg_id: number;                         // int
       chat_instance: bigint;                  // long
-      data?: BufferSource;                    // flags.0?bytes
+      data?: Uint8Array;                      // flags.0?bytes
       game_short_name?: string;               // flags.1?string
     },
     "updateEditMessage": {
@@ -1984,7 +1984,7 @@ declare namespace global {
       user_id: bigint;                        // long
       msg_id: global.InputBotInlineMessageID; // InputBotInlineMessageID
       chat_instance: bigint;                  // long
-      data?: BufferSource;                    // flags.0?bytes
+      data?: Uint8Array;                      // flags.0?bytes
       game_short_name?: string;               // flags.1?string
     },
     "updateReadChannelOutbox": {
@@ -2026,13 +2026,13 @@ declare namespace global {
     "updateBotShippingQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
-      payload: BufferSource;                  // bytes
+      payload: Uint8Array;                    // bytes
       shipping_address: global.PostAddress;   // PostAddress
     },
     "updateBotPrecheckoutQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
-      payload: BufferSource;                  // bytes
+      payload: Uint8Array;                    // bytes
       info?: global.PaymentRequestedInfo;     // flags.0?PaymentRequestedInfo
       shipping_option_id?: string;            // flags.1?string
       currency: string;                       // string
@@ -2102,7 +2102,7 @@ declare namespace global {
     "updateMessagePollVote": {
       poll_id: bigint;                        // long
       peer: global.Peer;                      // Peer
-      options: BufferSource[];                // Vector<bytes>
+      options: Uint8Array[];                  // Vector<bytes>
       qts: number;                            // int
     },
     "updateDialogFilter": {
@@ -2115,7 +2115,7 @@ declare namespace global {
     "updateDialogFilters": {}
     "updatePhoneCallSignalingData": {
       phone_call_id: bigint;                  // long
-      data: BufferSource;                     // bytes
+      data: Uint8Array;                       // bytes
     },
     "updateChannelMessageForwards": {
       channel_id: bigint;                     // long
@@ -2510,7 +2510,7 @@ declare namespace global {
       id: number;                             // int
       ip_address: string;                     // string
       port: number;                           // int
-      secret?: BufferSource;                  // flags.10?bytes
+      secret?: Uint8Array;                    // flags.10?bytes
     },
   };
 
@@ -2604,7 +2604,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      g_a: BufferSource;                      // bytes
+      g_a: Uint8Array;                        // bytes
     },
     "encryptedChat": {
       id: number;                             // int
@@ -2612,7 +2612,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      g_a_or_b: BufferSource;                 // bytes
+      g_a_or_b: Uint8Array;                   // bytes
       key_fingerprint: bigint;                // long
     },
     "encryptedChatDiscarded": {
@@ -2687,14 +2687,14 @@ declare namespace global {
       random_id: bigint;                      // long
       chat_id: number;                        // int
       date: number;                           // int
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
       file: global.EncryptedFile;             // EncryptedFile
     },
     "encryptedMessageService": {
       random_id: bigint;                      // long
       chat_id: number;                        // int
       date: number;                           // int
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
   };
 
@@ -2708,7 +2708,7 @@ declare namespace global {
     "inputDocument": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
     },
   };
 
@@ -2724,7 +2724,7 @@ declare namespace global {
     "document": {
       id: bigint;                             // long
       access_hash: bigint;                    // long
-      file_reference: BufferSource;           // bytes
+      file_reference: Uint8Array;             // bytes
       date: number;                           // int
       mime_type: string;                      // string
       size: bigint;                           // long
@@ -2973,7 +2973,7 @@ declare namespace global {
       duration: number;                       // int
       title?: string;                         // flags.0?string
       performer?: string;                     // flags.1?string
-      waveform?: BufferSource;                // flags.2?bytes
+      waveform?: Uint8Array;                  // flags.2?bytes
     },
     "documentAttributeFilename": {
       file_name: string;                      // string
@@ -3242,7 +3242,7 @@ declare namespace global {
     "keyboardButtonCallback": {
       requires_password?: true;               // flags.0?true
       text: string;                           // string
-      data: BufferSource;                     // bytes
+      data: Uint8Array;                       // bytes
     },
     "keyboardButtonRequestPhone": {
       text: string;                           // string
@@ -3644,7 +3644,7 @@ declare namespace global {
       description: string;                    // string
       photo?: global.InputWebDocument;        // flags.0?InputWebDocument
       invoice: global.Invoice;                // Invoice
-      payload: BufferSource;                  // bytes
+      payload: Uint8Array;                    // bytes
       provider: string;                       // string
       provider_data: global.DataJSON;         // DataJSON
       reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
@@ -4431,7 +4431,7 @@ declare namespace global {
   export type _InputPaymentCredentials = {
     "inputPaymentCredentialsSaved": {
       id: string;                             // string
-      tmp_password: BufferSource;             // bytes
+      tmp_password: Uint8Array;               // bytes
     },
     "inputPaymentCredentials": {
       save?: true;                            // flags.0?true
@@ -4509,7 +4509,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      g_a_hash: BufferSource;                 // bytes
+      g_a_hash: Uint8Array;                   // bytes
       protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
     },
     "phoneCallAccepted": {
@@ -4519,7 +4519,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      g_b: BufferSource;                      // bytes
+      g_b: Uint8Array;                        // bytes
       protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
     },
     "phoneCall": {
@@ -4530,7 +4530,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      g_a_or_b: BufferSource;                 // bytes
+      g_a_or_b: Uint8Array;                   // bytes
       key_fingerprint: bigint;                // long
       protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
       connections: global.PhoneConnection[];  // Vector<PhoneConnection>
@@ -4562,7 +4562,7 @@ declare namespace global {
       ip: string;                             // string
       ipv6: string;                           // string
       port: number;                           // int
-      peer_tag: BufferSource;                 // bytes
+      peer_tag: Uint8Array;                   // bytes
     },
     "phoneConnectionWebrtc": {
       turn?: true;                            // flags.0?true
@@ -5043,7 +5043,7 @@ declare namespace global {
     "fileHash": {
       offset: bigint;                         // long
       limit: number;                          // int
-      hash: BufferSource;                     // bytes
+      hash: Uint8Array;                       // bytes
     },
   };
 
@@ -5067,8 +5067,8 @@ declare namespace global {
       id: bigint;                             // long
       parts: number;                          // int
       md5_checksum: string;                   // string
-      file_hash: BufferSource;                // bytes
-      secret: BufferSource;                   // bytes
+      file_hash: Uint8Array;                  // bytes
+      secret: Uint8Array;                     // bytes
     },
     "inputSecureFile": {
       id: bigint;                             // long
@@ -5089,8 +5089,8 @@ declare namespace global {
       size: bigint;                           // long
       dc_id: number;                          // int
       date: number;                           // int
-      file_hash: BufferSource;                // bytes
-      secret: BufferSource;                   // bytes
+      file_hash: Uint8Array;                  // bytes
+      secret: Uint8Array;                     // bytes
     },
   };
 
@@ -5101,9 +5101,9 @@ declare namespace global {
   > = ToUnderscore<_SecureData, K>;
   export type _SecureData = {
     "secureData": {
-      data: BufferSource;                     // bytes
-      data_hash: BufferSource;                // bytes
-      secret: BufferSource;                   // bytes
+      data: Uint8Array;                       // bytes
+      data_hash: Uint8Array;                  // bytes
+      secret: Uint8Array;                     // bytes
     },
   };
 
@@ -5167,7 +5167,7 @@ declare namespace global {
       translation?: global.SecureFile[];      // flags.6?Vector<SecureFile>
       files?: global.SecureFile[];            // flags.4?Vector<SecureFile>
       plain_data?: global.SecurePlainData;    // flags.5?SecurePlainData
-      hash: BufferSource;                     // bytes
+      hash: Uint8Array;                       // bytes
     },
   };
 
@@ -5195,7 +5195,7 @@ declare namespace global {
   export type _SecureValueHash = {
     "secureValueHash": {
       type: global.SecureValueType;           // SecureValueType
-      hash: BufferSource;                     // bytes
+      hash: Uint8Array;                       // bytes
     },
   };
 
@@ -5206,48 +5206,48 @@ declare namespace global {
   export type _SecureValueError = {
     "secureValueErrorData": {
       type: global.SecureValueType;           // SecureValueType
-      data_hash: BufferSource;                // bytes
+      data_hash: Uint8Array;                  // bytes
       field: string;                          // string
       text: string;                           // string
     },
     "secureValueErrorFrontSide": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource;                // bytes
+      file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorReverseSide": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource;                // bytes
+      file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorSelfie": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource;                // bytes
+      file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorFile": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource;                // bytes
+      file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorFiles": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource[];              // Vector<bytes>
+      file_hash: Uint8Array[];                // Vector<bytes>
       text: string;                           // string
     },
     "secureValueError": {
       type: global.SecureValueType;           // SecureValueType
-      hash: BufferSource;                     // bytes
+      hash: Uint8Array;                       // bytes
       text: string;                           // string
     },
     "secureValueErrorTranslationFile": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource;                // bytes
+      file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorTranslationFiles": {
       type: global.SecureValueType;           // SecureValueType
-      file_hash: BufferSource[];              // Vector<bytes>
+      file_hash: Uint8Array[];                // Vector<bytes>
       text: string;                           // string
     },
   };
@@ -5266,9 +5266,9 @@ declare namespace global {
   > = ToUnderscore<_SecureCredentialsEncrypted, K>;
   export type _SecureCredentialsEncrypted = {
     "secureCredentialsEncrypted": {
-      data: BufferSource;                     // bytes
-      hash: BufferSource;                     // bytes
-      secret: BufferSource;                   // bytes
+      data: Uint8Array;                       // bytes
+      hash: Uint8Array;                       // bytes
+      secret: Uint8Array;                     // bytes
     },
   };
 
@@ -5292,10 +5292,10 @@ declare namespace global {
   export type _PasswordKdfAlgo = {
     "passwordKdfAlgoUnknown": {}
     "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow": {
-      salt1: BufferSource;                    // bytes
-      salt2: BufferSource;                    // bytes
+      salt1: Uint8Array;                      // bytes
+      salt2: Uint8Array;                      // bytes
       g: number;                              // int
-      p: BufferSource;                        // bytes
+      p: Uint8Array;                          // bytes
     },
   };
 
@@ -5307,10 +5307,10 @@ declare namespace global {
   export type _SecurePasswordKdfAlgo = {
     "securePasswordKdfAlgoUnknown": {}
     "securePasswordKdfAlgoPBKDF2HMACSHA512iter100000": {
-      salt: BufferSource;                     // bytes
+      salt: Uint8Array;                       // bytes
     },
     "securePasswordKdfAlgoSHA512": {
-      salt: BufferSource;                     // bytes
+      salt: Uint8Array;                       // bytes
     },
   };
 
@@ -5323,7 +5323,7 @@ declare namespace global {
   export type _SecureSecretSettings = {
     "secureSecretSettings": {
       secure_algo: global.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
-      secure_secret: BufferSource;            // bytes
+      secure_secret: Uint8Array;              // bytes
       secure_secret_id: bigint;               // long
     },
   };
@@ -5336,8 +5336,8 @@ declare namespace global {
     "inputCheckPasswordEmpty": {}
     "inputCheckPasswordSRP": {
       srp_id: bigint;                         // long
-      A: BufferSource;                        // bytes
-      M1: BufferSource;                       // bytes
+      A: Uint8Array;                          // bytes
+      M1: Uint8Array;                         // bytes
     },
   };
 
@@ -5519,7 +5519,7 @@ declare namespace global {
   export type _PollAnswer = {
     "pollAnswer": {
       text: string;                           // string
-      option: BufferSource;                   // bytes
+      option: Uint8Array;                     // bytes
     },
   };
 
@@ -5549,7 +5549,7 @@ declare namespace global {
     "pollAnswerVoters": {
       chosen?: true;                          // flags.0?true
       correct?: true;                         // flags.1?true
-      option: BufferSource;                   // bytes
+      option: Uint8Array;                     // bytes
       voters: number;                         // int
     },
   };
@@ -5673,7 +5673,7 @@ declare namespace global {
       allow_app_hash?: true;                  // flags.4?true
       allow_missed_call?: true;               // flags.5?true
       allow_firebase?: true;                  // flags.7?true
-      logout_tokens?: BufferSource[];         // flags.6?Vector<bytes>
+      logout_tokens?: Uint8Array[];           // flags.6?Vector<bytes>
       token?: string;                         // flags.8?string
       app_sandbox?: boolean;                  // flags.8?Bool
     },
@@ -6392,7 +6392,7 @@ declare namespace global {
     "sponsoredMessage": {
       recommended?: true;                     // flags.5?true
       show_peer_photo?: true;                 // flags.6?true
-      random_id: BufferSource;                // bytes
+      random_id: Uint8Array;                  // bytes
       from_id?: global.Peer;                  // flags.3?Peer
       chat_invite?: global.ChatInvite;        // flags.4?ChatInvite
       chat_invite_hash?: string;              // flags.4?string
@@ -7116,7 +7116,7 @@ declare namespace global {
   export type _MessagePeerVote = {
     "messagePeerVote": {
       peer: global.Peer;                      // Peer
-      option: BufferSource;                   // bytes
+      option: Uint8Array;                     // bytes
       date: number;                           // int
     },
     "messagePeerVoteInputOption": {
@@ -7125,7 +7125,7 @@ declare namespace global {
     },
     "messagePeerVoteMultiple": {
       peer: global.Peer;                      // Peer
-      options: BufferSource[];                // Vector<bytes>
+      options: Uint8Array[];                  // Vector<bytes>
       date: number;                           // int
     },
   };
@@ -7433,7 +7433,7 @@ export namespace auth {
       setup_password_required?: true;         // flags.1?true
       otherwise_relogin_days?: number;        // flags.1?int
       tmp_sessions?: number;                  // flags.0?int
-      future_auth_token?: BufferSource;       // flags.2?bytes
+      future_auth_token?: Uint8Array;         // flags.2?bytes
       user: global.User;                      // User
     },
     "auth.authorizationSignUpRequired": {
@@ -7449,7 +7449,7 @@ export namespace auth {
   export type _ExportedAuthorization = {
     "auth.exportedAuthorization": {
       id: bigint;                             // long
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
   };
 
@@ -7517,7 +7517,7 @@ export namespace auth {
       length: number;                         // int
     },
     "auth.sentCodeTypeFirebaseSms": {
-      nonce?: BufferSource;                   // flags.0?bytes
+      nonce?: Uint8Array;                     // flags.0?bytes
       receipt?: string;                       // flags.1?string
       push_timeout?: number;                  // flags.1?int
       length: number;                         // int
@@ -7539,11 +7539,11 @@ export namespace auth {
   export type _LoginToken = {
     "auth.loginToken": {
       expires: number;                        // int
-      token: BufferSource;                    // bytes
+      token: Uint8Array;                      // bytes
     },
     "auth.loginTokenMigrateTo": {
       dc_id: number;                          // int
-      token: BufferSource;                    // bytes
+      token: Uint8Array;                      // bytes
     },
     "auth.loginTokenSuccess": {
       authorization: auth.Authorization;      // auth.Authorization
@@ -7558,7 +7558,7 @@ export namespace auth {
   > = ToUnderscore<_LoggedOut, K>;
   export type _LoggedOut = {
     "auth.loggedOut": {
-      future_auth_token?: BufferSource;       // flags.0?bytes
+      future_auth_token?: Uint8Array;         // flags.0?bytes
     },
   };
 
@@ -7762,13 +7762,13 @@ export namespace messages {
   > = ToUnderscore<_DhConfig, K>;
   export type _DhConfig = {
     "messages.dhConfigNotModified": {
-      random: BufferSource;                   // bytes
+      random: Uint8Array;                     // bytes
     },
     "messages.dhConfig": {
       g: number;                              // int
-      p: BufferSource;                        // bytes
+      p: Uint8Array;                          // bytes
       version: number;                        // int
-      random: BufferSource;                   // bytes
+      random: Uint8Array;                     // bytes
     },
   };
 
@@ -8461,13 +8461,13 @@ export namespace upload {
     "upload.file": {
       type: storage.FileType;                 // storage.FileType
       mtime: number;                          // int
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
     "upload.fileCdnRedirect": {
       dc_id: number;                          // int
-      file_token: BufferSource;               // bytes
-      encryption_key: BufferSource;           // bytes
-      encryption_iv: BufferSource;            // bytes
+      file_token: Uint8Array;                 // bytes
+      encryption_key: Uint8Array;             // bytes
+      encryption_iv: Uint8Array;              // bytes
       file_hashes: global.FileHash[];         // Vector<FileHash>
     },
   };
@@ -8483,7 +8483,7 @@ export namespace upload {
       mime_type: string;                      // string
       file_type: storage.FileType;            // storage.FileType
       mtime: number;                          // int
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
   };
 
@@ -8493,10 +8493,10 @@ export namespace upload {
   > = ToUnderscore<_CdnFile, K>;
   export type _CdnFile = {
     "upload.cdnFileReuploadNeeded": {
-      request_token: BufferSource;            // bytes
+      request_token: Uint8Array;              // bytes
     },
     "upload.cdnFile": {
-      bytes: BufferSource;                    // bytes
+      bytes: Uint8Array;                      // bytes
     },
   };
 
@@ -8760,13 +8760,13 @@ export namespace account {
       has_secure_values?: true;               // flags.1?true
       has_password?: true;                    // flags.2?true
       current_algo?: global.PasswordKdfAlgo;  // flags.2?PasswordKdfAlgo
-      srp_B?: BufferSource;                   // flags.2?bytes
+      srp_B?: Uint8Array;                     // flags.2?bytes
       srp_id?: bigint;                        // flags.2?long
       hint?: string;                          // flags.3?string
       email_unconfirmed_pattern?: string;     // flags.4?string
       new_algo: global.PasswordKdfAlgo;       // PasswordKdfAlgo
       new_secure_algo: global.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
-      secure_random: BufferSource;            // bytes
+      secure_random: Uint8Array;              // bytes
       pending_reset_date?: number;            // flags.5?int
       login_email_pattern?: string;           // flags.6?string
     },
@@ -8790,7 +8790,7 @@ export namespace account {
   export type _PasswordInputSettings = {
     "account.passwordInputSettings": {
       new_algo?: global.PasswordKdfAlgo;      // flags.0?PasswordKdfAlgo
-      new_password_hash?: BufferSource;       // flags.0?bytes
+      new_password_hash?: Uint8Array;         // flags.0?bytes
       hint?: string;                          // flags.0?string
       email?: string;                         // flags.1?string
       new_secure_settings?: global.SecureSecretSettings; // flags.2?SecureSecretSettings
@@ -8803,7 +8803,7 @@ export namespace account {
   > = ToUnderscore<_TmpPassword, K>;
   export type _TmpPassword = {
     "account.tmpPassword": {
-      tmp_password: BufferSource;             // bytes
+      tmp_password: Uint8Array;               // bytes
       valid_until: number;                    // int
     },
   };
@@ -10035,15 +10035,15 @@ export namespace mt {
   export const req_DH_params: TLMethod<{
     nonce: Uint8Array                       // int128
     server_nonce: Uint8Array                // int128
-    p: BufferSource                         // bytes
-    q: BufferSource                         // bytes
+    p: Uint8Array                           // bytes
+    q: Uint8Array                           // bytes
     public_key_fingerprint: bigint          // long
-    encrypted_data: BufferSource            // bytes
+    encrypted_data: Uint8Array              // bytes
   }, Server_DH_Params>
   export const set_client_DH_params: TLMethod<{
     nonce: Uint8Array                       // int128
     server_nonce: Uint8Array                // int128
-    encrypted_data: BufferSource            // bytes
+    encrypted_data: Uint8Array              // bytes
   }, Set_client_DH_params_answer>
   export const rpc_drop_answer: TLMethod<{
     req_msg_id: bigint                      // long
@@ -10131,13 +10131,13 @@ export namespace auth {
   }, ExportedAuthorization>
   export const importAuthorization: TLApiMethod<"auth.importAuthorization", {
     id: bigint                              // long
-    bytes: BufferSource                     // bytes
+    bytes: Uint8Array                       // bytes
   }, Authorization>
   export const bindTempAuthKey: TLApiMethod<"auth.bindTempAuthKey", {
     perm_auth_key_id: bigint                // long
     nonce: bigint                           // long
     expires_at: number                      // int
-    encrypted_message: BufferSource         // bytes
+    encrypted_message: Uint8Array           // bytes
   }, boolean>
   export const importBotAuthorization: TLApiMethod<"auth.importBotAuthorization", {
     flags: number                           // int
@@ -10170,10 +10170,10 @@ export namespace auth {
     except_ids: bigint[]                    // Vector<long>
   }, LoginToken>
   export const importLoginToken: TLApiMethod<"auth.importLoginToken", {
-    token: BufferSource                     // bytes
+    token: Uint8Array                       // bytes
   }, LoginToken>
   export const acceptLoginToken: TLApiMethod<"auth.acceptLoginToken", {
-    token: BufferSource                     // bytes
+    token: Uint8Array                       // bytes
   }, global.Authorization>
   export const checkRecoveryPassword: TLApiMethod<"auth.checkRecoveryPassword", {
     code: string                            // string
@@ -10201,7 +10201,7 @@ export namespace account {
     token_type: number                      // int
     token: string                           // string
     app_sandbox: boolean                    // Bool
-    secret: BufferSource                    // bytes
+    secret: Uint8Array                      // bytes
     other_uids: bigint[]                    // Vector<long>
   }, boolean>
   export const unregisterDevice: TLApiMethod<"account.unregisterDevice", {
@@ -10780,11 +10780,11 @@ export namespace messages {
   export const requestEncryption: TLApiMethod<"messages.requestEncryption", {
     user_id: global.InputUser               // InputUser
     random_id: number                       // int
-    g_a: BufferSource                       // bytes
+    g_a: Uint8Array                         // bytes
   }, global.EncryptedChat>
   export const acceptEncryption: TLApiMethod<"messages.acceptEncryption", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
-    g_b: BufferSource                       // bytes
+    g_b: Uint8Array                         // bytes
     key_fingerprint: bigint                 // long
   }, global.EncryptedChat>
   export const discardEncryption: TLApiMethod<"messages.discardEncryption", {
@@ -10803,19 +10803,19 @@ export namespace messages {
     silent?: true                           // flags.0?true
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
-    data: BufferSource                      // bytes
+    data: Uint8Array                        // bytes
   }, SentEncryptedMessage>
   export const sendEncryptedFile: TLApiMethod<"messages.sendEncryptedFile", {
     silent?: true                           // flags.0?true
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
-    data: BufferSource                      // bytes
+    data: Uint8Array                        // bytes
     file: global.InputEncryptedFile         // InputEncryptedFile
   }, SentEncryptedMessage>
   export const sendEncryptedService: TLApiMethod<"messages.sendEncryptedService", {
     peer: global.InputEncryptedChat         // InputEncryptedChat
     random_id: bigint                       // long
-    data: BufferSource                      // bytes
+    data: Uint8Array                        // bytes
   }, SentEncryptedMessage>
   export const receivedQueue: TLApiMethod<"messages.receivedQueue", {
     max_qts: number                         // int
@@ -10898,7 +10898,7 @@ export namespace messages {
     order: bigint[]                         // Vector<long>
   }, boolean>
   export const getDocumentByHash: TLApiMethod<"messages.getDocumentByHash", {
-    sha256: BufferSource                    // bytes
+    sha256: Uint8Array                      // bytes
     size: bigint                            // long
     mime_type: string                       // string
   }, global.Document>
@@ -10967,7 +10967,7 @@ export namespace messages {
     game?: true                             // flags.1?true
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-    data?: BufferSource                     // flags.0?bytes
+    data?: Uint8Array                       // flags.0?bytes
     password?: global.InputCheckPasswordSRP // flags.2?InputCheckPasswordSRP
   }, BotCallbackAnswer>
   export const setBotCallbackAnswer: TLApiMethod<"messages.setBotCallbackAnswer", {
@@ -11148,7 +11148,7 @@ export namespace messages {
   export const sendVote: TLApiMethod<"messages.sendVote", {
     peer: global.InputPeer                  // InputPeer
     msg_id: number                          // int
-    options: BufferSource[]                 // Vector<bytes>
+    options: Uint8Array[]                   // Vector<bytes>
   }, global.Updates>
   export const getPollResults: TLApiMethod<"messages.getPollResults", {
     peer: global.InputPeer                  // InputPeer
@@ -11218,7 +11218,7 @@ export namespace messages {
   export const getPollVotes: TLApiMethod<"messages.getPollVotes", {
     peer: global.InputPeer                  // InputPeer
     id: number                              // int
-    option?: BufferSource                   // flags.0?bytes
+    option?: Uint8Array                     // flags.0?bytes
     offset?: string                         // flags.1?string
     limit: number                           // int
   }, VotesList>
@@ -11619,7 +11619,7 @@ export namespace upload {
   export const saveFilePart: TLApiMethod<"upload.saveFilePart", {
     file_id: bigint                         // long
     file_part: number                       // int
-    bytes: BufferSource                     // bytes
+    bytes: Uint8Array                       // bytes
   }, boolean>
   export const getFile: TLApiMethod<"upload.getFile", {
     precise?: true                          // flags.0?true
@@ -11632,7 +11632,7 @@ export namespace upload {
     file_id: bigint                         // long
     file_part: number                       // int
     file_total_parts: number                // int
-    bytes: BufferSource                     // bytes
+    bytes: Uint8Array                       // bytes
   }, boolean>
   export const getWebFile: TLApiMethod<"upload.getWebFile", {
     location: global.InputWebFileLocation   // InputWebFileLocation
@@ -11640,16 +11640,16 @@ export namespace upload {
     limit: number                           // int
   }, WebFile>
   export const getCdnFile: TLApiMethod<"upload.getCdnFile", {
-    file_token: BufferSource                // bytes
+    file_token: Uint8Array                  // bytes
     offset: bigint                          // long
     limit: number                           // int
   }, CdnFile>
   export const reuploadCdnFile: TLApiMethod<"upload.reuploadCdnFile", {
-    file_token: BufferSource                // bytes
-    request_token: BufferSource             // bytes
+    file_token: Uint8Array                  // bytes
+    request_token: Uint8Array               // bytes
   }, global.FileHash[]>
   export const getCdnFileHashes: TLApiMethod<"upload.getCdnFileHashes", {
-    file_token: BufferSource                // bytes
+    file_token: Uint8Array                  // bytes
     offset: bigint                          // long
   }, global.FileHash[]>
   export const getFileHashes: TLApiMethod<"upload.getFileHashes", {
@@ -11871,7 +11871,7 @@ export namespace channels {
   }, global.Updates>
   export const viewSponsoredMessage: TLApiMethod<"channels.viewSponsoredMessage", {
     channel: global.InputChannel            // InputChannel
-    random_id: BufferSource                 // bytes
+    random_id: Uint8Array                   // bytes
   }, boolean>
   export const getSponsoredMessages: TLApiMethod<"channels.getSponsoredMessages", {
     channel: global.InputChannel            // InputChannel
@@ -11963,7 +11963,7 @@ export namespace channels {
   }, global.Updates>
   export const clickSponsoredMessage: TLApiMethod<"channels.clickSponsoredMessage", {
     channel: global.InputChannel            // InputChannel
-    random_id: BufferSource                 // bytes
+    random_id: Uint8Array                   // bytes
   }, boolean>
   export const updateColor: TLApiMethod<"channels.updateColor", {
     channel: global.InputChannel            // InputChannel
@@ -12074,7 +12074,7 @@ export namespace payments {
     invoice_media: global.InputMedia        // InputMedia
   }, ExportedInvoice>
   export const assignAppStoreTransaction: TLApiMethod<"payments.assignAppStoreTransaction", {
-    receipt: BufferSource                   // bytes
+    receipt: Uint8Array                     // bytes
     purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
   }, global.Updates>
   export const assignPlayMarketTransaction: TLApiMethod<"payments.assignPlayMarketTransaction", {
@@ -12161,17 +12161,17 @@ export namespace phone {
     video?: true                            // flags.0?true
     user_id: global.InputUser               // InputUser
     random_id: number                       // int
-    g_a_hash: BufferSource                  // bytes
+    g_a_hash: Uint8Array                    // bytes
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
   }, PhoneCall>
   export const acceptCall: TLApiMethod<"phone.acceptCall", {
     peer: global.InputPhoneCall             // InputPhoneCall
-    g_b: BufferSource                       // bytes
+    g_b: Uint8Array                         // bytes
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
   }, PhoneCall>
   export const confirmCall: TLApiMethod<"phone.confirmCall", {
     peer: global.InputPhoneCall             // InputPhoneCall
-    g_a: BufferSource                       // bytes
+    g_a: Uint8Array                         // bytes
     key_fingerprint: bigint                 // long
     protocol: global.PhoneCallProtocol      // PhoneCallProtocol
   }, PhoneCall>
@@ -12197,7 +12197,7 @@ export namespace phone {
   }, boolean>
   export const sendSignalingData: TLApiMethod<"phone.sendSignalingData", {
     peer: global.InputPhoneCall             // InputPhoneCall
-    data: BufferSource                      // bytes
+    data: Uint8Array                        // bytes
   }, boolean>
   export const createGroupCall: TLApiMethod<"phone.createGroupCall", {
     rtmp_stream?: true                      // flags.2?true

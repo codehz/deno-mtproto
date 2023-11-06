@@ -35,10 +35,10 @@ export interface BaseSerializer {
   int128(value: Uint8Array): void;
   int256(value: Uint8Array): void;
   double(value: number): void;
-  bytes(value: BufferSource): void;
+  bytes(value: Uint8Array): void;
   string(value: string): void;
 
-  raw(value: BufferSource): void;
+  raw(value: Uint8Array): void;
 
   vector<T>(
     value: T[],

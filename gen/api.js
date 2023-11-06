@@ -6698,23 +6698,23 @@ export const $encoder = {
     this.int32(85337187);
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
-    this.bytes(_.pq);                       // : BufferSource - bytes
+    this.bytes(_.pq);                       // : Uint8Array - bytes
     this.vector(_.server_public_key_fingerprints, this.int64); // : bigint[] - Vector<long>
   },
   ["mt.p_q_inner_data"](_) {
     this.int32(-2083955988);
-    this.bytes(_.pq);                       // : BufferSource - bytes
-    this.bytes(_.p);                        // : BufferSource - bytes
-    this.bytes(_.q);                        // : BufferSource - bytes
+    this.bytes(_.pq);                       // : Uint8Array - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
+    this.bytes(_.q);                        // : Uint8Array - bytes
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int256(_.new_nonce);               // : Uint8Array - int256
   },
   ["mt.p_q_inner_data_dc"](_) {
     this.int32(-1443537003);
-    this.bytes(_.pq);                       // : BufferSource - bytes
-    this.bytes(_.p);                        // : BufferSource - bytes
-    this.bytes(_.q);                        // : BufferSource - bytes
+    this.bytes(_.pq);                       // : Uint8Array - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
+    this.bytes(_.q);                        // : Uint8Array - bytes
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int256(_.new_nonce);               // : Uint8Array - int256
@@ -6722,9 +6722,9 @@ export const $encoder = {
   },
   ["mt.p_q_inner_data_temp"](_) {
     this.int32(1013613780);
-    this.bytes(_.pq);                       // : BufferSource - bytes
-    this.bytes(_.p);                        // : BufferSource - bytes
-    this.bytes(_.q);                        // : BufferSource - bytes
+    this.bytes(_.pq);                       // : Uint8Array - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
+    this.bytes(_.q);                        // : Uint8Array - bytes
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int256(_.new_nonce);               // : Uint8Array - int256
@@ -6732,9 +6732,9 @@ export const $encoder = {
   },
   ["mt.p_q_inner_data_temp_dc"](_) {
     this.int32(1459478408);
-    this.bytes(_.pq);                       // : BufferSource - bytes
-    this.bytes(_.p);                        // : BufferSource - bytes
-    this.bytes(_.q);                        // : BufferSource - bytes
+    this.bytes(_.pq);                       // : Uint8Array - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
+    this.bytes(_.q);                        // : Uint8Array - bytes
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int256(_.new_nonce);               // : Uint8Array - int256
@@ -6751,15 +6751,15 @@ export const $encoder = {
     this.int32(-790100132);
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
-    this.bytes(_.encrypted_answer);         // : BufferSource - bytes
+    this.bytes(_.encrypted_answer);         // : Uint8Array - bytes
   },
   ["mt.server_DH_inner_data"](_) {
     this.int32(-1249309254);
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int32(_.g);                        // : number - int
-    this.bytes(_.dh_prime);                 // : BufferSource - bytes
-    this.bytes(_.g_a);                      // : BufferSource - bytes
+    this.bytes(_.dh_prime);                 // : Uint8Array - bytes
+    this.bytes(_.g_a);                      // : Uint8Array - bytes
     this.int32(_.server_time);              // : number - int
   },
   ["mt.client_DH_inner_data"](_) {
@@ -6767,7 +6767,7 @@ export const $encoder = {
     this.int128(_.nonce);                   // : Uint8Array - int128
     this.int128(_.server_nonce);            // : Uint8Array - int128
     this.int64(_.retry_id);                 // : bigint - long
-    this.bytes(_.g_b);                      // : BufferSource - bytes
+    this.bytes(_.g_b);                      // : Uint8Array - bytes
   },
   ["mt.dh_gen_ok"](_) {
     this.int32(1003222836);
@@ -6849,7 +6849,7 @@ export const $encoder = {
   },
   ["mt.gzip_packed"](_) {
     this.int32(812830625);
-    this.bytes(_.packed_data);              // : BufferSource - bytes
+    this.bytes(_.packed_data);              // : Uint8Array - bytes
   },
   ["mt.msgs_ack"](_) {
     this.int32(1658238041);
@@ -6883,12 +6883,12 @@ export const $encoder = {
   ["mt.msgs_state_info"](_) {
     this.int32(81704317);
     this.int64(_.req_msg_id);               // : bigint - long
-    this.bytes(_.info);                     // : BufferSource - bytes
+    this.bytes(_.info);                     // : Uint8Array - bytes
   },
   ["mt.msgs_all_info"](_) {
     this.int32(-1933520591);
     this.vector(_.msg_ids, this.int64);     // : bigint[] - Vector<long>
-    this.bytes(_.info);                     // : BufferSource - bytes
+    this.bytes(_.info);                     // : Uint8Array - bytes
   },
   ["mt.msg_detailed_info"](_) {
     this.int32(661470918);
@@ -7128,7 +7128,7 @@ export const $encoder = {
     if (_.photo != null)
       this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
     this.object(_.invoice);                 // : Invoice - Invoice
-    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.bytes(_.payload);                  // : Uint8Array - bytes
     this.string(_.provider);                // : string - string
     this.object(_.provider_data);           // : DataJSON - DataJSON
     if (_.start_param != null)
@@ -7163,7 +7163,7 @@ export const $encoder = {
     )
     this.object(_.poll);                    // : Poll - Poll
     if (_.correct_answers != null && _.correct_answers.length > 0)
-      this.vector(_.correct_answers, this.bytes); // ?: BufferSource[] - flags.0?Vector<bytes>
+      this.vector(_.correct_answers, this.bytes); // ?: Uint8Array[] - flags.0?Vector<bytes>
     if (_.solution != null)
       this.string(_.solution);              // ?: string - flags.1?string
     if (_.solution_entities != null && _.solution_entities.length > 0)
@@ -7237,14 +7237,14 @@ export const $encoder = {
     this.int32(1001634122);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
   },
   ["inputFileLocation"](_) {
     this.int32(-539317279);
     this.int64(_.volume_id);                // : bigint - long
     this.int32(_.local_id);                 // : number - int
     this.int64(_.secret);                   // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
   },
   ["inputEncryptedFileLocation"](_) {
     this.int32(-182231723);
@@ -7255,7 +7255,7 @@ export const $encoder = {
     this.int32(-1160743548);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
     this.string(_.thumb_size);              // : string - string
   },
   ["inputSecureFileLocation"](_) {
@@ -7270,14 +7270,14 @@ export const $encoder = {
     this.int32(1075322878);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
     this.string(_.thumb_size);              // : string - string
   },
   ["inputPhotoLegacyFileLocation"](_) {
     this.int32(-667654413);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
     this.int64(_.volume_id);                // : bigint - long
     this.int32(_.local_id);                 // : number - int
     this.int64(_.secret);                   // : bigint - long
@@ -7495,7 +7495,7 @@ export const $encoder = {
       this.true(_.personal);                // ?: true - flags.2?true
     this.int64(_.photo_id);                 // : bigint - long
     if (_.stripped_thumb != null)
-      this.bytes(_.stripped_thumb);         // ?: BufferSource - flags.1?bytes
+      this.bytes(_.stripped_thumb);         // ?: Uint8Array - flags.1?bytes
     this.int32(_.dc_id);                    // : number - int
   },
   ["userStatusEmpty"](_) {
@@ -7929,7 +7929,7 @@ export const $encoder = {
       this.true(_.has_video);               // ?: true - flags.0?true
     this.int64(_.photo_id);                 // : bigint - long
     if (_.stripped_thumb != null)
-      this.bytes(_.stripped_thumb);         // ?: BufferSource - flags.1?bytes
+      this.bytes(_.stripped_thumb);         // ?: Uint8Array - flags.1?bytes
     this.int32(_.dc_id);                    // : number - int
   },
   ["messageEmpty"](_) {
@@ -8295,7 +8295,7 @@ export const $encoder = {
       this.true(_.recurring_used);          // ?: true - flags.3?true
     this.string(_.currency);                // : string - string
     this.int64(_.total_amount);             // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.bytes(_.payload);                  // : Uint8Array - bytes
     if (_.info != null)
       this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (_.shipping_option_id != null)
@@ -8556,7 +8556,7 @@ export const $encoder = {
       this.true(_.has_stickers);            // ?: true - flags.0?true
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
     this.int32(_.date);                     // : number - int
     this.vector(_.sizes, this.object);      // : PhotoSize[] - Vector<PhotoSize>
     if (_.video_sizes != null && _.video_sizes.length > 0)
@@ -8579,12 +8579,12 @@ export const $encoder = {
     this.string(_.type);                    // : string - string
     this.int32(_.w);                        // : number - int
     this.int32(_.h);                        // : number - int
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["photoStrippedSize"](_) {
     this.int32(-525288402);
     this.string(_.type);                    // : string - string
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["photoSizeProgressive"](_) {
     this.int32(-96535659);
@@ -8596,7 +8596,7 @@ export const $encoder = {
   ["photoPathSize"](_) {
     this.int32(-668906175);
     this.string(_.type);                    // : string - string
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["geoPointEmpty"](_) {
     this.int32(286776671);
@@ -8644,7 +8644,7 @@ export const $encoder = {
     if (_.tmp_sessions != null)
       this.int32(_.tmp_sessions);           // ?: number - flags.0?int
     if (_.future_auth_token != null)
-      this.bytes(_.future_auth_token);      // ?: BufferSource - flags.2?bytes
+      this.bytes(_.future_auth_token);      // ?: Uint8Array - flags.2?bytes
     this.object(_.user);                    // : User - User
   },
   ["auth.authorizationSignUpRequired"](_) {
@@ -8658,7 +8658,7 @@ export const $encoder = {
   ["auth.exportedAuthorization"](_) {
     this.int32(-1271602504);
     this.int64(_.id);                       // : bigint - long
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["inputNotifyPeer"](_) {
     this.int32(-1195615476);
@@ -9419,7 +9419,7 @@ export const $encoder = {
     this.int32(_.msg_id);                   // : number - int
     this.int64(_.chat_instance);            // : bigint - long
     if (_.data != null)
-      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
+      this.bytes(_.data);                   // ?: Uint8Array - flags.0?bytes
     if (_.game_short_name != null)
       this.string(_.game_short_name);       // ?: string - flags.1?string
   },
@@ -9440,7 +9440,7 @@ export const $encoder = {
     this.object(_.msg_id);                  // : InputBotInlineMessageID - InputBotInlineMessageID
     this.int64(_.chat_instance);            // : bigint - long
     if (_.data != null)
-      this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
+      this.bytes(_.data);                   // ?: Uint8Array - flags.0?bytes
     if (_.game_short_name != null)
       this.string(_.game_short_name);       // ?: string - flags.1?string
   },
@@ -9515,7 +9515,7 @@ export const $encoder = {
     this.int32(-1246823043);
     this.int64(_.query_id);                 // : bigint - long
     this.int64(_.user_id);                  // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.bytes(_.payload);                  // : Uint8Array - bytes
     this.object(_.shipping_address);        // : PostAddress - PostAddress
   },
   ["updateBotPrecheckoutQuery"](_) {
@@ -9526,7 +9526,7 @@ export const $encoder = {
     )
     this.int64(_.query_id);                 // : bigint - long
     this.int64(_.user_id);                  // : bigint - long
-    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.bytes(_.payload);                  // : Uint8Array - bytes
     if (_.info != null)
       this.object(_.info);                  // ?: PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (_.shipping_option_id != null)
@@ -9632,7 +9632,7 @@ export const $encoder = {
     this.int32(619974263);
     this.int64(_.poll_id);                  // : bigint - long
     this.object(_.peer);                    // : Peer - Peer
-    this.vector(_.options, this.bytes);     // : BufferSource[] - Vector<bytes>
+    this.vector(_.options, this.bytes);     // : Uint8Array[] - Vector<bytes>
     this.int32(_.qts);                      // : number - int
   },
   ["updateDialogFilter"](_) {
@@ -9654,7 +9654,7 @@ export const $encoder = {
   ["updatePhoneCallSignalingData"](_) {
     this.int32(643940105);
     this.int64(_.phone_call_id);            // : bigint - long
-    this.bytes(_.data);                     // : BufferSource - bytes
+    this.bytes(_.data);                     // : Uint8Array - bytes
   },
   ["updateChannelMessageForwards"](_) {
     this.int32(-761649164);
@@ -10134,14 +10134,14 @@ export const $encoder = {
     this.int32(157948117);
     this.object(_.type);                    // : storage.FileType - storage.FileType
     this.int32(_.mtime);                    // : number - int
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["upload.fileCdnRedirect"](_) {
     this.int32(-242427324);
     this.int32(_.dc_id);                    // : number - int
-    this.bytes(_.file_token);               // : BufferSource - bytes
-    this.bytes(_.encryption_key);           // : BufferSource - bytes
-    this.bytes(_.encryption_iv);            // : BufferSource - bytes
+    this.bytes(_.file_token);               // : Uint8Array - bytes
+    this.bytes(_.encryption_key);           // : Uint8Array - bytes
+    this.bytes(_.encryption_iv);            // : Uint8Array - bytes
     this.vector(_.file_hashes, this.object); // : FileHash[] - Vector<FileHash>
   },
   ["dcOption"](_) {
@@ -10171,7 +10171,7 @@ export const $encoder = {
     this.string(_.ip_address);              // : string - string
     this.int32(_.port);                     // : number - int
     if (_.secret != null)
-      this.bytes(_.secret);                 // ?: BufferSource - flags.10?bytes
+      this.bytes(_.secret);                 // ?: Uint8Array - flags.10?bytes
   },
   ["config"](_) {
     this.int32(-870702050);
@@ -10315,7 +10315,7 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int64(_.admin_id);                 // : bigint - long
     this.int64(_.participant_id);           // : bigint - long
-    this.bytes(_.g_a);                      // : BufferSource - bytes
+    this.bytes(_.g_a);                      // : Uint8Array - bytes
   },
   ["encryptedChat"](_) {
     this.int32(1643173063);
@@ -10324,7 +10324,7 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int64(_.admin_id);                 // : bigint - long
     this.int64(_.participant_id);           // : bigint - long
-    this.bytes(_.g_a_or_b);                 // : BufferSource - bytes
+    this.bytes(_.g_a_or_b);                 // : Uint8Array - bytes
     this.int64(_.key_fingerprint);          // : bigint - long
   },
   ["encryptedChatDiscarded"](_) {
@@ -10378,7 +10378,7 @@ export const $encoder = {
     this.int64(_.random_id);                // : bigint - long
     this.int32(_.chat_id);                  // : number - int
     this.int32(_.date);                     // : number - int
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
     this.object(_.file);                    // : EncryptedFile - EncryptedFile
   },
   ["encryptedMessageService"](_) {
@@ -10386,18 +10386,18 @@ export const $encoder = {
     this.int64(_.random_id);                // : bigint - long
     this.int32(_.chat_id);                  // : number - int
     this.int32(_.date);                     // : number - int
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["messages.dhConfigNotModified"](_) {
     this.int32(-1058912715);
-    this.bytes(_.random);                   // : BufferSource - bytes
+    this.bytes(_.random);                   // : Uint8Array - bytes
   },
   ["messages.dhConfig"](_) {
     this.int32(740433629);
     this.int32(_.g);                        // : number - int
-    this.bytes(_.p);                        // : BufferSource - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
     this.int32(_.version);                  // : number - int
-    this.bytes(_.random);                   // : BufferSource - bytes
+    this.bytes(_.random);                   // : Uint8Array - bytes
   },
   ["messages.sentEncryptedMessage"](_) {
     this.int32(1443858741);
@@ -10415,7 +10415,7 @@ export const $encoder = {
     this.int32(448771445);
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
   },
   ["documentEmpty"](_) {
     this.int32(922273905);
@@ -10429,7 +10429,7 @@ export const $encoder = {
     )
     this.int64(_.id);                       // : bigint - long
     this.int64(_.access_hash);              // : bigint - long
-    this.bytes(_.file_reference);           // : BufferSource - bytes
+    this.bytes(_.file_reference);           // : Uint8Array - bytes
     this.int32(_.date);                     // : number - int
     this.string(_.mime_type);               // : string - string
     this.int64(_.size);                     // : bigint - long
@@ -10723,7 +10723,7 @@ export const $encoder = {
     if (_.performer != null)
       this.string(_.performer);             // ?: string - flags.1?string
     if (_.waveform != null)
-      this.bytes(_.waveform);               // ?: BufferSource - flags.2?bytes
+      this.bytes(_.waveform);               // ?: Uint8Array - flags.2?bytes
   },
   ["documentAttributeFilename"](_) {
     this.int32(358154344);
@@ -10915,7 +10915,7 @@ export const $encoder = {
     if (_.current_algo != null)
       this.object(_.current_algo);          // ?: PasswordKdfAlgo - flags.2?PasswordKdfAlgo
     if (_.srp_B != null)
-      this.bytes(_.srp_B);                  // ?: BufferSource - flags.2?bytes
+      this.bytes(_.srp_B);                  // ?: Uint8Array - flags.2?bytes
     if (_.srp_id != null)
       this.int64(_.srp_id);                 // ?: bigint - flags.2?long
     if (_.hint != null)
@@ -10924,7 +10924,7 @@ export const $encoder = {
       this.string(_.email_unconfirmed_pattern); // ?: string - flags.4?string
     this.object(_.new_algo);                // : PasswordKdfAlgo - PasswordKdfAlgo
     this.object(_.new_secure_algo);         // : SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
-    this.bytes(_.secure_random);            // : BufferSource - bytes
+    this.bytes(_.secure_random);            // : Uint8Array - bytes
     if (_.pending_reset_date != null)
       this.int32(_.pending_reset_date);     // ?: number - flags.5?int
     if (_.login_email_pattern != null)
@@ -10953,7 +10953,7 @@ export const $encoder = {
     if (_.new_algo != null)
       this.object(_.new_algo);              // ?: PasswordKdfAlgo - flags.0?PasswordKdfAlgo
     if (_.new_password_hash != null)
-      this.bytes(_.new_password_hash);      // ?: BufferSource - flags.0?bytes
+      this.bytes(_.new_password_hash);      // ?: Uint8Array - flags.0?bytes
     if (_.hint != null)
       this.string(_.hint);                  // ?: string - flags.0?string
     if (_.email != null)
@@ -11192,7 +11192,7 @@ export const $encoder = {
     if (_.requires_password != null)
       this.true(_.requires_password);       // ?: true - flags.0?true
     this.string(_.text);                    // : string - string
-    this.bytes(_.data);                     // : BufferSource - bytes
+    this.bytes(_.data);                     // : Uint8Array - bytes
   },
   ["keyboardButtonRequestPhone"](_) {
     this.int32(-1318425559);
@@ -11757,7 +11757,7 @@ export const $encoder = {
     if (_.photo != null)
       this.object(_.photo);                 // ?: InputWebDocument - flags.0?InputWebDocument
     this.object(_.invoice);                 // : Invoice - Invoice
-    this.bytes(_.payload);                  // : BufferSource - bytes
+    this.bytes(_.payload);                  // : Uint8Array - bytes
     this.string(_.provider);                // : string - string
     this.object(_.provider_data);           // : DataJSON - DataJSON
     if (_.reply_markup != null)
@@ -12143,7 +12143,7 @@ export const $encoder = {
       | (+(_.push_timeout != null) << 1)
     )
     if (_.nonce != null)
-      this.bytes(_.nonce);                  // ?: BufferSource - flags.0?bytes
+      this.bytes(_.nonce);                  // ?: Uint8Array - flags.0?bytes
     if (_.receipt != null)
       this.string(_.receipt);               // ?: string - flags.1?string
     if (_.push_timeout != null)
@@ -12808,7 +12808,7 @@ export const $encoder = {
     this.string(_.mime_type);               // : string - string
     this.object(_.file_type);               // : storage.FileType - storage.FileType
     this.int32(_.mtime);                    // : number - int
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["payments.paymentForm"](_) {
     this.int32(-1610250415);
@@ -12907,7 +12907,7 @@ export const $encoder = {
   ["inputPaymentCredentialsSaved"](_) {
     this.int32(-1056001329);
     this.string(_.id);                      // : string - string
-    this.bytes(_.tmp_password);             // : BufferSource - bytes
+    this.bytes(_.tmp_password);             // : Uint8Array - bytes
   },
   ["inputPaymentCredentials"](_) {
     this.int32(873977640);
@@ -12928,7 +12928,7 @@ export const $encoder = {
   },
   ["account.tmpPassword"](_) {
     this.int32(-614138572);
-    this.bytes(_.tmp_password);             // : BufferSource - bytes
+    this.bytes(_.tmp_password);             // : Uint8Array - bytes
     this.int32(_.valid_until);              // : number - int
   },
   ["shippingOption"](_) {
@@ -12988,7 +12988,7 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int64(_.admin_id);                 // : bigint - long
     this.int64(_.participant_id);           // : bigint - long
-    this.bytes(_.g_a_hash);                 // : BufferSource - bytes
+    this.bytes(_.g_a_hash);                 // : Uint8Array - bytes
     this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
   },
   ["phoneCallAccepted"](_) {
@@ -13003,7 +13003,7 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int64(_.admin_id);                 // : bigint - long
     this.int64(_.participant_id);           // : bigint - long
-    this.bytes(_.g_b);                      // : BufferSource - bytes
+    this.bytes(_.g_b);                      // : Uint8Array - bytes
     this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
   },
   ["phoneCall"](_) {
@@ -13021,7 +13021,7 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
     this.int64(_.admin_id);                 // : bigint - long
     this.int64(_.participant_id);           // : bigint - long
-    this.bytes(_.g_a_or_b);                 // : BufferSource - bytes
+    this.bytes(_.g_a_or_b);                 // : Uint8Array - bytes
     this.int64(_.key_fingerprint);          // : bigint - long
     this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
     this.vector(_.connections, this.object); // : PhoneConnection[] - Vector<PhoneConnection>
@@ -13059,7 +13059,7 @@ export const $encoder = {
     this.string(_.ip);                      // : string - string
     this.string(_.ipv6);                    // : string - string
     this.int32(_.port);                     // : number - int
-    this.bytes(_.peer_tag);                 // : BufferSource - bytes
+    this.bytes(_.peer_tag);                 // : Uint8Array - bytes
   },
   ["phoneConnectionWebrtc"](_) {
     this.int32(1667228533);
@@ -13099,11 +13099,11 @@ export const $encoder = {
   },
   ["upload.cdnFileReuploadNeeded"](_) {
     this.int32(-290921362);
-    this.bytes(_.request_token);            // : BufferSource - bytes
+    this.bytes(_.request_token);            // : Uint8Array - bytes
   },
   ["upload.cdnFile"](_) {
     this.int32(-1449145777);
-    this.bytes(_.bytes);                    // : BufferSource - bytes
+    this.bytes(_.bytes);                    // : Uint8Array - bytes
   },
   ["cdnPublicKey"](_) {
     this.int32(-914167110);
@@ -13574,7 +13574,7 @@ export const $encoder = {
     this.int32(-207944868);
     this.int64(_.offset);                   // : bigint - long
     this.int32(_.limit);                    // : number - int
-    this.bytes(_.hash);                     // : BufferSource - bytes
+    this.bytes(_.hash);                     // : Uint8Array - bytes
   },
   ["inputClientProxy"](_) {
     this.int32(1968737087);
@@ -13595,8 +13595,8 @@ export const $encoder = {
     this.int64(_.id);                       // : bigint - long
     this.int32(_.parts);                    // : number - int
     this.string(_.md5_checksum);            // : string - string
-    this.bytes(_.file_hash);                // : BufferSource - bytes
-    this.bytes(_.secret);                   // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
+    this.bytes(_.secret);                   // : Uint8Array - bytes
   },
   ["inputSecureFile"](_) {
     this.int32(1399317950);
@@ -13613,14 +13613,14 @@ export const $encoder = {
     this.int64(_.size);                     // : bigint - long
     this.int32(_.dc_id);                    // : number - int
     this.int32(_.date);                     // : number - int
-    this.bytes(_.file_hash);                // : BufferSource - bytes
-    this.bytes(_.secret);                   // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
+    this.bytes(_.secret);                   // : Uint8Array - bytes
   },
   ["secureData"](_) {
     this.int32(-1964327229);
-    this.bytes(_.data);                     // : BufferSource - bytes
-    this.bytes(_.data_hash);                // : BufferSource - bytes
-    this.bytes(_.secret);                   // : BufferSource - bytes
+    this.bytes(_.data);                     // : Uint8Array - bytes
+    this.bytes(_.data_hash);                // : Uint8Array - bytes
+    this.bytes(_.secret);                   // : Uint8Array - bytes
   },
   ["securePlainPhone"](_) {
     this.int32(2103482845);
@@ -13695,7 +13695,7 @@ export const $encoder = {
       this.vector(_.files, this.object);    // ?: SecureFile[] - flags.4?Vector<SecureFile>
     if (_.plain_data != null)
       this.object(_.plain_data);            // ?: SecurePlainData - flags.5?SecurePlainData
-    this.bytes(_.hash);                     // : BufferSource - bytes
+    this.bytes(_.hash);                     // : Uint8Array - bytes
   },
   ["inputSecureValue"](_) {
     this.int32(-618540889);
@@ -13727,68 +13727,68 @@ export const $encoder = {
   ["secureValueHash"](_) {
     this.int32(-316748368);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.hash);                     // : BufferSource - bytes
+    this.bytes(_.hash);                     // : Uint8Array - bytes
   },
   ["secureValueErrorData"](_) {
     this.int32(-391902247);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.data_hash);                // : BufferSource - bytes
+    this.bytes(_.data_hash);                // : Uint8Array - bytes
     this.string(_.field);                   // : string - string
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorFrontSide"](_) {
     this.int32(12467706);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorReverseSide"](_) {
     this.int32(-2037765467);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorSelfie"](_) {
     this.int32(-449327402);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorFile"](_) {
     this.int32(2054162547);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorFiles"](_) {
     this.int32(1717706985);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.vector(_.file_hash, this.bytes);   // : BufferSource[] - Vector<bytes>
+    this.vector(_.file_hash, this.bytes);   // : Uint8Array[] - Vector<bytes>
     this.string(_.text);                    // : string - string
   },
   ["secureValueError"](_) {
     this.int32(-2036501105);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.hash);                     // : BufferSource - bytes
+    this.bytes(_.hash);                     // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorTranslationFile"](_) {
     this.int32(-1592506512);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.bytes(_.file_hash);                // : BufferSource - bytes
+    this.bytes(_.file_hash);                // : Uint8Array - bytes
     this.string(_.text);                    // : string - string
   },
   ["secureValueErrorTranslationFiles"](_) {
     this.int32(878931416);
     this.object(_.type);                    // : SecureValueType - SecureValueType
-    this.vector(_.file_hash, this.bytes);   // : BufferSource[] - Vector<bytes>
+    this.vector(_.file_hash, this.bytes);   // : Uint8Array[] - Vector<bytes>
     this.string(_.text);                    // : string - string
   },
   ["secureCredentialsEncrypted"](_) {
     this.int32(871426631);
-    this.bytes(_.data);                     // : BufferSource - bytes
-    this.bytes(_.hash);                     // : BufferSource - bytes
-    this.bytes(_.secret);                   // : BufferSource - bytes
+    this.bytes(_.data);                     // : Uint8Array - bytes
+    this.bytes(_.hash);                     // : Uint8Array - bytes
+    this.bytes(_.secret);                   // : Uint8Array - bytes
   },
   ["account.authorizationForm"](_) {
     this.int32(-1389486888);
@@ -13838,26 +13838,26 @@ export const $encoder = {
   },
   ["passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow"](_) {
     this.int32(982592842);
-    this.bytes(_.salt1);                    // : BufferSource - bytes
-    this.bytes(_.salt2);                    // : BufferSource - bytes
+    this.bytes(_.salt1);                    // : Uint8Array - bytes
+    this.bytes(_.salt2);                    // : Uint8Array - bytes
     this.int32(_.g);                        // : number - int
-    this.bytes(_.p);                        // : BufferSource - bytes
+    this.bytes(_.p);                        // : Uint8Array - bytes
   },
   ["securePasswordKdfAlgoUnknown"](_) {
     this.int32(4883767);
   },
   ["securePasswordKdfAlgoPBKDF2HMACSHA512iter100000"](_) {
     this.int32(-1141711456);
-    this.bytes(_.salt);                     // : BufferSource - bytes
+    this.bytes(_.salt);                     // : Uint8Array - bytes
   },
   ["securePasswordKdfAlgoSHA512"](_) {
     this.int32(-2042159726);
-    this.bytes(_.salt);                     // : BufferSource - bytes
+    this.bytes(_.salt);                     // : Uint8Array - bytes
   },
   ["secureSecretSettings"](_) {
     this.int32(354925740);
     this.object(_.secure_algo);             // : SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
-    this.bytes(_.secure_secret);            // : BufferSource - bytes
+    this.bytes(_.secure_secret);            // : Uint8Array - bytes
     this.int64(_.secure_secret_id);         // : bigint - long
   },
   ["inputCheckPasswordEmpty"](_) {
@@ -13866,8 +13866,8 @@ export const $encoder = {
   ["inputCheckPasswordSRP"](_) {
     this.int32(-763367294);
     this.int64(_.srp_id);                   // : bigint - long
-    this.bytes(_.A);                        // : BufferSource - bytes
-    this.bytes(_.M1);                       // : BufferSource - bytes
+    this.bytes(_.A);                        // : Uint8Array - bytes
+    this.bytes(_.M1);                       // : Uint8Array - bytes
   },
   ["secureRequiredType"](_) {
     this.int32(-2103600678);
@@ -14047,7 +14047,7 @@ export const $encoder = {
   ["pollAnswer"](_) {
     this.int32(1823064809);
     this.string(_.text);                    // : string - string
-    this.bytes(_.option);                   // : BufferSource - bytes
+    this.bytes(_.option);                   // : Uint8Array - bytes
   },
   ["poll"](_) {
     this.int32(-2032041631);
@@ -14085,7 +14085,7 @@ export const $encoder = {
       this.true(_.chosen);                  // ?: true - flags.0?true
     if (_.correct != null)
       this.true(_.correct);                 // ?: true - flags.1?true
-    this.bytes(_.option);                   // : BufferSource - bytes
+    this.bytes(_.option);                   // : Uint8Array - bytes
     this.int32(_.voters);                   // : number - int
   },
   ["pollResults"](_) {
@@ -14279,7 +14279,7 @@ export const $encoder = {
     if (_.allow_firebase != null)
       this.true(_.allow_firebase);          // ?: true - flags.7?true
     if (_.logout_tokens != null && _.logout_tokens.length > 0)
-      this.vector(_.logout_tokens, this.bytes); // ?: BufferSource[] - flags.6?Vector<bytes>
+      this.vector(_.logout_tokens, this.bytes); // ?: Uint8Array[] - flags.6?Vector<bytes>
     if (_.token != null)
       this.string(_.token);                 // ?: string - flags.8?string
     if (_.app_sandbox != null)
@@ -14501,12 +14501,12 @@ export const $encoder = {
   ["auth.loginToken"](_) {
     this.int32(1654593920);
     this.int32(_.expires);                  // : number - int
-    this.bytes(_.token);                    // : BufferSource - bytes
+    this.bytes(_.token);                    // : Uint8Array - bytes
   },
   ["auth.loginTokenMigrateTo"](_) {
     this.int32(110008598);
     this.int32(_.dc_id);                    // : number - int
-    this.bytes(_.token);                    // : BufferSource - bytes
+    this.bytes(_.token);                    // : Uint8Array - bytes
   },
   ["auth.loginTokenSuccess"](_) {
     this.int32(957176926);
@@ -15304,7 +15304,7 @@ export const $encoder = {
       this.true(_.recommended);             // ?: true - flags.5?true
     if (_.show_peer_photo != null)
       this.true(_.show_peer_photo);         // ?: true - flags.6?true
-    this.bytes(_.random_id);                // : BufferSource - bytes
+    this.bytes(_.random_id);                // : Uint8Array - bytes
     if (_.from_id != null)
       this.object(_.from_id);               // ?: Peer - flags.3?Peer
     if (_.chat_invite != null)
@@ -15399,7 +15399,7 @@ export const $encoder = {
       (+(_.future_auth_token != null) << 0)
     )
     if (_.future_auth_token != null)
-      this.bytes(_.future_auth_token);      // ?: BufferSource - flags.0?bytes
+      this.bytes(_.future_auth_token);      // ?: Uint8Array - flags.0?bytes
   },
   ["reactionCount"](_) {
     this.int32(-1546531968);
@@ -16187,7 +16187,7 @@ export const $encoder = {
   ["messagePeerVote"](_) {
     this.int32(-1228133028);
     this.object(_.peer);                    // : Peer - Peer
-    this.bytes(_.option);                   // : BufferSource - bytes
+    this.bytes(_.option);                   // : Uint8Array - bytes
     this.int32(_.date);                     // : number - int
   },
   ["messagePeerVoteInputOption"](_) {
@@ -16198,7 +16198,7 @@ export const $encoder = {
   ["messagePeerVoteMultiple"](_) {
     this.int32(1177089766);
     this.object(_.peer);                    // : Peer - Peer
-    this.vector(_.options, this.bytes);     // : BufferSource[] - Vector<bytes>
+    this.vector(_.options, this.bytes);     // : Uint8Array[] - Vector<bytes>
     this.int32(_.date);                     // : number - int
   },
   ["sponsoredWebPage"](_) {
@@ -16642,15 +16642,15 @@ export const $decoder = new Map([
     const _ = { _: "mt.resPQ" }
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
-    _.pq = this.bytes();                    // : BufferSource - bytes
+    _.pq = this.bytes();                    // : Uint8Array - bytes
     _.server_public_key_fingerprints = this.vector(this.int64); // : bigint[] - Vector<long>
     return _;
   }],
   [-2083955988, function decode$mt__p_q_inner_data() {
     const _ = { _: "mt.p_q_inner_data" }
-    _.pq = this.bytes();                    // : BufferSource - bytes
-    _.p = this.bytes();                     // : BufferSource - bytes
-    _.q = this.bytes();                     // : BufferSource - bytes
+    _.pq = this.bytes();                    // : Uint8Array - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
+    _.q = this.bytes();                     // : Uint8Array - bytes
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.new_nonce = this.int256();            // : Uint8Array - int256
@@ -16658,9 +16658,9 @@ export const $decoder = new Map([
   }],
   [-1443537003, function decode$mt__p_q_inner_data_dc() {
     const _ = { _: "mt.p_q_inner_data_dc" }
-    _.pq = this.bytes();                    // : BufferSource - bytes
-    _.p = this.bytes();                     // : BufferSource - bytes
-    _.q = this.bytes();                     // : BufferSource - bytes
+    _.pq = this.bytes();                    // : Uint8Array - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
+    _.q = this.bytes();                     // : Uint8Array - bytes
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.new_nonce = this.int256();            // : Uint8Array - int256
@@ -16669,9 +16669,9 @@ export const $decoder = new Map([
   }],
   [1013613780, function decode$mt__p_q_inner_data_temp() {
     const _ = { _: "mt.p_q_inner_data_temp" }
-    _.pq = this.bytes();                    // : BufferSource - bytes
-    _.p = this.bytes();                     // : BufferSource - bytes
-    _.q = this.bytes();                     // : BufferSource - bytes
+    _.pq = this.bytes();                    // : Uint8Array - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
+    _.q = this.bytes();                     // : Uint8Array - bytes
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.new_nonce = this.int256();            // : Uint8Array - int256
@@ -16680,9 +16680,9 @@ export const $decoder = new Map([
   }],
   [1459478408, function decode$mt__p_q_inner_data_temp_dc() {
     const _ = { _: "mt.p_q_inner_data_temp_dc" }
-    _.pq = this.bytes();                    // : BufferSource - bytes
-    _.p = this.bytes();                     // : BufferSource - bytes
-    _.q = this.bytes();                     // : BufferSource - bytes
+    _.pq = this.bytes();                    // : Uint8Array - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
+    _.q = this.bytes();                     // : Uint8Array - bytes
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.new_nonce = this.int256();            // : Uint8Array - int256
@@ -16701,7 +16701,7 @@ export const $decoder = new Map([
     const _ = { _: "mt.server_DH_params_ok" }
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
-    _.encrypted_answer = this.bytes();      // : BufferSource - bytes
+    _.encrypted_answer = this.bytes();      // : Uint8Array - bytes
     return _;
   }],
   [-1249309254, function decode$mt__server_DH_inner_data() {
@@ -16709,8 +16709,8 @@ export const $decoder = new Map([
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.g = this.int32();                     // : number - int
-    _.dh_prime = this.bytes();              // : BufferSource - bytes
-    _.g_a = this.bytes();                   // : BufferSource - bytes
+    _.dh_prime = this.bytes();              // : Uint8Array - bytes
+    _.g_a = this.bytes();                   // : Uint8Array - bytes
     _.server_time = this.int32();           // : number - int
     return _;
   }],
@@ -16719,7 +16719,7 @@ export const $decoder = new Map([
     _.nonce = this.int128();                // : Uint8Array - int128
     _.server_nonce = this.int128();         // : Uint8Array - int128
     _.retry_id = this.int64();              // : bigint - long
-    _.g_b = this.bytes();                   // : BufferSource - bytes
+    _.g_b = this.bytes();                   // : Uint8Array - bytes
     return _;
   }],
   [1003222836, function decode$mt__dh_gen_ok() {
@@ -16815,7 +16815,7 @@ export const $decoder = new Map([
   }],
   [812830625, function decode$mt__gzip_packed() {
     const _ = { _: "mt.gzip_packed" }
-    _.packed_data = this.bytes();           // : BufferSource - bytes
+    _.packed_data = this.bytes();           // : Uint8Array - bytes
     return _;
   }],
   [1658238041, function decode$mt__msgs_ack() {
@@ -16856,13 +16856,13 @@ export const $decoder = new Map([
   [81704317, function decode$mt__msgs_state_info() {
     const _ = { _: "mt.msgs_state_info" }
     _.req_msg_id = this.int64();            // : bigint - long
-    _.info = this.bytes();                  // : BufferSource - bytes
+    _.info = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-1933520591, function decode$mt__msgs_all_info() {
     const _ = { _: "mt.msgs_all_info" }
     _.msg_ids = this.vector(this.int64);    // : bigint[] - Vector<long>
-    _.info = this.bytes();                  // : BufferSource - bytes
+    _.info = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [661470918, function decode$mt__msg_detailed_info() {
@@ -17081,7 +17081,7 @@ export const $decoder = new Map([
     _.description = this.string();          // : string - string
     if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
     _.invoice = this.object();              // : global.Invoice - Invoice
-    _.payload = this.bytes();               // : BufferSource - bytes
+    _.payload = this.bytes();               // : Uint8Array - bytes
     _.provider = this.string();             // : string - string
     _.provider_data = this.object();        // : global.DataJSON - DataJSON
     if (flags & 2) _.start_param = this.string() // ?: string - flags.1?string
@@ -17102,7 +17102,7 @@ export const $decoder = new Map([
     const _ = { _: "inputMediaPoll" }
     const flags = this.int32();
     _.poll = this.object();                 // : global.Poll - Poll
-    if (flags & 1) _.correct_answers = this.vector(this.bytes) // ?: BufferSource[] - flags.0?Vector<bytes>
+    if (flags & 1) _.correct_answers = this.vector(this.bytes) // ?: Uint8Array[] - flags.0?Vector<bytes>
     if (flags & 2) _.solution = this.string() // ?: string - flags.1?string
     if (flags & 2) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
     return _;
@@ -17162,7 +17162,7 @@ export const $decoder = new Map([
     const _ = { _: "inputPhoto" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     return _;
   }],
   [-539317279, function decode$inputFileLocation() {
@@ -17170,7 +17170,7 @@ export const $decoder = new Map([
     _.volume_id = this.int64();             // : bigint - long
     _.local_id = this.int32();              // : number - int
     _.secret = this.int64();                // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     return _;
   }],
   [-182231723, function decode$inputEncryptedFileLocation() {
@@ -17183,7 +17183,7 @@ export const $decoder = new Map([
     const _ = { _: "inputDocumentFileLocation" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.thumb_size = this.string();           // : string - string
     return _;
   }],
@@ -17200,7 +17200,7 @@ export const $decoder = new Map([
     const _ = { _: "inputPhotoFileLocation" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.thumb_size = this.string();           // : string - string
     return _;
   }],
@@ -17208,7 +17208,7 @@ export const $decoder = new Map([
     const _ = { _: "inputPhotoLegacyFileLocation" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.volume_id = this.int64();             // : bigint - long
     _.local_id = this.int32();              // : number - int
     _.secret = this.int64();                // : bigint - long
@@ -17342,7 +17342,7 @@ export const $decoder = new Map([
     if (flags & 1) _.has_video = true       // ?: true - flags.0?true
     if (flags & 4) _.personal = true        // ?: true - flags.2?true
     _.photo_id = this.int64();              // : bigint - long
-    if (flags & 2) _.stripped_thumb = this.bytes() // ?: BufferSource - flags.1?bytes
+    if (flags & 2) _.stripped_thumb = this.bytes() // ?: Uint8Array - flags.1?bytes
     _.dc_id = this.int32();                 // : number - int
     return _;
   }],
@@ -17574,7 +17574,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.has_video = true       // ?: true - flags.0?true
     _.photo_id = this.int64();              // : bigint - long
-    if (flags & 2) _.stripped_thumb = this.bytes() // ?: BufferSource - flags.1?bytes
+    if (flags & 2) _.stripped_thumb = this.bytes() // ?: Uint8Array - flags.1?bytes
     _.dc_id = this.int32();                 // : number - int
     return _;
   }],
@@ -17830,7 +17830,7 @@ export const $decoder = new Map([
     if (flags & 8) _.recurring_used = true  // ?: true - flags.3?true
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
+    _.payload = this.bytes();               // : Uint8Array - bytes
     if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
     _.charge = this.object();               // : global.PaymentCharge - PaymentCharge
@@ -18042,7 +18042,7 @@ export const $decoder = new Map([
     if (flags & 1) _.has_stickers = true    // ?: true - flags.0?true
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.date = this.int32();                  // : number - int
     _.sizes = this.vector(this.object);     // : global.PhotoSize[] - Vector<PhotoSize>
     if (flags & 2) _.video_sizes = this.vector(this.object) // ?: global.VideoSize[] - flags.1?Vector<VideoSize>
@@ -18067,13 +18067,13 @@ export const $decoder = new Map([
     _.type = this.string();                 // : string - string
     _.w = this.int32();                     // : number - int
     _.h = this.int32();                     // : number - int
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-525288402, function decode$photoStrippedSize() {
     const _ = { _: "photoStrippedSize" }
     _.type = this.string();                 // : string - string
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-96535659, function decode$photoSizeProgressive() {
@@ -18087,7 +18087,7 @@ export const $decoder = new Map([
   [-668906175, function decode$photoPathSize() {
     const _ = { _: "photoPathSize" }
     _.type = this.string();                 // : string - string
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [286776671, function decode$geoPointEmpty() {
@@ -18122,7 +18122,7 @@ export const $decoder = new Map([
     if (flags & 2) _.setup_password_required = true // ?: true - flags.1?true
     if (flags & 2) _.otherwise_relogin_days = this.int32() // ?: number - flags.1?int
     if (flags & 1) _.tmp_sessions = this.int32() // ?: number - flags.0?int
-    if (flags & 4) _.future_auth_token = this.bytes() // ?: BufferSource - flags.2?bytes
+    if (flags & 4) _.future_auth_token = this.bytes() // ?: Uint8Array - flags.2?bytes
     _.user = this.object();                 // : global.User - User
     return _;
   }],
@@ -18135,7 +18135,7 @@ export const $decoder = new Map([
   [-1271602504, function decode$auth__exportedAuthorization() {
     const _ = { _: "auth.exportedAuthorization" }
     _.id = this.int64();                    // : bigint - long
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-1195615476, function decode$inputNotifyPeer() {
@@ -18762,7 +18762,7 @@ export const $decoder = new Map([
     _.peer = this.object();                 // : global.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     _.chat_instance = this.int64();         // : bigint - long
-    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
+    if (flags & 1) _.data = this.bytes()    // ?: Uint8Array - flags.0?bytes
     if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
     return _;
   }],
@@ -18780,7 +18780,7 @@ export const $decoder = new Map([
     _.user_id = this.int64();               // : bigint - long
     _.msg_id = this.object();               // : global.InputBotInlineMessageID - InputBotInlineMessageID
     _.chat_instance = this.int64();         // : bigint - long
-    if (flags & 1) _.data = this.bytes()    // ?: BufferSource - flags.0?bytes
+    if (flags & 1) _.data = this.bytes()    // ?: Uint8Array - flags.0?bytes
     if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
     return _;
   }],
@@ -18849,7 +18849,7 @@ export const $decoder = new Map([
     const _ = { _: "updateBotShippingQuery" }
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
+    _.payload = this.bytes();               // : Uint8Array - bytes
     _.shipping_address = this.object();     // : global.PostAddress - PostAddress
     return _;
   }],
@@ -18858,7 +18858,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    _.payload = this.bytes();               // : BufferSource - bytes
+    _.payload = this.bytes();               // : Uint8Array - bytes
     if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
     _.currency = this.string();             // : string - string
@@ -18969,7 +18969,7 @@ export const $decoder = new Map([
     const _ = { _: "updateMessagePollVote" }
     _.poll_id = this.int64();               // : bigint - long
     _.peer = this.object();                 // : global.Peer - Peer
-    _.options = this.vector(this.bytes);    // : BufferSource[] - Vector<bytes>
+    _.options = this.vector(this.bytes);    // : Uint8Array[] - Vector<bytes>
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -18991,7 +18991,7 @@ export const $decoder = new Map([
   [643940105, function decode$updatePhoneCallSignalingData() {
     const _ = { _: "updatePhoneCallSignalingData" }
     _.phone_call_id = this.int64();         // : bigint - long
-    _.data = this.bytes();                  // : BufferSource - bytes
+    _.data = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-761649164, function decode$updateChannelMessageForwards() {
@@ -19415,15 +19415,15 @@ export const $decoder = new Map([
     const _ = { _: "upload.file" }
     _.type = this.object();                 // : storage.FileType - storage.FileType
     _.mtime = this.int32();                 // : number - int
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-242427324, function decode$upload__fileCdnRedirect() {
     const _ = { _: "upload.fileCdnRedirect" }
     _.dc_id = this.int32();                 // : number - int
-    _.file_token = this.bytes();            // : BufferSource - bytes
-    _.encryption_key = this.bytes();        // : BufferSource - bytes
-    _.encryption_iv = this.bytes();         // : BufferSource - bytes
+    _.file_token = this.bytes();            // : Uint8Array - bytes
+    _.encryption_key = this.bytes();        // : Uint8Array - bytes
+    _.encryption_iv = this.bytes();         // : Uint8Array - bytes
     _.file_hashes = this.vector(this.object); // : global.FileHash[] - Vector<FileHash>
     return _;
   }],
@@ -19439,7 +19439,7 @@ export const $decoder = new Map([
     _.id = this.int32();                    // : number - int
     _.ip_address = this.string();           // : string - string
     _.port = this.int32();                  // : number - int
-    if (flags & 1024) _.secret = this.bytes() // ?: BufferSource - flags.10?bytes
+    if (flags & 1024) _.secret = this.bytes() // ?: Uint8Array - flags.10?bytes
     return _;
   }],
   [-870702050, function decode$config() {
@@ -19545,7 +19545,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.g_a = this.bytes();                   // : BufferSource - bytes
+    _.g_a = this.bytes();                   // : Uint8Array - bytes
     return _;
   }],
   [1643173063, function decode$encryptedChat() {
@@ -19555,7 +19555,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.g_a_or_b = this.bytes();              // : BufferSource - bytes
+    _.g_a_or_b = this.bytes();              // : Uint8Array - bytes
     _.key_fingerprint = this.int64();       // : bigint - long
     return _;
   }],
@@ -19613,7 +19613,7 @@ export const $decoder = new Map([
     _.random_id = this.int64();             // : bigint - long
     _.chat_id = this.int32();               // : number - int
     _.date = this.int32();                  // : number - int
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     _.file = this.object();                 // : global.EncryptedFile - EncryptedFile
     return _;
   }],
@@ -19622,20 +19622,20 @@ export const $decoder = new Map([
     _.random_id = this.int64();             // : bigint - long
     _.chat_id = this.int32();               // : number - int
     _.date = this.int32();                  // : number - int
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-1058912715, function decode$messages__dhConfigNotModified() {
     const _ = { _: "messages.dhConfigNotModified" }
-    _.random = this.bytes();                // : BufferSource - bytes
+    _.random = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [740433629, function decode$messages__dhConfig() {
     const _ = { _: "messages.dhConfig" }
     _.g = this.int32();                     // : number - int
-    _.p = this.bytes();                     // : BufferSource - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
     _.version = this.int32();               // : number - int
-    _.random = this.bytes();                // : BufferSource - bytes
+    _.random = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [1443858741, function decode$messages__sentEncryptedMessage() {
@@ -19656,7 +19656,7 @@ export const $decoder = new Map([
     const _ = { _: "inputDocument" }
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     return _;
   }],
   [922273905, function decode$documentEmpty() {
@@ -19669,7 +19669,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
-    _.file_reference = this.bytes();        // : BufferSource - bytes
+    _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.date = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
     _.size = this.int64();                  // : bigint - long
@@ -19964,7 +19964,7 @@ export const $decoder = new Map([
     _.duration = this.int32();              // : number - int
     if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
     if (flags & 2) _.performer = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.waveform = this.bytes() // ?: BufferSource - flags.2?bytes
+    if (flags & 4) _.waveform = this.bytes() // ?: Uint8Array - flags.2?bytes
     return _;
   }],
   [358154344, function decode$documentAttributeFilename() {
@@ -20095,13 +20095,13 @@ export const $decoder = new Map([
     if (flags & 2) _.has_secure_values = true // ?: true - flags.1?true
     if (flags & 4) _.has_password = true    // ?: true - flags.2?true
     if (flags & 4) _.current_algo = this.object() // ?: global.PasswordKdfAlgo - flags.2?PasswordKdfAlgo
-    if (flags & 4) _.srp_B = this.bytes()   // ?: BufferSource - flags.2?bytes
+    if (flags & 4) _.srp_B = this.bytes()   // ?: Uint8Array - flags.2?bytes
     if (flags & 4) _.srp_id = this.int64()  // ?: bigint - flags.2?long
     if (flags & 8) _.hint = this.string()   // ?: string - flags.3?string
     if (flags & 16) _.email_unconfirmed_pattern = this.string() // ?: string - flags.4?string
     _.new_algo = this.object();             // : global.PasswordKdfAlgo - PasswordKdfAlgo
     _.new_secure_algo = this.object();      // : global.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
-    _.secure_random = this.bytes();         // : BufferSource - bytes
+    _.secure_random = this.bytes();         // : Uint8Array - bytes
     if (flags & 32) _.pending_reset_date = this.int32() // ?: number - flags.5?int
     if (flags & 64) _.login_email_pattern = this.string() // ?: string - flags.6?string
     return _;
@@ -20117,7 +20117,7 @@ export const $decoder = new Map([
     const _ = { _: "account.passwordInputSettings" }
     const flags = this.int32();
     if (flags & 1) _.new_algo = this.object() // ?: global.PasswordKdfAlgo - flags.0?PasswordKdfAlgo
-    if (flags & 1) _.new_password_hash = this.bytes() // ?: BufferSource - flags.0?bytes
+    if (flags & 1) _.new_password_hash = this.bytes() // ?: Uint8Array - flags.0?bytes
     if (flags & 1) _.hint = this.string()   // ?: string - flags.0?string
     if (flags & 2) _.email = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.new_secure_settings = this.object() // ?: global.SecureSecretSettings - flags.2?SecureSecretSettings
@@ -20288,7 +20288,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.requires_password = true // ?: true - flags.0?true
     _.text = this.string();                 // : string - string
-    _.data = this.bytes();                  // : BufferSource - bytes
+    _.data = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-1318425559, function decode$keyboardButtonRequestPhone() {
@@ -20801,7 +20801,7 @@ export const $decoder = new Map([
     _.description = this.string();          // : string - string
     if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
     _.invoice = this.object();              // : global.Invoice - Invoice
-    _.payload = this.bytes();               // : BufferSource - bytes
+    _.payload = this.bytes();               // : Uint8Array - bytes
     _.provider = this.string();             // : string - string
     _.provider_data = this.object();        // : global.DataJSON - DataJSON
     if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
@@ -21063,7 +21063,7 @@ export const $decoder = new Map([
   [-444918734, function decode$auth__sentCodeTypeFirebaseSms() {
     const _ = { _: "auth.sentCodeTypeFirebaseSms" }
     const flags = this.int32();
-    if (flags & 1) _.nonce = this.bytes()   // ?: BufferSource - flags.0?bytes
+    if (flags & 1) _.nonce = this.bytes()   // ?: Uint8Array - flags.0?bytes
     if (flags & 2) _.receipt = this.string() // ?: string - flags.1?string
     if (flags & 2) _.push_timeout = this.int32() // ?: number - flags.1?int
     _.length = this.int32();                // : number - int
@@ -21700,7 +21700,7 @@ export const $decoder = new Map([
     _.mime_type = this.string();            // : string - string
     _.file_type = this.object();            // : storage.FileType - storage.FileType
     _.mtime = this.int32();                 // : number - int
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-1610250415, function decode$payments__paymentForm() {
@@ -21770,7 +21770,7 @@ export const $decoder = new Map([
   [-1056001329, function decode$inputPaymentCredentialsSaved() {
     const _ = { _: "inputPaymentCredentialsSaved" }
     _.id = this.string();                   // : string - string
-    _.tmp_password = this.bytes();          // : BufferSource - bytes
+    _.tmp_password = this.bytes();          // : Uint8Array - bytes
     return _;
   }],
   [873977640, function decode$inputPaymentCredentials() {
@@ -21792,7 +21792,7 @@ export const $decoder = new Map([
   }],
   [-614138572, function decode$account__tmpPassword() {
     const _ = { _: "account.tmpPassword" }
-    _.tmp_password = this.bytes();          // : BufferSource - bytes
+    _.tmp_password = this.bytes();          // : Uint8Array - bytes
     _.valid_until = this.int32();           // : number - int
     return _;
   }],
@@ -21845,7 +21845,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.g_a_hash = this.bytes();              // : BufferSource - bytes
+    _.g_a_hash = this.bytes();              // : Uint8Array - bytes
     _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
     return _;
   }],
@@ -21858,7 +21858,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.g_b = this.bytes();                   // : BufferSource - bytes
+    _.g_b = this.bytes();                   // : Uint8Array - bytes
     _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
     return _;
   }],
@@ -21872,7 +21872,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.g_a_or_b = this.bytes();              // : BufferSource - bytes
+    _.g_a_or_b = this.bytes();              // : Uint8Array - bytes
     _.key_fingerprint = this.int64();       // : bigint - long
     _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
     _.connections = this.vector(this.object); // : global.PhoneConnection[] - Vector<PhoneConnection>
@@ -21898,7 +21898,7 @@ export const $decoder = new Map([
     _.ip = this.string();                   // : string - string
     _.ipv6 = this.string();                 // : string - string
     _.port = this.int32();                  // : number - int
-    _.peer_tag = this.bytes();              // : BufferSource - bytes
+    _.peer_tag = this.bytes();              // : Uint8Array - bytes
     return _;
   }],
   [1667228533, function decode$phoneConnectionWebrtc() {
@@ -21932,12 +21932,12 @@ export const $decoder = new Map([
   }],
   [-290921362, function decode$upload__cdnFileReuploadNeeded() {
     const _ = { _: "upload.cdnFileReuploadNeeded" }
-    _.request_token = this.bytes();         // : BufferSource - bytes
+    _.request_token = this.bytes();         // : Uint8Array - bytes
     return _;
   }],
   [-1449145777, function decode$upload__cdnFile() {
     const _ = { _: "upload.cdnFile" }
-    _.bytes = this.bytes();                 // : BufferSource - bytes
+    _.bytes = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [-914167110, function decode$cdnPublicKey() {
@@ -22413,7 +22413,7 @@ export const $decoder = new Map([
     const _ = { _: "fileHash" }
     _.offset = this.int64();                // : bigint - long
     _.limit = this.int32();                 // : number - int
-    _.hash = this.bytes();                  // : BufferSource - bytes
+    _.hash = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [1968737087, function decode$inputClientProxy() {
@@ -22438,8 +22438,8 @@ export const $decoder = new Map([
     _.id = this.int64();                    // : bigint - long
     _.parts = this.int32();                 // : number - int
     _.md5_checksum = this.string();         // : string - string
-    _.file_hash = this.bytes();             // : BufferSource - bytes
-    _.secret = this.bytes();                // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
+    _.secret = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [1399317950, function decode$inputSecureFile() {
@@ -22458,15 +22458,15 @@ export const $decoder = new Map([
     _.size = this.int64();                  // : bigint - long
     _.dc_id = this.int32();                 // : number - int
     _.date = this.int32();                  // : number - int
-    _.file_hash = this.bytes();             // : BufferSource - bytes
-    _.secret = this.bytes();                // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
+    _.secret = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [-1964327229, function decode$secureData() {
     const _ = { _: "secureData" }
-    _.data = this.bytes();                  // : BufferSource - bytes
-    _.data_hash = this.bytes();             // : BufferSource - bytes
-    _.secret = this.bytes();                // : BufferSource - bytes
+    _.data = this.bytes();                  // : Uint8Array - bytes
+    _.data_hash = this.bytes();             // : Uint8Array - bytes
+    _.secret = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [2103482845, function decode$securePlainPhone() {
@@ -22529,7 +22529,7 @@ export const $decoder = new Map([
     if (flags & 64) _.translation = this.vector(this.object) // ?: global.SecureFile[] - flags.6?Vector<SecureFile>
     if (flags & 16) _.files = this.vector(this.object) // ?: global.SecureFile[] - flags.4?Vector<SecureFile>
     if (flags & 32) _.plain_data = this.object() // ?: global.SecurePlainData - flags.5?SecurePlainData
-    _.hash = this.bytes();                  // : BufferSource - bytes
+    _.hash = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-618540889, function decode$inputSecureValue() {
@@ -22548,13 +22548,13 @@ export const $decoder = new Map([
   [-316748368, function decode$secureValueHash() {
     const _ = { _: "secureValueHash" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.hash = this.bytes();                  // : BufferSource - bytes
+    _.hash = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-391902247, function decode$secureValueErrorData() {
     const _ = { _: "secureValueErrorData" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.data_hash = this.bytes();             // : BufferSource - bytes
+    _.data_hash = this.bytes();             // : Uint8Array - bytes
     _.field = this.string();                // : string - string
     _.text = this.string();                 // : string - string
     return _;
@@ -22562,64 +22562,64 @@ export const $decoder = new Map([
   [12467706, function decode$secureValueErrorFrontSide() {
     const _ = { _: "secureValueErrorFrontSide" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-2037765467, function decode$secureValueErrorReverseSide() {
     const _ = { _: "secureValueErrorReverseSide" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-449327402, function decode$secureValueErrorSelfie() {
     const _ = { _: "secureValueErrorSelfie" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [2054162547, function decode$secureValueErrorFile() {
     const _ = { _: "secureValueErrorFile" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [1717706985, function decode$secureValueErrorFiles() {
     const _ = { _: "secureValueErrorFiles" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.vector(this.bytes);  // : BufferSource[] - Vector<bytes>
+    _.file_hash = this.vector(this.bytes);  // : Uint8Array[] - Vector<bytes>
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-2036501105, function decode$secureValueError() {
     const _ = { _: "secureValueError" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.hash = this.bytes();                  // : BufferSource - bytes
+    _.hash = this.bytes();                  // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-1592506512, function decode$secureValueErrorTranslationFile() {
     const _ = { _: "secureValueErrorTranslationFile" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.bytes();             // : BufferSource - bytes
+    _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [878931416, function decode$secureValueErrorTranslationFiles() {
     const _ = { _: "secureValueErrorTranslationFiles" }
     _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    _.file_hash = this.vector(this.bytes);  // : BufferSource[] - Vector<bytes>
+    _.file_hash = this.vector(this.bytes);  // : Uint8Array[] - Vector<bytes>
     _.text = this.string();                 // : string - string
     return _;
   }],
   [871426631, function decode$secureCredentialsEncrypted() {
     const _ = { _: "secureCredentialsEncrypted" }
-    _.data = this.bytes();                  // : BufferSource - bytes
-    _.hash = this.bytes();                  // : BufferSource - bytes
-    _.secret = this.bytes();                // : BufferSource - bytes
+    _.data = this.bytes();                  // : Uint8Array - bytes
+    _.hash = this.bytes();                  // : Uint8Array - bytes
+    _.secret = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [-1389486888, function decode$account__authorizationForm() {
@@ -22667,10 +22667,10 @@ export const $decoder = new Map([
   }],
   [982592842, function decode$passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow() {
     const _ = { _: "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow" }
-    _.salt1 = this.bytes();                 // : BufferSource - bytes
-    _.salt2 = this.bytes();                 // : BufferSource - bytes
+    _.salt1 = this.bytes();                 // : Uint8Array - bytes
+    _.salt2 = this.bytes();                 // : Uint8Array - bytes
     _.g = this.int32();                     // : number - int
-    _.p = this.bytes();                     // : BufferSource - bytes
+    _.p = this.bytes();                     // : Uint8Array - bytes
     return _;
   }],
   [4883767, function decode$securePasswordKdfAlgoUnknown() {
@@ -22678,18 +22678,18 @@ export const $decoder = new Map([
   }],
   [-1141711456, function decode$securePasswordKdfAlgoPBKDF2HMACSHA512iter100000() {
     const _ = { _: "securePasswordKdfAlgoPBKDF2HMACSHA512iter100000" }
-    _.salt = this.bytes();                  // : BufferSource - bytes
+    _.salt = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-2042159726, function decode$securePasswordKdfAlgoSHA512() {
     const _ = { _: "securePasswordKdfAlgoSHA512" }
-    _.salt = this.bytes();                  // : BufferSource - bytes
+    _.salt = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [354925740, function decode$secureSecretSettings() {
     const _ = { _: "secureSecretSettings" }
     _.secure_algo = this.object();          // : global.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
-    _.secure_secret = this.bytes();         // : BufferSource - bytes
+    _.secure_secret = this.bytes();         // : Uint8Array - bytes
     _.secure_secret_id = this.int64();      // : bigint - long
     return _;
   }],
@@ -22699,8 +22699,8 @@ export const $decoder = new Map([
   [-763367294, function decode$inputCheckPasswordSRP() {
     const _ = { _: "inputCheckPasswordSRP" }
     _.srp_id = this.int64();                // : bigint - long
-    _.A = this.bytes();                     // : BufferSource - bytes
-    _.M1 = this.bytes();                    // : BufferSource - bytes
+    _.A = this.bytes();                     // : Uint8Array - bytes
+    _.M1 = this.bytes();                    // : Uint8Array - bytes
     return _;
   }],
   [-2103600678, function decode$secureRequiredType() {
@@ -22858,7 +22858,7 @@ export const $decoder = new Map([
   [1823064809, function decode$pollAnswer() {
     const _ = { _: "pollAnswer" }
     _.text = this.string();                 // : string - string
-    _.option = this.bytes();                // : BufferSource - bytes
+    _.option = this.bytes();                // : Uint8Array - bytes
     return _;
   }],
   [-2032041631, function decode$poll() {
@@ -22880,7 +22880,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.chosen = true          // ?: true - flags.0?true
     if (flags & 2) _.correct = true         // ?: true - flags.1?true
-    _.option = this.bytes();                // : BufferSource - bytes
+    _.option = this.bytes();                // : Uint8Array - bytes
     _.voters = this.int32();                // : number - int
     return _;
   }],
@@ -22984,7 +22984,7 @@ export const $decoder = new Map([
     if (flags & 16) _.allow_app_hash = true // ?: true - flags.4?true
     if (flags & 32) _.allow_missed_call = true // ?: true - flags.5?true
     if (flags & 128) _.allow_firebase = true // ?: true - flags.7?true
-    if (flags & 64) _.logout_tokens = this.vector(this.bytes) // ?: BufferSource[] - flags.6?Vector<bytes>
+    if (flags & 64) _.logout_tokens = this.vector(this.bytes) // ?: Uint8Array[] - flags.6?Vector<bytes>
     if (flags & 256) _.token = this.string() // ?: string - flags.8?string
     if (flags & 256) _.app_sandbox = this.bool() // ?: boolean - flags.8?Bool
     return _;
@@ -23169,13 +23169,13 @@ export const $decoder = new Map([
   [1654593920, function decode$auth__loginToken() {
     const _ = { _: "auth.loginToken" }
     _.expires = this.int32();               // : number - int
-    _.token = this.bytes();                 // : BufferSource - bytes
+    _.token = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [110008598, function decode$auth__loginTokenMigrateTo() {
     const _ = { _: "auth.loginTokenMigrateTo" }
     _.dc_id = this.int32();                 // : number - int
-    _.token = this.bytes();                 // : BufferSource - bytes
+    _.token = this.bytes();                 // : Uint8Array - bytes
     return _;
   }],
   [957176926, function decode$auth__loginTokenSuccess() {
@@ -23812,7 +23812,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 32) _.recommended = true    // ?: true - flags.5?true
     if (flags & 64) _.show_peer_photo = true // ?: true - flags.6?true
-    _.random_id = this.bytes();             // : BufferSource - bytes
+    _.random_id = this.bytes();             // : Uint8Array - bytes
     if (flags & 8) _.from_id = this.object() // ?: global.Peer - flags.3?Peer
     if (flags & 16) _.chat_invite = this.object() // ?: global.ChatInvite - flags.4?ChatInvite
     if (flags & 16) _.chat_invite_hash = this.string() // ?: string - flags.4?string
@@ -23896,7 +23896,7 @@ export const $decoder = new Map([
   [-1012759713, function decode$auth__loggedOut() {
     const _ = { _: "auth.loggedOut" }
     const flags = this.int32();
-    if (flags & 1) _.future_auth_token = this.bytes() // ?: BufferSource - flags.0?bytes
+    if (flags & 1) _.future_auth_token = this.bytes() // ?: Uint8Array - flags.0?bytes
     return _;
   }],
   [-1546531968, function decode$reactionCount() {
@@ -24604,7 +24604,7 @@ export const $decoder = new Map([
   [-1228133028, function decode$messagePeerVote() {
     const _ = { _: "messagePeerVote" }
     _.peer = this.object();                 // : global.Peer - Peer
-    _.option = this.bytes();                // : BufferSource - bytes
+    _.option = this.bytes();                // : Uint8Array - bytes
     _.date = this.int32();                  // : number - int
     return _;
   }],
@@ -24617,7 +24617,7 @@ export const $decoder = new Map([
   [1177089766, function decode$messagePeerVoteMultiple() {
     const _ = { _: "messagePeerVoteMultiple" }
     _.peer = this.object();                 // : global.Peer - Peer
-    _.options = this.vector(this.bytes);    // : BufferSource[] - Vector<bytes>
+    _.options = this.vector(this.bytes);    // : Uint8Array[] - Vector<bytes>
     _.date = this.int32();                  // : number - int
     return _;
   }],
@@ -24961,10 +24961,10 @@ mt.req_DH_params = function req_DH_params(_) {
   this.int32(-686627650);
   this.int128(_.nonce);                   // : Uint8Array - int128
   this.int128(_.server_nonce);            // : Uint8Array - int128
-  this.bytes(_.p);                        // : BufferSource - bytes
-  this.bytes(_.q);                        // : BufferSource - bytes
+  this.bytes(_.p);                        // : Uint8Array - bytes
+  this.bytes(_.q);                        // : Uint8Array - bytes
   this.int64(_.public_key_fingerprint);   // : bigint - long
-  this.bytes(_.encrypted_data);           // : BufferSource - bytes
+  this.bytes(_.encrypted_data);           // : Uint8Array - bytes
 };
 mt.req_DH_params.verify = function($$) {
   const $ = $$;
@@ -24975,7 +24975,7 @@ mt.set_client_DH_params = function set_client_DH_params(_) {
   this.int32(-184262881);
   this.int128(_.nonce);                   // : Uint8Array - int128
   this.int128(_.server_nonce);            // : Uint8Array - int128
-  this.bytes(_.encrypted_data);           // : BufferSource - bytes
+  this.bytes(_.encrypted_data);           // : Uint8Array - bytes
 };
 mt.set_client_DH_params.verify = function($$) {
   const $ = $$;
@@ -25243,7 +25243,7 @@ auth.importAuthorization = function importAuthorization(_) {
 $encoder["auth.importAuthorization"] = function (_) {
   this.int32(-1518699091);
   this.int64(_.id);                       // : bigint - long
-  this.bytes(_.bytes);                    // : BufferSource - bytes
+  this.bytes(_.bytes);                    // : Uint8Array - bytes
 };
 auth.importAuthorization.ref = "auth.importAuthorization";
 auth.importAuthorization.verify = function($$) {
@@ -25259,7 +25259,7 @@ $encoder["auth.bindTempAuthKey"] = function (_) {
   this.int64(_.perm_auth_key_id);         // : bigint - long
   this.int64(_.nonce);                    // : bigint - long
   this.int32(_.expires_at);               // : number - int
-  this.bytes(_.encrypted_message);        // : BufferSource - bytes
+  this.bytes(_.encrypted_message);        // : Uint8Array - bytes
 };
 auth.bindTempAuthKey.ref = "auth.bindTempAuthKey";
 auth.bindTempAuthKey.verify = function($$) {
@@ -25387,7 +25387,7 @@ auth.importLoginToken = function importLoginToken(_) {
 }
 $encoder["auth.importLoginToken"] = function (_) {
   this.int32(-1783866140);
-  this.bytes(_.token);                    // : BufferSource - bytes
+  this.bytes(_.token);                    // : Uint8Array - bytes
 };
 auth.importLoginToken.ref = "auth.importLoginToken";
 auth.importLoginToken.verify = function($$) {
@@ -25400,7 +25400,7 @@ auth.acceptLoginToken = function acceptLoginToken(_) {
 }
 $encoder["auth.acceptLoginToken"] = function (_) {
   this.int32(-392909491);
-  this.bytes(_.token);                    // : BufferSource - bytes
+  this.bytes(_.token);                    // : Uint8Array - bytes
 };
 auth.acceptLoginToken.ref = "auth.acceptLoginToken";
 auth.acceptLoginToken.verify = function($$) {
@@ -25486,7 +25486,7 @@ $encoder["account.registerDevice"] = function (_) {
   this.int32(_.token_type);               // : number - int
   this.string(_.token);                   // : string - string
   this.bool(_.app_sandbox);               // : boolean - Bool
-  this.bytes(_.secret);                   // : BufferSource - bytes
+  this.bytes(_.secret);                   // : Uint8Array - bytes
   this.vector(_.other_uids, this.int64);  // : bigint[] - Vector<long>
 };
 account.registerDevice.ref = "account.registerDevice";
@@ -27766,7 +27766,7 @@ $encoder["messages.requestEncryption"] = function (_) {
   this.int32(-162681021);
   this.object(_.user_id);                 // : InputUser - InputUser
   this.int32(_.random_id);                // : number - int
-  this.bytes(_.g_a);                      // : BufferSource - bytes
+  this.bytes(_.g_a);                      // : Uint8Array - bytes
 };
 messages.requestEncryption.ref = "messages.requestEncryption";
 messages.requestEncryption.verify = function($$) {
@@ -27780,7 +27780,7 @@ messages.acceptEncryption = function acceptEncryption(_) {
 $encoder["messages.acceptEncryption"] = function (_) {
   this.int32(1035731989);
   this.object(_.peer);                    // : InputEncryptedChat - InputEncryptedChat
-  this.bytes(_.g_b);                      // : BufferSource - bytes
+  this.bytes(_.g_b);                      // : Uint8Array - bytes
   this.int64(_.key_fingerprint);          // : bigint - long
 };
 messages.acceptEncryption.ref = "messages.acceptEncryption";
@@ -27847,7 +27847,7 @@ $encoder["messages.sendEncrypted"] = function (_) {
     this.true(_.silent);                  // ?: true - flags.0?true
   this.object(_.peer);                    // : InputEncryptedChat - InputEncryptedChat
   this.int64(_.random_id);                // : bigint - long
-  this.bytes(_.data);                     // : BufferSource - bytes
+  this.bytes(_.data);                     // : Uint8Array - bytes
 };
 messages.sendEncrypted.ref = "messages.sendEncrypted";
 messages.sendEncrypted.verify = function($$) {
@@ -27867,7 +27867,7 @@ $encoder["messages.sendEncryptedFile"] = function (_) {
     this.true(_.silent);                  // ?: true - flags.0?true
   this.object(_.peer);                    // : InputEncryptedChat - InputEncryptedChat
   this.int64(_.random_id);                // : bigint - long
-  this.bytes(_.data);                     // : BufferSource - bytes
+  this.bytes(_.data);                     // : Uint8Array - bytes
   this.object(_.file);                    // : InputEncryptedFile - InputEncryptedFile
 };
 messages.sendEncryptedFile.ref = "messages.sendEncryptedFile";
@@ -27883,7 +27883,7 @@ $encoder["messages.sendEncryptedService"] = function (_) {
   this.int32(852769188);
   this.object(_.peer);                    // : InputEncryptedChat - InputEncryptedChat
   this.int64(_.random_id);                // : bigint - long
-  this.bytes(_.data);                     // : BufferSource - bytes
+  this.bytes(_.data);                     // : Uint8Array - bytes
 };
 messages.sendEncryptedService.ref = "messages.sendEncryptedService";
 messages.sendEncryptedService.verify = function($$) {
@@ -28183,7 +28183,7 @@ messages.getDocumentByHash = function getDocumentByHash(_) {
 }
 $encoder["messages.getDocumentByHash"] = function (_) {
   this.int32(-1309538785);
-  this.bytes(_.sha256);                   // : BufferSource - bytes
+  this.bytes(_.sha256);                   // : Uint8Array - bytes
   this.int64(_.size);                     // : bigint - long
   this.string(_.mime_type);               // : string - string
 };
@@ -28411,7 +28411,7 @@ $encoder["messages.getBotCallbackAnswer"] = function (_) {
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.int32(_.msg_id);                   // : number - int
   if (_.data != null)
-    this.bytes(_.data);                   // ?: BufferSource - flags.0?bytes
+    this.bytes(_.data);                   // ?: Uint8Array - flags.0?bytes
   if (_.password != null)
     this.object(_.password);              // ?: InputCheckPasswordSRP - flags.2?InputCheckPasswordSRP
 };
@@ -29104,7 +29104,7 @@ $encoder["messages.sendVote"] = function (_) {
   this.int32(283795844);
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.int32(_.msg_id);                   // : number - int
-  this.vector(_.options, this.bytes);     // : BufferSource[] - Vector<bytes>
+  this.vector(_.options, this.bytes);     // : Uint8Array[] - Vector<bytes>
 };
 messages.sendVote.ref = "messages.sendVote";
 messages.sendVote.verify = function($$) {
@@ -29377,7 +29377,7 @@ $encoder["messages.getPollVotes"] = function (_) {
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.int32(_.id);                       // : number - int
   if (_.option != null)
-    this.bytes(_.option);                 // ?: BufferSource - flags.0?bytes
+    this.bytes(_.option);                 // ?: Uint8Array - flags.0?bytes
   if (_.offset != null)
     this.string(_.offset);                // ?: string - flags.1?string
   this.int32(_.limit);                    // : number - int
@@ -30787,7 +30787,7 @@ $encoder["upload.saveFilePart"] = function (_) {
   this.int32(-1291540959);
   this.int64(_.file_id);                  // : bigint - long
   this.int32(_.file_part);                // : number - int
-  this.bytes(_.bytes);                    // : BufferSource - bytes
+  this.bytes(_.bytes);                    // : Uint8Array - bytes
 };
 upload.saveFilePart.ref = "upload.saveFilePart";
 upload.saveFilePart.verify = function($$) {
@@ -30826,7 +30826,7 @@ $encoder["upload.saveBigFilePart"] = function (_) {
   this.int64(_.file_id);                  // : bigint - long
   this.int32(_.file_part);                // : number - int
   this.int32(_.file_total_parts);         // : number - int
-  this.bytes(_.bytes);                    // : BufferSource - bytes
+  this.bytes(_.bytes);                    // : Uint8Array - bytes
 };
 upload.saveBigFilePart.ref = "upload.saveBigFilePart";
 upload.saveBigFilePart.verify = function($$) {
@@ -30854,7 +30854,7 @@ upload.getCdnFile = function getCdnFile(_) {
 }
 $encoder["upload.getCdnFile"] = function (_) {
   this.int32(962554330);
-  this.bytes(_.file_token);               // : BufferSource - bytes
+  this.bytes(_.file_token);               // : Uint8Array - bytes
   this.int64(_.offset);                   // : bigint - long
   this.int32(_.limit);                    // : number - int
 };
@@ -30869,8 +30869,8 @@ upload.reuploadCdnFile = function reuploadCdnFile(_) {
 }
 $encoder["upload.reuploadCdnFile"] = function (_) {
   this.int32(-1691921240);
-  this.bytes(_.file_token);               // : BufferSource - bytes
-  this.bytes(_.request_token);            // : BufferSource - bytes
+  this.bytes(_.file_token);               // : Uint8Array - bytes
+  this.bytes(_.request_token);            // : Uint8Array - bytes
 };
 upload.reuploadCdnFile.ref = "upload.reuploadCdnFile";
 upload.reuploadCdnFile.verify = function($$) {
@@ -30884,7 +30884,7 @@ upload.getCdnFileHashes = function getCdnFileHashes(_) {
 }
 $encoder["upload.getCdnFileHashes"] = function (_) {
   this.int32(-1847836879);
-  this.bytes(_.file_token);               // : BufferSource - bytes
+  this.bytes(_.file_token);               // : Uint8Array - bytes
   this.int64(_.offset);                   // : bigint - long
 };
 upload.getCdnFileHashes.ref = "upload.getCdnFileHashes";
@@ -31753,7 +31753,7 @@ channels.viewSponsoredMessage = function viewSponsoredMessage(_) {
 $encoder["channels.viewSponsoredMessage"] = function (_) {
   this.int32(-1095836780);
   this.object(_.channel);                 // : InputChannel - InputChannel
-  this.bytes(_.random_id);                // : BufferSource - bytes
+  this.bytes(_.random_id);                // : Uint8Array - bytes
 };
 channels.viewSponsoredMessage.ref = "channels.viewSponsoredMessage";
 channels.viewSponsoredMessage.verify = function($$) {
@@ -32071,7 +32071,7 @@ channels.clickSponsoredMessage = function clickSponsoredMessage(_) {
 $encoder["channels.clickSponsoredMessage"] = function (_) {
   this.int32(414170259);
   this.object(_.channel);                 // : InputChannel - InputChannel
-  this.bytes(_.random_id);                // : BufferSource - bytes
+  this.bytes(_.random_id);                // : Uint8Array - bytes
 };
 channels.clickSponsoredMessage.ref = "channels.clickSponsoredMessage";
 channels.clickSponsoredMessage.verify = function($$) {
@@ -32480,7 +32480,7 @@ payments.assignAppStoreTransaction = function assignAppStoreTransaction(_) {
 }
 $encoder["payments.assignAppStoreTransaction"] = function (_) {
   this.int32(-2131921795);
-  this.bytes(_.receipt);                  // : BufferSource - bytes
+  this.bytes(_.receipt);                  // : Uint8Array - bytes
   this.object(_.purpose);                 // : InputStorePaymentPurpose - InputStorePaymentPurpose
 };
 payments.assignAppStoreTransaction.ref = "payments.assignAppStoreTransaction";
@@ -32793,7 +32793,7 @@ $encoder["phone.requestCall"] = function (_) {
     this.true(_.video);                   // ?: true - flags.0?true
   this.object(_.user_id);                 // : InputUser - InputUser
   this.int32(_.random_id);                // : number - int
-  this.bytes(_.g_a_hash);                 // : BufferSource - bytes
+  this.bytes(_.g_a_hash);                 // : Uint8Array - bytes
   this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
 };
 phone.requestCall.ref = "phone.requestCall";
@@ -32808,7 +32808,7 @@ phone.acceptCall = function acceptCall(_) {
 $encoder["phone.acceptCall"] = function (_) {
   this.int32(1003664544);
   this.object(_.peer);                    // : InputPhoneCall - InputPhoneCall
-  this.bytes(_.g_b);                      // : BufferSource - bytes
+  this.bytes(_.g_b);                      // : Uint8Array - bytes
   this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
 };
 phone.acceptCall.ref = "phone.acceptCall";
@@ -32823,7 +32823,7 @@ phone.confirmCall = function confirmCall(_) {
 $encoder["phone.confirmCall"] = function (_) {
   this.int32(788404002);
   this.object(_.peer);                    // : InputPhoneCall - InputPhoneCall
-  this.bytes(_.g_a);                      // : BufferSource - bytes
+  this.bytes(_.g_a);                      // : Uint8Array - bytes
   this.int64(_.key_fingerprint);          // : bigint - long
   this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
 };
@@ -32907,7 +32907,7 @@ phone.sendSignalingData = function sendSignalingData(_) {
 $encoder["phone.sendSignalingData"] = function (_) {
   this.int32(-8744061);
   this.object(_.peer);                    // : InputPhoneCall - InputPhoneCall
-  this.bytes(_.data);                     // : BufferSource - bytes
+  this.bytes(_.data);                     // : Uint8Array - bytes
 };
 phone.sendSignalingData.ref = "phone.sendSignalingData";
 phone.sendSignalingData.verify = function($$) {
