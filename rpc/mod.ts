@@ -235,19 +235,11 @@ export default class RPC extends EventEmitter<Events> {
             lang_code: "en",
             lang_pack: "",
             system_lang_code: "en",
-            query: this.subscribe
-              ? method({
-                ...params,
-                api_id: this.#api_id,
-                api_hash: this.#api_hash,
-              })
-              : invokeWithoutUpdates(
-                method({
-                  ...params,
-                  api_id: this.#api_id,
-                  api_hash: this.#api_hash,
-                }),
-              ),
+            query: method({
+              ...params,
+              api_id: this.#api_id,
+              api_hash: this.#api_hash,
+            }),
           }),
         })
         : this.subscribe
