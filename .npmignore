@@ -1,0 +1,9 @@
+.vscode
+diag*
+.gitignore
+deno.jsonc
+examples
+scripts
+gen/api.tl
+gen/api.json
+gen/mtproto.json

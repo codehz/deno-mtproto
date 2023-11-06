@@ -1,0 +1,15 @@
+{
+  "name": "bun-mtproto",
+  "version": "v0.5.0",
+  "module": "./mod.ts",
+  "type": "module",
+  "author": {
+    "name": "Code Hz",
+    "email": "codehz@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codehz/deno-mtproto"
+  },
+  "license": "MIT"
+}
