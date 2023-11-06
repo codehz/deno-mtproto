@@ -1,9 +1,6 @@
 {
   "version": "3",
   "remote": {
-    "https://deno.land/std@0.205.0/encoding/_util.ts": "f368920189c4fe6592ab2e93bd7ded8f3065b84f95cd3e036a4a10a75649dcba",
-    "https://deno.land/std@0.205.0/encoding/base64.ts": "cc03110d6518170aeaa68ec97f89c6d6e2276294b30807e7332591d7ce2e4b72",
-    "https://deno.land/std@0.205.0/encoding/hex.ts": "d41e9c3f7dd9d4738c40c2b9e6db5eb32e9dc103360291aff63a5c3fccdb45a6",
     "https://esm.sh/aes-js@3.1.2": "915c47157052ae535e0186f973e23582c4c56a2bf76633ad85f9709d912a7a67",
     "https://esm.sh/fflate@0.8.1": "7f7dd7cd441bd8bc80b2d4a5420c627613b6a0dfc35330062baf9f19afdc8f74",
     "https://esm.sh/v131/fflate@0.8.1/denonext/fflate.mjs": "761ec3a8390bccf68b40c9a47ec4364d0c3efaf45057033f186b47d58d6591db",

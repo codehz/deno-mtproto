@@ -1,7 +1,3 @@
-import {
-  decodeHex,
-  encodeHex,
-} from "https://deno.land/std@0.205.0/encoding/hex.ts";
 import { Sha1 } from "../crypto/sha1.ts";
 import { Sha256 } from "../crypto/sha256.ts";
 
@@ -76,14 +72,6 @@ export function todv(buffer: BufferSource): DataView {
   } else {
     return new DataView(buffer.buffer, buffer.byteOffset);
   }
-}
-
-export function fromhex(hexstr: string) {
-  return decodeHex(hexstr);
-}
-
-export function tohex(buffer: BufferSource) {
-  return encodeHex(tou8(buffer));
 }
 
 export function tobig(bytes: Iterable<number>, little_endian = false) {

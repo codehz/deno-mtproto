@@ -1,8 +1,5 @@
-import {
-  decodeBase64,
-  encodeBase64,
-} from "https://deno.land/std@0.205.0/encoding/base64.ts";
 import { max } from "../common/alg.ts";
+import { decodeBase64, encodeBase64 } from "../common/base64.ts";
 import cached from "../common/cached.ts";
 import { DCIdentifier } from "../common/dc.ts";
 import EventEmitter from "../common/event.ts";
