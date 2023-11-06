@@ -28,6 +28,7 @@ import { decompressObject } from "../common/gzip.ts";
 import { DCIdentifier } from "../common/dc.ts";
 import { KVStorage } from "../storage/types.ts";
 import EventEmitter from "../common/event.ts";
+import { invokeWithoutUpdates } from "../gen/api.js";
 
 const API_LAYER = 166;
 
@@ -39,10 +40,9 @@ type GenApiMethods<T> = {
   [K in FilteredKeys<T, TLApiMethod<any, any, any>>]: T[K] extends {
     (param: infer I): any;
     verify(param: infer R): any;
-  }
-    ? (
-        param: void extends I ? void : Omit<I, "api_id" | "api_hash">
-      ) => Promise<R>
+  } ? (
+      param: void extends I ? void : Omit<I, "api_id" | "api_hash">,
+    ) => Promise<R>
     : never;
 };
 
@@ -101,7 +101,7 @@ class Session {
       (BigInt(timeSec) << 32n) |
         (BigInt(timeMSec) << 21n) |
         (BigInt(random) << 3n) |
-        4n
+        4n,
     ));
   }
 }
@@ -129,7 +129,7 @@ class QueueHandler<T> {
   constructor(
     handler: (t: T[]) => Promise<void>,
     errhandler: (err: any) => void,
-    blocked = true
+    blocked = true,
   ) {
     this.#handler = handler;
     this.#errhandler = errhandler;
@@ -201,6 +201,8 @@ export default class RPC extends EventEmitter<Events> {
     await this.#transport.send(msg);
   });
 
+  subscribe = true;
+
   get dcid() {
     return this.#dcid;
   }
@@ -226,25 +228,41 @@ export default class RPC extends EventEmitter<Events> {
       const { method, params, resolver } = list.shift()!;
       const packet = this.#session.first
         ? serialize(invokeWithLayer, {
-            layer: API_LAYER,
-            query: initConnection({
-              ...this.#environment_information,
-              api_id: this.#api_id,
-              lang_code: "en",
-              lang_pack: "",
-              system_lang_code: "en",
-              query: method({
+          layer: API_LAYER,
+          query: initConnection({
+            ...this.#environment_information,
+            api_id: this.#api_id,
+            lang_code: "en",
+            lang_pack: "",
+            system_lang_code: "en",
+            query: this.subscribe
+              ? method({
                 ...params,
                 api_id: this.#api_id,
                 api_hash: this.#api_hash,
-              }),
-            }),
-          })
-        : serialize(method, {
+              })
+              : invokeWithoutUpdates(
+                method({
+                  ...params,
+                  api_id: this.#api_id,
+                  api_hash: this.#api_hash,
+                }),
+              ),
+          }),
+        })
+        : this.subscribe
+        ? serialize(method, {
+          ...params,
+          api_id: this.#api_id,
+          api_hash: this.#api_hash,
+        })
+        : serialize(invokeWithoutUpdates, {
+          query: method({
             ...params,
             api_id: this.#api_id,
             api_hash: this.#api_hash,
-          });
+          }),
+        });
       const msgid = await this.#send_encrypted(packet);
       this.#waitlist.set(msgid, { resolver, packet });
     }
@@ -260,7 +278,7 @@ export default class RPC extends EventEmitter<Events> {
     dcid: DCIdentifier,
     api_id: number,
     api_hash: string,
-    environment_information: EnvironmentInformation
+    environment_information: EnvironmentInformation,
   ) {
     super();
     this.#transport = transport;
@@ -342,12 +360,12 @@ export default class RPC extends EventEmitter<Events> {
     const key = concat_array(
       a.subarray(0, 8),
       view_arr(b, 8, 16),
-      view_arr(a, 24, 8)
+      view_arr(a, 24, 8),
     );
     const iv = concat_array(
       b.subarray(0, 8),
       view_arr(a, 8, 16),
-      view_arr(b, 24, 8)
+      view_arr(b, 24, 8),
     );
     return new aes.IGE(key, iv);
   }
@@ -363,11 +381,11 @@ export default class RPC extends EventEmitter<Events> {
   call<N extends string, R>(method: TLApiMethod<N, void, R>): Promise<R>;
   call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
-    params: Omit<T, "api_id" | "api_hash">
+    params: Omit<T, "api_id" | "api_hash">,
   ): Promise<R>;
   call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
-    params: T extends void ? void : Omit<T, "api_id" | "api_hash">
+    params: T extends void ? void : Omit<T, "api_id" | "api_hash">,
   ): Promise<R> {
     const resolver = new Resolver<R>();
     this.#pending_calls.push({
@@ -402,7 +420,7 @@ export default class RPC extends EventEmitter<Events> {
     }: {
       content_related?: boolean;
       msgid?: bigint;
-    } = {}
+    } = {},
   ) {
     const salt = this.#salt;
     const seqno = content_related
@@ -425,7 +443,7 @@ export default class RPC extends EventEmitter<Events> {
     const msgkey = view_arr(
       sha256(view_arr(this.#auth, 88, 32), payload),
       8,
-      16
+      16,
     );
     const encrypted = this.#aes_encrypt(msgkey, payload);
     const authkeyid = sha1(this.#auth).subarray(-8);
@@ -444,13 +462,13 @@ export default class RPC extends EventEmitter<Events> {
         msgkey,
         encrypted_payload.subarray(
           0,
-          encrypted_payload.length - (encrypted_payload.length % 16)
-        )
+          encrypted_payload.length - (encrypted_payload.length % 16),
+        ),
       );
       const computed_msgkey = view_arr(
         sha256(view_arr(this.#auth, 96, 32), decrypted_payload),
         8,
-        16
+        16,
       );
       if (!eq_array(msgkey, computed_msgkey)) {
         throw new Error(`Incorrect msgkey`);
@@ -484,7 +502,7 @@ export default class RPC extends EventEmitter<Events> {
       | mt.Pong
       | api.Update
       | api.Updates,
-    msgid: bigint
+    msgid: bigint,
   ): Promise<void> {
     switch (data._) {
       case "mt.pong":
@@ -510,7 +528,7 @@ export default class RPC extends EventEmitter<Events> {
         this.#ack_queue.push(msgid);
         this.#setitem(
           "salt",
-          base64((this.#salt = frombig(data.server_salt, true)))
+          base64(this.#salt = frombig(data.server_salt, true)),
         );
         return;
       case "mt.rpc_result": {
@@ -568,7 +586,7 @@ export default class RPC extends EventEmitter<Events> {
       case "mt.bad_server_salt":
         this.#setitem(
           "salt",
-          base64((this.#salt = frombig(data.new_server_salt, true)))
+          base64(this.#salt = frombig(data.new_server_salt, true)),
         );
         await this.#resend_packet(data.bad_msg_id);
         return;
@@ -682,12 +700,12 @@ export default class RPC extends EventEmitter<Events> {
       set_timeoffset: (offset) => {
         this.#setitem(
           "time_offset",
-          (this.#session.offset = offset).toString()
+          (this.#session.offset = offset).toString(),
         );
       },
     });
-    this.#setitem("auth", base64((this.#auth = auth)));
-    this.#setitem("salt", base64((this.#salt = salt)));
+    this.#setitem("auth", base64(this.#auth = auth));
+    this.#setitem("salt", base64(this.#salt = salt));
   }
 
   async #error(code: number) {
