@@ -7,3 +7,4 @@ scripts
 gen/api.tl
 gen/api.json
 gen/mtproto.json
+gen/schemas.ts
