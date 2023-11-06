@@ -66,11 +66,7 @@ export default class MTProto {
     this.#api_hash = api_hash;
     this.#storage = storage;
     const defaultdc = this.#setting_get("dc");
-    if (defaultdc) {
-      this.#initdc = JSON.parse(defaultdc);
-    } else {
-      this.#initdc = initdc ?? testdc;
-    }
+    this.#initdc = defaultdc ? JSON.parse(defaultdc) : initdc ?? testdc;
     this.#transport_factory = transport_factory;
     this.#environment = environment;
     this.#dclist.push({
@@ -96,7 +92,7 @@ export default class MTProto {
         if (this.#ipv6 == "ipv4" && ipv6) return false;
         if (this.#ipv6 == "ipv6" && !ipv6) return false;
         return !cdn && !media_only;
-      }
+      },
     );
     if (founds.length) {
       const { id, ip_address, port } = founds[0];
@@ -122,7 +118,7 @@ export default class MTProto {
   }
 
   async rpc(
-    dcid: DCIdentifier = this.get_dc_id(this.default_dc)
+    dcid: DCIdentifier = this.get_dc_id(this.default_dc),
   ): Promise<RPC> {
     if (this.#connections.has(dcid)) {
       return this.#connections.get(dcid)!;
@@ -136,13 +132,13 @@ export default class MTProto {
         if (type == "cdn") return cdn;
         if (type == "media") return media_only;
         return true;
-      }
+      },
     );
     let lasterr: Error | undefined;
     for (const found of founds) {
       try {
         const connection = await this.#transport_factory(
-          toInitDC(found, this.#initdc.test)
+          toInitDC(found, this.#initdc.test),
         );
         const rpc = new RPC(
           connection,
@@ -150,7 +146,7 @@ export default class MTProto {
           dcid,
           this.#api_id,
           this.#api_hash,
-          this.#environment
+          this.#environment,
         );
         rpc.once("terminate", () => this.#connections.delete(dcid));
         this.#connections.set(dcid, rpc);

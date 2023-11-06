@@ -293,7 +293,7 @@ export default class RPC extends EventEmitter<Events> {
   }
 
   close(e?: any) {
-    if (this.#state == "disconnected") return;
+    if (this.#state === "disconnected") return;
     const suberror = new Error("rpc failed", { cause: e });
     this.emit("terminate", {});
     this.#send_queue.stop(suberror);
@@ -310,10 +310,10 @@ export default class RPC extends EventEmitter<Events> {
   }
 
   #setitem(key: string, value: string | undefined) {
-    if (value != null) {
-      this.#storage.set(key, value);
-    } else {
+    if (value == null) {
       this.#storage.delete(key);
+    } else {
+      this.#storage.set(key, value);
     }
   }
 
