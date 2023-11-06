@@ -226,37 +226,41 @@ export default class RPC extends EventEmitter<Events> {
   #pending_calls = new QueueHandler<PendingCall>(async (list) => {
     while (list.length) {
       const { method, params, resolver } = list.shift()!;
-      const packet = this.#session.first
-        ? serialize(invokeWithLayer, {
-          layer: API_LAYER,
-          query: initConnection({
-            ...this.#environment_information,
+      try {
+        const packet = this.#session.first
+          ? serialize(invokeWithLayer, {
+            layer: API_LAYER,
+            query: initConnection({
+              ...this.#environment_information,
+              api_id: this.#api_id,
+              lang_code: "en",
+              lang_pack: "",
+              system_lang_code: "en",
+              query: method({
+                ...params,
+                api_id: this.#api_id,
+                api_hash: this.#api_hash,
+              }),
+            }),
+          })
+          : this.subscribe
+          ? serialize(method, {
+            ...params,
             api_id: this.#api_id,
-            lang_code: "en",
-            lang_pack: "",
-            system_lang_code: "en",
+            api_hash: this.#api_hash,
+          })
+          : serialize(invokeWithoutUpdates, {
             query: method({
               ...params,
               api_id: this.#api_id,
               api_hash: this.#api_hash,
             }),
-          }),
-        })
-        : this.subscribe
-        ? serialize(method, {
-          ...params,
-          api_id: this.#api_id,
-          api_hash: this.#api_hash,
-        })
-        : serialize(invokeWithoutUpdates, {
-          query: method({
-            ...params,
-            api_id: this.#api_id,
-            api_hash: this.#api_hash,
-          }),
-        });
-      const msgid = await this.#send_encrypted(packet);
-      this.#waitlist.set(msgid, { resolver, packet });
+          });
+        const msgid = await this.#send_encrypted(packet);
+        this.#waitlist.set(msgid, { resolver, packet });
+      } catch (e) {
+        resolver.reject(e);
+      }
     }
   }, this.#handleerr);
 
