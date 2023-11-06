@@ -5,7 +5,7 @@ import factory from "../transport/connection/deno-tcp.ts";
 import Abridged from "../transport/codec/abridged.ts";
 // import Intermediate from "../transport/codec/intermediate.ts";
 import Obfuscated from "../transport/codec/obfuscated.ts";
-import { decode } from "../tl/json.ts";
+import { decodeTLJson } from "../tl/json.ts";
 
 const create = factory(() => new Obfuscated(new Abridged()));
 const transport = await create({
@@ -56,7 +56,7 @@ try {
   const cfg = await rpc.api.help.getConfig();
   console.log(cfg);
   const appcfg = await rpc.api.help.getAppConfig({ hash: 1 });
-  if (appcfg._ === "help.appConfig") console.log(decode(appcfg.config));
+  if (appcfg._ === "help.appConfig") console.log(decodeTLJson(appcfg.config));
 } finally {
   rpc.close();
 }

@@ -1,6 +1,6 @@
 import api from "../gen/api.js";
 
-export function decode(obj: api.JSONValue): unknown {
+export function decodeTLJson(obj: api.JSONValue): unknown {
   switch (obj._) {
     case "jsonNull":
       return null;
@@ -9,15 +9,15 @@ export function decode(obj: api.JSONValue): unknown {
     case "jsonBool":
       return obj.value;
     case "jsonArray":
-      return obj.value.map(decode);
+      return obj.value.map(decodeTLJson);
     case "jsonObject":
       return Object.fromEntries(
-        obj.value.map(({ key, value }) => [key, decode(value)]),
+        obj.value.map(({ key, value }) => [key, decodeTLJson(value)]),
       );
   }
 }
 
-export function encode(value: any): api.JSONValue {
+export function encodeTLJson(value: any): api.JSONValue {
   switch (typeof value) {
     case "bigint":
       throw new Error("cannot encode bigint");
@@ -36,11 +36,11 @@ export function encode(value: any): api.JSONValue {
     case "object":
       if (value == null) return api.jsonNull();
       else if (Array.isArray(value)) {
-        return api.jsonArray({ value: value.map(encode) });
+        return api.jsonArray({ value: value.map(encodeTLJson) });
       } else {
         return api.jsonObject({
           value: Object.entries(value).map(([key, value]) =>
-            api.jsonObjectValue({ key, value: encode(value) })
+            api.jsonObjectValue({ key, value: encodeTLJson(value) })
           ),
         });
       }
