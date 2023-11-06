@@ -1,9 +1,0 @@
-{
-  "version": "3",
-  "remote": {
-    "https://esm.sh/aes-js@3.1.2": "915c47157052ae535e0186f973e23582c4c56a2bf76633ad85f9709d912a7a67",
-    "https://esm.sh/fflate@0.8.1": "7f7dd7cd441bd8bc80b2d4a5420c627613b6a0dfc35330062baf9f19afdc8f74",
-    "https://esm.sh/v131/fflate@0.8.1/denonext/fflate.mjs": "761ec3a8390bccf68b40c9a47ec4364d0c3efaf45057033f186b47d58d6591db",
-    "https://esm.sh/v96/aes-js@3.1.2/deno/aes-js.js": "d05fb87c88ea872c50e458abe6c75b0673e806b7043d279fca37787ba7d82e28"
-  }
-}

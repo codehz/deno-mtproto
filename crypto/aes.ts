@@ -1,4 +1,6 @@
-import aesjs from "https://esm.sh/aes-js@3.1.2";
+// @deno-types="../vendor/aes-js.d.ts"
+import aesjs from "../vendor/aes-js.js";
+
 import { tou8, view_arr, xor_array } from "../common/utils.ts";
 
 export class IGE {
