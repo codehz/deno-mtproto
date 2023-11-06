@@ -1,34 +1,40 @@
-import { EnvironmentInformation, Transport } from "../types.ts";
-import { TLApiMethod, TLMethod } from "../tl/types.ts";
-import api, { initConnection, invokeWithLayer, mt } from "../gen/api.js";
-import * as apiset from "../gen/api.js";
+import {
+  decodeBase64,
+  encodeBase64,
+} from "https://deno.land/std@0.205.0/encoding/base64.ts";
+import { max } from "../common/alg.ts";
+import cached from "../common/cached.ts";
+import { DCIdentifier } from "../common/dc.ts";
+import EventEmitter from "../common/event.ts";
+import { decompressObject } from "../common/gzip.ts";
+import type { FilteredKeys } from "../common/magic.ts";
+import TaskQueue from "../common/queue.ts";
+import Resolver from "../common/resolver.ts";
 import {
   concat_array,
   eq_array,
   frombig,
+  rand_array,
+  rand_bigint,
+  rand_int,
   sha1,
   sha256,
   view_arr,
 } from "../common/utils.ts";
-import Resolver from "../common/resolver.ts";
-import type { FilteredKeys } from "../common/magic.ts";
-import TaskQueue from "../common/queue.ts";
-import cached from "../common/cached.ts";
 import * as aes from "../crypto/aes.ts";
-import { serialize } from "../tl/serializer.ts";
-import { Deserializer } from "../tl/deserializer.ts";
-import { rand_array, rand_bigint, rand_int } from "../common/utils.ts";
-import { max } from "../common/alg.ts";
-import {
-  decode as debase64,
-  encode as base64,
-} from "https://deno.land/std@0.205.0/encoding/base64.ts";
+import * as apiset from "../gen/api.js";
+import api, {
+  initConnection,
+  invokeWithLayer,
+  invokeWithoutUpdates,
+  mt,
+} from "../gen/api.js";
 import authorize from "../rpc/authorizor.ts";
-import { decompressObject } from "../common/gzip.ts";
-import { DCIdentifier } from "../common/dc.ts";
 import { KVStorage } from "../storage/types.ts";
-import EventEmitter from "../common/event.ts";
-import { invokeWithoutUpdates } from "../gen/api.js";
+import { Deserializer } from "../tl/deserializer.ts";
+import { serialize } from "../tl/serializer.ts";
+import { TLApiMethod, TLMethod } from "../tl/types.ts";
+import { EnvironmentInformation, Transport } from "../types.ts";
 
 const API_LAYER = 166;
 
@@ -340,8 +346,8 @@ export default class RPC extends EventEmitter<Events> {
     if (auth == null || salt == null) {
       await this.#do_auth();
     } else {
-      this.#auth = debase64(auth);
-      this.#salt = debase64(salt);
+      this.#auth = decodeBase64(auth);
+      this.#salt = decodeBase64(salt);
     }
     this.#handle = this.#handle_encrypted;
     this.#state = "connected";
@@ -524,7 +530,7 @@ export default class RPC extends EventEmitter<Events> {
         this.#ack_queue.push(msgid);
         this.#setitem(
           "salt",
-          base64(this.#salt = frombig(data.server_salt, true)),
+          encodeBase64(this.#salt = frombig(data.server_salt, true)),
         );
         return;
       case "mt.rpc_result": {
@@ -582,7 +588,7 @@ export default class RPC extends EventEmitter<Events> {
       case "mt.bad_server_salt":
         this.#setitem(
           "salt",
-          base64(this.#salt = frombig(data.new_server_salt, true)),
+          encodeBase64(this.#salt = frombig(data.new_server_salt, true)),
         );
         await this.#resend_packet(data.bad_msg_id);
         return;
@@ -700,8 +706,8 @@ export default class RPC extends EventEmitter<Events> {
         );
       },
     });
-    this.#setitem("auth", base64(this.#auth = auth));
-    this.#setitem("salt", base64(this.#salt = salt));
+    this.#setitem("auth", encodeBase64(this.#auth = auth));
+    this.#setitem("salt", encodeBase64(this.#salt = salt));
   }
 
   async #error(code: number) {

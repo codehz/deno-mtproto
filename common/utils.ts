@@ -1,6 +1,9 @@
+import {
+  decodeHex,
+  encodeHex,
+} from "https://deno.land/std@0.205.0/encoding/hex.ts";
 import { Sha1 } from "../crypto/sha1.ts";
 import { Sha256 } from "../crypto/sha256.ts";
-import * as hex from "https://deno.land/std@0.205.0/encoding/hex.ts";
 
 export function rand_int(max: number) {
   return Math.random() * max | 0;
@@ -76,11 +79,11 @@ export function todv(buffer: BufferSource): DataView {
 }
 
 export function fromhex(hexstr: string) {
-  return hex.decode(new TextEncoder().encode(hexstr));
+  return decodeHex(hexstr);
 }
 
 export function tohex(buffer: BufferSource) {
-  return new TextDecoder().decode(hex.encode(tou8(buffer)));
+  return encodeHex(tou8(buffer));
 }
 
 export function tobig(bytes: Iterable<number>, little_endian = false) {
