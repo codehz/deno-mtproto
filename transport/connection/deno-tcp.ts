@@ -7,6 +7,9 @@ import type {
   TransportFactory,
 } from "../../types.ts";
 
+/**
+ * TCP transport using Deno.Conn
+ */
 export class DenoTCP implements Transport {
   #closed = false;
   #conn: Deno.Conn;

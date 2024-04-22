@@ -5,6 +5,9 @@ import {
   type StorageKind,
 } from "./types.ts";
 
+/**
+ * KVStorageAdapter implements MTStorage using a Map as backend.
+ */
 export default class KVStorageAdapter implements MTStorage {
   constructor(public data: KVStorage = new Map()) {}
 

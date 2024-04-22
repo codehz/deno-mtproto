@@ -4,6 +4,18 @@ import type { PacketCodec } from "../../types.ts";
 const init: Uint8Array = new Uint8Array([0xef]);
 const obfuscate_tag: Uint8Array = new Uint8Array([0xef, 0xef, 0xef, 0xef]);
 
+/**
+ * Abridged codec.
+ *
+ * This codec omits the length prefix from the packets, instead sending
+ * packets with a single byte that is equal to the number of words in the
+ * packet (i.e. the length divided by 4). If the length is greater than
+ * 127, it sends the length using three bytes.
+ *
+ * The codec sends a special "init" packet with a single byte set to 0xef.
+ *
+ * @implements {PacketCodec}
+ */
 export default class Abridged implements PacketCodec {
   init = init;
   obfuscate_tag = obfuscate_tag;

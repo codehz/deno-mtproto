@@ -25,6 +25,9 @@ class JsonKV extends Map<string, string> implements KVStorage {
   }
 }
 
+/**
+ * JsonDBAdapter implements MTStorage using a JSON file as backend.
+ */
 export default class JsonDBAdapter implements MTStorage {
   data: Map<string, JsonKV> = new Map();
   constructor(public name: string) {

@@ -25,6 +25,11 @@ function gendcnumid(id: DCIdentifier) {
   return num;
 }
 
+/**
+ * Implements Telegram's obfuscated transport layer.
+ *
+ * See https://core.telegram.org/mtproto/mtproto-transports#transport-obfuscation
+ */
 export default class Obfuscated implements PacketCodec {
   init: Uint8Array = new Uint8Array(64);
   readonly obfuscated: true = true;

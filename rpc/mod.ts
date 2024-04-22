@@ -181,6 +181,17 @@ type Events = api._Update & {
   sent: api._Updates["updateShortSentMessage"];
 };
 
+
+/**
+ * Main client class of this library.
+ *
+ * @remarks
+ *
+ * This class is the primary interface for interacting with Telegram's API. It
+ * handles authorization, maintains the connection, and provides methods for
+ * making requests.
+ *
+ */
 export default class RPC extends EventEmitter<Events> {
   #api_id: number;
   #api_hash: string;
@@ -270,6 +281,16 @@ export default class RPC extends EventEmitter<Events> {
     return this.#state;
   }
 
+  /**
+   * The RPC client constructor.
+   *
+   * @param transport - the transport to use for the connection
+   * @param storage - storage to use for auth session
+   * @param dcid - destination DC identifier
+   * @param api_id - Telegram API ID
+   * @param api_hash - Telegram API hash
+   * @param environment_information - Telegram environment information
+   */
   constructor(
     transport: Transport,
     storage: KVStorage,
@@ -290,6 +311,11 @@ export default class RPC extends EventEmitter<Events> {
     this.#connect().catch(this.#handleerr);
   }
 
+  /**
+   * Closes the RPC connection.
+   *
+   * @param e - error that caused the disconnection
+   */
   close(e?: any) {
     if (this.#state === "disconnected") return;
     const suberror = new Error("rpc failed", { cause: e });
@@ -376,7 +402,16 @@ export default class RPC extends EventEmitter<Events> {
     return this.#aes_instance(msgkey, false).encrypt(data);
   }
 
+  /**
+   * Call a Telegram API method without parameters.
+   * @param method the method to call
+   */
   call<N extends string, R>(method: TLApiMethod<N, void, R>): Promise<R>;
+  /**
+   * Call a Telegram API method.
+   * @param method the method to call
+   * @param params the method parameters
+   */
   call<N extends string, T, R>(
     method: TLApiMethod<N, T, R>,
     params: Omit<T, "api_id" | "api_hash">,
@@ -394,6 +429,10 @@ export default class RPC extends EventEmitter<Events> {
     return resolver.promise;
   }
 
+  /**
+   * Proxy to the Telegram API methods.
+   * @param name the method name
+   */
   readonly api: GenApi<typeof apiset> = cached((name) => {
     if (
       name in apiset &&

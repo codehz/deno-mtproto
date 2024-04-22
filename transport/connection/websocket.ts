@@ -96,6 +96,9 @@ class WebSocketWrapper implements Deno.Reader {
   }
 }
 
+/**
+ * WebSocket transport using websocket API
+ */
 export class WebSocketTransport implements Transport {
   #closed = false;
   #conn: WebSocketWrapper;

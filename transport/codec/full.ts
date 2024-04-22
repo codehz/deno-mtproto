@@ -2,6 +2,20 @@ import { concat_array, todv, view_arr } from "../../common/utils.ts";
 import crc32 from "../../crypto/crc32.ts";
 import type { PacketCodec } from "../../types.ts";
 
+/**
+ * Full packet codec.
+ *
+ * This codec is compatible with the full MTProto protocol.
+ * It adds a header to each packet which includes the packet length and a
+ * sequence number. The header is 8 bytes long and has the following format:
+ *
+ * |<--------------------------- 32 bits -------------------------->|
+ * |  Length (big endian, including header)  |  Sequence number (big endian)  |
+ * |<--------------------------------------------------------------->|
+ *
+ * The codec also includes a CRC32 checksum at the end of each packet.
+ * The checksum covers the entire packet (header and data).
+ */
 export default class Full implements PacketCodec {
   #sendbuf = new Uint8Array(8);
   #dv = todv(this.#sendbuf);

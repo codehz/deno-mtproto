@@ -37,6 +37,9 @@ class BufferSync {
   }
 }
 
+/**
+ * WebSocket transport using stream API
+ */
 export class WebSocketStreamTransport implements Transport {
   #closed = false;
   #stream: WebSocketStream;

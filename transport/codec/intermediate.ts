@@ -3,6 +3,14 @@ import type { PacketCodec } from "../../types.ts";
 
 const init: Uint8Array = new Uint8Array([0xee, 0xee, 0xee, 0xee]);
 
+/**
+ * Intermediate codec.
+ *
+ * This codec sends a length prefix for each packet, followed by the data.
+ * The length prefix is a big-endian 32-bit integer.
+ *
+ * @implements {PacketCodec}
+ */
 export default class Intermediate implements PacketCodec {
   init = init;
   obfuscate_tag = init;

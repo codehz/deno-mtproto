@@ -6,13 +6,33 @@ const idmap = {
   5: "flora",
 } as Record<number, string>;
 
+/**
+ * Options for getting address of data center.
+ */
 export type AddressOption = {
+  /**
+   * Use websocket connection instead of plain tcp.
+   */
   websocket?: boolean;
+  /**
+   * Use tls connection instead of plain tcp.
+   */
   tls?: boolean;
+  /**
+   * Use CORS for http based connection.
+   */
   cors?: boolean;
+  /**
+   * Use test data center instead of production.
+   */
   test?: boolean;
 };
 
+/**
+ * Get address of data center.
+ * @param dc Data center ID.
+ * @param options Options for getting address.
+ */
 export function get_address(dc: number, {
   websocket,
   tls,

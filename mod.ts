@@ -32,6 +32,12 @@ function toInitDC(dc: api.DcOption, test: boolean): InitDC {
   };
 }
 
+/**
+ * Main entry point for this library.
+ *
+ * It provide API for Telegram client, it manage connections to DC,
+ * store auth key, etc.
+ */
 export default class MTProto {
   #api_id: number;
   #api_hash: string;
@@ -84,12 +90,24 @@ export default class MTProto {
     this.setup_rpc = setup_rpc;
   }
 
+  /**
+   * Init MTProto connection and fetch DC list.
+   *
+   * This method must be called before using any other methods.
+   */
   async init() {
     const rpc = await this.rpc();
     const config = await rpc.api.help.getConfig();
     this.#dclist = config.dc_options;
   }
 
+  /**
+   * Default DC identifier to use when no DC is explicitly specified
+   * in a method call.
+   *
+   * This value is stored in localStorage and will be persisted between
+   * sessions.
+   */
   set default_dc(dcid: number) {
     const founds = this.#dclist.filter(
       ({ cdn, media_only, id, ipv6, tcpo_only }) => {
@@ -110,10 +128,24 @@ export default class MTProto {
     }
   }
 
+  /**
+   * Get default DC identifier to use when no DC is explicitly specified
+   * in a method call.
+   *
+   * This value is stored in localStorage and will be persisted between
+   * sessions.
+   */
   get default_dc(): number {
     return this.#initdc.id;
   }
 
+  /**
+   * Get DC identifier for a given DC id and type.
+   *
+   * @param id DC id.
+   * @param type DC type.
+   * @returns DC identifier.
+   */
   get_dc_id(id: number, type: DCType = "main"): DCIdentifier {
     return toDCIdentifier({
       id,
@@ -122,6 +154,16 @@ export default class MTProto {
     });
   }
 
+  /**
+   * Get RPC connection for a given DC identifier.
+   *
+   * If no DC identifier is provided, use default DC.
+   * If connection to that DC has not been established yet,
+   * it will be created and initialized.
+   *
+   * @param dcid DC identifier.
+   * @returns RPC connection to that DC.
+   */
   async rpc(
     dcid: DCIdentifier = this.get_dc_id(this.default_dc),
   ): Promise<RPC> {
@@ -164,6 +206,12 @@ export default class MTProto {
     throw lasterr ?? new Error(`Unknown DC ${dcid}`);
   }
 
+  /**
+   * Close all active connections and cleanup.
+   * 
+   * This method should be called when user want to shutdown
+   * all connections and stop working with library.
+   */
   async shutdown(): Promise<void[]> {
     const conns = [...this.#connections.values()];
     this.#connections.clear();

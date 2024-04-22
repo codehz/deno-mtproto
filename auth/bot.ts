@@ -3,6 +3,13 @@ import type { auth } from "../gen/api.js";
 import type MTProto from "../mod.ts";
 import { RPCError } from "../rpc/mod.ts";
 
+
+/**
+ * Log in as bot
+ * @param proto MTProto connection
+ * @param token bot token
+ * @returns authorization object
+ */
 export async function loginAsBot(
   proto: MTProto,
   token: string,

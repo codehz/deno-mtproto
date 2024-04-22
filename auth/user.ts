@@ -6,6 +6,15 @@ import type MTProto from "../mod.ts";
 import type RPC from "../rpc/mod.ts";
 import { RPCError } from "../rpc/mod.ts";
 
+/**
+ * Interface for objects that handle user interaction during login.
+ *
+ * @remarks
+ * The methods of this interface are used by {@link MTProto.login} to prompt
+ * the user for information during the login process.
+ *
+ * @see {@link MTProto.login}
+ */
 export interface SendCodeUI {
   askCode(): Promise<string>;
   askPassword(hint?: string): Promise<string>;
@@ -38,6 +47,31 @@ async function login2fa(
   });
 }
 
+/**
+ * Prompts the user for login code and performs login via {@link MTProto.rpc}
+ *
+ * @remarks
+ * This is a convenience function for implementing user authentication flow.
+ * It prompts the user for a phone number and sends a login code to it,
+ * then it asks the user for the code and performs SRP authentication.
+ *
+ * If the user account has 2FA enabled, it asks the user for the password
+ * and sends SRP proof to the server using {@link auth.checkPassword}.
+ *
+ * If the user account does not have 2FA enabled, it simply logs in without
+ * asking for SRP proof.
+ *
+ * @see {@link MTProto.login} for more information on the login process.
+ * @see {@link auth.Authorization} for information about the authorization
+ *      object returned by this function.
+ *
+ * @param proto - {@link MTProto} instance to use for login.
+ * @param ui - Interface with methods for user interaction.
+ * @param phone_number - The phone number to send the code to.
+ * @param logout_tokens - Optional list of logout tokens to invalidate.
+ *
+ * @returns An authorization object as returned by the server.
+ */
 export async function sendCode(
   proto: MTProto,
   ui: SendCodeUI,

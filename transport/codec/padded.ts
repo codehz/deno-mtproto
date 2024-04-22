@@ -3,6 +3,15 @@ import type { PacketCodec } from "../../types.ts";
 
 const init: Uint8Array = new Uint8Array([0xdd, 0xdd, 0xdd, 0xdd]);
 
+/**
+ * Padded codec.
+ *
+ * This codec sends the length of each packet prefixed by a random 1-15
+ * byte length indicator. The actual packet is then padded with random
+ * bytes to make the total length of the packet a multiple of 16 bytes.
+ *
+ * @implements {PacketCodec}
+ */
 export default class Padded implements PacketCodec {
   init = init;
   obfuscate_tag = init;

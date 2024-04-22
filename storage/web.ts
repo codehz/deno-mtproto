@@ -1,6 +1,9 @@
 import KVStorageAdapter from "./kv.ts";
 import type { MTStorage } from "./types.ts";
 
+/**
+ * WebStorageAdapter implements MTStorage using Web Storage API as backend.
+ */
 export default class WebStorageAdapter extends KVStorageAdapter
   implements MTStorage {
   constructor(storage: Storage = localStorage) {
