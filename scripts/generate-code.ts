@@ -309,7 +309,7 @@ class DefinitionProcessor {
         filtered.push(item);
         typelist.add(item);
         if (!item.type.includes(".")) {
-          typesubs.add("global." + item.type, item.predicate);
+          typesubs.add("api." + item.type, item.predicate);
         } else {
           typesubs.add(item.type, item.predicate);
         }
@@ -363,7 +363,7 @@ class DefinitionProcessor {
     if (!typenamespace) {
       if (!(barename in tstypemaps)) {
         if (this.typelist.get()!.has(barename)) {
-          parsed.type = `global.${parsed.type}`;
+          parsed.type = `api.${parsed.type}`;
         } else {
           console.log(`${parsed.type} not found`);
         }
@@ -387,19 +387,13 @@ class DefinitionProcessor {
     tsfile.empty();
     jsfile.append`// #region "constructors"`;
     jsfile.empty();
-    for (const [namespace, content] of typelist) {
+    for (const [namespace = 'api', content] of typelist) {
       if (namespace) {
         tsfile.append`export namespace ${namespace} {`;
         tsfile.indent++;
         jsfile.append`export const ${namespace} = {`;
         jsfile.indent++;
         globals.add(namespace);
-      } else {
-        tsfile.append`declare namespace global {`;
-        tsfile.indent++;
-        jsfile.append`const global = {`;
-        jsfile.indent++;
-        globals.add("global");
       }
       for (const [typename, constructors] of content) {
         tsfile.append`export type ${typename}<`;
@@ -461,7 +455,7 @@ class DefinitionProcessor {
       for (const [typename, constructors] of content) {
         jsfile.append`// type ${typename}`;
         for (const { constructor: { predicate } } of constructors) {
-          const { namespace, name } = parseNamespace(predicate);
+          const { namespace = 'api', name } = parseNamespace(predicate);
           jsfile.append`${namespace ?? "global"}.${name}.ref = "${predicate}";`;
         }
         jsfile.empty();
@@ -481,7 +475,7 @@ class DefinitionProcessor {
     tsfile.append`export type AnyObject =`;
     tsfile.indent++;
     for (const type of types) {
-      const { namespace = "global", name } = parseNamespace(type);
+      const { namespace = "api", name } = parseNamespace(type);
       tsfile.append`| ${namespace}.${name}`;
     }
     tsfile.eat();

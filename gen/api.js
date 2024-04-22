@@ -281,7 +281,7 @@ mt.destroy_auth_key_fail.ref = "mt.destroy_auth_key_fail";
 mt.destroy_session_ok.ref = "mt.destroy_session_ok";
 mt.destroy_session_none.ref = "mt.destroy_session_none";
 
-const global = {
+export const api = {
   // type InputPeer
   inputPeerEmpty() {
     return { _: "inputPeerEmpty" };
@@ -3970,1649 +3970,1647 @@ const global = {
 };
 
 // type InputPeer
-global.inputPeerEmpty.ref = "inputPeerEmpty";
-global.inputPeerSelf.ref = "inputPeerSelf";
-global.inputPeerChat.ref = "inputPeerChat";
-global.inputPeerUser.ref = "inputPeerUser";
-global.inputPeerChannel.ref = "inputPeerChannel";
-global.inputPeerUserFromMessage.ref = "inputPeerUserFromMessage";
-global.inputPeerChannelFromMessage.ref = "inputPeerChannelFromMessage";
+api.inputPeerEmpty.ref = "inputPeerEmpty";
+api.inputPeerSelf.ref = "inputPeerSelf";
+api.inputPeerChat.ref = "inputPeerChat";
+api.inputPeerUser.ref = "inputPeerUser";
+api.inputPeerChannel.ref = "inputPeerChannel";
+api.inputPeerUserFromMessage.ref = "inputPeerUserFromMessage";
+api.inputPeerChannelFromMessage.ref = "inputPeerChannelFromMessage";
 
 // type InputUser
-global.inputUserEmpty.ref = "inputUserEmpty";
-global.inputUserSelf.ref = "inputUserSelf";
-global.inputUser.ref = "inputUser";
-global.inputUserFromMessage.ref = "inputUserFromMessage";
+api.inputUserEmpty.ref = "inputUserEmpty";
+api.inputUserSelf.ref = "inputUserSelf";
+api.inputUser.ref = "inputUser";
+api.inputUserFromMessage.ref = "inputUserFromMessage";
 
 // type InputContact
-global.inputPhoneContact.ref = "inputPhoneContact";
+api.inputPhoneContact.ref = "inputPhoneContact";
 
 // type InputFile
-global.inputFile.ref = "inputFile";
-global.inputFileBig.ref = "inputFileBig";
+api.inputFile.ref = "inputFile";
+api.inputFileBig.ref = "inputFileBig";
 
 // type InputMedia
-global.inputMediaEmpty.ref = "inputMediaEmpty";
-global.inputMediaUploadedPhoto.ref = "inputMediaUploadedPhoto";
-global.inputMediaPhoto.ref = "inputMediaPhoto";
-global.inputMediaGeoPoint.ref = "inputMediaGeoPoint";
-global.inputMediaContact.ref = "inputMediaContact";
-global.inputMediaUploadedDocument.ref = "inputMediaUploadedDocument";
-global.inputMediaDocument.ref = "inputMediaDocument";
-global.inputMediaVenue.ref = "inputMediaVenue";
-global.inputMediaPhotoExternal.ref = "inputMediaPhotoExternal";
-global.inputMediaDocumentExternal.ref = "inputMediaDocumentExternal";
-global.inputMediaGame.ref = "inputMediaGame";
-global.inputMediaInvoice.ref = "inputMediaInvoice";
-global.inputMediaGeoLive.ref = "inputMediaGeoLive";
-global.inputMediaPoll.ref = "inputMediaPoll";
-global.inputMediaDice.ref = "inputMediaDice";
-global.inputMediaStory.ref = "inputMediaStory";
-global.inputMediaWebPage.ref = "inputMediaWebPage";
+api.inputMediaEmpty.ref = "inputMediaEmpty";
+api.inputMediaUploadedPhoto.ref = "inputMediaUploadedPhoto";
+api.inputMediaPhoto.ref = "inputMediaPhoto";
+api.inputMediaGeoPoint.ref = "inputMediaGeoPoint";
+api.inputMediaContact.ref = "inputMediaContact";
+api.inputMediaUploadedDocument.ref = "inputMediaUploadedDocument";
+api.inputMediaDocument.ref = "inputMediaDocument";
+api.inputMediaVenue.ref = "inputMediaVenue";
+api.inputMediaPhotoExternal.ref = "inputMediaPhotoExternal";
+api.inputMediaDocumentExternal.ref = "inputMediaDocumentExternal";
+api.inputMediaGame.ref = "inputMediaGame";
+api.inputMediaInvoice.ref = "inputMediaInvoice";
+api.inputMediaGeoLive.ref = "inputMediaGeoLive";
+api.inputMediaPoll.ref = "inputMediaPoll";
+api.inputMediaDice.ref = "inputMediaDice";
+api.inputMediaStory.ref = "inputMediaStory";
+api.inputMediaWebPage.ref = "inputMediaWebPage";
 
 // type InputChatPhoto
-global.inputChatPhotoEmpty.ref = "inputChatPhotoEmpty";
-global.inputChatUploadedPhoto.ref = "inputChatUploadedPhoto";
-global.inputChatPhoto.ref = "inputChatPhoto";
+api.inputChatPhotoEmpty.ref = "inputChatPhotoEmpty";
+api.inputChatUploadedPhoto.ref = "inputChatUploadedPhoto";
+api.inputChatPhoto.ref = "inputChatPhoto";
 
 // type InputGeoPoint
-global.inputGeoPointEmpty.ref = "inputGeoPointEmpty";
-global.inputGeoPoint.ref = "inputGeoPoint";
+api.inputGeoPointEmpty.ref = "inputGeoPointEmpty";
+api.inputGeoPoint.ref = "inputGeoPoint";
 
 // type InputPhoto
-global.inputPhotoEmpty.ref = "inputPhotoEmpty";
-global.inputPhoto.ref = "inputPhoto";
+api.inputPhotoEmpty.ref = "inputPhotoEmpty";
+api.inputPhoto.ref = "inputPhoto";
 
 // type InputFileLocation
-global.inputFileLocation.ref = "inputFileLocation";
-global.inputEncryptedFileLocation.ref = "inputEncryptedFileLocation";
-global.inputDocumentFileLocation.ref = "inputDocumentFileLocation";
-global.inputSecureFileLocation.ref = "inputSecureFileLocation";
-global.inputTakeoutFileLocation.ref = "inputTakeoutFileLocation";
-global.inputPhotoFileLocation.ref = "inputPhotoFileLocation";
-global.inputPhotoLegacyFileLocation.ref = "inputPhotoLegacyFileLocation";
-global.inputPeerPhotoFileLocation.ref = "inputPeerPhotoFileLocation";
-global.inputStickerSetThumb.ref = "inputStickerSetThumb";
-global.inputGroupCallStream.ref = "inputGroupCallStream";
+api.inputFileLocation.ref = "inputFileLocation";
+api.inputEncryptedFileLocation.ref = "inputEncryptedFileLocation";
+api.inputDocumentFileLocation.ref = "inputDocumentFileLocation";
+api.inputSecureFileLocation.ref = "inputSecureFileLocation";
+api.inputTakeoutFileLocation.ref = "inputTakeoutFileLocation";
+api.inputPhotoFileLocation.ref = "inputPhotoFileLocation";
+api.inputPhotoLegacyFileLocation.ref = "inputPhotoLegacyFileLocation";
+api.inputPeerPhotoFileLocation.ref = "inputPeerPhotoFileLocation";
+api.inputStickerSetThumb.ref = "inputStickerSetThumb";
+api.inputGroupCallStream.ref = "inputGroupCallStream";
 
 // type Peer
-global.peerUser.ref = "peerUser";
-global.peerChat.ref = "peerChat";
-global.peerChannel.ref = "peerChannel";
+api.peerUser.ref = "peerUser";
+api.peerChat.ref = "peerChat";
+api.peerChannel.ref = "peerChannel";
 
 // type User
-global.userEmpty.ref = "userEmpty";
-global.user.ref = "user";
+api.userEmpty.ref = "userEmpty";
+api.user.ref = "user";
 
 // type UserProfilePhoto
-global.userProfilePhotoEmpty.ref = "userProfilePhotoEmpty";
-global.userProfilePhoto.ref = "userProfilePhoto";
+api.userProfilePhotoEmpty.ref = "userProfilePhotoEmpty";
+api.userProfilePhoto.ref = "userProfilePhoto";
 
 // type UserStatus
-global.userStatusEmpty.ref = "userStatusEmpty";
-global.userStatusOnline.ref = "userStatusOnline";
-global.userStatusOffline.ref = "userStatusOffline";
-global.userStatusRecently.ref = "userStatusRecently";
-global.userStatusLastWeek.ref = "userStatusLastWeek";
-global.userStatusLastMonth.ref = "userStatusLastMonth";
+api.userStatusEmpty.ref = "userStatusEmpty";
+api.userStatusOnline.ref = "userStatusOnline";
+api.userStatusOffline.ref = "userStatusOffline";
+api.userStatusRecently.ref = "userStatusRecently";
+api.userStatusLastWeek.ref = "userStatusLastWeek";
+api.userStatusLastMonth.ref = "userStatusLastMonth";
 
 // type Chat
-global.chatEmpty.ref = "chatEmpty";
-global.chat.ref = "chat";
-global.chatForbidden.ref = "chatForbidden";
-global.channel.ref = "channel";
-global.channelForbidden.ref = "channelForbidden";
+api.chatEmpty.ref = "chatEmpty";
+api.chat.ref = "chat";
+api.chatForbidden.ref = "chatForbidden";
+api.channel.ref = "channel";
+api.channelForbidden.ref = "channelForbidden";
 
 // type ChatFull
-global.chatFull.ref = "chatFull";
-global.channelFull.ref = "channelFull";
+api.chatFull.ref = "chatFull";
+api.channelFull.ref = "channelFull";
 
 // type ChatParticipant
-global.chatParticipant.ref = "chatParticipant";
-global.chatParticipantCreator.ref = "chatParticipantCreator";
-global.chatParticipantAdmin.ref = "chatParticipantAdmin";
+api.chatParticipant.ref = "chatParticipant";
+api.chatParticipantCreator.ref = "chatParticipantCreator";
+api.chatParticipantAdmin.ref = "chatParticipantAdmin";
 
 // type ChatParticipants
-global.chatParticipantsForbidden.ref = "chatParticipantsForbidden";
-global.chatParticipants.ref = "chatParticipants";
+api.chatParticipantsForbidden.ref = "chatParticipantsForbidden";
+api.chatParticipants.ref = "chatParticipants";
 
 // type ChatPhoto
-global.chatPhotoEmpty.ref = "chatPhotoEmpty";
-global.chatPhoto.ref = "chatPhoto";
+api.chatPhotoEmpty.ref = "chatPhotoEmpty";
+api.chatPhoto.ref = "chatPhoto";
 
 // type Message
-global.messageEmpty.ref = "messageEmpty";
-global.message.ref = "message";
-global.messageService.ref = "messageService";
+api.messageEmpty.ref = "messageEmpty";
+api.message.ref = "message";
+api.messageService.ref = "messageService";
 
 // type MessageMedia
-global.messageMediaEmpty.ref = "messageMediaEmpty";
-global.messageMediaPhoto.ref = "messageMediaPhoto";
-global.messageMediaGeo.ref = "messageMediaGeo";
-global.messageMediaContact.ref = "messageMediaContact";
-global.messageMediaUnsupported.ref = "messageMediaUnsupported";
-global.messageMediaDocument.ref = "messageMediaDocument";
-global.messageMediaWebPage.ref = "messageMediaWebPage";
-global.messageMediaVenue.ref = "messageMediaVenue";
-global.messageMediaGame.ref = "messageMediaGame";
-global.messageMediaInvoice.ref = "messageMediaInvoice";
-global.messageMediaGeoLive.ref = "messageMediaGeoLive";
-global.messageMediaPoll.ref = "messageMediaPoll";
-global.messageMediaDice.ref = "messageMediaDice";
-global.messageMediaStory.ref = "messageMediaStory";
-global.messageMediaGiveaway.ref = "messageMediaGiveaway";
-global.messageMediaGiveawayResults.ref = "messageMediaGiveawayResults";
+api.messageMediaEmpty.ref = "messageMediaEmpty";
+api.messageMediaPhoto.ref = "messageMediaPhoto";
+api.messageMediaGeo.ref = "messageMediaGeo";
+api.messageMediaContact.ref = "messageMediaContact";
+api.messageMediaUnsupported.ref = "messageMediaUnsupported";
+api.messageMediaDocument.ref = "messageMediaDocument";
+api.messageMediaWebPage.ref = "messageMediaWebPage";
+api.messageMediaVenue.ref = "messageMediaVenue";
+api.messageMediaGame.ref = "messageMediaGame";
+api.messageMediaInvoice.ref = "messageMediaInvoice";
+api.messageMediaGeoLive.ref = "messageMediaGeoLive";
+api.messageMediaPoll.ref = "messageMediaPoll";
+api.messageMediaDice.ref = "messageMediaDice";
+api.messageMediaStory.ref = "messageMediaStory";
+api.messageMediaGiveaway.ref = "messageMediaGiveaway";
+api.messageMediaGiveawayResults.ref = "messageMediaGiveawayResults";
 
 // type MessageAction
-global.messageActionEmpty.ref = "messageActionEmpty";
-global.messageActionChatCreate.ref = "messageActionChatCreate";
-global.messageActionChatEditTitle.ref = "messageActionChatEditTitle";
-global.messageActionChatEditPhoto.ref = "messageActionChatEditPhoto";
-global.messageActionChatDeletePhoto.ref = "messageActionChatDeletePhoto";
-global.messageActionChatAddUser.ref = "messageActionChatAddUser";
-global.messageActionChatDeleteUser.ref = "messageActionChatDeleteUser";
-global.messageActionChatJoinedByLink.ref = "messageActionChatJoinedByLink";
-global.messageActionChannelCreate.ref = "messageActionChannelCreate";
-global.messageActionChatMigrateTo.ref = "messageActionChatMigrateTo";
-global.messageActionChannelMigrateFrom.ref = "messageActionChannelMigrateFrom";
-global.messageActionPinMessage.ref = "messageActionPinMessage";
-global.messageActionHistoryClear.ref = "messageActionHistoryClear";
-global.messageActionGameScore.ref = "messageActionGameScore";
-global.messageActionPaymentSentMe.ref = "messageActionPaymentSentMe";
-global.messageActionPaymentSent.ref = "messageActionPaymentSent";
-global.messageActionPhoneCall.ref = "messageActionPhoneCall";
-global.messageActionScreenshotTaken.ref = "messageActionScreenshotTaken";
-global.messageActionCustomAction.ref = "messageActionCustomAction";
-global.messageActionBotAllowed.ref = "messageActionBotAllowed";
-global.messageActionSecureValuesSentMe.ref = "messageActionSecureValuesSentMe";
-global.messageActionSecureValuesSent.ref = "messageActionSecureValuesSent";
-global.messageActionContactSignUp.ref = "messageActionContactSignUp";
-global.messageActionGeoProximityReached.ref = "messageActionGeoProximityReached";
-global.messageActionGroupCall.ref = "messageActionGroupCall";
-global.messageActionInviteToGroupCall.ref = "messageActionInviteToGroupCall";
-global.messageActionSetMessagesTTL.ref = "messageActionSetMessagesTTL";
-global.messageActionGroupCallScheduled.ref = "messageActionGroupCallScheduled";
-global.messageActionSetChatTheme.ref = "messageActionSetChatTheme";
-global.messageActionChatJoinedByRequest.ref = "messageActionChatJoinedByRequest";
-global.messageActionWebViewDataSentMe.ref = "messageActionWebViewDataSentMe";
-global.messageActionWebViewDataSent.ref = "messageActionWebViewDataSent";
-global.messageActionGiftPremium.ref = "messageActionGiftPremium";
-global.messageActionTopicCreate.ref = "messageActionTopicCreate";
-global.messageActionTopicEdit.ref = "messageActionTopicEdit";
-global.messageActionSuggestProfilePhoto.ref = "messageActionSuggestProfilePhoto";
-global.messageActionRequestedPeer.ref = "messageActionRequestedPeer";
-global.messageActionSetChatWallPaper.ref = "messageActionSetChatWallPaper";
-global.messageActionGiftCode.ref = "messageActionGiftCode";
-global.messageActionGiveawayLaunch.ref = "messageActionGiveawayLaunch";
-global.messageActionGiveawayResults.ref = "messageActionGiveawayResults";
-global.messageActionBoostApply.ref = "messageActionBoostApply";
-global.messageActionRequestedPeerSentMe.ref = "messageActionRequestedPeerSentMe";
+api.messageActionEmpty.ref = "messageActionEmpty";
+api.messageActionChatCreate.ref = "messageActionChatCreate";
+api.messageActionChatEditTitle.ref = "messageActionChatEditTitle";
+api.messageActionChatEditPhoto.ref = "messageActionChatEditPhoto";
+api.messageActionChatDeletePhoto.ref = "messageActionChatDeletePhoto";
+api.messageActionChatAddUser.ref = "messageActionChatAddUser";
+api.messageActionChatDeleteUser.ref = "messageActionChatDeleteUser";
+api.messageActionChatJoinedByLink.ref = "messageActionChatJoinedByLink";
+api.messageActionChannelCreate.ref = "messageActionChannelCreate";
+api.messageActionChatMigrateTo.ref = "messageActionChatMigrateTo";
+api.messageActionChannelMigrateFrom.ref = "messageActionChannelMigrateFrom";
+api.messageActionPinMessage.ref = "messageActionPinMessage";
+api.messageActionHistoryClear.ref = "messageActionHistoryClear";
+api.messageActionGameScore.ref = "messageActionGameScore";
+api.messageActionPaymentSentMe.ref = "messageActionPaymentSentMe";
+api.messageActionPaymentSent.ref = "messageActionPaymentSent";
+api.messageActionPhoneCall.ref = "messageActionPhoneCall";
+api.messageActionScreenshotTaken.ref = "messageActionScreenshotTaken";
+api.messageActionCustomAction.ref = "messageActionCustomAction";
+api.messageActionBotAllowed.ref = "messageActionBotAllowed";
+api.messageActionSecureValuesSentMe.ref = "messageActionSecureValuesSentMe";
+api.messageActionSecureValuesSent.ref = "messageActionSecureValuesSent";
+api.messageActionContactSignUp.ref = "messageActionContactSignUp";
+api.messageActionGeoProximityReached.ref = "messageActionGeoProximityReached";
+api.messageActionGroupCall.ref = "messageActionGroupCall";
+api.messageActionInviteToGroupCall.ref = "messageActionInviteToGroupCall";
+api.messageActionSetMessagesTTL.ref = "messageActionSetMessagesTTL";
+api.messageActionGroupCallScheduled.ref = "messageActionGroupCallScheduled";
+api.messageActionSetChatTheme.ref = "messageActionSetChatTheme";
+api.messageActionChatJoinedByRequest.ref = "messageActionChatJoinedByRequest";
+api.messageActionWebViewDataSentMe.ref = "messageActionWebViewDataSentMe";
+api.messageActionWebViewDataSent.ref = "messageActionWebViewDataSent";
+api.messageActionGiftPremium.ref = "messageActionGiftPremium";
+api.messageActionTopicCreate.ref = "messageActionTopicCreate";
+api.messageActionTopicEdit.ref = "messageActionTopicEdit";
+api.messageActionSuggestProfilePhoto.ref = "messageActionSuggestProfilePhoto";
+api.messageActionRequestedPeer.ref = "messageActionRequestedPeer";
+api.messageActionSetChatWallPaper.ref = "messageActionSetChatWallPaper";
+api.messageActionGiftCode.ref = "messageActionGiftCode";
+api.messageActionGiveawayLaunch.ref = "messageActionGiveawayLaunch";
+api.messageActionGiveawayResults.ref = "messageActionGiveawayResults";
+api.messageActionBoostApply.ref = "messageActionBoostApply";
+api.messageActionRequestedPeerSentMe.ref = "messageActionRequestedPeerSentMe";
 
 // type Dialog
-global.dialog.ref = "dialog";
-global.dialogFolder.ref = "dialogFolder";
+api.dialog.ref = "dialog";
+api.dialogFolder.ref = "dialogFolder";
 
 // type Photo
-global.photoEmpty.ref = "photoEmpty";
-global.photo.ref = "photo";
+api.photoEmpty.ref = "photoEmpty";
+api.photo.ref = "photo";
 
 // type PhotoSize
-global.photoSizeEmpty.ref = "photoSizeEmpty";
-global.photoSize.ref = "photoSize";
-global.photoCachedSize.ref = "photoCachedSize";
-global.photoStrippedSize.ref = "photoStrippedSize";
-global.photoSizeProgressive.ref = "photoSizeProgressive";
-global.photoPathSize.ref = "photoPathSize";
+api.photoSizeEmpty.ref = "photoSizeEmpty";
+api.photoSize.ref = "photoSize";
+api.photoCachedSize.ref = "photoCachedSize";
+api.photoStrippedSize.ref = "photoStrippedSize";
+api.photoSizeProgressive.ref = "photoSizeProgressive";
+api.photoPathSize.ref = "photoPathSize";
 
 // type GeoPoint
-global.geoPointEmpty.ref = "geoPointEmpty";
-global.geoPoint.ref = "geoPoint";
+api.geoPointEmpty.ref = "geoPointEmpty";
+api.geoPoint.ref = "geoPoint";
 
 // type InputNotifyPeer
-global.inputNotifyPeer.ref = "inputNotifyPeer";
-global.inputNotifyUsers.ref = "inputNotifyUsers";
-global.inputNotifyChats.ref = "inputNotifyChats";
-global.inputNotifyBroadcasts.ref = "inputNotifyBroadcasts";
-global.inputNotifyForumTopic.ref = "inputNotifyForumTopic";
+api.inputNotifyPeer.ref = "inputNotifyPeer";
+api.inputNotifyUsers.ref = "inputNotifyUsers";
+api.inputNotifyChats.ref = "inputNotifyChats";
+api.inputNotifyBroadcasts.ref = "inputNotifyBroadcasts";
+api.inputNotifyForumTopic.ref = "inputNotifyForumTopic";
 
 // type InputPeerNotifySettings
-global.inputPeerNotifySettings.ref = "inputPeerNotifySettings";
+api.inputPeerNotifySettings.ref = "inputPeerNotifySettings";
 
 // type PeerNotifySettings
-global.peerNotifySettings.ref = "peerNotifySettings";
+api.peerNotifySettings.ref = "peerNotifySettings";
 
 // type PeerSettings
-global.peerSettings.ref = "peerSettings";
+api.peerSettings.ref = "peerSettings";
 
 // type WallPaper
-global.wallPaper.ref = "wallPaper";
-global.wallPaperNoFile.ref = "wallPaperNoFile";
+api.wallPaper.ref = "wallPaper";
+api.wallPaperNoFile.ref = "wallPaperNoFile";
 
 // type ReportReason
-global.inputReportReasonSpam.ref = "inputReportReasonSpam";
-global.inputReportReasonViolence.ref = "inputReportReasonViolence";
-global.inputReportReasonPornography.ref = "inputReportReasonPornography";
-global.inputReportReasonChildAbuse.ref = "inputReportReasonChildAbuse";
-global.inputReportReasonOther.ref = "inputReportReasonOther";
-global.inputReportReasonCopyright.ref = "inputReportReasonCopyright";
-global.inputReportReasonGeoIrrelevant.ref = "inputReportReasonGeoIrrelevant";
-global.inputReportReasonFake.ref = "inputReportReasonFake";
-global.inputReportReasonIllegalDrugs.ref = "inputReportReasonIllegalDrugs";
-global.inputReportReasonPersonalDetails.ref = "inputReportReasonPersonalDetails";
+api.inputReportReasonSpam.ref = "inputReportReasonSpam";
+api.inputReportReasonViolence.ref = "inputReportReasonViolence";
+api.inputReportReasonPornography.ref = "inputReportReasonPornography";
+api.inputReportReasonChildAbuse.ref = "inputReportReasonChildAbuse";
+api.inputReportReasonOther.ref = "inputReportReasonOther";
+api.inputReportReasonCopyright.ref = "inputReportReasonCopyright";
+api.inputReportReasonGeoIrrelevant.ref = "inputReportReasonGeoIrrelevant";
+api.inputReportReasonFake.ref = "inputReportReasonFake";
+api.inputReportReasonIllegalDrugs.ref = "inputReportReasonIllegalDrugs";
+api.inputReportReasonPersonalDetails.ref = "inputReportReasonPersonalDetails";
 
 // type UserFull
-global.userFull.ref = "userFull";
+api.userFull.ref = "userFull";
 
 // type Contact
-global.contact.ref = "contact";
+api.contact.ref = "contact";
 
 // type ImportedContact
-global.importedContact.ref = "importedContact";
+api.importedContact.ref = "importedContact";
 
 // type ContactStatus
-global.contactStatus.ref = "contactStatus";
+api.contactStatus.ref = "contactStatus";
 
 // type MessagesFilter
-global.inputMessagesFilterEmpty.ref = "inputMessagesFilterEmpty";
-global.inputMessagesFilterPhotos.ref = "inputMessagesFilterPhotos";
-global.inputMessagesFilterVideo.ref = "inputMessagesFilterVideo";
-global.inputMessagesFilterPhotoVideo.ref = "inputMessagesFilterPhotoVideo";
-global.inputMessagesFilterDocument.ref = "inputMessagesFilterDocument";
-global.inputMessagesFilterUrl.ref = "inputMessagesFilterUrl";
-global.inputMessagesFilterGif.ref = "inputMessagesFilterGif";
-global.inputMessagesFilterVoice.ref = "inputMessagesFilterVoice";
-global.inputMessagesFilterMusic.ref = "inputMessagesFilterMusic";
-global.inputMessagesFilterChatPhotos.ref = "inputMessagesFilterChatPhotos";
-global.inputMessagesFilterPhoneCalls.ref = "inputMessagesFilterPhoneCalls";
-global.inputMessagesFilterRoundVoice.ref = "inputMessagesFilterRoundVoice";
-global.inputMessagesFilterRoundVideo.ref = "inputMessagesFilterRoundVideo";
-global.inputMessagesFilterMyMentions.ref = "inputMessagesFilterMyMentions";
-global.inputMessagesFilterGeo.ref = "inputMessagesFilterGeo";
-global.inputMessagesFilterContacts.ref = "inputMessagesFilterContacts";
-global.inputMessagesFilterPinned.ref = "inputMessagesFilterPinned";
+api.inputMessagesFilterEmpty.ref = "inputMessagesFilterEmpty";
+api.inputMessagesFilterPhotos.ref = "inputMessagesFilterPhotos";
+api.inputMessagesFilterVideo.ref = "inputMessagesFilterVideo";
+api.inputMessagesFilterPhotoVideo.ref = "inputMessagesFilterPhotoVideo";
+api.inputMessagesFilterDocument.ref = "inputMessagesFilterDocument";
+api.inputMessagesFilterUrl.ref = "inputMessagesFilterUrl";
+api.inputMessagesFilterGif.ref = "inputMessagesFilterGif";
+api.inputMessagesFilterVoice.ref = "inputMessagesFilterVoice";
+api.inputMessagesFilterMusic.ref = "inputMessagesFilterMusic";
+api.inputMessagesFilterChatPhotos.ref = "inputMessagesFilterChatPhotos";
+api.inputMessagesFilterPhoneCalls.ref = "inputMessagesFilterPhoneCalls";
+api.inputMessagesFilterRoundVoice.ref = "inputMessagesFilterRoundVoice";
+api.inputMessagesFilterRoundVideo.ref = "inputMessagesFilterRoundVideo";
+api.inputMessagesFilterMyMentions.ref = "inputMessagesFilterMyMentions";
+api.inputMessagesFilterGeo.ref = "inputMessagesFilterGeo";
+api.inputMessagesFilterContacts.ref = "inputMessagesFilterContacts";
+api.inputMessagesFilterPinned.ref = "inputMessagesFilterPinned";
 
 // type Update
-global.updateNewMessage.ref = "updateNewMessage";
-global.updateMessageID.ref = "updateMessageID";
-global.updateDeleteMessages.ref = "updateDeleteMessages";
-global.updateUserTyping.ref = "updateUserTyping";
-global.updateChatUserTyping.ref = "updateChatUserTyping";
-global.updateChatParticipants.ref = "updateChatParticipants";
-global.updateUserStatus.ref = "updateUserStatus";
-global.updateUserName.ref = "updateUserName";
-global.updateNewAuthorization.ref = "updateNewAuthorization";
-global.updateNewEncryptedMessage.ref = "updateNewEncryptedMessage";
-global.updateEncryptedChatTyping.ref = "updateEncryptedChatTyping";
-global.updateEncryption.ref = "updateEncryption";
-global.updateEncryptedMessagesRead.ref = "updateEncryptedMessagesRead";
-global.updateChatParticipantAdd.ref = "updateChatParticipantAdd";
-global.updateChatParticipantDelete.ref = "updateChatParticipantDelete";
-global.updateDcOptions.ref = "updateDcOptions";
-global.updateNotifySettings.ref = "updateNotifySettings";
-global.updateServiceNotification.ref = "updateServiceNotification";
-global.updatePrivacy.ref = "updatePrivacy";
-global.updateUserPhone.ref = "updateUserPhone";
-global.updateReadHistoryInbox.ref = "updateReadHistoryInbox";
-global.updateReadHistoryOutbox.ref = "updateReadHistoryOutbox";
-global.updateWebPage.ref = "updateWebPage";
-global.updateReadMessagesContents.ref = "updateReadMessagesContents";
-global.updateChannelTooLong.ref = "updateChannelTooLong";
-global.updateChannel.ref = "updateChannel";
-global.updateNewChannelMessage.ref = "updateNewChannelMessage";
-global.updateReadChannelInbox.ref = "updateReadChannelInbox";
-global.updateDeleteChannelMessages.ref = "updateDeleteChannelMessages";
-global.updateChannelMessageViews.ref = "updateChannelMessageViews";
-global.updateChatParticipantAdmin.ref = "updateChatParticipantAdmin";
-global.updateNewStickerSet.ref = "updateNewStickerSet";
-global.updateStickerSetsOrder.ref = "updateStickerSetsOrder";
-global.updateStickerSets.ref = "updateStickerSets";
-global.updateSavedGifs.ref = "updateSavedGifs";
-global.updateBotInlineQuery.ref = "updateBotInlineQuery";
-global.updateBotInlineSend.ref = "updateBotInlineSend";
-global.updateEditChannelMessage.ref = "updateEditChannelMessage";
-global.updateBotCallbackQuery.ref = "updateBotCallbackQuery";
-global.updateEditMessage.ref = "updateEditMessage";
-global.updateInlineBotCallbackQuery.ref = "updateInlineBotCallbackQuery";
-global.updateReadChannelOutbox.ref = "updateReadChannelOutbox";
-global.updateDraftMessage.ref = "updateDraftMessage";
-global.updateReadFeaturedStickers.ref = "updateReadFeaturedStickers";
-global.updateRecentStickers.ref = "updateRecentStickers";
-global.updateConfig.ref = "updateConfig";
-global.updatePtsChanged.ref = "updatePtsChanged";
-global.updateChannelWebPage.ref = "updateChannelWebPage";
-global.updateDialogPinned.ref = "updateDialogPinned";
-global.updatePinnedDialogs.ref = "updatePinnedDialogs";
-global.updateBotWebhookJSON.ref = "updateBotWebhookJSON";
-global.updateBotWebhookJSONQuery.ref = "updateBotWebhookJSONQuery";
-global.updateBotShippingQuery.ref = "updateBotShippingQuery";
-global.updateBotPrecheckoutQuery.ref = "updateBotPrecheckoutQuery";
-global.updatePhoneCall.ref = "updatePhoneCall";
-global.updateLangPackTooLong.ref = "updateLangPackTooLong";
-global.updateLangPack.ref = "updateLangPack";
-global.updateFavedStickers.ref = "updateFavedStickers";
-global.updateChannelReadMessagesContents.ref = "updateChannelReadMessagesContents";
-global.updateContactsReset.ref = "updateContactsReset";
-global.updateChannelAvailableMessages.ref = "updateChannelAvailableMessages";
-global.updateDialogUnreadMark.ref = "updateDialogUnreadMark";
-global.updateMessagePoll.ref = "updateMessagePoll";
-global.updateChatDefaultBannedRights.ref = "updateChatDefaultBannedRights";
-global.updateFolderPeers.ref = "updateFolderPeers";
-global.updatePeerSettings.ref = "updatePeerSettings";
-global.updatePeerLocated.ref = "updatePeerLocated";
-global.updateNewScheduledMessage.ref = "updateNewScheduledMessage";
-global.updateDeleteScheduledMessages.ref = "updateDeleteScheduledMessages";
-global.updateTheme.ref = "updateTheme";
-global.updateGeoLiveViewed.ref = "updateGeoLiveViewed";
-global.updateLoginToken.ref = "updateLoginToken";
-global.updateMessagePollVote.ref = "updateMessagePollVote";
-global.updateDialogFilter.ref = "updateDialogFilter";
-global.updateDialogFilterOrder.ref = "updateDialogFilterOrder";
-global.updateDialogFilters.ref = "updateDialogFilters";
-global.updatePhoneCallSignalingData.ref = "updatePhoneCallSignalingData";
-global.updateChannelMessageForwards.ref = "updateChannelMessageForwards";
-global.updateReadChannelDiscussionInbox.ref = "updateReadChannelDiscussionInbox";
-global.updateReadChannelDiscussionOutbox.ref = "updateReadChannelDiscussionOutbox";
-global.updatePeerBlocked.ref = "updatePeerBlocked";
-global.updateChannelUserTyping.ref = "updateChannelUserTyping";
-global.updatePinnedMessages.ref = "updatePinnedMessages";
-global.updatePinnedChannelMessages.ref = "updatePinnedChannelMessages";
-global.updateChat.ref = "updateChat";
-global.updateGroupCallParticipants.ref = "updateGroupCallParticipants";
-global.updateGroupCall.ref = "updateGroupCall";
-global.updatePeerHistoryTTL.ref = "updatePeerHistoryTTL";
-global.updateChatParticipant.ref = "updateChatParticipant";
-global.updateChannelParticipant.ref = "updateChannelParticipant";
-global.updateBotStopped.ref = "updateBotStopped";
-global.updateGroupCallConnection.ref = "updateGroupCallConnection";
-global.updateBotCommands.ref = "updateBotCommands";
-global.updatePendingJoinRequests.ref = "updatePendingJoinRequests";
-global.updateBotChatInviteRequester.ref = "updateBotChatInviteRequester";
-global.updateMessageReactions.ref = "updateMessageReactions";
-global.updateAttachMenuBots.ref = "updateAttachMenuBots";
-global.updateWebViewResultSent.ref = "updateWebViewResultSent";
-global.updateBotMenuButton.ref = "updateBotMenuButton";
-global.updateSavedRingtones.ref = "updateSavedRingtones";
-global.updateTranscribedAudio.ref = "updateTranscribedAudio";
-global.updateReadFeaturedEmojiStickers.ref = "updateReadFeaturedEmojiStickers";
-global.updateUserEmojiStatus.ref = "updateUserEmojiStatus";
-global.updateRecentEmojiStatuses.ref = "updateRecentEmojiStatuses";
-global.updateRecentReactions.ref = "updateRecentReactions";
-global.updateMoveStickerSetToTop.ref = "updateMoveStickerSetToTop";
-global.updateMessageExtendedMedia.ref = "updateMessageExtendedMedia";
-global.updateChannelPinnedTopic.ref = "updateChannelPinnedTopic";
-global.updateChannelPinnedTopics.ref = "updateChannelPinnedTopics";
-global.updateUser.ref = "updateUser";
-global.updateAutoSaveSettings.ref = "updateAutoSaveSettings";
-global.updateStory.ref = "updateStory";
-global.updateReadStories.ref = "updateReadStories";
-global.updateStoryID.ref = "updateStoryID";
-global.updateStoriesStealthMode.ref = "updateStoriesStealthMode";
-global.updateSentStoryReaction.ref = "updateSentStoryReaction";
-global.updateBotChatBoost.ref = "updateBotChatBoost";
-global.updateChannelViewForumAsMessages.ref = "updateChannelViewForumAsMessages";
-global.updatePeerWallpaper.ref = "updatePeerWallpaper";
-global.updateBotMessageReaction.ref = "updateBotMessageReaction";
-global.updateBotMessageReactions.ref = "updateBotMessageReactions";
-global.updateSavedDialogPinned.ref = "updateSavedDialogPinned";
-global.updatePinnedSavedDialogs.ref = "updatePinnedSavedDialogs";
-global.updateSavedReactionTags.ref = "updateSavedReactionTags";
-global.updateSmsJob.ref = "updateSmsJob";
-global.updateQuickReplies.ref = "updateQuickReplies";
-global.updateNewQuickReply.ref = "updateNewQuickReply";
-global.updateDeleteQuickReply.ref = "updateDeleteQuickReply";
-global.updateQuickReplyMessage.ref = "updateQuickReplyMessage";
-global.updateDeleteQuickReplyMessages.ref = "updateDeleteQuickReplyMessages";
-global.updateBotBusinessConnect.ref = "updateBotBusinessConnect";
-global.updateBotNewBusinessMessage.ref = "updateBotNewBusinessMessage";
-global.updateBotEditBusinessMessage.ref = "updateBotEditBusinessMessage";
-global.updateBotDeleteBusinessMessage.ref = "updateBotDeleteBusinessMessage";
+api.updateNewMessage.ref = "updateNewMessage";
+api.updateMessageID.ref = "updateMessageID";
+api.updateDeleteMessages.ref = "updateDeleteMessages";
+api.updateUserTyping.ref = "updateUserTyping";
+api.updateChatUserTyping.ref = "updateChatUserTyping";
+api.updateChatParticipants.ref = "updateChatParticipants";
+api.updateUserStatus.ref = "updateUserStatus";
+api.updateUserName.ref = "updateUserName";
+api.updateNewAuthorization.ref = "updateNewAuthorization";
+api.updateNewEncryptedMessage.ref = "updateNewEncryptedMessage";
+api.updateEncryptedChatTyping.ref = "updateEncryptedChatTyping";
+api.updateEncryption.ref = "updateEncryption";
+api.updateEncryptedMessagesRead.ref = "updateEncryptedMessagesRead";
+api.updateChatParticipantAdd.ref = "updateChatParticipantAdd";
+api.updateChatParticipantDelete.ref = "updateChatParticipantDelete";
+api.updateDcOptions.ref = "updateDcOptions";
+api.updateNotifySettings.ref = "updateNotifySettings";
+api.updateServiceNotification.ref = "updateServiceNotification";
+api.updatePrivacy.ref = "updatePrivacy";
+api.updateUserPhone.ref = "updateUserPhone";
+api.updateReadHistoryInbox.ref = "updateReadHistoryInbox";
+api.updateReadHistoryOutbox.ref = "updateReadHistoryOutbox";
+api.updateWebPage.ref = "updateWebPage";
+api.updateReadMessagesContents.ref = "updateReadMessagesContents";
+api.updateChannelTooLong.ref = "updateChannelTooLong";
+api.updateChannel.ref = "updateChannel";
+api.updateNewChannelMessage.ref = "updateNewChannelMessage";
+api.updateReadChannelInbox.ref = "updateReadChannelInbox";
+api.updateDeleteChannelMessages.ref = "updateDeleteChannelMessages";
+api.updateChannelMessageViews.ref = "updateChannelMessageViews";
+api.updateChatParticipantAdmin.ref = "updateChatParticipantAdmin";
+api.updateNewStickerSet.ref = "updateNewStickerSet";
+api.updateStickerSetsOrder.ref = "updateStickerSetsOrder";
+api.updateStickerSets.ref = "updateStickerSets";
+api.updateSavedGifs.ref = "updateSavedGifs";
+api.updateBotInlineQuery.ref = "updateBotInlineQuery";
+api.updateBotInlineSend.ref = "updateBotInlineSend";
+api.updateEditChannelMessage.ref = "updateEditChannelMessage";
+api.updateBotCallbackQuery.ref = "updateBotCallbackQuery";
+api.updateEditMessage.ref = "updateEditMessage";
+api.updateInlineBotCallbackQuery.ref = "updateInlineBotCallbackQuery";
+api.updateReadChannelOutbox.ref = "updateReadChannelOutbox";
+api.updateDraftMessage.ref = "updateDraftMessage";
+api.updateReadFeaturedStickers.ref = "updateReadFeaturedStickers";
+api.updateRecentStickers.ref = "updateRecentStickers";
+api.updateConfig.ref = "updateConfig";
+api.updatePtsChanged.ref = "updatePtsChanged";
+api.updateChannelWebPage.ref = "updateChannelWebPage";
+api.updateDialogPinned.ref = "updateDialogPinned";
+api.updatePinnedDialogs.ref = "updatePinnedDialogs";
+api.updateBotWebhookJSON.ref = "updateBotWebhookJSON";
+api.updateBotWebhookJSONQuery.ref = "updateBotWebhookJSONQuery";
+api.updateBotShippingQuery.ref = "updateBotShippingQuery";
+api.updateBotPrecheckoutQuery.ref = "updateBotPrecheckoutQuery";
+api.updatePhoneCall.ref = "updatePhoneCall";
+api.updateLangPackTooLong.ref = "updateLangPackTooLong";
+api.updateLangPack.ref = "updateLangPack";
+api.updateFavedStickers.ref = "updateFavedStickers";
+api.updateChannelReadMessagesContents.ref = "updateChannelReadMessagesContents";
+api.updateContactsReset.ref = "updateContactsReset";
+api.updateChannelAvailableMessages.ref = "updateChannelAvailableMessages";
+api.updateDialogUnreadMark.ref = "updateDialogUnreadMark";
+api.updateMessagePoll.ref = "updateMessagePoll";
+api.updateChatDefaultBannedRights.ref = "updateChatDefaultBannedRights";
+api.updateFolderPeers.ref = "updateFolderPeers";
+api.updatePeerSettings.ref = "updatePeerSettings";
+api.updatePeerLocated.ref = "updatePeerLocated";
+api.updateNewScheduledMessage.ref = "updateNewScheduledMessage";
+api.updateDeleteScheduledMessages.ref = "updateDeleteScheduledMessages";
+api.updateTheme.ref = "updateTheme";
+api.updateGeoLiveViewed.ref = "updateGeoLiveViewed";
+api.updateLoginToken.ref = "updateLoginToken";
+api.updateMessagePollVote.ref = "updateMessagePollVote";
+api.updateDialogFilter.ref = "updateDialogFilter";
+api.updateDialogFilterOrder.ref = "updateDialogFilterOrder";
+api.updateDialogFilters.ref = "updateDialogFilters";
+api.updatePhoneCallSignalingData.ref = "updatePhoneCallSignalingData";
+api.updateChannelMessageForwards.ref = "updateChannelMessageForwards";
+api.updateReadChannelDiscussionInbox.ref = "updateReadChannelDiscussionInbox";
+api.updateReadChannelDiscussionOutbox.ref = "updateReadChannelDiscussionOutbox";
+api.updatePeerBlocked.ref = "updatePeerBlocked";
+api.updateChannelUserTyping.ref = "updateChannelUserTyping";
+api.updatePinnedMessages.ref = "updatePinnedMessages";
+api.updatePinnedChannelMessages.ref = "updatePinnedChannelMessages";
+api.updateChat.ref = "updateChat";
+api.updateGroupCallParticipants.ref = "updateGroupCallParticipants";
+api.updateGroupCall.ref = "updateGroupCall";
+api.updatePeerHistoryTTL.ref = "updatePeerHistoryTTL";
+api.updateChatParticipant.ref = "updateChatParticipant";
+api.updateChannelParticipant.ref = "updateChannelParticipant";
+api.updateBotStopped.ref = "updateBotStopped";
+api.updateGroupCallConnection.ref = "updateGroupCallConnection";
+api.updateBotCommands.ref = "updateBotCommands";
+api.updatePendingJoinRequests.ref = "updatePendingJoinRequests";
+api.updateBotChatInviteRequester.ref = "updateBotChatInviteRequester";
+api.updateMessageReactions.ref = "updateMessageReactions";
+api.updateAttachMenuBots.ref = "updateAttachMenuBots";
+api.updateWebViewResultSent.ref = "updateWebViewResultSent";
+api.updateBotMenuButton.ref = "updateBotMenuButton";
+api.updateSavedRingtones.ref = "updateSavedRingtones";
+api.updateTranscribedAudio.ref = "updateTranscribedAudio";
+api.updateReadFeaturedEmojiStickers.ref = "updateReadFeaturedEmojiStickers";
+api.updateUserEmojiStatus.ref = "updateUserEmojiStatus";
+api.updateRecentEmojiStatuses.ref = "updateRecentEmojiStatuses";
+api.updateRecentReactions.ref = "updateRecentReactions";
+api.updateMoveStickerSetToTop.ref = "updateMoveStickerSetToTop";
+api.updateMessageExtendedMedia.ref = "updateMessageExtendedMedia";
+api.updateChannelPinnedTopic.ref = "updateChannelPinnedTopic";
+api.updateChannelPinnedTopics.ref = "updateChannelPinnedTopics";
+api.updateUser.ref = "updateUser";
+api.updateAutoSaveSettings.ref = "updateAutoSaveSettings";
+api.updateStory.ref = "updateStory";
+api.updateReadStories.ref = "updateReadStories";
+api.updateStoryID.ref = "updateStoryID";
+api.updateStoriesStealthMode.ref = "updateStoriesStealthMode";
+api.updateSentStoryReaction.ref = "updateSentStoryReaction";
+api.updateBotChatBoost.ref = "updateBotChatBoost";
+api.updateChannelViewForumAsMessages.ref = "updateChannelViewForumAsMessages";
+api.updatePeerWallpaper.ref = "updatePeerWallpaper";
+api.updateBotMessageReaction.ref = "updateBotMessageReaction";
+api.updateBotMessageReactions.ref = "updateBotMessageReactions";
+api.updateSavedDialogPinned.ref = "updateSavedDialogPinned";
+api.updatePinnedSavedDialogs.ref = "updatePinnedSavedDialogs";
+api.updateSavedReactionTags.ref = "updateSavedReactionTags";
+api.updateSmsJob.ref = "updateSmsJob";
+api.updateQuickReplies.ref = "updateQuickReplies";
+api.updateNewQuickReply.ref = "updateNewQuickReply";
+api.updateDeleteQuickReply.ref = "updateDeleteQuickReply";
+api.updateQuickReplyMessage.ref = "updateQuickReplyMessage";
+api.updateDeleteQuickReplyMessages.ref = "updateDeleteQuickReplyMessages";
+api.updateBotBusinessConnect.ref = "updateBotBusinessConnect";
+api.updateBotNewBusinessMessage.ref = "updateBotNewBusinessMessage";
+api.updateBotEditBusinessMessage.ref = "updateBotEditBusinessMessage";
+api.updateBotDeleteBusinessMessage.ref = "updateBotDeleteBusinessMessage";
 
 // type Updates
-global.updatesTooLong.ref = "updatesTooLong";
-global.updateShortMessage.ref = "updateShortMessage";
-global.updateShortChatMessage.ref = "updateShortChatMessage";
-global.updateShort.ref = "updateShort";
-global.updatesCombined.ref = "updatesCombined";
-global.updates.ref = "updates";
-global.updateShortSentMessage.ref = "updateShortSentMessage";
+api.updatesTooLong.ref = "updatesTooLong";
+api.updateShortMessage.ref = "updateShortMessage";
+api.updateShortChatMessage.ref = "updateShortChatMessage";
+api.updateShort.ref = "updateShort";
+api.updatesCombined.ref = "updatesCombined";
+api.updates.ref = "updates";
+api.updateShortSentMessage.ref = "updateShortSentMessage";
 
 // type DcOption
-global.dcOption.ref = "dcOption";
+api.dcOption.ref = "dcOption";
 
 // type Config
-global.config.ref = "config";
+api.config.ref = "config";
 
 // type NearestDc
-global.nearestDc.ref = "nearestDc";
+api.nearestDc.ref = "nearestDc";
 
 // type EncryptedChat
-global.encryptedChatEmpty.ref = "encryptedChatEmpty";
-global.encryptedChatWaiting.ref = "encryptedChatWaiting";
-global.encryptedChatRequested.ref = "encryptedChatRequested";
-global.encryptedChat.ref = "encryptedChat";
-global.encryptedChatDiscarded.ref = "encryptedChatDiscarded";
+api.encryptedChatEmpty.ref = "encryptedChatEmpty";
+api.encryptedChatWaiting.ref = "encryptedChatWaiting";
+api.encryptedChatRequested.ref = "encryptedChatRequested";
+api.encryptedChat.ref = "encryptedChat";
+api.encryptedChatDiscarded.ref = "encryptedChatDiscarded";
 
 // type InputEncryptedChat
-global.inputEncryptedChat.ref = "inputEncryptedChat";
+api.inputEncryptedChat.ref = "inputEncryptedChat";
 
 // type EncryptedFile
-global.encryptedFileEmpty.ref = "encryptedFileEmpty";
-global.encryptedFile.ref = "encryptedFile";
+api.encryptedFileEmpty.ref = "encryptedFileEmpty";
+api.encryptedFile.ref = "encryptedFile";
 
 // type InputEncryptedFile
-global.inputEncryptedFileEmpty.ref = "inputEncryptedFileEmpty";
-global.inputEncryptedFileUploaded.ref = "inputEncryptedFileUploaded";
-global.inputEncryptedFile.ref = "inputEncryptedFile";
-global.inputEncryptedFileBigUploaded.ref = "inputEncryptedFileBigUploaded";
+api.inputEncryptedFileEmpty.ref = "inputEncryptedFileEmpty";
+api.inputEncryptedFileUploaded.ref = "inputEncryptedFileUploaded";
+api.inputEncryptedFile.ref = "inputEncryptedFile";
+api.inputEncryptedFileBigUploaded.ref = "inputEncryptedFileBigUploaded";
 
 // type EncryptedMessage
-global.encryptedMessage.ref = "encryptedMessage";
-global.encryptedMessageService.ref = "encryptedMessageService";
+api.encryptedMessage.ref = "encryptedMessage";
+api.encryptedMessageService.ref = "encryptedMessageService";
 
 // type InputDocument
-global.inputDocumentEmpty.ref = "inputDocumentEmpty";
-global.inputDocument.ref = "inputDocument";
+api.inputDocumentEmpty.ref = "inputDocumentEmpty";
+api.inputDocument.ref = "inputDocument";
 
 // type Document
-global.documentEmpty.ref = "documentEmpty";
-global.document.ref = "document";
+api.documentEmpty.ref = "documentEmpty";
+api.document.ref = "document";
 
 // type NotifyPeer
-global.notifyPeer.ref = "notifyPeer";
-global.notifyUsers.ref = "notifyUsers";
-global.notifyChats.ref = "notifyChats";
-global.notifyBroadcasts.ref = "notifyBroadcasts";
-global.notifyForumTopic.ref = "notifyForumTopic";
+api.notifyPeer.ref = "notifyPeer";
+api.notifyUsers.ref = "notifyUsers";
+api.notifyChats.ref = "notifyChats";
+api.notifyBroadcasts.ref = "notifyBroadcasts";
+api.notifyForumTopic.ref = "notifyForumTopic";
 
 // type SendMessageAction
-global.sendMessageTypingAction.ref = "sendMessageTypingAction";
-global.sendMessageCancelAction.ref = "sendMessageCancelAction";
-global.sendMessageRecordVideoAction.ref = "sendMessageRecordVideoAction";
-global.sendMessageUploadVideoAction.ref = "sendMessageUploadVideoAction";
-global.sendMessageRecordAudioAction.ref = "sendMessageRecordAudioAction";
-global.sendMessageUploadAudioAction.ref = "sendMessageUploadAudioAction";
-global.sendMessageUploadPhotoAction.ref = "sendMessageUploadPhotoAction";
-global.sendMessageUploadDocumentAction.ref = "sendMessageUploadDocumentAction";
-global.sendMessageGeoLocationAction.ref = "sendMessageGeoLocationAction";
-global.sendMessageChooseContactAction.ref = "sendMessageChooseContactAction";
-global.sendMessageGamePlayAction.ref = "sendMessageGamePlayAction";
-global.sendMessageRecordRoundAction.ref = "sendMessageRecordRoundAction";
-global.sendMessageUploadRoundAction.ref = "sendMessageUploadRoundAction";
-global.speakingInGroupCallAction.ref = "speakingInGroupCallAction";
-global.sendMessageHistoryImportAction.ref = "sendMessageHistoryImportAction";
-global.sendMessageChooseStickerAction.ref = "sendMessageChooseStickerAction";
-global.sendMessageEmojiInteraction.ref = "sendMessageEmojiInteraction";
-global.sendMessageEmojiInteractionSeen.ref = "sendMessageEmojiInteractionSeen";
+api.sendMessageTypingAction.ref = "sendMessageTypingAction";
+api.sendMessageCancelAction.ref = "sendMessageCancelAction";
+api.sendMessageRecordVideoAction.ref = "sendMessageRecordVideoAction";
+api.sendMessageUploadVideoAction.ref = "sendMessageUploadVideoAction";
+api.sendMessageRecordAudioAction.ref = "sendMessageRecordAudioAction";
+api.sendMessageUploadAudioAction.ref = "sendMessageUploadAudioAction";
+api.sendMessageUploadPhotoAction.ref = "sendMessageUploadPhotoAction";
+api.sendMessageUploadDocumentAction.ref = "sendMessageUploadDocumentAction";
+api.sendMessageGeoLocationAction.ref = "sendMessageGeoLocationAction";
+api.sendMessageChooseContactAction.ref = "sendMessageChooseContactAction";
+api.sendMessageGamePlayAction.ref = "sendMessageGamePlayAction";
+api.sendMessageRecordRoundAction.ref = "sendMessageRecordRoundAction";
+api.sendMessageUploadRoundAction.ref = "sendMessageUploadRoundAction";
+api.speakingInGroupCallAction.ref = "speakingInGroupCallAction";
+api.sendMessageHistoryImportAction.ref = "sendMessageHistoryImportAction";
+api.sendMessageChooseStickerAction.ref = "sendMessageChooseStickerAction";
+api.sendMessageEmojiInteraction.ref = "sendMessageEmojiInteraction";
+api.sendMessageEmojiInteractionSeen.ref = "sendMessageEmojiInteractionSeen";
 
 // type InputPrivacyKey
-global.inputPrivacyKeyStatusTimestamp.ref = "inputPrivacyKeyStatusTimestamp";
-global.inputPrivacyKeyChatInvite.ref = "inputPrivacyKeyChatInvite";
-global.inputPrivacyKeyPhoneCall.ref = "inputPrivacyKeyPhoneCall";
-global.inputPrivacyKeyPhoneP2P.ref = "inputPrivacyKeyPhoneP2P";
-global.inputPrivacyKeyForwards.ref = "inputPrivacyKeyForwards";
-global.inputPrivacyKeyProfilePhoto.ref = "inputPrivacyKeyProfilePhoto";
-global.inputPrivacyKeyPhoneNumber.ref = "inputPrivacyKeyPhoneNumber";
-global.inputPrivacyKeyAddedByPhone.ref = "inputPrivacyKeyAddedByPhone";
-global.inputPrivacyKeyVoiceMessages.ref = "inputPrivacyKeyVoiceMessages";
-global.inputPrivacyKeyAbout.ref = "inputPrivacyKeyAbout";
-global.inputPrivacyKeyBirthday.ref = "inputPrivacyKeyBirthday";
+api.inputPrivacyKeyStatusTimestamp.ref = "inputPrivacyKeyStatusTimestamp";
+api.inputPrivacyKeyChatInvite.ref = "inputPrivacyKeyChatInvite";
+api.inputPrivacyKeyPhoneCall.ref = "inputPrivacyKeyPhoneCall";
+api.inputPrivacyKeyPhoneP2P.ref = "inputPrivacyKeyPhoneP2P";
+api.inputPrivacyKeyForwards.ref = "inputPrivacyKeyForwards";
+api.inputPrivacyKeyProfilePhoto.ref = "inputPrivacyKeyProfilePhoto";
+api.inputPrivacyKeyPhoneNumber.ref = "inputPrivacyKeyPhoneNumber";
+api.inputPrivacyKeyAddedByPhone.ref = "inputPrivacyKeyAddedByPhone";
+api.inputPrivacyKeyVoiceMessages.ref = "inputPrivacyKeyVoiceMessages";
+api.inputPrivacyKeyAbout.ref = "inputPrivacyKeyAbout";
+api.inputPrivacyKeyBirthday.ref = "inputPrivacyKeyBirthday";
 
 // type PrivacyKey
-global.privacyKeyStatusTimestamp.ref = "privacyKeyStatusTimestamp";
-global.privacyKeyChatInvite.ref = "privacyKeyChatInvite";
-global.privacyKeyPhoneCall.ref = "privacyKeyPhoneCall";
-global.privacyKeyPhoneP2P.ref = "privacyKeyPhoneP2P";
-global.privacyKeyForwards.ref = "privacyKeyForwards";
-global.privacyKeyProfilePhoto.ref = "privacyKeyProfilePhoto";
-global.privacyKeyPhoneNumber.ref = "privacyKeyPhoneNumber";
-global.privacyKeyAddedByPhone.ref = "privacyKeyAddedByPhone";
-global.privacyKeyVoiceMessages.ref = "privacyKeyVoiceMessages";
-global.privacyKeyAbout.ref = "privacyKeyAbout";
-global.privacyKeyBirthday.ref = "privacyKeyBirthday";
+api.privacyKeyStatusTimestamp.ref = "privacyKeyStatusTimestamp";
+api.privacyKeyChatInvite.ref = "privacyKeyChatInvite";
+api.privacyKeyPhoneCall.ref = "privacyKeyPhoneCall";
+api.privacyKeyPhoneP2P.ref = "privacyKeyPhoneP2P";
+api.privacyKeyForwards.ref = "privacyKeyForwards";
+api.privacyKeyProfilePhoto.ref = "privacyKeyProfilePhoto";
+api.privacyKeyPhoneNumber.ref = "privacyKeyPhoneNumber";
+api.privacyKeyAddedByPhone.ref = "privacyKeyAddedByPhone";
+api.privacyKeyVoiceMessages.ref = "privacyKeyVoiceMessages";
+api.privacyKeyAbout.ref = "privacyKeyAbout";
+api.privacyKeyBirthday.ref = "privacyKeyBirthday";
 
 // type InputPrivacyRule
-global.inputPrivacyValueAllowContacts.ref = "inputPrivacyValueAllowContacts";
-global.inputPrivacyValueAllowAll.ref = "inputPrivacyValueAllowAll";
-global.inputPrivacyValueAllowUsers.ref = "inputPrivacyValueAllowUsers";
-global.inputPrivacyValueDisallowContacts.ref = "inputPrivacyValueDisallowContacts";
-global.inputPrivacyValueDisallowAll.ref = "inputPrivacyValueDisallowAll";
-global.inputPrivacyValueDisallowUsers.ref = "inputPrivacyValueDisallowUsers";
-global.inputPrivacyValueAllowChatParticipants.ref = "inputPrivacyValueAllowChatParticipants";
-global.inputPrivacyValueDisallowChatParticipants.ref = "inputPrivacyValueDisallowChatParticipants";
-global.inputPrivacyValueAllowCloseFriends.ref = "inputPrivacyValueAllowCloseFriends";
-global.inputPrivacyValueAllowPremium.ref = "inputPrivacyValueAllowPremium";
+api.inputPrivacyValueAllowContacts.ref = "inputPrivacyValueAllowContacts";
+api.inputPrivacyValueAllowAll.ref = "inputPrivacyValueAllowAll";
+api.inputPrivacyValueAllowUsers.ref = "inputPrivacyValueAllowUsers";
+api.inputPrivacyValueDisallowContacts.ref = "inputPrivacyValueDisallowContacts";
+api.inputPrivacyValueDisallowAll.ref = "inputPrivacyValueDisallowAll";
+api.inputPrivacyValueDisallowUsers.ref = "inputPrivacyValueDisallowUsers";
+api.inputPrivacyValueAllowChatParticipants.ref = "inputPrivacyValueAllowChatParticipants";
+api.inputPrivacyValueDisallowChatParticipants.ref = "inputPrivacyValueDisallowChatParticipants";
+api.inputPrivacyValueAllowCloseFriends.ref = "inputPrivacyValueAllowCloseFriends";
+api.inputPrivacyValueAllowPremium.ref = "inputPrivacyValueAllowPremium";
 
 // type PrivacyRule
-global.privacyValueAllowContacts.ref = "privacyValueAllowContacts";
-global.privacyValueAllowAll.ref = "privacyValueAllowAll";
-global.privacyValueAllowUsers.ref = "privacyValueAllowUsers";
-global.privacyValueDisallowContacts.ref = "privacyValueDisallowContacts";
-global.privacyValueDisallowAll.ref = "privacyValueDisallowAll";
-global.privacyValueDisallowUsers.ref = "privacyValueDisallowUsers";
-global.privacyValueAllowChatParticipants.ref = "privacyValueAllowChatParticipants";
-global.privacyValueDisallowChatParticipants.ref = "privacyValueDisallowChatParticipants";
-global.privacyValueAllowCloseFriends.ref = "privacyValueAllowCloseFriends";
-global.privacyValueAllowPremium.ref = "privacyValueAllowPremium";
+api.privacyValueAllowContacts.ref = "privacyValueAllowContacts";
+api.privacyValueAllowAll.ref = "privacyValueAllowAll";
+api.privacyValueAllowUsers.ref = "privacyValueAllowUsers";
+api.privacyValueDisallowContacts.ref = "privacyValueDisallowContacts";
+api.privacyValueDisallowAll.ref = "privacyValueDisallowAll";
+api.privacyValueDisallowUsers.ref = "privacyValueDisallowUsers";
+api.privacyValueAllowChatParticipants.ref = "privacyValueAllowChatParticipants";
+api.privacyValueDisallowChatParticipants.ref = "privacyValueDisallowChatParticipants";
+api.privacyValueAllowCloseFriends.ref = "privacyValueAllowCloseFriends";
+api.privacyValueAllowPremium.ref = "privacyValueAllowPremium";
 
 // type AccountDaysTTL
-global.accountDaysTTL.ref = "accountDaysTTL";
+api.accountDaysTTL.ref = "accountDaysTTL";
 
 // type DocumentAttribute
-global.documentAttributeImageSize.ref = "documentAttributeImageSize";
-global.documentAttributeAnimated.ref = "documentAttributeAnimated";
-global.documentAttributeSticker.ref = "documentAttributeSticker";
-global.documentAttributeVideo.ref = "documentAttributeVideo";
-global.documentAttributeAudio.ref = "documentAttributeAudio";
-global.documentAttributeFilename.ref = "documentAttributeFilename";
-global.documentAttributeHasStickers.ref = "documentAttributeHasStickers";
-global.documentAttributeCustomEmoji.ref = "documentAttributeCustomEmoji";
+api.documentAttributeImageSize.ref = "documentAttributeImageSize";
+api.documentAttributeAnimated.ref = "documentAttributeAnimated";
+api.documentAttributeSticker.ref = "documentAttributeSticker";
+api.documentAttributeVideo.ref = "documentAttributeVideo";
+api.documentAttributeAudio.ref = "documentAttributeAudio";
+api.documentAttributeFilename.ref = "documentAttributeFilename";
+api.documentAttributeHasStickers.ref = "documentAttributeHasStickers";
+api.documentAttributeCustomEmoji.ref = "documentAttributeCustomEmoji";
 
 // type StickerPack
-global.stickerPack.ref = "stickerPack";
+api.stickerPack.ref = "stickerPack";
 
 // type WebPage
-global.webPageEmpty.ref = "webPageEmpty";
-global.webPagePending.ref = "webPagePending";
-global.webPage.ref = "webPage";
-global.webPageNotModified.ref = "webPageNotModified";
+api.webPageEmpty.ref = "webPageEmpty";
+api.webPagePending.ref = "webPagePending";
+api.webPage.ref = "webPage";
+api.webPageNotModified.ref = "webPageNotModified";
 
 // type Authorization
-global.authorization.ref = "authorization";
+api.authorization.ref = "authorization";
 
 // type ReceivedNotifyMessage
-global.receivedNotifyMessage.ref = "receivedNotifyMessage";
+api.receivedNotifyMessage.ref = "receivedNotifyMessage";
 
 // type ExportedChatInvite
-global.chatInviteExported.ref = "chatInviteExported";
-global.chatInvitePublicJoinRequests.ref = "chatInvitePublicJoinRequests";
+api.chatInviteExported.ref = "chatInviteExported";
+api.chatInvitePublicJoinRequests.ref = "chatInvitePublicJoinRequests";
 
 // type ChatInvite
-global.chatInviteAlready.ref = "chatInviteAlready";
-global.chatInvite.ref = "chatInvite";
-global.chatInvitePeek.ref = "chatInvitePeek";
+api.chatInviteAlready.ref = "chatInviteAlready";
+api.chatInvite.ref = "chatInvite";
+api.chatInvitePeek.ref = "chatInvitePeek";
 
 // type InputStickerSet
-global.inputStickerSetEmpty.ref = "inputStickerSetEmpty";
-global.inputStickerSetID.ref = "inputStickerSetID";
-global.inputStickerSetShortName.ref = "inputStickerSetShortName";
-global.inputStickerSetAnimatedEmoji.ref = "inputStickerSetAnimatedEmoji";
-global.inputStickerSetDice.ref = "inputStickerSetDice";
-global.inputStickerSetAnimatedEmojiAnimations.ref = "inputStickerSetAnimatedEmojiAnimations";
-global.inputStickerSetPremiumGifts.ref = "inputStickerSetPremiumGifts";
-global.inputStickerSetEmojiGenericAnimations.ref = "inputStickerSetEmojiGenericAnimations";
-global.inputStickerSetEmojiDefaultStatuses.ref = "inputStickerSetEmojiDefaultStatuses";
-global.inputStickerSetEmojiDefaultTopicIcons.ref = "inputStickerSetEmojiDefaultTopicIcons";
-global.inputStickerSetEmojiChannelDefaultStatuses.ref = "inputStickerSetEmojiChannelDefaultStatuses";
+api.inputStickerSetEmpty.ref = "inputStickerSetEmpty";
+api.inputStickerSetID.ref = "inputStickerSetID";
+api.inputStickerSetShortName.ref = "inputStickerSetShortName";
+api.inputStickerSetAnimatedEmoji.ref = "inputStickerSetAnimatedEmoji";
+api.inputStickerSetDice.ref = "inputStickerSetDice";
+api.inputStickerSetAnimatedEmojiAnimations.ref = "inputStickerSetAnimatedEmojiAnimations";
+api.inputStickerSetPremiumGifts.ref = "inputStickerSetPremiumGifts";
+api.inputStickerSetEmojiGenericAnimations.ref = "inputStickerSetEmojiGenericAnimations";
+api.inputStickerSetEmojiDefaultStatuses.ref = "inputStickerSetEmojiDefaultStatuses";
+api.inputStickerSetEmojiDefaultTopicIcons.ref = "inputStickerSetEmojiDefaultTopicIcons";
+api.inputStickerSetEmojiChannelDefaultStatuses.ref = "inputStickerSetEmojiChannelDefaultStatuses";
 
 // type StickerSet
-global.stickerSet.ref = "stickerSet";
+api.stickerSet.ref = "stickerSet";
 
 // type BotCommand
-global.botCommand.ref = "botCommand";
+api.botCommand.ref = "botCommand";
 
 // type BotInfo
-global.botInfo.ref = "botInfo";
+api.botInfo.ref = "botInfo";
 
 // type KeyboardButton
-global.keyboardButton.ref = "keyboardButton";
-global.keyboardButtonUrl.ref = "keyboardButtonUrl";
-global.keyboardButtonCallback.ref = "keyboardButtonCallback";
-global.keyboardButtonRequestPhone.ref = "keyboardButtonRequestPhone";
-global.keyboardButtonRequestGeoLocation.ref = "keyboardButtonRequestGeoLocation";
-global.keyboardButtonSwitchInline.ref = "keyboardButtonSwitchInline";
-global.keyboardButtonGame.ref = "keyboardButtonGame";
-global.keyboardButtonBuy.ref = "keyboardButtonBuy";
-global.keyboardButtonUrlAuth.ref = "keyboardButtonUrlAuth";
-global.inputKeyboardButtonUrlAuth.ref = "inputKeyboardButtonUrlAuth";
-global.keyboardButtonRequestPoll.ref = "keyboardButtonRequestPoll";
-global.inputKeyboardButtonUserProfile.ref = "inputKeyboardButtonUserProfile";
-global.keyboardButtonUserProfile.ref = "keyboardButtonUserProfile";
-global.keyboardButtonWebView.ref = "keyboardButtonWebView";
-global.keyboardButtonSimpleWebView.ref = "keyboardButtonSimpleWebView";
-global.keyboardButtonRequestPeer.ref = "keyboardButtonRequestPeer";
-global.inputKeyboardButtonRequestPeer.ref = "inputKeyboardButtonRequestPeer";
+api.keyboardButton.ref = "keyboardButton";
+api.keyboardButtonUrl.ref = "keyboardButtonUrl";
+api.keyboardButtonCallback.ref = "keyboardButtonCallback";
+api.keyboardButtonRequestPhone.ref = "keyboardButtonRequestPhone";
+api.keyboardButtonRequestGeoLocation.ref = "keyboardButtonRequestGeoLocation";
+api.keyboardButtonSwitchInline.ref = "keyboardButtonSwitchInline";
+api.keyboardButtonGame.ref = "keyboardButtonGame";
+api.keyboardButtonBuy.ref = "keyboardButtonBuy";
+api.keyboardButtonUrlAuth.ref = "keyboardButtonUrlAuth";
+api.inputKeyboardButtonUrlAuth.ref = "inputKeyboardButtonUrlAuth";
+api.keyboardButtonRequestPoll.ref = "keyboardButtonRequestPoll";
+api.inputKeyboardButtonUserProfile.ref = "inputKeyboardButtonUserProfile";
+api.keyboardButtonUserProfile.ref = "keyboardButtonUserProfile";
+api.keyboardButtonWebView.ref = "keyboardButtonWebView";
+api.keyboardButtonSimpleWebView.ref = "keyboardButtonSimpleWebView";
+api.keyboardButtonRequestPeer.ref = "keyboardButtonRequestPeer";
+api.inputKeyboardButtonRequestPeer.ref = "inputKeyboardButtonRequestPeer";
 
 // type KeyboardButtonRow
-global.keyboardButtonRow.ref = "keyboardButtonRow";
+api.keyboardButtonRow.ref = "keyboardButtonRow";
 
 // type ReplyMarkup
-global.replyKeyboardHide.ref = "replyKeyboardHide";
-global.replyKeyboardForceReply.ref = "replyKeyboardForceReply";
-global.replyKeyboardMarkup.ref = "replyKeyboardMarkup";
-global.replyInlineMarkup.ref = "replyInlineMarkup";
+api.replyKeyboardHide.ref = "replyKeyboardHide";
+api.replyKeyboardForceReply.ref = "replyKeyboardForceReply";
+api.replyKeyboardMarkup.ref = "replyKeyboardMarkup";
+api.replyInlineMarkup.ref = "replyInlineMarkup";
 
 // type MessageEntity
-global.messageEntityUnknown.ref = "messageEntityUnknown";
-global.messageEntityMention.ref = "messageEntityMention";
-global.messageEntityHashtag.ref = "messageEntityHashtag";
-global.messageEntityBotCommand.ref = "messageEntityBotCommand";
-global.messageEntityUrl.ref = "messageEntityUrl";
-global.messageEntityEmail.ref = "messageEntityEmail";
-global.messageEntityBold.ref = "messageEntityBold";
-global.messageEntityItalic.ref = "messageEntityItalic";
-global.messageEntityCode.ref = "messageEntityCode";
-global.messageEntityPre.ref = "messageEntityPre";
-global.messageEntityTextUrl.ref = "messageEntityTextUrl";
-global.messageEntityMentionName.ref = "messageEntityMentionName";
-global.inputMessageEntityMentionName.ref = "inputMessageEntityMentionName";
-global.messageEntityPhone.ref = "messageEntityPhone";
-global.messageEntityCashtag.ref = "messageEntityCashtag";
-global.messageEntityUnderline.ref = "messageEntityUnderline";
-global.messageEntityStrike.ref = "messageEntityStrike";
-global.messageEntityBankCard.ref = "messageEntityBankCard";
-global.messageEntitySpoiler.ref = "messageEntitySpoiler";
-global.messageEntityCustomEmoji.ref = "messageEntityCustomEmoji";
-global.messageEntityBlockquote.ref = "messageEntityBlockquote";
+api.messageEntityUnknown.ref = "messageEntityUnknown";
+api.messageEntityMention.ref = "messageEntityMention";
+api.messageEntityHashtag.ref = "messageEntityHashtag";
+api.messageEntityBotCommand.ref = "messageEntityBotCommand";
+api.messageEntityUrl.ref = "messageEntityUrl";
+api.messageEntityEmail.ref = "messageEntityEmail";
+api.messageEntityBold.ref = "messageEntityBold";
+api.messageEntityItalic.ref = "messageEntityItalic";
+api.messageEntityCode.ref = "messageEntityCode";
+api.messageEntityPre.ref = "messageEntityPre";
+api.messageEntityTextUrl.ref = "messageEntityTextUrl";
+api.messageEntityMentionName.ref = "messageEntityMentionName";
+api.inputMessageEntityMentionName.ref = "inputMessageEntityMentionName";
+api.messageEntityPhone.ref = "messageEntityPhone";
+api.messageEntityCashtag.ref = "messageEntityCashtag";
+api.messageEntityUnderline.ref = "messageEntityUnderline";
+api.messageEntityStrike.ref = "messageEntityStrike";
+api.messageEntityBankCard.ref = "messageEntityBankCard";
+api.messageEntitySpoiler.ref = "messageEntitySpoiler";
+api.messageEntityCustomEmoji.ref = "messageEntityCustomEmoji";
+api.messageEntityBlockquote.ref = "messageEntityBlockquote";
 
 // type InputChannel
-global.inputChannelEmpty.ref = "inputChannelEmpty";
-global.inputChannel.ref = "inputChannel";
-global.inputChannelFromMessage.ref = "inputChannelFromMessage";
+api.inputChannelEmpty.ref = "inputChannelEmpty";
+api.inputChannel.ref = "inputChannel";
+api.inputChannelFromMessage.ref = "inputChannelFromMessage";
 
 // type MessageRange
-global.messageRange.ref = "messageRange";
+api.messageRange.ref = "messageRange";
 
 // type ChannelMessagesFilter
-global.channelMessagesFilterEmpty.ref = "channelMessagesFilterEmpty";
-global.channelMessagesFilter.ref = "channelMessagesFilter";
+api.channelMessagesFilterEmpty.ref = "channelMessagesFilterEmpty";
+api.channelMessagesFilter.ref = "channelMessagesFilter";
 
 // type ChannelParticipant
-global.channelParticipant.ref = "channelParticipant";
-global.channelParticipantSelf.ref = "channelParticipantSelf";
-global.channelParticipantCreator.ref = "channelParticipantCreator";
-global.channelParticipantAdmin.ref = "channelParticipantAdmin";
-global.channelParticipantBanned.ref = "channelParticipantBanned";
-global.channelParticipantLeft.ref = "channelParticipantLeft";
+api.channelParticipant.ref = "channelParticipant";
+api.channelParticipantSelf.ref = "channelParticipantSelf";
+api.channelParticipantCreator.ref = "channelParticipantCreator";
+api.channelParticipantAdmin.ref = "channelParticipantAdmin";
+api.channelParticipantBanned.ref = "channelParticipantBanned";
+api.channelParticipantLeft.ref = "channelParticipantLeft";
 
 // type ChannelParticipantsFilter
-global.channelParticipantsRecent.ref = "channelParticipantsRecent";
-global.channelParticipantsAdmins.ref = "channelParticipantsAdmins";
-global.channelParticipantsKicked.ref = "channelParticipantsKicked";
-global.channelParticipantsBots.ref = "channelParticipantsBots";
-global.channelParticipantsBanned.ref = "channelParticipantsBanned";
-global.channelParticipantsSearch.ref = "channelParticipantsSearch";
-global.channelParticipantsContacts.ref = "channelParticipantsContacts";
-global.channelParticipantsMentions.ref = "channelParticipantsMentions";
+api.channelParticipantsRecent.ref = "channelParticipantsRecent";
+api.channelParticipantsAdmins.ref = "channelParticipantsAdmins";
+api.channelParticipantsKicked.ref = "channelParticipantsKicked";
+api.channelParticipantsBots.ref = "channelParticipantsBots";
+api.channelParticipantsBanned.ref = "channelParticipantsBanned";
+api.channelParticipantsSearch.ref = "channelParticipantsSearch";
+api.channelParticipantsContacts.ref = "channelParticipantsContacts";
+api.channelParticipantsMentions.ref = "channelParticipantsMentions";
 
 // type InputBotInlineMessage
-global.inputBotInlineMessageMediaAuto.ref = "inputBotInlineMessageMediaAuto";
-global.inputBotInlineMessageText.ref = "inputBotInlineMessageText";
-global.inputBotInlineMessageMediaGeo.ref = "inputBotInlineMessageMediaGeo";
-global.inputBotInlineMessageMediaVenue.ref = "inputBotInlineMessageMediaVenue";
-global.inputBotInlineMessageMediaContact.ref = "inputBotInlineMessageMediaContact";
-global.inputBotInlineMessageGame.ref = "inputBotInlineMessageGame";
-global.inputBotInlineMessageMediaInvoice.ref = "inputBotInlineMessageMediaInvoice";
-global.inputBotInlineMessageMediaWebPage.ref = "inputBotInlineMessageMediaWebPage";
+api.inputBotInlineMessageMediaAuto.ref = "inputBotInlineMessageMediaAuto";
+api.inputBotInlineMessageText.ref = "inputBotInlineMessageText";
+api.inputBotInlineMessageMediaGeo.ref = "inputBotInlineMessageMediaGeo";
+api.inputBotInlineMessageMediaVenue.ref = "inputBotInlineMessageMediaVenue";
+api.inputBotInlineMessageMediaContact.ref = "inputBotInlineMessageMediaContact";
+api.inputBotInlineMessageGame.ref = "inputBotInlineMessageGame";
+api.inputBotInlineMessageMediaInvoice.ref = "inputBotInlineMessageMediaInvoice";
+api.inputBotInlineMessageMediaWebPage.ref = "inputBotInlineMessageMediaWebPage";
 
 // type InputBotInlineResult
-global.inputBotInlineResult.ref = "inputBotInlineResult";
-global.inputBotInlineResultPhoto.ref = "inputBotInlineResultPhoto";
-global.inputBotInlineResultDocument.ref = "inputBotInlineResultDocument";
-global.inputBotInlineResultGame.ref = "inputBotInlineResultGame";
+api.inputBotInlineResult.ref = "inputBotInlineResult";
+api.inputBotInlineResultPhoto.ref = "inputBotInlineResultPhoto";
+api.inputBotInlineResultDocument.ref = "inputBotInlineResultDocument";
+api.inputBotInlineResultGame.ref = "inputBotInlineResultGame";
 
 // type BotInlineMessage
-global.botInlineMessageMediaAuto.ref = "botInlineMessageMediaAuto";
-global.botInlineMessageText.ref = "botInlineMessageText";
-global.botInlineMessageMediaGeo.ref = "botInlineMessageMediaGeo";
-global.botInlineMessageMediaVenue.ref = "botInlineMessageMediaVenue";
-global.botInlineMessageMediaContact.ref = "botInlineMessageMediaContact";
-global.botInlineMessageMediaInvoice.ref = "botInlineMessageMediaInvoice";
-global.botInlineMessageMediaWebPage.ref = "botInlineMessageMediaWebPage";
+api.botInlineMessageMediaAuto.ref = "botInlineMessageMediaAuto";
+api.botInlineMessageText.ref = "botInlineMessageText";
+api.botInlineMessageMediaGeo.ref = "botInlineMessageMediaGeo";
+api.botInlineMessageMediaVenue.ref = "botInlineMessageMediaVenue";
+api.botInlineMessageMediaContact.ref = "botInlineMessageMediaContact";
+api.botInlineMessageMediaInvoice.ref = "botInlineMessageMediaInvoice";
+api.botInlineMessageMediaWebPage.ref = "botInlineMessageMediaWebPage";
 
 // type BotInlineResult
-global.botInlineResult.ref = "botInlineResult";
-global.botInlineMediaResult.ref = "botInlineMediaResult";
+api.botInlineResult.ref = "botInlineResult";
+api.botInlineMediaResult.ref = "botInlineMediaResult";
 
 // type ExportedMessageLink
-global.exportedMessageLink.ref = "exportedMessageLink";
+api.exportedMessageLink.ref = "exportedMessageLink";
 
 // type MessageFwdHeader
-global.messageFwdHeader.ref = "messageFwdHeader";
+api.messageFwdHeader.ref = "messageFwdHeader";
 
 // type InputBotInlineMessageID
-global.inputBotInlineMessageID.ref = "inputBotInlineMessageID";
-global.inputBotInlineMessageID64.ref = "inputBotInlineMessageID64";
+api.inputBotInlineMessageID.ref = "inputBotInlineMessageID";
+api.inputBotInlineMessageID64.ref = "inputBotInlineMessageID64";
 
 // type InlineBotSwitchPM
-global.inlineBotSwitchPM.ref = "inlineBotSwitchPM";
+api.inlineBotSwitchPM.ref = "inlineBotSwitchPM";
 
 // type TopPeer
-global.topPeer.ref = "topPeer";
+api.topPeer.ref = "topPeer";
 
 // type TopPeerCategory
-global.topPeerCategoryBotsPM.ref = "topPeerCategoryBotsPM";
-global.topPeerCategoryBotsInline.ref = "topPeerCategoryBotsInline";
-global.topPeerCategoryCorrespondents.ref = "topPeerCategoryCorrespondents";
-global.topPeerCategoryGroups.ref = "topPeerCategoryGroups";
-global.topPeerCategoryChannels.ref = "topPeerCategoryChannels";
-global.topPeerCategoryPhoneCalls.ref = "topPeerCategoryPhoneCalls";
-global.topPeerCategoryForwardUsers.ref = "topPeerCategoryForwardUsers";
-global.topPeerCategoryForwardChats.ref = "topPeerCategoryForwardChats";
+api.topPeerCategoryBotsPM.ref = "topPeerCategoryBotsPM";
+api.topPeerCategoryBotsInline.ref = "topPeerCategoryBotsInline";
+api.topPeerCategoryCorrespondents.ref = "topPeerCategoryCorrespondents";
+api.topPeerCategoryGroups.ref = "topPeerCategoryGroups";
+api.topPeerCategoryChannels.ref = "topPeerCategoryChannels";
+api.topPeerCategoryPhoneCalls.ref = "topPeerCategoryPhoneCalls";
+api.topPeerCategoryForwardUsers.ref = "topPeerCategoryForwardUsers";
+api.topPeerCategoryForwardChats.ref = "topPeerCategoryForwardChats";
 
 // type TopPeerCategoryPeers
-global.topPeerCategoryPeers.ref = "topPeerCategoryPeers";
+api.topPeerCategoryPeers.ref = "topPeerCategoryPeers";
 
 // type DraftMessage
-global.draftMessageEmpty.ref = "draftMessageEmpty";
-global.draftMessage.ref = "draftMessage";
+api.draftMessageEmpty.ref = "draftMessageEmpty";
+api.draftMessage.ref = "draftMessage";
 
 // type StickerSetCovered
-global.stickerSetCovered.ref = "stickerSetCovered";
-global.stickerSetMultiCovered.ref = "stickerSetMultiCovered";
-global.stickerSetFullCovered.ref = "stickerSetFullCovered";
-global.stickerSetNoCovered.ref = "stickerSetNoCovered";
+api.stickerSetCovered.ref = "stickerSetCovered";
+api.stickerSetMultiCovered.ref = "stickerSetMultiCovered";
+api.stickerSetFullCovered.ref = "stickerSetFullCovered";
+api.stickerSetNoCovered.ref = "stickerSetNoCovered";
 
 // type MaskCoords
-global.maskCoords.ref = "maskCoords";
+api.maskCoords.ref = "maskCoords";
 
 // type InputStickeredMedia
-global.inputStickeredMediaPhoto.ref = "inputStickeredMediaPhoto";
-global.inputStickeredMediaDocument.ref = "inputStickeredMediaDocument";
+api.inputStickeredMediaPhoto.ref = "inputStickeredMediaPhoto";
+api.inputStickeredMediaDocument.ref = "inputStickeredMediaDocument";
 
 // type Game
-global.game.ref = "game";
+api.game.ref = "game";
 
 // type InputGame
-global.inputGameID.ref = "inputGameID";
-global.inputGameShortName.ref = "inputGameShortName";
+api.inputGameID.ref = "inputGameID";
+api.inputGameShortName.ref = "inputGameShortName";
 
 // type HighScore
-global.highScore.ref = "highScore";
+api.highScore.ref = "highScore";
 
 // type RichText
-global.textEmpty.ref = "textEmpty";
-global.textPlain.ref = "textPlain";
-global.textBold.ref = "textBold";
-global.textItalic.ref = "textItalic";
-global.textUnderline.ref = "textUnderline";
-global.textStrike.ref = "textStrike";
-global.textFixed.ref = "textFixed";
-global.textUrl.ref = "textUrl";
-global.textEmail.ref = "textEmail";
-global.textConcat.ref = "textConcat";
-global.textSubscript.ref = "textSubscript";
-global.textSuperscript.ref = "textSuperscript";
-global.textMarked.ref = "textMarked";
-global.textPhone.ref = "textPhone";
-global.textImage.ref = "textImage";
-global.textAnchor.ref = "textAnchor";
+api.textEmpty.ref = "textEmpty";
+api.textPlain.ref = "textPlain";
+api.textBold.ref = "textBold";
+api.textItalic.ref = "textItalic";
+api.textUnderline.ref = "textUnderline";
+api.textStrike.ref = "textStrike";
+api.textFixed.ref = "textFixed";
+api.textUrl.ref = "textUrl";
+api.textEmail.ref = "textEmail";
+api.textConcat.ref = "textConcat";
+api.textSubscript.ref = "textSubscript";
+api.textSuperscript.ref = "textSuperscript";
+api.textMarked.ref = "textMarked";
+api.textPhone.ref = "textPhone";
+api.textImage.ref = "textImage";
+api.textAnchor.ref = "textAnchor";
 
 // type PageBlock
-global.pageBlockUnsupported.ref = "pageBlockUnsupported";
-global.pageBlockTitle.ref = "pageBlockTitle";
-global.pageBlockSubtitle.ref = "pageBlockSubtitle";
-global.pageBlockAuthorDate.ref = "pageBlockAuthorDate";
-global.pageBlockHeader.ref = "pageBlockHeader";
-global.pageBlockSubheader.ref = "pageBlockSubheader";
-global.pageBlockParagraph.ref = "pageBlockParagraph";
-global.pageBlockPreformatted.ref = "pageBlockPreformatted";
-global.pageBlockFooter.ref = "pageBlockFooter";
-global.pageBlockDivider.ref = "pageBlockDivider";
-global.pageBlockAnchor.ref = "pageBlockAnchor";
-global.pageBlockList.ref = "pageBlockList";
-global.pageBlockBlockquote.ref = "pageBlockBlockquote";
-global.pageBlockPullquote.ref = "pageBlockPullquote";
-global.pageBlockPhoto.ref = "pageBlockPhoto";
-global.pageBlockVideo.ref = "pageBlockVideo";
-global.pageBlockCover.ref = "pageBlockCover";
-global.pageBlockEmbed.ref = "pageBlockEmbed";
-global.pageBlockEmbedPost.ref = "pageBlockEmbedPost";
-global.pageBlockCollage.ref = "pageBlockCollage";
-global.pageBlockSlideshow.ref = "pageBlockSlideshow";
-global.pageBlockChannel.ref = "pageBlockChannel";
-global.pageBlockAudio.ref = "pageBlockAudio";
-global.pageBlockKicker.ref = "pageBlockKicker";
-global.pageBlockTable.ref = "pageBlockTable";
-global.pageBlockOrderedList.ref = "pageBlockOrderedList";
-global.pageBlockDetails.ref = "pageBlockDetails";
-global.pageBlockRelatedArticles.ref = "pageBlockRelatedArticles";
-global.pageBlockMap.ref = "pageBlockMap";
+api.pageBlockUnsupported.ref = "pageBlockUnsupported";
+api.pageBlockTitle.ref = "pageBlockTitle";
+api.pageBlockSubtitle.ref = "pageBlockSubtitle";
+api.pageBlockAuthorDate.ref = "pageBlockAuthorDate";
+api.pageBlockHeader.ref = "pageBlockHeader";
+api.pageBlockSubheader.ref = "pageBlockSubheader";
+api.pageBlockParagraph.ref = "pageBlockParagraph";
+api.pageBlockPreformatted.ref = "pageBlockPreformatted";
+api.pageBlockFooter.ref = "pageBlockFooter";
+api.pageBlockDivider.ref = "pageBlockDivider";
+api.pageBlockAnchor.ref = "pageBlockAnchor";
+api.pageBlockList.ref = "pageBlockList";
+api.pageBlockBlockquote.ref = "pageBlockBlockquote";
+api.pageBlockPullquote.ref = "pageBlockPullquote";
+api.pageBlockPhoto.ref = "pageBlockPhoto";
+api.pageBlockVideo.ref = "pageBlockVideo";
+api.pageBlockCover.ref = "pageBlockCover";
+api.pageBlockEmbed.ref = "pageBlockEmbed";
+api.pageBlockEmbedPost.ref = "pageBlockEmbedPost";
+api.pageBlockCollage.ref = "pageBlockCollage";
+api.pageBlockSlideshow.ref = "pageBlockSlideshow";
+api.pageBlockChannel.ref = "pageBlockChannel";
+api.pageBlockAudio.ref = "pageBlockAudio";
+api.pageBlockKicker.ref = "pageBlockKicker";
+api.pageBlockTable.ref = "pageBlockTable";
+api.pageBlockOrderedList.ref = "pageBlockOrderedList";
+api.pageBlockDetails.ref = "pageBlockDetails";
+api.pageBlockRelatedArticles.ref = "pageBlockRelatedArticles";
+api.pageBlockMap.ref = "pageBlockMap";
 
 // type PhoneCallDiscardReason
-global.phoneCallDiscardReasonMissed.ref = "phoneCallDiscardReasonMissed";
-global.phoneCallDiscardReasonDisconnect.ref = "phoneCallDiscardReasonDisconnect";
-global.phoneCallDiscardReasonHangup.ref = "phoneCallDiscardReasonHangup";
-global.phoneCallDiscardReasonBusy.ref = "phoneCallDiscardReasonBusy";
+api.phoneCallDiscardReasonMissed.ref = "phoneCallDiscardReasonMissed";
+api.phoneCallDiscardReasonDisconnect.ref = "phoneCallDiscardReasonDisconnect";
+api.phoneCallDiscardReasonHangup.ref = "phoneCallDiscardReasonHangup";
+api.phoneCallDiscardReasonBusy.ref = "phoneCallDiscardReasonBusy";
 
 // type DataJSON
-global.dataJSON.ref = "dataJSON";
+api.dataJSON.ref = "dataJSON";
 
 // type LabeledPrice
-global.labeledPrice.ref = "labeledPrice";
+api.labeledPrice.ref = "labeledPrice";
 
 // type Invoice
-global.invoice.ref = "invoice";
+api.invoice.ref = "invoice";
 
 // type PaymentCharge
-global.paymentCharge.ref = "paymentCharge";
+api.paymentCharge.ref = "paymentCharge";
 
 // type PostAddress
-global.postAddress.ref = "postAddress";
+api.postAddress.ref = "postAddress";
 
 // type PaymentRequestedInfo
-global.paymentRequestedInfo.ref = "paymentRequestedInfo";
+api.paymentRequestedInfo.ref = "paymentRequestedInfo";
 
 // type PaymentSavedCredentials
-global.paymentSavedCredentialsCard.ref = "paymentSavedCredentialsCard";
+api.paymentSavedCredentialsCard.ref = "paymentSavedCredentialsCard";
 
 // type WebDocument
-global.webDocument.ref = "webDocument";
-global.webDocumentNoProxy.ref = "webDocumentNoProxy";
+api.webDocument.ref = "webDocument";
+api.webDocumentNoProxy.ref = "webDocumentNoProxy";
 
 // type InputWebDocument
-global.inputWebDocument.ref = "inputWebDocument";
+api.inputWebDocument.ref = "inputWebDocument";
 
 // type InputWebFileLocation
-global.inputWebFileLocation.ref = "inputWebFileLocation";
-global.inputWebFileGeoPointLocation.ref = "inputWebFileGeoPointLocation";
-global.inputWebFileAudioAlbumThumbLocation.ref = "inputWebFileAudioAlbumThumbLocation";
+api.inputWebFileLocation.ref = "inputWebFileLocation";
+api.inputWebFileGeoPointLocation.ref = "inputWebFileGeoPointLocation";
+api.inputWebFileAudioAlbumThumbLocation.ref = "inputWebFileAudioAlbumThumbLocation";
 
 // type InputPaymentCredentials
-global.inputPaymentCredentialsSaved.ref = "inputPaymentCredentialsSaved";
-global.inputPaymentCredentials.ref = "inputPaymentCredentials";
-global.inputPaymentCredentialsApplePay.ref = "inputPaymentCredentialsApplePay";
-global.inputPaymentCredentialsGooglePay.ref = "inputPaymentCredentialsGooglePay";
+api.inputPaymentCredentialsSaved.ref = "inputPaymentCredentialsSaved";
+api.inputPaymentCredentials.ref = "inputPaymentCredentials";
+api.inputPaymentCredentialsApplePay.ref = "inputPaymentCredentialsApplePay";
+api.inputPaymentCredentialsGooglePay.ref = "inputPaymentCredentialsGooglePay";
 
 // type ShippingOption
-global.shippingOption.ref = "shippingOption";
+api.shippingOption.ref = "shippingOption";
 
 // type InputStickerSetItem
-global.inputStickerSetItem.ref = "inputStickerSetItem";
+api.inputStickerSetItem.ref = "inputStickerSetItem";
 
 // type InputPhoneCall
-global.inputPhoneCall.ref = "inputPhoneCall";
+api.inputPhoneCall.ref = "inputPhoneCall";
 
 // type PhoneCall
-global.phoneCallEmpty.ref = "phoneCallEmpty";
-global.phoneCallWaiting.ref = "phoneCallWaiting";
-global.phoneCallRequested.ref = "phoneCallRequested";
-global.phoneCallAccepted.ref = "phoneCallAccepted";
-global.phoneCall.ref = "phoneCall";
-global.phoneCallDiscarded.ref = "phoneCallDiscarded";
+api.phoneCallEmpty.ref = "phoneCallEmpty";
+api.phoneCallWaiting.ref = "phoneCallWaiting";
+api.phoneCallRequested.ref = "phoneCallRequested";
+api.phoneCallAccepted.ref = "phoneCallAccepted";
+api.phoneCall.ref = "phoneCall";
+api.phoneCallDiscarded.ref = "phoneCallDiscarded";
 
 // type PhoneConnection
-global.phoneConnection.ref = "phoneConnection";
-global.phoneConnectionWebrtc.ref = "phoneConnectionWebrtc";
+api.phoneConnection.ref = "phoneConnection";
+api.phoneConnectionWebrtc.ref = "phoneConnectionWebrtc";
 
 // type PhoneCallProtocol
-global.phoneCallProtocol.ref = "phoneCallProtocol";
+api.phoneCallProtocol.ref = "phoneCallProtocol";
 
 // type CdnPublicKey
-global.cdnPublicKey.ref = "cdnPublicKey";
+api.cdnPublicKey.ref = "cdnPublicKey";
 
 // type CdnConfig
-global.cdnConfig.ref = "cdnConfig";
+api.cdnConfig.ref = "cdnConfig";
 
 // type LangPackString
-global.langPackString.ref = "langPackString";
-global.langPackStringPluralized.ref = "langPackStringPluralized";
-global.langPackStringDeleted.ref = "langPackStringDeleted";
+api.langPackString.ref = "langPackString";
+api.langPackStringPluralized.ref = "langPackStringPluralized";
+api.langPackStringDeleted.ref = "langPackStringDeleted";
 
 // type LangPackDifference
-global.langPackDifference.ref = "langPackDifference";
+api.langPackDifference.ref = "langPackDifference";
 
 // type LangPackLanguage
-global.langPackLanguage.ref = "langPackLanguage";
+api.langPackLanguage.ref = "langPackLanguage";
 
 // type ChannelAdminLogEventAction
-global.channelAdminLogEventActionChangeTitle.ref = "channelAdminLogEventActionChangeTitle";
-global.channelAdminLogEventActionChangeAbout.ref = "channelAdminLogEventActionChangeAbout";
-global.channelAdminLogEventActionChangeUsername.ref = "channelAdminLogEventActionChangeUsername";
-global.channelAdminLogEventActionChangePhoto.ref = "channelAdminLogEventActionChangePhoto";
-global.channelAdminLogEventActionToggleInvites.ref = "channelAdminLogEventActionToggleInvites";
-global.channelAdminLogEventActionToggleSignatures.ref = "channelAdminLogEventActionToggleSignatures";
-global.channelAdminLogEventActionUpdatePinned.ref = "channelAdminLogEventActionUpdatePinned";
-global.channelAdminLogEventActionEditMessage.ref = "channelAdminLogEventActionEditMessage";
-global.channelAdminLogEventActionDeleteMessage.ref = "channelAdminLogEventActionDeleteMessage";
-global.channelAdminLogEventActionParticipantJoin.ref = "channelAdminLogEventActionParticipantJoin";
-global.channelAdminLogEventActionParticipantLeave.ref = "channelAdminLogEventActionParticipantLeave";
-global.channelAdminLogEventActionParticipantInvite.ref = "channelAdminLogEventActionParticipantInvite";
-global.channelAdminLogEventActionParticipantToggleBan.ref = "channelAdminLogEventActionParticipantToggleBan";
-global.channelAdminLogEventActionParticipantToggleAdmin.ref = "channelAdminLogEventActionParticipantToggleAdmin";
-global.channelAdminLogEventActionChangeStickerSet.ref = "channelAdminLogEventActionChangeStickerSet";
-global.channelAdminLogEventActionTogglePreHistoryHidden.ref = "channelAdminLogEventActionTogglePreHistoryHidden";
-global.channelAdminLogEventActionDefaultBannedRights.ref = "channelAdminLogEventActionDefaultBannedRights";
-global.channelAdminLogEventActionStopPoll.ref = "channelAdminLogEventActionStopPoll";
-global.channelAdminLogEventActionChangeLinkedChat.ref = "channelAdminLogEventActionChangeLinkedChat";
-global.channelAdminLogEventActionChangeLocation.ref = "channelAdminLogEventActionChangeLocation";
-global.channelAdminLogEventActionToggleSlowMode.ref = "channelAdminLogEventActionToggleSlowMode";
-global.channelAdminLogEventActionStartGroupCall.ref = "channelAdminLogEventActionStartGroupCall";
-global.channelAdminLogEventActionDiscardGroupCall.ref = "channelAdminLogEventActionDiscardGroupCall";
-global.channelAdminLogEventActionParticipantMute.ref = "channelAdminLogEventActionParticipantMute";
-global.channelAdminLogEventActionParticipantUnmute.ref = "channelAdminLogEventActionParticipantUnmute";
-global.channelAdminLogEventActionToggleGroupCallSetting.ref = "channelAdminLogEventActionToggleGroupCallSetting";
-global.channelAdminLogEventActionParticipantJoinByInvite.ref = "channelAdminLogEventActionParticipantJoinByInvite";
-global.channelAdminLogEventActionExportedInviteDelete.ref = "channelAdminLogEventActionExportedInviteDelete";
-global.channelAdminLogEventActionExportedInviteRevoke.ref = "channelAdminLogEventActionExportedInviteRevoke";
-global.channelAdminLogEventActionExportedInviteEdit.ref = "channelAdminLogEventActionExportedInviteEdit";
-global.channelAdminLogEventActionParticipantVolume.ref = "channelAdminLogEventActionParticipantVolume";
-global.channelAdminLogEventActionChangeHistoryTTL.ref = "channelAdminLogEventActionChangeHistoryTTL";
-global.channelAdminLogEventActionParticipantJoinByRequest.ref = "channelAdminLogEventActionParticipantJoinByRequest";
-global.channelAdminLogEventActionToggleNoForwards.ref = "channelAdminLogEventActionToggleNoForwards";
-global.channelAdminLogEventActionSendMessage.ref = "channelAdminLogEventActionSendMessage";
-global.channelAdminLogEventActionChangeAvailableReactions.ref = "channelAdminLogEventActionChangeAvailableReactions";
-global.channelAdminLogEventActionChangeUsernames.ref = "channelAdminLogEventActionChangeUsernames";
-global.channelAdminLogEventActionToggleForum.ref = "channelAdminLogEventActionToggleForum";
-global.channelAdminLogEventActionCreateTopic.ref = "channelAdminLogEventActionCreateTopic";
-global.channelAdminLogEventActionEditTopic.ref = "channelAdminLogEventActionEditTopic";
-global.channelAdminLogEventActionDeleteTopic.ref = "channelAdminLogEventActionDeleteTopic";
-global.channelAdminLogEventActionPinTopic.ref = "channelAdminLogEventActionPinTopic";
-global.channelAdminLogEventActionToggleAntiSpam.ref = "channelAdminLogEventActionToggleAntiSpam";
-global.channelAdminLogEventActionChangePeerColor.ref = "channelAdminLogEventActionChangePeerColor";
-global.channelAdminLogEventActionChangeProfilePeerColor.ref = "channelAdminLogEventActionChangeProfilePeerColor";
-global.channelAdminLogEventActionChangeWallpaper.ref = "channelAdminLogEventActionChangeWallpaper";
-global.channelAdminLogEventActionChangeEmojiStatus.ref = "channelAdminLogEventActionChangeEmojiStatus";
-global.channelAdminLogEventActionChangeEmojiStickerSet.ref = "channelAdminLogEventActionChangeEmojiStickerSet";
+api.channelAdminLogEventActionChangeTitle.ref = "channelAdminLogEventActionChangeTitle";
+api.channelAdminLogEventActionChangeAbout.ref = "channelAdminLogEventActionChangeAbout";
+api.channelAdminLogEventActionChangeUsername.ref = "channelAdminLogEventActionChangeUsername";
+api.channelAdminLogEventActionChangePhoto.ref = "channelAdminLogEventActionChangePhoto";
+api.channelAdminLogEventActionToggleInvites.ref = "channelAdminLogEventActionToggleInvites";
+api.channelAdminLogEventActionToggleSignatures.ref = "channelAdminLogEventActionToggleSignatures";
+api.channelAdminLogEventActionUpdatePinned.ref = "channelAdminLogEventActionUpdatePinned";
+api.channelAdminLogEventActionEditMessage.ref = "channelAdminLogEventActionEditMessage";
+api.channelAdminLogEventActionDeleteMessage.ref = "channelAdminLogEventActionDeleteMessage";
+api.channelAdminLogEventActionParticipantJoin.ref = "channelAdminLogEventActionParticipantJoin";
+api.channelAdminLogEventActionParticipantLeave.ref = "channelAdminLogEventActionParticipantLeave";
+api.channelAdminLogEventActionParticipantInvite.ref = "channelAdminLogEventActionParticipantInvite";
+api.channelAdminLogEventActionParticipantToggleBan.ref = "channelAdminLogEventActionParticipantToggleBan";
+api.channelAdminLogEventActionParticipantToggleAdmin.ref = "channelAdminLogEventActionParticipantToggleAdmin";
+api.channelAdminLogEventActionChangeStickerSet.ref = "channelAdminLogEventActionChangeStickerSet";
+api.channelAdminLogEventActionTogglePreHistoryHidden.ref = "channelAdminLogEventActionTogglePreHistoryHidden";
+api.channelAdminLogEventActionDefaultBannedRights.ref = "channelAdminLogEventActionDefaultBannedRights";
+api.channelAdminLogEventActionStopPoll.ref = "channelAdminLogEventActionStopPoll";
+api.channelAdminLogEventActionChangeLinkedChat.ref = "channelAdminLogEventActionChangeLinkedChat";
+api.channelAdminLogEventActionChangeLocation.ref = "channelAdminLogEventActionChangeLocation";
+api.channelAdminLogEventActionToggleSlowMode.ref = "channelAdminLogEventActionToggleSlowMode";
+api.channelAdminLogEventActionStartGroupCall.ref = "channelAdminLogEventActionStartGroupCall";
+api.channelAdminLogEventActionDiscardGroupCall.ref = "channelAdminLogEventActionDiscardGroupCall";
+api.channelAdminLogEventActionParticipantMute.ref = "channelAdminLogEventActionParticipantMute";
+api.channelAdminLogEventActionParticipantUnmute.ref = "channelAdminLogEventActionParticipantUnmute";
+api.channelAdminLogEventActionToggleGroupCallSetting.ref = "channelAdminLogEventActionToggleGroupCallSetting";
+api.channelAdminLogEventActionParticipantJoinByInvite.ref = "channelAdminLogEventActionParticipantJoinByInvite";
+api.channelAdminLogEventActionExportedInviteDelete.ref = "channelAdminLogEventActionExportedInviteDelete";
+api.channelAdminLogEventActionExportedInviteRevoke.ref = "channelAdminLogEventActionExportedInviteRevoke";
+api.channelAdminLogEventActionExportedInviteEdit.ref = "channelAdminLogEventActionExportedInviteEdit";
+api.channelAdminLogEventActionParticipantVolume.ref = "channelAdminLogEventActionParticipantVolume";
+api.channelAdminLogEventActionChangeHistoryTTL.ref = "channelAdminLogEventActionChangeHistoryTTL";
+api.channelAdminLogEventActionParticipantJoinByRequest.ref = "channelAdminLogEventActionParticipantJoinByRequest";
+api.channelAdminLogEventActionToggleNoForwards.ref = "channelAdminLogEventActionToggleNoForwards";
+api.channelAdminLogEventActionSendMessage.ref = "channelAdminLogEventActionSendMessage";
+api.channelAdminLogEventActionChangeAvailableReactions.ref = "channelAdminLogEventActionChangeAvailableReactions";
+api.channelAdminLogEventActionChangeUsernames.ref = "channelAdminLogEventActionChangeUsernames";
+api.channelAdminLogEventActionToggleForum.ref = "channelAdminLogEventActionToggleForum";
+api.channelAdminLogEventActionCreateTopic.ref = "channelAdminLogEventActionCreateTopic";
+api.channelAdminLogEventActionEditTopic.ref = "channelAdminLogEventActionEditTopic";
+api.channelAdminLogEventActionDeleteTopic.ref = "channelAdminLogEventActionDeleteTopic";
+api.channelAdminLogEventActionPinTopic.ref = "channelAdminLogEventActionPinTopic";
+api.channelAdminLogEventActionToggleAntiSpam.ref = "channelAdminLogEventActionToggleAntiSpam";
+api.channelAdminLogEventActionChangePeerColor.ref = "channelAdminLogEventActionChangePeerColor";
+api.channelAdminLogEventActionChangeProfilePeerColor.ref = "channelAdminLogEventActionChangeProfilePeerColor";
+api.channelAdminLogEventActionChangeWallpaper.ref = "channelAdminLogEventActionChangeWallpaper";
+api.channelAdminLogEventActionChangeEmojiStatus.ref = "channelAdminLogEventActionChangeEmojiStatus";
+api.channelAdminLogEventActionChangeEmojiStickerSet.ref = "channelAdminLogEventActionChangeEmojiStickerSet";
 
 // type ChannelAdminLogEvent
-global.channelAdminLogEvent.ref = "channelAdminLogEvent";
+api.channelAdminLogEvent.ref = "channelAdminLogEvent";
 
 // type ChannelAdminLogEventsFilter
-global.channelAdminLogEventsFilter.ref = "channelAdminLogEventsFilter";
+api.channelAdminLogEventsFilter.ref = "channelAdminLogEventsFilter";
 
 // type PopularContact
-global.popularContact.ref = "popularContact";
+api.popularContact.ref = "popularContact";
 
 // type RecentMeUrl
-global.recentMeUrlUnknown.ref = "recentMeUrlUnknown";
-global.recentMeUrlUser.ref = "recentMeUrlUser";
-global.recentMeUrlChat.ref = "recentMeUrlChat";
-global.recentMeUrlChatInvite.ref = "recentMeUrlChatInvite";
-global.recentMeUrlStickerSet.ref = "recentMeUrlStickerSet";
+api.recentMeUrlUnknown.ref = "recentMeUrlUnknown";
+api.recentMeUrlUser.ref = "recentMeUrlUser";
+api.recentMeUrlChat.ref = "recentMeUrlChat";
+api.recentMeUrlChatInvite.ref = "recentMeUrlChatInvite";
+api.recentMeUrlStickerSet.ref = "recentMeUrlStickerSet";
 
 // type InputSingleMedia
-global.inputSingleMedia.ref = "inputSingleMedia";
+api.inputSingleMedia.ref = "inputSingleMedia";
 
 // type WebAuthorization
-global.webAuthorization.ref = "webAuthorization";
+api.webAuthorization.ref = "webAuthorization";
 
 // type InputMessage
-global.inputMessageID.ref = "inputMessageID";
-global.inputMessageReplyTo.ref = "inputMessageReplyTo";
-global.inputMessagePinned.ref = "inputMessagePinned";
-global.inputMessageCallbackQuery.ref = "inputMessageCallbackQuery";
+api.inputMessageID.ref = "inputMessageID";
+api.inputMessageReplyTo.ref = "inputMessageReplyTo";
+api.inputMessagePinned.ref = "inputMessagePinned";
+api.inputMessageCallbackQuery.ref = "inputMessageCallbackQuery";
 
 // type InputDialogPeer
-global.inputDialogPeer.ref = "inputDialogPeer";
-global.inputDialogPeerFolder.ref = "inputDialogPeerFolder";
+api.inputDialogPeer.ref = "inputDialogPeer";
+api.inputDialogPeerFolder.ref = "inputDialogPeerFolder";
 
 // type DialogPeer
-global.dialogPeer.ref = "dialogPeer";
-global.dialogPeerFolder.ref = "dialogPeerFolder";
+api.dialogPeer.ref = "dialogPeer";
+api.dialogPeerFolder.ref = "dialogPeerFolder";
 
 // type FileHash
-global.fileHash.ref = "fileHash";
+api.fileHash.ref = "fileHash";
 
 // type InputClientProxy
-global.inputClientProxy.ref = "inputClientProxy";
+api.inputClientProxy.ref = "inputClientProxy";
 
 // type InputSecureFile
-global.inputSecureFileUploaded.ref = "inputSecureFileUploaded";
-global.inputSecureFile.ref = "inputSecureFile";
+api.inputSecureFileUploaded.ref = "inputSecureFileUploaded";
+api.inputSecureFile.ref = "inputSecureFile";
 
 // type SecureFile
-global.secureFileEmpty.ref = "secureFileEmpty";
-global.secureFile.ref = "secureFile";
+api.secureFileEmpty.ref = "secureFileEmpty";
+api.secureFile.ref = "secureFile";
 
 // type SecureData
-global.secureData.ref = "secureData";
+api.secureData.ref = "secureData";
 
 // type SecurePlainData
-global.securePlainPhone.ref = "securePlainPhone";
-global.securePlainEmail.ref = "securePlainEmail";
+api.securePlainPhone.ref = "securePlainPhone";
+api.securePlainEmail.ref = "securePlainEmail";
 
 // type SecureValueType
-global.secureValueTypePersonalDetails.ref = "secureValueTypePersonalDetails";
-global.secureValueTypePassport.ref = "secureValueTypePassport";
-global.secureValueTypeDriverLicense.ref = "secureValueTypeDriverLicense";
-global.secureValueTypeIdentityCard.ref = "secureValueTypeIdentityCard";
-global.secureValueTypeInternalPassport.ref = "secureValueTypeInternalPassport";
-global.secureValueTypeAddress.ref = "secureValueTypeAddress";
-global.secureValueTypeUtilityBill.ref = "secureValueTypeUtilityBill";
-global.secureValueTypeBankStatement.ref = "secureValueTypeBankStatement";
-global.secureValueTypeRentalAgreement.ref = "secureValueTypeRentalAgreement";
-global.secureValueTypePassportRegistration.ref = "secureValueTypePassportRegistration";
-global.secureValueTypeTemporaryRegistration.ref = "secureValueTypeTemporaryRegistration";
-global.secureValueTypePhone.ref = "secureValueTypePhone";
-global.secureValueTypeEmail.ref = "secureValueTypeEmail";
+api.secureValueTypePersonalDetails.ref = "secureValueTypePersonalDetails";
+api.secureValueTypePassport.ref = "secureValueTypePassport";
+api.secureValueTypeDriverLicense.ref = "secureValueTypeDriverLicense";
+api.secureValueTypeIdentityCard.ref = "secureValueTypeIdentityCard";
+api.secureValueTypeInternalPassport.ref = "secureValueTypeInternalPassport";
+api.secureValueTypeAddress.ref = "secureValueTypeAddress";
+api.secureValueTypeUtilityBill.ref = "secureValueTypeUtilityBill";
+api.secureValueTypeBankStatement.ref = "secureValueTypeBankStatement";
+api.secureValueTypeRentalAgreement.ref = "secureValueTypeRentalAgreement";
+api.secureValueTypePassportRegistration.ref = "secureValueTypePassportRegistration";
+api.secureValueTypeTemporaryRegistration.ref = "secureValueTypeTemporaryRegistration";
+api.secureValueTypePhone.ref = "secureValueTypePhone";
+api.secureValueTypeEmail.ref = "secureValueTypeEmail";
 
 // type SecureValue
-global.secureValue.ref = "secureValue";
+api.secureValue.ref = "secureValue";
 
 // type InputSecureValue
-global.inputSecureValue.ref = "inputSecureValue";
+api.inputSecureValue.ref = "inputSecureValue";
 
 // type SecureValueHash
-global.secureValueHash.ref = "secureValueHash";
+api.secureValueHash.ref = "secureValueHash";
 
 // type SecureValueError
-global.secureValueErrorData.ref = "secureValueErrorData";
-global.secureValueErrorFrontSide.ref = "secureValueErrorFrontSide";
-global.secureValueErrorReverseSide.ref = "secureValueErrorReverseSide";
-global.secureValueErrorSelfie.ref = "secureValueErrorSelfie";
-global.secureValueErrorFile.ref = "secureValueErrorFile";
-global.secureValueErrorFiles.ref = "secureValueErrorFiles";
-global.secureValueError.ref = "secureValueError";
-global.secureValueErrorTranslationFile.ref = "secureValueErrorTranslationFile";
-global.secureValueErrorTranslationFiles.ref = "secureValueErrorTranslationFiles";
+api.secureValueErrorData.ref = "secureValueErrorData";
+api.secureValueErrorFrontSide.ref = "secureValueErrorFrontSide";
+api.secureValueErrorReverseSide.ref = "secureValueErrorReverseSide";
+api.secureValueErrorSelfie.ref = "secureValueErrorSelfie";
+api.secureValueErrorFile.ref = "secureValueErrorFile";
+api.secureValueErrorFiles.ref = "secureValueErrorFiles";
+api.secureValueError.ref = "secureValueError";
+api.secureValueErrorTranslationFile.ref = "secureValueErrorTranslationFile";
+api.secureValueErrorTranslationFiles.ref = "secureValueErrorTranslationFiles";
 
 // type SecureCredentialsEncrypted
-global.secureCredentialsEncrypted.ref = "secureCredentialsEncrypted";
+api.secureCredentialsEncrypted.ref = "secureCredentialsEncrypted";
 
 // type SavedContact
-global.savedPhoneContact.ref = "savedPhoneContact";
+api.savedPhoneContact.ref = "savedPhoneContact";
 
 // type PasswordKdfAlgo
-global.passwordKdfAlgoUnknown.ref = "passwordKdfAlgoUnknown";
-global.passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.ref = "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow";
+api.passwordKdfAlgoUnknown.ref = "passwordKdfAlgoUnknown";
+api.passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.ref = "passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow";
 
 // type SecurePasswordKdfAlgo
-global.securePasswordKdfAlgoUnknown.ref = "securePasswordKdfAlgoUnknown";
-global.securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.ref = "securePasswordKdfAlgoPBKDF2HMACSHA512iter100000";
-global.securePasswordKdfAlgoSHA512.ref = "securePasswordKdfAlgoSHA512";
+api.securePasswordKdfAlgoUnknown.ref = "securePasswordKdfAlgoUnknown";
+api.securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.ref = "securePasswordKdfAlgoPBKDF2HMACSHA512iter100000";
+api.securePasswordKdfAlgoSHA512.ref = "securePasswordKdfAlgoSHA512";
 
 // type SecureSecretSettings
-global.secureSecretSettings.ref = "secureSecretSettings";
+api.secureSecretSettings.ref = "secureSecretSettings";
 
 // type InputCheckPasswordSRP
-global.inputCheckPasswordEmpty.ref = "inputCheckPasswordEmpty";
-global.inputCheckPasswordSRP.ref = "inputCheckPasswordSRP";
+api.inputCheckPasswordEmpty.ref = "inputCheckPasswordEmpty";
+api.inputCheckPasswordSRP.ref = "inputCheckPasswordSRP";
 
 // type SecureRequiredType
-global.secureRequiredType.ref = "secureRequiredType";
-global.secureRequiredTypeOneOf.ref = "secureRequiredTypeOneOf";
+api.secureRequiredType.ref = "secureRequiredType";
+api.secureRequiredTypeOneOf.ref = "secureRequiredTypeOneOf";
 
 // type InputAppEvent
-global.inputAppEvent.ref = "inputAppEvent";
+api.inputAppEvent.ref = "inputAppEvent";
 
 // type JSONObjectValue
-global.jsonObjectValue.ref = "jsonObjectValue";
+api.jsonObjectValue.ref = "jsonObjectValue";
 
 // type JSONValue
-global.jsonNull.ref = "jsonNull";
-global.jsonBool.ref = "jsonBool";
-global.jsonNumber.ref = "jsonNumber";
-global.jsonString.ref = "jsonString";
-global.jsonArray.ref = "jsonArray";
-global.jsonObject.ref = "jsonObject";
+api.jsonNull.ref = "jsonNull";
+api.jsonBool.ref = "jsonBool";
+api.jsonNumber.ref = "jsonNumber";
+api.jsonString.ref = "jsonString";
+api.jsonArray.ref = "jsonArray";
+api.jsonObject.ref = "jsonObject";
 
 // type PageTableCell
-global.pageTableCell.ref = "pageTableCell";
+api.pageTableCell.ref = "pageTableCell";
 
 // type PageTableRow
-global.pageTableRow.ref = "pageTableRow";
+api.pageTableRow.ref = "pageTableRow";
 
 // type PageCaption
-global.pageCaption.ref = "pageCaption";
+api.pageCaption.ref = "pageCaption";
 
 // type PageListItem
-global.pageListItemText.ref = "pageListItemText";
-global.pageListItemBlocks.ref = "pageListItemBlocks";
+api.pageListItemText.ref = "pageListItemText";
+api.pageListItemBlocks.ref = "pageListItemBlocks";
 
 // type PageListOrderedItem
-global.pageListOrderedItemText.ref = "pageListOrderedItemText";
-global.pageListOrderedItemBlocks.ref = "pageListOrderedItemBlocks";
+api.pageListOrderedItemText.ref = "pageListOrderedItemText";
+api.pageListOrderedItemBlocks.ref = "pageListOrderedItemBlocks";
 
 // type PageRelatedArticle
-global.pageRelatedArticle.ref = "pageRelatedArticle";
+api.pageRelatedArticle.ref = "pageRelatedArticle";
 
 // type Page
-global.page.ref = "page";
+api.page.ref = "page";
 
 // type PollAnswer
-global.pollAnswer.ref = "pollAnswer";
+api.pollAnswer.ref = "pollAnswer";
 
 // type Poll
-global.poll.ref = "poll";
+api.poll.ref = "poll";
 
 // type PollAnswerVoters
-global.pollAnswerVoters.ref = "pollAnswerVoters";
+api.pollAnswerVoters.ref = "pollAnswerVoters";
 
 // type PollResults
-global.pollResults.ref = "pollResults";
+api.pollResults.ref = "pollResults";
 
 // type ChatOnlines
-global.chatOnlines.ref = "chatOnlines";
+api.chatOnlines.ref = "chatOnlines";
 
 // type StatsURL
-global.statsURL.ref = "statsURL";
+api.statsURL.ref = "statsURL";
 
 // type ChatAdminRights
-global.chatAdminRights.ref = "chatAdminRights";
+api.chatAdminRights.ref = "chatAdminRights";
 
 // type ChatBannedRights
-global.chatBannedRights.ref = "chatBannedRights";
+api.chatBannedRights.ref = "chatBannedRights";
 
 // type InputWallPaper
-global.inputWallPaper.ref = "inputWallPaper";
-global.inputWallPaperSlug.ref = "inputWallPaperSlug";
-global.inputWallPaperNoFile.ref = "inputWallPaperNoFile";
+api.inputWallPaper.ref = "inputWallPaper";
+api.inputWallPaperSlug.ref = "inputWallPaperSlug";
+api.inputWallPaperNoFile.ref = "inputWallPaperNoFile";
 
 // type CodeSettings
-global.codeSettings.ref = "codeSettings";
+api.codeSettings.ref = "codeSettings";
 
 // type WallPaperSettings
-global.wallPaperSettings.ref = "wallPaperSettings";
+api.wallPaperSettings.ref = "wallPaperSettings";
 
 // type AutoDownloadSettings
-global.autoDownloadSettings.ref = "autoDownloadSettings";
+api.autoDownloadSettings.ref = "autoDownloadSettings";
 
 // type EmojiKeyword
-global.emojiKeyword.ref = "emojiKeyword";
-global.emojiKeywordDeleted.ref = "emojiKeywordDeleted";
+api.emojiKeyword.ref = "emojiKeyword";
+api.emojiKeywordDeleted.ref = "emojiKeywordDeleted";
 
 // type EmojiKeywordsDifference
-global.emojiKeywordsDifference.ref = "emojiKeywordsDifference";
+api.emojiKeywordsDifference.ref = "emojiKeywordsDifference";
 
 // type EmojiURL
-global.emojiURL.ref = "emojiURL";
+api.emojiURL.ref = "emojiURL";
 
 // type EmojiLanguage
-global.emojiLanguage.ref = "emojiLanguage";
+api.emojiLanguage.ref = "emojiLanguage";
 
 // type Folder
-global.folder.ref = "folder";
+api.folder.ref = "folder";
 
 // type InputFolderPeer
-global.inputFolderPeer.ref = "inputFolderPeer";
+api.inputFolderPeer.ref = "inputFolderPeer";
 
 // type FolderPeer
-global.folderPeer.ref = "folderPeer";
+api.folderPeer.ref = "folderPeer";
 
 // type UrlAuthResult
-global.urlAuthResultRequest.ref = "urlAuthResultRequest";
-global.urlAuthResultAccepted.ref = "urlAuthResultAccepted";
-global.urlAuthResultDefault.ref = "urlAuthResultDefault";
+api.urlAuthResultRequest.ref = "urlAuthResultRequest";
+api.urlAuthResultAccepted.ref = "urlAuthResultAccepted";
+api.urlAuthResultDefault.ref = "urlAuthResultDefault";
 
 // type ChannelLocation
-global.channelLocationEmpty.ref = "channelLocationEmpty";
-global.channelLocation.ref = "channelLocation";
+api.channelLocationEmpty.ref = "channelLocationEmpty";
+api.channelLocation.ref = "channelLocation";
 
 // type PeerLocated
-global.peerLocated.ref = "peerLocated";
-global.peerSelfLocated.ref = "peerSelfLocated";
+api.peerLocated.ref = "peerLocated";
+api.peerSelfLocated.ref = "peerSelfLocated";
 
 // type RestrictionReason
-global.restrictionReason.ref = "restrictionReason";
+api.restrictionReason.ref = "restrictionReason";
 
 // type InputTheme
-global.inputTheme.ref = "inputTheme";
-global.inputThemeSlug.ref = "inputThemeSlug";
+api.inputTheme.ref = "inputTheme";
+api.inputThemeSlug.ref = "inputThemeSlug";
 
 // type Theme
-global.theme.ref = "theme";
+api.theme.ref = "theme";
 
 // type BaseTheme
-global.baseThemeClassic.ref = "baseThemeClassic";
-global.baseThemeDay.ref = "baseThemeDay";
-global.baseThemeNight.ref = "baseThemeNight";
-global.baseThemeTinted.ref = "baseThemeTinted";
-global.baseThemeArctic.ref = "baseThemeArctic";
+api.baseThemeClassic.ref = "baseThemeClassic";
+api.baseThemeDay.ref = "baseThemeDay";
+api.baseThemeNight.ref = "baseThemeNight";
+api.baseThemeTinted.ref = "baseThemeTinted";
+api.baseThemeArctic.ref = "baseThemeArctic";
 
 // type InputThemeSettings
-global.inputThemeSettings.ref = "inputThemeSettings";
+api.inputThemeSettings.ref = "inputThemeSettings";
 
 // type ThemeSettings
-global.themeSettings.ref = "themeSettings";
+api.themeSettings.ref = "themeSettings";
 
 // type WebPageAttribute
-global.webPageAttributeTheme.ref = "webPageAttributeTheme";
-global.webPageAttributeStory.ref = "webPageAttributeStory";
+api.webPageAttributeTheme.ref = "webPageAttributeTheme";
+api.webPageAttributeStory.ref = "webPageAttributeStory";
 
 // type BankCardOpenUrl
-global.bankCardOpenUrl.ref = "bankCardOpenUrl";
+api.bankCardOpenUrl.ref = "bankCardOpenUrl";
 
 // type DialogFilter
-global.dialogFilter.ref = "dialogFilter";
-global.dialogFilterDefault.ref = "dialogFilterDefault";
-global.dialogFilterChatlist.ref = "dialogFilterChatlist";
+api.dialogFilter.ref = "dialogFilter";
+api.dialogFilterDefault.ref = "dialogFilterDefault";
+api.dialogFilterChatlist.ref = "dialogFilterChatlist";
 
 // type DialogFilterSuggested
-global.dialogFilterSuggested.ref = "dialogFilterSuggested";
+api.dialogFilterSuggested.ref = "dialogFilterSuggested";
 
 // type StatsDateRangeDays
-global.statsDateRangeDays.ref = "statsDateRangeDays";
+api.statsDateRangeDays.ref = "statsDateRangeDays";
 
 // type StatsAbsValueAndPrev
-global.statsAbsValueAndPrev.ref = "statsAbsValueAndPrev";
+api.statsAbsValueAndPrev.ref = "statsAbsValueAndPrev";
 
 // type StatsPercentValue
-global.statsPercentValue.ref = "statsPercentValue";
+api.statsPercentValue.ref = "statsPercentValue";
 
 // type StatsGraph
-global.statsGraphAsync.ref = "statsGraphAsync";
-global.statsGraphError.ref = "statsGraphError";
-global.statsGraph.ref = "statsGraph";
+api.statsGraphAsync.ref = "statsGraphAsync";
+api.statsGraphError.ref = "statsGraphError";
+api.statsGraph.ref = "statsGraph";
 
 // type VideoSize
-global.videoSize.ref = "videoSize";
-global.videoSizeEmojiMarkup.ref = "videoSizeEmojiMarkup";
-global.videoSizeStickerMarkup.ref = "videoSizeStickerMarkup";
+api.videoSize.ref = "videoSize";
+api.videoSizeEmojiMarkup.ref = "videoSizeEmojiMarkup";
+api.videoSizeStickerMarkup.ref = "videoSizeStickerMarkup";
 
 // type StatsGroupTopPoster
-global.statsGroupTopPoster.ref = "statsGroupTopPoster";
+api.statsGroupTopPoster.ref = "statsGroupTopPoster";
 
 // type StatsGroupTopAdmin
-global.statsGroupTopAdmin.ref = "statsGroupTopAdmin";
+api.statsGroupTopAdmin.ref = "statsGroupTopAdmin";
 
 // type StatsGroupTopInviter
-global.statsGroupTopInviter.ref = "statsGroupTopInviter";
+api.statsGroupTopInviter.ref = "statsGroupTopInviter";
 
 // type GlobalPrivacySettings
-global.globalPrivacySettings.ref = "globalPrivacySettings";
+api.globalPrivacySettings.ref = "globalPrivacySettings";
 
 // type MessageViews
-global.messageViews.ref = "messageViews";
+api.messageViews.ref = "messageViews";
 
 // type MessageReplyHeader
-global.messageReplyHeader.ref = "messageReplyHeader";
-global.messageReplyStoryHeader.ref = "messageReplyStoryHeader";
+api.messageReplyHeader.ref = "messageReplyHeader";
+api.messageReplyStoryHeader.ref = "messageReplyStoryHeader";
 
 // type MessageReplies
-global.messageReplies.ref = "messageReplies";
+api.messageReplies.ref = "messageReplies";
 
 // type PeerBlocked
-global.peerBlocked.ref = "peerBlocked";
+api.peerBlocked.ref = "peerBlocked";
 
 // type GroupCall
-global.groupCallDiscarded.ref = "groupCallDiscarded";
-global.groupCall.ref = "groupCall";
+api.groupCallDiscarded.ref = "groupCallDiscarded";
+api.groupCall.ref = "groupCall";
 
 // type InputGroupCall
-global.inputGroupCall.ref = "inputGroupCall";
+api.inputGroupCall.ref = "inputGroupCall";
 
 // type GroupCallParticipant
-global.groupCallParticipant.ref = "groupCallParticipant";
+api.groupCallParticipant.ref = "groupCallParticipant";
 
 // type InlineQueryPeerType
-global.inlineQueryPeerTypeSameBotPM.ref = "inlineQueryPeerTypeSameBotPM";
-global.inlineQueryPeerTypePM.ref = "inlineQueryPeerTypePM";
-global.inlineQueryPeerTypeChat.ref = "inlineQueryPeerTypeChat";
-global.inlineQueryPeerTypeMegagroup.ref = "inlineQueryPeerTypeMegagroup";
-global.inlineQueryPeerTypeBroadcast.ref = "inlineQueryPeerTypeBroadcast";
-global.inlineQueryPeerTypeBotPM.ref = "inlineQueryPeerTypeBotPM";
+api.inlineQueryPeerTypeSameBotPM.ref = "inlineQueryPeerTypeSameBotPM";
+api.inlineQueryPeerTypePM.ref = "inlineQueryPeerTypePM";
+api.inlineQueryPeerTypeChat.ref = "inlineQueryPeerTypeChat";
+api.inlineQueryPeerTypeMegagroup.ref = "inlineQueryPeerTypeMegagroup";
+api.inlineQueryPeerTypeBroadcast.ref = "inlineQueryPeerTypeBroadcast";
+api.inlineQueryPeerTypeBotPM.ref = "inlineQueryPeerTypeBotPM";
 
 // type ChatInviteImporter
-global.chatInviteImporter.ref = "chatInviteImporter";
+api.chatInviteImporter.ref = "chatInviteImporter";
 
 // type ChatAdminWithInvites
-global.chatAdminWithInvites.ref = "chatAdminWithInvites";
+api.chatAdminWithInvites.ref = "chatAdminWithInvites";
 
 // type GroupCallParticipantVideoSourceGroup
-global.groupCallParticipantVideoSourceGroup.ref = "groupCallParticipantVideoSourceGroup";
+api.groupCallParticipantVideoSourceGroup.ref = "groupCallParticipantVideoSourceGroup";
 
 // type GroupCallParticipantVideo
-global.groupCallParticipantVideo.ref = "groupCallParticipantVideo";
+api.groupCallParticipantVideo.ref = "groupCallParticipantVideo";
 
 // type BotCommandScope
-global.botCommandScopeDefault.ref = "botCommandScopeDefault";
-global.botCommandScopeUsers.ref = "botCommandScopeUsers";
-global.botCommandScopeChats.ref = "botCommandScopeChats";
-global.botCommandScopeChatAdmins.ref = "botCommandScopeChatAdmins";
-global.botCommandScopePeer.ref = "botCommandScopePeer";
-global.botCommandScopePeerAdmins.ref = "botCommandScopePeerAdmins";
-global.botCommandScopePeerUser.ref = "botCommandScopePeerUser";
+api.botCommandScopeDefault.ref = "botCommandScopeDefault";
+api.botCommandScopeUsers.ref = "botCommandScopeUsers";
+api.botCommandScopeChats.ref = "botCommandScopeChats";
+api.botCommandScopeChatAdmins.ref = "botCommandScopeChatAdmins";
+api.botCommandScopePeer.ref = "botCommandScopePeer";
+api.botCommandScopePeerAdmins.ref = "botCommandScopePeerAdmins";
+api.botCommandScopePeerUser.ref = "botCommandScopePeerUser";
 
 // type SponsoredMessage
-global.sponsoredMessage.ref = "sponsoredMessage";
+api.sponsoredMessage.ref = "sponsoredMessage";
 
 // type SearchResultsCalendarPeriod
-global.searchResultsCalendarPeriod.ref = "searchResultsCalendarPeriod";
+api.searchResultsCalendarPeriod.ref = "searchResultsCalendarPeriod";
 
 // type SearchResultsPosition
-global.searchResultPosition.ref = "searchResultPosition";
+api.searchResultPosition.ref = "searchResultPosition";
 
 // type ReactionCount
-global.reactionCount.ref = "reactionCount";
+api.reactionCount.ref = "reactionCount";
 
 // type MessageReactions
-global.messageReactions.ref = "messageReactions";
+api.messageReactions.ref = "messageReactions";
 
 // type AvailableReaction
-global.availableReaction.ref = "availableReaction";
+api.availableReaction.ref = "availableReaction";
 
 // type MessagePeerReaction
-global.messagePeerReaction.ref = "messagePeerReaction";
+api.messagePeerReaction.ref = "messagePeerReaction";
 
 // type GroupCallStreamChannel
-global.groupCallStreamChannel.ref = "groupCallStreamChannel";
+api.groupCallStreamChannel.ref = "groupCallStreamChannel";
 
 // type AttachMenuBotIconColor
-global.attachMenuBotIconColor.ref = "attachMenuBotIconColor";
+api.attachMenuBotIconColor.ref = "attachMenuBotIconColor";
 
 // type AttachMenuBotIcon
-global.attachMenuBotIcon.ref = "attachMenuBotIcon";
+api.attachMenuBotIcon.ref = "attachMenuBotIcon";
 
 // type AttachMenuBot
-global.attachMenuBot.ref = "attachMenuBot";
+api.attachMenuBot.ref = "attachMenuBot";
 
 // type AttachMenuBots
-global.attachMenuBotsNotModified.ref = "attachMenuBotsNotModified";
-global.attachMenuBots.ref = "attachMenuBots";
+api.attachMenuBotsNotModified.ref = "attachMenuBotsNotModified";
+api.attachMenuBots.ref = "attachMenuBots";
 
 // type AttachMenuBotsBot
-global.attachMenuBotsBot.ref = "attachMenuBotsBot";
+api.attachMenuBotsBot.ref = "attachMenuBotsBot";
 
 // type WebViewResult
-global.webViewResultUrl.ref = "webViewResultUrl";
+api.webViewResultUrl.ref = "webViewResultUrl";
 
 // type SimpleWebViewResult
-global.simpleWebViewResultUrl.ref = "simpleWebViewResultUrl";
+api.simpleWebViewResultUrl.ref = "simpleWebViewResultUrl";
 
 // type WebViewMessageSent
-global.webViewMessageSent.ref = "webViewMessageSent";
+api.webViewMessageSent.ref = "webViewMessageSent";
 
 // type BotMenuButton
-global.botMenuButtonDefault.ref = "botMenuButtonDefault";
-global.botMenuButtonCommands.ref = "botMenuButtonCommands";
-global.botMenuButton.ref = "botMenuButton";
+api.botMenuButtonDefault.ref = "botMenuButtonDefault";
+api.botMenuButtonCommands.ref = "botMenuButtonCommands";
+api.botMenuButton.ref = "botMenuButton";
 
 // type NotificationSound
-global.notificationSoundDefault.ref = "notificationSoundDefault";
-global.notificationSoundNone.ref = "notificationSoundNone";
-global.notificationSoundLocal.ref = "notificationSoundLocal";
-global.notificationSoundRingtone.ref = "notificationSoundRingtone";
+api.notificationSoundDefault.ref = "notificationSoundDefault";
+api.notificationSoundNone.ref = "notificationSoundNone";
+api.notificationSoundLocal.ref = "notificationSoundLocal";
+api.notificationSoundRingtone.ref = "notificationSoundRingtone";
 
 // type AttachMenuPeerType
-global.attachMenuPeerTypeSameBotPM.ref = "attachMenuPeerTypeSameBotPM";
-global.attachMenuPeerTypeBotPM.ref = "attachMenuPeerTypeBotPM";
-global.attachMenuPeerTypePM.ref = "attachMenuPeerTypePM";
-global.attachMenuPeerTypeChat.ref = "attachMenuPeerTypeChat";
-global.attachMenuPeerTypeBroadcast.ref = "attachMenuPeerTypeBroadcast";
+api.attachMenuPeerTypeSameBotPM.ref = "attachMenuPeerTypeSameBotPM";
+api.attachMenuPeerTypeBotPM.ref = "attachMenuPeerTypeBotPM";
+api.attachMenuPeerTypePM.ref = "attachMenuPeerTypePM";
+api.attachMenuPeerTypeChat.ref = "attachMenuPeerTypeChat";
+api.attachMenuPeerTypeBroadcast.ref = "attachMenuPeerTypeBroadcast";
 
 // type InputInvoice
-global.inputInvoiceMessage.ref = "inputInvoiceMessage";
-global.inputInvoiceSlug.ref = "inputInvoiceSlug";
-global.inputInvoicePremiumGiftCode.ref = "inputInvoicePremiumGiftCode";
+api.inputInvoiceMessage.ref = "inputInvoiceMessage";
+api.inputInvoiceSlug.ref = "inputInvoiceSlug";
+api.inputInvoicePremiumGiftCode.ref = "inputInvoicePremiumGiftCode";
 
 // type InputStorePaymentPurpose
-global.inputStorePaymentPremiumSubscription.ref = "inputStorePaymentPremiumSubscription";
-global.inputStorePaymentGiftPremium.ref = "inputStorePaymentGiftPremium";
-global.inputStorePaymentPremiumGiftCode.ref = "inputStorePaymentPremiumGiftCode";
-global.inputStorePaymentPremiumGiveaway.ref = "inputStorePaymentPremiumGiveaway";
+api.inputStorePaymentPremiumSubscription.ref = "inputStorePaymentPremiumSubscription";
+api.inputStorePaymentGiftPremium.ref = "inputStorePaymentGiftPremium";
+api.inputStorePaymentPremiumGiftCode.ref = "inputStorePaymentPremiumGiftCode";
+api.inputStorePaymentPremiumGiveaway.ref = "inputStorePaymentPremiumGiveaway";
 
 // type PremiumGiftOption
-global.premiumGiftOption.ref = "premiumGiftOption";
+api.premiumGiftOption.ref = "premiumGiftOption";
 
 // type PaymentFormMethod
-global.paymentFormMethod.ref = "paymentFormMethod";
+api.paymentFormMethod.ref = "paymentFormMethod";
 
 // type EmojiStatus
-global.emojiStatusEmpty.ref = "emojiStatusEmpty";
-global.emojiStatus.ref = "emojiStatus";
-global.emojiStatusUntil.ref = "emojiStatusUntil";
+api.emojiStatusEmpty.ref = "emojiStatusEmpty";
+api.emojiStatus.ref = "emojiStatus";
+api.emojiStatusUntil.ref = "emojiStatusUntil";
 
 // type Reaction
-global.reactionEmpty.ref = "reactionEmpty";
-global.reactionEmoji.ref = "reactionEmoji";
-global.reactionCustomEmoji.ref = "reactionCustomEmoji";
+api.reactionEmpty.ref = "reactionEmpty";
+api.reactionEmoji.ref = "reactionEmoji";
+api.reactionCustomEmoji.ref = "reactionCustomEmoji";
 
 // type ChatReactions
-global.chatReactionsNone.ref = "chatReactionsNone";
-global.chatReactionsAll.ref = "chatReactionsAll";
-global.chatReactionsSome.ref = "chatReactionsSome";
+api.chatReactionsNone.ref = "chatReactionsNone";
+api.chatReactionsAll.ref = "chatReactionsAll";
+api.chatReactionsSome.ref = "chatReactionsSome";
 
 // type EmailVerifyPurpose
-global.emailVerifyPurposeLoginSetup.ref = "emailVerifyPurposeLoginSetup";
-global.emailVerifyPurposeLoginChange.ref = "emailVerifyPurposeLoginChange";
-global.emailVerifyPurposePassport.ref = "emailVerifyPurposePassport";
+api.emailVerifyPurposeLoginSetup.ref = "emailVerifyPurposeLoginSetup";
+api.emailVerifyPurposeLoginChange.ref = "emailVerifyPurposeLoginChange";
+api.emailVerifyPurposePassport.ref = "emailVerifyPurposePassport";
 
 // type EmailVerification
-global.emailVerificationCode.ref = "emailVerificationCode";
-global.emailVerificationGoogle.ref = "emailVerificationGoogle";
-global.emailVerificationApple.ref = "emailVerificationApple";
+api.emailVerificationCode.ref = "emailVerificationCode";
+api.emailVerificationGoogle.ref = "emailVerificationGoogle";
+api.emailVerificationApple.ref = "emailVerificationApple";
 
 // type PremiumSubscriptionOption
-global.premiumSubscriptionOption.ref = "premiumSubscriptionOption";
+api.premiumSubscriptionOption.ref = "premiumSubscriptionOption";
 
 // type SendAsPeer
-global.sendAsPeer.ref = "sendAsPeer";
+api.sendAsPeer.ref = "sendAsPeer";
 
 // type MessageExtendedMedia
-global.messageExtendedMediaPreview.ref = "messageExtendedMediaPreview";
-global.messageExtendedMedia.ref = "messageExtendedMedia";
+api.messageExtendedMediaPreview.ref = "messageExtendedMediaPreview";
+api.messageExtendedMedia.ref = "messageExtendedMedia";
 
 // type StickerKeyword
-global.stickerKeyword.ref = "stickerKeyword";
+api.stickerKeyword.ref = "stickerKeyword";
 
 // type Username
-global.username.ref = "username";
+api.username.ref = "username";
 
 // type ForumTopic
-global.forumTopicDeleted.ref = "forumTopicDeleted";
-global.forumTopic.ref = "forumTopic";
+api.forumTopicDeleted.ref = "forumTopicDeleted";
+api.forumTopic.ref = "forumTopic";
 
 // type DefaultHistoryTTL
-global.defaultHistoryTTL.ref = "defaultHistoryTTL";
+api.defaultHistoryTTL.ref = "defaultHistoryTTL";
 
 // type ExportedContactToken
-global.exportedContactToken.ref = "exportedContactToken";
+api.exportedContactToken.ref = "exportedContactToken";
 
 // type RequestPeerType
-global.requestPeerTypeUser.ref = "requestPeerTypeUser";
-global.requestPeerTypeChat.ref = "requestPeerTypeChat";
-global.requestPeerTypeBroadcast.ref = "requestPeerTypeBroadcast";
+api.requestPeerTypeUser.ref = "requestPeerTypeUser";
+api.requestPeerTypeChat.ref = "requestPeerTypeChat";
+api.requestPeerTypeBroadcast.ref = "requestPeerTypeBroadcast";
 
 // type EmojiList
-global.emojiListNotModified.ref = "emojiListNotModified";
-global.emojiList.ref = "emojiList";
+api.emojiListNotModified.ref = "emojiListNotModified";
+api.emojiList.ref = "emojiList";
 
 // type EmojiGroup
-global.emojiGroup.ref = "emojiGroup";
+api.emojiGroup.ref = "emojiGroup";
 
 // type TextWithEntities
-global.textWithEntities.ref = "textWithEntities";
+api.textWithEntities.ref = "textWithEntities";
 
 // type AutoSaveSettings
-global.autoSaveSettings.ref = "autoSaveSettings";
+api.autoSaveSettings.ref = "autoSaveSettings";
 
 // type AutoSaveException
-global.autoSaveException.ref = "autoSaveException";
+api.autoSaveException.ref = "autoSaveException";
 
 // type InputBotApp
-global.inputBotAppID.ref = "inputBotAppID";
-global.inputBotAppShortName.ref = "inputBotAppShortName";
+api.inputBotAppID.ref = "inputBotAppID";
+api.inputBotAppShortName.ref = "inputBotAppShortName";
 
 // type BotApp
-global.botAppNotModified.ref = "botAppNotModified";
-global.botApp.ref = "botApp";
+api.botAppNotModified.ref = "botAppNotModified";
+api.botApp.ref = "botApp";
 
 // type AppWebViewResult
-global.appWebViewResultUrl.ref = "appWebViewResultUrl";
+api.appWebViewResultUrl.ref = "appWebViewResultUrl";
 
 // type InlineBotWebView
-global.inlineBotWebView.ref = "inlineBotWebView";
+api.inlineBotWebView.ref = "inlineBotWebView";
 
 // type ReadParticipantDate
-global.readParticipantDate.ref = "readParticipantDate";
+api.readParticipantDate.ref = "readParticipantDate";
 
 // type InputChatlist
-global.inputChatlistDialogFilter.ref = "inputChatlistDialogFilter";
+api.inputChatlistDialogFilter.ref = "inputChatlistDialogFilter";
 
 // type ExportedChatlistInvite
-global.exportedChatlistInvite.ref = "exportedChatlistInvite";
+api.exportedChatlistInvite.ref = "exportedChatlistInvite";
 
 // type MessagePeerVote
-global.messagePeerVote.ref = "messagePeerVote";
-global.messagePeerVoteInputOption.ref = "messagePeerVoteInputOption";
-global.messagePeerVoteMultiple.ref = "messagePeerVoteMultiple";
+api.messagePeerVote.ref = "messagePeerVote";
+api.messagePeerVoteInputOption.ref = "messagePeerVoteInputOption";
+api.messagePeerVoteMultiple.ref = "messagePeerVoteMultiple";
 
 // type SponsoredWebPage
-global.sponsoredWebPage.ref = "sponsoredWebPage";
+api.sponsoredWebPage.ref = "sponsoredWebPage";
 
 // type StoryViews
-global.storyViews.ref = "storyViews";
+api.storyViews.ref = "storyViews";
 
 // type StoryItem
-global.storyItemDeleted.ref = "storyItemDeleted";
-global.storyItemSkipped.ref = "storyItemSkipped";
-global.storyItem.ref = "storyItem";
+api.storyItemDeleted.ref = "storyItemDeleted";
+api.storyItemSkipped.ref = "storyItemSkipped";
+api.storyItem.ref = "storyItem";
 
 // type StoryView
-global.storyView.ref = "storyView";
-global.storyViewPublicForward.ref = "storyViewPublicForward";
-global.storyViewPublicRepost.ref = "storyViewPublicRepost";
+api.storyView.ref = "storyView";
+api.storyViewPublicForward.ref = "storyViewPublicForward";
+api.storyViewPublicRepost.ref = "storyViewPublicRepost";
 
 // type InputReplyTo
-global.inputReplyToMessage.ref = "inputReplyToMessage";
-global.inputReplyToStory.ref = "inputReplyToStory";
+api.inputReplyToMessage.ref = "inputReplyToMessage";
+api.inputReplyToStory.ref = "inputReplyToStory";
 
 // type ExportedStoryLink
-global.exportedStoryLink.ref = "exportedStoryLink";
+api.exportedStoryLink.ref = "exportedStoryLink";
 
 // type StoriesStealthMode
-global.storiesStealthMode.ref = "storiesStealthMode";
+api.storiesStealthMode.ref = "storiesStealthMode";
 
 // type MediaAreaCoordinates
-global.mediaAreaCoordinates.ref = "mediaAreaCoordinates";
+api.mediaAreaCoordinates.ref = "mediaAreaCoordinates";
 
 // type MediaArea
-global.mediaAreaVenue.ref = "mediaAreaVenue";
-global.inputMediaAreaVenue.ref = "inputMediaAreaVenue";
-global.mediaAreaGeoPoint.ref = "mediaAreaGeoPoint";
-global.mediaAreaSuggestedReaction.ref = "mediaAreaSuggestedReaction";
-global.mediaAreaChannelPost.ref = "mediaAreaChannelPost";
-global.inputMediaAreaChannelPost.ref = "inputMediaAreaChannelPost";
+api.mediaAreaVenue.ref = "mediaAreaVenue";
+api.inputMediaAreaVenue.ref = "inputMediaAreaVenue";
+api.mediaAreaGeoPoint.ref = "mediaAreaGeoPoint";
+api.mediaAreaSuggestedReaction.ref = "mediaAreaSuggestedReaction";
+api.mediaAreaChannelPost.ref = "mediaAreaChannelPost";
+api.inputMediaAreaChannelPost.ref = "inputMediaAreaChannelPost";
 
 // type PeerStories
-global.peerStories.ref = "peerStories";
+api.peerStories.ref = "peerStories";
 
 // type PremiumGiftCodeOption
-global.premiumGiftCodeOption.ref = "premiumGiftCodeOption";
+api.premiumGiftCodeOption.ref = "premiumGiftCodeOption";
 
 // type PrepaidGiveaway
-global.prepaidGiveaway.ref = "prepaidGiveaway";
+api.prepaidGiveaway.ref = "prepaidGiveaway";
 
 // type Boost
-global.boost.ref = "boost";
+api.boost.ref = "boost";
 
 // type MyBoost
-global.myBoost.ref = "myBoost";
+api.myBoost.ref = "myBoost";
 
 // type StoryFwdHeader
-global.storyFwdHeader.ref = "storyFwdHeader";
+api.storyFwdHeader.ref = "storyFwdHeader";
 
 // type PostInteractionCounters
-global.postInteractionCountersMessage.ref = "postInteractionCountersMessage";
-global.postInteractionCountersStory.ref = "postInteractionCountersStory";
+api.postInteractionCountersMessage.ref = "postInteractionCountersMessage";
+api.postInteractionCountersStory.ref = "postInteractionCountersStory";
 
 // type PublicForward
-global.publicForwardMessage.ref = "publicForwardMessage";
-global.publicForwardStory.ref = "publicForwardStory";
+api.publicForwardMessage.ref = "publicForwardMessage";
+api.publicForwardStory.ref = "publicForwardStory";
 
 // type PeerColor
-global.peerColor.ref = "peerColor";
+api.peerColor.ref = "peerColor";
 
 // type StoryReaction
-global.storyReaction.ref = "storyReaction";
-global.storyReactionPublicForward.ref = "storyReactionPublicForward";
-global.storyReactionPublicRepost.ref = "storyReactionPublicRepost";
+api.storyReaction.ref = "storyReaction";
+api.storyReactionPublicForward.ref = "storyReactionPublicForward";
+api.storyReactionPublicRepost.ref = "storyReactionPublicRepost";
 
 // type SavedDialog
-global.savedDialog.ref = "savedDialog";
+api.savedDialog.ref = "savedDialog";
 
 // type SavedReactionTag
-global.savedReactionTag.ref = "savedReactionTag";
+api.savedReactionTag.ref = "savedReactionTag";
 
 // type OutboxReadDate
-global.outboxReadDate.ref = "outboxReadDate";
+api.outboxReadDate.ref = "outboxReadDate";
 
 // type SmsJob
-global.smsJob.ref = "smsJob";
+api.smsJob.ref = "smsJob";
 
 // type BusinessWeeklyOpen
-global.businessWeeklyOpen.ref = "businessWeeklyOpen";
+api.businessWeeklyOpen.ref = "businessWeeklyOpen";
 
 // type BusinessWorkHours
-global.businessWorkHours.ref = "businessWorkHours";
+api.businessWorkHours.ref = "businessWorkHours";
 
 // type BusinessLocation
-global.businessLocation.ref = "businessLocation";
+api.businessLocation.ref = "businessLocation";
 
 // type InputBusinessRecipients
-global.inputBusinessRecipients.ref = "inputBusinessRecipients";
+api.inputBusinessRecipients.ref = "inputBusinessRecipients";
 
 // type BusinessRecipients
-global.businessRecipients.ref = "businessRecipients";
+api.businessRecipients.ref = "businessRecipients";
 
 // type BusinessAwayMessageSchedule
-global.businessAwayMessageScheduleAlways.ref = "businessAwayMessageScheduleAlways";
-global.businessAwayMessageScheduleOutsideWorkHours.ref = "businessAwayMessageScheduleOutsideWorkHours";
-global.businessAwayMessageScheduleCustom.ref = "businessAwayMessageScheduleCustom";
+api.businessAwayMessageScheduleAlways.ref = "businessAwayMessageScheduleAlways";
+api.businessAwayMessageScheduleOutsideWorkHours.ref = "businessAwayMessageScheduleOutsideWorkHours";
+api.businessAwayMessageScheduleCustom.ref = "businessAwayMessageScheduleCustom";
 
 // type InputBusinessGreetingMessage
-global.inputBusinessGreetingMessage.ref = "inputBusinessGreetingMessage";
+api.inputBusinessGreetingMessage.ref = "inputBusinessGreetingMessage";
 
 // type BusinessGreetingMessage
-global.businessGreetingMessage.ref = "businessGreetingMessage";
+api.businessGreetingMessage.ref = "businessGreetingMessage";
 
 // type InputBusinessAwayMessage
-global.inputBusinessAwayMessage.ref = "inputBusinessAwayMessage";
+api.inputBusinessAwayMessage.ref = "inputBusinessAwayMessage";
 
 // type BusinessAwayMessage
-global.businessAwayMessage.ref = "businessAwayMessage";
+api.businessAwayMessage.ref = "businessAwayMessage";
 
 // type Timezone
-global.timezone.ref = "timezone";
+api.timezone.ref = "timezone";
 
 // type QuickReply
-global.quickReply.ref = "quickReply";
+api.quickReply.ref = "quickReply";
 
 // type InputQuickReplyShortcut
-global.inputQuickReplyShortcut.ref = "inputQuickReplyShortcut";
-global.inputQuickReplyShortcutId.ref = "inputQuickReplyShortcutId";
+api.inputQuickReplyShortcut.ref = "inputQuickReplyShortcut";
+api.inputQuickReplyShortcutId.ref = "inputQuickReplyShortcutId";
 
 // type ConnectedBot
-global.connectedBot.ref = "connectedBot";
+api.connectedBot.ref = "connectedBot";
 
 // type Birthday
-global.birthday.ref = "birthday";
+api.birthday.ref = "birthday";
 
 // type BotBusinessConnection
-global.botBusinessConnection.ref = "botBusinessConnection";
+api.botBusinessConnection.ref = "botBusinessConnection";
 
 // type InputBusinessIntro
-global.inputBusinessIntro.ref = "inputBusinessIntro";
+api.inputBusinessIntro.ref = "inputBusinessIntro";
 
 // type BusinessIntro
-global.businessIntro.ref = "businessIntro";
+api.businessIntro.ref = "businessIntro";
 
 // type InputCollectible
-global.inputCollectibleUsername.ref = "inputCollectibleUsername";
-global.inputCollectiblePhone.ref = "inputCollectiblePhone";
+api.inputCollectibleUsername.ref = "inputCollectibleUsername";
+api.inputCollectiblePhone.ref = "inputCollectiblePhone";
 
 // type InputBusinessBotRecipients
-global.inputBusinessBotRecipients.ref = "inputBusinessBotRecipients";
+api.inputBusinessBotRecipients.ref = "inputBusinessBotRecipients";
 
 // type BusinessBotRecipients
-global.businessBotRecipients.ref = "businessBotRecipients";
+api.businessBotRecipients.ref = "businessBotRecipients";
 
 // type ContactBirthday
-global.contactBirthday.ref = "contactBirthday";
+api.contactBirthday.ref = "contactBirthday";
 
 // type MissingInvitee
-global.missingInvitee.ref = "missingInvitee";
+api.missingInvitee.ref = "missingInvitee";
 
 // type InputBusinessChatLink
-global.inputBusinessChatLink.ref = "inputBusinessChatLink";
+api.inputBusinessChatLink.ref = "inputBusinessChatLink";
 
 // type BusinessChatLink
-global.businessChatLink.ref = "businessChatLink";
+api.businessChatLink.ref = "businessChatLink";
 
 // type RequestedPeer
-global.requestedPeerUser.ref = "requestedPeerUser";
-global.requestedPeerChat.ref = "requestedPeerChat";
-global.requestedPeerChannel.ref = "requestedPeerChannel";
+api.requestedPeerUser.ref = "requestedPeerUser";
+api.requestedPeerChat.ref = "requestedPeerChat";
+api.requestedPeerChannel.ref = "requestedPeerChannel";
 
 // type SponsoredMessageReportOption
-global.sponsoredMessageReportOption.ref = "sponsoredMessageReportOption";
+api.sponsoredMessageReportOption.ref = "sponsoredMessageReportOption";
 
 // type BroadcastRevenueTransaction
-global.broadcastRevenueTransactionProceeds.ref = "broadcastRevenueTransactionProceeds";
-global.broadcastRevenueTransactionWithdrawal.ref = "broadcastRevenueTransactionWithdrawal";
-global.broadcastRevenueTransactionRefund.ref = "broadcastRevenueTransactionRefund";
-
-export default global;
+api.broadcastRevenueTransactionProceeds.ref = "broadcastRevenueTransactionProceeds";
+api.broadcastRevenueTransactionWithdrawal.ref = "broadcastRevenueTransactionWithdrawal";
+api.broadcastRevenueTransactionRefund.ref = "broadcastRevenueTransactionRefund";
 
 export const storage = {
   // type FileType
@@ -18786,14 +18784,14 @@ export const $decoder = new Map([
   }],
   [-1468331492, function decode$inputPeerUserFromMessage() {
     const _ = { _: "inputPeerUserFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.msg_id = this.int32();                // : number - int
     _.user_id = this.int64();               // : bigint - long
     return _;
   }],
   [-1121318848, function decode$inputPeerChannelFromMessage() {
     const _ = { _: "inputPeerChannelFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.msg_id = this.int32();                // : number - int
     _.channel_id = this.int64();            // : bigint - long
     return _;
@@ -18812,7 +18810,7 @@ export const $decoder = new Map([
   }],
   [497305826, function decode$inputUserFromMessage() {
     const _ = { _: "inputUserFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.msg_id = this.int32();                // : number - int
     _.user_id = this.int64();               // : bigint - long
     return _;
@@ -18847,8 +18845,8 @@ export const $decoder = new Map([
     const _ = { _: "inputMediaUploadedPhoto" }
     const flags = this.int32();
     if (flags & 4) _.spoiler = true         // ?: true - flags.2?true
-    _.file = this.object();                 // : global.InputFile - InputFile
-    if (flags & 1) _.stickers = this.vector(this.object) // ?: global.InputDocument[] - flags.0?Vector<InputDocument>
+    _.file = this.object();                 // : api.InputFile - InputFile
+    if (flags & 1) _.stickers = this.vector(this.object) // ?: api.InputDocument[] - flags.0?Vector<InputDocument>
     if (flags & 2) _.ttl_seconds = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -18856,13 +18854,13 @@ export const $decoder = new Map([
     const _ = { _: "inputMediaPhoto" }
     const flags = this.int32();
     if (flags & 2) _.spoiler = true         // ?: true - flags.1?true
-    _.id = this.object();                   // : global.InputPhoto - InputPhoto
+    _.id = this.object();                   // : api.InputPhoto - InputPhoto
     if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
     return _;
   }],
   [-104578748, function decode$inputMediaGeoPoint() {
     const _ = { _: "inputMediaGeoPoint" }
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     return _;
   }],
   [-122978821, function decode$inputMediaContact() {
@@ -18879,11 +18877,11 @@ export const $decoder = new Map([
     if (flags & 8) _.nosound_video = true   // ?: true - flags.3?true
     if (flags & 16) _.force_file = true     // ?: true - flags.4?true
     if (flags & 32) _.spoiler = true        // ?: true - flags.5?true
-    _.file = this.object();                 // : global.InputFile - InputFile
-    if (flags & 4) _.thumb = this.object()  // ?: global.InputFile - flags.2?InputFile
+    _.file = this.object();                 // : api.InputFile - InputFile
+    if (flags & 4) _.thumb = this.object()  // ?: api.InputFile - flags.2?InputFile
     _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
-    if (flags & 1) _.stickers = this.vector(this.object) // ?: global.InputDocument[] - flags.0?Vector<InputDocument>
+    _.attributes = this.vector(this.object); // : api.DocumentAttribute[] - Vector<DocumentAttribute>
+    if (flags & 1) _.stickers = this.vector(this.object) // ?: api.InputDocument[] - flags.0?Vector<InputDocument>
     if (flags & 2) _.ttl_seconds = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -18891,14 +18889,14 @@ export const $decoder = new Map([
     const _ = { _: "inputMediaDocument" }
     const flags = this.int32();
     if (flags & 4) _.spoiler = true         // ?: true - flags.2?true
-    _.id = this.object();                   // : global.InputDocument - InputDocument
+    _.id = this.object();                   // : api.InputDocument - InputDocument
     if (flags & 1) _.ttl_seconds = this.int32() // ?: number - flags.0?int
     if (flags & 2) _.query = this.string()  // ?: string - flags.1?string
     return _;
   }],
   [-1052959727, function decode$inputMediaVenue() {
     const _ = { _: "inputMediaVenue" }
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     _.title = this.string();                // : string - string
     _.address = this.string();              // : string - string
     _.provider = this.string();             // : string - string
@@ -18924,7 +18922,7 @@ export const $decoder = new Map([
   }],
   [-750828557, function decode$inputMediaGame() {
     const _ = { _: "inputMediaGame" }
-    _.id = this.object();                   // : global.InputGame - InputGame
+    _.id = this.object();                   // : api.InputGame - InputGame
     return _;
   }],
   [-1900697899, function decode$inputMediaInvoice() {
@@ -18932,20 +18930,20 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
+    if (flags & 1) _.photo = this.object()  // ?: api.InputWebDocument - flags.0?InputWebDocument
+    _.invoice = this.object();              // : api.Invoice - Invoice
     _.payload = this.bytes();               // : Uint8Array - bytes
     _.provider = this.string();             // : string - string
-    _.provider_data = this.object();        // : global.DataJSON - DataJSON
+    _.provider_data = this.object();        // : api.DataJSON - DataJSON
     if (flags & 2) _.start_param = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.extended_media = this.object() // ?: global.InputMedia - flags.2?InputMedia
+    if (flags & 4) _.extended_media = this.object() // ?: api.InputMedia - flags.2?InputMedia
     return _;
   }],
   [-1759532989, function decode$inputMediaGeoLive() {
     const _ = { _: "inputMediaGeoLive" }
     const flags = this.int32();
     if (flags & 1) _.stopped = true         // ?: true - flags.0?true
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     if (flags & 4) _.heading = this.int32() // ?: number - flags.2?int
     if (flags & 2) _.period = this.int32()  // ?: number - flags.1?int
     if (flags & 8) _.proximity_notification_radius = this.int32() // ?: number - flags.3?int
@@ -18954,10 +18952,10 @@ export const $decoder = new Map([
   [261416433, function decode$inputMediaPoll() {
     const _ = { _: "inputMediaPoll" }
     const flags = this.int32();
-    _.poll = this.object();                 // : global.Poll - Poll
+    _.poll = this.object();                 // : api.Poll - Poll
     if (flags & 1) _.correct_answers = this.vector(this.bytes) // ?: Uint8Array[] - flags.0?Vector<bytes>
     if (flags & 2) _.solution = this.string() // ?: string - flags.1?string
-    if (flags & 2) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2) _.solution_entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
     return _;
   }],
   [-428884101, function decode$inputMediaDice() {
@@ -18967,7 +18965,7 @@ export const $decoder = new Map([
   }],
   [-1979852936, function decode$inputMediaStory() {
     const _ = { _: "inputMediaStory" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.id = this.int32();                    // : number - int
     return _;
   }],
@@ -18986,15 +18984,15 @@ export const $decoder = new Map([
   [-1110593856, function decode$inputChatUploadedPhoto() {
     const _ = { _: "inputChatUploadedPhoto" }
     const flags = this.int32();
-    if (flags & 1) _.file = this.object()   // ?: global.InputFile - flags.0?InputFile
-    if (flags & 2) _.video = this.object()  // ?: global.InputFile - flags.1?InputFile
+    if (flags & 1) _.file = this.object()   // ?: api.InputFile - flags.0?InputFile
+    if (flags & 2) _.video = this.object()  // ?: api.InputFile - flags.1?InputFile
     if (flags & 4) _.video_start_ts = this.double() // ?: number - flags.2?double
-    if (flags & 8) _.video_emoji_markup = this.object() // ?: global.VideoSize - flags.3?VideoSize
+    if (flags & 8) _.video_emoji_markup = this.object() // ?: api.VideoSize - flags.3?VideoSize
     return _;
   }],
   [-1991004873, function decode$inputChatPhoto() {
     const _ = { _: "inputChatPhoto" }
-    _.id = this.object();                   // : global.InputPhoto - InputPhoto
+    _.id = this.object();                   // : api.InputPhoto - InputPhoto
     return _;
   }],
   [-457104426, function decode$inputGeoPointEmpty() {
@@ -19071,20 +19069,20 @@ export const $decoder = new Map([
     const _ = { _: "inputPeerPhotoFileLocation" }
     const flags = this.int32();
     if (flags & 1) _.big = true             // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.photo_id = this.int64();              // : bigint - long
     return _;
   }],
   [-1652231205, function decode$inputStickerSetThumb() {
     const _ = { _: "inputStickerSetThumb" }
-    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
+    _.stickerset = this.object();           // : api.InputStickerSet - InputStickerSet
     _.thumb_version = this.int32();         // : number - int
     return _;
   }],
   [93890858, function decode$inputGroupCallStream() {
     const _ = { _: "inputGroupCallStream" }
     const flags = this.int32();
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     _.time_ms = this.int64();               // : bigint - long
     _.scale = this.int32();                 // : number - int
     if (flags & 1) _.video_channel = this.int32() // ?: number - flags.0?int
@@ -19175,17 +19173,17 @@ export const $decoder = new Map([
     if (flags & 4) _.last_name = this.string() // ?: string - flags.2?string
     if (flags & 8) _.username = this.string() // ?: string - flags.3?string
     if (flags & 16) _.phone = this.string() // ?: string - flags.4?string
-    if (flags & 32) _.photo = this.object() // ?: global.UserProfilePhoto - flags.5?UserProfilePhoto
-    if (flags & 64) _.status = this.object() // ?: global.UserStatus - flags.6?UserStatus
+    if (flags & 32) _.photo = this.object() // ?: api.UserProfilePhoto - flags.5?UserProfilePhoto
+    if (flags & 64) _.status = this.object() // ?: api.UserStatus - flags.6?UserStatus
     if (flags & 16384) _.bot_info_version = this.int32() // ?: number - flags.14?int
-    if (flags & 262144) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.18?Vector<RestrictionReason>
+    if (flags & 262144) _.restriction_reason = this.vector(this.object) // ?: api.RestrictionReason[] - flags.18?Vector<RestrictionReason>
     if (flags & 524288) _.bot_inline_placeholder = this.string() // ?: string - flags.19?string
     if (flags & 4194304) _.lang_code = this.string() // ?: string - flags.22?string
-    if (flags & 1073741824) _.emoji_status = this.object() // ?: global.EmojiStatus - flags.30?EmojiStatus
-    if (flags2 & 1) _.usernames = this.vector(this.object) // ?: global.Username[] - flags2.0?Vector<Username>
+    if (flags & 1073741824) _.emoji_status = this.object() // ?: api.EmojiStatus - flags.30?EmojiStatus
+    if (flags2 & 1) _.usernames = this.vector(this.object) // ?: api.Username[] - flags2.0?Vector<Username>
     if (flags2 & 32) _.stories_max_id = this.int32() // ?: number - flags2.5?int
-    if (flags2 & 256) _.color = this.object() // ?: global.PeerColor - flags2.8?PeerColor
-    if (flags2 & 512) _.profile_color = this.object() // ?: global.PeerColor - flags2.9?PeerColor
+    if (flags2 & 256) _.color = this.object() // ?: api.PeerColor - flags2.8?PeerColor
+    if (flags2 & 512) _.profile_color = this.object() // ?: api.PeerColor - flags2.9?PeerColor
     return _;
   }],
   [1326562017, function decode$userProfilePhotoEmpty() {
@@ -19248,13 +19246,13 @@ export const $decoder = new Map([
     if (flags & 33554432) _.noforwards = true // ?: true - flags.25?true
     _.id = this.int64();                    // : bigint - long
     _.title = this.string();                // : string - string
-    _.photo = this.object();                // : global.ChatPhoto - ChatPhoto
+    _.photo = this.object();                // : api.ChatPhoto - ChatPhoto
     _.participants_count = this.int32();    // : number - int
     _.date = this.int32();                  // : number - int
     _.version = this.int32();               // : number - int
-    if (flags & 64) _.migrated_to = this.object() // ?: global.InputChannel - flags.6?InputChannel
-    if (flags & 16384) _.admin_rights = this.object() // ?: global.ChatAdminRights - flags.14?ChatAdminRights
-    if (flags & 262144) _.default_banned_rights = this.object() // ?: global.ChatBannedRights - flags.18?ChatBannedRights
+    if (flags & 64) _.migrated_to = this.object() // ?: api.InputChannel - flags.6?InputChannel
+    if (flags & 16384) _.admin_rights = this.object() // ?: api.ChatAdminRights - flags.14?ChatAdminRights
+    if (flags & 262144) _.default_banned_rights = this.object() // ?: api.ChatBannedRights - flags.18?ChatBannedRights
     return _;
   }],
   [1704108455, function decode$chatForbidden() {
@@ -19294,18 +19292,18 @@ export const $decoder = new Map([
     if (flags & 8192) _.access_hash = this.int64() // ?: bigint - flags.13?long
     _.title = this.string();                // : string - string
     if (flags & 64) _.username = this.string() // ?: string - flags.6?string
-    _.photo = this.object();                // : global.ChatPhoto - ChatPhoto
+    _.photo = this.object();                // : api.ChatPhoto - ChatPhoto
     _.date = this.int32();                  // : number - int
-    if (flags & 512) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.9?Vector<RestrictionReason>
-    if (flags & 16384) _.admin_rights = this.object() // ?: global.ChatAdminRights - flags.14?ChatAdminRights
-    if (flags & 32768) _.banned_rights = this.object() // ?: global.ChatBannedRights - flags.15?ChatBannedRights
-    if (flags & 262144) _.default_banned_rights = this.object() // ?: global.ChatBannedRights - flags.18?ChatBannedRights
+    if (flags & 512) _.restriction_reason = this.vector(this.object) // ?: api.RestrictionReason[] - flags.9?Vector<RestrictionReason>
+    if (flags & 16384) _.admin_rights = this.object() // ?: api.ChatAdminRights - flags.14?ChatAdminRights
+    if (flags & 32768) _.banned_rights = this.object() // ?: api.ChatBannedRights - flags.15?ChatBannedRights
+    if (flags & 262144) _.default_banned_rights = this.object() // ?: api.ChatBannedRights - flags.18?ChatBannedRights
     if (flags & 131072) _.participants_count = this.int32() // ?: number - flags.17?int
-    if (flags2 & 1) _.usernames = this.vector(this.object) // ?: global.Username[] - flags2.0?Vector<Username>
+    if (flags2 & 1) _.usernames = this.vector(this.object) // ?: api.Username[] - flags2.0?Vector<Username>
     if (flags2 & 16) _.stories_max_id = this.int32() // ?: number - flags2.4?int
-    if (flags2 & 128) _.color = this.object() // ?: global.PeerColor - flags2.7?PeerColor
-    if (flags2 & 256) _.profile_color = this.object() // ?: global.PeerColor - flags2.8?PeerColor
-    if (flags2 & 512) _.emoji_status = this.object() // ?: global.EmojiStatus - flags2.9?EmojiStatus
+    if (flags2 & 128) _.color = this.object() // ?: api.PeerColor - flags2.7?PeerColor
+    if (flags2 & 256) _.profile_color = this.object() // ?: api.PeerColor - flags2.8?PeerColor
+    if (flags2 & 512) _.emoji_status = this.object() // ?: api.EmojiStatus - flags2.9?EmojiStatus
     if (flags2 & 1024) _.level = this.int32() // ?: number - flags2.10?int
     return _;
   }],
@@ -19328,20 +19326,20 @@ export const $decoder = new Map([
     if (flags & 524288) _.translations_disabled = true // ?: true - flags.19?true
     _.id = this.int64();                    // : bigint - long
     _.about = this.string();                // : string - string
-    _.participants = this.object();         // : global.ChatParticipants - ChatParticipants
-    if (flags & 4) _.chat_photo = this.object() // ?: global.Photo - flags.2?Photo
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    if (flags & 8192) _.exported_invite = this.object() // ?: global.ExportedChatInvite - flags.13?ExportedChatInvite
-    if (flags & 8) _.bot_info = this.vector(this.object) // ?: global.BotInfo[] - flags.3?Vector<BotInfo>
+    _.participants = this.object();         // : api.ChatParticipants - ChatParticipants
+    if (flags & 4) _.chat_photo = this.object() // ?: api.Photo - flags.2?Photo
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
+    if (flags & 8192) _.exported_invite = this.object() // ?: api.ExportedChatInvite - flags.13?ExportedChatInvite
+    if (flags & 8) _.bot_info = this.vector(this.object) // ?: api.BotInfo[] - flags.3?Vector<BotInfo>
     if (flags & 64) _.pinned_msg_id = this.int32() // ?: number - flags.6?int
     if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
-    if (flags & 4096) _.call = this.object() // ?: global.InputGroupCall - flags.12?InputGroupCall
+    if (flags & 4096) _.call = this.object() // ?: api.InputGroupCall - flags.12?InputGroupCall
     if (flags & 16384) _.ttl_period = this.int32() // ?: number - flags.14?int
-    if (flags & 32768) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.15?Peer
+    if (flags & 32768) _.groupcall_default_join_as = this.object() // ?: api.Peer - flags.15?Peer
     if (flags & 65536) _.theme_emoticon = this.string() // ?: string - flags.16?string
     if (flags & 131072) _.requests_pending = this.int32() // ?: number - flags.17?int
     if (flags & 131072) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.17?Vector<long>
-    if (flags & 262144) _.available_reactions = this.object() // ?: global.ChatReactions - flags.18?ChatReactions
+    if (flags & 262144) _.available_reactions = this.object() // ?: api.ChatReactions - flags.18?ChatReactions
     return _;
   }],
   [1153455271, function decode$channelFull() {
@@ -19374,36 +19372,36 @@ export const $decoder = new Map([
     _.read_inbox_max_id = this.int32();     // : number - int
     _.read_outbox_max_id = this.int32();    // : number - int
     _.unread_count = this.int32();          // : number - int
-    _.chat_photo = this.object();           // : global.Photo - Photo
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    if (flags & 8388608) _.exported_invite = this.object() // ?: global.ExportedChatInvite - flags.23?ExportedChatInvite
-    _.bot_info = this.vector(this.object);  // : global.BotInfo[] - Vector<BotInfo>
+    _.chat_photo = this.object();           // : api.Photo - Photo
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
+    if (flags & 8388608) _.exported_invite = this.object() // ?: api.ExportedChatInvite - flags.23?ExportedChatInvite
+    _.bot_info = this.vector(this.object);  // : api.BotInfo[] - Vector<BotInfo>
     if (flags & 16) _.migrated_from_chat_id = this.int64() // ?: bigint - flags.4?long
     if (flags & 16) _.migrated_from_max_id = this.int32() // ?: number - flags.4?int
     if (flags & 32) _.pinned_msg_id = this.int32() // ?: number - flags.5?int
-    if (flags & 256) _.stickerset = this.object() // ?: global.StickerSet - flags.8?StickerSet
+    if (flags & 256) _.stickerset = this.object() // ?: api.StickerSet - flags.8?StickerSet
     if (flags & 512) _.available_min_id = this.int32() // ?: number - flags.9?int
     if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
     if (flags & 16384) _.linked_chat_id = this.int64() // ?: bigint - flags.14?long
-    if (flags & 32768) _.location = this.object() // ?: global.ChannelLocation - flags.15?ChannelLocation
+    if (flags & 32768) _.location = this.object() // ?: api.ChannelLocation - flags.15?ChannelLocation
     if (flags & 131072) _.slowmode_seconds = this.int32() // ?: number - flags.17?int
     if (flags & 262144) _.slowmode_next_send_date = this.int32() // ?: number - flags.18?int
     if (flags & 4096) _.stats_dc = this.int32() // ?: number - flags.12?int
     _.pts = this.int32();                   // : number - int
-    if (flags & 2097152) _.call = this.object() // ?: global.InputGroupCall - flags.21?InputGroupCall
+    if (flags & 2097152) _.call = this.object() // ?: api.InputGroupCall - flags.21?InputGroupCall
     if (flags & 16777216) _.ttl_period = this.int32() // ?: number - flags.24?int
     if (flags & 33554432) _.pending_suggestions = this.vector(this.string) // ?: string[] - flags.25?Vector<string>
-    if (flags & 67108864) _.groupcall_default_join_as = this.object() // ?: global.Peer - flags.26?Peer
+    if (flags & 67108864) _.groupcall_default_join_as = this.object() // ?: api.Peer - flags.26?Peer
     if (flags & 134217728) _.theme_emoticon = this.string() // ?: string - flags.27?string
     if (flags & 268435456) _.requests_pending = this.int32() // ?: number - flags.28?int
     if (flags & 268435456) _.recent_requesters = this.vector(this.int64) // ?: bigint[] - flags.28?Vector<long>
-    if (flags & 536870912) _.default_send_as = this.object() // ?: global.Peer - flags.29?Peer
-    if (flags & 1073741824) _.available_reactions = this.object() // ?: global.ChatReactions - flags.30?ChatReactions
-    if (flags2 & 16) _.stories = this.object() // ?: global.PeerStories - flags2.4?PeerStories
-    if (flags2 & 128) _.wallpaper = this.object() // ?: global.WallPaper - flags2.7?WallPaper
+    if (flags & 536870912) _.default_send_as = this.object() // ?: api.Peer - flags.29?Peer
+    if (flags & 1073741824) _.available_reactions = this.object() // ?: api.ChatReactions - flags.30?ChatReactions
+    if (flags2 & 16) _.stories = this.object() // ?: api.PeerStories - flags2.4?PeerStories
+    if (flags2 & 128) _.wallpaper = this.object() // ?: api.WallPaper - flags2.7?WallPaper
     if (flags2 & 256) _.boosts_applied = this.int32() // ?: number - flags2.8?int
     if (flags2 & 512) _.boosts_unrestrict = this.int32() // ?: number - flags2.9?int
-    if (flags2 & 1024) _.emojiset = this.object() // ?: global.StickerSet - flags2.10?StickerSet
+    if (flags2 & 1024) _.emojiset = this.object() // ?: api.StickerSet - flags2.10?StickerSet
     return _;
   }],
   [-1070776313, function decode$chatParticipant() {
@@ -19429,13 +19427,13 @@ export const $decoder = new Map([
     const _ = { _: "chatParticipantsForbidden" }
     const flags = this.int32();
     _.chat_id = this.int64();               // : bigint - long
-    if (flags & 1) _.self_participant = this.object() // ?: global.ChatParticipant - flags.0?ChatParticipant
+    if (flags & 1) _.self_participant = this.object() // ?: api.ChatParticipant - flags.0?ChatParticipant
     return _;
   }],
   [1018991608, function decode$chatParticipants() {
     const _ = { _: "chatParticipants" }
     _.chat_id = this.int64();               // : bigint - long
-    _.participants = this.vector(this.object); // : global.ChatParticipant[] - Vector<ChatParticipant>
+    _.participants = this.vector(this.object); // : api.ChatParticipant[] - Vector<ChatParticipant>
     _.version = this.int32();               // : number - int
     return _;
   }],
@@ -19455,7 +19453,7 @@ export const $decoder = new Map([
     const _ = { _: "messageEmpty" }
     const flags = this.int32();
     _.id = this.int32();                    // : number - int
-    if (flags & 1) _.peer_id = this.object() // ?: global.Peer - flags.0?Peer
+    if (flags & 1) _.peer_id = this.object() // ?: api.Peer - flags.0?Peer
     return _;
   }],
   [592953125, function decode$message() {
@@ -19475,27 +19473,27 @@ export const $decoder = new Map([
     const flags2 = this.int32();
     if (flags2 & 2) _.offline = true        // ?: true - flags2.1?true
     _.id = this.int32();                    // : number - int
-    if (flags & 256) _.from_id = this.object() // ?: global.Peer - flags.8?Peer
+    if (flags & 256) _.from_id = this.object() // ?: api.Peer - flags.8?Peer
     if (flags & 536870912) _.from_boosts_applied = this.int32() // ?: number - flags.29?int
-    _.peer_id = this.object();              // : global.Peer - Peer
-    if (flags & 268435456) _.saved_peer_id = this.object() // ?: global.Peer - flags.28?Peer
-    if (flags & 4) _.fwd_from = this.object() // ?: global.MessageFwdHeader - flags.2?MessageFwdHeader
+    _.peer_id = this.object();              // : api.Peer - Peer
+    if (flags & 268435456) _.saved_peer_id = this.object() // ?: api.Peer - flags.28?Peer
+    if (flags & 4) _.fwd_from = this.object() // ?: api.MessageFwdHeader - flags.2?MessageFwdHeader
     if (flags & 2048) _.via_bot_id = this.int64() // ?: bigint - flags.11?long
     if (flags2 & 1) _.via_business_bot_id = this.int64() // ?: bigint - flags2.0?long
-    if (flags & 8) _.reply_to = this.object() // ?: global.MessageReplyHeader - flags.3?MessageReplyHeader
+    if (flags & 8) _.reply_to = this.object() // ?: api.MessageReplyHeader - flags.3?MessageReplyHeader
     _.date = this.int32();                  // : number - int
     _.message = this.string();              // : string - string
-    if (flags & 512) _.media = this.object() // ?: global.MessageMedia - flags.9?MessageMedia
-    if (flags & 64) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.6?ReplyMarkup
-    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 512) _.media = this.object() // ?: api.MessageMedia - flags.9?MessageMedia
+    if (flags & 64) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.6?ReplyMarkup
+    if (flags & 128) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.7?Vector<MessageEntity>
     if (flags & 1024) _.views = this.int32() // ?: number - flags.10?int
     if (flags & 1024) _.forwards = this.int32() // ?: number - flags.10?int
-    if (flags & 8388608) _.replies = this.object() // ?: global.MessageReplies - flags.23?MessageReplies
+    if (flags & 8388608) _.replies = this.object() // ?: api.MessageReplies - flags.23?MessageReplies
     if (flags & 32768) _.edit_date = this.int32() // ?: number - flags.15?int
     if (flags & 65536) _.post_author = this.string() // ?: string - flags.16?string
     if (flags & 131072) _.grouped_id = this.int64() // ?: bigint - flags.17?long
-    if (flags & 1048576) _.reactions = this.object() // ?: global.MessageReactions - flags.20?MessageReactions
-    if (flags & 4194304) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.22?Vector<RestrictionReason>
+    if (flags & 1048576) _.reactions = this.object() // ?: api.MessageReactions - flags.20?MessageReactions
+    if (flags & 4194304) _.restriction_reason = this.vector(this.object) // ?: api.RestrictionReason[] - flags.22?Vector<RestrictionReason>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     if (flags & 1073741824) _.quick_reply_shortcut_id = this.int32() // ?: number - flags.30?int
     return _;
@@ -19510,11 +19508,11 @@ export const $decoder = new Map([
     if (flags & 16384) _.post = true        // ?: true - flags.14?true
     if (flags & 524288) _.legacy = true     // ?: true - flags.19?true
     _.id = this.int32();                    // : number - int
-    if (flags & 256) _.from_id = this.object() // ?: global.Peer - flags.8?Peer
-    _.peer_id = this.object();              // : global.Peer - Peer
-    if (flags & 8) _.reply_to = this.object() // ?: global.MessageReplyHeader - flags.3?MessageReplyHeader
+    if (flags & 256) _.from_id = this.object() // ?: api.Peer - flags.8?Peer
+    _.peer_id = this.object();              // : api.Peer - Peer
+    if (flags & 8) _.reply_to = this.object() // ?: api.MessageReplyHeader - flags.3?MessageReplyHeader
     _.date = this.int32();                  // : number - int
-    _.action = this.object();               // : global.MessageAction - MessageAction
+    _.action = this.object();               // : api.MessageAction - MessageAction
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     return _;
   }],
@@ -19525,13 +19523,13 @@ export const $decoder = new Map([
     const _ = { _: "messageMediaPhoto" }
     const flags = this.int32();
     if (flags & 8) _.spoiler = true         // ?: true - flags.3?true
-    if (flags & 1) _.photo = this.object()  // ?: global.Photo - flags.0?Photo
+    if (flags & 1) _.photo = this.object()  // ?: api.Photo - flags.0?Photo
     if (flags & 4) _.ttl_seconds = this.int32() // ?: number - flags.2?int
     return _;
   }],
   [1457575028, function decode$messageMediaGeo() {
     const _ = { _: "messageMediaGeo" }
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     return _;
   }],
   [1882335561, function decode$messageMediaContact() {
@@ -19554,8 +19552,8 @@ export const $decoder = new Map([
     if (flags & 64) _.video = true          // ?: true - flags.6?true
     if (flags & 128) _.round = true         // ?: true - flags.7?true
     if (flags & 256) _.voice = true         // ?: true - flags.8?true
-    if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
-    if (flags & 32) _.alt_document = this.object() // ?: global.Document - flags.5?Document
+    if (flags & 1) _.document = this.object() // ?: api.Document - flags.0?Document
+    if (flags & 32) _.alt_document = this.object() // ?: api.Document - flags.5?Document
     if (flags & 4) _.ttl_seconds = this.int32() // ?: number - flags.2?int
     return _;
   }],
@@ -19566,12 +19564,12 @@ export const $decoder = new Map([
     if (flags & 2) _.force_small_media = true // ?: true - flags.1?true
     if (flags & 8) _.manual = true          // ?: true - flags.3?true
     if (flags & 16) _.safe = true           // ?: true - flags.4?true
-    _.webpage = this.object();              // : global.WebPage - WebPage
+    _.webpage = this.object();              // : api.WebPage - WebPage
     return _;
   }],
   [784356159, function decode$messageMediaVenue() {
     const _ = { _: "messageMediaVenue" }
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     _.title = this.string();                // : string - string
     _.address = this.string();              // : string - string
     _.provider = this.string();             // : string - string
@@ -19581,7 +19579,7 @@ export const $decoder = new Map([
   }],
   [-38694904, function decode$messageMediaGame() {
     const _ = { _: "messageMediaGame" }
-    _.game = this.object();                 // : global.Game - Game
+    _.game = this.object();                 // : api.Game - Game
     return _;
   }],
   [-156940077, function decode$messageMediaInvoice() {
@@ -19591,18 +19589,18 @@ export const $decoder = new Map([
     if (flags & 8) _.test = true            // ?: true - flags.3?true
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
+    if (flags & 1) _.photo = this.object()  // ?: api.WebDocument - flags.0?WebDocument
     if (flags & 4) _.receipt_msg_id = this.int32() // ?: number - flags.2?int
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
     _.start_param = this.string();          // : string - string
-    if (flags & 16) _.extended_media = this.object() // ?: global.MessageExtendedMedia - flags.4?MessageExtendedMedia
+    if (flags & 16) _.extended_media = this.object() // ?: api.MessageExtendedMedia - flags.4?MessageExtendedMedia
     return _;
   }],
   [-1186937242, function decode$messageMediaGeoLive() {
     const _ = { _: "messageMediaGeoLive" }
     const flags = this.int32();
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     if (flags & 1) _.heading = this.int32() // ?: number - flags.0?int
     _.period = this.int32();                // : number - int
     if (flags & 2) _.proximity_notification_radius = this.int32() // ?: number - flags.1?int
@@ -19610,8 +19608,8 @@ export const $decoder = new Map([
   }],
   [1272375192, function decode$messageMediaPoll() {
     const _ = { _: "messageMediaPoll" }
-    _.poll = this.object();                 // : global.Poll - Poll
-    _.results = this.object();              // : global.PollResults - PollResults
+    _.poll = this.object();                 // : api.Poll - Poll
+    _.results = this.object();              // : api.PollResults - PollResults
     return _;
   }],
   [1065280907, function decode$messageMediaDice() {
@@ -19624,9 +19622,9 @@ export const $decoder = new Map([
     const _ = { _: "messageMediaStory" }
     const flags = this.int32();
     if (flags & 2) _.via_mention = true     // ?: true - flags.1?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.id = this.int32();                    // : number - int
-    if (flags & 1) _.story = this.object()  // ?: global.StoryItem - flags.0?StoryItem
+    if (flags & 1) _.story = this.object()  // ?: api.StoryItem - flags.0?StoryItem
     return _;
   }],
   [-626162256, function decode$messageMediaGiveaway() {
@@ -19674,7 +19672,7 @@ export const $decoder = new Map([
   }],
   [2144015272, function decode$messageActionChatEditPhoto() {
     const _ = { _: "messageActionChatEditPhoto" }
-    _.photo = this.object();                // : global.Photo - Photo
+    _.photo = this.object();                // : api.Photo - Photo
     return _;
   }],
   [-1780220945, function decode$messageActionChatDeletePhoto() {
@@ -19731,9 +19729,9 @@ export const $decoder = new Map([
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
     _.payload = this.bytes();               // : Uint8Array - bytes
-    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 1) _.info = this.object()   // ?: api.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
-    _.charge = this.object();               // : global.PaymentCharge - PaymentCharge
+    _.charge = this.object();               // : api.PaymentCharge - PaymentCharge
     return _;
   }],
   [-1776926890, function decode$messageActionPaymentSent() {
@@ -19751,7 +19749,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 4) _.video = true           // ?: true - flags.2?true
     _.call_id = this.int64();               // : bigint - long
-    if (flags & 1) _.reason = this.object() // ?: global.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
+    if (flags & 1) _.reason = this.object() // ?: api.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
     if (flags & 2) _.duration = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -19769,18 +19767,18 @@ export const $decoder = new Map([
     if (flags & 2) _.attach_menu = true     // ?: true - flags.1?true
     if (flags & 8) _.from_request = true    // ?: true - flags.3?true
     if (flags & 1) _.domain = this.string() // ?: string - flags.0?string
-    if (flags & 4) _.app = this.object()    // ?: global.BotApp - flags.2?BotApp
+    if (flags & 4) _.app = this.object()    // ?: api.BotApp - flags.2?BotApp
     return _;
   }],
   [455635795, function decode$messageActionSecureValuesSentMe() {
     const _ = { _: "messageActionSecureValuesSentMe" }
-    _.values = this.vector(this.object);    // : global.SecureValue[] - Vector<SecureValue>
-    _.credentials = this.object();          // : global.SecureCredentialsEncrypted - SecureCredentialsEncrypted
+    _.values = this.vector(this.object);    // : api.SecureValue[] - Vector<SecureValue>
+    _.credentials = this.object();          // : api.SecureCredentialsEncrypted - SecureCredentialsEncrypted
     return _;
   }],
   [-648257196, function decode$messageActionSecureValuesSent() {
     const _ = { _: "messageActionSecureValuesSent" }
-    _.types = this.vector(this.object);     // : global.SecureValueType[] - Vector<SecureValueType>
+    _.types = this.vector(this.object);     // : api.SecureValueType[] - Vector<SecureValueType>
     return _;
   }],
   [-202219658, function decode$messageActionContactSignUp() {
@@ -19788,21 +19786,21 @@ export const $decoder = new Map([
   }],
   [-1730095465, function decode$messageActionGeoProximityReached() {
     const _ = { _: "messageActionGeoProximityReached" }
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.to_id = this.object();                // : global.Peer - Peer
+    _.from_id = this.object();              // : api.Peer - Peer
+    _.to_id = this.object();                // : api.Peer - Peer
     _.distance = this.int32();              // : number - int
     return _;
   }],
   [2047704898, function decode$messageActionGroupCall() {
     const _ = { _: "messageActionGroupCall" }
     const flags = this.int32();
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     if (flags & 1) _.duration = this.int32() // ?: number - flags.0?int
     return _;
   }],
   [1345295095, function decode$messageActionInviteToGroupCall() {
     const _ = { _: "messageActionInviteToGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     _.users = this.vector(this.int64);      // : bigint[] - Vector<long>
     return _;
   }],
@@ -19815,7 +19813,7 @@ export const $decoder = new Map([
   }],
   [-1281329567, function decode$messageActionGroupCallScheduled() {
     const _ = { _: "messageActionGroupCallScheduled" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     _.schedule_date = this.int32();         // : number - int
     return _;
   }],
@@ -19867,13 +19865,13 @@ export const $decoder = new Map([
   }],
   [1474192222, function decode$messageActionSuggestProfilePhoto() {
     const _ = { _: "messageActionSuggestProfilePhoto" }
-    _.photo = this.object();                // : global.Photo - Photo
+    _.photo = this.object();                // : api.Photo - Photo
     return _;
   }],
   [827428507, function decode$messageActionRequestedPeer() {
     const _ = { _: "messageActionRequestedPeer" }
     _.button_id = this.int32();             // : number - int
-    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
+    _.peers = this.vector(this.object);     // : api.Peer[] - Vector<Peer>
     return _;
   }],
   [1348510708, function decode$messageActionSetChatWallPaper() {
@@ -19881,7 +19879,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.same = true            // ?: true - flags.0?true
     if (flags & 2) _.for_both = true        // ?: true - flags.1?true
-    _.wallpaper = this.object();            // : global.WallPaper - WallPaper
+    _.wallpaper = this.object();            // : api.WallPaper - WallPaper
     return _;
   }],
   [1737240073, function decode$messageActionGiftCode() {
@@ -19889,7 +19887,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.via_giveaway = true    // ?: true - flags.0?true
     if (flags & 4) _.unclaimed = true       // ?: true - flags.2?true
-    if (flags & 2) _.boost_peer = this.object() // ?: global.Peer - flags.1?Peer
+    if (flags & 2) _.boost_peer = this.object() // ?: api.Peer - flags.1?Peer
     _.months = this.int32();                // : number - int
     _.slug = this.string();                 // : string - string
     if (flags & 4) _.currency = this.string() // ?: string - flags.2?string
@@ -19915,7 +19913,7 @@ export const $decoder = new Map([
   [-1816979384, function decode$messageActionRequestedPeerSentMe() {
     const _ = { _: "messageActionRequestedPeerSentMe" }
     _.button_id = this.int32();             // : number - int
-    _.peers = this.vector(this.object);     // : global.RequestedPeer[] - Vector<RequestedPeer>
+    _.peers = this.vector(this.object);     // : api.RequestedPeer[] - Vector<RequestedPeer>
     return _;
   }],
   [-712374074, function decode$dialog() {
@@ -19924,16 +19922,16 @@ export const $decoder = new Map([
     if (flags & 4) _.pinned = true          // ?: true - flags.2?true
     if (flags & 8) _.unread_mark = true     // ?: true - flags.3?true
     if (flags & 64) _.view_forum_as_messages = true // ?: true - flags.6?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.top_message = this.int32();           // : number - int
     _.read_inbox_max_id = this.int32();     // : number - int
     _.read_outbox_max_id = this.int32();    // : number - int
     _.unread_count = this.int32();          // : number - int
     _.unread_mentions_count = this.int32(); // : number - int
     _.unread_reactions_count = this.int32(); // : number - int
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
     if (flags & 1) _.pts = this.int32()     // ?: number - flags.0?int
-    if (flags & 2) _.draft = this.object()  // ?: global.DraftMessage - flags.1?DraftMessage
+    if (flags & 2) _.draft = this.object()  // ?: api.DraftMessage - flags.1?DraftMessage
     if (flags & 16) _.folder_id = this.int32() // ?: number - flags.4?int
     if (flags & 32) _.ttl_period = this.int32() // ?: number - flags.5?int
     return _;
@@ -19942,8 +19940,8 @@ export const $decoder = new Map([
     const _ = { _: "dialogFolder" }
     const flags = this.int32();
     if (flags & 4) _.pinned = true          // ?: true - flags.2?true
-    _.folder = this.object();               // : global.Folder - Folder
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.folder = this.object();               // : api.Folder - Folder
+    _.peer = this.object();                 // : api.Peer - Peer
     _.top_message = this.int32();           // : number - int
     _.unread_muted_peers_count = this.int32(); // : number - int
     _.unread_unmuted_peers_count = this.int32(); // : number - int
@@ -19964,8 +19962,8 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     _.file_reference = this.bytes();        // : Uint8Array - bytes
     _.date = this.int32();                  // : number - int
-    _.sizes = this.vector(this.object);     // : global.PhotoSize[] - Vector<PhotoSize>
-    if (flags & 2) _.video_sizes = this.vector(this.object) // ?: global.VideoSize[] - flags.1?Vector<VideoSize>
+    _.sizes = this.vector(this.object);     // : api.PhotoSize[] - Vector<PhotoSize>
+    if (flags & 2) _.video_sizes = this.vector(this.object) // ?: api.VideoSize[] - flags.1?Vector<VideoSize>
     _.dc_id = this.int32();                 // : number - int
     return _;
   }],
@@ -20043,7 +20041,7 @@ export const $decoder = new Map([
     if (flags & 2) _.otherwise_relogin_days = this.int32() // ?: number - flags.1?int
     if (flags & 1) _.tmp_sessions = this.int32() // ?: number - flags.0?int
     if (flags & 4) _.future_auth_token = this.bytes() // ?: Uint8Array - flags.2?bytes
-    _.user = this.object();                 // : global.User - User
+    _.user = this.object();                 // : api.User - User
     return _;
   }],
   [1148485274, function decode$auth__authorizationSignUpRequired() {
@@ -20060,7 +20058,7 @@ export const $decoder = new Map([
   }],
   [-1195615476, function decode$inputNotifyPeer() {
     const _ = { _: "inputNotifyPeer" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     return _;
   }],
   [423314455, function decode$inputNotifyUsers() {
@@ -20074,7 +20072,7 @@ export const $decoder = new Map([
   }],
   [1548122514, function decode$inputNotifyForumTopic() {
     const _ = { _: "inputNotifyForumTopic" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.top_msg_id = this.int32();            // : number - int
     return _;
   }],
@@ -20084,10 +20082,10 @@ export const $decoder = new Map([
     if (flags & 1) _.show_previews = this.bool() // ?: boolean - flags.0?Bool
     if (flags & 2) _.silent = this.bool()   // ?: boolean - flags.1?Bool
     if (flags & 4) _.mute_until = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.sound = this.object()  // ?: global.NotificationSound - flags.3?NotificationSound
+    if (flags & 8) _.sound = this.object()  // ?: api.NotificationSound - flags.3?NotificationSound
     if (flags & 64) _.stories_muted = this.bool() // ?: boolean - flags.6?Bool
     if (flags & 128) _.stories_hide_sender = this.bool() // ?: boolean - flags.7?Bool
-    if (flags & 256) _.stories_sound = this.object() // ?: global.NotificationSound - flags.8?NotificationSound
+    if (flags & 256) _.stories_sound = this.object() // ?: api.NotificationSound - flags.8?NotificationSound
     return _;
   }],
   [-1721619444, function decode$peerNotifySettings() {
@@ -20096,14 +20094,14 @@ export const $decoder = new Map([
     if (flags & 1) _.show_previews = this.bool() // ?: boolean - flags.0?Bool
     if (flags & 2) _.silent = this.bool()   // ?: boolean - flags.1?Bool
     if (flags & 4) _.mute_until = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.ios_sound = this.object() // ?: global.NotificationSound - flags.3?NotificationSound
-    if (flags & 16) _.android_sound = this.object() // ?: global.NotificationSound - flags.4?NotificationSound
-    if (flags & 32) _.other_sound = this.object() // ?: global.NotificationSound - flags.5?NotificationSound
+    if (flags & 8) _.ios_sound = this.object() // ?: api.NotificationSound - flags.3?NotificationSound
+    if (flags & 16) _.android_sound = this.object() // ?: api.NotificationSound - flags.4?NotificationSound
+    if (flags & 32) _.other_sound = this.object() // ?: api.NotificationSound - flags.5?NotificationSound
     if (flags & 64) _.stories_muted = this.bool() // ?: boolean - flags.6?Bool
     if (flags & 128) _.stories_hide_sender = this.bool() // ?: boolean - flags.7?Bool
-    if (flags & 256) _.stories_ios_sound = this.object() // ?: global.NotificationSound - flags.8?NotificationSound
-    if (flags & 512) _.stories_android_sound = this.object() // ?: global.NotificationSound - flags.9?NotificationSound
-    if (flags & 1024) _.stories_other_sound = this.object() // ?: global.NotificationSound - flags.10?NotificationSound
+    if (flags & 256) _.stories_ios_sound = this.object() // ?: api.NotificationSound - flags.8?NotificationSound
+    if (flags & 512) _.stories_android_sound = this.object() // ?: api.NotificationSound - flags.9?NotificationSound
+    if (flags & 1024) _.stories_other_sound = this.object() // ?: api.NotificationSound - flags.10?NotificationSound
     return _;
   }],
   [-1395233698, function decode$peerSettings() {
@@ -20137,8 +20135,8 @@ export const $decoder = new Map([
     if (flags & 16) _.dark = true           // ?: true - flags.4?true
     _.access_hash = this.int64();           // : bigint - long
     _.slug = this.string();                 // : string - string
-    _.document = this.object();             // : global.Document - Document
-    if (flags & 4) _.settings = this.object() // ?: global.WallPaperSettings - flags.2?WallPaperSettings
+    _.document = this.object();             // : api.Document - Document
+    if (flags & 4) _.settings = this.object() // ?: api.WallPaperSettings - flags.2?WallPaperSettings
     return _;
   }],
   [-528465642, function decode$wallPaperNoFile() {
@@ -20147,7 +20145,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 2) _.default = true         // ?: true - flags.1?true
     if (flags & 16) _.dark = true           // ?: true - flags.4?true
-    if (flags & 4) _.settings = this.object() // ?: global.WallPaperSettings - flags.2?WallPaperSettings
+    if (flags & 4) _.settings = this.object() // ?: api.WallPaperSettings - flags.2?WallPaperSettings
     return _;
   }],
   [1490799288, function decode$inputReportReasonSpam() {
@@ -20199,29 +20197,29 @@ export const $decoder = new Map([
     const flags2 = this.int32();
     _.id = this.int64();                    // : bigint - long
     if (flags & 2) _.about = this.string()  // ?: string - flags.1?string
-    _.settings = this.object();             // : global.PeerSettings - PeerSettings
-    if (flags & 2097152) _.personal_photo = this.object() // ?: global.Photo - flags.21?Photo
-    if (flags & 4) _.profile_photo = this.object() // ?: global.Photo - flags.2?Photo
-    if (flags & 4194304) _.fallback_photo = this.object() // ?: global.Photo - flags.22?Photo
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    if (flags & 8) _.bot_info = this.object() // ?: global.BotInfo - flags.3?BotInfo
+    _.settings = this.object();             // : api.PeerSettings - PeerSettings
+    if (flags & 2097152) _.personal_photo = this.object() // ?: api.Photo - flags.21?Photo
+    if (flags & 4) _.profile_photo = this.object() // ?: api.Photo - flags.2?Photo
+    if (flags & 4194304) _.fallback_photo = this.object() // ?: api.Photo - flags.22?Photo
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
+    if (flags & 8) _.bot_info = this.object() // ?: api.BotInfo - flags.3?BotInfo
     if (flags & 64) _.pinned_msg_id = this.int32() // ?: number - flags.6?int
     _.common_chats_count = this.int32();    // : number - int
     if (flags & 2048) _.folder_id = this.int32() // ?: number - flags.11?int
     if (flags & 16384) _.ttl_period = this.int32() // ?: number - flags.14?int
     if (flags & 32768) _.theme_emoticon = this.string() // ?: string - flags.15?string
     if (flags & 65536) _.private_forward_name = this.string() // ?: string - flags.16?string
-    if (flags & 131072) _.bot_group_admin_rights = this.object() // ?: global.ChatAdminRights - flags.17?ChatAdminRights
-    if (flags & 262144) _.bot_broadcast_admin_rights = this.object() // ?: global.ChatAdminRights - flags.18?ChatAdminRights
-    if (flags & 524288) _.premium_gifts = this.vector(this.object) // ?: global.PremiumGiftOption[] - flags.19?Vector<PremiumGiftOption>
-    if (flags & 16777216) _.wallpaper = this.object() // ?: global.WallPaper - flags.24?WallPaper
-    if (flags & 33554432) _.stories = this.object() // ?: global.PeerStories - flags.25?PeerStories
-    if (flags2 & 1) _.business_work_hours = this.object() // ?: global.BusinessWorkHours - flags2.0?BusinessWorkHours
-    if (flags2 & 2) _.business_location = this.object() // ?: global.BusinessLocation - flags2.1?BusinessLocation
-    if (flags2 & 4) _.business_greeting_message = this.object() // ?: global.BusinessGreetingMessage - flags2.2?BusinessGreetingMessage
-    if (flags2 & 8) _.business_away_message = this.object() // ?: global.BusinessAwayMessage - flags2.3?BusinessAwayMessage
-    if (flags2 & 16) _.business_intro = this.object() // ?: global.BusinessIntro - flags2.4?BusinessIntro
-    if (flags2 & 32) _.birthday = this.object() // ?: global.Birthday - flags2.5?Birthday
+    if (flags & 131072) _.bot_group_admin_rights = this.object() // ?: api.ChatAdminRights - flags.17?ChatAdminRights
+    if (flags & 262144) _.bot_broadcast_admin_rights = this.object() // ?: api.ChatAdminRights - flags.18?ChatAdminRights
+    if (flags & 524288) _.premium_gifts = this.vector(this.object) // ?: api.PremiumGiftOption[] - flags.19?Vector<PremiumGiftOption>
+    if (flags & 16777216) _.wallpaper = this.object() // ?: api.WallPaper - flags.24?WallPaper
+    if (flags & 33554432) _.stories = this.object() // ?: api.PeerStories - flags.25?PeerStories
+    if (flags2 & 1) _.business_work_hours = this.object() // ?: api.BusinessWorkHours - flags2.0?BusinessWorkHours
+    if (flags2 & 2) _.business_location = this.object() // ?: api.BusinessLocation - flags2.1?BusinessLocation
+    if (flags2 & 4) _.business_greeting_message = this.object() // ?: api.BusinessGreetingMessage - flags2.2?BusinessGreetingMessage
+    if (flags2 & 8) _.business_away_message = this.object() // ?: api.BusinessAwayMessage - flags2.3?BusinessAwayMessage
+    if (flags2 & 16) _.business_intro = this.object() // ?: api.BusinessIntro - flags2.4?BusinessIntro
+    if (flags2 & 32) _.birthday = this.object() // ?: api.Birthday - flags2.5?Birthday
     if (flags2 & 64) _.personal_channel_id = this.int64() // ?: bigint - flags2.6?long
     if (flags2 & 64) _.personal_channel_message = this.int32() // ?: number - flags2.6?int
     return _;
@@ -20241,7 +20239,7 @@ export const $decoder = new Map([
   [383348795, function decode$contactStatus() {
     const _ = { _: "contactStatus" }
     _.user_id = this.int64();               // : bigint - long
-    _.status = this.object();               // : global.UserStatus - UserStatus
+    _.status = this.object();               // : api.UserStatus - UserStatus
     return _;
   }],
   [-1219778094, function decode$contacts__contactsNotModified() {
@@ -20249,49 +20247,49 @@ export const $decoder = new Map([
   }],
   [-353862078, function decode$contacts__contacts() {
     const _ = { _: "contacts.contacts" }
-    _.contacts = this.vector(this.object);  // : global.Contact[] - Vector<Contact>
+    _.contacts = this.vector(this.object);  // : api.Contact[] - Vector<Contact>
     _.saved_count = this.int32();           // : number - int
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [2010127419, function decode$contacts__importedContacts() {
     const _ = { _: "contacts.importedContacts" }
-    _.imported = this.vector(this.object);  // : global.ImportedContact[] - Vector<ImportedContact>
-    _.popular_invites = this.vector(this.object); // : global.PopularContact[] - Vector<PopularContact>
+    _.imported = this.vector(this.object);  // : api.ImportedContact[] - Vector<ImportedContact>
+    _.popular_invites = this.vector(this.object); // : api.PopularContact[] - Vector<PopularContact>
     _.retry_contacts = this.vector(this.int64); // : bigint[] - Vector<long>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [182326673, function decode$contacts__blocked() {
     const _ = { _: "contacts.blocked" }
-    _.blocked = this.vector(this.object);   // : global.PeerBlocked[] - Vector<PeerBlocked>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.blocked = this.vector(this.object);   // : api.PeerBlocked[] - Vector<PeerBlocked>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-513392236, function decode$contacts__blockedSlice() {
     const _ = { _: "contacts.blockedSlice" }
     _.count = this.int32();                 // : number - int
-    _.blocked = this.vector(this.object);   // : global.PeerBlocked[] - Vector<PeerBlocked>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.blocked = this.vector(this.object);   // : api.PeerBlocked[] - Vector<PeerBlocked>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [364538944, function decode$messages__dialogs() {
     const _ = { _: "messages.dialogs" }
-    _.dialogs = this.vector(this.object);   // : global.Dialog[] - Vector<Dialog>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialogs = this.vector(this.object);   // : api.Dialog[] - Vector<Dialog>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1910543603, function decode$messages__dialogsSlice() {
     const _ = { _: "messages.dialogsSlice" }
     _.count = this.int32();                 // : number - int
-    _.dialogs = this.vector(this.object);   // : global.Dialog[] - Vector<Dialog>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialogs = this.vector(this.object);   // : api.Dialog[] - Vector<Dialog>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-253500010, function decode$messages__dialogsNotModified() {
@@ -20301,9 +20299,9 @@ export const $decoder = new Map([
   }],
   [-1938715001, function decode$messages__messages() {
     const _ = { _: "messages.messages" }
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [978610270, function decode$messages__messagesSlice() {
@@ -20313,9 +20311,9 @@ export const $decoder = new Map([
     _.count = this.int32();                 // : number - int
     if (flags & 1) _.next_rate = this.int32() // ?: number - flags.0?int
     if (flags & 4) _.offset_id_offset = this.int32() // ?: number - flags.2?int
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-948520370, function decode$messages__channelMessages() {
@@ -20325,10 +20323,10 @@ export const $decoder = new Map([
     _.pts = this.int32();                   // : number - int
     _.count = this.int32();                 // : number - int
     if (flags & 4) _.offset_id_offset = this.int32() // ?: number - flags.2?int
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.topics = this.vector(this.object);    // : global.ForumTopic[] - Vector<ForumTopic>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.topics = this.vector(this.object);    // : api.ForumTopic[] - Vector<ForumTopic>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1951620897, function decode$messages__messagesNotModified() {
@@ -20338,20 +20336,20 @@ export const $decoder = new Map([
   }],
   [1694474197, function decode$messages__chats() {
     const _ = { _: "messages.chats" }
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
     return _;
   }],
   [-1663561404, function decode$messages__chatsSlice() {
     const _ = { _: "messages.chatsSlice" }
     _.count = this.int32();                 // : number - int
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
     return _;
   }],
   [-438840932, function decode$messages__chatFull() {
     const _ = { _: "messages.chatFull" }
-    _.full_chat = this.object();            // : global.ChatFull - ChatFull
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.full_chat = this.object();            // : api.ChatFull - ChatFull
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1269012015, function decode$messages__affectedHistory() {
@@ -20417,7 +20415,7 @@ export const $decoder = new Map([
   }],
   [522914557, function decode$updateNewMessage() {
     const _ = { _: "updateNewMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20438,25 +20436,25 @@ export const $decoder = new Map([
   [-1071741569, function decode$updateUserTyping() {
     const _ = { _: "updateUserTyping" }
     _.user_id = this.int64();               // : bigint - long
-    _.action = this.object();               // : global.SendMessageAction - SendMessageAction
+    _.action = this.object();               // : api.SendMessageAction - SendMessageAction
     return _;
   }],
   [-2092401936, function decode$updateChatUserTyping() {
     const _ = { _: "updateChatUserTyping" }
     _.chat_id = this.int64();               // : bigint - long
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.action = this.object();               // : global.SendMessageAction - SendMessageAction
+    _.from_id = this.object();              // : api.Peer - Peer
+    _.action = this.object();               // : api.SendMessageAction - SendMessageAction
     return _;
   }],
   [125178264, function decode$updateChatParticipants() {
     const _ = { _: "updateChatParticipants" }
-    _.participants = this.object();         // : global.ChatParticipants - ChatParticipants
+    _.participants = this.object();         // : api.ChatParticipants - ChatParticipants
     return _;
   }],
   [-440534818, function decode$updateUserStatus() {
     const _ = { _: "updateUserStatus" }
     _.user_id = this.int64();               // : bigint - long
-    _.status = this.object();               // : global.UserStatus - UserStatus
+    _.status = this.object();               // : api.UserStatus - UserStatus
     return _;
   }],
   [-1484486364, function decode$updateUserName() {
@@ -20464,7 +20462,7 @@ export const $decoder = new Map([
     _.user_id = this.int64();               // : bigint - long
     _.first_name = this.string();           // : string - string
     _.last_name = this.string();            // : string - string
-    _.usernames = this.vector(this.object); // : global.Username[] - Vector<Username>
+    _.usernames = this.vector(this.object); // : api.Username[] - Vector<Username>
     return _;
   }],
   [-1991136273, function decode$updateNewAuthorization() {
@@ -20479,7 +20477,7 @@ export const $decoder = new Map([
   }],
   [314359194, function decode$updateNewEncryptedMessage() {
     const _ = { _: "updateNewEncryptedMessage" }
-    _.message = this.object();              // : global.EncryptedMessage - EncryptedMessage
+    _.message = this.object();              // : api.EncryptedMessage - EncryptedMessage
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -20490,7 +20488,7 @@ export const $decoder = new Map([
   }],
   [-1264392051, function decode$updateEncryption() {
     const _ = { _: "updateEncryption" }
-    _.chat = this.object();                 // : global.EncryptedChat - EncryptedChat
+    _.chat = this.object();                 // : api.EncryptedChat - EncryptedChat
     _.date = this.int32();                  // : number - int
     return _;
   }],
@@ -20519,13 +20517,13 @@ export const $decoder = new Map([
   }],
   [-1906403213, function decode$updateDcOptions() {
     const _ = { _: "updateDcOptions" }
-    _.dc_options = this.vector(this.object); // : global.DcOption[] - Vector<DcOption>
+    _.dc_options = this.vector(this.object); // : api.DcOption[] - Vector<DcOption>
     return _;
   }],
   [-1094555409, function decode$updateNotifySettings() {
     const _ = { _: "updateNotifySettings" }
-    _.peer = this.object();                 // : global.NotifyPeer - NotifyPeer
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
+    _.peer = this.object();                 // : api.NotifyPeer - NotifyPeer
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
     return _;
   }],
   [-337352679, function decode$updateServiceNotification() {
@@ -20536,14 +20534,14 @@ export const $decoder = new Map([
     if (flags & 2) _.inbox_date = this.int32() // ?: number - flags.1?int
     _.type = this.string();                 // : string - string
     _.message = this.string();              // : string - string
-    _.media = this.object();                // : global.MessageMedia - MessageMedia
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
+    _.media = this.object();                // : api.MessageMedia - MessageMedia
+    _.entities = this.vector(this.object);  // : api.MessageEntity[] - Vector<MessageEntity>
     return _;
   }],
   [-298113238, function decode$updatePrivacy() {
     const _ = { _: "updatePrivacy" }
-    _.key = this.object();                  // : global.PrivacyKey - PrivacyKey
-    _.rules = this.vector(this.object);     // : global.PrivacyRule[] - Vector<PrivacyRule>
+    _.key = this.object();                  // : api.PrivacyKey - PrivacyKey
+    _.rules = this.vector(this.object);     // : api.PrivacyRule[] - Vector<PrivacyRule>
     return _;
   }],
   [88680979, function decode$updateUserPhone() {
@@ -20556,7 +20554,7 @@ export const $decoder = new Map([
     const _ = { _: "updateReadHistoryInbox" }
     const flags = this.int32();
     if (flags & 1) _.folder_id = this.int32() // ?: number - flags.0?int
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.max_id = this.int32();                // : number - int
     _.still_unread_count = this.int32();    // : number - int
     _.pts = this.int32();                   // : number - int
@@ -20565,7 +20563,7 @@ export const $decoder = new Map([
   }],
   [791617983, function decode$updateReadHistoryOutbox() {
     const _ = { _: "updateReadHistoryOutbox" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.max_id = this.int32();                // : number - int
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
@@ -20573,7 +20571,7 @@ export const $decoder = new Map([
   }],
   [2139689491, function decode$updateWebPage() {
     const _ = { _: "updateWebPage" }
-    _.webpage = this.object();              // : global.WebPage - WebPage
+    _.webpage = this.object();              // : api.WebPage - WebPage
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20601,7 +20599,7 @@ export const $decoder = new Map([
   }],
   [1656358105, function decode$updateNewChannelMessage() {
     const _ = { _: "updateNewChannelMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20668,8 +20666,8 @@ export const $decoder = new Map([
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
     _.query = this.string();                // : string - string
-    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
-    if (flags & 2) _.peer_type = this.object() // ?: global.InlineQueryPeerType - flags.1?InlineQueryPeerType
+    if (flags & 1) _.geo = this.object()    // ?: api.GeoPoint - flags.0?GeoPoint
+    if (flags & 2) _.peer_type = this.object() // ?: api.InlineQueryPeerType - flags.1?InlineQueryPeerType
     _.offset = this.string();               // : string - string
     return _;
   }],
@@ -20678,14 +20676,14 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.user_id = this.int64();               // : bigint - long
     _.query = this.string();                // : string - string
-    if (flags & 1) _.geo = this.object()    // ?: global.GeoPoint - flags.0?GeoPoint
+    if (flags & 1) _.geo = this.object()    // ?: api.GeoPoint - flags.0?GeoPoint
     _.id = this.string();                   // : string - string
-    if (flags & 2) _.msg_id = this.object() // ?: global.InputBotInlineMessageID - flags.1?InputBotInlineMessageID
+    if (flags & 2) _.msg_id = this.object() // ?: api.InputBotInlineMessageID - flags.1?InputBotInlineMessageID
     return _;
   }],
   [457133559, function decode$updateEditChannelMessage() {
     const _ = { _: "updateEditChannelMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20695,7 +20693,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     _.chat_instance = this.int64();         // : bigint - long
     if (flags & 1) _.data = this.bytes()    // ?: Uint8Array - flags.0?bytes
@@ -20704,7 +20702,7 @@ export const $decoder = new Map([
   }],
   [-469536605, function decode$updateEditMessage() {
     const _ = { _: "updateEditMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20714,7 +20712,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    _.msg_id = this.object();               // : global.InputBotInlineMessageID - InputBotInlineMessageID
+    _.msg_id = this.object();               // : api.InputBotInlineMessageID - InputBotInlineMessageID
     _.chat_instance = this.int64();         // : bigint - long
     if (flags & 1) _.data = this.bytes()    // ?: Uint8Array - flags.0?bytes
     if (flags & 2) _.game_short_name = this.string() // ?: string - flags.1?string
@@ -20729,9 +20727,9 @@ export const $decoder = new Map([
   [457829485, function decode$updateDraftMessage() {
     const _ = { _: "updateDraftMessage" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
-    _.draft = this.object();                // : global.DraftMessage - DraftMessage
+    _.draft = this.object();                // : api.DraftMessage - DraftMessage
     return _;
   }],
   [1461528386, function decode$updateReadFeaturedStickers() {
@@ -20749,7 +20747,7 @@ export const $decoder = new Map([
   [791390623, function decode$updateChannelWebPage() {
     const _ = { _: "updateChannelWebPage" }
     _.channel_id = this.int64();            // : bigint - long
-    _.webpage = this.object();              // : global.WebPage - WebPage
+    _.webpage = this.object();              // : api.WebPage - WebPage
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
@@ -20759,25 +20757,25 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.pinned = true          // ?: true - flags.0?true
     if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
-    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    _.peer = this.object();                 // : api.DialogPeer - DialogPeer
     return _;
   }],
   [-99664734, function decode$updatePinnedDialogs() {
     const _ = { _: "updatePinnedDialogs" }
     const flags = this.int32();
     if (flags & 2) _.folder_id = this.int32() // ?: number - flags.1?int
-    if (flags & 1) _.order = this.vector(this.object) // ?: global.DialogPeer[] - flags.0?Vector<DialogPeer>
+    if (flags & 1) _.order = this.vector(this.object) // ?: api.DialogPeer[] - flags.0?Vector<DialogPeer>
     return _;
   }],
   [-2095595325, function decode$updateBotWebhookJSON() {
     const _ = { _: "updateBotWebhookJSON" }
-    _.data = this.object();                 // : global.DataJSON - DataJSON
+    _.data = this.object();                 // : api.DataJSON - DataJSON
     return _;
   }],
   [-1684914010, function decode$updateBotWebhookJSONQuery() {
     const _ = { _: "updateBotWebhookJSONQuery" }
     _.query_id = this.int64();              // : bigint - long
-    _.data = this.object();                 // : global.DataJSON - DataJSON
+    _.data = this.object();                 // : api.DataJSON - DataJSON
     _.timeout = this.int32();               // : number - int
     return _;
   }],
@@ -20786,7 +20784,7 @@ export const $decoder = new Map([
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
     _.payload = this.bytes();               // : Uint8Array - bytes
-    _.shipping_address = this.object();     // : global.PostAddress - PostAddress
+    _.shipping_address = this.object();     // : api.PostAddress - PostAddress
     return _;
   }],
   [-1934976362, function decode$updateBotPrecheckoutQuery() {
@@ -20795,7 +20793,7 @@ export const $decoder = new Map([
     _.query_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
     _.payload = this.bytes();               // : Uint8Array - bytes
-    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 1) _.info = this.object()   // ?: api.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     if (flags & 2) _.shipping_option_id = this.string() // ?: string - flags.1?string
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
@@ -20803,7 +20801,7 @@ export const $decoder = new Map([
   }],
   [-1425052898, function decode$updatePhoneCall() {
     const _ = { _: "updatePhoneCall" }
-    _.phone_call = this.object();           // : global.PhoneCall - PhoneCall
+    _.phone_call = this.object();           // : api.PhoneCall - PhoneCall
     return _;
   }],
   [1180041828, function decode$updateLangPackTooLong() {
@@ -20813,7 +20811,7 @@ export const $decoder = new Map([
   }],
   [1442983757, function decode$updateLangPack() {
     const _ = { _: "updateLangPack" }
-    _.difference = this.object();           // : global.LangPackDifference - LangPackDifference
+    _.difference = this.object();           // : api.LangPackDifference - LangPackDifference
     return _;
   }],
   [-451831443, function decode$updateFavedStickers() {
@@ -20840,61 +20838,61 @@ export const $decoder = new Map([
     const _ = { _: "updateDialogUnreadMark" }
     const flags = this.int32();
     if (flags & 1) _.unread = true          // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    _.peer = this.object();                 // : api.DialogPeer - DialogPeer
     return _;
   }],
   [-1398708869, function decode$updateMessagePoll() {
     const _ = { _: "updateMessagePoll" }
     const flags = this.int32();
     _.poll_id = this.int64();               // : bigint - long
-    if (flags & 1) _.poll = this.object()   // ?: global.Poll - flags.0?Poll
-    _.results = this.object();              // : global.PollResults - PollResults
+    if (flags & 1) _.poll = this.object()   // ?: api.Poll - flags.0?Poll
+    _.results = this.object();              // : api.PollResults - PollResults
     return _;
   }],
   [1421875280, function decode$updateChatDefaultBannedRights() {
     const _ = { _: "updateChatDefaultBannedRights" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.default_banned_rights = this.object(); // : global.ChatBannedRights - ChatBannedRights
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.default_banned_rights = this.object(); // : api.ChatBannedRights - ChatBannedRights
     _.version = this.int32();               // : number - int
     return _;
   }],
   [422972864, function decode$updateFolderPeers() {
     const _ = { _: "updateFolderPeers" }
-    _.folder_peers = this.vector(this.object); // : global.FolderPeer[] - Vector<FolderPeer>
+    _.folder_peers = this.vector(this.object); // : api.FolderPeer[] - Vector<FolderPeer>
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     return _;
   }],
   [1786671974, function decode$updatePeerSettings() {
     const _ = { _: "updatePeerSettings" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.settings = this.object();             // : global.PeerSettings - PeerSettings
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.settings = this.object();             // : api.PeerSettings - PeerSettings
     return _;
   }],
   [-1263546448, function decode$updatePeerLocated() {
     const _ = { _: "updatePeerLocated" }
-    _.peers = this.vector(this.object);     // : global.PeerLocated[] - Vector<PeerLocated>
+    _.peers = this.vector(this.object);     // : api.PeerLocated[] - Vector<PeerLocated>
     return _;
   }],
   [967122427, function decode$updateNewScheduledMessage() {
     const _ = { _: "updateNewScheduledMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [-1870238482, function decode$updateDeleteScheduledMessages() {
     const _ = { _: "updateDeleteScheduledMessages" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.messages = this.vector(this.int32);   // : number[] - Vector<int>
     return _;
   }],
   [-2112423005, function decode$updateTheme() {
     const _ = { _: "updateTheme" }
-    _.theme = this.object();                // : global.Theme - Theme
+    _.theme = this.object();                // : api.Theme - Theme
     return _;
   }],
   [-2027964103, function decode$updateGeoLiveViewed() {
     const _ = { _: "updateGeoLiveViewed" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     return _;
   }],
@@ -20904,7 +20902,7 @@ export const $decoder = new Map([
   [619974263, function decode$updateMessagePollVote() {
     const _ = { _: "updateMessagePollVote" }
     _.poll_id = this.int64();               // : bigint - long
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.options = this.vector(this.bytes);    // : Uint8Array[] - Vector<bytes>
     _.qts = this.int32();                   // : number - int
     return _;
@@ -20913,7 +20911,7 @@ export const $decoder = new Map([
     const _ = { _: "updateDialogFilter" }
     const flags = this.int32();
     _.id = this.int32();                    // : number - int
-    if (flags & 1) _.filter = this.object() // ?: global.DialogFilter - flags.0?DialogFilter
+    if (flags & 1) _.filter = this.object() // ?: api.DialogFilter - flags.0?DialogFilter
     return _;
   }],
   [-1512627963, function decode$updateDialogFilterOrder() {
@@ -20959,7 +20957,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
     if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
-    _.peer_id = this.object();              // : global.Peer - Peer
+    _.peer_id = this.object();              // : api.Peer - Peer
     return _;
   }],
   [-1937192669, function decode$updateChannelUserTyping() {
@@ -20967,15 +20965,15 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.channel_id = this.int64();            // : bigint - long
     if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.action = this.object();               // : global.SendMessageAction - SendMessageAction
+    _.from_id = this.object();              // : api.Peer - Peer
+    _.action = this.object();               // : api.SendMessageAction - SendMessageAction
     return _;
   }],
   [-309990731, function decode$updatePinnedMessages() {
     const _ = { _: "updatePinnedMessages" }
     const flags = this.int32();
     if (flags & 1) _.pinned = true          // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.messages = this.vector(this.int32);   // : number[] - Vector<int>
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
@@ -20998,21 +20996,21 @@ export const $decoder = new Map([
   }],
   [-219423922, function decode$updateGroupCallParticipants() {
     const _ = { _: "updateGroupCallParticipants" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
-    _.participants = this.vector(this.object); // : global.GroupCallParticipant[] - Vector<GroupCallParticipant>
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
+    _.participants = this.vector(this.object); // : api.GroupCallParticipant[] - Vector<GroupCallParticipant>
     _.version = this.int32();               // : number - int
     return _;
   }],
   [347227392, function decode$updateGroupCall() {
     const _ = { _: "updateGroupCall" }
     _.chat_id = this.int64();               // : bigint - long
-    _.call = this.object();                 // : global.GroupCall - GroupCall
+    _.call = this.object();                 // : api.GroupCall - GroupCall
     return _;
   }],
   [-1147422299, function decode$updatePeerHistoryTTL() {
     const _ = { _: "updatePeerHistoryTTL" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     if (flags & 1) _.ttl_period = this.int32() // ?: number - flags.0?int
     return _;
   }],
@@ -21023,9 +21021,9 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.actor_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    if (flags & 1) _.prev_participant = this.object() // ?: global.ChatParticipant - flags.0?ChatParticipant
-    if (flags & 2) _.new_participant = this.object() // ?: global.ChatParticipant - flags.1?ChatParticipant
-    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
+    if (flags & 1) _.prev_participant = this.object() // ?: api.ChatParticipant - flags.0?ChatParticipant
+    if (flags & 2) _.new_participant = this.object() // ?: api.ChatParticipant - flags.1?ChatParticipant
+    if (flags & 4) _.invite = this.object() // ?: api.ExportedChatInvite - flags.2?ExportedChatInvite
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21037,9 +21035,9 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.actor_id = this.int64();              // : bigint - long
     _.user_id = this.int64();               // : bigint - long
-    if (flags & 1) _.prev_participant = this.object() // ?: global.ChannelParticipant - flags.0?ChannelParticipant
-    if (flags & 2) _.new_participant = this.object() // ?: global.ChannelParticipant - flags.1?ChannelParticipant
-    if (flags & 4) _.invite = this.object() // ?: global.ExportedChatInvite - flags.2?ExportedChatInvite
+    if (flags & 1) _.prev_participant = this.object() // ?: api.ChannelParticipant - flags.0?ChannelParticipant
+    if (flags & 2) _.new_participant = this.object() // ?: api.ChannelParticipant - flags.1?ChannelParticipant
+    if (flags & 4) _.invite = this.object() // ?: api.ExportedChatInvite - flags.2?ExportedChatInvite
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21055,40 +21053,40 @@ export const $decoder = new Map([
     const _ = { _: "updateGroupCallConnection" }
     const flags = this.int32();
     if (flags & 1) _.presentation = true    // ?: true - flags.0?true
-    _.params = this.object();               // : global.DataJSON - DataJSON
+    _.params = this.object();               // : api.DataJSON - DataJSON
     return _;
   }],
   [1299263278, function decode$updateBotCommands() {
     const _ = { _: "updateBotCommands" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.bot_id = this.int64();                // : bigint - long
-    _.commands = this.vector(this.object);  // : global.BotCommand[] - Vector<BotCommand>
+    _.commands = this.vector(this.object);  // : api.BotCommand[] - Vector<BotCommand>
     return _;
   }],
   [1885586395, function decode$updatePendingJoinRequests() {
     const _ = { _: "updatePendingJoinRequests" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.requests_pending = this.int32();      // : number - int
     _.recent_requesters = this.vector(this.int64); // : bigint[] - Vector<long>
     return _;
   }],
   [299870598, function decode$updateBotChatInviteRequester() {
     const _ = { _: "updateBotChatInviteRequester" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
     _.user_id = this.int64();               // : bigint - long
     _.about = this.string();                // : string - string
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
     _.qts = this.int32();                   // : number - int
     return _;
   }],
   [1578843320, function decode$updateMessageReactions() {
     const _ = { _: "updateMessageReactions" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
-    _.reactions = this.object();            // : global.MessageReactions - MessageReactions
+    _.reactions = this.object();            // : api.MessageReactions - MessageReactions
     return _;
   }],
   [397910539, function decode$updateAttachMenuBots() {
@@ -21102,7 +21100,7 @@ export const $decoder = new Map([
   [347625491, function decode$updateBotMenuButton() {
     const _ = { _: "updateBotMenuButton" }
     _.bot_id = this.int64();                // : bigint - long
-    _.button = this.object();               // : global.BotMenuButton - BotMenuButton
+    _.button = this.object();               // : api.BotMenuButton - BotMenuButton
     return _;
   }],
   [1960361625, function decode$updateSavedRingtones() {
@@ -21112,7 +21110,7 @@ export const $decoder = new Map([
     const _ = { _: "updateTranscribedAudio" }
     const flags = this.int32();
     if (flags & 1) _.pending = true         // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     _.transcription_id = this.int64();      // : bigint - long
     _.text = this.string();                 // : string - string
@@ -21124,7 +21122,7 @@ export const $decoder = new Map([
   [674706841, function decode$updateUserEmojiStatus() {
     const _ = { _: "updateUserEmojiStatus" }
     _.user_id = this.int64();               // : bigint - long
-    _.emoji_status = this.object();         // : global.EmojiStatus - EmojiStatus
+    _.emoji_status = this.object();         // : api.EmojiStatus - EmojiStatus
     return _;
   }],
   [821314523, function decode$updateRecentEmojiStatuses() {
@@ -21143,9 +21141,9 @@ export const $decoder = new Map([
   }],
   [1517529484, function decode$updateMessageExtendedMedia() {
     const _ = { _: "updateMessageExtendedMedia" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
-    _.extended_media = this.object();       // : global.MessageExtendedMedia - MessageExtendedMedia
+    _.extended_media = this.object();       // : api.MessageExtendedMedia - MessageExtendedMedia
     return _;
   }],
   [422509539, function decode$updateChannelPinnedTopic() {
@@ -21173,13 +21171,13 @@ export const $decoder = new Map([
   }],
   [1974712216, function decode$updateStory() {
     const _ = { _: "updateStory" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.story = this.object();                // : global.StoryItem - StoryItem
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.story = this.object();                // : api.StoryItem - StoryItem
     return _;
   }],
   [-145845461, function decode$updateReadStories() {
     const _ = { _: "updateReadStories" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.max_id = this.int32();                // : number - int
     return _;
   }],
@@ -21191,20 +21189,20 @@ export const $decoder = new Map([
   }],
   [738741697, function decode$updateStoriesStealthMode() {
     const _ = { _: "updateStoriesStealthMode" }
-    _.stealth_mode = this.object();         // : global.StoriesStealthMode - StoriesStealthMode
+    _.stealth_mode = this.object();         // : api.StoriesStealthMode - StoriesStealthMode
     return _;
   }],
   [2103604867, function decode$updateSentStoryReaction() {
     const _ = { _: "updateSentStoryReaction" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.story_id = this.int32();              // : number - int
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.reaction = this.object();             // : api.Reaction - Reaction
     return _;
   }],
   [-1873947492, function decode$updateBotChatBoost() {
     const _ = { _: "updateBotChatBoost" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.boost = this.object();                // : global.Boost - Boost
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.boost = this.object();                // : api.Boost - Boost
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21218,27 +21216,27 @@ export const $decoder = new Map([
     const _ = { _: "updatePeerWallpaper" }
     const flags = this.int32();
     if (flags & 2) _.wallpaper_overridden = true // ?: true - flags.1?true
-    _.peer = this.object();                 // : global.Peer - Peer
-    if (flags & 1) _.wallpaper = this.object() // ?: global.WallPaper - flags.0?WallPaper
+    _.peer = this.object();                 // : api.Peer - Peer
+    if (flags & 1) _.wallpaper = this.object() // ?: api.WallPaper - flags.0?WallPaper
     return _;
   }],
   [-1407069234, function decode$updateBotMessageReaction() {
     const _ = { _: "updateBotMessageReaction" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     _.date = this.int32();                  // : number - int
-    _.actor = this.object();                // : global.Peer - Peer
-    _.old_reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
-    _.new_reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
+    _.actor = this.object();                // : api.Peer - Peer
+    _.old_reactions = this.vector(this.object); // : api.Reaction[] - Vector<Reaction>
+    _.new_reactions = this.vector(this.object); // : api.Reaction[] - Vector<Reaction>
     _.qts = this.int32();                   // : number - int
     return _;
   }],
   [164329305, function decode$updateBotMessageReactions() {
     const _ = { _: "updateBotMessageReactions" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
     _.date = this.int32();                  // : number - int
-    _.reactions = this.vector(this.object); // : global.ReactionCount[] - Vector<ReactionCount>
+    _.reactions = this.vector(this.object); // : api.ReactionCount[] - Vector<ReactionCount>
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21246,13 +21244,13 @@ export const $decoder = new Map([
     const _ = { _: "updateSavedDialogPinned" }
     const flags = this.int32();
     if (flags & 1) _.pinned = true          // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    _.peer = this.object();                 // : api.DialogPeer - DialogPeer
     return _;
   }],
   [1751942566, function decode$updatePinnedSavedDialogs() {
     const _ = { _: "updatePinnedSavedDialogs" }
     const flags = this.int32();
-    if (flags & 1) _.order = this.vector(this.object) // ?: global.DialogPeer[] - flags.0?Vector<DialogPeer>
+    if (flags & 1) _.order = this.vector(this.object) // ?: api.DialogPeer[] - flags.0?Vector<DialogPeer>
     return _;
   }],
   [969307186, function decode$updateSavedReactionTags() {
@@ -21265,12 +21263,12 @@ export const $decoder = new Map([
   }],
   [-112784718, function decode$updateQuickReplies() {
     const _ = { _: "updateQuickReplies" }
-    _.quick_replies = this.vector(this.object); // : global.QuickReply[] - Vector<QuickReply>
+    _.quick_replies = this.vector(this.object); // : api.QuickReply[] - Vector<QuickReply>
     return _;
   }],
   [-180508905, function decode$updateNewQuickReply() {
     const _ = { _: "updateNewQuickReply" }
-    _.quick_reply = this.object();          // : global.QuickReply - QuickReply
+    _.quick_reply = this.object();          // : api.QuickReply - QuickReply
     return _;
   }],
   [1407644140, function decode$updateDeleteQuickReply() {
@@ -21280,7 +21278,7 @@ export const $decoder = new Map([
   }],
   [1040518415, function decode$updateQuickReplyMessage() {
     const _ = { _: "updateQuickReplyMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [1450174413, function decode$updateDeleteQuickReplyMessages() {
@@ -21291,7 +21289,7 @@ export const $decoder = new Map([
   }],
   [-1964652166, function decode$updateBotBusinessConnect() {
     const _ = { _: "updateBotBusinessConnect" }
-    _.connection = this.object();           // : global.BotBusinessConnection - BotBusinessConnection
+    _.connection = this.object();           // : api.BotBusinessConnection - BotBusinessConnection
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21299,8 +21297,8 @@ export const $decoder = new Map([
     const _ = { _: "updateBotNewBusinessMessage" }
     const flags = this.int32();
     _.connection_id = this.string();        // : string - string
-    _.message = this.object();              // : global.Message - Message
-    if (flags & 1) _.reply_to_message = this.object() // ?: global.Message - flags.0?Message
+    _.message = this.object();              // : api.Message - Message
+    if (flags & 1) _.reply_to_message = this.object() // ?: api.Message - flags.0?Message
     _.qts = this.int32();                   // : number - int
     return _;
   }],
@@ -21308,15 +21306,15 @@ export const $decoder = new Map([
     const _ = { _: "updateBotEditBusinessMessage" }
     const flags = this.int32();
     _.connection_id = this.string();        // : string - string
-    _.message = this.object();              // : global.Message - Message
-    if (flags & 1) _.reply_to_message = this.object() // ?: global.Message - flags.0?Message
+    _.message = this.object();              // : api.Message - Message
+    if (flags & 1) _.reply_to_message = this.object() // ?: api.Message - flags.0?Message
     _.qts = this.int32();                   // : number - int
     return _;
   }],
   [-1607821266, function decode$updateBotDeleteBusinessMessage() {
     const _ = { _: "updateBotDeleteBusinessMessage" }
     _.connection_id = this.string();        // : string - string
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.messages = this.vector(this.int32);   // : number[] - Vector<int>
     _.qts = this.int32();                   // : number - int
     return _;
@@ -21338,21 +21336,21 @@ export const $decoder = new Map([
   }],
   [16030880, function decode$updates__difference() {
     const _ = { _: "updates.difference" }
-    _.new_messages = this.vector(this.object); // : global.Message[] - Vector<Message>
-    _.new_encrypted_messages = this.vector(this.object); // : global.EncryptedMessage[] - Vector<EncryptedMessage>
-    _.other_updates = this.vector(this.object); // : global.Update[] - Vector<Update>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.new_messages = this.vector(this.object); // : api.Message[] - Vector<Message>
+    _.new_encrypted_messages = this.vector(this.object); // : api.EncryptedMessage[] - Vector<EncryptedMessage>
+    _.other_updates = this.vector(this.object); // : api.Update[] - Vector<Update>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     _.state = this.object();                // : updates.State - updates.State
     return _;
   }],
   [-1459938943, function decode$updates__differenceSlice() {
     const _ = { _: "updates.differenceSlice" }
-    _.new_messages = this.vector(this.object); // : global.Message[] - Vector<Message>
-    _.new_encrypted_messages = this.vector(this.object); // : global.EncryptedMessage[] - Vector<EncryptedMessage>
-    _.other_updates = this.vector(this.object); // : global.Update[] - Vector<Update>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.new_messages = this.vector(this.object); // : api.Message[] - Vector<Message>
+    _.new_encrypted_messages = this.vector(this.object); // : api.EncryptedMessage[] - Vector<EncryptedMessage>
+    _.other_updates = this.vector(this.object); // : api.Update[] - Vector<Update>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     _.intermediate_state = this.object();   // : updates.State - updates.State
     return _;
   }],
@@ -21377,10 +21375,10 @@ export const $decoder = new Map([
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     _.date = this.int32();                  // : number - int
-    if (flags & 4) _.fwd_from = this.object() // ?: global.MessageFwdHeader - flags.2?MessageFwdHeader
+    if (flags & 4) _.fwd_from = this.object() // ?: api.MessageFwdHeader - flags.2?MessageFwdHeader
     if (flags & 2048) _.via_bot_id = this.int64() // ?: bigint - flags.11?long
-    if (flags & 8) _.reply_to = this.object() // ?: global.MessageReplyHeader - flags.3?MessageReplyHeader
-    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 8) _.reply_to = this.object() // ?: api.MessageReplyHeader - flags.3?MessageReplyHeader
+    if (flags & 128) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.7?Vector<MessageEntity>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     return _;
   }],
@@ -21398,24 +21396,24 @@ export const $decoder = new Map([
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     _.date = this.int32();                  // : number - int
-    if (flags & 4) _.fwd_from = this.object() // ?: global.MessageFwdHeader - flags.2?MessageFwdHeader
+    if (flags & 4) _.fwd_from = this.object() // ?: api.MessageFwdHeader - flags.2?MessageFwdHeader
     if (flags & 2048) _.via_bot_id = this.int64() // ?: bigint - flags.11?long
-    if (flags & 8) _.reply_to = this.object() // ?: global.MessageReplyHeader - flags.3?MessageReplyHeader
-    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 8) _.reply_to = this.object() // ?: api.MessageReplyHeader - flags.3?MessageReplyHeader
+    if (flags & 128) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.7?Vector<MessageEntity>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     return _;
   }],
   [2027216577, function decode$updateShort() {
     const _ = { _: "updateShort" }
-    _.update = this.object();               // : global.Update - Update
+    _.update = this.object();               // : api.Update - Update
     _.date = this.int32();                  // : number - int
     return _;
   }],
   [1918567619, function decode$updatesCombined() {
     const _ = { _: "updatesCombined" }
-    _.updates = this.vector(this.object);   // : global.Update[] - Vector<Update>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.updates = this.vector(this.object);   // : api.Update[] - Vector<Update>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
     _.date = this.int32();                  // : number - int
     _.seq_start = this.int32();             // : number - int
     _.seq = this.int32();                   // : number - int
@@ -21423,9 +21421,9 @@ export const $decoder = new Map([
   }],
   [1957577280, function decode$updates() {
     const _ = { _: "updates" }
-    _.updates = this.vector(this.object);   // : global.Update[] - Vector<Update>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.updates = this.vector(this.object);   // : api.Update[] - Vector<Update>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
     _.date = this.int32();                  // : number - int
     _.seq = this.int32();                   // : number - int
     return _;
@@ -21438,28 +21436,28 @@ export const $decoder = new Map([
     _.pts = this.int32();                   // : number - int
     _.pts_count = this.int32();             // : number - int
     _.date = this.int32();                  // : number - int
-    if (flags & 512) _.media = this.object() // ?: global.MessageMedia - flags.9?MessageMedia
-    if (flags & 128) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 512) _.media = this.object() // ?: api.MessageMedia - flags.9?MessageMedia
+    if (flags & 128) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.7?Vector<MessageEntity>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
     return _;
   }],
   [-1916114267, function decode$photos__photos() {
     const _ = { _: "photos.photos" }
-    _.photos = this.vector(this.object);    // : global.Photo[] - Vector<Photo>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.photos = this.vector(this.object);    // : api.Photo[] - Vector<Photo>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [352657236, function decode$photos__photosSlice() {
     const _ = { _: "photos.photosSlice" }
     _.count = this.int32();                 // : number - int
-    _.photos = this.vector(this.object);    // : global.Photo[] - Vector<Photo>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.photos = this.vector(this.object);    // : api.Photo[] - Vector<Photo>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [539045032, function decode$photos__photo() {
     const _ = { _: "photos.photo" }
-    _.photo = this.object();                // : global.Photo - Photo
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.photo = this.object();                // : api.Photo - Photo
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [157948117, function decode$upload__file() {
@@ -21475,7 +21473,7 @@ export const $decoder = new Map([
     _.file_token = this.bytes();            // : Uint8Array - bytes
     _.encryption_key = this.bytes();        // : Uint8Array - bytes
     _.encryption_iv = this.bytes();         // : Uint8Array - bytes
-    _.file_hashes = this.vector(this.object); // : global.FileHash[] - Vector<FileHash>
+    _.file_hashes = this.vector(this.object); // : api.FileHash[] - Vector<FileHash>
     return _;
   }],
   [414687501, function decode$dcOption() {
@@ -21505,7 +21503,7 @@ export const $decoder = new Map([
     _.expires = this.int32();               // : number - int
     _.test_mode = this.bool();              // : boolean - Bool
     _.this_dc = this.int32();               // : number - int
-    _.dc_options = this.vector(this.object); // : global.DcOption[] - Vector<DcOption>
+    _.dc_options = this.vector(this.object); // : api.DcOption[] - Vector<DcOption>
     _.dc_txt_domain_name = this.string();   // : string - string
     _.chat_size_max = this.int32();         // : number - int
     _.megagroup_size_max = this.int32();    // : number - int
@@ -21541,7 +21539,7 @@ export const $decoder = new Map([
     if (flags & 4) _.suggested_lang_code = this.string() // ?: string - flags.2?string
     if (flags & 4) _.lang_pack_version = this.int32() // ?: number - flags.2?int
     if (flags & 4) _.base_lang_pack_version = this.int32() // ?: number - flags.2?int
-    if (flags & 32768) _.reactions_default = this.object() // ?: global.Reaction - flags.15?Reaction
+    if (flags & 32768) _.reactions_default = this.object() // ?: api.Reaction - flags.15?Reaction
     if (flags & 65536) _.autologin_token = this.string() // ?: string - flags.16?string
     return _;
   }],
@@ -21559,10 +21557,10 @@ export const $decoder = new Map([
     _.id = this.int32();                    // : number - int
     _.version = this.string();              // : string - string
     _.text = this.string();                 // : string - string
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
-    if (flags & 2) _.document = this.object() // ?: global.Document - flags.1?Document
+    _.entities = this.vector(this.object);  // : api.MessageEntity[] - Vector<MessageEntity>
+    if (flags & 2) _.document = this.object() // ?: api.Document - flags.1?Document
     if (flags & 4) _.url = this.string()    // ?: string - flags.2?string
-    if (flags & 8) _.sticker = this.object() // ?: global.Document - flags.3?Document
+    if (flags & 8) _.sticker = this.object() // ?: api.Document - flags.3?Document
     return _;
   }],
   [-1000708810, function decode$help__noAppUpdate() {
@@ -21665,7 +21663,7 @@ export const $decoder = new Map([
     _.chat_id = this.int32();               // : number - int
     _.date = this.int32();                  // : number - int
     _.bytes = this.bytes();                 // : Uint8Array - bytes
-    _.file = this.object();                 // : global.EncryptedFile - EncryptedFile
+    _.file = this.object();                 // : api.EncryptedFile - EncryptedFile
     return _;
   }],
   [594758406, function decode$encryptedMessageService() {
@@ -21697,7 +21695,7 @@ export const $decoder = new Map([
   [-1802240206, function decode$messages__sentEncryptedFile() {
     const _ = { _: "messages.sentEncryptedFile" }
     _.date = this.int32();                  // : number - int
-    _.file = this.object();                 // : global.EncryptedFile - EncryptedFile
+    _.file = this.object();                 // : api.EncryptedFile - EncryptedFile
     return _;
   }],
   [1928391342, function decode$inputDocumentEmpty() {
@@ -21724,21 +21722,21 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
     _.size = this.int64();                  // : bigint - long
-    if (flags & 1) _.thumbs = this.vector(this.object) // ?: global.PhotoSize[] - flags.0?Vector<PhotoSize>
-    if (flags & 2) _.video_thumbs = this.vector(this.object) // ?: global.VideoSize[] - flags.1?Vector<VideoSize>
+    if (flags & 1) _.thumbs = this.vector(this.object) // ?: api.PhotoSize[] - flags.0?Vector<PhotoSize>
+    if (flags & 2) _.video_thumbs = this.vector(this.object) // ?: api.VideoSize[] - flags.1?Vector<VideoSize>
     _.dc_id = this.int32();                 // : number - int
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    _.attributes = this.vector(this.object); // : api.DocumentAttribute[] - Vector<DocumentAttribute>
     return _;
   }],
   [398898678, function decode$help__support() {
     const _ = { _: "help.support" }
     _.phone_number = this.string();         // : string - string
-    _.user = this.object();                 // : global.User - User
+    _.user = this.object();                 // : api.User - User
     return _;
   }],
   [-1613493288, function decode$notifyPeer() {
     const _ = { _: "notifyPeer" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     return _;
   }],
   [-1261946036, function decode$notifyUsers() {
@@ -21752,7 +21750,7 @@ export const $decoder = new Map([
   }],
   [577659656, function decode$notifyForumTopic() {
     const _ = { _: "notifyForumTopic" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.top_msg_id = this.int32();            // : number - int
     return _;
   }],
@@ -21820,7 +21818,7 @@ export const $decoder = new Map([
     const _ = { _: "sendMessageEmojiInteraction" }
     _.emoticon = this.string();             // : string - string
     _.msg_id = this.int32();                // : number - int
-    _.interaction = this.object();          // : global.DataJSON - DataJSON
+    _.interaction = this.object();          // : api.DataJSON - DataJSON
     return _;
   }],
   [-1234857938, function decode$sendMessageEmojiInteractionSeen() {
@@ -21830,10 +21828,10 @@ export const $decoder = new Map([
   }],
   [-1290580579, function decode$contacts__found() {
     const _ = { _: "contacts.found" }
-    _.my_results = this.vector(this.object); // : global.Peer[] - Vector<Peer>
-    _.results = this.vector(this.object);   // : global.Peer[] - Vector<Peer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.my_results = this.vector(this.object); // : api.Peer[] - Vector<Peer>
+    _.results = this.vector(this.object);   // : api.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1335282456, function decode$inputPrivacyKeyStatusTimestamp() {
@@ -21910,7 +21908,7 @@ export const $decoder = new Map([
   }],
   [320652927, function decode$inputPrivacyValueAllowUsers() {
     const _ = { _: "inputPrivacyValueAllowUsers" }
-    _.users = this.vector(this.object);     // : global.InputUser[] - Vector<InputUser>
+    _.users = this.vector(this.object);     // : api.InputUser[] - Vector<InputUser>
     return _;
   }],
   [195371015, function decode$inputPrivacyValueDisallowContacts() {
@@ -21921,7 +21919,7 @@ export const $decoder = new Map([
   }],
   [-1877932953, function decode$inputPrivacyValueDisallowUsers() {
     const _ = { _: "inputPrivacyValueDisallowUsers" }
-    _.users = this.vector(this.object);     // : global.InputUser[] - Vector<InputUser>
+    _.users = this.vector(this.object);     // : api.InputUser[] - Vector<InputUser>
     return _;
   }],
   [-2079962673, function decode$inputPrivacyValueAllowChatParticipants() {
@@ -21980,9 +21978,9 @@ export const $decoder = new Map([
   }],
   [1352683077, function decode$account__privacyRules() {
     const _ = { _: "account.privacyRules" }
-    _.rules = this.vector(this.object);     // : global.PrivacyRule[] - Vector<PrivacyRule>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.rules = this.vector(this.object);     // : api.PrivacyRule[] - Vector<PrivacyRule>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1194283041, function decode$accountDaysTTL() {
@@ -22004,8 +22002,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 2) _.mask = true            // ?: true - flags.1?true
     _.alt = this.string();                  // : string - string
-    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
-    if (flags & 1) _.mask_coords = this.object() // ?: global.MaskCoords - flags.0?MaskCoords
+    _.stickerset = this.object();           // : api.InputStickerSet - InputStickerSet
+    if (flags & 1) _.mask_coords = this.object() // ?: api.MaskCoords - flags.0?MaskCoords
     return _;
   }],
   [-745541182, function decode$documentAttributeVideo() {
@@ -22044,7 +22042,7 @@ export const $decoder = new Map([
     if (flags & 1) _.free = true            // ?: true - flags.0?true
     if (flags & 2) _.text_color = true      // ?: true - flags.1?true
     _.alt = this.string();                  // : string - string
-    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
+    _.stickerset = this.object();           // : api.InputStickerSet - InputStickerSet
     return _;
   }],
   [-244016606, function decode$messages__stickersNotModified() {
@@ -22053,7 +22051,7 @@ export const $decoder = new Map([
   [816245886, function decode$messages__stickers() {
     const _ = { _: "messages.stickers" }
     _.hash = this.int64();                  // : bigint - long
-    _.stickers = this.vector(this.object);  // : global.Document[] - Vector<Document>
+    _.stickers = this.vector(this.object);  // : api.Document[] - Vector<Document>
     return _;
   }],
   [313694676, function decode$stickerPack() {
@@ -22068,7 +22066,7 @@ export const $decoder = new Map([
   [-843329861, function decode$messages__allStickers() {
     const _ = { _: "messages.allStickers" }
     _.hash = this.int64();                  // : bigint - long
-    _.sets = this.vector(this.object);      // : global.StickerSet[] - Vector<StickerSet>
+    _.sets = this.vector(this.object);      // : api.StickerSet[] - Vector<StickerSet>
     return _;
   }],
   [-2066640507, function decode$messages__affectedMessages() {
@@ -22104,16 +22102,16 @@ export const $decoder = new Map([
     if (flags & 2) _.site_name = this.string() // ?: string - flags.1?string
     if (flags & 4) _.title = this.string()  // ?: string - flags.2?string
     if (flags & 8) _.description = this.string() // ?: string - flags.3?string
-    if (flags & 16) _.photo = this.object() // ?: global.Photo - flags.4?Photo
+    if (flags & 16) _.photo = this.object() // ?: api.Photo - flags.4?Photo
     if (flags & 32) _.embed_url = this.string() // ?: string - flags.5?string
     if (flags & 32) _.embed_type = this.string() // ?: string - flags.5?string
     if (flags & 64) _.embed_width = this.int32() // ?: number - flags.6?int
     if (flags & 64) _.embed_height = this.int32() // ?: number - flags.6?int
     if (flags & 128) _.duration = this.int32() // ?: number - flags.7?int
     if (flags & 256) _.author = this.string() // ?: string - flags.8?string
-    if (flags & 512) _.document = this.object() // ?: global.Document - flags.9?Document
-    if (flags & 1024) _.cached_page = this.object() // ?: global.Page - flags.10?Page
-    if (flags & 4096) _.attributes = this.vector(this.object) // ?: global.WebPageAttribute[] - flags.12?Vector<WebPageAttribute>
+    if (flags & 512) _.document = this.object() // ?: api.Document - flags.9?Document
+    if (flags & 1024) _.cached_page = this.object() // ?: api.Page - flags.10?Page
+    if (flags & 4096) _.attributes = this.vector(this.object) // ?: api.WebPageAttribute[] - flags.12?Vector<WebPageAttribute>
     return _;
   }],
   [1930545681, function decode$webPageNotModified() {
@@ -22148,7 +22146,7 @@ export const $decoder = new Map([
   [1275039392, function decode$account__authorizations() {
     const _ = { _: "account.authorizations" }
     _.authorization_ttl_days = this.int32(); // : number - int
-    _.authorizations = this.vector(this.object); // : global.Authorization[] - Vector<Authorization>
+    _.authorizations = this.vector(this.object); // : api.Authorization[] - Vector<Authorization>
     return _;
   }],
   [-1787080453, function decode$account__password() {
@@ -22157,13 +22155,13 @@ export const $decoder = new Map([
     if (flags & 1) _.has_recovery = true    // ?: true - flags.0?true
     if (flags & 2) _.has_secure_values = true // ?: true - flags.1?true
     if (flags & 4) _.has_password = true    // ?: true - flags.2?true
-    if (flags & 4) _.current_algo = this.object() // ?: global.PasswordKdfAlgo - flags.2?PasswordKdfAlgo
+    if (flags & 4) _.current_algo = this.object() // ?: api.PasswordKdfAlgo - flags.2?PasswordKdfAlgo
     if (flags & 4) _.srp_B = this.bytes()   // ?: Uint8Array - flags.2?bytes
     if (flags & 4) _.srp_id = this.int64()  // ?: bigint - flags.2?long
     if (flags & 8) _.hint = this.string()   // ?: string - flags.3?string
     if (flags & 16) _.email_unconfirmed_pattern = this.string() // ?: string - flags.4?string
-    _.new_algo = this.object();             // : global.PasswordKdfAlgo - PasswordKdfAlgo
-    _.new_secure_algo = this.object();      // : global.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
+    _.new_algo = this.object();             // : api.PasswordKdfAlgo - PasswordKdfAlgo
+    _.new_secure_algo = this.object();      // : api.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
     _.secure_random = this.bytes();         // : Uint8Array - bytes
     if (flags & 32) _.pending_reset_date = this.int32() // ?: number - flags.5?int
     if (flags & 64) _.login_email_pattern = this.string() // ?: string - flags.6?string
@@ -22173,17 +22171,17 @@ export const $decoder = new Map([
     const _ = { _: "account.passwordSettings" }
     const flags = this.int32();
     if (flags & 1) _.email = this.string()  // ?: string - flags.0?string
-    if (flags & 2) _.secure_settings = this.object() // ?: global.SecureSecretSettings - flags.1?SecureSecretSettings
+    if (flags & 2) _.secure_settings = this.object() // ?: api.SecureSecretSettings - flags.1?SecureSecretSettings
     return _;
   }],
   [-1036572727, function decode$account__passwordInputSettings() {
     const _ = { _: "account.passwordInputSettings" }
     const flags = this.int32();
-    if (flags & 1) _.new_algo = this.object() // ?: global.PasswordKdfAlgo - flags.0?PasswordKdfAlgo
+    if (flags & 1) _.new_algo = this.object() // ?: api.PasswordKdfAlgo - flags.0?PasswordKdfAlgo
     if (flags & 1) _.new_password_hash = this.bytes() // ?: Uint8Array - flags.0?bytes
     if (flags & 1) _.hint = this.string()   // ?: string - flags.0?string
     if (flags & 2) _.email = this.string()  // ?: string - flags.1?string
-    if (flags & 4) _.new_secure_settings = this.object() // ?: global.SecureSecretSettings - flags.2?SecureSecretSettings
+    if (flags & 4) _.new_secure_settings = this.object() // ?: api.SecureSecretSettings - flags.2?SecureSecretSettings
     return _;
   }],
   [326715557, function decode$auth__passwordRecovery() {
@@ -22219,7 +22217,7 @@ export const $decoder = new Map([
   }],
   [1516793212, function decode$chatInviteAlready() {
     const _ = { _: "chatInviteAlready" }
-    _.chat = this.object();                 // : global.Chat - Chat
+    _.chat = this.object();                 // : api.Chat - Chat
     return _;
   }],
   [-840897472, function decode$chatInvite() {
@@ -22235,15 +22233,15 @@ export const $decoder = new Map([
     if (flags & 512) _.fake = true          // ?: true - flags.9?true
     _.title = this.string();                // : string - string
     if (flags & 32) _.about = this.string() // ?: string - flags.5?string
-    _.photo = this.object();                // : global.Photo - Photo
+    _.photo = this.object();                // : api.Photo - Photo
     _.participants_count = this.int32();    // : number - int
-    if (flags & 16) _.participants = this.vector(this.object) // ?: global.User[] - flags.4?Vector<User>
+    if (flags & 16) _.participants = this.vector(this.object) // ?: api.User[] - flags.4?Vector<User>
     _.color = this.int32();                 // : number - int
     return _;
   }],
   [1634294960, function decode$chatInvitePeek() {
     const _ = { _: "chatInvitePeek" }
-    _.chat = this.object();                 // : global.Chat - Chat
+    _.chat = this.object();                 // : api.Chat - Chat
     _.expires = this.int32();               // : number - int
     return _;
   }],
@@ -22302,7 +22300,7 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     _.title = this.string();                // : string - string
     _.short_name = this.string();           // : string - string
-    if (flags & 16) _.thumbs = this.vector(this.object) // ?: global.PhotoSize[] - flags.4?Vector<PhotoSize>
+    if (flags & 16) _.thumbs = this.vector(this.object) // ?: api.PhotoSize[] - flags.4?Vector<PhotoSize>
     if (flags & 16) _.thumb_dc_id = this.int32() // ?: number - flags.4?int
     if (flags & 16) _.thumb_version = this.int32() // ?: number - flags.4?int
     if (flags & 256) _.thumb_document_id = this.int64() // ?: bigint - flags.8?long
@@ -22312,10 +22310,10 @@ export const $decoder = new Map([
   }],
   [1846886166, function decode$messages__stickerSet() {
     const _ = { _: "messages.stickerSet" }
-    _.set = this.object();                  // : global.StickerSet - StickerSet
-    _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
-    _.keywords = this.vector(this.object);  // : global.StickerKeyword[] - Vector<StickerKeyword>
-    _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
+    _.set = this.object();                  // : api.StickerSet - StickerSet
+    _.packs = this.vector(this.object);     // : api.StickerPack[] - Vector<StickerPack>
+    _.keywords = this.vector(this.object);  // : api.StickerKeyword[] - Vector<StickerKeyword>
+    _.documents = this.vector(this.object); // : api.Document[] - Vector<Document>
     return _;
   }],
   [-738646805, function decode$messages__stickerSetNotModified() {
@@ -22332,10 +22330,10 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.user_id = this.int64() // ?: bigint - flags.0?long
     if (flags & 2) _.description = this.string() // ?: string - flags.1?string
-    if (flags & 16) _.description_photo = this.object() // ?: global.Photo - flags.4?Photo
-    if (flags & 32) _.description_document = this.object() // ?: global.Document - flags.5?Document
-    if (flags & 4) _.commands = this.vector(this.object) // ?: global.BotCommand[] - flags.2?Vector<BotCommand>
-    if (flags & 8) _.menu_button = this.object() // ?: global.BotMenuButton - flags.3?BotMenuButton
+    if (flags & 16) _.description_photo = this.object() // ?: api.Photo - flags.4?Photo
+    if (flags & 32) _.description_document = this.object() // ?: api.Document - flags.5?Document
+    if (flags & 4) _.commands = this.vector(this.object) // ?: api.BotCommand[] - flags.2?Vector<BotCommand>
+    if (flags & 8) _.menu_button = this.object() // ?: api.BotMenuButton - flags.3?BotMenuButton
     return _;
   }],
   [-1560655744, function decode$keyboardButton() {
@@ -22373,7 +22371,7 @@ export const $decoder = new Map([
     if (flags & 1) _.same_peer = true       // ?: true - flags.0?true
     _.text = this.string();                 // : string - string
     _.query = this.string();                // : string - string
-    if (flags & 2) _.peer_types = this.vector(this.object) // ?: global.InlineQueryPeerType[] - flags.1?Vector<InlineQueryPeerType>
+    if (flags & 2) _.peer_types = this.vector(this.object) // ?: api.InlineQueryPeerType[] - flags.1?Vector<InlineQueryPeerType>
     return _;
   }],
   [1358175439, function decode$keyboardButtonGame() {
@@ -22402,7 +22400,7 @@ export const $decoder = new Map([
     _.text = this.string();                 // : string - string
     if (flags & 2) _.fwd_text = this.string() // ?: string - flags.1?string
     _.url = this.string();                  // : string - string
-    _.bot = this.object();                  // : global.InputUser - InputUser
+    _.bot = this.object();                  // : api.InputUser - InputUser
     return _;
   }],
   [-1144565411, function decode$keyboardButtonRequestPoll() {
@@ -22415,7 +22413,7 @@ export const $decoder = new Map([
   [-376962181, function decode$inputKeyboardButtonUserProfile() {
     const _ = { _: "inputKeyboardButtonUserProfile" }
     _.text = this.string();                 // : string - string
-    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.user_id = this.object();              // : api.InputUser - InputUser
     return _;
   }],
   [814112961, function decode$keyboardButtonUserProfile() {
@@ -22440,7 +22438,7 @@ export const $decoder = new Map([
     const _ = { _: "keyboardButtonRequestPeer" }
     _.text = this.string();                 // : string - string
     _.button_id = this.int32();             // : number - int
-    _.peer_type = this.object();            // : global.RequestPeerType - RequestPeerType
+    _.peer_type = this.object();            // : api.RequestPeerType - RequestPeerType
     _.max_quantity = this.int32();          // : number - int
     return _;
   }],
@@ -22452,13 +22450,13 @@ export const $decoder = new Map([
     if (flags & 4) _.photo_requested = true // ?: true - flags.2?true
     _.text = this.string();                 // : string - string
     _.button_id = this.int32();             // : number - int
-    _.peer_type = this.object();            // : global.RequestPeerType - RequestPeerType
+    _.peer_type = this.object();            // : api.RequestPeerType - RequestPeerType
     _.max_quantity = this.int32();          // : number - int
     return _;
   }],
   [2002815875, function decode$keyboardButtonRow() {
     const _ = { _: "keyboardButtonRow" }
-    _.buttons = this.vector(this.object);   // : global.KeyboardButton[] - Vector<KeyboardButton>
+    _.buttons = this.vector(this.object);   // : api.KeyboardButton[] - Vector<KeyboardButton>
     return _;
   }],
   [-1606526075, function decode$replyKeyboardHide() {
@@ -22482,13 +22480,13 @@ export const $decoder = new Map([
     if (flags & 2) _.single_use = true      // ?: true - flags.1?true
     if (flags & 4) _.selective = true       // ?: true - flags.2?true
     if (flags & 16) _.persistent = true     // ?: true - flags.4?true
-    _.rows = this.vector(this.object);      // : global.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
+    _.rows = this.vector(this.object);      // : api.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
     if (flags & 8) _.placeholder = this.string() // ?: string - flags.3?string
     return _;
   }],
   [1218642516, function decode$replyInlineMarkup() {
     const _ = { _: "replyInlineMarkup" }
-    _.rows = this.vector(this.object);      // : global.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
+    _.rows = this.vector(this.object);      // : api.KeyboardButtonRow[] - Vector<KeyboardButtonRow>
     return _;
   }],
   [-1148011883, function decode$messageEntityUnknown() {
@@ -22570,7 +22568,7 @@ export const $decoder = new Map([
     const _ = { _: "inputMessageEntityMentionName" }
     _.offset = this.int32();                // : number - int
     _.length = this.int32();                // : number - int
-    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.user_id = this.object();              // : api.InputUser - InputUser
     return _;
   }],
   [-1687559349, function decode$messageEntityPhone() {
@@ -22633,16 +22631,16 @@ export const $decoder = new Map([
   }],
   [1536380829, function decode$inputChannelFromMessage() {
     const _ = { _: "inputChannelFromMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.msg_id = this.int32();                // : number - int
     _.channel_id = this.int64();            // : bigint - long
     return _;
   }],
   [2131196633, function decode$contacts__resolvedPeer() {
     const _ = { _: "contacts.resolvedPeer" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [182649427, function decode$messageRange() {
@@ -22664,10 +22662,10 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.final = true           // ?: true - flags.0?true
     if (flags & 2) _.timeout = this.int32() // ?: number - flags.1?int
-    _.dialog = this.object();               // : global.Dialog - Dialog
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialog = this.object();               // : api.Dialog - Dialog
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [543450958, function decode$updates__channelDifference() {
@@ -22676,10 +22674,10 @@ export const $decoder = new Map([
     if (flags & 1) _.final = true           // ?: true - flags.0?true
     _.pts = this.int32();                   // : number - int
     if (flags & 2) _.timeout = this.int32() // ?: number - flags.1?int
-    _.new_messages = this.vector(this.object); // : global.Message[] - Vector<Message>
-    _.other_updates = this.vector(this.object); // : global.Update[] - Vector<Update>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.new_messages = this.vector(this.object); // : api.Message[] - Vector<Message>
+    _.other_updates = this.vector(this.object); // : api.Update[] - Vector<Update>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1798033689, function decode$channelMessagesFilterEmpty() {
@@ -22689,7 +22687,7 @@ export const $decoder = new Map([
     const _ = { _: "channelMessagesFilter" }
     const flags = this.int32();
     if (flags & 2) _.exclude_new_messages = true // ?: true - flags.1?true
-    _.ranges = this.vector(this.object);    // : global.MessageRange[] - Vector<MessageRange>
+    _.ranges = this.vector(this.object);    // : api.MessageRange[] - Vector<MessageRange>
     return _;
   }],
   [-1072953408, function decode$channelParticipant() {
@@ -22711,7 +22709,7 @@ export const $decoder = new Map([
     const _ = { _: "channelParticipantCreator" }
     const flags = this.int32();
     _.user_id = this.int64();               // : bigint - long
-    _.admin_rights = this.object();         // : global.ChatAdminRights - ChatAdminRights
+    _.admin_rights = this.object();         // : api.ChatAdminRights - ChatAdminRights
     if (flags & 1) _.rank = this.string()   // ?: string - flags.0?string
     return _;
   }],
@@ -22724,7 +22722,7 @@ export const $decoder = new Map([
     if (flags & 2) _.inviter_id = this.int64() // ?: bigint - flags.1?long
     _.promoted_by = this.int64();           // : bigint - long
     _.date = this.int32();                  // : number - int
-    _.admin_rights = this.object();         // : global.ChatAdminRights - ChatAdminRights
+    _.admin_rights = this.object();         // : api.ChatAdminRights - ChatAdminRights
     if (flags & 4) _.rank = this.string()   // ?: string - flags.2?string
     return _;
   }],
@@ -22732,15 +22730,15 @@ export const $decoder = new Map([
     const _ = { _: "channelParticipantBanned" }
     const flags = this.int32();
     if (flags & 1) _.left = true            // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.kicked_by = this.int64();             // : bigint - long
     _.date = this.int32();                  // : number - int
-    _.banned_rights = this.object();        // : global.ChatBannedRights - ChatBannedRights
+    _.banned_rights = this.object();        // : api.ChatBannedRights - ChatBannedRights
     return _;
   }],
   [453242886, function decode$channelParticipantLeft() {
     const _ = { _: "channelParticipantLeft" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     return _;
   }],
   [-566281095, function decode$channelParticipantsRecent() {
@@ -22782,9 +22780,9 @@ export const $decoder = new Map([
   [-1699676497, function decode$channels__channelParticipants() {
     const _ = { _: "channels.channelParticipants" }
     _.count = this.int32();                 // : number - int
-    _.participants = this.vector(this.object); // : global.ChannelParticipant[] - Vector<ChannelParticipant>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.participants = this.vector(this.object); // : api.ChannelParticipant[] - Vector<ChannelParticipant>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-266911767, function decode$channels__channelParticipantsNotModified() {
@@ -22792,18 +22790,18 @@ export const $decoder = new Map([
   }],
   [-541588713, function decode$channels__channelParticipant() {
     const _ = { _: "channels.channelParticipant" }
-    _.participant = this.object();          // : global.ChannelParticipant - ChannelParticipant
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.participant = this.object();          // : api.ChannelParticipant - ChannelParticipant
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [2013922064, function decode$help__termsOfService() {
     const _ = { _: "help.termsOfService" }
     const flags = this.int32();
     if (flags & 1) _.popup = true           // ?: true - flags.0?true
-    _.id = this.object();                   // : global.DataJSON - DataJSON
+    _.id = this.object();                   // : api.DataJSON - DataJSON
     _.text = this.string();                 // : string - string
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
+    _.entities = this.vector(this.object);  // : api.MessageEntity[] - Vector<MessageEntity>
     if (flags & 2) _.min_age_confirm = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -22813,7 +22811,7 @@ export const $decoder = new Map([
   [-2069878259, function decode$messages__savedGifs() {
     const _ = { _: "messages.savedGifs" }
     _.hash = this.int64();                  // : bigint - long
-    _.gifs = this.vector(this.object);      // : global.Document[] - Vector<Document>
+    _.gifs = this.vector(this.object);      // : api.Document[] - Vector<Document>
     return _;
   }],
   [864077702, function decode$inputBotInlineMessageMediaAuto() {
@@ -22821,8 +22819,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 8) _.invert_media = true    // ?: true - flags.3?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [1036876423, function decode$inputBotInlineMessageText() {
@@ -22831,30 +22829,30 @@ export const $decoder = new Map([
     if (flags & 1) _.no_webpage = true      // ?: true - flags.0?true
     if (flags & 8) _.invert_media = true    // ?: true - flags.3?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-1768777083, function decode$inputBotInlineMessageMediaGeo() {
     const _ = { _: "inputBotInlineMessageMediaGeo" }
     const flags = this.int32();
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     if (flags & 1) _.heading = this.int32() // ?: number - flags.0?int
     if (flags & 2) _.period = this.int32()  // ?: number - flags.1?int
     if (flags & 8) _.proximity_notification_radius = this.int32() // ?: number - flags.3?int
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [1098628881, function decode$inputBotInlineMessageMediaVenue() {
     const _ = { _: "inputBotInlineMessageMediaVenue" }
     const flags = this.int32();
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     _.title = this.string();                // : string - string
     _.address = this.string();              // : string - string
     _.provider = this.string();             // : string - string
     _.venue_id = this.string();             // : string - string
     _.venue_type = this.string();           // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-1494368259, function decode$inputBotInlineMessageMediaContact() {
@@ -22864,13 +22862,13 @@ export const $decoder = new Map([
     _.first_name = this.string();           // : string - string
     _.last_name = this.string();            // : string - string
     _.vcard = this.string();                // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [1262639204, function decode$inputBotInlineMessageGame() {
     const _ = { _: "inputBotInlineMessageGame" }
     const flags = this.int32();
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-672693723, function decode$inputBotInlineMessageMediaInvoice() {
@@ -22878,12 +22876,12 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.InputWebDocument - flags.0?InputWebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
+    if (flags & 1) _.photo = this.object()  // ?: api.InputWebDocument - flags.0?InputWebDocument
+    _.invoice = this.object();              // : api.Invoice - Invoice
     _.payload = this.bytes();               // : Uint8Array - bytes
     _.provider = this.string();             // : string - string
-    _.provider_data = this.object();        // : global.DataJSON - DataJSON
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    _.provider_data = this.object();        // : api.DataJSON - DataJSON
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-1109605104, function decode$inputBotInlineMessageMediaWebPage() {
@@ -22894,9 +22892,9 @@ export const $decoder = new Map([
     if (flags & 32) _.force_small_media = true // ?: true - flags.5?true
     if (flags & 64) _.optional = true       // ?: true - flags.6?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
     _.url = this.string();                  // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-2000710887, function decode$inputBotInlineResult() {
@@ -22907,17 +22905,17 @@ export const $decoder = new Map([
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.description = this.string() // ?: string - flags.2?string
     if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
-    if (flags & 16) _.thumb = this.object() // ?: global.InputWebDocument - flags.4?InputWebDocument
-    if (flags & 32) _.content = this.object() // ?: global.InputWebDocument - flags.5?InputWebDocument
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    if (flags & 16) _.thumb = this.object() // ?: api.InputWebDocument - flags.4?InputWebDocument
+    if (flags & 32) _.content = this.object() // ?: api.InputWebDocument - flags.5?InputWebDocument
+    _.send_message = this.object();         // : api.InputBotInlineMessage - InputBotInlineMessage
     return _;
   }],
   [-1462213465, function decode$inputBotInlineResultPhoto() {
     const _ = { _: "inputBotInlineResultPhoto" }
     _.id = this.string();                   // : string - string
     _.type = this.string();                 // : string - string
-    _.photo = this.object();                // : global.InputPhoto - InputPhoto
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    _.photo = this.object();                // : api.InputPhoto - InputPhoto
+    _.send_message = this.object();         // : api.InputBotInlineMessage - InputBotInlineMessage
     return _;
   }],
   [-459324, function decode$inputBotInlineResultDocument() {
@@ -22927,15 +22925,15 @@ export const $decoder = new Map([
     _.type = this.string();                 // : string - string
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.description = this.string() // ?: string - flags.2?string
-    _.document = this.object();             // : global.InputDocument - InputDocument
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    _.document = this.object();             // : api.InputDocument - InputDocument
+    _.send_message = this.object();         // : api.InputBotInlineMessage - InputBotInlineMessage
     return _;
   }],
   [1336154098, function decode$inputBotInlineResultGame() {
     const _ = { _: "inputBotInlineResultGame" }
     _.id = this.string();                   // : string - string
     _.short_name = this.string();           // : string - string
-    _.send_message = this.object();         // : global.InputBotInlineMessage - InputBotInlineMessage
+    _.send_message = this.object();         // : api.InputBotInlineMessage - InputBotInlineMessage
     return _;
   }],
   [1984755728, function decode$botInlineMessageMediaAuto() {
@@ -22943,8 +22941,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 8) _.invert_media = true    // ?: true - flags.3?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-1937807902, function decode$botInlineMessageText() {
@@ -22953,30 +22951,30 @@ export const $decoder = new Map([
     if (flags & 1) _.no_webpage = true      // ?: true - flags.0?true
     if (flags & 8) _.invert_media = true    // ?: true - flags.3?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [85477117, function decode$botInlineMessageMediaGeo() {
     const _ = { _: "botInlineMessageMediaGeo" }
     const flags = this.int32();
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     if (flags & 1) _.heading = this.int32() // ?: number - flags.0?int
     if (flags & 2) _.period = this.int32()  // ?: number - flags.1?int
     if (flags & 8) _.proximity_notification_radius = this.int32() // ?: number - flags.3?int
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-1970903652, function decode$botInlineMessageMediaVenue() {
     const _ = { _: "botInlineMessageMediaVenue" }
     const flags = this.int32();
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     _.title = this.string();                // : string - string
     _.address = this.string();              // : string - string
     _.provider = this.string();             // : string - string
     _.venue_id = this.string();             // : string - string
     _.venue_type = this.string();           // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [416402882, function decode$botInlineMessageMediaContact() {
@@ -22986,7 +22984,7 @@ export const $decoder = new Map([
     _.first_name = this.string();           // : string - string
     _.last_name = this.string();            // : string - string
     _.vcard = this.string();                // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [894081801, function decode$botInlineMessageMediaInvoice() {
@@ -22996,10 +22994,10 @@ export const $decoder = new Map([
     if (flags & 8) _.test = true            // ?: true - flags.3?true
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.WebDocument - flags.0?WebDocument
+    if (flags & 1) _.photo = this.object()  // ?: api.WebDocument - flags.0?WebDocument
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [-2137335386, function decode$botInlineMessageMediaWebPage() {
@@ -23011,9 +23009,9 @@ export const $decoder = new Map([
     if (flags & 128) _.manual = true        // ?: true - flags.7?true
     if (flags & 256) _.safe = true          // ?: true - flags.8?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
     _.url = this.string();                  // : string - string
-    if (flags & 4) _.reply_markup = this.object() // ?: global.ReplyMarkup - flags.2?ReplyMarkup
+    if (flags & 4) _.reply_markup = this.object() // ?: api.ReplyMarkup - flags.2?ReplyMarkup
     return _;
   }],
   [295067450, function decode$botInlineResult() {
@@ -23024,9 +23022,9 @@ export const $decoder = new Map([
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.description = this.string() // ?: string - flags.2?string
     if (flags & 8) _.url = this.string()    // ?: string - flags.3?string
-    if (flags & 16) _.thumb = this.object() // ?: global.WebDocument - flags.4?WebDocument
-    if (flags & 32) _.content = this.object() // ?: global.WebDocument - flags.5?WebDocument
-    _.send_message = this.object();         // : global.BotInlineMessage - BotInlineMessage
+    if (flags & 16) _.thumb = this.object() // ?: api.WebDocument - flags.4?WebDocument
+    if (flags & 32) _.content = this.object() // ?: api.WebDocument - flags.5?WebDocument
+    _.send_message = this.object();         // : api.BotInlineMessage - BotInlineMessage
     return _;
   }],
   [400266251, function decode$botInlineMediaResult() {
@@ -23034,11 +23032,11 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.id = this.string();                   // : string - string
     _.type = this.string();                 // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.Photo - flags.0?Photo
-    if (flags & 2) _.document = this.object() // ?: global.Document - flags.1?Document
+    if (flags & 1) _.photo = this.object()  // ?: api.Photo - flags.0?Photo
+    if (flags & 2) _.document = this.object() // ?: api.Document - flags.1?Document
     if (flags & 4) _.title = this.string()  // ?: string - flags.2?string
     if (flags & 8) _.description = this.string() // ?: string - flags.3?string
-    _.send_message = this.object();         // : global.BotInlineMessage - BotInlineMessage
+    _.send_message = this.object();         // : api.BotInlineMessage - BotInlineMessage
     return _;
   }],
   [-534646026, function decode$messages__botResults() {
@@ -23047,11 +23045,11 @@ export const $decoder = new Map([
     if (flags & 1) _.gallery = true         // ?: true - flags.0?true
     _.query_id = this.int64();              // : bigint - long
     if (flags & 2) _.next_offset = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.switch_pm = this.object() // ?: global.InlineBotSwitchPM - flags.2?InlineBotSwitchPM
-    if (flags & 8) _.switch_webview = this.object() // ?: global.InlineBotWebView - flags.3?InlineBotWebView
-    _.results = this.vector(this.object);   // : global.BotInlineResult[] - Vector<BotInlineResult>
+    if (flags & 4) _.switch_pm = this.object() // ?: api.InlineBotSwitchPM - flags.2?InlineBotSwitchPM
+    if (flags & 8) _.switch_webview = this.object() // ?: api.InlineBotWebView - flags.3?InlineBotWebView
+    _.results = this.vector(this.object);   // : api.BotInlineResult[] - Vector<BotInlineResult>
     _.cache_time = this.int32();            // : number - int
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1571494644, function decode$exportedMessageLink() {
@@ -23065,14 +23063,14 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 128) _.imported = true      // ?: true - flags.7?true
     if (flags & 2048) _.saved_out = true    // ?: true - flags.11?true
-    if (flags & 1) _.from_id = this.object() // ?: global.Peer - flags.0?Peer
+    if (flags & 1) _.from_id = this.object() // ?: api.Peer - flags.0?Peer
     if (flags & 32) _.from_name = this.string() // ?: string - flags.5?string
     _.date = this.int32();                  // : number - int
     if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
     if (flags & 8) _.post_author = this.string() // ?: string - flags.3?string
-    if (flags & 16) _.saved_from_peer = this.object() // ?: global.Peer - flags.4?Peer
+    if (flags & 16) _.saved_from_peer = this.object() // ?: api.Peer - flags.4?Peer
     if (flags & 16) _.saved_from_msg_id = this.int32() // ?: number - flags.4?int
-    if (flags & 256) _.saved_from_id = this.object() // ?: global.Peer - flags.8?Peer
+    if (flags & 256) _.saved_from_id = this.object() // ?: api.Peer - flags.8?Peer
     if (flags & 512) _.saved_from_name = this.string() // ?: string - flags.9?string
     if (flags & 1024) _.saved_date = this.int32() // ?: number - flags.10?int
     if (flags & 64) _.psa_type = this.string() // ?: string - flags.6?string
@@ -23192,16 +23190,16 @@ export const $decoder = new Map([
   }],
   [863093588, function decode$messages__peerDialogs() {
     const _ = { _: "messages.peerDialogs" }
-    _.dialogs = this.vector(this.object);   // : global.Dialog[] - Vector<Dialog>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialogs = this.vector(this.object);   // : api.Dialog[] - Vector<Dialog>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     _.state = this.object();                // : updates.State - updates.State
     return _;
   }],
   [-305282981, function decode$topPeer() {
     const _ = { _: "topPeer" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.rating = this.double();               // : number - double
     return _;
   }],
@@ -23231,9 +23229,9 @@ export const $decoder = new Map([
   }],
   [-75283823, function decode$topPeerCategoryPeers() {
     const _ = { _: "topPeerCategoryPeers" }
-    _.category = this.object();             // : global.TopPeerCategory - TopPeerCategory
+    _.category = this.object();             // : api.TopPeerCategory - TopPeerCategory
     _.count = this.int32();                 // : number - int
-    _.peers = this.vector(this.object);     // : global.TopPeer[] - Vector<TopPeer>
+    _.peers = this.vector(this.object);     // : api.TopPeer[] - Vector<TopPeer>
     return _;
   }],
   [-567906571, function decode$contacts__topPeersNotModified() {
@@ -23241,9 +23239,9 @@ export const $decoder = new Map([
   }],
   [1891070632, function decode$contacts__topPeers() {
     const _ = { _: "contacts.topPeers" }
-    _.categories = this.vector(this.object); // : global.TopPeerCategoryPeers[] - Vector<TopPeerCategoryPeers>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.categories = this.vector(this.object); // : api.TopPeerCategoryPeers[] - Vector<TopPeerCategoryPeers>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1255369827, function decode$contacts__topPeersDisabled() {
@@ -23260,10 +23258,10 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 2) _.no_webpage = true      // ?: true - flags.1?true
     if (flags & 64) _.invert_media = true   // ?: true - flags.6?true
-    if (flags & 16) _.reply_to = this.object() // ?: global.InputReplyTo - flags.4?InputReplyTo
+    if (flags & 16) _.reply_to = this.object() // ?: api.InputReplyTo - flags.4?InputReplyTo
     _.message = this.string();              // : string - string
-    if (flags & 8) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.3?Vector<MessageEntity>
-    if (flags & 32) _.media = this.object() // ?: global.InputMedia - flags.5?InputMedia
+    if (flags & 8) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.3?Vector<MessageEntity>
+    if (flags & 32) _.media = this.object() // ?: api.InputMedia - flags.5?InputMedia
     _.date = this.int32();                  // : number - int
     return _;
   }],
@@ -23278,7 +23276,7 @@ export const $decoder = new Map([
     if (flags & 1) _.premium = true         // ?: true - flags.0?true
     _.hash = this.int64();                  // : bigint - long
     _.count = this.int32();                 // : number - int
-    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    _.sets = this.vector(this.object);      // : api.StickerSetCovered[] - Vector<StickerSetCovered>
     _.unread = this.vector(this.int64);     // : bigint[] - Vector<long>
     return _;
   }],
@@ -23288,15 +23286,15 @@ export const $decoder = new Map([
   [-1999405994, function decode$messages__recentStickers() {
     const _ = { _: "messages.recentStickers" }
     _.hash = this.int64();                  // : bigint - long
-    _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
-    _.stickers = this.vector(this.object);  // : global.Document[] - Vector<Document>
+    _.packs = this.vector(this.object);     // : api.StickerPack[] - Vector<StickerPack>
+    _.stickers = this.vector(this.object);  // : api.Document[] - Vector<Document>
     _.dates = this.vector(this.int32);      // : number[] - Vector<int>
     return _;
   }],
   [1338747336, function decode$messages__archivedStickers() {
     const _ = { _: "messages.archivedStickers" }
     _.count = this.int32();                 // : number - int
-    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    _.sets = this.vector(this.object);      // : api.StickerSetCovered[] - Vector<StickerSetCovered>
     return _;
   }],
   [946083368, function decode$messages__stickerSetInstallResultSuccess() {
@@ -23304,32 +23302,32 @@ export const $decoder = new Map([
   }],
   [904138920, function decode$messages__stickerSetInstallResultArchive() {
     const _ = { _: "messages.stickerSetInstallResultArchive" }
-    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    _.sets = this.vector(this.object);      // : api.StickerSetCovered[] - Vector<StickerSetCovered>
     return _;
   }],
   [1678812626, function decode$stickerSetCovered() {
     const _ = { _: "stickerSetCovered" }
-    _.set = this.object();                  // : global.StickerSet - StickerSet
-    _.cover = this.object();                // : global.Document - Document
+    _.set = this.object();                  // : api.StickerSet - StickerSet
+    _.cover = this.object();                // : api.Document - Document
     return _;
   }],
   [872932635, function decode$stickerSetMultiCovered() {
     const _ = { _: "stickerSetMultiCovered" }
-    _.set = this.object();                  // : global.StickerSet - StickerSet
-    _.covers = this.vector(this.object);    // : global.Document[] - Vector<Document>
+    _.set = this.object();                  // : api.StickerSet - StickerSet
+    _.covers = this.vector(this.object);    // : api.Document[] - Vector<Document>
     return _;
   }],
   [1087454222, function decode$stickerSetFullCovered() {
     const _ = { _: "stickerSetFullCovered" }
-    _.set = this.object();                  // : global.StickerSet - StickerSet
-    _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
-    _.keywords = this.vector(this.object);  // : global.StickerKeyword[] - Vector<StickerKeyword>
-    _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
+    _.set = this.object();                  // : api.StickerSet - StickerSet
+    _.packs = this.vector(this.object);     // : api.StickerPack[] - Vector<StickerPack>
+    _.keywords = this.vector(this.object);  // : api.StickerKeyword[] - Vector<StickerKeyword>
+    _.documents = this.vector(this.object); // : api.Document[] - Vector<Document>
     return _;
   }],
   [2008112412, function decode$stickerSetNoCovered() {
     const _ = { _: "stickerSetNoCovered" }
-    _.set = this.object();                  // : global.StickerSet - StickerSet
+    _.set = this.object();                  // : api.StickerSet - StickerSet
     return _;
   }],
   [-1361650766, function decode$maskCoords() {
@@ -23342,12 +23340,12 @@ export const $decoder = new Map([
   }],
   [1251549527, function decode$inputStickeredMediaPhoto() {
     const _ = { _: "inputStickeredMediaPhoto" }
-    _.id = this.object();                   // : global.InputPhoto - InputPhoto
+    _.id = this.object();                   // : api.InputPhoto - InputPhoto
     return _;
   }],
   [70813275, function decode$inputStickeredMediaDocument() {
     const _ = { _: "inputStickeredMediaDocument" }
-    _.id = this.object();                   // : global.InputDocument - InputDocument
+    _.id = this.object();                   // : api.InputDocument - InputDocument
     return _;
   }],
   [-1107729093, function decode$game() {
@@ -23358,8 +23356,8 @@ export const $decoder = new Map([
     _.short_name = this.string();           // : string - string
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    _.photo = this.object();                // : global.Photo - Photo
-    if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
+    _.photo = this.object();                // : api.Photo - Photo
+    if (flags & 1) _.document = this.object() // ?: api.Document - flags.0?Document
     return _;
   }],
   [53231223, function decode$inputGameID() {
@@ -23370,7 +23368,7 @@ export const $decoder = new Map([
   }],
   [-1020139510, function decode$inputGameShortName() {
     const _ = { _: "inputGameShortName" }
-    _.bot_id = this.object();               // : global.InputUser - InputUser
+    _.bot_id = this.object();               // : api.InputUser - InputUser
     _.short_name = this.string();           // : string - string
     return _;
   }],
@@ -23383,8 +23381,8 @@ export const $decoder = new Map([
   }],
   [-1707344487, function decode$messages__highScores() {
     const _ = { _: "messages.highScores" }
-    _.scores = this.vector(this.object);    // : global.HighScore[] - Vector<HighScore>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.scores = this.vector(this.object);    // : api.HighScore[] - Vector<HighScore>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-599948721, function decode$textEmpty() {
@@ -23397,65 +23395,65 @@ export const $decoder = new Map([
   }],
   [1730456516, function decode$textBold() {
     const _ = { _: "textBold" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-653089380, function decode$textItalic() {
     const _ = { _: "textItalic" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1054465340, function decode$textUnderline() {
     const _ = { _: "textUnderline" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1678197867, function decode$textStrike() {
     const _ = { _: "textStrike" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [1816074681, function decode$textFixed() {
     const _ = { _: "textFixed" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [1009288385, function decode$textUrl() {
     const _ = { _: "textUrl" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     _.url = this.string();                  // : string - string
     _.webpage_id = this.int64();            // : bigint - long
     return _;
   }],
   [-564523562, function decode$textEmail() {
     const _ = { _: "textEmail" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     _.email = this.string();                // : string - string
     return _;
   }],
   [2120376535, function decode$textConcat() {
     const _ = { _: "textConcat" }
-    _.texts = this.vector(this.object);     // : global.RichText[] - Vector<RichText>
+    _.texts = this.vector(this.object);     // : api.RichText[] - Vector<RichText>
     return _;
   }],
   [-311786236, function decode$textSubscript() {
     const _ = { _: "textSubscript" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-939827711, function decode$textSuperscript() {
     const _ = { _: "textSuperscript" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [55281185, function decode$textMarked() {
     const _ = { _: "textMarked" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [483104362, function decode$textPhone() {
     const _ = { _: "textPhone" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     _.phone = this.string();                // : string - string
     return _;
   }],
@@ -23468,7 +23466,7 @@ export const $decoder = new Map([
   }],
   [894777186, function decode$textAnchor() {
     const _ = { _: "textAnchor" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     _.name = this.string();                 // : string - string
     return _;
   }],
@@ -23477,44 +23475,44 @@ export const $decoder = new Map([
   }],
   [1890305021, function decode$pageBlockTitle() {
     const _ = { _: "pageBlockTitle" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1879401953, function decode$pageBlockSubtitle() {
     const _ = { _: "pageBlockSubtitle" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1162877472, function decode$pageBlockAuthorDate() {
     const _ = { _: "pageBlockAuthorDate" }
-    _.author = this.object();               // : global.RichText - RichText
+    _.author = this.object();               // : api.RichText - RichText
     _.published_date = this.int32();        // : number - int
     return _;
   }],
   [-1076861716, function decode$pageBlockHeader() {
     const _ = { _: "pageBlockHeader" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-248793375, function decode$pageBlockSubheader() {
     const _ = { _: "pageBlockSubheader" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [1182402406, function decode$pageBlockParagraph() {
     const _ = { _: "pageBlockParagraph" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1066346178, function decode$pageBlockPreformatted() {
     const _ = { _: "pageBlockPreformatted" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     _.language = this.string();             // : string - string
     return _;
   }],
   [1216809369, function decode$pageBlockFooter() {
     const _ = { _: "pageBlockFooter" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-618614392, function decode$pageBlockDivider() {
@@ -23527,26 +23525,26 @@ export const $decoder = new Map([
   }],
   [-454524911, function decode$pageBlockList() {
     const _ = { _: "pageBlockList" }
-    _.items = this.vector(this.object);     // : global.PageListItem[] - Vector<PageListItem>
+    _.items = this.vector(this.object);     // : api.PageListItem[] - Vector<PageListItem>
     return _;
   }],
   [641563686, function decode$pageBlockBlockquote() {
     const _ = { _: "pageBlockBlockquote" }
-    _.text = this.object();                 // : global.RichText - RichText
-    _.caption = this.object();              // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
+    _.caption = this.object();              // : api.RichText - RichText
     return _;
   }],
   [1329878739, function decode$pageBlockPullquote() {
     const _ = { _: "pageBlockPullquote" }
-    _.text = this.object();                 // : global.RichText - RichText
-    _.caption = this.object();              // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
+    _.caption = this.object();              // : api.RichText - RichText
     return _;
   }],
   [391759200, function decode$pageBlockPhoto() {
     const _ = { _: "pageBlockPhoto" }
     const flags = this.int32();
     _.photo_id = this.int64();              // : bigint - long
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     if (flags & 1) _.url = this.string()    // ?: string - flags.0?string
     if (flags & 1) _.webpage_id = this.int64() // ?: bigint - flags.0?long
     return _;
@@ -23557,12 +23555,12 @@ export const $decoder = new Map([
     if (flags & 1) _.autoplay = true        // ?: true - flags.0?true
     if (flags & 2) _.loop = true            // ?: true - flags.1?true
     _.video_id = this.int64();              // : bigint - long
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [972174080, function decode$pageBlockCover() {
     const _ = { _: "pageBlockCover" }
-    _.cover = this.object();                // : global.PageBlock - PageBlock
+    _.cover = this.object();                // : api.PageBlock - PageBlock
     return _;
   }],
   [-1468953147, function decode$pageBlockEmbed() {
@@ -23575,7 +23573,7 @@ export const $decoder = new Map([
     if (flags & 16) _.poster_photo_id = this.int64() // ?: bigint - flags.4?long
     if (flags & 32) _.w = this.int32()      // ?: number - flags.5?int
     if (flags & 32) _.h = this.int32()      // ?: number - flags.5?int
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [-229005301, function decode$pageBlockEmbedPost() {
@@ -23585,36 +23583,36 @@ export const $decoder = new Map([
     _.author_photo_id = this.int64();       // : bigint - long
     _.author = this.string();               // : string - string
     _.date = this.int32();                  // : number - int
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.blocks = this.vector(this.object);    // : api.PageBlock[] - Vector<PageBlock>
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [1705048653, function decode$pageBlockCollage() {
     const _ = { _: "pageBlockCollage" }
-    _.items = this.vector(this.object);     // : global.PageBlock[] - Vector<PageBlock>
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.items = this.vector(this.object);     // : api.PageBlock[] - Vector<PageBlock>
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [52401552, function decode$pageBlockSlideshow() {
     const _ = { _: "pageBlockSlideshow" }
-    _.items = this.vector(this.object);     // : global.PageBlock[] - Vector<PageBlock>
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.items = this.vector(this.object);     // : api.PageBlock[] - Vector<PageBlock>
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [-283684427, function decode$pageBlockChannel() {
     const _ = { _: "pageBlockChannel" }
-    _.channel = this.object();              // : global.Chat - Chat
+    _.channel = this.object();              // : api.Chat - Chat
     return _;
   }],
   [-2143067670, function decode$pageBlockAudio() {
     const _ = { _: "pageBlockAudio" }
     _.audio_id = this.int64();              // : bigint - long
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [504660880, function decode$pageBlockKicker() {
     const _ = { _: "pageBlockKicker" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1085412734, function decode$pageBlockTable() {
@@ -23622,36 +23620,36 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.bordered = true        // ?: true - flags.0?true
     if (flags & 2) _.striped = true         // ?: true - flags.1?true
-    _.title = this.object();                // : global.RichText - RichText
-    _.rows = this.vector(this.object);      // : global.PageTableRow[] - Vector<PageTableRow>
+    _.title = this.object();                // : api.RichText - RichText
+    _.rows = this.vector(this.object);      // : api.PageTableRow[] - Vector<PageTableRow>
     return _;
   }],
   [-1702174239, function decode$pageBlockOrderedList() {
     const _ = { _: "pageBlockOrderedList" }
-    _.items = this.vector(this.object);     // : global.PageListOrderedItem[] - Vector<PageListOrderedItem>
+    _.items = this.vector(this.object);     // : api.PageListOrderedItem[] - Vector<PageListOrderedItem>
     return _;
   }],
   [1987480557, function decode$pageBlockDetails() {
     const _ = { _: "pageBlockDetails" }
     const flags = this.int32();
     if (flags & 1) _.open = true            // ?: true - flags.0?true
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
-    _.title = this.object();                // : global.RichText - RichText
+    _.blocks = this.vector(this.object);    // : api.PageBlock[] - Vector<PageBlock>
+    _.title = this.object();                // : api.RichText - RichText
     return _;
   }],
   [370236054, function decode$pageBlockRelatedArticles() {
     const _ = { _: "pageBlockRelatedArticles" }
-    _.title = this.object();                // : global.RichText - RichText
-    _.articles = this.vector(this.object);  // : global.PageRelatedArticle[] - Vector<PageRelatedArticle>
+    _.title = this.object();                // : api.RichText - RichText
+    _.articles = this.vector(this.object);  // : api.PageRelatedArticle[] - Vector<PageRelatedArticle>
     return _;
   }],
   [-1538310410, function decode$pageBlockMap() {
     const _ = { _: "pageBlockMap" }
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     _.zoom = this.int32();                  // : number - int
     _.w = this.int32();                     // : number - int
     _.h = this.int32();                     // : number - int
-    _.caption = this.object();              // : global.PageCaption - PageCaption
+    _.caption = this.object();              // : api.PageCaption - PageCaption
     return _;
   }],
   [-2048646399, function decode$phoneCallDiscardReasonMissed() {
@@ -23690,7 +23688,7 @@ export const $decoder = new Map([
     if (flags & 128) _.email_to_provider = true // ?: true - flags.7?true
     if (flags & 512) _.recurring = true     // ?: true - flags.9?true
     _.currency = this.string();             // : string - string
-    _.prices = this.vector(this.object);    // : global.LabeledPrice[] - Vector<LabeledPrice>
+    _.prices = this.vector(this.object);    // : api.LabeledPrice[] - Vector<LabeledPrice>
     if (flags & 256) _.max_tip_amount = this.int64() // ?: bigint - flags.8?long
     if (flags & 256) _.suggested_tip_amounts = this.vector(this.int64) // ?: bigint[] - flags.8?Vector<long>
     if (flags & 1024) _.terms_url = this.string() // ?: string - flags.10?string
@@ -23718,7 +23716,7 @@ export const $decoder = new Map([
     if (flags & 1) _.name = this.string()   // ?: string - flags.0?string
     if (flags & 2) _.phone = this.string()  // ?: string - flags.1?string
     if (flags & 4) _.email = this.string()  // ?: string - flags.2?string
-    if (flags & 8) _.shipping_address = this.object() // ?: global.PostAddress - flags.3?PostAddress
+    if (flags & 8) _.shipping_address = this.object() // ?: api.PostAddress - flags.3?PostAddress
     return _;
   }],
   [-842892769, function decode$paymentSavedCredentialsCard() {
@@ -23733,7 +23731,7 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     _.size = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    _.attributes = this.vector(this.object); // : api.DocumentAttribute[] - Vector<DocumentAttribute>
     return _;
   }],
   [-104284986, function decode$webDocumentNoProxy() {
@@ -23741,7 +23739,7 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     _.size = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    _.attributes = this.vector(this.object); // : api.DocumentAttribute[] - Vector<DocumentAttribute>
     return _;
   }],
   [-1678949555, function decode$inputWebDocument() {
@@ -23749,7 +23747,7 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     _.size = this.int32();                  // : number - int
     _.mime_type = this.string();            // : string - string
-    _.attributes = this.vector(this.object); // : global.DocumentAttribute[] - Vector<DocumentAttribute>
+    _.attributes = this.vector(this.object); // : api.DocumentAttribute[] - Vector<DocumentAttribute>
     return _;
   }],
   [-1036396922, function decode$inputWebFileLocation() {
@@ -23760,7 +23758,7 @@ export const $decoder = new Map([
   }],
   [-1625153079, function decode$inputWebFileGeoPointLocation() {
     const _ = { _: "inputWebFileGeoPointLocation" }
-    _.geo_point = this.object();            // : global.InputGeoPoint - InputGeoPoint
+    _.geo_point = this.object();            // : api.InputGeoPoint - InputGeoPoint
     _.access_hash = this.int64();           // : bigint - long
     _.w = this.int32();                     // : number - int
     _.h = this.int32();                     // : number - int
@@ -23772,7 +23770,7 @@ export const $decoder = new Map([
     const _ = { _: "inputWebFileAudioAlbumThumbLocation" }
     const flags = this.int32();
     if (flags & 4) _.small = true           // ?: true - flags.2?true
-    if (flags & 1) _.document = this.object() // ?: global.InputDocument - flags.0?InputDocument
+    if (flags & 1) _.document = this.object() // ?: api.InputDocument - flags.0?InputDocument
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     if (flags & 2) _.performer = this.string() // ?: string - flags.1?string
     return _;
@@ -23795,28 +23793,28 @@ export const $decoder = new Map([
     _.bot_id = this.int64();                // : bigint - long
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 32) _.photo = this.object() // ?: global.WebDocument - flags.5?WebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
+    if (flags & 32) _.photo = this.object() // ?: api.WebDocument - flags.5?WebDocument
+    _.invoice = this.object();              // : api.Invoice - Invoice
     _.provider_id = this.int64();           // : bigint - long
     _.url = this.string();                  // : string - string
     if (flags & 16) _.native_provider = this.string() // ?: string - flags.4?string
-    if (flags & 16) _.native_params = this.object() // ?: global.DataJSON - flags.4?DataJSON
-    if (flags & 64) _.additional_methods = this.vector(this.object) // ?: global.PaymentFormMethod[] - flags.6?Vector<PaymentFormMethod>
-    if (flags & 1) _.saved_info = this.object() // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (flags & 2) _.saved_credentials = this.vector(this.object) // ?: global.PaymentSavedCredentials[] - flags.1?Vector<PaymentSavedCredentials>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    if (flags & 16) _.native_params = this.object() // ?: api.DataJSON - flags.4?DataJSON
+    if (flags & 64) _.additional_methods = this.vector(this.object) // ?: api.PaymentFormMethod[] - flags.6?Vector<PaymentFormMethod>
+    if (flags & 1) _.saved_info = this.object() // ?: api.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 2) _.saved_credentials = this.vector(this.object) // ?: api.PaymentSavedCredentials[] - flags.1?Vector<PaymentSavedCredentials>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-784000893, function decode$payments__validatedRequestedInfo() {
     const _ = { _: "payments.validatedRequestedInfo" }
     const flags = this.int32();
     if (flags & 1) _.id = this.string()     // ?: string - flags.0?string
-    if (flags & 2) _.shipping_options = this.vector(this.object) // ?: global.ShippingOption[] - flags.1?Vector<ShippingOption>
+    if (flags & 2) _.shipping_options = this.vector(this.object) // ?: api.ShippingOption[] - flags.1?Vector<ShippingOption>
     return _;
   }],
   [1314881805, function decode$payments__paymentResult() {
     const _ = { _: "payments.paymentResult" }
-    _.updates = this.object();              // : global.Updates - Updates
+    _.updates = this.object();              // : api.Updates - Updates
     return _;
   }],
   [-666824391, function decode$payments__paymentVerificationNeeded() {
@@ -23832,22 +23830,22 @@ export const $decoder = new Map([
     _.provider_id = this.int64();           // : bigint - long
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 4) _.photo = this.object()  // ?: global.WebDocument - flags.2?WebDocument
-    _.invoice = this.object();              // : global.Invoice - Invoice
-    if (flags & 1) _.info = this.object()   // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
-    if (flags & 2) _.shipping = this.object() // ?: global.ShippingOption - flags.1?ShippingOption
+    if (flags & 4) _.photo = this.object()  // ?: api.WebDocument - flags.2?WebDocument
+    _.invoice = this.object();              // : api.Invoice - Invoice
+    if (flags & 1) _.info = this.object()   // ?: api.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 2) _.shipping = this.object() // ?: api.ShippingOption - flags.1?ShippingOption
     if (flags & 8) _.tip_amount = this.int64() // ?: bigint - flags.3?long
     _.currency = this.string();             // : string - string
     _.total_amount = this.int64();          // : bigint - long
     _.credentials_title = this.string();    // : string - string
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-74456004, function decode$payments__savedInfo() {
     const _ = { _: "payments.savedInfo" }
     const flags = this.int32();
     if (flags & 2) _.has_saved_credentials = true // ?: true - flags.1?true
-    if (flags & 1) _.saved_info = this.object() // ?: global.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
+    if (flags & 1) _.saved_info = this.object() // ?: api.PaymentRequestedInfo - flags.0?PaymentRequestedInfo
     return _;
   }],
   [-1056001329, function decode$inputPaymentCredentialsSaved() {
@@ -23860,17 +23858,17 @@ export const $decoder = new Map([
     const _ = { _: "inputPaymentCredentials" }
     const flags = this.int32();
     if (flags & 1) _.save = true            // ?: true - flags.0?true
-    _.data = this.object();                 // : global.DataJSON - DataJSON
+    _.data = this.object();                 // : api.DataJSON - DataJSON
     return _;
   }],
   [178373535, function decode$inputPaymentCredentialsApplePay() {
     const _ = { _: "inputPaymentCredentialsApplePay" }
-    _.payment_data = this.object();         // : global.DataJSON - DataJSON
+    _.payment_data = this.object();         // : api.DataJSON - DataJSON
     return _;
   }],
   [-1966921727, function decode$inputPaymentCredentialsGooglePay() {
     const _ = { _: "inputPaymentCredentialsGooglePay" }
-    _.payment_token = this.object();        // : global.DataJSON - DataJSON
+    _.payment_token = this.object();        // : api.DataJSON - DataJSON
     return _;
   }],
   [-614138572, function decode$account__tmpPassword() {
@@ -23883,15 +23881,15 @@ export const $decoder = new Map([
     const _ = { _: "shippingOption" }
     _.id = this.string();                   // : string - string
     _.title = this.string();                // : string - string
-    _.prices = this.vector(this.object);    // : global.LabeledPrice[] - Vector<LabeledPrice>
+    _.prices = this.vector(this.object);    // : api.LabeledPrice[] - Vector<LabeledPrice>
     return _;
   }],
   [853188252, function decode$inputStickerSetItem() {
     const _ = { _: "inputStickerSetItem" }
     const flags = this.int32();
-    _.document = this.object();             // : global.InputDocument - InputDocument
+    _.document = this.object();             // : api.InputDocument - InputDocument
     _.emoji = this.string();                // : string - string
-    if (flags & 1) _.mask_coords = this.object() // ?: global.MaskCoords - flags.0?MaskCoords
+    if (flags & 1) _.mask_coords = this.object() // ?: api.MaskCoords - flags.0?MaskCoords
     if (flags & 2) _.keywords = this.string() // ?: string - flags.1?string
     return _;
   }],
@@ -23915,7 +23913,7 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
-    _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
+    _.protocol = this.object();             // : api.PhoneCallProtocol - PhoneCallProtocol
     if (flags & 1) _.receive_date = this.int32() // ?: number - flags.0?int
     return _;
   }],
@@ -23929,7 +23927,7 @@ export const $decoder = new Map([
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
     _.g_a_hash = this.bytes();              // : Uint8Array - bytes
-    _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
+    _.protocol = this.object();             // : api.PhoneCallProtocol - PhoneCallProtocol
     return _;
   }],
   [912311057, function decode$phoneCallAccepted() {
@@ -23942,7 +23940,7 @@ export const $decoder = new Map([
     _.admin_id = this.int64();              // : bigint - long
     _.participant_id = this.int64();        // : bigint - long
     _.g_b = this.bytes();                   // : Uint8Array - bytes
-    _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
+    _.protocol = this.object();             // : api.PhoneCallProtocol - PhoneCallProtocol
     return _;
   }],
   [810769141, function decode$phoneCall() {
@@ -23957,10 +23955,10 @@ export const $decoder = new Map([
     _.participant_id = this.int64();        // : bigint - long
     _.g_a_or_b = this.bytes();              // : Uint8Array - bytes
     _.key_fingerprint = this.int64();       // : bigint - long
-    _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
-    _.connections = this.vector(this.object); // : global.PhoneConnection[] - Vector<PhoneConnection>
+    _.protocol = this.object();             // : api.PhoneCallProtocol - PhoneCallProtocol
+    _.connections = this.vector(this.object); // : api.PhoneConnection[] - Vector<PhoneConnection>
     _.start_date = this.int32();            // : number - int
-    if (flags & 128) _.custom_parameters = this.object() // ?: global.DataJSON - flags.7?DataJSON
+    if (flags & 128) _.custom_parameters = this.object() // ?: api.DataJSON - flags.7?DataJSON
     return _;
   }],
   [1355435489, function decode$phoneCallDiscarded() {
@@ -23970,7 +23968,7 @@ export const $decoder = new Map([
     if (flags & 8) _.need_debug = true      // ?: true - flags.3?true
     if (flags & 64) _.video = true          // ?: true - flags.6?true
     _.id = this.int64();                    // : bigint - long
-    if (flags & 1) _.reason = this.object() // ?: global.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
+    if (flags & 1) _.reason = this.object() // ?: api.PhoneCallDiscardReason - flags.0?PhoneCallDiscardReason
     if (flags & 2) _.duration = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -24010,8 +24008,8 @@ export const $decoder = new Map([
   }],
   [-326966976, function decode$phone__phoneCall() {
     const _ = { _: "phone.phoneCall" }
-    _.phone_call = this.object();           // : global.PhoneCall - PhoneCall
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.phone_call = this.object();           // : api.PhoneCall - PhoneCall
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-290921362, function decode$upload__cdnFileReuploadNeeded() {
@@ -24032,7 +24030,7 @@ export const $decoder = new Map([
   }],
   [1462101002, function decode$cdnConfig() {
     const _ = { _: "cdnConfig" }
-    _.public_keys = this.vector(this.object); // : global.CdnPublicKey[] - Vector<CdnPublicKey>
+    _.public_keys = this.vector(this.object); // : api.CdnPublicKey[] - Vector<CdnPublicKey>
     return _;
   }],
   [-892239370, function decode$langPackString() {
@@ -24063,7 +24061,7 @@ export const $decoder = new Map([
     _.lang_code = this.string();            // : string - string
     _.from_version = this.int32();          // : number - int
     _.version = this.int32();               // : number - int
-    _.strings = this.vector(this.object);   // : global.LangPackString[] - Vector<LangPackString>
+    _.strings = this.vector(this.object);   // : api.LangPackString[] - Vector<LangPackString>
     return _;
   }],
   [-288727837, function decode$langPackLanguage() {
@@ -24102,8 +24100,8 @@ export const $decoder = new Map([
   }],
   [1129042607, function decode$channelAdminLogEventActionChangePhoto() {
     const _ = { _: "channelAdminLogEventActionChangePhoto" }
-    _.prev_photo = this.object();           // : global.Photo - Photo
-    _.new_photo = this.object();            // : global.Photo - Photo
+    _.prev_photo = this.object();           // : api.Photo - Photo
+    _.new_photo = this.object();            // : api.Photo - Photo
     return _;
   }],
   [460916654, function decode$channelAdminLogEventActionToggleInvites() {
@@ -24118,18 +24116,18 @@ export const $decoder = new Map([
   }],
   [-370660328, function decode$channelAdminLogEventActionUpdatePinned() {
     const _ = { _: "channelAdminLogEventActionUpdatePinned" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [1889215493, function decode$channelAdminLogEventActionEditMessage() {
     const _ = { _: "channelAdminLogEventActionEditMessage" }
-    _.prev_message = this.object();         // : global.Message - Message
-    _.new_message = this.object();          // : global.Message - Message
+    _.prev_message = this.object();         // : api.Message - Message
+    _.new_message = this.object();          // : api.Message - Message
     return _;
   }],
   [1121994683, function decode$channelAdminLogEventActionDeleteMessage() {
     const _ = { _: "channelAdminLogEventActionDeleteMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [405815507, function decode$channelAdminLogEventActionParticipantJoin() {
@@ -24140,25 +24138,25 @@ export const $decoder = new Map([
   }],
   [-484690728, function decode$channelAdminLogEventActionParticipantInvite() {
     const _ = { _: "channelAdminLogEventActionParticipantInvite" }
-    _.participant = this.object();          // : global.ChannelParticipant - ChannelParticipant
+    _.participant = this.object();          // : api.ChannelParticipant - ChannelParticipant
     return _;
   }],
   [-422036098, function decode$channelAdminLogEventActionParticipantToggleBan() {
     const _ = { _: "channelAdminLogEventActionParticipantToggleBan" }
-    _.prev_participant = this.object();     // : global.ChannelParticipant - ChannelParticipant
-    _.new_participant = this.object();      // : global.ChannelParticipant - ChannelParticipant
+    _.prev_participant = this.object();     // : api.ChannelParticipant - ChannelParticipant
+    _.new_participant = this.object();      // : api.ChannelParticipant - ChannelParticipant
     return _;
   }],
   [-714643696, function decode$channelAdminLogEventActionParticipantToggleAdmin() {
     const _ = { _: "channelAdminLogEventActionParticipantToggleAdmin" }
-    _.prev_participant = this.object();     // : global.ChannelParticipant - ChannelParticipant
-    _.new_participant = this.object();      // : global.ChannelParticipant - ChannelParticipant
+    _.prev_participant = this.object();     // : api.ChannelParticipant - ChannelParticipant
+    _.new_participant = this.object();      // : api.ChannelParticipant - ChannelParticipant
     return _;
   }],
   [-1312568665, function decode$channelAdminLogEventActionChangeStickerSet() {
     const _ = { _: "channelAdminLogEventActionChangeStickerSet" }
-    _.prev_stickerset = this.object();      // : global.InputStickerSet - InputStickerSet
-    _.new_stickerset = this.object();       // : global.InputStickerSet - InputStickerSet
+    _.prev_stickerset = this.object();      // : api.InputStickerSet - InputStickerSet
+    _.new_stickerset = this.object();       // : api.InputStickerSet - InputStickerSet
     return _;
   }],
   [1599903217, function decode$channelAdminLogEventActionTogglePreHistoryHidden() {
@@ -24168,13 +24166,13 @@ export const $decoder = new Map([
   }],
   [771095562, function decode$channelAdminLogEventActionDefaultBannedRights() {
     const _ = { _: "channelAdminLogEventActionDefaultBannedRights" }
-    _.prev_banned_rights = this.object();   // : global.ChatBannedRights - ChatBannedRights
-    _.new_banned_rights = this.object();    // : global.ChatBannedRights - ChatBannedRights
+    _.prev_banned_rights = this.object();   // : api.ChatBannedRights - ChatBannedRights
+    _.new_banned_rights = this.object();    // : api.ChatBannedRights - ChatBannedRights
     return _;
   }],
   [-1895328189, function decode$channelAdminLogEventActionStopPoll() {
     const _ = { _: "channelAdminLogEventActionStopPoll" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [84703944, function decode$channelAdminLogEventActionChangeLinkedChat() {
@@ -24185,8 +24183,8 @@ export const $decoder = new Map([
   }],
   [241923758, function decode$channelAdminLogEventActionChangeLocation() {
     const _ = { _: "channelAdminLogEventActionChangeLocation" }
-    _.prev_value = this.object();           // : global.ChannelLocation - ChannelLocation
-    _.new_value = this.object();            // : global.ChannelLocation - ChannelLocation
+    _.prev_value = this.object();           // : api.ChannelLocation - ChannelLocation
+    _.new_value = this.object();            // : api.ChannelLocation - ChannelLocation
     return _;
   }],
   [1401984889, function decode$channelAdminLogEventActionToggleSlowMode() {
@@ -24197,22 +24195,22 @@ export const $decoder = new Map([
   }],
   [589338437, function decode$channelAdminLogEventActionStartGroupCall() {
     const _ = { _: "channelAdminLogEventActionStartGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     return _;
   }],
   [-610299584, function decode$channelAdminLogEventActionDiscardGroupCall() {
     const _ = { _: "channelAdminLogEventActionDiscardGroupCall" }
-    _.call = this.object();                 // : global.InputGroupCall - InputGroupCall
+    _.call = this.object();                 // : api.InputGroupCall - InputGroupCall
     return _;
   }],
   [-115071790, function decode$channelAdminLogEventActionParticipantMute() {
     const _ = { _: "channelAdminLogEventActionParticipantMute" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    _.participant = this.object();          // : api.GroupCallParticipant - GroupCallParticipant
     return _;
   }],
   [-431740480, function decode$channelAdminLogEventActionParticipantUnmute() {
     const _ = { _: "channelAdminLogEventActionParticipantUnmute" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    _.participant = this.object();          // : api.GroupCallParticipant - GroupCallParticipant
     return _;
   }],
   [1456906823, function decode$channelAdminLogEventActionToggleGroupCallSetting() {
@@ -24224,28 +24222,28 @@ export const $decoder = new Map([
     const _ = { _: "channelAdminLogEventActionParticipantJoinByInvite" }
     const flags = this.int32();
     if (flags & 1) _.via_chatlist = true    // ?: true - flags.0?true
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
     return _;
   }],
   [1515256996, function decode$channelAdminLogEventActionExportedInviteDelete() {
     const _ = { _: "channelAdminLogEventActionExportedInviteDelete" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
     return _;
   }],
   [1091179342, function decode$channelAdminLogEventActionExportedInviteRevoke() {
     const _ = { _: "channelAdminLogEventActionExportedInviteRevoke" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
     return _;
   }],
   [-384910503, function decode$channelAdminLogEventActionExportedInviteEdit() {
     const _ = { _: "channelAdminLogEventActionExportedInviteEdit" }
-    _.prev_invite = this.object();          // : global.ExportedChatInvite - ExportedChatInvite
-    _.new_invite = this.object();           // : global.ExportedChatInvite - ExportedChatInvite
+    _.prev_invite = this.object();          // : api.ExportedChatInvite - ExportedChatInvite
+    _.new_invite = this.object();           // : api.ExportedChatInvite - ExportedChatInvite
     return _;
   }],
   [1048537159, function decode$channelAdminLogEventActionParticipantVolume() {
     const _ = { _: "channelAdminLogEventActionParticipantVolume" }
-    _.participant = this.object();          // : global.GroupCallParticipant - GroupCallParticipant
+    _.participant = this.object();          // : api.GroupCallParticipant - GroupCallParticipant
     return _;
   }],
   [1855199800, function decode$channelAdminLogEventActionChangeHistoryTTL() {
@@ -24256,7 +24254,7 @@ export const $decoder = new Map([
   }],
   [-1347021750, function decode$channelAdminLogEventActionParticipantJoinByRequest() {
     const _ = { _: "channelAdminLogEventActionParticipantJoinByRequest" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
     _.approved_by = this.int64();           // : bigint - long
     return _;
   }],
@@ -24267,13 +24265,13 @@ export const $decoder = new Map([
   }],
   [663693416, function decode$channelAdminLogEventActionSendMessage() {
     const _ = { _: "channelAdminLogEventActionSendMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [-1102180616, function decode$channelAdminLogEventActionChangeAvailableReactions() {
     const _ = { _: "channelAdminLogEventActionChangeAvailableReactions" }
-    _.prev_value = this.object();           // : global.ChatReactions - ChatReactions
-    _.new_value = this.object();            // : global.ChatReactions - ChatReactions
+    _.prev_value = this.object();           // : api.ChatReactions - ChatReactions
+    _.new_value = this.object();            // : api.ChatReactions - ChatReactions
     return _;
   }],
   [-263212119, function decode$channelAdminLogEventActionChangeUsernames() {
@@ -24289,25 +24287,25 @@ export const $decoder = new Map([
   }],
   [1483767080, function decode$channelAdminLogEventActionCreateTopic() {
     const _ = { _: "channelAdminLogEventActionCreateTopic" }
-    _.topic = this.object();                // : global.ForumTopic - ForumTopic
+    _.topic = this.object();                // : api.ForumTopic - ForumTopic
     return _;
   }],
   [-261103096, function decode$channelAdminLogEventActionEditTopic() {
     const _ = { _: "channelAdminLogEventActionEditTopic" }
-    _.prev_topic = this.object();           // : global.ForumTopic - ForumTopic
-    _.new_topic = this.object();            // : global.ForumTopic - ForumTopic
+    _.prev_topic = this.object();           // : api.ForumTopic - ForumTopic
+    _.new_topic = this.object();            // : api.ForumTopic - ForumTopic
     return _;
   }],
   [-1374254839, function decode$channelAdminLogEventActionDeleteTopic() {
     const _ = { _: "channelAdminLogEventActionDeleteTopic" }
-    _.topic = this.object();                // : global.ForumTopic - ForumTopic
+    _.topic = this.object();                // : api.ForumTopic - ForumTopic
     return _;
   }],
   [1569535291, function decode$channelAdminLogEventActionPinTopic() {
     const _ = { _: "channelAdminLogEventActionPinTopic" }
     const flags = this.int32();
-    if (flags & 1) _.prev_topic = this.object() // ?: global.ForumTopic - flags.0?ForumTopic
-    if (flags & 2) _.new_topic = this.object() // ?: global.ForumTopic - flags.1?ForumTopic
+    if (flags & 1) _.prev_topic = this.object() // ?: api.ForumTopic - flags.0?ForumTopic
+    if (flags & 2) _.new_topic = this.object() // ?: api.ForumTopic - flags.1?ForumTopic
     return _;
   }],
   [1693675004, function decode$channelAdminLogEventActionToggleAntiSpam() {
@@ -24317,32 +24315,32 @@ export const $decoder = new Map([
   }],
   [1469507456, function decode$channelAdminLogEventActionChangePeerColor() {
     const _ = { _: "channelAdminLogEventActionChangePeerColor" }
-    _.prev_value = this.object();           // : global.PeerColor - PeerColor
-    _.new_value = this.object();            // : global.PeerColor - PeerColor
+    _.prev_value = this.object();           // : api.PeerColor - PeerColor
+    _.new_value = this.object();            // : api.PeerColor - PeerColor
     return _;
   }],
   [1581742885, function decode$channelAdminLogEventActionChangeProfilePeerColor() {
     const _ = { _: "channelAdminLogEventActionChangeProfilePeerColor" }
-    _.prev_value = this.object();           // : global.PeerColor - PeerColor
-    _.new_value = this.object();            // : global.PeerColor - PeerColor
+    _.prev_value = this.object();           // : api.PeerColor - PeerColor
+    _.new_value = this.object();            // : api.PeerColor - PeerColor
     return _;
   }],
   [834362706, function decode$channelAdminLogEventActionChangeWallpaper() {
     const _ = { _: "channelAdminLogEventActionChangeWallpaper" }
-    _.prev_value = this.object();           // : global.WallPaper - WallPaper
-    _.new_value = this.object();            // : global.WallPaper - WallPaper
+    _.prev_value = this.object();           // : api.WallPaper - WallPaper
+    _.new_value = this.object();            // : api.WallPaper - WallPaper
     return _;
   }],
   [1051328177, function decode$channelAdminLogEventActionChangeEmojiStatus() {
     const _ = { _: "channelAdminLogEventActionChangeEmojiStatus" }
-    _.prev_value = this.object();           // : global.EmojiStatus - EmojiStatus
-    _.new_value = this.object();            // : global.EmojiStatus - EmojiStatus
+    _.prev_value = this.object();           // : api.EmojiStatus - EmojiStatus
+    _.new_value = this.object();            // : api.EmojiStatus - EmojiStatus
     return _;
   }],
   [1188577451, function decode$channelAdminLogEventActionChangeEmojiStickerSet() {
     const _ = { _: "channelAdminLogEventActionChangeEmojiStickerSet" }
-    _.prev_stickerset = this.object();      // : global.InputStickerSet - InputStickerSet
-    _.new_stickerset = this.object();       // : global.InputStickerSet - InputStickerSet
+    _.prev_stickerset = this.object();      // : api.InputStickerSet - InputStickerSet
+    _.new_stickerset = this.object();       // : api.InputStickerSet - InputStickerSet
     return _;
   }],
   [531458253, function decode$channelAdminLogEvent() {
@@ -24350,14 +24348,14 @@ export const $decoder = new Map([
     _.id = this.int64();                    // : bigint - long
     _.date = this.int32();                  // : number - int
     _.user_id = this.int64();               // : bigint - long
-    _.action = this.object();               // : global.ChannelAdminLogEventAction - ChannelAdminLogEventAction
+    _.action = this.object();               // : api.ChannelAdminLogEventAction - ChannelAdminLogEventAction
     return _;
   }],
   [-309659827, function decode$channels__adminLogResults() {
     const _ = { _: "channels.adminLogResults" }
-    _.events = this.vector(this.object);    // : global.ChannelAdminLogEvent[] - Vector<ChannelAdminLogEvent>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.events = this.vector(this.object);    // : api.ChannelAdminLogEvent[] - Vector<ChannelAdminLogEvent>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-368018716, function decode$channelAdminLogEventsFilter() {
@@ -24395,8 +24393,8 @@ export const $decoder = new Map([
   [750063767, function decode$messages__favedStickers() {
     const _ = { _: "messages.favedStickers" }
     _.hash = this.int64();                  // : bigint - long
-    _.packs = this.vector(this.object);     // : global.StickerPack[] - Vector<StickerPack>
-    _.stickers = this.vector(this.object);  // : global.Document[] - Vector<Document>
+    _.packs = this.vector(this.object);     // : api.StickerPack[] - Vector<StickerPack>
+    _.stickers = this.vector(this.object);  // : api.Document[] - Vector<Document>
     return _;
   }],
   [1189204285, function decode$recentMeUrlUnknown() {
@@ -24419,29 +24417,29 @@ export const $decoder = new Map([
   [-347535331, function decode$recentMeUrlChatInvite() {
     const _ = { _: "recentMeUrlChatInvite" }
     _.url = this.string();                  // : string - string
-    _.chat_invite = this.object();          // : global.ChatInvite - ChatInvite
+    _.chat_invite = this.object();          // : api.ChatInvite - ChatInvite
     return _;
   }],
   [-1140172836, function decode$recentMeUrlStickerSet() {
     const _ = { _: "recentMeUrlStickerSet" }
     _.url = this.string();                  // : string - string
-    _.set = this.object();                  // : global.StickerSetCovered - StickerSetCovered
+    _.set = this.object();                  // : api.StickerSetCovered - StickerSetCovered
     return _;
   }],
   [235081943, function decode$help__recentMeUrls() {
     const _ = { _: "help.recentMeUrls" }
-    _.urls = this.vector(this.object);      // : global.RecentMeUrl[] - Vector<RecentMeUrl>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.urls = this.vector(this.object);      // : api.RecentMeUrl[] - Vector<RecentMeUrl>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [482797855, function decode$inputSingleMedia() {
     const _ = { _: "inputSingleMedia" }
     const flags = this.int32();
-    _.media = this.object();                // : global.InputMedia - InputMedia
+    _.media = this.object();                // : api.InputMedia - InputMedia
     _.random_id = this.int64();             // : bigint - long
     _.message = this.string();              // : string - string
-    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (flags & 1) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.0?Vector<MessageEntity>
     return _;
   }],
   [-1493633966, function decode$webAuthorization() {
@@ -24459,8 +24457,8 @@ export const $decoder = new Map([
   }],
   [-313079300, function decode$account__webAuthorizations() {
     const _ = { _: "account.webAuthorizations" }
-    _.authorizations = this.vector(this.object); // : global.WebAuthorization[] - Vector<WebAuthorization>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.authorizations = this.vector(this.object); // : api.WebAuthorization[] - Vector<WebAuthorization>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1502174430, function decode$inputMessageID() {
@@ -24484,7 +24482,7 @@ export const $decoder = new Map([
   }],
   [-55902537, function decode$inputDialogPeer() {
     const _ = { _: "inputDialogPeer" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     return _;
   }],
   [1684014375, function decode$inputDialogPeerFolder() {
@@ -24494,7 +24492,7 @@ export const $decoder = new Map([
   }],
   [-445792507, function decode$dialogPeer() {
     const _ = { _: "dialogPeer" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     return _;
   }],
   [1363483106, function decode$dialogPeerFolder() {
@@ -24508,7 +24506,7 @@ export const $decoder = new Map([
   [-1963942446, function decode$messages__foundStickerSets() {
     const _ = { _: "messages.foundStickerSets" }
     _.hash = this.int64();                  // : bigint - long
-    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    _.sets = this.vector(this.object);      // : api.StickerSetCovered[] - Vector<StickerSetCovered>
     return _;
   }],
   [-207944868, function decode$fileHash() {
@@ -24623,39 +24621,39 @@ export const $decoder = new Map([
   [411017418, function decode$secureValue() {
     const _ = { _: "secureValue" }
     const flags = this.int32();
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    if (flags & 1) _.data = this.object()   // ?: global.SecureData - flags.0?SecureData
-    if (flags & 2) _.front_side = this.object() // ?: global.SecureFile - flags.1?SecureFile
-    if (flags & 4) _.reverse_side = this.object() // ?: global.SecureFile - flags.2?SecureFile
-    if (flags & 8) _.selfie = this.object() // ?: global.SecureFile - flags.3?SecureFile
-    if (flags & 64) _.translation = this.vector(this.object) // ?: global.SecureFile[] - flags.6?Vector<SecureFile>
-    if (flags & 16) _.files = this.vector(this.object) // ?: global.SecureFile[] - flags.4?Vector<SecureFile>
-    if (flags & 32) _.plain_data = this.object() // ?: global.SecurePlainData - flags.5?SecurePlainData
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
+    if (flags & 1) _.data = this.object()   // ?: api.SecureData - flags.0?SecureData
+    if (flags & 2) _.front_side = this.object() // ?: api.SecureFile - flags.1?SecureFile
+    if (flags & 4) _.reverse_side = this.object() // ?: api.SecureFile - flags.2?SecureFile
+    if (flags & 8) _.selfie = this.object() // ?: api.SecureFile - flags.3?SecureFile
+    if (flags & 64) _.translation = this.vector(this.object) // ?: api.SecureFile[] - flags.6?Vector<SecureFile>
+    if (flags & 16) _.files = this.vector(this.object) // ?: api.SecureFile[] - flags.4?Vector<SecureFile>
+    if (flags & 32) _.plain_data = this.object() // ?: api.SecurePlainData - flags.5?SecurePlainData
     _.hash = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-618540889, function decode$inputSecureValue() {
     const _ = { _: "inputSecureValue" }
     const flags = this.int32();
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
-    if (flags & 1) _.data = this.object()   // ?: global.SecureData - flags.0?SecureData
-    if (flags & 2) _.front_side = this.object() // ?: global.InputSecureFile - flags.1?InputSecureFile
-    if (flags & 4) _.reverse_side = this.object() // ?: global.InputSecureFile - flags.2?InputSecureFile
-    if (flags & 8) _.selfie = this.object() // ?: global.InputSecureFile - flags.3?InputSecureFile
-    if (flags & 64) _.translation = this.vector(this.object) // ?: global.InputSecureFile[] - flags.6?Vector<InputSecureFile>
-    if (flags & 16) _.files = this.vector(this.object) // ?: global.InputSecureFile[] - flags.4?Vector<InputSecureFile>
-    if (flags & 32) _.plain_data = this.object() // ?: global.SecurePlainData - flags.5?SecurePlainData
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
+    if (flags & 1) _.data = this.object()   // ?: api.SecureData - flags.0?SecureData
+    if (flags & 2) _.front_side = this.object() // ?: api.InputSecureFile - flags.1?InputSecureFile
+    if (flags & 4) _.reverse_side = this.object() // ?: api.InputSecureFile - flags.2?InputSecureFile
+    if (flags & 8) _.selfie = this.object() // ?: api.InputSecureFile - flags.3?InputSecureFile
+    if (flags & 64) _.translation = this.vector(this.object) // ?: api.InputSecureFile[] - flags.6?Vector<InputSecureFile>
+    if (flags & 16) _.files = this.vector(this.object) // ?: api.InputSecureFile[] - flags.4?Vector<InputSecureFile>
+    if (flags & 32) _.plain_data = this.object() // ?: api.SecurePlainData - flags.5?SecurePlainData
     return _;
   }],
   [-316748368, function decode$secureValueHash() {
     const _ = { _: "secureValueHash" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.hash = this.bytes();                  // : Uint8Array - bytes
     return _;
   }],
   [-391902247, function decode$secureValueErrorData() {
     const _ = { _: "secureValueErrorData" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.data_hash = this.bytes();             // : Uint8Array - bytes
     _.field = this.string();                // : string - string
     _.text = this.string();                 // : string - string
@@ -24663,56 +24661,56 @@ export const $decoder = new Map([
   }],
   [12467706, function decode$secureValueErrorFrontSide() {
     const _ = { _: "secureValueErrorFrontSide" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-2037765467, function decode$secureValueErrorReverseSide() {
     const _ = { _: "secureValueErrorReverseSide" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-449327402, function decode$secureValueErrorSelfie() {
     const _ = { _: "secureValueErrorSelfie" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [2054162547, function decode$secureValueErrorFile() {
     const _ = { _: "secureValueErrorFile" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [1717706985, function decode$secureValueErrorFiles() {
     const _ = { _: "secureValueErrorFiles" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.vector(this.bytes);  // : Uint8Array[] - Vector<bytes>
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-2036501105, function decode$secureValueError() {
     const _ = { _: "secureValueError" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.hash = this.bytes();                  // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [-1592506512, function decode$secureValueErrorTranslationFile() {
     const _ = { _: "secureValueErrorTranslationFile" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.bytes();             // : Uint8Array - bytes
     _.text = this.string();                 // : string - string
     return _;
   }],
   [878931416, function decode$secureValueErrorTranslationFiles() {
     const _ = { _: "secureValueErrorTranslationFiles" }
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     _.file_hash = this.vector(this.bytes);  // : Uint8Array[] - Vector<bytes>
     _.text = this.string();                 // : string - string
     return _;
@@ -24727,10 +24725,10 @@ export const $decoder = new Map([
   [-1389486888, function decode$account__authorizationForm() {
     const _ = { _: "account.authorizationForm" }
     const flags = this.int32();
-    _.required_types = this.vector(this.object); // : global.SecureRequiredType[] - Vector<SecureRequiredType>
-    _.values = this.vector(this.object);    // : global.SecureValue[] - Vector<SecureValue>
-    _.errors = this.vector(this.object);    // : global.SecureValueError[] - Vector<SecureValueError>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.required_types = this.vector(this.object); // : api.SecureRequiredType[] - Vector<SecureRequiredType>
+    _.values = this.vector(this.object);    // : api.SecureValue[] - Vector<SecureValue>
+    _.errors = this.vector(this.object);    // : api.SecureValueError[] - Vector<SecureValueError>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 1) _.privacy_policy_url = this.string() // ?: string - flags.0?string
     return _;
   }],
@@ -24748,7 +24746,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.update_app = true      // ?: true - flags.0?true
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
     return _;
   }],
   [289586518, function decode$savedPhoneContact() {
@@ -24790,7 +24788,7 @@ export const $decoder = new Map([
   }],
   [354925740, function decode$secureSecretSettings() {
     const _ = { _: "secureSecretSettings" }
-    _.secure_algo = this.object();          // : global.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
+    _.secure_algo = this.object();          // : api.SecurePasswordKdfAlgo - SecurePasswordKdfAlgo
     _.secure_secret = this.bytes();         // : Uint8Array - bytes
     _.secure_secret_id = this.int64();      // : bigint - long
     return _;
@@ -24811,12 +24809,12 @@ export const $decoder = new Map([
     if (flags & 1) _.native_names = true    // ?: true - flags.0?true
     if (flags & 2) _.selfie_required = true // ?: true - flags.1?true
     if (flags & 4) _.translation_required = true // ?: true - flags.2?true
-    _.type = this.object();                 // : global.SecureValueType - SecureValueType
+    _.type = this.object();                 // : api.SecureValueType - SecureValueType
     return _;
   }],
   [41187252, function decode$secureRequiredTypeOneOf() {
     const _ = { _: "secureRequiredTypeOneOf" }
-    _.types = this.vector(this.object);     // : global.SecureRequiredType[] - Vector<SecureRequiredType>
+    _.types = this.vector(this.object);     // : api.SecureRequiredType[] - Vector<SecureRequiredType>
     return _;
   }],
   [-1078332329, function decode$help__passportConfigNotModified() {
@@ -24825,7 +24823,7 @@ export const $decoder = new Map([
   [-1600596305, function decode$help__passportConfig() {
     const _ = { _: "help.passportConfig" }
     _.hash = this.int32();                  // : number - int
-    _.countries_langs = this.object();      // : global.DataJSON - DataJSON
+    _.countries_langs = this.object();      // : api.DataJSON - DataJSON
     return _;
   }],
   [488313413, function decode$inputAppEvent() {
@@ -24833,13 +24831,13 @@ export const $decoder = new Map([
     _.time = this.double();                 // : number - double
     _.type = this.string();                 // : string - string
     _.peer = this.int64();                  // : bigint - long
-    _.data = this.object();                 // : global.JSONValue - JSONValue
+    _.data = this.object();                 // : api.JSONValue - JSONValue
     return _;
   }],
   [-1059185703, function decode$jsonObjectValue() {
     const _ = { _: "jsonObjectValue" }
     _.key = this.string();                  // : string - string
-    _.value = this.object();                // : global.JSONValue - JSONValue
+    _.value = this.object();                // : api.JSONValue - JSONValue
     return _;
   }],
   [1064139624, function decode$jsonNull() {
@@ -24862,12 +24860,12 @@ export const $decoder = new Map([
   }],
   [-146520221, function decode$jsonArray() {
     const _ = { _: "jsonArray" }
-    _.value = this.vector(this.object);     // : global.JSONValue[] - Vector<JSONValue>
+    _.value = this.vector(this.object);     // : api.JSONValue[] - Vector<JSONValue>
     return _;
   }],
   [-1715350371, function decode$jsonObject() {
     const _ = { _: "jsonObject" }
-    _.value = this.vector(this.object);     // : global.JSONObjectValue[] - Vector<JSONObjectValue>
+    _.value = this.vector(this.object);     // : api.JSONObjectValue[] - Vector<JSONObjectValue>
     return _;
   }],
   [878078826, function decode$pageTableCell() {
@@ -24878,42 +24876,42 @@ export const $decoder = new Map([
     if (flags & 16) _.align_right = true    // ?: true - flags.4?true
     if (flags & 32) _.valign_middle = true  // ?: true - flags.5?true
     if (flags & 64) _.valign_bottom = true  // ?: true - flags.6?true
-    if (flags & 128) _.text = this.object() // ?: global.RichText - flags.7?RichText
+    if (flags & 128) _.text = this.object() // ?: api.RichText - flags.7?RichText
     if (flags & 2) _.colspan = this.int32() // ?: number - flags.1?int
     if (flags & 4) _.rowspan = this.int32() // ?: number - flags.2?int
     return _;
   }],
   [-524237339, function decode$pageTableRow() {
     const _ = { _: "pageTableRow" }
-    _.cells = this.vector(this.object);     // : global.PageTableCell[] - Vector<PageTableCell>
+    _.cells = this.vector(this.object);     // : api.PageTableCell[] - Vector<PageTableCell>
     return _;
   }],
   [1869903447, function decode$pageCaption() {
     const _ = { _: "pageCaption" }
-    _.text = this.object();                 // : global.RichText - RichText
-    _.credit = this.object();               // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
+    _.credit = this.object();               // : api.RichText - RichText
     return _;
   }],
   [-1188055347, function decode$pageListItemText() {
     const _ = { _: "pageListItemText" }
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [635466748, function decode$pageListItemBlocks() {
     const _ = { _: "pageListItemBlocks" }
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
+    _.blocks = this.vector(this.object);    // : api.PageBlock[] - Vector<PageBlock>
     return _;
   }],
   [1577484359, function decode$pageListOrderedItemText() {
     const _ = { _: "pageListOrderedItemText" }
     _.num = this.string();                  // : string - string
-    _.text = this.object();                 // : global.RichText - RichText
+    _.text = this.object();                 // : api.RichText - RichText
     return _;
   }],
   [-1730311882, function decode$pageListOrderedItemBlocks() {
     const _ = { _: "pageListOrderedItemBlocks" }
     _.num = this.string();                  // : string - string
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
+    _.blocks = this.vector(this.object);    // : api.PageBlock[] - Vector<PageBlock>
     return _;
   }],
   [-1282352120, function decode$pageRelatedArticle() {
@@ -24935,9 +24933,9 @@ export const $decoder = new Map([
     if (flags & 2) _.rtl = true             // ?: true - flags.1?true
     if (flags & 4) _.v2 = true              // ?: true - flags.2?true
     _.url = this.string();                  // : string - string
-    _.blocks = this.vector(this.object);    // : global.PageBlock[] - Vector<PageBlock>
-    _.photos = this.vector(this.object);    // : global.Photo[] - Vector<Photo>
-    _.documents = this.vector(this.object); // : global.Document[] - Vector<Document>
+    _.blocks = this.vector(this.object);    // : api.PageBlock[] - Vector<PageBlock>
+    _.photos = this.vector(this.object);    // : api.Photo[] - Vector<Photo>
+    _.documents = this.vector(this.object); // : api.Document[] - Vector<Document>
     if (flags & 8) _.views = this.int32()   // ?: number - flags.3?int
     return _;
   }],
@@ -24952,7 +24950,7 @@ export const $decoder = new Map([
   [32192344, function decode$help__userInfo() {
     const _ = { _: "help.userInfo" }
     _.message = this.string();              // : string - string
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
+    _.entities = this.vector(this.object);  // : api.MessageEntity[] - Vector<MessageEntity>
     _.author = this.string();               // : string - string
     _.date = this.int32();                  // : number - int
     return _;
@@ -24972,7 +24970,7 @@ export const $decoder = new Map([
     if (flags & 4) _.multiple_choice = true // ?: true - flags.2?true
     if (flags & 8) _.quiz = true            // ?: true - flags.3?true
     _.question = this.string();             // : string - string
-    _.answers = this.vector(this.object);   // : global.PollAnswer[] - Vector<PollAnswer>
+    _.answers = this.vector(this.object);   // : api.PollAnswer[] - Vector<PollAnswer>
     if (flags & 16) _.close_period = this.int32() // ?: number - flags.4?int
     if (flags & 32) _.close_date = this.int32() // ?: number - flags.5?int
     return _;
@@ -24990,11 +24988,11 @@ export const $decoder = new Map([
     const _ = { _: "pollResults" }
     const flags = this.int32();
     if (flags & 1) _.min = true             // ?: true - flags.0?true
-    if (flags & 2) _.results = this.vector(this.object) // ?: global.PollAnswerVoters[] - flags.1?Vector<PollAnswerVoters>
+    if (flags & 2) _.results = this.vector(this.object) // ?: api.PollAnswerVoters[] - flags.1?Vector<PollAnswerVoters>
     if (flags & 4) _.total_voters = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.recent_voters = this.vector(this.object) // ?: global.Peer[] - flags.3?Vector<Peer>
+    if (flags & 8) _.recent_voters = this.vector(this.object) // ?: api.Peer[] - flags.3?Vector<Peer>
     if (flags & 16) _.solution = this.string() // ?: string - flags.4?string
-    if (flags & 16) _.solution_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.4?Vector<MessageEntity>
+    if (flags & 16) _.solution_entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.4?Vector<MessageEntity>
     return _;
   }],
   [-264117680, function decode$chatOnlines() {
@@ -25075,7 +25073,7 @@ export const $decoder = new Map([
   [-842824308, function decode$account__wallPapers() {
     const _ = { _: "account.wallPapers" }
     _.hash = this.int64();                  // : bigint - long
-    _.wallpapers = this.vector(this.object); // : global.WallPaper[] - Vector<WallPaper>
+    _.wallpapers = this.vector(this.object); // : api.WallPaper[] - Vector<WallPaper>
     return _;
   }],
   [-1390068360, function decode$codeSettings() {
@@ -25123,9 +25121,9 @@ export const $decoder = new Map([
   }],
   [1674235686, function decode$account__autoDownloadSettings() {
     const _ = { _: "account.autoDownloadSettings" }
-    _.low = this.object();                  // : global.AutoDownloadSettings - AutoDownloadSettings
-    _.medium = this.object();               // : global.AutoDownloadSettings - AutoDownloadSettings
-    _.high = this.object();                 // : global.AutoDownloadSettings - AutoDownloadSettings
+    _.low = this.object();                  // : api.AutoDownloadSettings - AutoDownloadSettings
+    _.medium = this.object();               // : api.AutoDownloadSettings - AutoDownloadSettings
+    _.high = this.object();                 // : api.AutoDownloadSettings - AutoDownloadSettings
     return _;
   }],
   [-709641735, function decode$emojiKeyword() {
@@ -25145,7 +25143,7 @@ export const $decoder = new Map([
     _.lang_code = this.string();            // : string - string
     _.from_version = this.int32();          // : number - int
     _.version = this.int32();               // : number - int
-    _.keywords = this.vector(this.object);  // : global.EmojiKeyword[] - Vector<EmojiKeyword>
+    _.keywords = this.vector(this.object);  // : api.EmojiKeyword[] - Vector<EmojiKeyword>
     return _;
   }],
   [-1519029347, function decode$emojiURL() {
@@ -25166,18 +25164,18 @@ export const $decoder = new Map([
     if (flags & 4) _.autofill_new_correspondents = true // ?: true - flags.2?true
     _.id = this.int32();                    // : number - int
     _.title = this.string();                // : string - string
-    if (flags & 8) _.photo = this.object()  // ?: global.ChatPhoto - flags.3?ChatPhoto
+    if (flags & 8) _.photo = this.object()  // ?: api.ChatPhoto - flags.3?ChatPhoto
     return _;
   }],
   [-70073706, function decode$inputFolderPeer() {
     const _ = { _: "inputFolderPeer" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.folder_id = this.int32();             // : number - int
     return _;
   }],
   [-373643672, function decode$folderPeer() {
     const _ = { _: "folderPeer" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.folder_id = this.int32();             // : number - int
     return _;
   }],
@@ -25185,7 +25183,7 @@ export const $decoder = new Map([
     const _ = { _: "messages.searchCounter" }
     const flags = this.int32();
     if (flags & 2) _.inexact = true         // ?: true - flags.1?true
-    _.filter = this.object();               // : global.MessagesFilter - MessagesFilter
+    _.filter = this.object();               // : api.MessagesFilter - MessagesFilter
     _.count = this.int32();                 // : number - int
     return _;
   }],
@@ -25193,7 +25191,7 @@ export const $decoder = new Map([
     const _ = { _: "urlAuthResultRequest" }
     const flags = this.int32();
     if (flags & 1) _.request_write_access = true // ?: true - flags.0?true
-    _.bot = this.object();                  // : global.User - User
+    _.bot = this.object();                  // : api.User - User
     _.domain = this.string();               // : string - string
     return _;
   }],
@@ -25210,13 +25208,13 @@ export const $decoder = new Map([
   }],
   [547062491, function decode$channelLocation() {
     const _ = { _: "channelLocation" }
-    _.geo_point = this.object();            // : global.GeoPoint - GeoPoint
+    _.geo_point = this.object();            // : api.GeoPoint - GeoPoint
     _.address = this.string();              // : string - string
     return _;
   }],
   [-901375139, function decode$peerLocated() {
     const _ = { _: "peerLocated" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.expires = this.int32();               // : number - int
     _.distance = this.int32();              // : number - int
     return _;
@@ -25254,8 +25252,8 @@ export const $decoder = new Map([
     _.access_hash = this.int64();           // : bigint - long
     _.slug = this.string();                 // : string - string
     _.title = this.string();                // : string - string
-    if (flags & 4) _.document = this.object() // ?: global.Document - flags.2?Document
-    if (flags & 8) _.settings = this.vector(this.object) // ?: global.ThemeSettings[] - flags.3?Vector<ThemeSettings>
+    if (flags & 4) _.document = this.object() // ?: api.Document - flags.2?Document
+    if (flags & 8) _.settings = this.vector(this.object) // ?: api.ThemeSettings[] - flags.3?Vector<ThemeSettings>
     if (flags & 64) _.emoticon = this.string() // ?: string - flags.6?string
     if (flags & 16) _.installs_count = this.int32() // ?: number - flags.4?int
     return _;
@@ -25266,7 +25264,7 @@ export const $decoder = new Map([
   [-1707242387, function decode$account__themes() {
     const _ = { _: "account.themes" }
     _.hash = this.int64();                  // : bigint - long
-    _.themes = this.vector(this.object);    // : global.Theme[] - Vector<Theme>
+    _.themes = this.vector(this.object);    // : api.Theme[] - Vector<Theme>
     return _;
   }],
   [1654593920, function decode$auth__loginToken() {
@@ -25296,8 +25294,8 @@ export const $decoder = new Map([
   [-1456996667, function decode$messages__inactiveChats() {
     const _ = { _: "messages.inactiveChats" }
     _.dates = this.vector(this.int32);      // : number[] - Vector<int>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1012849566, function decode$baseThemeClassic() {
@@ -25319,47 +25317,47 @@ export const $decoder = new Map([
     const _ = { _: "inputThemeSettings" }
     const flags = this.int32();
     if (flags & 4) _.message_colors_animated = true // ?: true - flags.2?true
-    _.base_theme = this.object();           // : global.BaseTheme - BaseTheme
+    _.base_theme = this.object();           // : api.BaseTheme - BaseTheme
     _.accent_color = this.int32();          // : number - int
     if (flags & 8) _.outbox_accent_color = this.int32() // ?: number - flags.3?int
     if (flags & 1) _.message_colors = this.vector(this.int32) // ?: number[] - flags.0?Vector<int>
-    if (flags & 2) _.wallpaper = this.object() // ?: global.InputWallPaper - flags.1?InputWallPaper
-    if (flags & 2) _.wallpaper_settings = this.object() // ?: global.WallPaperSettings - flags.1?WallPaperSettings
+    if (flags & 2) _.wallpaper = this.object() // ?: api.InputWallPaper - flags.1?InputWallPaper
+    if (flags & 2) _.wallpaper_settings = this.object() // ?: api.WallPaperSettings - flags.1?WallPaperSettings
     return _;
   }],
   [-94849324, function decode$themeSettings() {
     const _ = { _: "themeSettings" }
     const flags = this.int32();
     if (flags & 4) _.message_colors_animated = true // ?: true - flags.2?true
-    _.base_theme = this.object();           // : global.BaseTheme - BaseTheme
+    _.base_theme = this.object();           // : api.BaseTheme - BaseTheme
     _.accent_color = this.int32();          // : number - int
     if (flags & 8) _.outbox_accent_color = this.int32() // ?: number - flags.3?int
     if (flags & 1) _.message_colors = this.vector(this.int32) // ?: number[] - flags.0?Vector<int>
-    if (flags & 2) _.wallpaper = this.object() // ?: global.WallPaper - flags.1?WallPaper
+    if (flags & 2) _.wallpaper = this.object() // ?: api.WallPaper - flags.1?WallPaper
     return _;
   }],
   [1421174295, function decode$webPageAttributeTheme() {
     const _ = { _: "webPageAttributeTheme" }
     const flags = this.int32();
-    if (flags & 1) _.documents = this.vector(this.object) // ?: global.Document[] - flags.0?Vector<Document>
-    if (flags & 2) _.settings = this.object() // ?: global.ThemeSettings - flags.1?ThemeSettings
+    if (flags & 1) _.documents = this.vector(this.object) // ?: api.Document[] - flags.0?Vector<Document>
+    if (flags & 2) _.settings = this.object() // ?: api.ThemeSettings - flags.1?ThemeSettings
     return _;
   }],
   [781501415, function decode$webPageAttributeStory() {
     const _ = { _: "webPageAttributeStory" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.id = this.int32();                    // : number - int
-    if (flags & 1) _.story = this.object()  // ?: global.StoryItem - flags.0?StoryItem
+    if (flags & 1) _.story = this.object()  // ?: api.StoryItem - flags.0?StoryItem
     return _;
   }],
   [1218005070, function decode$messages__votesList() {
     const _ = { _: "messages.votesList" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
-    _.votes = this.vector(this.object);     // : global.MessagePeerVote[] - Vector<MessagePeerVote>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.votes = this.vector(this.object);     // : api.MessagePeerVote[] - Vector<MessagePeerVote>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
   }],
@@ -25372,7 +25370,7 @@ export const $decoder = new Map([
   [1042605427, function decode$payments__bankCardData() {
     const _ = { _: "payments.bankCardData" }
     _.title = this.string();                // : string - string
-    _.open_urls = this.vector(this.object); // : global.BankCardOpenUrl[] - Vector<BankCardOpenUrl>
+    _.open_urls = this.vector(this.object); // : api.BankCardOpenUrl[] - Vector<BankCardOpenUrl>
     return _;
   }],
   [1605718587, function decode$dialogFilter() {
@@ -25390,9 +25388,9 @@ export const $decoder = new Map([
     _.title = this.string();                // : string - string
     if (flags & 33554432) _.emoticon = this.string() // ?: string - flags.25?string
     if (flags & 134217728) _.color = this.int32() // ?: number - flags.27?int
-    _.pinned_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
-    _.include_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
-    _.exclude_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
+    _.pinned_peers = this.vector(this.object); // : api.InputPeer[] - Vector<InputPeer>
+    _.include_peers = this.vector(this.object); // : api.InputPeer[] - Vector<InputPeer>
+    _.exclude_peers = this.vector(this.object); // : api.InputPeer[] - Vector<InputPeer>
     return _;
   }],
   [909284270, function decode$dialogFilterDefault() {
@@ -25406,13 +25404,13 @@ export const $decoder = new Map([
     _.title = this.string();                // : string - string
     if (flags & 33554432) _.emoticon = this.string() // ?: string - flags.25?string
     if (flags & 134217728) _.color = this.int32() // ?: number - flags.27?int
-    _.pinned_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
-    _.include_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
+    _.pinned_peers = this.vector(this.object); // : api.InputPeer[] - Vector<InputPeer>
+    _.include_peers = this.vector(this.object); // : api.InputPeer[] - Vector<InputPeer>
     return _;
   }],
   [2004110666, function decode$dialogFilterSuggested() {
     const _ = { _: "dialogFilterSuggested" }
-    _.filter = this.object();               // : global.DialogFilter - DialogFilter
+    _.filter = this.object();               // : api.DialogFilter - DialogFilter
     _.description = this.string();          // : string - string
     return _;
   }],
@@ -25447,34 +25445,34 @@ export const $decoder = new Map([
   [-1901828938, function decode$statsGraph() {
     const _ = { _: "statsGraph" }
     const flags = this.int32();
-    _.json = this.object();                 // : global.DataJSON - DataJSON
+    _.json = this.object();                 // : api.DataJSON - DataJSON
     if (flags & 1) _.zoom_token = this.string() // ?: string - flags.0?string
     return _;
   }],
   [963421692, function decode$stats__broadcastStats() {
     const _ = { _: "stats.broadcastStats" }
-    _.period = this.object();               // : global.StatsDateRangeDays - StatsDateRangeDays
-    _.followers = this.object();            // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.views_per_post = this.object();       // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.shares_per_post = this.object();      // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.reactions_per_post = this.object();   // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.views_per_story = this.object();      // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.shares_per_story = this.object();     // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.reactions_per_story = this.object();  // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.enabled_notifications = this.object(); // : global.StatsPercentValue - StatsPercentValue
-    _.growth_graph = this.object();         // : global.StatsGraph - StatsGraph
-    _.followers_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.mute_graph = this.object();           // : global.StatsGraph - StatsGraph
-    _.top_hours_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.interactions_graph = this.object();   // : global.StatsGraph - StatsGraph
-    _.iv_interactions_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.views_by_source_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.new_followers_by_source_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.languages_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.story_interactions_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.story_reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.recent_posts_interactions = this.vector(this.object); // : global.PostInteractionCounters[] - Vector<PostInteractionCounters>
+    _.period = this.object();               // : api.StatsDateRangeDays - StatsDateRangeDays
+    _.followers = this.object();            // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.views_per_post = this.object();       // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.shares_per_post = this.object();      // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.reactions_per_post = this.object();   // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.views_per_story = this.object();      // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.shares_per_story = this.object();     // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.reactions_per_story = this.object();  // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.enabled_notifications = this.object(); // : api.StatsPercentValue - StatsPercentValue
+    _.growth_graph = this.object();         // : api.StatsGraph - StatsGraph
+    _.followers_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.mute_graph = this.object();           // : api.StatsGraph - StatsGraph
+    _.top_hours_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.interactions_graph = this.object();   // : api.StatsGraph - StatsGraph
+    _.iv_interactions_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.views_by_source_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.new_followers_by_source_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.languages_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.reactions_by_emotion_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.story_interactions_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.story_reactions_by_emotion_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.recent_posts_interactions = this.vector(this.object); // : api.PostInteractionCounters[] - Vector<PostInteractionCounters>
     return _;
   }],
   [-1728664459, function decode$help__promoDataEmpty() {
@@ -25487,9 +25485,9 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.proxy = true           // ?: true - flags.0?true
     _.expires = this.int32();               // : number - int
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 2) _.psa_type = this.string() // ?: string - flags.1?string
     if (flags & 4) _.psa_message = this.string() // ?: string - flags.2?string
     return _;
@@ -25512,7 +25510,7 @@ export const $decoder = new Map([
   }],
   [228623102, function decode$videoSizeStickerMarkup() {
     const _ = { _: "videoSizeStickerMarkup" }
-    _.stickerset = this.object();           // : global.InputStickerSet - InputStickerSet
+    _.stickerset = this.object();           // : api.InputStickerSet - InputStickerSet
     _.sticker_id = this.int64();            // : bigint - long
     _.background_colors = this.vector(this.int32); // : number[] - Vector<int>
     return _;
@@ -25540,23 +25538,23 @@ export const $decoder = new Map([
   }],
   [-276825834, function decode$stats__megagroupStats() {
     const _ = { _: "stats.megagroupStats" }
-    _.period = this.object();               // : global.StatsDateRangeDays - StatsDateRangeDays
-    _.members = this.object();              // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.messages = this.object();             // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.viewers = this.object();              // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.posters = this.object();              // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
-    _.growth_graph = this.object();         // : global.StatsGraph - StatsGraph
-    _.members_graph = this.object();        // : global.StatsGraph - StatsGraph
-    _.new_members_by_source_graph = this.object(); // : global.StatsGraph - StatsGraph
-    _.languages_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.messages_graph = this.object();       // : global.StatsGraph - StatsGraph
-    _.actions_graph = this.object();        // : global.StatsGraph - StatsGraph
-    _.top_hours_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.weekdays_graph = this.object();       // : global.StatsGraph - StatsGraph
-    _.top_posters = this.vector(this.object); // : global.StatsGroupTopPoster[] - Vector<StatsGroupTopPoster>
-    _.top_admins = this.vector(this.object); // : global.StatsGroupTopAdmin[] - Vector<StatsGroupTopAdmin>
-    _.top_inviters = this.vector(this.object); // : global.StatsGroupTopInviter[] - Vector<StatsGroupTopInviter>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.period = this.object();               // : api.StatsDateRangeDays - StatsDateRangeDays
+    _.members = this.object();              // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.messages = this.object();             // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.viewers = this.object();              // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.posters = this.object();              // : api.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.growth_graph = this.object();         // : api.StatsGraph - StatsGraph
+    _.members_graph = this.object();        // : api.StatsGraph - StatsGraph
+    _.new_members_by_source_graph = this.object(); // : api.StatsGraph - StatsGraph
+    _.languages_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.messages_graph = this.object();       // : api.StatsGraph - StatsGraph
+    _.actions_graph = this.object();        // : api.StatsGraph - StatsGraph
+    _.top_hours_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.weekdays_graph = this.object();       // : api.StatsGraph - StatsGraph
+    _.top_posters = this.vector(this.object); // : api.StatsGroupTopPoster[] - Vector<StatsGroupTopPoster>
+    _.top_admins = this.vector(this.object); // : api.StatsGroupTopAdmin[] - Vector<StatsGroupTopAdmin>
+    _.top_inviters = this.vector(this.object); // : api.StatsGroupTopInviter[] - Vector<StatsGroupTopInviter>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1934380235, function decode$globalPrivacySettings() {
@@ -25601,26 +25599,26 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.views = this.int32()   // ?: number - flags.0?int
     if (flags & 2) _.forwards = this.int32() // ?: number - flags.1?int
-    if (flags & 4) _.replies = this.object() // ?: global.MessageReplies - flags.2?MessageReplies
+    if (flags & 4) _.replies = this.object() // ?: api.MessageReplies - flags.2?MessageReplies
     return _;
   }],
   [-1228606141, function decode$messages__messageViews() {
     const _ = { _: "messages.messageViews" }
-    _.views = this.vector(this.object);     // : global.MessageViews[] - Vector<MessageViews>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.views = this.vector(this.object);     // : api.MessageViews[] - Vector<MessageViews>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1506535550, function decode$messages__discussionMessage() {
     const _ = { _: "messages.discussionMessage" }
     const flags = this.int32();
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
     if (flags & 1) _.max_id = this.int32()  // ?: number - flags.0?int
     if (flags & 2) _.read_inbox_max_id = this.int32() // ?: number - flags.1?int
     if (flags & 4) _.read_outbox_max_id = this.int32() // ?: number - flags.2?int
     _.unread_count = this.int32();          // : number - int
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1346631205, function decode$messageReplyHeader() {
@@ -25630,18 +25628,18 @@ export const $decoder = new Map([
     if (flags & 8) _.forum_topic = true     // ?: true - flags.3?true
     if (flags & 512) _.quote = true         // ?: true - flags.9?true
     if (flags & 16) _.reply_to_msg_id = this.int32() // ?: number - flags.4?int
-    if (flags & 1) _.reply_to_peer_id = this.object() // ?: global.Peer - flags.0?Peer
-    if (flags & 32) _.reply_from = this.object() // ?: global.MessageFwdHeader - flags.5?MessageFwdHeader
-    if (flags & 256) _.reply_media = this.object() // ?: global.MessageMedia - flags.8?MessageMedia
+    if (flags & 1) _.reply_to_peer_id = this.object() // ?: api.Peer - flags.0?Peer
+    if (flags & 32) _.reply_from = this.object() // ?: api.MessageFwdHeader - flags.5?MessageFwdHeader
+    if (flags & 256) _.reply_media = this.object() // ?: api.MessageMedia - flags.8?MessageMedia
     if (flags & 2) _.reply_to_top_id = this.int32() // ?: number - flags.1?int
     if (flags & 64) _.quote_text = this.string() // ?: string - flags.6?string
-    if (flags & 128) _.quote_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 128) _.quote_entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.7?Vector<MessageEntity>
     if (flags & 1024) _.quote_offset = this.int32() // ?: number - flags.10?int
     return _;
   }],
   [240843065, function decode$messageReplyStoryHeader() {
     const _ = { _: "messageReplyStoryHeader" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.story_id = this.int32();              // : number - int
     return _;
   }],
@@ -25651,7 +25649,7 @@ export const $decoder = new Map([
     if (flags & 1) _.comments = true        // ?: true - flags.0?true
     _.replies = this.int32();               // : number - int
     _.replies_pts = this.int32();           // : number - int
-    if (flags & 2) _.recent_repliers = this.vector(this.object) // ?: global.Peer[] - flags.1?Vector<Peer>
+    if (flags & 2) _.recent_repliers = this.vector(this.object) // ?: api.Peer[] - flags.1?Vector<Peer>
     if (flags & 1) _.channel_id = this.int64() // ?: bigint - flags.0?long
     if (flags & 4) _.max_id = this.int32()  // ?: number - flags.2?int
     if (flags & 8) _.read_max_id = this.int32() // ?: number - flags.3?int
@@ -25659,14 +25657,14 @@ export const $decoder = new Map([
   }],
   [-386039788, function decode$peerBlocked() {
     const _ = { _: "peerBlocked" }
-    _.peer_id = this.object();              // : global.Peer - Peer
+    _.peer_id = this.object();              // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
     return _;
   }],
   [2145983508, function decode$stats__messageStats() {
     const _ = { _: "stats.messageStats" }
-    _.views_graph = this.object();          // : global.StatsGraph - StatsGraph
-    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
+    _.views_graph = this.object();          // : api.StatsGraph - StatsGraph
+    _.reactions_by_emotion_graph = this.object(); // : api.StatsGraph - StatsGraph
     return _;
   }],
   [2004925620, function decode$groupCallDiscarded() {
@@ -25718,33 +25716,33 @@ export const $decoder = new Map([
     if (flags & 1024) _.volume_by_admin = true // ?: true - flags.10?true
     if (flags & 4096) _.self = true         // ?: true - flags.12?true
     if (flags & 32768) _.video_joined = true // ?: true - flags.15?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
     if (flags & 8) _.active_date = this.int32() // ?: number - flags.3?int
     _.source = this.int32();                // : number - int
     if (flags & 128) _.volume = this.int32() // ?: number - flags.7?int
     if (flags & 2048) _.about = this.string() // ?: string - flags.11?string
     if (flags & 8192) _.raise_hand_rating = this.int64() // ?: bigint - flags.13?long
-    if (flags & 64) _.video = this.object() // ?: global.GroupCallParticipantVideo - flags.6?GroupCallParticipantVideo
-    if (flags & 16384) _.presentation = this.object() // ?: global.GroupCallParticipantVideo - flags.14?GroupCallParticipantVideo
+    if (flags & 64) _.video = this.object() // ?: api.GroupCallParticipantVideo - flags.6?GroupCallParticipantVideo
+    if (flags & 16384) _.presentation = this.object() // ?: api.GroupCallParticipantVideo - flags.14?GroupCallParticipantVideo
     return _;
   }],
   [-1636664659, function decode$phone__groupCall() {
     const _ = { _: "phone.groupCall" }
-    _.call = this.object();                 // : global.GroupCall - GroupCall
-    _.participants = this.vector(this.object); // : global.GroupCallParticipant[] - Vector<GroupCallParticipant>
+    _.call = this.object();                 // : api.GroupCall - GroupCall
+    _.participants = this.vector(this.object); // : api.GroupCallParticipant[] - Vector<GroupCallParticipant>
     _.participants_next_offset = this.string(); // : string - string
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-193506890, function decode$phone__groupParticipants() {
     const _ = { _: "phone.groupParticipants" }
     _.count = this.int32();                 // : number - int
-    _.participants = this.vector(this.object); // : global.GroupCallParticipant[] - Vector<GroupCallParticipant>
+    _.participants = this.vector(this.object); // : api.GroupCallParticipant[] - Vector<GroupCallParticipant>
     _.next_offset = this.string();          // : string - string
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     _.version = this.int32();               // : number - int
     return _;
   }],
@@ -25801,28 +25799,28 @@ export const $decoder = new Map([
   [-1111085620, function decode$messages__exportedChatInvites() {
     const _ = { _: "messages.exportedChatInvites" }
     _.count = this.int32();                 // : number - int
-    _.invites = this.vector(this.object);   // : global.ExportedChatInvite[] - Vector<ExportedChatInvite>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.invites = this.vector(this.object);   // : api.ExportedChatInvite[] - Vector<ExportedChatInvite>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [410107472, function decode$messages__exportedChatInvite() {
     const _ = { _: "messages.exportedChatInvite" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [572915951, function decode$messages__exportedChatInviteReplaced() {
     const _ = { _: "messages.exportedChatInviteReplaced" }
-    _.invite = this.object();               // : global.ExportedChatInvite - ExportedChatInvite
-    _.new_invite = this.object();           // : global.ExportedChatInvite - ExportedChatInvite
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.invite = this.object();               // : api.ExportedChatInvite - ExportedChatInvite
+    _.new_invite = this.object();           // : api.ExportedChatInvite - ExportedChatInvite
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-2118733814, function decode$messages__chatInviteImporters() {
     const _ = { _: "messages.chatInviteImporters" }
     _.count = this.int32();                 // : number - int
-    _.importers = this.vector(this.object); // : global.ChatInviteImporter[] - Vector<ChatInviteImporter>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.importers = this.vector(this.object); // : api.ChatInviteImporter[] - Vector<ChatInviteImporter>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-219353309, function decode$chatAdminWithInvites() {
@@ -25834,8 +25832,8 @@ export const $decoder = new Map([
   }],
   [-1231326505, function decode$messages__chatAdminsWithInvites() {
     const _ = { _: "messages.chatAdminsWithInvites" }
-    _.admins = this.vector(this.object);    // : global.ChatAdminWithInvites[] - Vector<ChatAdminWithInvites>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.admins = this.vector(this.object);    // : api.ChatAdminWithInvites[] - Vector<ChatAdminWithInvites>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1571952873, function decode$messages__checkedHistoryImportPeer() {
@@ -25845,9 +25843,9 @@ export const $decoder = new Map([
   }],
   [-1343921601, function decode$phone__joinAsPeers() {
     const _ = { _: "phone.joinAsPeers" }
-    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.peers = this.vector(this.object);     // : api.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [541839704, function decode$phone__exportedGroupCallInvite() {
@@ -25866,7 +25864,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.paused = true          // ?: true - flags.0?true
     _.endpoint = this.string();             // : string - string
-    _.source_groups = this.vector(this.object); // : global.GroupCallParticipantVideoSourceGroup[] - Vector<GroupCallParticipantVideoSourceGroup>
+    _.source_groups = this.vector(this.object); // : api.GroupCallParticipantVideoSourceGroup[] - Vector<GroupCallParticipantVideoSourceGroup>
     if (flags & 2) _.audio_source = this.int32() // ?: number - flags.1?int
     return _;
   }],
@@ -25889,18 +25887,18 @@ export const $decoder = new Map([
   }],
   [-610432643, function decode$botCommandScopePeer() {
     const _ = { _: "botCommandScopePeer" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     return _;
   }],
   [1071145937, function decode$botCommandScopePeerAdmins() {
     const _ = { _: "botCommandScopePeerAdmins" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     return _;
   }],
   [169026035, function decode$botCommandScopePeerUser() {
     const _ = { _: "botCommandScopePeerUser" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
-    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
+    _.user_id = this.object();              // : api.InputUser - InputUser
     return _;
   }],
   [-478701471, function decode$account__resetPasswordFailedWait() {
@@ -25923,15 +25921,15 @@ export const $decoder = new Map([
     if (flags & 64) _.show_peer_photo = true // ?: true - flags.6?true
     if (flags & 4096) _.can_report = true   // ?: true - flags.12?true
     _.random_id = this.bytes();             // : Uint8Array - bytes
-    if (flags & 8) _.from_id = this.object() // ?: global.Peer - flags.3?Peer
-    if (flags & 16) _.chat_invite = this.object() // ?: global.ChatInvite - flags.4?ChatInvite
+    if (flags & 8) _.from_id = this.object() // ?: api.Peer - flags.3?Peer
+    if (flags & 16) _.chat_invite = this.object() // ?: api.ChatInvite - flags.4?ChatInvite
     if (flags & 16) _.chat_invite_hash = this.string() // ?: string - flags.4?string
     if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
     if (flags & 1) _.start_param = this.string() // ?: string - flags.0?string
-    if (flags & 512) _.webpage = this.object() // ?: global.SponsoredWebPage - flags.9?SponsoredWebPage
-    if (flags & 1024) _.app = this.object() // ?: global.BotApp - flags.10?BotApp
+    if (flags & 512) _.webpage = this.object() // ?: api.SponsoredWebPage - flags.9?SponsoredWebPage
+    if (flags & 1024) _.app = this.object() // ?: api.BotApp - flags.10?BotApp
     _.message = this.string();              // : string - string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
     if (flags & 2048) _.button_text = this.string() // ?: string - flags.11?string
     if (flags & 128) _.sponsor_info = this.string() // ?: string - flags.7?string
     if (flags & 256) _.additional_info = this.string() // ?: string - flags.8?string
@@ -25941,9 +25939,9 @@ export const $decoder = new Map([
     const _ = { _: "messages.sponsoredMessages" }
     const flags = this.int32();
     if (flags & 1) _.posts_between = this.int32() // ?: number - flags.0?int
-    _.messages = this.vector(this.object);  // : global.SponsoredMessage[] - Vector<SponsoredMessage>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.messages = this.vector(this.object);  // : api.SponsoredMessage[] - Vector<SponsoredMessage>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [406407439, function decode$messages__sponsoredMessagesEmpty() {
@@ -25965,10 +25963,10 @@ export const $decoder = new Map([
     _.min_date = this.int32();              // : number - int
     _.min_msg_id = this.int32();            // : number - int
     if (flags & 2) _.offset_id_offset = this.int32() // ?: number - flags.1?int
-    _.periods = this.vector(this.object);   // : global.SearchResultsCalendarPeriod[] - Vector<SearchResultsCalendarPeriod>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.periods = this.vector(this.object);   // : api.SearchResultsCalendarPeriod[] - Vector<SearchResultsCalendarPeriod>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [2137295719, function decode$searchResultPosition() {
@@ -25981,28 +25979,28 @@ export const $decoder = new Map([
   [1404185519, function decode$messages__searchResultsPositions() {
     const _ = { _: "messages.searchResultsPositions" }
     _.count = this.int32();                 // : number - int
-    _.positions = this.vector(this.object); // : global.SearchResultsPosition[] - Vector<SearchResultsPosition>
+    _.positions = this.vector(this.object); // : api.SearchResultsPosition[] - Vector<SearchResultsPosition>
     return _;
   }],
   [-191450938, function decode$channels__sendAsPeers() {
     const _ = { _: "channels.sendAsPeers" }
-    _.peers = this.vector(this.object);     // : global.SendAsPeer[] - Vector<SendAsPeer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.peers = this.vector(this.object);     // : api.SendAsPeer[] - Vector<SendAsPeer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [997004590, function decode$users__userFull() {
     const _ = { _: "users.userFull" }
-    _.full_user = this.object();            // : global.UserFull - UserFull
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.full_user = this.object();            // : api.UserFull - UserFull
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1753266509, function decode$messages__peerSettings() {
     const _ = { _: "messages.peerSettings" }
-    _.settings = this.object();             // : global.PeerSettings - PeerSettings
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.settings = this.object();             // : api.PeerSettings - PeerSettings
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1012759713, function decode$auth__loggedOut() {
@@ -26015,7 +26013,7 @@ export const $decoder = new Map([
     const _ = { _: "reactionCount" }
     const flags = this.int32();
     if (flags & 1) _.chosen_order = this.int32() // ?: number - flags.0?int
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.reaction = this.object();             // : api.Reaction - Reaction
     _.count = this.int32();                 // : number - int
     return _;
   }],
@@ -26025,17 +26023,17 @@ export const $decoder = new Map([
     if (flags & 1) _.min = true             // ?: true - flags.0?true
     if (flags & 4) _.can_see_list = true    // ?: true - flags.2?true
     if (flags & 8) _.reactions_as_tags = true // ?: true - flags.3?true
-    _.results = this.vector(this.object);   // : global.ReactionCount[] - Vector<ReactionCount>
-    if (flags & 2) _.recent_reactions = this.vector(this.object) // ?: global.MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
+    _.results = this.vector(this.object);   // : api.ReactionCount[] - Vector<ReactionCount>
+    if (flags & 2) _.recent_reactions = this.vector(this.object) // ?: api.MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
     return _;
   }],
   [834488621, function decode$messages__messageReactionsList() {
     const _ = { _: "messages.messageReactionsList" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
-    _.reactions = this.vector(this.object); // : global.MessagePeerReaction[] - Vector<MessagePeerReaction>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.reactions = this.vector(this.object); // : api.MessagePeerReaction[] - Vector<MessagePeerReaction>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
   }],
@@ -26046,13 +26044,13 @@ export const $decoder = new Map([
     if (flags & 4) _.premium = true         // ?: true - flags.2?true
     _.reaction = this.string();             // : string - string
     _.title = this.string();                // : string - string
-    _.static_icon = this.object();          // : global.Document - Document
-    _.appear_animation = this.object();     // : global.Document - Document
-    _.select_animation = this.object();     // : global.Document - Document
-    _.activate_animation = this.object();   // : global.Document - Document
-    _.effect_animation = this.object();     // : global.Document - Document
-    if (flags & 2) _.around_animation = this.object() // ?: global.Document - flags.1?Document
-    if (flags & 2) _.center_icon = this.object() // ?: global.Document - flags.1?Document
+    _.static_icon = this.object();          // : api.Document - Document
+    _.appear_animation = this.object();     // : api.Document - Document
+    _.select_animation = this.object();     // : api.Document - Document
+    _.activate_animation = this.object();   // : api.Document - Document
+    _.effect_animation = this.object();     // : api.Document - Document
+    if (flags & 2) _.around_animation = this.object() // ?: api.Document - flags.1?Document
+    if (flags & 2) _.center_icon = this.object() // ?: api.Document - flags.1?Document
     return _;
   }],
   [-1626924713, function decode$messages__availableReactionsNotModified() {
@@ -26061,7 +26059,7 @@ export const $decoder = new Map([
   [1989032621, function decode$messages__availableReactions() {
     const _ = { _: "messages.availableReactions" }
     _.hash = this.int32();                  // : number - int
-    _.reactions = this.vector(this.object); // : global.AvailableReaction[] - Vector<AvailableReaction>
+    _.reactions = this.vector(this.object); // : api.AvailableReaction[] - Vector<AvailableReaction>
     return _;
   }],
   [-1938180548, function decode$messagePeerReaction() {
@@ -26070,9 +26068,9 @@ export const $decoder = new Map([
     if (flags & 1) _.big = true             // ?: true - flags.0?true
     if (flags & 2) _.unread = true          // ?: true - flags.1?true
     if (flags & 4) _.my = true              // ?: true - flags.2?true
-    _.peer_id = this.object();              // : global.Peer - Peer
+    _.peer_id = this.object();              // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.reaction = this.object();             // : api.Reaction - Reaction
     return _;
   }],
   [-2132064081, function decode$groupCallStreamChannel() {
@@ -26084,7 +26082,7 @@ export const $decoder = new Map([
   }],
   [-790330702, function decode$phone__groupCallStreamChannels() {
     const _ = { _: "phone.groupCallStreamChannels" }
-    _.channels = this.vector(this.object);  // : global.GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
+    _.channels = this.vector(this.object);  // : api.GroupCallStreamChannel[] - Vector<GroupCallStreamChannel>
     return _;
   }],
   [767505458, function decode$phone__groupCallStreamRtmpUrl() {
@@ -26103,8 +26101,8 @@ export const $decoder = new Map([
     const _ = { _: "attachMenuBotIcon" }
     const flags = this.int32();
     _.name = this.string();                 // : string - string
-    _.icon = this.object();                 // : global.Document - Document
-    if (flags & 1) _.colors = this.vector(this.object) // ?: global.AttachMenuBotIconColor[] - flags.0?Vector<AttachMenuBotIconColor>
+    _.icon = this.object();                 // : api.Document - Document
+    if (flags & 1) _.colors = this.vector(this.object) // ?: api.AttachMenuBotIconColor[] - flags.0?Vector<AttachMenuBotIconColor>
     return _;
   }],
   [-653423106, function decode$attachMenuBot() {
@@ -26118,8 +26116,8 @@ export const $decoder = new Map([
     if (flags & 32) _.side_menu_disclaimer_needed = true // ?: true - flags.5?true
     _.bot_id = this.int64();                // : bigint - long
     _.short_name = this.string();           // : string - string
-    if (flags & 8) _.peer_types = this.vector(this.object) // ?: global.AttachMenuPeerType[] - flags.3?Vector<AttachMenuPeerType>
-    _.icons = this.vector(this.object);     // : global.AttachMenuBotIcon[] - Vector<AttachMenuBotIcon>
+    if (flags & 8) _.peer_types = this.vector(this.object) // ?: api.AttachMenuPeerType[] - flags.3?Vector<AttachMenuPeerType>
+    _.icons = this.vector(this.object);     // : api.AttachMenuBotIcon[] - Vector<AttachMenuBotIcon>
     return _;
   }],
   [-237467044, function decode$attachMenuBotsNotModified() {
@@ -26128,14 +26126,14 @@ export const $decoder = new Map([
   [1011024320, function decode$attachMenuBots() {
     const _ = { _: "attachMenuBots" }
     _.hash = this.int64();                  // : bigint - long
-    _.bots = this.vector(this.object);      // : global.AttachMenuBot[] - Vector<AttachMenuBot>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.bots = this.vector(this.object);      // : api.AttachMenuBot[] - Vector<AttachMenuBot>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1816172929, function decode$attachMenuBotsBot() {
     const _ = { _: "attachMenuBotsBot" }
-    _.bot = this.object();                  // : global.AttachMenuBot - AttachMenuBot
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.bot = this.object();                  // : api.AttachMenuBot - AttachMenuBot
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [202659196, function decode$webViewResultUrl() {
@@ -26152,7 +26150,7 @@ export const $decoder = new Map([
   [211046684, function decode$webViewMessageSent() {
     const _ = { _: "webViewMessageSent" }
     const flags = this.int32();
-    if (flags & 1) _.msg_id = this.object() // ?: global.InputBotInlineMessageID - flags.0?InputBotInlineMessageID
+    if (flags & 1) _.msg_id = this.object() // ?: api.InputBotInlineMessageID - flags.0?InputBotInlineMessageID
     return _;
   }],
   [1966318984, function decode$botMenuButtonDefault() {
@@ -26173,7 +26171,7 @@ export const $decoder = new Map([
   [-1041683259, function decode$account__savedRingtones() {
     const _ = { _: "account.savedRingtones" }
     _.hash = this.int64();                  // : bigint - long
-    _.ringtones = this.vector(this.object); // : global.Document[] - Vector<Document>
+    _.ringtones = this.vector(this.object); // : api.Document[] - Vector<Document>
     return _;
   }],
   [-1746354498, function decode$notificationSoundDefault() {
@@ -26198,7 +26196,7 @@ export const $decoder = new Map([
   }],
   [523271863, function decode$account__savedRingtoneConverted() {
     const _ = { _: "account.savedRingtoneConverted" }
-    _.document = this.object();             // : global.Document - Document
+    _.document = this.object();             // : api.Document - Document
     return _;
   }],
   [2104224014, function decode$attachMenuPeerTypeSameBotPM() {
@@ -26218,7 +26216,7 @@ export const $decoder = new Map([
   }],
   [-977967015, function decode$inputInvoiceMessage() {
     const _ = { _: "inputInvoiceMessage" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.msg_id = this.int32();                // : number - int
     return _;
   }],
@@ -26229,8 +26227,8 @@ export const $decoder = new Map([
   }],
   [-1734841331, function decode$inputInvoicePremiumGiftCode() {
     const _ = { _: "inputInvoicePremiumGiftCode" }
-    _.purpose = this.object();              // : global.InputStorePaymentPurpose - InputStorePaymentPurpose
-    _.option = this.object();               // : global.PremiumGiftCodeOption - PremiumGiftCodeOption
+    _.purpose = this.object();              // : api.InputStorePaymentPurpose - InputStorePaymentPurpose
+    _.option = this.object();               // : api.PremiumGiftCodeOption - PremiumGiftCodeOption
     return _;
   }],
   [-1362048039, function decode$payments__exportedInvoice() {
@@ -26251,11 +26249,11 @@ export const $decoder = new Map([
   [1395946908, function decode$help__premiumPromo() {
     const _ = { _: "help.premiumPromo" }
     _.status_text = this.string();          // : string - string
-    _.status_entities = this.vector(this.object); // : global.MessageEntity[] - Vector<MessageEntity>
+    _.status_entities = this.vector(this.object); // : api.MessageEntity[] - Vector<MessageEntity>
     _.video_sections = this.vector(this.string); // : string[] - Vector<string>
-    _.videos = this.vector(this.object);    // : global.Document[] - Vector<Document>
-    _.period_options = this.vector(this.object); // : global.PremiumSubscriptionOption[] - Vector<PremiumSubscriptionOption>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.videos = this.vector(this.object);    // : api.Document[] - Vector<Document>
+    _.period_options = this.vector(this.object); // : api.PremiumSubscriptionOption[] - Vector<PremiumSubscriptionOption>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1502273946, function decode$inputStorePaymentPremiumSubscription() {
@@ -26267,7 +26265,7 @@ export const $decoder = new Map([
   }],
   [1634697192, function decode$inputStorePaymentGiftPremium() {
     const _ = { _: "inputStorePaymentGiftPremium" }
-    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.user_id = this.object();              // : api.InputUser - InputUser
     _.currency = this.string();             // : string - string
     _.amount = this.int64();                // : bigint - long
     return _;
@@ -26275,8 +26273,8 @@ export const $decoder = new Map([
   [-1551868097, function decode$inputStorePaymentPremiumGiftCode() {
     const _ = { _: "inputStorePaymentPremiumGiftCode" }
     const flags = this.int32();
-    _.users = this.vector(this.object);     // : global.InputUser[] - Vector<InputUser>
-    if (flags & 1) _.boost_peer = this.object() // ?: global.InputPeer - flags.0?InputPeer
+    _.users = this.vector(this.object);     // : api.InputUser[] - Vector<InputUser>
+    if (flags & 1) _.boost_peer = this.object() // ?: api.InputPeer - flags.0?InputPeer
     _.currency = this.string();             // : string - string
     _.amount = this.int64();                // : bigint - long
     return _;
@@ -26286,8 +26284,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.only_new_subscribers = true // ?: true - flags.0?true
     if (flags & 8) _.winners_are_visible = true // ?: true - flags.3?true
-    _.boost_peer = this.object();           // : global.InputPeer - InputPeer
-    if (flags & 2) _.additional_peers = this.vector(this.object) // ?: global.InputPeer[] - flags.1?Vector<InputPeer>
+    _.boost_peer = this.object();           // : api.InputPeer - InputPeer
+    if (flags & 2) _.additional_peers = this.vector(this.object) // ?: api.InputPeer[] - flags.1?Vector<InputPeer>
     if (flags & 4) _.countries_iso2 = this.vector(this.string) // ?: string[] - flags.2?Vector<string>
     if (flags & 16) _.prize_description = this.string() // ?: string - flags.4?string
     _.random_id = this.int64();             // : bigint - long
@@ -26332,7 +26330,7 @@ export const $decoder = new Map([
   [-1866176559, function decode$account__emojiStatuses() {
     const _ = { _: "account.emojiStatuses" }
     _.hash = this.int64();                  // : bigint - long
-    _.statuses = this.vector(this.object);  // : global.EmojiStatus[] - Vector<EmojiStatus>
+    _.statuses = this.vector(this.object);  // : api.EmojiStatus[] - Vector<EmojiStatus>
     return _;
   }],
   [2046153753, function decode$reactionEmpty() {
@@ -26359,7 +26357,7 @@ export const $decoder = new Map([
   }],
   [1713193015, function decode$chatReactionsSome() {
     const _ = { _: "chatReactionsSome" }
-    _.reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
+    _.reactions = this.vector(this.object); // : api.Reaction[] - Vector<Reaction>
     return _;
   }],
   [-1334846497, function decode$messages__reactionsNotModified() {
@@ -26368,7 +26366,7 @@ export const $decoder = new Map([
   [-352454890, function decode$messages__reactions() {
     const _ = { _: "messages.reactions" }
     _.hash = this.int64();                  // : bigint - long
-    _.reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
+    _.reactions = this.vector(this.object); // : api.Reaction[] - Vector<Reaction>
     return _;
   }],
   [1128644211, function decode$emailVerifyPurposeLoginSetup() {
@@ -26426,7 +26424,7 @@ export const $decoder = new Map([
     const _ = { _: "sendAsPeer" }
     const flags = this.int32();
     if (flags & 1) _.premium_required = true // ?: true - flags.0?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     return _;
   }],
   [-1386050360, function decode$messageExtendedMediaPreview() {
@@ -26434,13 +26432,13 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.w = this.int32()       // ?: number - flags.0?int
     if (flags & 1) _.h = this.int32()       // ?: number - flags.0?int
-    if (flags & 2) _.thumb = this.object()  // ?: global.PhotoSize - flags.1?PhotoSize
+    if (flags & 2) _.thumb = this.object()  // ?: api.PhotoSize - flags.1?PhotoSize
     if (flags & 4) _.video_duration = this.int32() // ?: number - flags.2?int
     return _;
   }],
   [-297296796, function decode$messageExtendedMedia() {
     const _ = { _: "messageExtendedMedia" }
-    _.media = this.object();                // : global.MessageMedia - MessageMedia
+    _.media = this.object();                // : api.MessageMedia - MessageMedia
     return _;
   }],
   [-50416996, function decode$stickerKeyword() {
@@ -26481,9 +26479,9 @@ export const $decoder = new Map([
     _.unread_count = this.int32();          // : number - int
     _.unread_mentions_count = this.int32(); // : number - int
     _.unread_reactions_count = this.int32(); // : number - int
-    _.from_id = this.object();              // : global.Peer - Peer
-    _.notify_settings = this.object();      // : global.PeerNotifySettings - PeerNotifySettings
-    if (flags & 16) _.draft = this.object() // ?: global.DraftMessage - flags.4?DraftMessage
+    _.from_id = this.object();              // : api.Peer - Peer
+    _.notify_settings = this.object();      // : api.PeerNotifySettings - PeerNotifySettings
+    if (flags & 16) _.draft = this.object() // ?: api.DraftMessage - flags.4?DraftMessage
     return _;
   }],
   [913709011, function decode$messages__forumTopics() {
@@ -26491,10 +26489,10 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.order_by_create_date = true // ?: true - flags.0?true
     _.count = this.int32();                 // : number - int
-    _.topics = this.vector(this.object);    // : global.ForumTopic[] - Vector<ForumTopic>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.topics = this.vector(this.object);    // : api.ForumTopic[] - Vector<ForumTopic>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     _.pts = this.int32();                   // : number - int
     return _;
   }],
@@ -26523,8 +26521,8 @@ export const $decoder = new Map([
     if (flags & 32) _.bot_participant = true // ?: true - flags.5?true
     if (flags & 8) _.has_username = this.bool() // ?: boolean - flags.3?Bool
     if (flags & 16) _.forum = this.bool()   // ?: boolean - flags.4?Bool
-    if (flags & 2) _.user_admin_rights = this.object() // ?: global.ChatAdminRights - flags.1?ChatAdminRights
-    if (flags & 4) _.bot_admin_rights = this.object() // ?: global.ChatAdminRights - flags.2?ChatAdminRights
+    if (flags & 2) _.user_admin_rights = this.object() // ?: api.ChatAdminRights - flags.1?ChatAdminRights
+    if (flags & 4) _.bot_admin_rights = this.object() // ?: api.ChatAdminRights - flags.2?ChatAdminRights
     return _;
   }],
   [865857388, function decode$requestPeerTypeBroadcast() {
@@ -26532,8 +26530,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.creator = true         // ?: true - flags.0?true
     if (flags & 8) _.has_username = this.bool() // ?: boolean - flags.3?Bool
-    if (flags & 2) _.user_admin_rights = this.object() // ?: global.ChatAdminRights - flags.1?ChatAdminRights
-    if (flags & 4) _.bot_admin_rights = this.object() // ?: global.ChatAdminRights - flags.2?ChatAdminRights
+    if (flags & 2) _.user_admin_rights = this.object() // ?: api.ChatAdminRights - flags.1?ChatAdminRights
+    if (flags & 4) _.bot_admin_rights = this.object() // ?: api.ChatAdminRights - flags.2?ChatAdminRights
     return _;
   }],
   [1209970170, function decode$emojiListNotModified() {
@@ -26558,18 +26556,18 @@ export const $decoder = new Map([
   [-2011186869, function decode$messages__emojiGroups() {
     const _ = { _: "messages.emojiGroups" }
     _.hash = this.int32();                  // : number - int
-    _.groups = this.vector(this.object);    // : global.EmojiGroup[] - Vector<EmojiGroup>
+    _.groups = this.vector(this.object);    // : api.EmojiGroup[] - Vector<EmojiGroup>
     return _;
   }],
   [1964978502, function decode$textWithEntities() {
     const _ = { _: "textWithEntities" }
     _.text = this.string();                 // : string - string
-    _.entities = this.vector(this.object);  // : global.MessageEntity[] - Vector<MessageEntity>
+    _.entities = this.vector(this.object);  // : api.MessageEntity[] - Vector<MessageEntity>
     return _;
   }],
   [870003448, function decode$messages__translateResult() {
     const _ = { _: "messages.translateResult" }
-    _.result = this.vector(this.object);    // : global.TextWithEntities[] - Vector<TextWithEntities>
+    _.result = this.vector(this.object);    // : api.TextWithEntities[] - Vector<TextWithEntities>
     return _;
   }],
   [-934791986, function decode$autoSaveSettings() {
@@ -26582,18 +26580,18 @@ export const $decoder = new Map([
   }],
   [-2124403385, function decode$autoSaveException() {
     const _ = { _: "autoSaveException" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.settings = this.object();             // : global.AutoSaveSettings - AutoSaveSettings
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.settings = this.object();             // : api.AutoSaveSettings - AutoSaveSettings
     return _;
   }],
   [1279133341, function decode$account__autoSaveSettings() {
     const _ = { _: "account.autoSaveSettings" }
-    _.users_settings = this.object();       // : global.AutoSaveSettings - AutoSaveSettings
-    _.chats_settings = this.object();       // : global.AutoSaveSettings - AutoSaveSettings
-    _.broadcasts_settings = this.object();  // : global.AutoSaveSettings - AutoSaveSettings
-    _.exceptions = this.vector(this.object); // : global.AutoSaveException[] - Vector<AutoSaveException>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users_settings = this.object();       // : api.AutoSaveSettings - AutoSaveSettings
+    _.chats_settings = this.object();       // : api.AutoSaveSettings - AutoSaveSettings
+    _.broadcasts_settings = this.object();  // : api.AutoSaveSettings - AutoSaveSettings
+    _.exceptions = this.vector(this.object); // : api.AutoSaveException[] - Vector<AutoSaveException>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [2094949405, function decode$help__appConfigNotModified() {
@@ -26602,7 +26600,7 @@ export const $decoder = new Map([
   [-585598930, function decode$help__appConfig() {
     const _ = { _: "help.appConfig" }
     _.hash = this.int32();                  // : number - int
-    _.config = this.object();               // : global.JSONValue - JSONValue
+    _.config = this.object();               // : api.JSONValue - JSONValue
     return _;
   }],
   [-1457472134, function decode$inputBotAppID() {
@@ -26613,7 +26611,7 @@ export const $decoder = new Map([
   }],
   [-1869872121, function decode$inputBotAppShortName() {
     const _ = { _: "inputBotAppShortName" }
-    _.bot_id = this.object();               // : global.InputUser - InputUser
+    _.bot_id = this.object();               // : api.InputUser - InputUser
     _.short_name = this.string();           // : string - string
     return _;
   }],
@@ -26628,8 +26626,8 @@ export const $decoder = new Map([
     _.short_name = this.string();           // : string - string
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    _.photo = this.object();                // : global.Photo - Photo
-    if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
+    _.photo = this.object();                // : api.Photo - Photo
+    if (flags & 1) _.document = this.object() // ?: api.Document - flags.0?Document
     _.hash = this.int64();                  // : bigint - long
     return _;
   }],
@@ -26639,7 +26637,7 @@ export const $decoder = new Map([
     if (flags & 1) _.inactive = true        // ?: true - flags.0?true
     if (flags & 2) _.request_write_access = true // ?: true - flags.1?true
     if (flags & 4) _.has_settings = true    // ?: true - flags.2?true
-    _.app = this.object();                  // : global.BotApp - BotApp
+    _.app = this.object();                  // : api.BotApp - BotApp
     return _;
   }],
   [1008422669, function decode$appWebViewResultUrl() {
@@ -26669,29 +26667,29 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     _.url = this.string();                  // : string - string
-    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
+    _.peers = this.vector(this.object);     // : api.Peer[] - Vector<Peer>
     return _;
   }],
   [283567014, function decode$chatlists__exportedChatlistInvite() {
     const _ = { _: "chatlists.exportedChatlistInvite" }
-    _.filter = this.object();               // : global.DialogFilter - DialogFilter
-    _.invite = this.object();               // : global.ExportedChatlistInvite - ExportedChatlistInvite
+    _.filter = this.object();               // : api.DialogFilter - DialogFilter
+    _.invite = this.object();               // : api.ExportedChatlistInvite - ExportedChatlistInvite
     return _;
   }],
   [279670215, function decode$chatlists__exportedInvites() {
     const _ = { _: "chatlists.exportedInvites" }
-    _.invites = this.vector(this.object);   // : global.ExportedChatlistInvite[] - Vector<ExportedChatlistInvite>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.invites = this.vector(this.object);   // : api.ExportedChatlistInvite[] - Vector<ExportedChatlistInvite>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-91752871, function decode$chatlists__chatlistInviteAlready() {
     const _ = { _: "chatlists.chatlistInviteAlready" }
     _.filter_id = this.int32();             // : number - int
-    _.missing_peers = this.vector(this.object); // : global.Peer[] - Vector<Peer>
-    _.already_peers = this.vector(this.object); // : global.Peer[] - Vector<Peer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.missing_peers = this.vector(this.object); // : api.Peer[] - Vector<Peer>
+    _.already_peers = this.vector(this.object); // : api.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [500007837, function decode$chatlists__chatlistInvite() {
@@ -26699,16 +26697,16 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     if (flags & 1) _.emoticon = this.string() // ?: string - flags.0?string
-    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.peers = this.vector(this.object);     // : api.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1816295539, function decode$chatlists__chatlistUpdates() {
     const _ = { _: "chatlists.chatlistUpdates" }
-    _.missing_peers = this.vector(this.object); // : global.Peer[] - Vector<Peer>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.missing_peers = this.vector(this.object); // : api.Peer[] - Vector<Peer>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-391678544, function decode$bots__botInfo() {
@@ -26720,20 +26718,20 @@ export const $decoder = new Map([
   }],
   [-1228133028, function decode$messagePeerVote() {
     const _ = { _: "messagePeerVote" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.option = this.bytes();                // : Uint8Array - bytes
     _.date = this.int32();                  // : number - int
     return _;
   }],
   [1959634180, function decode$messagePeerVoteInputOption() {
     const _ = { _: "messagePeerVoteInputOption" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
     return _;
   }],
   [1177089766, function decode$messagePeerVoteMultiple() {
     const _ = { _: "messagePeerVoteMultiple" }
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.options = this.vector(this.bytes);    // : Uint8Array[] - Vector<bytes>
     _.date = this.int32();                  // : number - int
     return _;
@@ -26743,7 +26741,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.url = this.string();                  // : string - string
     _.site_name = this.string();            // : string - string
-    if (flags & 1) _.photo = this.object()  // ?: global.Photo - flags.0?Photo
+    if (flags & 1) _.photo = this.object()  // ?: api.Photo - flags.0?Photo
     return _;
   }],
   [-1923523370, function decode$storyViews() {
@@ -26752,7 +26750,7 @@ export const $decoder = new Map([
     if (flags & 2) _.has_viewers = true     // ?: true - flags.1?true
     _.views_count = this.int32();           // : number - int
     if (flags & 4) _.forwards_count = this.int32() // ?: number - flags.2?int
-    if (flags & 8) _.reactions = this.vector(this.object) // ?: global.ReactionCount[] - flags.3?Vector<ReactionCount>
+    if (flags & 8) _.reactions = this.vector(this.object) // ?: api.ReactionCount[] - flags.3?Vector<ReactionCount>
     if (flags & 16) _.reactions_count = this.int32() // ?: number - flags.4?int
     if (flags & 1) _.recent_viewers = this.vector(this.int64) // ?: bigint[] - flags.0?Vector<long>
     return _;
@@ -26785,23 +26783,23 @@ export const $decoder = new Map([
     if (flags & 65536) _.out = true         // ?: true - flags.16?true
     _.id = this.int32();                    // : number - int
     _.date = this.int32();                  // : number - int
-    if (flags & 262144) _.from_id = this.object() // ?: global.Peer - flags.18?Peer
-    if (flags & 131072) _.fwd_from = this.object() // ?: global.StoryFwdHeader - flags.17?StoryFwdHeader
+    if (flags & 262144) _.from_id = this.object() // ?: api.Peer - flags.18?Peer
+    if (flags & 131072) _.fwd_from = this.object() // ?: api.StoryFwdHeader - flags.17?StoryFwdHeader
     _.expire_date = this.int32();           // : number - int
     if (flags & 1) _.caption = this.string() // ?: string - flags.0?string
-    if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
-    _.media = this.object();                // : global.MessageMedia - MessageMedia
-    if (flags & 16384) _.media_areas = this.vector(this.object) // ?: global.MediaArea[] - flags.14?Vector<MediaArea>
-    if (flags & 4) _.privacy = this.vector(this.object) // ?: global.PrivacyRule[] - flags.2?Vector<PrivacyRule>
-    if (flags & 8) _.views = this.object()  // ?: global.StoryViews - flags.3?StoryViews
-    if (flags & 32768) _.sent_reaction = this.object() // ?: global.Reaction - flags.15?Reaction
+    if (flags & 2) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.1?Vector<MessageEntity>
+    _.media = this.object();                // : api.MessageMedia - MessageMedia
+    if (flags & 16384) _.media_areas = this.vector(this.object) // ?: api.MediaArea[] - flags.14?Vector<MediaArea>
+    if (flags & 4) _.privacy = this.vector(this.object) // ?: api.PrivacyRule[] - flags.2?Vector<PrivacyRule>
+    if (flags & 8) _.views = this.object()  // ?: api.StoryViews - flags.3?StoryViews
+    if (flags & 32768) _.sent_reaction = this.object() // ?: api.Reaction - flags.15?Reaction
     return _;
   }],
   [291044926, function decode$stories__allStoriesNotModified() {
     const _ = { _: "stories.allStoriesNotModified" }
     const flags = this.int32();
     _.state = this.string();                // : string - string
-    _.stealth_mode = this.object();         // : global.StoriesStealthMode - StoriesStealthMode
+    _.stealth_mode = this.object();         // : api.StoriesStealthMode - StoriesStealthMode
     return _;
   }],
   [1862033025, function decode$stories__allStories() {
@@ -26810,18 +26808,18 @@ export const $decoder = new Map([
     if (flags & 1) _.has_more = true        // ?: true - flags.0?true
     _.count = this.int32();                 // : number - int
     _.state = this.string();                // : string - string
-    _.peer_stories = this.vector(this.object); // : global.PeerStories[] - Vector<PeerStories>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
-    _.stealth_mode = this.object();         // : global.StoriesStealthMode - StoriesStealthMode
+    _.peer_stories = this.vector(this.object); // : api.PeerStories[] - Vector<PeerStories>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
+    _.stealth_mode = this.object();         // : api.StoriesStealthMode - StoriesStealthMode
     return _;
   }],
   [1574486984, function decode$stories__stories() {
     const _ = { _: "stories.stories" }
     _.count = this.int32();                 // : number - int
-    _.stories = this.vector(this.object);   // : global.StoryItem[] - Vector<StoryItem>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.stories = this.vector(this.object);   // : api.StoryItem[] - Vector<StoryItem>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1329730875, function decode$storyView() {
@@ -26831,7 +26829,7 @@ export const $decoder = new Map([
     if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
     _.user_id = this.int64();               // : bigint - long
     _.date = this.int32();                  // : number - int
-    if (flags & 4) _.reaction = this.object() // ?: global.Reaction - flags.2?Reaction
+    if (flags & 4) _.reaction = this.object() // ?: api.Reaction - flags.2?Reaction
     return _;
   }],
   [-1870436597, function decode$storyViewPublicForward() {
@@ -26839,7 +26837,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
     if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [-1116418231, function decode$storyViewPublicRepost() {
@@ -26847,8 +26845,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
     if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
-    _.peer_id = this.object();              // : global.Peer - Peer
-    _.story = this.object();                // : global.StoryItem - StoryItem
+    _.peer_id = this.object();              // : api.Peer - Peer
+    _.story = this.object();                // : api.StoryItem - StoryItem
     return _;
   }],
   [1507299269, function decode$stories__storyViewsList() {
@@ -26858,16 +26856,16 @@ export const $decoder = new Map([
     _.views_count = this.int32();           // : number - int
     _.forwards_count = this.int32();        // : number - int
     _.reactions_count = this.int32();       // : number - int
-    _.views = this.vector(this.object);     // : global.StoryView[] - Vector<StoryView>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.views = this.vector(this.object);     // : api.StoryView[] - Vector<StoryView>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
   }],
   [-560009955, function decode$stories__storyViews() {
     const _ = { _: "stories.storyViews" }
-    _.views = this.vector(this.object);     // : global.StoryViews[] - Vector<StoryViews>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.views = this.vector(this.object);     // : api.StoryViews[] - Vector<StoryViews>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [583071445, function decode$inputReplyToMessage() {
@@ -26875,15 +26873,15 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.reply_to_msg_id = this.int32();       // : number - int
     if (flags & 1) _.top_msg_id = this.int32() // ?: number - flags.0?int
-    if (flags & 2) _.reply_to_peer_id = this.object() // ?: global.InputPeer - flags.1?InputPeer
+    if (flags & 2) _.reply_to_peer_id = this.object() // ?: api.InputPeer - flags.1?InputPeer
     if (flags & 4) _.quote_text = this.string() // ?: string - flags.2?string
-    if (flags & 8) _.quote_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.3?Vector<MessageEntity>
+    if (flags & 8) _.quote_entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.3?Vector<MessageEntity>
     if (flags & 16) _.quote_offset = this.int32() // ?: number - flags.4?int
     return _;
   }],
   [1484862010, function decode$inputReplyToStory() {
     const _ = { _: "inputReplyToStory" }
-    _.peer = this.object();                 // : global.InputPeer - InputPeer
+    _.peer = this.object();                 // : api.InputPeer - InputPeer
     _.story_id = this.int32();              // : number - int
     return _;
   }],
@@ -26910,8 +26908,8 @@ export const $decoder = new Map([
   }],
   [-1098720356, function decode$mediaAreaVenue() {
     const _ = { _: "mediaAreaVenue" }
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     _.title = this.string();                // : string - string
     _.address = this.string();              // : string - string
     _.provider = this.string();             // : string - string
@@ -26921,15 +26919,15 @@ export const $decoder = new Map([
   }],
   [-1300094593, function decode$inputMediaAreaVenue() {
     const _ = { _: "inputMediaAreaVenue" }
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
     _.query_id = this.int64();              // : bigint - long
     _.result_id = this.string();            // : string - string
     return _;
   }],
   [-544523486, function decode$mediaAreaGeoPoint() {
     const _ = { _: "mediaAreaGeoPoint" }
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
-    _.geo = this.object();                  // : global.GeoPoint - GeoPoint
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
+    _.geo = this.object();                  // : api.GeoPoint - GeoPoint
     return _;
   }],
   [340088945, function decode$mediaAreaSuggestedReaction() {
@@ -26937,44 +26935,44 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.dark = true            // ?: true - flags.0?true
     if (flags & 2) _.flipped = true         // ?: true - flags.1?true
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
+    _.reaction = this.object();             // : api.Reaction - Reaction
     return _;
   }],
   [1996756655, function decode$mediaAreaChannelPost() {
     const _ = { _: "mediaAreaChannelPost" }
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
     _.channel_id = this.int64();            // : bigint - long
     _.msg_id = this.int32();                // : number - int
     return _;
   }],
   [577893055, function decode$inputMediaAreaChannelPost() {
     const _ = { _: "inputMediaAreaChannelPost" }
-    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
-    _.channel = this.object();              // : global.InputChannel - InputChannel
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
+    _.channel = this.object();              // : api.InputChannel - InputChannel
     _.msg_id = this.int32();                // : number - int
     return _;
   }],
   [-1707742823, function decode$peerStories() {
     const _ = { _: "peerStories" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     if (flags & 1) _.max_read_id = this.int32() // ?: number - flags.0?int
-    _.stories = this.vector(this.object);   // : global.StoryItem[] - Vector<StoryItem>
+    _.stories = this.vector(this.object);   // : api.StoryItem[] - Vector<StoryItem>
     return _;
   }],
   [-890861720, function decode$stories__peerStories() {
     const _ = { _: "stories.peerStories" }
-    _.stories = this.object();              // : global.PeerStories - PeerStories
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.stories = this.object();              // : api.PeerStories - PeerStories
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-44166467, function decode$messages__webPage() {
     const _ = { _: "messages.webPage" }
-    _.webpage = this.object();              // : global.WebPage - WebPage
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.webpage = this.object();              // : api.WebPage - WebPage
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [629052971, function decode$premiumGiftCodeOption() {
@@ -26992,14 +26990,14 @@ export const $decoder = new Map([
     const _ = { _: "payments.checkedGiftCode" }
     const flags = this.int32();
     if (flags & 4) _.via_giveaway = true    // ?: true - flags.2?true
-    if (flags & 16) _.from_id = this.object() // ?: global.Peer - flags.4?Peer
+    if (flags & 16) _.from_id = this.object() // ?: api.Peer - flags.4?Peer
     if (flags & 8) _.giveaway_msg_id = this.int32() // ?: number - flags.3?int
     if (flags & 1) _.to_id = this.int64()   // ?: bigint - flags.0?long
     _.date = this.int32();                  // : number - int
     _.months = this.int32();                // : number - int
     if (flags & 2) _.used_date = this.int32() // ?: number - flags.1?int
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1130879648, function decode$payments__giveawayInfo() {
@@ -27052,16 +27050,16 @@ export const $decoder = new Map([
     const _ = { _: "premium.boostsList" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
-    _.boosts = this.vector(this.object);    // : global.Boost[] - Vector<Boost>
+    _.boosts = this.vector(this.object);    // : api.Boost[] - Vector<Boost>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1001897636, function decode$myBoost() {
     const _ = { _: "myBoost" }
     const flags = this.int32();
     _.slot = this.int32();                  // : number - int
-    if (flags & 1) _.peer = this.object()   // ?: global.Peer - flags.0?Peer
+    if (flags & 1) _.peer = this.object()   // ?: api.Peer - flags.0?Peer
     _.date = this.int32();                  // : number - int
     _.expires = this.int32();               // : number - int
     if (flags & 2) _.cooldown_until_date = this.int32() // ?: number - flags.1?int
@@ -27069,9 +27067,9 @@ export const $decoder = new Map([
   }],
   [-1696454430, function decode$premium__myBoosts() {
     const _ = { _: "premium.myBoosts" }
-    _.my_boosts = this.vector(this.object); // : global.MyBoost[] - Vector<MyBoost>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.my_boosts = this.vector(this.object); // : api.MyBoost[] - Vector<MyBoost>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1230586490, function decode$premium__boostsStatus() {
@@ -27083,9 +27081,9 @@ export const $decoder = new Map([
     _.boosts = this.int32();                // : number - int
     if (flags & 16) _.gift_boosts = this.int32() // ?: number - flags.4?int
     if (flags & 1) _.next_level_boosts = this.int32() // ?: number - flags.0?int
-    if (flags & 2) _.premium_audience = this.object() // ?: global.StatsPercentValue - flags.1?StatsPercentValue
+    if (flags & 2) _.premium_audience = this.object() // ?: api.StatsPercentValue - flags.1?StatsPercentValue
     _.boost_url = this.string();            // : string - string
-    if (flags & 8) _.prepaid_giveaways = this.vector(this.object) // ?: global.PrepaidGiveaway[] - flags.3?Vector<PrepaidGiveaway>
+    if (flags & 8) _.prepaid_giveaways = this.vector(this.object) // ?: api.PrepaidGiveaway[] - flags.3?Vector<PrepaidGiveaway>
     if (flags & 4) _.my_boost_slots = this.vector(this.int32) // ?: number[] - flags.2?Vector<int>
     return _;
   }],
@@ -27093,7 +27091,7 @@ export const $decoder = new Map([
     const _ = { _: "storyFwdHeader" }
     const flags = this.int32();
     if (flags & 8) _.modified = true        // ?: true - flags.3?true
-    if (flags & 1) _.from = this.object()   // ?: global.Peer - flags.0?Peer
+    if (flags & 1) _.from = this.object()   // ?: api.Peer - flags.0?Peer
     if (flags & 2) _.from_name = this.string() // ?: string - flags.1?string
     if (flags & 4) _.story_id = this.int32() // ?: number - flags.2?int
     return _;
@@ -27116,29 +27114,29 @@ export const $decoder = new Map([
   }],
   [1355613820, function decode$stats__storyStats() {
     const _ = { _: "stats.storyStats" }
-    _.views_graph = this.object();          // : global.StatsGraph - StatsGraph
-    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
+    _.views_graph = this.object();          // : api.StatsGraph - StatsGraph
+    _.reactions_by_emotion_graph = this.object(); // : api.StatsGraph - StatsGraph
     return _;
   }],
   [32685898, function decode$publicForwardMessage() {
     const _ = { _: "publicForwardMessage" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [-302797360, function decode$publicForwardStory() {
     const _ = { _: "publicForwardStory" }
-    _.peer = this.object();                 // : global.Peer - Peer
-    _.story = this.object();                // : global.StoryItem - StoryItem
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.story = this.object();                // : api.StoryItem - StoryItem
     return _;
   }],
   [-1828487648, function decode$stats__publicForwards() {
     const _ = { _: "stats.publicForwards" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
-    _.forwards = this.vector(this.object);  // : global.PublicForward[] - Vector<PublicForward>
+    _.forwards = this.vector(this.object);  // : api.PublicForward[] - Vector<PublicForward>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1253352753, function decode$peerColor() {
@@ -27182,29 +27180,29 @@ export const $decoder = new Map([
   }],
   [1620104917, function decode$storyReaction() {
     const _ = { _: "storyReaction" }
-    _.peer_id = this.object();              // : global.Peer - Peer
+    _.peer_id = this.object();              // : api.Peer - Peer
     _.date = this.int32();                  // : number - int
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.reaction = this.object();             // : api.Reaction - Reaction
     return _;
   }],
   [-1146411453, function decode$storyReactionPublicForward() {
     const _ = { _: "storyReactionPublicForward" }
-    _.message = this.object();              // : global.Message - Message
+    _.message = this.object();              // : api.Message - Message
     return _;
   }],
   [-808644845, function decode$storyReactionPublicRepost() {
     const _ = { _: "storyReactionPublicRepost" }
-    _.peer_id = this.object();              // : global.Peer - Peer
-    _.story = this.object();                // : global.StoryItem - StoryItem
+    _.peer_id = this.object();              // : api.Peer - Peer
+    _.story = this.object();                // : api.StoryItem - StoryItem
     return _;
   }],
   [-1436583780, function decode$stories__storyReactionsList() {
     const _ = { _: "stories.storyReactionsList" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
-    _.reactions = this.vector(this.object); // : global.StoryReaction[] - Vector<StoryReaction>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.reactions = this.vector(this.object); // : api.StoryReaction[] - Vector<StoryReaction>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
   }],
@@ -27212,25 +27210,25 @@ export const $decoder = new Map([
     const _ = { _: "savedDialog" }
     const flags = this.int32();
     if (flags & 4) _.pinned = true          // ?: true - flags.2?true
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.top_message = this.int32();           // : number - int
     return _;
   }],
   [-130358751, function decode$messages__savedDialogs() {
     const _ = { _: "messages.savedDialogs" }
-    _.dialogs = this.vector(this.object);   // : global.SavedDialog[] - Vector<SavedDialog>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialogs = this.vector(this.object);   // : api.SavedDialog[] - Vector<SavedDialog>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1153080793, function decode$messages__savedDialogsSlice() {
     const _ = { _: "messages.savedDialogsSlice" }
     _.count = this.int32();                 // : number - int
-    _.dialogs = this.vector(this.object);   // : global.SavedDialog[] - Vector<SavedDialog>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.dialogs = this.vector(this.object);   // : api.SavedDialog[] - Vector<SavedDialog>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1071681560, function decode$messages__savedDialogsNotModified() {
@@ -27241,7 +27239,7 @@ export const $decoder = new Map([
   [-881854424, function decode$savedReactionTag() {
     const _ = { _: "savedReactionTag" }
     const flags = this.int32();
-    _.reaction = this.object();             // : global.Reaction - Reaction
+    _.reaction = this.object();             // : api.Reaction - Reaction
     if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
     _.count = this.int32();                 // : number - int
     return _;
@@ -27251,7 +27249,7 @@ export const $decoder = new Map([
   }],
   [844731658, function decode$messages__savedReactionTags() {
     const _ = { _: "messages.savedReactionTags" }
-    _.tags = this.vector(this.object);      // : global.SavedReactionTag[] - Vector<SavedReactionTag>
+    _.tags = this.vector(this.object);      // : api.SavedReactionTag[] - Vector<SavedReactionTag>
     _.hash = this.int64();                  // : bigint - long
     return _;
   }],
@@ -27297,13 +27295,13 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.open_now = true        // ?: true - flags.0?true
     _.timezone_id = this.string();          // : string - string
-    _.weekly_open = this.vector(this.object); // : global.BusinessWeeklyOpen[] - Vector<BusinessWeeklyOpen>
+    _.weekly_open = this.vector(this.object); // : api.BusinessWeeklyOpen[] - Vector<BusinessWeeklyOpen>
     return _;
   }],
   [-1403249929, function decode$businessLocation() {
     const _ = { _: "businessLocation" }
     const flags = this.int32();
-    if (flags & 1) _.geo_point = this.object() // ?: global.GeoPoint - flags.0?GeoPoint
+    if (flags & 1) _.geo_point = this.object() // ?: api.GeoPoint - flags.0?GeoPoint
     _.address = this.string();              // : string - string
     return _;
   }],
@@ -27315,7 +27313,7 @@ export const $decoder = new Map([
     if (flags & 4) _.contacts = true        // ?: true - flags.2?true
     if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
     if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
-    if (flags & 16) _.users = this.vector(this.object) // ?: global.InputUser[] - flags.4?Vector<InputUser>
+    if (flags & 16) _.users = this.vector(this.object) // ?: api.InputUser[] - flags.4?Vector<InputUser>
     return _;
   }],
   [554733559, function decode$businessRecipients() {
@@ -27344,14 +27342,14 @@ export const $decoder = new Map([
   [26528571, function decode$inputBusinessGreetingMessage() {
     const _ = { _: "inputBusinessGreetingMessage" }
     _.shortcut_id = this.int32();           // : number - int
-    _.recipients = this.object();           // : global.InputBusinessRecipients - InputBusinessRecipients
+    _.recipients = this.object();           // : api.InputBusinessRecipients - InputBusinessRecipients
     _.no_activity_days = this.int32();      // : number - int
     return _;
   }],
   [-451302485, function decode$businessGreetingMessage() {
     const _ = { _: "businessGreetingMessage" }
     _.shortcut_id = this.int32();           // : number - int
-    _.recipients = this.object();           // : global.BusinessRecipients - BusinessRecipients
+    _.recipients = this.object();           // : api.BusinessRecipients - BusinessRecipients
     _.no_activity_days = this.int32();      // : number - int
     return _;
   }],
@@ -27360,8 +27358,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.offline_only = true    // ?: true - flags.0?true
     _.shortcut_id = this.int32();           // : number - int
-    _.schedule = this.object();             // : global.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
-    _.recipients = this.object();           // : global.InputBusinessRecipients - InputBusinessRecipients
+    _.schedule = this.object();             // : api.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    _.recipients = this.object();           // : api.InputBusinessRecipients - InputBusinessRecipients
     return _;
   }],
   [-283809188, function decode$businessAwayMessage() {
@@ -27369,8 +27367,8 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.offline_only = true    // ?: true - flags.0?true
     _.shortcut_id = this.int32();           // : number - int
-    _.schedule = this.object();             // : global.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
-    _.recipients = this.object();           // : global.BusinessRecipients - BusinessRecipients
+    _.schedule = this.object();             // : api.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    _.recipients = this.object();           // : api.BusinessRecipients - BusinessRecipients
     return _;
   }],
   [-7173643, function decode$timezone() {
@@ -27385,7 +27383,7 @@ export const $decoder = new Map([
   }],
   [2071260529, function decode$help__timezonesList() {
     const _ = { _: "help.timezonesList" }
-    _.timezones = this.vector(this.object); // : global.Timezone[] - Vector<Timezone>
+    _.timezones = this.vector(this.object); // : api.Timezone[] - Vector<Timezone>
     _.hash = this.int32();                  // : number - int
     return _;
   }],
@@ -27409,10 +27407,10 @@ export const $decoder = new Map([
   }],
   [-963811691, function decode$messages__quickReplies() {
     const _ = { _: "messages.quickReplies" }
-    _.quick_replies = this.vector(this.object); // : global.QuickReply[] - Vector<QuickReply>
-    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.quick_replies = this.vector(this.object); // : api.QuickReply[] - Vector<QuickReply>
+    _.messages = this.vector(this.object);  // : api.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1603398491, function decode$messages__quickRepliesNotModified() {
@@ -27423,20 +27421,20 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.can_reply = true       // ?: true - flags.0?true
     _.bot_id = this.int64();                // : bigint - long
-    _.recipients = this.object();           // : global.BusinessBotRecipients - BusinessBotRecipients
+    _.recipients = this.object();           // : api.BusinessBotRecipients - BusinessBotRecipients
     return _;
   }],
   [400029819, function decode$account__connectedBots() {
     const _ = { _: "account.connectedBots" }
-    _.connected_bots = this.vector(this.object); // : global.ConnectedBot[] - Vector<ConnectedBot>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.connected_bots = this.vector(this.object); // : api.ConnectedBot[] - Vector<ConnectedBot>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [718878489, function decode$messages__dialogFilters() {
     const _ = { _: "messages.dialogFilters" }
     const flags = this.int32();
     if (flags & 1) _.tags_enabled = true    // ?: true - flags.0?true
-    _.filters = this.vector(this.object);   // : global.DialogFilter[] - Vector<DialogFilter>
+    _.filters = this.vector(this.object);   // : api.DialogFilter[] - Vector<DialogFilter>
     return _;
   }],
   [1821253126, function decode$birthday() {
@@ -27463,7 +27461,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.sticker = this.object() // ?: global.InputDocument - flags.0?InputDocument
+    if (flags & 1) _.sticker = this.object() // ?: api.InputDocument - flags.0?InputDocument
     return _;
   }],
   [1510606445, function decode$businessIntro() {
@@ -27471,13 +27469,13 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.title = this.string();                // : string - string
     _.description = this.string();          // : string - string
-    if (flags & 1) _.sticker = this.object() // ?: global.Document - flags.0?Document
+    if (flags & 1) _.sticker = this.object() // ?: api.Document - flags.0?Document
     return _;
   }],
   [-83926371, function decode$messages__myStickers() {
     const _ = { _: "messages.myStickers" }
     _.count = this.int32();                 // : number - int
-    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    _.sets = this.vector(this.object);      // : api.StickerSetCovered[] - Vector<StickerSetCovered>
     return _;
   }],
   [-476815191, function decode$inputCollectibleUsername() {
@@ -27508,8 +27506,8 @@ export const $decoder = new Map([
     if (flags & 4) _.contacts = true        // ?: true - flags.2?true
     if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
     if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
-    if (flags & 16) _.users = this.vector(this.object) // ?: global.InputUser[] - flags.4?Vector<InputUser>
-    if (flags & 64) _.exclude_users = this.vector(this.object) // ?: global.InputUser[] - flags.6?Vector<InputUser>
+    if (flags & 16) _.users = this.vector(this.object) // ?: api.InputUser[] - flags.4?Vector<InputUser>
+    if (flags & 64) _.exclude_users = this.vector(this.object) // ?: api.InputUser[] - flags.6?Vector<InputUser>
     return _;
   }],
   [-1198722189, function decode$businessBotRecipients() {
@@ -27527,13 +27525,13 @@ export const $decoder = new Map([
   [496600883, function decode$contactBirthday() {
     const _ = { _: "contactBirthday" }
     _.contact_id = this.int64();            // : bigint - long
-    _.birthday = this.object();             // : global.Birthday - Birthday
+    _.birthday = this.object();             // : api.Birthday - Birthday
     return _;
   }],
   [290452237, function decode$contacts__contactBirthdays() {
     const _ = { _: "contacts.contactBirthdays" }
-    _.contacts = this.vector(this.object);  // : global.ContactBirthday[] - Vector<ContactBirthday>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.contacts = this.vector(this.object);  // : api.ContactBirthday[] - Vector<ContactBirthday>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [1653379620, function decode$missingInvitee() {
@@ -27546,15 +27544,15 @@ export const $decoder = new Map([
   }],
   [2136862630, function decode$messages__invitedUsers() {
     const _ = { _: "messages.invitedUsers" }
-    _.updates = this.object();              // : global.Updates - Updates
-    _.missing_invitees = this.vector(this.object); // : global.MissingInvitee[] - Vector<MissingInvitee>
+    _.updates = this.object();              // : api.Updates - Updates
+    _.missing_invitees = this.vector(this.object); // : api.MissingInvitee[] - Vector<MissingInvitee>
     return _;
   }],
   [292003751, function decode$inputBusinessChatLink() {
     const _ = { _: "inputBusinessChatLink" }
     const flags = this.int32();
     _.message = this.string();              // : string - string
-    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (flags & 1) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.0?Vector<MessageEntity>
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     return _;
   }],
@@ -27563,26 +27561,26 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.link = this.string();                 // : string - string
     _.message = this.string();              // : string - string
-    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (flags & 1) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.0?Vector<MessageEntity>
     if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
     _.views = this.int32();                 // : number - int
     return _;
   }],
   [-331111727, function decode$account__businessChatLinks() {
     const _ = { _: "account.businessChatLinks" }
-    _.links = this.vector(this.object);     // : global.BusinessChatLink[] - Vector<BusinessChatLink>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    _.links = this.vector(this.object);     // : api.BusinessChatLink[] - Vector<BusinessChatLink>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-1708937439, function decode$account__resolvedBusinessChatLinks() {
     const _ = { _: "account.resolvedBusinessChatLinks" }
     const flags = this.int32();
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peer = this.object();                 // : api.Peer - Peer
     _.message = this.string();              // : string - string
-    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
-    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
-    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    if (flags & 1) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.0?Vector<MessageEntity>
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
   [-701500310, function decode$requestedPeerUser() {
@@ -27592,7 +27590,7 @@ export const $decoder = new Map([
     if (flags & 1) _.first_name = this.string() // ?: string - flags.0?string
     if (flags & 1) _.last_name = this.string() // ?: string - flags.0?string
     if (flags & 2) _.username = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    if (flags & 4) _.photo = this.object()  // ?: api.Photo - flags.2?Photo
     return _;
   }],
   [1929860175, function decode$requestedPeerChat() {
@@ -27600,7 +27598,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     _.chat_id = this.int64();               // : bigint - long
     if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
-    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    if (flags & 4) _.photo = this.object()  // ?: api.Photo - flags.2?Photo
     return _;
   }],
   [-1952185372, function decode$requestedPeerChannel() {
@@ -27609,7 +27607,7 @@ export const $decoder = new Map([
     _.channel_id = this.int64();            // : bigint - long
     if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
     if (flags & 2) _.username = this.string() // ?: string - flags.1?string
-    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    if (flags & 4) _.photo = this.object()  // ?: api.Photo - flags.2?Photo
     return _;
   }],
   [1124938064, function decode$sponsoredMessageReportOption() {
@@ -27621,7 +27619,7 @@ export const $decoder = new Map([
   [-2073059774, function decode$channels__sponsoredMessageReportResultChooseOption() {
     const _ = { _: "channels.sponsoredMessageReportResultChooseOption" }
     _.title = this.string();                // : string - string
-    _.options = this.vector(this.object);   // : global.SponsoredMessageReportOption[] - Vector<SponsoredMessageReportOption>
+    _.options = this.vector(this.object);   // : api.SponsoredMessageReportOption[] - Vector<SponsoredMessageReportOption>
     return _;
   }],
   [1044107055, function decode$channels__sponsoredMessageReportResultAdsHidden() {
@@ -27632,8 +27630,8 @@ export const $decoder = new Map([
   }],
   [-797226067, function decode$stats__broadcastRevenueStats() {
     const _ = { _: "stats.broadcastRevenueStats" }
-    _.top_hours_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.revenue_graph = this.object();        // : global.StatsGraph - StatsGraph
+    _.top_hours_graph = this.object();      // : api.StatsGraph - StatsGraph
+    _.revenue_graph = this.object();        // : api.StatsGraph - StatsGraph
     _.current_balance = this.int64();       // : bigint - long
     _.available_balance = this.int64();     // : bigint - long
     _.overall_revenue = this.int64();       // : bigint - long
@@ -27674,7 +27672,7 @@ export const $decoder = new Map([
   [-2028632986, function decode$stats__broadcastRevenueTransactions() {
     const _ = { _: "stats.broadcastRevenueTransactions" }
     _.count = this.int32();                 // : number - int
-    _.transactions = this.vector(this.object); // : global.BroadcastRevenueTransaction[] - Vector<BroadcastRevenueTransaction>
+    _.transactions = this.vector(this.object); // : api.BroadcastRevenueTransaction[] - Vector<BroadcastRevenueTransaction>
     return _;
   }],
 ]);

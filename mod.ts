@@ -1,3 +1,13 @@
+import {
+  type DCIdentifier,
+  type DCType,
+  toDCIdentifier,
+  toDCInfo,
+} from "./common/dc.ts";
+import type { api } from "./gen/api.js";
+import RPC from "./rpc/mod.ts";
+import KVStorageAdapter from "./storage/kv.ts";
+import type { MTStorage } from "./storage/types.ts";
 import type {
   EnvironmentInformation,
   InitDC,
@@ -5,11 +15,6 @@ import type {
   MTProtoOptions,
   TransportFactory,
 } from "./types.ts";
-import RPC from "./rpc/mod.ts";
-import type api from "./gen/api.js";
-import { DCIdentifier, DCType, toDCIdentifier, toDCInfo } from "./common/dc.ts";
-import type { MTStorage } from "./storage/types.ts";
-import KVStorageAdapter from "./storage/kv.ts";
 
 const testdc: InitDC = {
   test: true,
@@ -105,11 +110,11 @@ export default class MTProto {
     }
   }
 
-  get default_dc() {
+  get default_dc(): number {
     return this.#initdc.id;
   }
 
-  get_dc_id(id: number, type: DCType = "main") {
+  get_dc_id(id: number, type: DCType = "main"): DCIdentifier {
     return toDCIdentifier({
       id,
       type,
@@ -159,7 +164,7 @@ export default class MTProto {
     throw lasterr ?? new Error(`Unknown DC ${dcid}`);
   }
 
-  async shutdown() {
+  async shutdown(): Promise<void[]> {
     const conns = [...this.#connections.values()];
     this.#connections.clear();
     return await Promise.all(conns.map((conn) => conn.close("closed")));

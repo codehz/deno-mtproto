@@ -1,4 +1,4 @@
-import api from "../gen/api.js";
+import { api } from "../gen/api.js";
 
 export function decodeTLJson(obj: api.JSONValue): unknown {
   switch (obj._) {

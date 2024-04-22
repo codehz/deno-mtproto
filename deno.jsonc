@@ -1,25 +1,22 @@
 {
+  "name": "@codehz/mtproto",
+  "version": "0.5.2",
+  "exports": "./mod.ts",
   "compilerOptions": {
     "allowJs": true,
     "checkJs": false
   },
   "lint": {
     "files": {
-      "exclude": [
-        "gen/"
-      ]
+      "exclude": ["gen/"]
     },
     "rules": {
-      "exclude": [
-        "no-explicit-any"
-      ]
+      "exclude": ["no-explicit-any"]
     }
   },
   "fmt": {
     "files": {
-      "exclude": [
-        "gen/"
-      ]
+      "exclude": ["gen/"]
     }
   }
 }

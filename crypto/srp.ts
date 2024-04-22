@@ -1,3 +1,4 @@
+import { modpow } from "../common/alg.ts";
 import {
   concat_array,
   frombig256,
@@ -6,9 +7,7 @@ import {
   tou8,
   xor_array,
 } from "../common/utils.ts";
-import { modpow } from "../common/alg.ts";
-
-import api from "../gen/api.js";
+import type { api } from "../gen/api.js";
 
 const H = async (...bytes: Uint8Array[]) =>
   tou8(await crypto.subtle.digest("SHA-256", concat_array(...bytes)));

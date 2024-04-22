@@ -1,7 +1,7 @@
 import { max } from "../common/alg.ts";
 import { decodeBase64, encodeBase64 } from "../common/base64.ts";
 import cached from "../common/cached.ts";
-import { DCIdentifier } from "../common/dc.ts";
+import type { DCIdentifier } from "../common/dc.ts";
 import EventEmitter from "../common/event.ts";
 import { decompressObject } from "../common/gzip.ts";
 import type { FilteredKeys } from "../common/magic.ts";
@@ -20,18 +20,19 @@ import {
 } from "../common/utils.ts";
 import * as aes from "../crypto/aes.ts";
 import * as apiset from "../gen/api.js";
-import api, {
+import {
+  type api,
   initConnection,
   invokeWithLayer,
   invokeWithoutUpdates,
   mt,
 } from "../gen/api.js";
 import authorize from "../rpc/authorizor.ts";
-import { KVStorage } from "../storage/types.ts";
+import type { KVStorage } from "../storage/types.ts";
 import { Deserializer } from "../tl/deserializer.ts";
 import { serialize } from "../tl/serializer.ts";
-import { TLApiMethod, TLMethod } from "../tl/types.ts";
-import { EnvironmentInformation, Transport } from "../types.ts";
+import type { TLApiMethod, TLMethod } from "../tl/types.ts";
+import type { EnvironmentInformation, Transport } from "../types.ts";
 
 const API_LAYER = 177;
 
@@ -206,7 +207,7 @@ export default class RPC extends EventEmitter<Events> {
 
   subscribe = true;
 
-  get dcid() {
+  get dcid(): DCIdentifier {
     return this.#dcid;
   }
 
@@ -267,7 +268,7 @@ export default class RPC extends EventEmitter<Events> {
     }
   }, this.#handleerr);
 
-  get state() {
+  get state(): RPCState {
     return this.#state;
   }
 

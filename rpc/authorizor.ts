@@ -1,4 +1,4 @@
-import { TLMethod } from "../tl/types.ts";
+import { modpow } from "../common/alg.ts";
 import {
   concat_array,
   dump_u8arr,
@@ -12,13 +12,13 @@ import {
   view_arr,
   xor_array,
 } from "../common/utils.ts";
-import { mt } from "../gen/api.js";
-import * as rsa from "../crypto/rsa.ts";
 import * as aes from "../crypto/aes.ts";
 import { depq } from "../crypto/pq.ts";
-import { serialize } from "../tl/serializer.ts";
+import * as rsa from "../crypto/rsa.ts";
+import { mt } from "../gen/api.js";
 import { Deserializer } from "../tl/deserializer.ts";
-import { modpow } from "../common/alg.ts";
+import { serialize } from "../tl/serializer.ts";
+import { TLMethod } from "../tl/types.ts";
 
 type DhParams = {
   prime: bigint;
@@ -170,7 +170,7 @@ async function get_params(
   const p = frombig(bigp);
   const q = frombig(bigq);
   const pq_inner_data = serialize(mt.p_q_inner_data, {
-    pq,
+    pq: tou8(pq),
     p,
     q,
     nonce,

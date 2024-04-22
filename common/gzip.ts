@@ -2,7 +2,7 @@
 import { gunzipSync } from "../vendor/fflate.js";
 
 import { tou8 } from "../common/utils.ts";
-import { AnyObject } from "../gen/api.js";
+import type { AnyObject } from "../gen/api.js";
 import { deserialize } from "../tl/deserializer.ts";
 
 export function decompress(buffer: BufferSource) {

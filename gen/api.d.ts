@@ -411,7 +411,7 @@ export namespace mt {
   export const destroy_session_none: TLConstructor<_DestroySessionRes, "mt.destroy_session_none">;
 }
 
-declare namespace global {
+export namespace api {
   export type InputPeer<
     K extends keyof _InputPeer = keyof _InputPeer
   > = ToUnderscore<_InputPeer, K>;
@@ -430,12 +430,12 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputPeerUserFromMessage": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       msg_id: number;                         // int
       user_id: bigint;                        // long
     },
     "inputPeerChannelFromMessage": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       msg_id: number;                         // int
       channel_id: bigint;                     // long
     },
@@ -459,7 +459,7 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputUserFromMessage": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       msg_id: number;                         // int
       user_id: bigint;                        // long
     },
@@ -508,17 +508,17 @@ declare namespace global {
     "inputMediaEmpty": {}
     "inputMediaUploadedPhoto": {
       spoiler?: true;                         // flags.2?true
-      file: global.InputFile;                 // InputFile
-      stickers?: global.InputDocument[];      // flags.0?Vector<InputDocument>
+      file: api.InputFile;                    // InputFile
+      stickers?: api.InputDocument[];         // flags.0?Vector<InputDocument>
       ttl_seconds?: number;                   // flags.1?int
     },
     "inputMediaPhoto": {
       spoiler?: true;                         // flags.1?true
-      id: global.InputPhoto;                  // InputPhoto
+      id: api.InputPhoto;                     // InputPhoto
       ttl_seconds?: number;                   // flags.0?int
     },
     "inputMediaGeoPoint": {
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
     },
     "inputMediaContact": {
       phone_number: string;                   // string
@@ -530,21 +530,21 @@ declare namespace global {
       nosound_video?: true;                   // flags.3?true
       force_file?: true;                      // flags.4?true
       spoiler?: true;                         // flags.5?true
-      file: global.InputFile;                 // InputFile
-      thumb?: global.InputFile;               // flags.2?InputFile
+      file: api.InputFile;                    // InputFile
+      thumb?: api.InputFile;                  // flags.2?InputFile
       mime_type: string;                      // string
-      attributes: global.DocumentAttribute[]; // Vector<DocumentAttribute>
-      stickers?: global.InputDocument[];      // flags.0?Vector<InputDocument>
+      attributes: api.DocumentAttribute[];    // Vector<DocumentAttribute>
+      stickers?: api.InputDocument[];         // flags.0?Vector<InputDocument>
       ttl_seconds?: number;                   // flags.1?int
     },
     "inputMediaDocument": {
       spoiler?: true;                         // flags.2?true
-      id: global.InputDocument;               // InputDocument
+      id: api.InputDocument;                  // InputDocument
       ttl_seconds?: number;                   // flags.0?int
       query?: string;                         // flags.1?string
     },
     "inputMediaVenue": {
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
       title: string;                          // string
       address: string;                        // string
       provider: string;                       // string
@@ -562,37 +562,37 @@ declare namespace global {
       ttl_seconds?: number;                   // flags.0?int
     },
     "inputMediaGame": {
-      id: global.InputGame;                   // InputGame
+      id: api.InputGame;                      // InputGame
     },
     "inputMediaInvoice": {
       title: string;                          // string
       description: string;                    // string
-      photo?: global.InputWebDocument;        // flags.0?InputWebDocument
-      invoice: global.Invoice;                // Invoice
+      photo?: api.InputWebDocument;           // flags.0?InputWebDocument
+      invoice: api.Invoice;                   // Invoice
       payload: Uint8Array;                    // bytes
       provider: string;                       // string
-      provider_data: global.DataJSON;         // DataJSON
+      provider_data: api.DataJSON;            // DataJSON
       start_param?: string;                   // flags.1?string
-      extended_media?: global.InputMedia;     // flags.2?InputMedia
+      extended_media?: api.InputMedia;        // flags.2?InputMedia
     },
     "inputMediaGeoLive": {
       stopped?: true;                         // flags.0?true
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
       heading?: number;                       // flags.2?int
       period?: number;                        // flags.1?int
       proximity_notification_radius?: number; // flags.3?int
     },
     "inputMediaPoll": {
-      poll: global.Poll;                      // Poll
+      poll: api.Poll;                         // Poll
       correct_answers?: Uint8Array[];         // flags.0?Vector<bytes>
       solution?: string;                      // flags.1?string
-      solution_entities?: global.MessageEntity[]; // flags.1?Vector<MessageEntity>
+      solution_entities?: api.MessageEntity[]; // flags.1?Vector<MessageEntity>
     },
     "inputMediaDice": {
       emoticon: string;                       // string
     },
     "inputMediaStory": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       id: number;                             // int
     },
     "inputMediaWebPage": {
@@ -626,13 +626,13 @@ declare namespace global {
   export type _InputChatPhoto = {
     "inputChatPhotoEmpty": {}
     "inputChatUploadedPhoto": {
-      file?: global.InputFile;                // flags.0?InputFile
-      video?: global.InputFile;               // flags.1?InputFile
+      file?: api.InputFile;                   // flags.0?InputFile
+      video?: api.InputFile;                  // flags.1?InputFile
       video_start_ts?: number;                // flags.2?double
-      video_emoji_markup?: global.VideoSize;  // flags.3?VideoSize
+      video_emoji_markup?: api.VideoSize;     // flags.3?VideoSize
     },
     "inputChatPhoto": {
-      id: global.InputPhoto;                  // InputPhoto
+      id: api.InputPhoto;                     // InputPhoto
     },
   };
 
@@ -708,15 +708,15 @@ declare namespace global {
     },
     "inputPeerPhotoFileLocation": {
       big?: true;                             // flags.0?true
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       photo_id: bigint;                       // long
     },
     "inputStickerSetThumb": {
-      stickerset: global.InputStickerSet;     // InputStickerSet
+      stickerset: api.InputStickerSet;        // InputStickerSet
       thumb_version: number;                  // int
     },
     "inputGroupCallStream": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
       time_ms: bigint;                        // long
       scale: number;                          // int
       video_channel?: number;                 // flags.0?int
@@ -790,17 +790,17 @@ declare namespace global {
       last_name?: string;                     // flags.2?string
       username?: string;                      // flags.3?string
       phone?: string;                         // flags.4?string
-      photo?: global.UserProfilePhoto;        // flags.5?UserProfilePhoto
-      status?: global.UserStatus;             // flags.6?UserStatus
+      photo?: api.UserProfilePhoto;           // flags.5?UserProfilePhoto
+      status?: api.UserStatus;                // flags.6?UserStatus
       bot_info_version?: number;              // flags.14?int
-      restriction_reason?: global.RestrictionReason[]; // flags.18?Vector<RestrictionReason>
+      restriction_reason?: api.RestrictionReason[]; // flags.18?Vector<RestrictionReason>
       bot_inline_placeholder?: string;        // flags.19?string
       lang_code?: string;                     // flags.22?string
-      emoji_status?: global.EmojiStatus;      // flags.30?EmojiStatus
-      usernames?: global.Username[];          // flags2.0?Vector<Username>
+      emoji_status?: api.EmojiStatus;         // flags.30?EmojiStatus
+      usernames?: api.Username[];             // flags2.0?Vector<Username>
       stories_max_id?: number;                // flags2.5?int
-      color?: global.PeerColor;               // flags2.8?PeerColor
-      profile_color?: global.PeerColor;       // flags2.9?PeerColor
+      color?: api.PeerColor;                  // flags2.8?PeerColor
+      profile_color?: api.PeerColor;          // flags2.9?PeerColor
     },
   };
 
@@ -866,13 +866,13 @@ declare namespace global {
       noforwards?: true;                      // flags.25?true
       id: bigint;                             // long
       title: string;                          // string
-      photo: global.ChatPhoto;                // ChatPhoto
+      photo: api.ChatPhoto;                   // ChatPhoto
       participants_count: number;             // int
       date: number;                           // int
       version: number;                        // int
-      migrated_to?: global.InputChannel;      // flags.6?InputChannel
-      admin_rights?: global.ChatAdminRights;  // flags.14?ChatAdminRights
-      default_banned_rights?: global.ChatBannedRights; // flags.18?ChatBannedRights
+      migrated_to?: api.InputChannel;         // flags.6?InputChannel
+      admin_rights?: api.ChatAdminRights;     // flags.14?ChatAdminRights
+      default_banned_rights?: api.ChatBannedRights; // flags.18?ChatBannedRights
     },
     "chatForbidden": {
       id: bigint;                             // long
@@ -906,18 +906,18 @@ declare namespace global {
       access_hash?: bigint;                   // flags.13?long
       title: string;                          // string
       username?: string;                      // flags.6?string
-      photo: global.ChatPhoto;                // ChatPhoto
+      photo: api.ChatPhoto;                   // ChatPhoto
       date: number;                           // int
-      restriction_reason?: global.RestrictionReason[]; // flags.9?Vector<RestrictionReason>
-      admin_rights?: global.ChatAdminRights;  // flags.14?ChatAdminRights
-      banned_rights?: global.ChatBannedRights; // flags.15?ChatBannedRights
-      default_banned_rights?: global.ChatBannedRights; // flags.18?ChatBannedRights
+      restriction_reason?: api.RestrictionReason[]; // flags.9?Vector<RestrictionReason>
+      admin_rights?: api.ChatAdminRights;     // flags.14?ChatAdminRights
+      banned_rights?: api.ChatBannedRights;   // flags.15?ChatBannedRights
+      default_banned_rights?: api.ChatBannedRights; // flags.18?ChatBannedRights
       participants_count?: number;            // flags.17?int
-      usernames?: global.Username[];          // flags2.0?Vector<Username>
+      usernames?: api.Username[];             // flags2.0?Vector<Username>
       stories_max_id?: number;                // flags2.4?int
-      color?: global.PeerColor;               // flags2.7?PeerColor
-      profile_color?: global.PeerColor;       // flags2.8?PeerColor
-      emoji_status?: global.EmojiStatus;      // flags2.9?EmojiStatus
+      color?: api.PeerColor;                  // flags2.7?PeerColor
+      profile_color?: api.PeerColor;          // flags2.8?PeerColor
+      emoji_status?: api.EmojiStatus;         // flags2.9?EmojiStatus
       level?: number;                         // flags2.10?int
     },
     "channelForbidden": {
@@ -945,20 +945,20 @@ declare namespace global {
       translations_disabled?: true;           // flags.19?true
       id: bigint;                             // long
       about: string;                          // string
-      participants: global.ChatParticipants;  // ChatParticipants
-      chat_photo?: global.Photo;              // flags.2?Photo
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
-      exported_invite?: global.ExportedChatInvite; // flags.13?ExportedChatInvite
-      bot_info?: global.BotInfo[];            // flags.3?Vector<BotInfo>
+      participants: api.ChatParticipants;     // ChatParticipants
+      chat_photo?: api.Photo;                 // flags.2?Photo
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
+      exported_invite?: api.ExportedChatInvite; // flags.13?ExportedChatInvite
+      bot_info?: api.BotInfo[];               // flags.3?Vector<BotInfo>
       pinned_msg_id?: number;                 // flags.6?int
       folder_id?: number;                     // flags.11?int
-      call?: global.InputGroupCall;           // flags.12?InputGroupCall
+      call?: api.InputGroupCall;              // flags.12?InputGroupCall
       ttl_period?: number;                    // flags.14?int
-      groupcall_default_join_as?: global.Peer; // flags.15?Peer
+      groupcall_default_join_as?: api.Peer;   // flags.15?Peer
       theme_emoticon?: string;                // flags.16?string
       requests_pending?: number;              // flags.17?int
       recent_requesters?: bigint[];           // flags.17?Vector<long>
-      available_reactions?: global.ChatReactions; // flags.18?ChatReactions
+      available_reactions?: api.ChatReactions; // flags.18?ChatReactions
     },
     "channelFull": {
       can_view_participants?: true;           // flags.3?true
@@ -987,36 +987,36 @@ declare namespace global {
       read_inbox_max_id: number;              // int
       read_outbox_max_id: number;             // int
       unread_count: number;                   // int
-      chat_photo: global.Photo;               // Photo
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
-      exported_invite?: global.ExportedChatInvite; // flags.23?ExportedChatInvite
-      bot_info: global.BotInfo[];             // Vector<BotInfo>
+      chat_photo: api.Photo;                  // Photo
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
+      exported_invite?: api.ExportedChatInvite; // flags.23?ExportedChatInvite
+      bot_info: api.BotInfo[];                // Vector<BotInfo>
       migrated_from_chat_id?: bigint;         // flags.4?long
       migrated_from_max_id?: number;          // flags.4?int
       pinned_msg_id?: number;                 // flags.5?int
-      stickerset?: global.StickerSet;         // flags.8?StickerSet
+      stickerset?: api.StickerSet;            // flags.8?StickerSet
       available_min_id?: number;              // flags.9?int
       folder_id?: number;                     // flags.11?int
       linked_chat_id?: bigint;                // flags.14?long
-      location?: global.ChannelLocation;      // flags.15?ChannelLocation
+      location?: api.ChannelLocation;         // flags.15?ChannelLocation
       slowmode_seconds?: number;              // flags.17?int
       slowmode_next_send_date?: number;       // flags.18?int
       stats_dc?: number;                      // flags.12?int
       pts: number;                            // int
-      call?: global.InputGroupCall;           // flags.21?InputGroupCall
+      call?: api.InputGroupCall;              // flags.21?InputGroupCall
       ttl_period?: number;                    // flags.24?int
       pending_suggestions?: string[];         // flags.25?Vector<string>
-      groupcall_default_join_as?: global.Peer; // flags.26?Peer
+      groupcall_default_join_as?: api.Peer;   // flags.26?Peer
       theme_emoticon?: string;                // flags.27?string
       requests_pending?: number;              // flags.28?int
       recent_requesters?: bigint[];           // flags.28?Vector<long>
-      default_send_as?: global.Peer;          // flags.29?Peer
-      available_reactions?: global.ChatReactions; // flags.30?ChatReactions
-      stories?: global.PeerStories;           // flags2.4?PeerStories
-      wallpaper?: global.WallPaper;           // flags2.7?WallPaper
+      default_send_as?: api.Peer;             // flags.29?Peer
+      available_reactions?: api.ChatReactions; // flags.30?ChatReactions
+      stories?: api.PeerStories;              // flags2.4?PeerStories
+      wallpaper?: api.WallPaper;              // flags2.7?WallPaper
       boosts_applied?: number;                // flags2.8?int
       boosts_unrestrict?: number;             // flags2.9?int
-      emojiset?: global.StickerSet;           // flags2.10?StickerSet
+      emojiset?: api.StickerSet;              // flags2.10?StickerSet
     },
   };
 
@@ -1050,11 +1050,11 @@ declare namespace global {
   export type _ChatParticipants = {
     "chatParticipantsForbidden": {
       chat_id: bigint;                        // long
-      self_participant?: global.ChatParticipant; // flags.0?ChatParticipant
+      self_participant?: api.ChatParticipant; // flags.0?ChatParticipant
     },
     "chatParticipants": {
       chat_id: bigint;                        // long
-      participants: global.ChatParticipant[]; // Vector<ChatParticipant>
+      participants: api.ChatParticipant[];    // Vector<ChatParticipant>
       version: number;                        // int
     },
   };
@@ -1082,7 +1082,7 @@ declare namespace global {
   export type _Message = {
     "messageEmpty": {
       id: number;                             // int
-      peer_id?: global.Peer;                  // flags.0?Peer
+      peer_id?: api.Peer;                     // flags.0?Peer
     },
     "message": {
       out?: true;                             // flags.1?true
@@ -1098,27 +1098,27 @@ declare namespace global {
       invert_media?: true;                    // flags.27?true
       offline?: true;                         // flags2.1?true
       id: number;                             // int
-      from_id?: global.Peer;                  // flags.8?Peer
+      from_id?: api.Peer;                     // flags.8?Peer
       from_boosts_applied?: number;           // flags.29?int
-      peer_id: global.Peer;                   // Peer
-      saved_peer_id?: global.Peer;            // flags.28?Peer
-      fwd_from?: global.MessageFwdHeader;     // flags.2?MessageFwdHeader
+      peer_id: api.Peer;                      // Peer
+      saved_peer_id?: api.Peer;               // flags.28?Peer
+      fwd_from?: api.MessageFwdHeader;        // flags.2?MessageFwdHeader
       via_bot_id?: bigint;                    // flags.11?long
       via_business_bot_id?: bigint;           // flags2.0?long
-      reply_to?: global.MessageReplyHeader;   // flags.3?MessageReplyHeader
+      reply_to?: api.MessageReplyHeader;      // flags.3?MessageReplyHeader
       date: number;                           // int
       message: string;                        // string
-      media?: global.MessageMedia;            // flags.9?MessageMedia
-      reply_markup?: global.ReplyMarkup;      // flags.6?ReplyMarkup
-      entities?: global.MessageEntity[];      // flags.7?Vector<MessageEntity>
+      media?: api.MessageMedia;               // flags.9?MessageMedia
+      reply_markup?: api.ReplyMarkup;         // flags.6?ReplyMarkup
+      entities?: api.MessageEntity[];         // flags.7?Vector<MessageEntity>
       views?: number;                         // flags.10?int
       forwards?: number;                      // flags.10?int
-      replies?: global.MessageReplies;        // flags.23?MessageReplies
+      replies?: api.MessageReplies;           // flags.23?MessageReplies
       edit_date?: number;                     // flags.15?int
       post_author?: string;                   // flags.16?string
       grouped_id?: bigint;                    // flags.17?long
-      reactions?: global.MessageReactions;    // flags.20?MessageReactions
-      restriction_reason?: global.RestrictionReason[]; // flags.22?Vector<RestrictionReason>
+      reactions?: api.MessageReactions;       // flags.20?MessageReactions
+      restriction_reason?: api.RestrictionReason[]; // flags.22?Vector<RestrictionReason>
       ttl_period?: number;                    // flags.25?int
       quick_reply_shortcut_id?: number;       // flags.30?int
     },
@@ -1130,11 +1130,11 @@ declare namespace global {
       post?: true;                            // flags.14?true
       legacy?: true;                          // flags.19?true
       id: number;                             // int
-      from_id?: global.Peer;                  // flags.8?Peer
-      peer_id: global.Peer;                   // Peer
-      reply_to?: global.MessageReplyHeader;   // flags.3?MessageReplyHeader
+      from_id?: api.Peer;                     // flags.8?Peer
+      peer_id: api.Peer;                      // Peer
+      reply_to?: api.MessageReplyHeader;      // flags.3?MessageReplyHeader
       date: number;                           // int
-      action: global.MessageAction;           // MessageAction
+      action: api.MessageAction;              // MessageAction
       ttl_period?: number;                    // flags.25?int
     },
   };
@@ -1149,11 +1149,11 @@ declare namespace global {
     "messageMediaEmpty": {}
     "messageMediaPhoto": {
       spoiler?: true;                         // flags.3?true
-      photo?: global.Photo;                   // flags.0?Photo
+      photo?: api.Photo;                      // flags.0?Photo
       ttl_seconds?: number;                   // flags.2?int
     },
     "messageMediaGeo": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
     },
     "messageMediaContact": {
       phone_number: string;                   // string
@@ -1169,8 +1169,8 @@ declare namespace global {
       video?: true;                           // flags.6?true
       round?: true;                           // flags.7?true
       voice?: true;                           // flags.8?true
-      document?: global.Document;             // flags.0?Document
-      alt_document?: global.Document;         // flags.5?Document
+      document?: api.Document;                // flags.0?Document
+      alt_document?: api.Document;            // flags.5?Document
       ttl_seconds?: number;                   // flags.2?int
     },
     "messageMediaWebPage": {
@@ -1178,10 +1178,10 @@ declare namespace global {
       force_small_media?: true;               // flags.1?true
       manual?: true;                          // flags.3?true
       safe?: true;                            // flags.4?true
-      webpage: global.WebPage;                // WebPage
+      webpage: api.WebPage;                   // WebPage
     },
     "messageMediaVenue": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
       title: string;                          // string
       address: string;                        // string
       provider: string;                       // string
@@ -1189,29 +1189,29 @@ declare namespace global {
       venue_type: string;                     // string
     },
     "messageMediaGame": {
-      game: global.Game;                      // Game
+      game: api.Game;                         // Game
     },
     "messageMediaInvoice": {
       shipping_address_requested?: true;      // flags.1?true
       test?: true;                            // flags.3?true
       title: string;                          // string
       description: string;                    // string
-      photo?: global.WebDocument;             // flags.0?WebDocument
+      photo?: api.WebDocument;                // flags.0?WebDocument
       receipt_msg_id?: number;                // flags.2?int
       currency: string;                       // string
       total_amount: bigint;                   // long
       start_param: string;                    // string
-      extended_media?: global.MessageExtendedMedia; // flags.4?MessageExtendedMedia
+      extended_media?: api.MessageExtendedMedia; // flags.4?MessageExtendedMedia
     },
     "messageMediaGeoLive": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
       heading?: number;                       // flags.0?int
       period: number;                         // int
       proximity_notification_radius?: number; // flags.1?int
     },
     "messageMediaPoll": {
-      poll: global.Poll;                      // Poll
-      results: global.PollResults;            // PollResults
+      poll: api.Poll;                         // Poll
+      results: api.PollResults;               // PollResults
     },
     "messageMediaDice": {
       value: number;                          // int
@@ -1219,9 +1219,9 @@ declare namespace global {
     },
     "messageMediaStory": {
       via_mention?: true;                     // flags.1?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       id: number;                             // int
-      story?: global.StoryItem;               // flags.0?StoryItem
+      story?: api.StoryItem;                  // flags.0?StoryItem
     },
     "messageMediaGiveaway": {
       only_new_subscribers?: true;            // flags.0?true
@@ -1277,7 +1277,7 @@ declare namespace global {
       title: string;                          // string
     },
     "messageActionChatEditPhoto": {
-      photo: global.Photo;                    // Photo
+      photo: api.Photo;                       // Photo
     },
     "messageActionChatDeletePhoto": {}
     "messageActionChatAddUser": {
@@ -1311,9 +1311,9 @@ declare namespace global {
       currency: string;                       // string
       total_amount: bigint;                   // long
       payload: Uint8Array;                    // bytes
-      info?: global.PaymentRequestedInfo;     // flags.0?PaymentRequestedInfo
+      info?: api.PaymentRequestedInfo;        // flags.0?PaymentRequestedInfo
       shipping_option_id?: string;            // flags.1?string
-      charge: global.PaymentCharge;           // PaymentCharge
+      charge: api.PaymentCharge;              // PaymentCharge
     },
     "messageActionPaymentSent": {
       recurring_init?: true;                  // flags.2?true
@@ -1325,7 +1325,7 @@ declare namespace global {
     "messageActionPhoneCall": {
       video?: true;                           // flags.2?true
       call_id: bigint;                        // long
-      reason?: global.PhoneCallDiscardReason; // flags.0?PhoneCallDiscardReason
+      reason?: api.PhoneCallDiscardReason;    // flags.0?PhoneCallDiscardReason
       duration?: number;                      // flags.1?int
     },
     "messageActionScreenshotTaken": {}
@@ -1336,27 +1336,27 @@ declare namespace global {
       attach_menu?: true;                     // flags.1?true
       from_request?: true;                    // flags.3?true
       domain?: string;                        // flags.0?string
-      app?: global.BotApp;                    // flags.2?BotApp
+      app?: api.BotApp;                       // flags.2?BotApp
     },
     "messageActionSecureValuesSentMe": {
-      values: global.SecureValue[];           // Vector<SecureValue>
-      credentials: global.SecureCredentialsEncrypted; // SecureCredentialsEncrypted
+      values: api.SecureValue[];              // Vector<SecureValue>
+      credentials: api.SecureCredentialsEncrypted; // SecureCredentialsEncrypted
     },
     "messageActionSecureValuesSent": {
-      types: global.SecureValueType[];        // Vector<SecureValueType>
+      types: api.SecureValueType[];           // Vector<SecureValueType>
     },
     "messageActionContactSignUp": {}
     "messageActionGeoProximityReached": {
-      from_id: global.Peer;                   // Peer
-      to_id: global.Peer;                     // Peer
+      from_id: api.Peer;                      // Peer
+      to_id: api.Peer;                        // Peer
       distance: number;                       // int
     },
     "messageActionGroupCall": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
       duration?: number;                      // flags.0?int
     },
     "messageActionInviteToGroupCall": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
       users: bigint[];                        // Vector<long>
     },
     "messageActionSetMessagesTTL": {
@@ -1364,7 +1364,7 @@ declare namespace global {
       auto_setting_from?: bigint;             // flags.0?long
     },
     "messageActionGroupCallScheduled": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
       schedule_date: number;                  // int
     },
     "messageActionSetChatTheme": {
@@ -1397,21 +1397,21 @@ declare namespace global {
       hidden?: boolean;                       // flags.3?Bool
     },
     "messageActionSuggestProfilePhoto": {
-      photo: global.Photo;                    // Photo
+      photo: api.Photo;                       // Photo
     },
     "messageActionRequestedPeer": {
       button_id: number;                      // int
-      peers: global.Peer[];                   // Vector<Peer>
+      peers: api.Peer[];                      // Vector<Peer>
     },
     "messageActionSetChatWallPaper": {
       same?: true;                            // flags.0?true
       for_both?: true;                        // flags.1?true
-      wallpaper: global.WallPaper;            // WallPaper
+      wallpaper: api.WallPaper;               // WallPaper
     },
     "messageActionGiftCode": {
       via_giveaway?: true;                    // flags.0?true
       unclaimed?: true;                       // flags.2?true
-      boost_peer?: global.Peer;               // flags.1?Peer
+      boost_peer?: api.Peer;                  // flags.1?Peer
       months: number;                         // int
       slug: string;                           // string
       currency?: string;                      // flags.2?string
@@ -1429,7 +1429,7 @@ declare namespace global {
     },
     "messageActionRequestedPeerSentMe": {
       button_id: number;                      // int
-      peers: global.RequestedPeer[];          // Vector<RequestedPeer>
+      peers: api.RequestedPeer[];             // Vector<RequestedPeer>
     },
   };
 
@@ -1484,23 +1484,23 @@ declare namespace global {
       pinned?: true;                          // flags.2?true
       unread_mark?: true;                     // flags.3?true
       view_forum_as_messages?: true;          // flags.6?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       top_message: number;                    // int
       read_inbox_max_id: number;              // int
       read_outbox_max_id: number;             // int
       unread_count: number;                   // int
       unread_mentions_count: number;          // int
       unread_reactions_count: number;         // int
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
       pts?: number;                           // flags.0?int
-      draft?: global.DraftMessage;            // flags.1?DraftMessage
+      draft?: api.DraftMessage;               // flags.1?DraftMessage
       folder_id?: number;                     // flags.4?int
       ttl_period?: number;                    // flags.5?int
     },
     "dialogFolder": {
       pinned?: true;                          // flags.2?true
-      folder: global.Folder;                  // Folder
-      peer: global.Peer;                      // Peer
+      folder: api.Folder;                     // Folder
+      peer: api.Peer;                         // Peer
       top_message: number;                    // int
       unread_muted_peers_count: number;       // int
       unread_unmuted_peers_count: number;     // int
@@ -1524,8 +1524,8 @@ declare namespace global {
       access_hash: bigint;                    // long
       file_reference: Uint8Array;             // bytes
       date: number;                           // int
-      sizes: global.PhotoSize[];              // Vector<PhotoSize>
-      video_sizes?: global.VideoSize[];       // flags.1?Vector<VideoSize>
+      sizes: api.PhotoSize[];                 // Vector<PhotoSize>
+      video_sizes?: api.VideoSize[];          // flags.1?Vector<VideoSize>
       dc_id: number;                          // int
     },
   };
@@ -1593,13 +1593,13 @@ declare namespace global {
   > = ToUnderscore<_InputNotifyPeer, K>;
   export type _InputNotifyPeer = {
     "inputNotifyPeer": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
     },
     "inputNotifyUsers": {}
     "inputNotifyChats": {}
     "inputNotifyBroadcasts": {}
     "inputNotifyForumTopic": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       top_msg_id: number;                     // int
     },
   };
@@ -1617,10 +1617,10 @@ declare namespace global {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
       mute_until?: number;                    // flags.2?int
-      sound?: global.NotificationSound;       // flags.3?NotificationSound
+      sound?: api.NotificationSound;          // flags.3?NotificationSound
       stories_muted?: boolean;                // flags.6?Bool
       stories_hide_sender?: boolean;          // flags.7?Bool
-      stories_sound?: global.NotificationSound; // flags.8?NotificationSound
+      stories_sound?: api.NotificationSound;  // flags.8?NotificationSound
     },
   };
 
@@ -1633,14 +1633,14 @@ declare namespace global {
       show_previews?: boolean;                // flags.0?Bool
       silent?: boolean;                       // flags.1?Bool
       mute_until?: number;                    // flags.2?int
-      ios_sound?: global.NotificationSound;   // flags.3?NotificationSound
-      android_sound?: global.NotificationSound; // flags.4?NotificationSound
-      other_sound?: global.NotificationSound; // flags.5?NotificationSound
+      ios_sound?: api.NotificationSound;      // flags.3?NotificationSound
+      android_sound?: api.NotificationSound;  // flags.4?NotificationSound
+      other_sound?: api.NotificationSound;    // flags.5?NotificationSound
       stories_muted?: boolean;                // flags.6?Bool
       stories_hide_sender?: boolean;          // flags.7?Bool
-      stories_ios_sound?: global.NotificationSound; // flags.8?NotificationSound
-      stories_android_sound?: global.NotificationSound; // flags.9?NotificationSound
-      stories_other_sound?: global.NotificationSound; // flags.10?NotificationSound
+      stories_ios_sound?: api.NotificationSound; // flags.8?NotificationSound
+      stories_android_sound?: api.NotificationSound; // flags.9?NotificationSound
+      stories_other_sound?: api.NotificationSound; // flags.10?NotificationSound
     },
   };
 
@@ -1682,14 +1682,14 @@ declare namespace global {
       dark?: true;                            // flags.4?true
       access_hash: bigint;                    // long
       slug: string;                           // string
-      document: global.Document;              // Document
-      settings?: global.WallPaperSettings;    // flags.2?WallPaperSettings
+      document: api.Document;                 // Document
+      settings?: api.WallPaperSettings;       // flags.2?WallPaperSettings
     },
     "wallPaperNoFile": {
       id: bigint;                             // long
       default?: true;                         // flags.1?true
       dark?: true;                            // flags.4?true
-      settings?: global.WallPaperSettings;    // flags.2?WallPaperSettings
+      settings?: api.WallPaperSettings;       // flags.2?WallPaperSettings
     },
   };
 
@@ -1741,29 +1741,29 @@ declare namespace global {
       read_dates_private?: true;              // flags.30?true
       id: bigint;                             // long
       about?: string;                         // flags.1?string
-      settings: global.PeerSettings;          // PeerSettings
-      personal_photo?: global.Photo;          // flags.21?Photo
-      profile_photo?: global.Photo;           // flags.2?Photo
-      fallback_photo?: global.Photo;          // flags.22?Photo
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
-      bot_info?: global.BotInfo;              // flags.3?BotInfo
+      settings: api.PeerSettings;             // PeerSettings
+      personal_photo?: api.Photo;             // flags.21?Photo
+      profile_photo?: api.Photo;              // flags.2?Photo
+      fallback_photo?: api.Photo;             // flags.22?Photo
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
+      bot_info?: api.BotInfo;                 // flags.3?BotInfo
       pinned_msg_id?: number;                 // flags.6?int
       common_chats_count: number;             // int
       folder_id?: number;                     // flags.11?int
       ttl_period?: number;                    // flags.14?int
       theme_emoticon?: string;                // flags.15?string
       private_forward_name?: string;          // flags.16?string
-      bot_group_admin_rights?: global.ChatAdminRights; // flags.17?ChatAdminRights
-      bot_broadcast_admin_rights?: global.ChatAdminRights; // flags.18?ChatAdminRights
-      premium_gifts?: global.PremiumGiftOption[]; // flags.19?Vector<PremiumGiftOption>
-      wallpaper?: global.WallPaper;           // flags.24?WallPaper
-      stories?: global.PeerStories;           // flags.25?PeerStories
-      business_work_hours?: global.BusinessWorkHours; // flags2.0?BusinessWorkHours
-      business_location?: global.BusinessLocation; // flags2.1?BusinessLocation
-      business_greeting_message?: global.BusinessGreetingMessage; // flags2.2?BusinessGreetingMessage
-      business_away_message?: global.BusinessAwayMessage; // flags2.3?BusinessAwayMessage
-      business_intro?: global.BusinessIntro;  // flags2.4?BusinessIntro
-      birthday?: global.Birthday;             // flags2.5?Birthday
+      bot_group_admin_rights?: api.ChatAdminRights; // flags.17?ChatAdminRights
+      bot_broadcast_admin_rights?: api.ChatAdminRights; // flags.18?ChatAdminRights
+      premium_gifts?: api.PremiumGiftOption[]; // flags.19?Vector<PremiumGiftOption>
+      wallpaper?: api.WallPaper;              // flags.24?WallPaper
+      stories?: api.PeerStories;              // flags.25?PeerStories
+      business_work_hours?: api.BusinessWorkHours; // flags2.0?BusinessWorkHours
+      business_location?: api.BusinessLocation; // flags2.1?BusinessLocation
+      business_greeting_message?: api.BusinessGreetingMessage; // flags2.2?BusinessGreetingMessage
+      business_away_message?: api.BusinessAwayMessage; // flags2.3?BusinessAwayMessage
+      business_intro?: api.BusinessIntro;     // flags2.4?BusinessIntro
+      birthday?: api.Birthday;                // flags2.5?Birthday
       personal_channel_id?: bigint;           // flags2.6?long
       personal_channel_message?: number;      // flags2.6?int
     },
@@ -1798,7 +1798,7 @@ declare namespace global {
   export type _ContactStatus = {
     "contactStatus": {
       user_id: bigint;                        // long
-      status: global.UserStatus;              // UserStatus
+      status: api.UserStatus;                 // UserStatus
     },
   };
 
@@ -1850,7 +1850,7 @@ declare namespace global {
   > = ToUnderscore<_Update, K>;
   export type _Update = {
     "updateNewMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
       pts: number;                            // int
       pts_count: number;                      // int
     },
@@ -1865,25 +1865,25 @@ declare namespace global {
     },
     "updateUserTyping": {
       user_id: bigint;                        // long
-      action: global.SendMessageAction;       // SendMessageAction
+      action: api.SendMessageAction;          // SendMessageAction
     },
     "updateChatUserTyping": {
       chat_id: bigint;                        // long
-      from_id: global.Peer;                   // Peer
-      action: global.SendMessageAction;       // SendMessageAction
+      from_id: api.Peer;                      // Peer
+      action: api.SendMessageAction;          // SendMessageAction
     },
     "updateChatParticipants": {
-      participants: global.ChatParticipants;  // ChatParticipants
+      participants: api.ChatParticipants;     // ChatParticipants
     },
     "updateUserStatus": {
       user_id: bigint;                        // long
-      status: global.UserStatus;              // UserStatus
+      status: api.UserStatus;                 // UserStatus
     },
     "updateUserName": {
       user_id: bigint;                        // long
       first_name: string;                     // string
       last_name: string;                      // string
-      usernames: global.Username[];           // Vector<Username>
+      usernames: api.Username[];              // Vector<Username>
     },
     "updateNewAuthorization": {
       unconfirmed?: true;                     // flags.0?true
@@ -1893,14 +1893,14 @@ declare namespace global {
       location?: string;                      // flags.0?string
     },
     "updateNewEncryptedMessage": {
-      message: global.EncryptedMessage;       // EncryptedMessage
+      message: api.EncryptedMessage;          // EncryptedMessage
       qts: number;                            // int
     },
     "updateEncryptedChatTyping": {
       chat_id: number;                        // int
     },
     "updateEncryption": {
-      chat: global.EncryptedChat;             // EncryptedChat
+      chat: api.EncryptedChat;                // EncryptedChat
       date: number;                           // int
     },
     "updateEncryptedMessagesRead": {
@@ -1921,11 +1921,11 @@ declare namespace global {
       version: number;                        // int
     },
     "updateDcOptions": {
-      dc_options: global.DcOption[];          // Vector<DcOption>
+      dc_options: api.DcOption[];             // Vector<DcOption>
     },
     "updateNotifySettings": {
-      peer: global.NotifyPeer;                // NotifyPeer
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
+      peer: api.NotifyPeer;                   // NotifyPeer
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
     },
     "updateServiceNotification": {
       popup?: true;                           // flags.0?true
@@ -1933,12 +1933,12 @@ declare namespace global {
       inbox_date?: number;                    // flags.1?int
       type: string;                           // string
       message: string;                        // string
-      media: global.MessageMedia;             // MessageMedia
-      entities: global.MessageEntity[];       // Vector<MessageEntity>
+      media: api.MessageMedia;                // MessageMedia
+      entities: api.MessageEntity[];          // Vector<MessageEntity>
     },
     "updatePrivacy": {
-      key: global.PrivacyKey;                 // PrivacyKey
-      rules: global.PrivacyRule[];            // Vector<PrivacyRule>
+      key: api.PrivacyKey;                    // PrivacyKey
+      rules: api.PrivacyRule[];               // Vector<PrivacyRule>
     },
     "updateUserPhone": {
       user_id: bigint;                        // long
@@ -1946,20 +1946,20 @@ declare namespace global {
     },
     "updateReadHistoryInbox": {
       folder_id?: number;                     // flags.0?int
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       max_id: number;                         // int
       still_unread_count: number;             // int
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updateReadHistoryOutbox": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       max_id: number;                         // int
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updateWebPage": {
-      webpage: global.WebPage;                // WebPage
+      webpage: api.WebPage;                   // WebPage
       pts: number;                            // int
       pts_count: number;                      // int
     },
@@ -1977,7 +1977,7 @@ declare namespace global {
       channel_id: bigint;                     // long
     },
     "updateNewChannelMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
       pts: number;                            // int
       pts_count: number;                      // int
     },
@@ -2022,40 +2022,40 @@ declare namespace global {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
       query: string;                          // string
-      geo?: global.GeoPoint;                  // flags.0?GeoPoint
-      peer_type?: global.InlineQueryPeerType; // flags.1?InlineQueryPeerType
+      geo?: api.GeoPoint;                     // flags.0?GeoPoint
+      peer_type?: api.InlineQueryPeerType;    // flags.1?InlineQueryPeerType
       offset: string;                         // string
     },
     "updateBotInlineSend": {
       user_id: bigint;                        // long
       query: string;                          // string
-      geo?: global.GeoPoint;                  // flags.0?GeoPoint
+      geo?: api.GeoPoint;                     // flags.0?GeoPoint
       id: string;                             // string
-      msg_id?: global.InputBotInlineMessageID; // flags.1?InputBotInlineMessageID
+      msg_id?: api.InputBotInlineMessageID;   // flags.1?InputBotInlineMessageID
     },
     "updateEditChannelMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updateBotCallbackQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
       chat_instance: bigint;                  // long
       data?: Uint8Array;                      // flags.0?bytes
       game_short_name?: string;               // flags.1?string
     },
     "updateEditMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updateInlineBotCallbackQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
-      msg_id: global.InputBotInlineMessageID; // InputBotInlineMessageID
+      msg_id: api.InputBotInlineMessageID;    // InputBotInlineMessageID
       chat_instance: bigint;                  // long
       data?: Uint8Array;                      // flags.0?bytes
       game_short_name?: string;               // flags.1?string
@@ -2065,9 +2065,9 @@ declare namespace global {
       max_id: number;                         // int
     },
     "updateDraftMessage": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       top_msg_id?: number;                    // flags.0?int
-      draft: global.DraftMessage;             // DraftMessage
+      draft: api.DraftMessage;                // DraftMessage
     },
     "updateReadFeaturedStickers": {}
     "updateRecentStickers": {}
@@ -2075,50 +2075,50 @@ declare namespace global {
     "updatePtsChanged": {}
     "updateChannelWebPage": {
       channel_id: bigint;                     // long
-      webpage: global.WebPage;                // WebPage
+      webpage: api.WebPage;                   // WebPage
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updateDialogPinned": {
       pinned?: true;                          // flags.0?true
       folder_id?: number;                     // flags.1?int
-      peer: global.DialogPeer;                // DialogPeer
+      peer: api.DialogPeer;                   // DialogPeer
     },
     "updatePinnedDialogs": {
       folder_id?: number;                     // flags.1?int
-      order?: global.DialogPeer[];            // flags.0?Vector<DialogPeer>
+      order?: api.DialogPeer[];               // flags.0?Vector<DialogPeer>
     },
     "updateBotWebhookJSON": {
-      data: global.DataJSON;                  // DataJSON
+      data: api.DataJSON;                     // DataJSON
     },
     "updateBotWebhookJSONQuery": {
       query_id: bigint;                       // long
-      data: global.DataJSON;                  // DataJSON
+      data: api.DataJSON;                     // DataJSON
       timeout: number;                        // int
     },
     "updateBotShippingQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
       payload: Uint8Array;                    // bytes
-      shipping_address: global.PostAddress;   // PostAddress
+      shipping_address: api.PostAddress;      // PostAddress
     },
     "updateBotPrecheckoutQuery": {
       query_id: bigint;                       // long
       user_id: bigint;                        // long
       payload: Uint8Array;                    // bytes
-      info?: global.PaymentRequestedInfo;     // flags.0?PaymentRequestedInfo
+      info?: api.PaymentRequestedInfo;        // flags.0?PaymentRequestedInfo
       shipping_option_id?: string;            // flags.1?string
       currency: string;                       // string
       total_amount: bigint;                   // long
     },
     "updatePhoneCall": {
-      phone_call: global.PhoneCall;           // PhoneCall
+      phone_call: api.PhoneCall;              // PhoneCall
     },
     "updateLangPackTooLong": {
       lang_code: string;                      // string
     },
     "updateLangPack": {
-      difference: global.LangPackDifference;  // LangPackDifference
+      difference: api.LangPackDifference;     // LangPackDifference
     },
     "updateFavedStickers": {}
     "updateChannelReadMessagesContents": {
@@ -2133,54 +2133,54 @@ declare namespace global {
     },
     "updateDialogUnreadMark": {
       unread?: true;                          // flags.0?true
-      peer: global.DialogPeer;                // DialogPeer
+      peer: api.DialogPeer;                   // DialogPeer
     },
     "updateMessagePoll": {
       poll_id: bigint;                        // long
-      poll?: global.Poll;                     // flags.0?Poll
-      results: global.PollResults;            // PollResults
+      poll?: api.Poll;                        // flags.0?Poll
+      results: api.PollResults;               // PollResults
     },
     "updateChatDefaultBannedRights": {
-      peer: global.Peer;                      // Peer
-      default_banned_rights: global.ChatBannedRights; // ChatBannedRights
+      peer: api.Peer;                         // Peer
+      default_banned_rights: api.ChatBannedRights; // ChatBannedRights
       version: number;                        // int
     },
     "updateFolderPeers": {
-      folder_peers: global.FolderPeer[];      // Vector<FolderPeer>
+      folder_peers: api.FolderPeer[];         // Vector<FolderPeer>
       pts: number;                            // int
       pts_count: number;                      // int
     },
     "updatePeerSettings": {
-      peer: global.Peer;                      // Peer
-      settings: global.PeerSettings;          // PeerSettings
+      peer: api.Peer;                         // Peer
+      settings: api.PeerSettings;             // PeerSettings
     },
     "updatePeerLocated": {
-      peers: global.PeerLocated[];            // Vector<PeerLocated>
+      peers: api.PeerLocated[];               // Vector<PeerLocated>
     },
     "updateNewScheduledMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "updateDeleteScheduledMessages": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       messages: number[];                     // Vector<int>
     },
     "updateTheme": {
-      theme: global.Theme;                    // Theme
+      theme: api.Theme;                       // Theme
     },
     "updateGeoLiveViewed": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
     },
     "updateLoginToken": {}
     "updateMessagePollVote": {
       poll_id: bigint;                        // long
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       options: Uint8Array[];                  // Vector<bytes>
       qts: number;                            // int
     },
     "updateDialogFilter": {
       id: number;                             // int
-      filter?: global.DialogFilter;           // flags.0?DialogFilter
+      filter?: api.DialogFilter;              // flags.0?DialogFilter
     },
     "updateDialogFilterOrder": {
       order: number[];                        // Vector<int>
@@ -2210,17 +2210,17 @@ declare namespace global {
     "updatePeerBlocked": {
       blocked?: true;                         // flags.0?true
       blocked_my_stories_from?: true;         // flags.1?true
-      peer_id: global.Peer;                   // Peer
+      peer_id: api.Peer;                      // Peer
     },
     "updateChannelUserTyping": {
       channel_id: bigint;                     // long
       top_msg_id?: number;                    // flags.0?int
-      from_id: global.Peer;                   // Peer
-      action: global.SendMessageAction;       // SendMessageAction
+      from_id: api.Peer;                      // Peer
+      action: api.SendMessageAction;          // SendMessageAction
     },
     "updatePinnedMessages": {
       pinned?: true;                          // flags.0?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       messages: number[];                     // Vector<int>
       pts: number;                            // int
       pts_count: number;                      // int
@@ -2236,16 +2236,16 @@ declare namespace global {
       chat_id: bigint;                        // long
     },
     "updateGroupCallParticipants": {
-      call: global.InputGroupCall;            // InputGroupCall
-      participants: global.GroupCallParticipant[]; // Vector<GroupCallParticipant>
+      call: api.InputGroupCall;               // InputGroupCall
+      participants: api.GroupCallParticipant[]; // Vector<GroupCallParticipant>
       version: number;                        // int
     },
     "updateGroupCall": {
       chat_id: bigint;                        // long
-      call: global.GroupCall;                 // GroupCall
+      call: api.GroupCall;                    // GroupCall
     },
     "updatePeerHistoryTTL": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       ttl_period?: number;                    // flags.0?int
     },
     "updateChatParticipant": {
@@ -2253,9 +2253,9 @@ declare namespace global {
       date: number;                           // int
       actor_id: bigint;                       // long
       user_id: bigint;                        // long
-      prev_participant?: global.ChatParticipant; // flags.0?ChatParticipant
-      new_participant?: global.ChatParticipant; // flags.1?ChatParticipant
-      invite?: global.ExportedChatInvite;     // flags.2?ExportedChatInvite
+      prev_participant?: api.ChatParticipant; // flags.0?ChatParticipant
+      new_participant?: api.ChatParticipant;  // flags.1?ChatParticipant
+      invite?: api.ExportedChatInvite;        // flags.2?ExportedChatInvite
       qts: number;                            // int
     },
     "updateChannelParticipant": {
@@ -2264,9 +2264,9 @@ declare namespace global {
       date: number;                           // int
       actor_id: bigint;                       // long
       user_id: bigint;                        // long
-      prev_participant?: global.ChannelParticipant; // flags.0?ChannelParticipant
-      new_participant?: global.ChannelParticipant; // flags.1?ChannelParticipant
-      invite?: global.ExportedChatInvite;     // flags.2?ExportedChatInvite
+      prev_participant?: api.ChannelParticipant; // flags.0?ChannelParticipant
+      new_participant?: api.ChannelParticipant; // flags.1?ChannelParticipant
+      invite?: api.ExportedChatInvite;        // flags.2?ExportedChatInvite
       qts: number;                            // int
     },
     "updateBotStopped": {
@@ -2277,31 +2277,31 @@ declare namespace global {
     },
     "updateGroupCallConnection": {
       presentation?: true;                    // flags.0?true
-      params: global.DataJSON;                // DataJSON
+      params: api.DataJSON;                   // DataJSON
     },
     "updateBotCommands": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       bot_id: bigint;                         // long
-      commands: global.BotCommand[];          // Vector<BotCommand>
+      commands: api.BotCommand[];             // Vector<BotCommand>
     },
     "updatePendingJoinRequests": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       requests_pending: number;               // int
       recent_requesters: bigint[];            // Vector<long>
     },
     "updateBotChatInviteRequester": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       date: number;                           // int
       user_id: bigint;                        // long
       about: string;                          // string
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
       qts: number;                            // int
     },
     "updateMessageReactions": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
       top_msg_id?: number;                    // flags.0?int
-      reactions: global.MessageReactions;     // MessageReactions
+      reactions: api.MessageReactions;        // MessageReactions
     },
     "updateAttachMenuBots": {}
     "updateWebViewResultSent": {
@@ -2309,12 +2309,12 @@ declare namespace global {
     },
     "updateBotMenuButton": {
       bot_id: bigint;                         // long
-      button: global.BotMenuButton;           // BotMenuButton
+      button: api.BotMenuButton;              // BotMenuButton
     },
     "updateSavedRingtones": {}
     "updateTranscribedAudio": {
       pending?: true;                         // flags.0?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
       transcription_id: bigint;               // long
       text: string;                           // string
@@ -2322,7 +2322,7 @@ declare namespace global {
     "updateReadFeaturedEmojiStickers": {}
     "updateUserEmojiStatus": {
       user_id: bigint;                        // long
-      emoji_status: global.EmojiStatus;       // EmojiStatus
+      emoji_status: api.EmojiStatus;          // EmojiStatus
     },
     "updateRecentEmojiStatuses": {}
     "updateRecentReactions": {}
@@ -2332,9 +2332,9 @@ declare namespace global {
       stickerset: bigint;                     // long
     },
     "updateMessageExtendedMedia": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
-      extended_media: global.MessageExtendedMedia; // MessageExtendedMedia
+      extended_media: api.MessageExtendedMedia; // MessageExtendedMedia
     },
     "updateChannelPinnedTopic": {
       pinned?: true;                          // flags.0?true
@@ -2350,11 +2350,11 @@ declare namespace global {
     },
     "updateAutoSaveSettings": {}
     "updateStory": {
-      peer: global.Peer;                      // Peer
-      story: global.StoryItem;                // StoryItem
+      peer: api.Peer;                         // Peer
+      story: api.StoryItem;                   // StoryItem
     },
     "updateReadStories": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       max_id: number;                         // int
     },
     "updateStoryID": {
@@ -2362,16 +2362,16 @@ declare namespace global {
       random_id: bigint;                      // long
     },
     "updateStoriesStealthMode": {
-      stealth_mode: global.StoriesStealthMode; // StoriesStealthMode
+      stealth_mode: api.StoriesStealthMode;   // StoriesStealthMode
     },
     "updateSentStoryReaction": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       story_id: number;                       // int
-      reaction: global.Reaction;              // Reaction
+      reaction: api.Reaction;                 // Reaction
     },
     "updateBotChatBoost": {
-      peer: global.Peer;                      // Peer
-      boost: global.Boost;                    // Boost
+      peer: api.Peer;                         // Peer
+      boost: api.Boost;                       // Boost
       qts: number;                            // int
     },
     "updateChannelViewForumAsMessages": {
@@ -2380,71 +2380,71 @@ declare namespace global {
     },
     "updatePeerWallpaper": {
       wallpaper_overridden?: true;            // flags.1?true
-      peer: global.Peer;                      // Peer
-      wallpaper?: global.WallPaper;           // flags.0?WallPaper
+      peer: api.Peer;                         // Peer
+      wallpaper?: api.WallPaper;              // flags.0?WallPaper
     },
     "updateBotMessageReaction": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
       date: number;                           // int
-      actor: global.Peer;                     // Peer
-      old_reactions: global.Reaction[];       // Vector<Reaction>
-      new_reactions: global.Reaction[];       // Vector<Reaction>
+      actor: api.Peer;                        // Peer
+      old_reactions: api.Reaction[];          // Vector<Reaction>
+      new_reactions: api.Reaction[];          // Vector<Reaction>
       qts: number;                            // int
     },
     "updateBotMessageReactions": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       msg_id: number;                         // int
       date: number;                           // int
-      reactions: global.ReactionCount[];      // Vector<ReactionCount>
+      reactions: api.ReactionCount[];         // Vector<ReactionCount>
       qts: number;                            // int
     },
     "updateSavedDialogPinned": {
       pinned?: true;                          // flags.0?true
-      peer: global.DialogPeer;                // DialogPeer
+      peer: api.DialogPeer;                   // DialogPeer
     },
     "updatePinnedSavedDialogs": {
-      order?: global.DialogPeer[];            // flags.0?Vector<DialogPeer>
+      order?: api.DialogPeer[];               // flags.0?Vector<DialogPeer>
     },
     "updateSavedReactionTags": {}
     "updateSmsJob": {
       job_id: string;                         // string
     },
     "updateQuickReplies": {
-      quick_replies: global.QuickReply[];     // Vector<QuickReply>
+      quick_replies: api.QuickReply[];        // Vector<QuickReply>
     },
     "updateNewQuickReply": {
-      quick_reply: global.QuickReply;         // QuickReply
+      quick_reply: api.QuickReply;            // QuickReply
     },
     "updateDeleteQuickReply": {
       shortcut_id: number;                    // int
     },
     "updateQuickReplyMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "updateDeleteQuickReplyMessages": {
       shortcut_id: number;                    // int
       messages: number[];                     // Vector<int>
     },
     "updateBotBusinessConnect": {
-      connection: global.BotBusinessConnection; // BotBusinessConnection
+      connection: api.BotBusinessConnection;  // BotBusinessConnection
       qts: number;                            // int
     },
     "updateBotNewBusinessMessage": {
       connection_id: string;                  // string
-      message: global.Message;                // Message
-      reply_to_message?: global.Message;      // flags.0?Message
+      message: api.Message;                   // Message
+      reply_to_message?: api.Message;         // flags.0?Message
       qts: number;                            // int
     },
     "updateBotEditBusinessMessage": {
       connection_id: string;                  // string
-      message: global.Message;                // Message
-      reply_to_message?: global.Message;      // flags.0?Message
+      message: api.Message;                   // Message
+      reply_to_message?: api.Message;         // flags.0?Message
       qts: number;                            // int
     },
     "updateBotDeleteBusinessMessage": {
       connection_id: string;                  // string
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       messages: number[];                     // Vector<int>
       qts: number;                            // int
     },
@@ -2600,10 +2600,10 @@ declare namespace global {
       pts: number;                            // int
       pts_count: number;                      // int
       date: number;                           // int
-      fwd_from?: global.MessageFwdHeader;     // flags.2?MessageFwdHeader
+      fwd_from?: api.MessageFwdHeader;        // flags.2?MessageFwdHeader
       via_bot_id?: bigint;                    // flags.11?long
-      reply_to?: global.MessageReplyHeader;   // flags.3?MessageReplyHeader
-      entities?: global.MessageEntity[];      // flags.7?Vector<MessageEntity>
+      reply_to?: api.MessageReplyHeader;      // flags.3?MessageReplyHeader
+      entities?: api.MessageEntity[];         // flags.7?Vector<MessageEntity>
       ttl_period?: number;                    // flags.25?int
     },
     "updateShortChatMessage": {
@@ -2618,28 +2618,28 @@ declare namespace global {
       pts: number;                            // int
       pts_count: number;                      // int
       date: number;                           // int
-      fwd_from?: global.MessageFwdHeader;     // flags.2?MessageFwdHeader
+      fwd_from?: api.MessageFwdHeader;        // flags.2?MessageFwdHeader
       via_bot_id?: bigint;                    // flags.11?long
-      reply_to?: global.MessageReplyHeader;   // flags.3?MessageReplyHeader
-      entities?: global.MessageEntity[];      // flags.7?Vector<MessageEntity>
+      reply_to?: api.MessageReplyHeader;      // flags.3?MessageReplyHeader
+      entities?: api.MessageEntity[];         // flags.7?Vector<MessageEntity>
       ttl_period?: number;                    // flags.25?int
     },
     "updateShort": {
-      update: global.Update;                  // Update
+      update: api.Update;                     // Update
       date: number;                           // int
     },
     "updatesCombined": {
-      updates: global.Update[];               // Vector<Update>
-      users: global.User[];                   // Vector<User>
-      chats: global.Chat[];                   // Vector<Chat>
+      updates: api.Update[];                  // Vector<Update>
+      users: api.User[];                      // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
       date: number;                           // int
       seq_start: number;                      // int
       seq: number;                            // int
     },
     "updates": {
-      updates: global.Update[];               // Vector<Update>
-      users: global.User[];                   // Vector<User>
-      chats: global.Chat[];                   // Vector<Chat>
+      updates: api.Update[];                  // Vector<Update>
+      users: api.User[];                      // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
       date: number;                           // int
       seq: number;                            // int
     },
@@ -2649,8 +2649,8 @@ declare namespace global {
       pts: number;                            // int
       pts_count: number;                      // int
       date: number;                           // int
-      media?: global.MessageMedia;            // flags.9?MessageMedia
-      entities?: global.MessageEntity[];      // flags.7?Vector<MessageEntity>
+      media?: api.MessageMedia;               // flags.9?MessageMedia
+      entities?: api.MessageEntity[];         // flags.7?Vector<MessageEntity>
       ttl_period?: number;                    // flags.25?int
     },
   };
@@ -2695,7 +2695,7 @@ declare namespace global {
       expires: number;                        // int
       test_mode: boolean;                     // Bool
       this_dc: number;                        // int
-      dc_options: global.DcOption[];          // Vector<DcOption>
+      dc_options: api.DcOption[];             // Vector<DcOption>
       dc_txt_domain_name: string;             // string
       chat_size_max: number;                  // int
       megagroup_size_max: number;             // int
@@ -2731,7 +2731,7 @@ declare namespace global {
       suggested_lang_code?: string;           // flags.2?string
       lang_pack_version?: number;             // flags.2?int
       base_lang_pack_version?: number;        // flags.2?int
-      reactions_default?: global.Reaction;    // flags.15?Reaction
+      reactions_default?: api.Reaction;       // flags.15?Reaction
       autologin_token?: string;               // flags.16?string
     },
   };
@@ -2854,7 +2854,7 @@ declare namespace global {
       chat_id: number;                        // int
       date: number;                           // int
       bytes: Uint8Array;                      // bytes
-      file: global.EncryptedFile;             // EncryptedFile
+      file: api.EncryptedFile;                // EncryptedFile
     },
     "encryptedMessageService": {
       random_id: bigint;                      // long
@@ -2894,10 +2894,10 @@ declare namespace global {
       date: number;                           // int
       mime_type: string;                      // string
       size: bigint;                           // long
-      thumbs?: global.PhotoSize[];            // flags.0?Vector<PhotoSize>
-      video_thumbs?: global.VideoSize[];      // flags.1?Vector<VideoSize>
+      thumbs?: api.PhotoSize[];               // flags.0?Vector<PhotoSize>
+      video_thumbs?: api.VideoSize[];         // flags.1?Vector<VideoSize>
       dc_id: number;                          // int
-      attributes: global.DocumentAttribute[]; // Vector<DocumentAttribute>
+      attributes: api.DocumentAttribute[];    // Vector<DocumentAttribute>
     },
   };
 
@@ -2908,13 +2908,13 @@ declare namespace global {
   > = ToUnderscore<_NotifyPeer, K>;
   export type _NotifyPeer = {
     "notifyPeer": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
     },
     "notifyUsers": {}
     "notifyChats": {}
     "notifyBroadcasts": {}
     "notifyForumTopic": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       top_msg_id: number;                     // int
     },
   };
@@ -2959,7 +2959,7 @@ declare namespace global {
     "sendMessageEmojiInteraction": {
       emoticon: string;                       // string
       msg_id: number;                         // int
-      interaction: global.DataJSON;           // DataJSON
+      interaction: api.DataJSON;              // DataJSON
     },
     "sendMessageEmojiInteractionSeen": {
       emoticon: string;                       // string
@@ -3047,12 +3047,12 @@ declare namespace global {
     "inputPrivacyValueAllowContacts": {}
     "inputPrivacyValueAllowAll": {}
     "inputPrivacyValueAllowUsers": {
-      users: global.InputUser[];              // Vector<InputUser>
+      users: api.InputUser[];                 // Vector<InputUser>
     },
     "inputPrivacyValueDisallowContacts": {}
     "inputPrivacyValueDisallowAll": {}
     "inputPrivacyValueDisallowUsers": {
-      users: global.InputUser[];              // Vector<InputUser>
+      users: api.InputUser[];                 // Vector<InputUser>
     },
     "inputPrivacyValueAllowChatParticipants": {
       chats: bigint[];                        // Vector<long>
@@ -3130,8 +3130,8 @@ declare namespace global {
     "documentAttributeSticker": {
       mask?: true;                            // flags.1?true
       alt: string;                            // string
-      stickerset: global.InputStickerSet;     // InputStickerSet
-      mask_coords?: global.MaskCoords;        // flags.0?MaskCoords
+      stickerset: api.InputStickerSet;        // InputStickerSet
+      mask_coords?: api.MaskCoords;           // flags.0?MaskCoords
     },
     "documentAttributeVideo": {
       round_message?: true;                   // flags.0?true
@@ -3157,7 +3157,7 @@ declare namespace global {
       free?: true;                            // flags.0?true
       text_color?: true;                      // flags.1?true
       alt: string;                            // string
-      stickerset: global.InputStickerSet;     // InputStickerSet
+      stickerset: api.InputStickerSet;        // InputStickerSet
     },
   };
 
@@ -3203,16 +3203,16 @@ declare namespace global {
       site_name?: string;                     // flags.1?string
       title?: string;                         // flags.2?string
       description?: string;                   // flags.3?string
-      photo?: global.Photo;                   // flags.4?Photo
+      photo?: api.Photo;                      // flags.4?Photo
       embed_url?: string;                     // flags.5?string
       embed_type?: string;                    // flags.5?string
       embed_width?: number;                   // flags.6?int
       embed_height?: number;                  // flags.6?int
       duration?: number;                      // flags.7?int
       author?: string;                        // flags.8?string
-      document?: global.Document;             // flags.9?Document
-      cached_page?: global.Page;              // flags.10?Page
-      attributes?: global.WebPageAttribute[]; // flags.12?Vector<WebPageAttribute>
+      document?: api.Document;                // flags.9?Document
+      cached_page?: api.Page;                 // flags.10?Page
+      attributes?: api.WebPageAttribute[];    // flags.12?Vector<WebPageAttribute>
     },
     "webPageNotModified": {
       cached_page_views?: number;             // flags.0?int
@@ -3289,7 +3289,7 @@ declare namespace global {
   > = ToUnderscore<_ChatInvite, K>;
   export type _ChatInvite = {
     "chatInviteAlready": {
-      chat: global.Chat;                      // Chat
+      chat: api.Chat;                         // Chat
     },
     "chatInvite": {
       channel?: true;                         // flags.0?true
@@ -3302,13 +3302,13 @@ declare namespace global {
       fake?: true;                            // flags.9?true
       title: string;                          // string
       about?: string;                         // flags.5?string
-      photo: global.Photo;                    // Photo
+      photo: api.Photo;                       // Photo
       participants_count: number;             // int
-      participants?: global.User[];           // flags.4?Vector<User>
+      participants?: api.User[];              // flags.4?Vector<User>
       color: number;                          // int
     },
     "chatInvitePeek": {
-      chat: global.Chat;                      // Chat
+      chat: api.Chat;                         // Chat
       expires: number;                        // int
     },
   };
@@ -3368,7 +3368,7 @@ declare namespace global {
       access_hash: bigint;                    // long
       title: string;                          // string
       short_name: string;                     // string
-      thumbs?: global.PhotoSize[];            // flags.4?Vector<PhotoSize>
+      thumbs?: api.PhotoSize[];               // flags.4?Vector<PhotoSize>
       thumb_dc_id?: number;                   // flags.4?int
       thumb_version?: number;                 // flags.4?int
       thumb_document_id?: bigint;             // flags.8?long
@@ -3396,10 +3396,10 @@ declare namespace global {
     "botInfo": {
       user_id?: bigint;                       // flags.0?long
       description?: string;                   // flags.1?string
-      description_photo?: global.Photo;       // flags.4?Photo
-      description_document?: global.Document; // flags.5?Document
-      commands?: global.BotCommand[];         // flags.2?Vector<BotCommand>
-      menu_button?: global.BotMenuButton;     // flags.3?BotMenuButton
+      description_photo?: api.Photo;          // flags.4?Photo
+      description_document?: api.Document;    // flags.5?Document
+      commands?: api.BotCommand[];            // flags.2?Vector<BotCommand>
+      menu_button?: api.BotMenuButton;        // flags.3?BotMenuButton
     },
   };
 
@@ -3430,7 +3430,7 @@ declare namespace global {
       same_peer?: true;                       // flags.0?true
       text: string;                           // string
       query: string;                          // string
-      peer_types?: global.InlineQueryPeerType[]; // flags.1?Vector<InlineQueryPeerType>
+      peer_types?: api.InlineQueryPeerType[]; // flags.1?Vector<InlineQueryPeerType>
     },
     "keyboardButtonGame": {
       text: string;                           // string
@@ -3449,7 +3449,7 @@ declare namespace global {
       text: string;                           // string
       fwd_text?: string;                      // flags.1?string
       url: string;                            // string
-      bot: global.InputUser;                  // InputUser
+      bot: api.InputUser;                     // InputUser
     },
     "keyboardButtonRequestPoll": {
       quiz?: boolean;                         // flags.0?Bool
@@ -3457,7 +3457,7 @@ declare namespace global {
     },
     "inputKeyboardButtonUserProfile": {
       text: string;                           // string
-      user_id: global.InputUser;              // InputUser
+      user_id: api.InputUser;                 // InputUser
     },
     "keyboardButtonUserProfile": {
       text: string;                           // string
@@ -3474,7 +3474,7 @@ declare namespace global {
     "keyboardButtonRequestPeer": {
       text: string;                           // string
       button_id: number;                      // int
-      peer_type: global.RequestPeerType;      // RequestPeerType
+      peer_type: api.RequestPeerType;         // RequestPeerType
       max_quantity: number;                   // int
     },
     "inputKeyboardButtonRequestPeer": {
@@ -3483,7 +3483,7 @@ declare namespace global {
       photo_requested?: true;                 // flags.2?true
       text: string;                           // string
       button_id: number;                      // int
-      peer_type: global.RequestPeerType;      // RequestPeerType
+      peer_type: api.RequestPeerType;         // RequestPeerType
       max_quantity: number;                   // int
     },
   };
@@ -3510,7 +3510,7 @@ declare namespace global {
   > = ToUnderscore<_KeyboardButtonRow, K>;
   export type _KeyboardButtonRow = {
     "keyboardButtonRow": {
-      buttons: global.KeyboardButton[];       // Vector<KeyboardButton>
+      buttons: api.KeyboardButton[];          // Vector<KeyboardButton>
     },
   };
 
@@ -3532,11 +3532,11 @@ declare namespace global {
       single_use?: true;                      // flags.1?true
       selective?: true;                       // flags.2?true
       persistent?: true;                      // flags.4?true
-      rows: global.KeyboardButtonRow[];       // Vector<KeyboardButtonRow>
+      rows: api.KeyboardButtonRow[];          // Vector<KeyboardButtonRow>
       placeholder?: string;                   // flags.3?string
     },
     "replyInlineMarkup": {
-      rows: global.KeyboardButtonRow[];       // Vector<KeyboardButtonRow>
+      rows: api.KeyboardButtonRow[];          // Vector<KeyboardButtonRow>
     },
   };
 
@@ -3602,7 +3602,7 @@ declare namespace global {
     "inputMessageEntityMentionName": {
       offset: number;                         // int
       length: number;                         // int
-      user_id: global.InputUser;              // InputUser
+      user_id: api.InputUser;                 // InputUser
     },
     "messageEntityPhone": {
       offset: number;                         // int
@@ -3670,7 +3670,7 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputChannelFromMessage": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       msg_id: number;                         // int
       channel_id: bigint;                     // long
     },
@@ -3697,7 +3697,7 @@ declare namespace global {
     "channelMessagesFilterEmpty": {}
     "channelMessagesFilter": {
       exclude_new_messages?: true;            // flags.1?true
-      ranges: global.MessageRange[];          // Vector<MessageRange>
+      ranges: api.MessageRange[];             // Vector<MessageRange>
     },
   };
 
@@ -3719,7 +3719,7 @@ declare namespace global {
     },
     "channelParticipantCreator": {
       user_id: bigint;                        // long
-      admin_rights: global.ChatAdminRights;   // ChatAdminRights
+      admin_rights: api.ChatAdminRights;      // ChatAdminRights
       rank?: string;                          // flags.0?string
     },
     "channelParticipantAdmin": {
@@ -3729,18 +3729,18 @@ declare namespace global {
       inviter_id?: bigint;                    // flags.1?long
       promoted_by: bigint;                    // long
       date: number;                           // int
-      admin_rights: global.ChatAdminRights;   // ChatAdminRights
+      admin_rights: api.ChatAdminRights;      // ChatAdminRights
       rank?: string;                          // flags.2?string
     },
     "channelParticipantBanned": {
       left?: true;                            // flags.0?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       kicked_by: bigint;                      // long
       date: number;                           // int
-      banned_rights: global.ChatBannedRights; // ChatBannedRights
+      banned_rights: api.ChatBannedRights;    // ChatBannedRights
     },
     "channelParticipantLeft": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
     },
   };
 
@@ -3790,51 +3790,51 @@ declare namespace global {
     "inputBotInlineMessageMediaAuto": {
       invert_media?: true;                    // flags.3?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageText": {
       no_webpage?: true;                      // flags.0?true
       invert_media?: true;                    // flags.3?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageMediaGeo": {
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
       heading?: number;                       // flags.0?int
       period?: number;                        // flags.1?int
       proximity_notification_radius?: number; // flags.3?int
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageMediaVenue": {
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
       title: string;                          // string
       address: string;                        // string
       provider: string;                       // string
       venue_id: string;                       // string
       venue_type: string;                     // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageMediaContact": {
       phone_number: string;                   // string
       first_name: string;                     // string
       last_name: string;                      // string
       vcard: string;                          // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageGame": {
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageMediaInvoice": {
       title: string;                          // string
       description: string;                    // string
-      photo?: global.InputWebDocument;        // flags.0?InputWebDocument
-      invoice: global.Invoice;                // Invoice
+      photo?: api.InputWebDocument;           // flags.0?InputWebDocument
+      invoice: api.Invoice;                   // Invoice
       payload: Uint8Array;                    // bytes
       provider: string;                       // string
-      provider_data: global.DataJSON;         // DataJSON
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      provider_data: api.DataJSON;            // DataJSON
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "inputBotInlineMessageMediaWebPage": {
       invert_media?: true;                    // flags.3?true
@@ -3842,9 +3842,9 @@ declare namespace global {
       force_small_media?: true;               // flags.5?true
       optional?: true;                        // flags.6?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
       url: string;                            // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
   };
 
@@ -3866,28 +3866,28 @@ declare namespace global {
       title?: string;                         // flags.1?string
       description?: string;                   // flags.2?string
       url?: string;                           // flags.3?string
-      thumb?: global.InputWebDocument;        // flags.4?InputWebDocument
-      content?: global.InputWebDocument;      // flags.5?InputWebDocument
-      send_message: global.InputBotInlineMessage; // InputBotInlineMessage
+      thumb?: api.InputWebDocument;           // flags.4?InputWebDocument
+      content?: api.InputWebDocument;         // flags.5?InputWebDocument
+      send_message: api.InputBotInlineMessage; // InputBotInlineMessage
     },
     "inputBotInlineResultPhoto": {
       id: string;                             // string
       type: string;                           // string
-      photo: global.InputPhoto;               // InputPhoto
-      send_message: global.InputBotInlineMessage; // InputBotInlineMessage
+      photo: api.InputPhoto;                  // InputPhoto
+      send_message: api.InputBotInlineMessage; // InputBotInlineMessage
     },
     "inputBotInlineResultDocument": {
       id: string;                             // string
       type: string;                           // string
       title?: string;                         // flags.1?string
       description?: string;                   // flags.2?string
-      document: global.InputDocument;         // InputDocument
-      send_message: global.InputBotInlineMessage; // InputBotInlineMessage
+      document: api.InputDocument;            // InputDocument
+      send_message: api.InputBotInlineMessage; // InputBotInlineMessage
     },
     "inputBotInlineResultGame": {
       id: string;                             // string
       short_name: string;                     // string
-      send_message: global.InputBotInlineMessage; // InputBotInlineMessage
+      send_message: api.InputBotInlineMessage; // InputBotInlineMessage
     },
   };
 
@@ -3902,48 +3902,48 @@ declare namespace global {
     "botInlineMessageMediaAuto": {
       invert_media?: true;                    // flags.3?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageText": {
       no_webpage?: true;                      // flags.0?true
       invert_media?: true;                    // flags.3?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageMediaGeo": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
       heading?: number;                       // flags.0?int
       period?: number;                        // flags.1?int
       proximity_notification_radius?: number; // flags.3?int
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageMediaVenue": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
       title: string;                          // string
       address: string;                        // string
       provider: string;                       // string
       venue_id: string;                       // string
       venue_type: string;                     // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageMediaContact": {
       phone_number: string;                   // string
       first_name: string;                     // string
       last_name: string;                      // string
       vcard: string;                          // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageMediaInvoice": {
       shipping_address_requested?: true;      // flags.1?true
       test?: true;                            // flags.3?true
       title: string;                          // string
       description: string;                    // string
-      photo?: global.WebDocument;             // flags.0?WebDocument
+      photo?: api.WebDocument;                // flags.0?WebDocument
       currency: string;                       // string
       total_amount: bigint;                   // long
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
     "botInlineMessageMediaWebPage": {
       invert_media?: true;                    // flags.3?true
@@ -3952,9 +3952,9 @@ declare namespace global {
       manual?: true;                          // flags.7?true
       safe?: true;                            // flags.8?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
       url: string;                            // string
-      reply_markup?: global.ReplyMarkup;      // flags.2?ReplyMarkup
+      reply_markup?: api.ReplyMarkup;         // flags.2?ReplyMarkup
     },
   };
 
@@ -3975,18 +3975,18 @@ declare namespace global {
       title?: string;                         // flags.1?string
       description?: string;                   // flags.2?string
       url?: string;                           // flags.3?string
-      thumb?: global.WebDocument;             // flags.4?WebDocument
-      content?: global.WebDocument;           // flags.5?WebDocument
-      send_message: global.BotInlineMessage;  // BotInlineMessage
+      thumb?: api.WebDocument;                // flags.4?WebDocument
+      content?: api.WebDocument;              // flags.5?WebDocument
+      send_message: api.BotInlineMessage;     // BotInlineMessage
     },
     "botInlineMediaResult": {
       id: string;                             // string
       type: string;                           // string
-      photo?: global.Photo;                   // flags.0?Photo
-      document?: global.Document;             // flags.1?Document
+      photo?: api.Photo;                      // flags.0?Photo
+      document?: api.Document;                // flags.1?Document
       title?: string;                         // flags.2?string
       description?: string;                   // flags.3?string
-      send_message: global.BotInlineMessage;  // BotInlineMessage
+      send_message: api.BotInlineMessage;     // BotInlineMessage
     },
   };
 
@@ -4010,14 +4010,14 @@ declare namespace global {
     "messageFwdHeader": {
       imported?: true;                        // flags.7?true
       saved_out?: true;                       // flags.11?true
-      from_id?: global.Peer;                  // flags.0?Peer
+      from_id?: api.Peer;                     // flags.0?Peer
       from_name?: string;                     // flags.5?string
       date: number;                           // int
       channel_post?: number;                  // flags.2?int
       post_author?: string;                   // flags.3?string
-      saved_from_peer?: global.Peer;          // flags.4?Peer
+      saved_from_peer?: api.Peer;             // flags.4?Peer
       saved_from_msg_id?: number;             // flags.4?int
-      saved_from_id?: global.Peer;            // flags.8?Peer
+      saved_from_id?: api.Peer;               // flags.8?Peer
       saved_from_name?: string;               // flags.9?string
       saved_date?: number;                    // flags.10?int
       psa_type?: string;                      // flags.6?string
@@ -4060,7 +4060,7 @@ declare namespace global {
   > = ToUnderscore<_TopPeer, K>;
   export type _TopPeer = {
     "topPeer": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       rating: number;                         // double
     },
   };
@@ -4093,9 +4093,9 @@ declare namespace global {
   > = ToUnderscore<_TopPeerCategoryPeers, K>;
   export type _TopPeerCategoryPeers = {
     "topPeerCategoryPeers": {
-      category: global.TopPeerCategory;       // TopPeerCategory
+      category: api.TopPeerCategory;          // TopPeerCategory
       count: number;                          // int
-      peers: global.TopPeer[];                // Vector<TopPeer>
+      peers: api.TopPeer[];                   // Vector<TopPeer>
     },
   };
 
@@ -4110,10 +4110,10 @@ declare namespace global {
     "draftMessage": {
       no_webpage?: true;                      // flags.1?true
       invert_media?: true;                    // flags.6?true
-      reply_to?: global.InputReplyTo;         // flags.4?InputReplyTo
+      reply_to?: api.InputReplyTo;            // flags.4?InputReplyTo
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.3?Vector<MessageEntity>
-      media?: global.InputMedia;              // flags.5?InputMedia
+      entities?: api.MessageEntity[];         // flags.3?Vector<MessageEntity>
+      media?: api.InputMedia;                 // flags.5?InputMedia
       date: number;                           // int
     },
   };
@@ -4125,21 +4125,21 @@ declare namespace global {
   > = ToUnderscore<_StickerSetCovered, K>;
   export type _StickerSetCovered = {
     "stickerSetCovered": {
-      set: global.StickerSet;                 // StickerSet
-      cover: global.Document;                 // Document
+      set: api.StickerSet;                    // StickerSet
+      cover: api.Document;                    // Document
     },
     "stickerSetMultiCovered": {
-      set: global.StickerSet;                 // StickerSet
-      covers: global.Document[];              // Vector<Document>
+      set: api.StickerSet;                    // StickerSet
+      covers: api.Document[];                 // Vector<Document>
     },
     "stickerSetFullCovered": {
-      set: global.StickerSet;                 // StickerSet
-      packs: global.StickerPack[];            // Vector<StickerPack>
-      keywords: global.StickerKeyword[];      // Vector<StickerKeyword>
-      documents: global.Document[];           // Vector<Document>
+      set: api.StickerSet;                    // StickerSet
+      packs: api.StickerPack[];               // Vector<StickerPack>
+      keywords: api.StickerKeyword[];         // Vector<StickerKeyword>
+      documents: api.Document[];              // Vector<Document>
     },
     "stickerSetNoCovered": {
-      set: global.StickerSet;                 // StickerSet
+      set: api.StickerSet;                    // StickerSet
     },
   };
 
@@ -4165,10 +4165,10 @@ declare namespace global {
   > = ToUnderscore<_InputStickeredMedia, K>;
   export type _InputStickeredMedia = {
     "inputStickeredMediaPhoto": {
-      id: global.InputPhoto;                  // InputPhoto
+      id: api.InputPhoto;                     // InputPhoto
     },
     "inputStickeredMediaDocument": {
-      id: global.InputDocument;               // InputDocument
+      id: api.InputDocument;                  // InputDocument
     },
   };
 
@@ -4184,8 +4184,8 @@ declare namespace global {
       short_name: string;                     // string
       title: string;                          // string
       description: string;                    // string
-      photo: global.Photo;                    // Photo
-      document?: global.Document;             // flags.0?Document
+      photo: api.Photo;                       // Photo
+      document?: api.Document;                // flags.0?Document
     },
   };
 
@@ -4199,7 +4199,7 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputGameShortName": {
-      bot_id: global.InputUser;               // InputUser
+      bot_id: api.InputUser;                  // InputUser
       short_name: string;                     // string
     },
   };
@@ -4227,43 +4227,43 @@ declare namespace global {
       text: string;                           // string
     },
     "textBold": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textItalic": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textUnderline": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textStrike": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textFixed": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textUrl": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
       url: string;                            // string
       webpage_id: bigint;                     // long
     },
     "textEmail": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
       email: string;                          // string
     },
     "textConcat": {
-      texts: global.RichText[];               // Vector<RichText>
+      texts: api.RichText[];                  // Vector<RichText>
     },
     "textSubscript": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textSuperscript": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textMarked": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "textPhone": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
       phone: string;                          // string
     },
     "textImage": {
@@ -4272,7 +4272,7 @@ declare namespace global {
       h: number;                              // int
     },
     "textAnchor": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
       name: string;                           // string
     },
   };
@@ -4299,49 +4299,49 @@ declare namespace global {
   export type _PageBlock = {
     "pageBlockUnsupported": {}
     "pageBlockTitle": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockSubtitle": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockAuthorDate": {
-      author: global.RichText;                // RichText
+      author: api.RichText;                   // RichText
       published_date: number;                 // int
     },
     "pageBlockHeader": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockSubheader": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockParagraph": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockPreformatted": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
       language: string;                       // string
     },
     "pageBlockFooter": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockDivider": {}
     "pageBlockAnchor": {
       name: string;                           // string
     },
     "pageBlockList": {
-      items: global.PageListItem[];           // Vector<PageListItem>
+      items: api.PageListItem[];              // Vector<PageListItem>
     },
     "pageBlockBlockquote": {
-      text: global.RichText;                  // RichText
-      caption: global.RichText;               // RichText
+      text: api.RichText;                     // RichText
+      caption: api.RichText;                  // RichText
     },
     "pageBlockPullquote": {
-      text: global.RichText;                  // RichText
-      caption: global.RichText;               // RichText
+      text: api.RichText;                     // RichText
+      caption: api.RichText;                  // RichText
     },
     "pageBlockPhoto": {
       photo_id: bigint;                       // long
-      caption: global.PageCaption;            // PageCaption
+      caption: api.PageCaption;               // PageCaption
       url?: string;                           // flags.0?string
       webpage_id?: bigint;                    // flags.0?long
     },
@@ -4349,10 +4349,10 @@ declare namespace global {
       autoplay?: true;                        // flags.0?true
       loop?: true;                            // flags.1?true
       video_id: bigint;                       // long
-      caption: global.PageCaption;            // PageCaption
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockCover": {
-      cover: global.PageBlock;                // PageBlock
+      cover: api.PageBlock;                   // PageBlock
     },
     "pageBlockEmbed": {
       full_width?: true;                      // flags.0?true
@@ -4362,7 +4362,7 @@ declare namespace global {
       poster_photo_id?: bigint;               // flags.4?long
       w?: number;                             // flags.5?int
       h?: number;                             // flags.5?int
-      caption: global.PageCaption;            // PageCaption
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockEmbedPost": {
       url: string;                            // string
@@ -4370,51 +4370,51 @@ declare namespace global {
       author_photo_id: bigint;                // long
       author: string;                         // string
       date: number;                           // int
-      blocks: global.PageBlock[];             // Vector<PageBlock>
-      caption: global.PageCaption;            // PageCaption
+      blocks: api.PageBlock[];                // Vector<PageBlock>
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockCollage": {
-      items: global.PageBlock[];              // Vector<PageBlock>
-      caption: global.PageCaption;            // PageCaption
+      items: api.PageBlock[];                 // Vector<PageBlock>
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockSlideshow": {
-      items: global.PageBlock[];              // Vector<PageBlock>
-      caption: global.PageCaption;            // PageCaption
+      items: api.PageBlock[];                 // Vector<PageBlock>
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockChannel": {
-      channel: global.Chat;                   // Chat
+      channel: api.Chat;                      // Chat
     },
     "pageBlockAudio": {
       audio_id: bigint;                       // long
-      caption: global.PageCaption;            // PageCaption
+      caption: api.PageCaption;               // PageCaption
     },
     "pageBlockKicker": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageBlockTable": {
       bordered?: true;                        // flags.0?true
       striped?: true;                         // flags.1?true
-      title: global.RichText;                 // RichText
-      rows: global.PageTableRow[];            // Vector<PageTableRow>
+      title: api.RichText;                    // RichText
+      rows: api.PageTableRow[];               // Vector<PageTableRow>
     },
     "pageBlockOrderedList": {
-      items: global.PageListOrderedItem[];    // Vector<PageListOrderedItem>
+      items: api.PageListOrderedItem[];       // Vector<PageListOrderedItem>
     },
     "pageBlockDetails": {
       open?: true;                            // flags.0?true
-      blocks: global.PageBlock[];             // Vector<PageBlock>
-      title: global.RichText;                 // RichText
+      blocks: api.PageBlock[];                // Vector<PageBlock>
+      title: api.RichText;                    // RichText
     },
     "pageBlockRelatedArticles": {
-      title: global.RichText;                 // RichText
-      articles: global.PageRelatedArticle[];  // Vector<PageRelatedArticle>
+      title: api.RichText;                    // RichText
+      articles: api.PageRelatedArticle[];     // Vector<PageRelatedArticle>
     },
     "pageBlockMap": {
-      geo: global.GeoPoint;                   // GeoPoint
+      geo: api.GeoPoint;                      // GeoPoint
       zoom: number;                           // int
       w: number;                              // int
       h: number;                              // int
-      caption: global.PageCaption;            // PageCaption
+      caption: api.PageCaption;               // PageCaption
     },
   };
 
@@ -4497,7 +4497,7 @@ declare namespace global {
       email_to_provider?: true;               // flags.7?true
       recurring?: true;                       // flags.9?true
       currency: string;                       // string
-      prices: global.LabeledPrice[];          // Vector<LabeledPrice>
+      prices: api.LabeledPrice[];             // Vector<LabeledPrice>
       max_tip_amount?: bigint;                // flags.8?long
       suggested_tip_amounts?: bigint[];       // flags.8?Vector<long>
       terms_url?: string;                     // flags.10?string
@@ -4539,7 +4539,7 @@ declare namespace global {
       name?: string;                          // flags.0?string
       phone?: string;                         // flags.1?string
       email?: string;                         // flags.2?string
-      shipping_address?: global.PostAddress;  // flags.3?PostAddress
+      shipping_address?: api.PostAddress;     // flags.3?PostAddress
     },
   };
 
@@ -4564,13 +4564,13 @@ declare namespace global {
       access_hash: bigint;                    // long
       size: number;                           // int
       mime_type: string;                      // string
-      attributes: global.DocumentAttribute[]; // Vector<DocumentAttribute>
+      attributes: api.DocumentAttribute[];    // Vector<DocumentAttribute>
     },
     "webDocumentNoProxy": {
       url: string;                            // string
       size: number;                           // int
       mime_type: string;                      // string
-      attributes: global.DocumentAttribute[]; // Vector<DocumentAttribute>
+      attributes: api.DocumentAttribute[];    // Vector<DocumentAttribute>
     },
   };
 
@@ -4584,7 +4584,7 @@ declare namespace global {
       url: string;                            // string
       size: number;                           // int
       mime_type: string;                      // string
-      attributes: global.DocumentAttribute[]; // Vector<DocumentAttribute>
+      attributes: api.DocumentAttribute[];    // Vector<DocumentAttribute>
     },
   };
 
@@ -4598,7 +4598,7 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputWebFileGeoPointLocation": {
-      geo_point: global.InputGeoPoint;        // InputGeoPoint
+      geo_point: api.InputGeoPoint;           // InputGeoPoint
       access_hash: bigint;                    // long
       w: number;                              // int
       h: number;                              // int
@@ -4607,7 +4607,7 @@ declare namespace global {
     },
     "inputWebFileAudioAlbumThumbLocation": {
       small?: true;                           // flags.2?true
-      document?: global.InputDocument;        // flags.0?InputDocument
+      document?: api.InputDocument;           // flags.0?InputDocument
       title?: string;                         // flags.1?string
       performer?: string;                     // flags.1?string
     },
@@ -4626,13 +4626,13 @@ declare namespace global {
     },
     "inputPaymentCredentials": {
       save?: true;                            // flags.0?true
-      data: global.DataJSON;                  // DataJSON
+      data: api.DataJSON;                     // DataJSON
     },
     "inputPaymentCredentialsApplePay": {
-      payment_data: global.DataJSON;          // DataJSON
+      payment_data: api.DataJSON;             // DataJSON
     },
     "inputPaymentCredentialsGooglePay": {
-      payment_token: global.DataJSON;         // DataJSON
+      payment_token: api.DataJSON;            // DataJSON
     },
   };
 
@@ -4647,7 +4647,7 @@ declare namespace global {
     "shippingOption": {
       id: string;                             // string
       title: string;                          // string
-      prices: global.LabeledPrice[];          // Vector<LabeledPrice>
+      prices: api.LabeledPrice[];             // Vector<LabeledPrice>
     },
   };
 
@@ -4657,9 +4657,9 @@ declare namespace global {
   > = ToUnderscore<_InputStickerSetItem, K>;
   export type _InputStickerSetItem = {
     "inputStickerSetItem": {
-      document: global.InputDocument;         // InputDocument
+      document: api.InputDocument;            // InputDocument
       emoji: string;                          // string
-      mask_coords?: global.MaskCoords;        // flags.0?MaskCoords
+      mask_coords?: api.MaskCoords;           // flags.0?MaskCoords
       keywords?: string;                      // flags.1?string
     },
   };
@@ -4690,7 +4690,7 @@ declare namespace global {
       date: number;                           // int
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
-      protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
+      protocol: api.PhoneCallProtocol;        // PhoneCallProtocol
       receive_date?: number;                  // flags.0?int
     },
     "phoneCallRequested": {
@@ -4701,7 +4701,7 @@ declare namespace global {
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
       g_a_hash: Uint8Array;                   // bytes
-      protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
+      protocol: api.PhoneCallProtocol;        // PhoneCallProtocol
     },
     "phoneCallAccepted": {
       video?: true;                           // flags.6?true
@@ -4711,7 +4711,7 @@ declare namespace global {
       admin_id: bigint;                       // long
       participant_id: bigint;                 // long
       g_b: Uint8Array;                        // bytes
-      protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
+      protocol: api.PhoneCallProtocol;        // PhoneCallProtocol
     },
     "phoneCall": {
       p2p_allowed?: true;                     // flags.5?true
@@ -4723,17 +4723,17 @@ declare namespace global {
       participant_id: bigint;                 // long
       g_a_or_b: Uint8Array;                   // bytes
       key_fingerprint: bigint;                // long
-      protocol: global.PhoneCallProtocol;     // PhoneCallProtocol
-      connections: global.PhoneConnection[];  // Vector<PhoneConnection>
+      protocol: api.PhoneCallProtocol;        // PhoneCallProtocol
+      connections: api.PhoneConnection[];     // Vector<PhoneConnection>
       start_date: number;                     // int
-      custom_parameters?: global.DataJSON;    // flags.7?DataJSON
+      custom_parameters?: api.DataJSON;       // flags.7?DataJSON
     },
     "phoneCallDiscarded": {
       need_rating?: true;                     // flags.2?true
       need_debug?: true;                      // flags.3?true
       video?: true;                           // flags.6?true
       id: bigint;                             // long
-      reason?: global.PhoneCallDiscardReason; // flags.0?PhoneCallDiscardReason
+      reason?: api.PhoneCallDiscardReason;    // flags.0?PhoneCallDiscardReason
       duration?: number;                      // flags.1?int
     },
   };
@@ -4800,7 +4800,7 @@ declare namespace global {
   > = ToUnderscore<_CdnConfig, K>;
   export type _CdnConfig = {
     "cdnConfig": {
-      public_keys: global.CdnPublicKey[];     // Vector<CdnPublicKey>
+      public_keys: api.CdnPublicKey[];        // Vector<CdnPublicKey>
     },
   };
 
@@ -4838,7 +4838,7 @@ declare namespace global {
       lang_code: string;                      // string
       from_version: number;                   // int
       version: number;                        // int
-      strings: global.LangPackString[];       // Vector<LangPackString>
+      strings: api.LangPackString[];          // Vector<LangPackString>
     },
   };
 
@@ -4880,8 +4880,8 @@ declare namespace global {
       new_value: string;                      // string
     },
     "channelAdminLogEventActionChangePhoto": {
-      prev_photo: global.Photo;               // Photo
-      new_photo: global.Photo;                // Photo
+      prev_photo: api.Photo;                  // Photo
+      new_photo: api.Photo;                   // Photo
     },
     "channelAdminLogEventActionToggleInvites": {
       new_value: boolean;                     // Bool
@@ -4890,103 +4890,103 @@ declare namespace global {
       new_value: boolean;                     // Bool
     },
     "channelAdminLogEventActionUpdatePinned": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "channelAdminLogEventActionEditMessage": {
-      prev_message: global.Message;           // Message
-      new_message: global.Message;            // Message
+      prev_message: api.Message;              // Message
+      new_message: api.Message;               // Message
     },
     "channelAdminLogEventActionDeleteMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "channelAdminLogEventActionParticipantJoin": {}
     "channelAdminLogEventActionParticipantLeave": {}
     "channelAdminLogEventActionParticipantInvite": {
-      participant: global.ChannelParticipant; // ChannelParticipant
+      participant: api.ChannelParticipant;    // ChannelParticipant
     },
     "channelAdminLogEventActionParticipantToggleBan": {
-      prev_participant: global.ChannelParticipant; // ChannelParticipant
-      new_participant: global.ChannelParticipant; // ChannelParticipant
+      prev_participant: api.ChannelParticipant; // ChannelParticipant
+      new_participant: api.ChannelParticipant; // ChannelParticipant
     },
     "channelAdminLogEventActionParticipantToggleAdmin": {
-      prev_participant: global.ChannelParticipant; // ChannelParticipant
-      new_participant: global.ChannelParticipant; // ChannelParticipant
+      prev_participant: api.ChannelParticipant; // ChannelParticipant
+      new_participant: api.ChannelParticipant; // ChannelParticipant
     },
     "channelAdminLogEventActionChangeStickerSet": {
-      prev_stickerset: global.InputStickerSet; // InputStickerSet
-      new_stickerset: global.InputStickerSet; // InputStickerSet
+      prev_stickerset: api.InputStickerSet;   // InputStickerSet
+      new_stickerset: api.InputStickerSet;    // InputStickerSet
     },
     "channelAdminLogEventActionTogglePreHistoryHidden": {
       new_value: boolean;                     // Bool
     },
     "channelAdminLogEventActionDefaultBannedRights": {
-      prev_banned_rights: global.ChatBannedRights; // ChatBannedRights
-      new_banned_rights: global.ChatBannedRights; // ChatBannedRights
+      prev_banned_rights: api.ChatBannedRights; // ChatBannedRights
+      new_banned_rights: api.ChatBannedRights; // ChatBannedRights
     },
     "channelAdminLogEventActionStopPoll": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "channelAdminLogEventActionChangeLinkedChat": {
       prev_value: bigint;                     // long
       new_value: bigint;                      // long
     },
     "channelAdminLogEventActionChangeLocation": {
-      prev_value: global.ChannelLocation;     // ChannelLocation
-      new_value: global.ChannelLocation;      // ChannelLocation
+      prev_value: api.ChannelLocation;        // ChannelLocation
+      new_value: api.ChannelLocation;         // ChannelLocation
     },
     "channelAdminLogEventActionToggleSlowMode": {
       prev_value: number;                     // int
       new_value: number;                      // int
     },
     "channelAdminLogEventActionStartGroupCall": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
     },
     "channelAdminLogEventActionDiscardGroupCall": {
-      call: global.InputGroupCall;            // InputGroupCall
+      call: api.InputGroupCall;               // InputGroupCall
     },
     "channelAdminLogEventActionParticipantMute": {
-      participant: global.GroupCallParticipant; // GroupCallParticipant
+      participant: api.GroupCallParticipant;  // GroupCallParticipant
     },
     "channelAdminLogEventActionParticipantUnmute": {
-      participant: global.GroupCallParticipant; // GroupCallParticipant
+      participant: api.GroupCallParticipant;  // GroupCallParticipant
     },
     "channelAdminLogEventActionToggleGroupCallSetting": {
       join_muted: boolean;                    // Bool
     },
     "channelAdminLogEventActionParticipantJoinByInvite": {
       via_chatlist?: true;                    // flags.0?true
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
     },
     "channelAdminLogEventActionExportedInviteDelete": {
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
     },
     "channelAdminLogEventActionExportedInviteRevoke": {
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
     },
     "channelAdminLogEventActionExportedInviteEdit": {
-      prev_invite: global.ExportedChatInvite; // ExportedChatInvite
-      new_invite: global.ExportedChatInvite;  // ExportedChatInvite
+      prev_invite: api.ExportedChatInvite;    // ExportedChatInvite
+      new_invite: api.ExportedChatInvite;     // ExportedChatInvite
     },
     "channelAdminLogEventActionParticipantVolume": {
-      participant: global.GroupCallParticipant; // GroupCallParticipant
+      participant: api.GroupCallParticipant;  // GroupCallParticipant
     },
     "channelAdminLogEventActionChangeHistoryTTL": {
       prev_value: number;                     // int
       new_value: number;                      // int
     },
     "channelAdminLogEventActionParticipantJoinByRequest": {
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
       approved_by: bigint;                    // long
     },
     "channelAdminLogEventActionToggleNoForwards": {
       new_value: boolean;                     // Bool
     },
     "channelAdminLogEventActionSendMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "channelAdminLogEventActionChangeAvailableReactions": {
-      prev_value: global.ChatReactions;       // ChatReactions
-      new_value: global.ChatReactions;        // ChatReactions
+      prev_value: api.ChatReactions;          // ChatReactions
+      new_value: api.ChatReactions;           // ChatReactions
     },
     "channelAdminLogEventActionChangeUsernames": {
       prev_value: string[];                   // Vector<string>
@@ -4996,41 +4996,41 @@ declare namespace global {
       new_value: boolean;                     // Bool
     },
     "channelAdminLogEventActionCreateTopic": {
-      topic: global.ForumTopic;               // ForumTopic
+      topic: api.ForumTopic;                  // ForumTopic
     },
     "channelAdminLogEventActionEditTopic": {
-      prev_topic: global.ForumTopic;          // ForumTopic
-      new_topic: global.ForumTopic;           // ForumTopic
+      prev_topic: api.ForumTopic;             // ForumTopic
+      new_topic: api.ForumTopic;              // ForumTopic
     },
     "channelAdminLogEventActionDeleteTopic": {
-      topic: global.ForumTopic;               // ForumTopic
+      topic: api.ForumTopic;                  // ForumTopic
     },
     "channelAdminLogEventActionPinTopic": {
-      prev_topic?: global.ForumTopic;         // flags.0?ForumTopic
-      new_topic?: global.ForumTopic;          // flags.1?ForumTopic
+      prev_topic?: api.ForumTopic;            // flags.0?ForumTopic
+      new_topic?: api.ForumTopic;             // flags.1?ForumTopic
     },
     "channelAdminLogEventActionToggleAntiSpam": {
       new_value: boolean;                     // Bool
     },
     "channelAdminLogEventActionChangePeerColor": {
-      prev_value: global.PeerColor;           // PeerColor
-      new_value: global.PeerColor;            // PeerColor
+      prev_value: api.PeerColor;              // PeerColor
+      new_value: api.PeerColor;               // PeerColor
     },
     "channelAdminLogEventActionChangeProfilePeerColor": {
-      prev_value: global.PeerColor;           // PeerColor
-      new_value: global.PeerColor;            // PeerColor
+      prev_value: api.PeerColor;              // PeerColor
+      new_value: api.PeerColor;               // PeerColor
     },
     "channelAdminLogEventActionChangeWallpaper": {
-      prev_value: global.WallPaper;           // WallPaper
-      new_value: global.WallPaper;            // WallPaper
+      prev_value: api.WallPaper;              // WallPaper
+      new_value: api.WallPaper;               // WallPaper
     },
     "channelAdminLogEventActionChangeEmojiStatus": {
-      prev_value: global.EmojiStatus;         // EmojiStatus
-      new_value: global.EmojiStatus;          // EmojiStatus
+      prev_value: api.EmojiStatus;            // EmojiStatus
+      new_value: api.EmojiStatus;             // EmojiStatus
     },
     "channelAdminLogEventActionChangeEmojiStickerSet": {
-      prev_stickerset: global.InputStickerSet; // InputStickerSet
-      new_stickerset: global.InputStickerSet; // InputStickerSet
+      prev_stickerset: api.InputStickerSet;   // InputStickerSet
+      new_stickerset: api.InputStickerSet;    // InputStickerSet
     },
   };
 
@@ -5090,7 +5090,7 @@ declare namespace global {
       id: bigint;                             // long
       date: number;                           // int
       user_id: bigint;                        // long
-      action: global.ChannelAdminLogEventAction; // ChannelAdminLogEventAction
+      action: api.ChannelAdminLogEventAction; // ChannelAdminLogEventAction
     },
   };
 
@@ -5150,11 +5150,11 @@ declare namespace global {
     },
     "recentMeUrlChatInvite": {
       url: string;                            // string
-      chat_invite: global.ChatInvite;         // ChatInvite
+      chat_invite: api.ChatInvite;            // ChatInvite
     },
     "recentMeUrlStickerSet": {
       url: string;                            // string
-      set: global.StickerSetCovered;          // StickerSetCovered
+      set: api.StickerSetCovered;             // StickerSetCovered
     },
   };
 
@@ -5168,10 +5168,10 @@ declare namespace global {
   > = ToUnderscore<_InputSingleMedia, K>;
   export type _InputSingleMedia = {
     "inputSingleMedia": {
-      media: global.InputMedia;               // InputMedia
+      media: api.InputMedia;                  // InputMedia
       random_id: bigint;                      // long
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.0?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.0?Vector<MessageEntity>
     },
   };
 
@@ -5220,7 +5220,7 @@ declare namespace global {
   > = ToUnderscore<_InputDialogPeer, K>;
   export type _InputDialogPeer = {
     "inputDialogPeer": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
     },
     "inputDialogPeerFolder": {
       folder_id: number;                      // int
@@ -5234,7 +5234,7 @@ declare namespace global {
   > = ToUnderscore<_DialogPeer, K>;
   export type _DialogPeer = {
     "dialogPeer": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
     },
     "dialogPeerFolder": {
       folder_id: number;                      // int
@@ -5366,14 +5366,14 @@ declare namespace global {
   > = ToUnderscore<_SecureValue, K>;
   export type _SecureValue = {
     "secureValue": {
-      type: global.SecureValueType;           // SecureValueType
-      data?: global.SecureData;               // flags.0?SecureData
-      front_side?: global.SecureFile;         // flags.1?SecureFile
-      reverse_side?: global.SecureFile;       // flags.2?SecureFile
-      selfie?: global.SecureFile;             // flags.3?SecureFile
-      translation?: global.SecureFile[];      // flags.6?Vector<SecureFile>
-      files?: global.SecureFile[];            // flags.4?Vector<SecureFile>
-      plain_data?: global.SecurePlainData;    // flags.5?SecurePlainData
+      type: api.SecureValueType;              // SecureValueType
+      data?: api.SecureData;                  // flags.0?SecureData
+      front_side?: api.SecureFile;            // flags.1?SecureFile
+      reverse_side?: api.SecureFile;          // flags.2?SecureFile
+      selfie?: api.SecureFile;                // flags.3?SecureFile
+      translation?: api.SecureFile[];         // flags.6?Vector<SecureFile>
+      files?: api.SecureFile[];               // flags.4?Vector<SecureFile>
+      plain_data?: api.SecurePlainData;       // flags.5?SecurePlainData
       hash: Uint8Array;                       // bytes
     },
   };
@@ -5384,14 +5384,14 @@ declare namespace global {
   > = ToUnderscore<_InputSecureValue, K>;
   export type _InputSecureValue = {
     "inputSecureValue": {
-      type: global.SecureValueType;           // SecureValueType
-      data?: global.SecureData;               // flags.0?SecureData
-      front_side?: global.InputSecureFile;    // flags.1?InputSecureFile
-      reverse_side?: global.InputSecureFile;  // flags.2?InputSecureFile
-      selfie?: global.InputSecureFile;        // flags.3?InputSecureFile
-      translation?: global.InputSecureFile[]; // flags.6?Vector<InputSecureFile>
-      files?: global.InputSecureFile[];       // flags.4?Vector<InputSecureFile>
-      plain_data?: global.SecurePlainData;    // flags.5?SecurePlainData
+      type: api.SecureValueType;              // SecureValueType
+      data?: api.SecureData;                  // flags.0?SecureData
+      front_side?: api.InputSecureFile;       // flags.1?InputSecureFile
+      reverse_side?: api.InputSecureFile;     // flags.2?InputSecureFile
+      selfie?: api.InputSecureFile;           // flags.3?InputSecureFile
+      translation?: api.InputSecureFile[];    // flags.6?Vector<InputSecureFile>
+      files?: api.InputSecureFile[];          // flags.4?Vector<InputSecureFile>
+      plain_data?: api.SecurePlainData;       // flags.5?SecurePlainData
     },
   };
 
@@ -5401,7 +5401,7 @@ declare namespace global {
   > = ToUnderscore<_SecureValueHash, K>;
   export type _SecureValueHash = {
     "secureValueHash": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       hash: Uint8Array;                       // bytes
     },
   };
@@ -5412,48 +5412,48 @@ declare namespace global {
   > = ToUnderscore<_SecureValueError, K>;
   export type _SecureValueError = {
     "secureValueErrorData": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       data_hash: Uint8Array;                  // bytes
       field: string;                          // string
       text: string;                           // string
     },
     "secureValueErrorFrontSide": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorReverseSide": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorSelfie": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorFile": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorFiles": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array[];                // Vector<bytes>
       text: string;                           // string
     },
     "secureValueError": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       hash: Uint8Array;                       // bytes
       text: string;                           // string
     },
     "secureValueErrorTranslationFile": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array;                  // bytes
       text: string;                           // string
     },
     "secureValueErrorTranslationFiles": {
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
       file_hash: Uint8Array[];                // Vector<bytes>
       text: string;                           // string
     },
@@ -5529,7 +5529,7 @@ declare namespace global {
   > = ToUnderscore<_SecureSecretSettings, K>;
   export type _SecureSecretSettings = {
     "secureSecretSettings": {
-      secure_algo: global.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
+      secure_algo: api.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
       secure_secret: Uint8Array;              // bytes
       secure_secret_id: bigint;               // long
     },
@@ -5558,10 +5558,10 @@ declare namespace global {
       native_names?: true;                    // flags.0?true
       selfie_required?: true;                 // flags.1?true
       translation_required?: true;            // flags.2?true
-      type: global.SecureValueType;           // SecureValueType
+      type: api.SecureValueType;              // SecureValueType
     },
     "secureRequiredTypeOneOf": {
-      types: global.SecureRequiredType[];     // Vector<SecureRequiredType>
+      types: api.SecureRequiredType[];        // Vector<SecureRequiredType>
     },
   };
 
@@ -5575,7 +5575,7 @@ declare namespace global {
       time: number;                           // double
       type: string;                           // string
       peer: bigint;                           // long
-      data: global.JSONValue;                 // JSONValue
+      data: api.JSONValue;                    // JSONValue
     },
   };
 
@@ -5586,7 +5586,7 @@ declare namespace global {
   export type _JSONObjectValue = {
     "jsonObjectValue": {
       key: string;                            // string
-      value: global.JSONValue;                // JSONValue
+      value: api.JSONValue;                   // JSONValue
     },
   };
 
@@ -5606,10 +5606,10 @@ declare namespace global {
       value: string;                          // string
     },
     "jsonArray": {
-      value: global.JSONValue[];              // Vector<JSONValue>
+      value: api.JSONValue[];                 // Vector<JSONValue>
     },
     "jsonObject": {
-      value: global.JSONObjectValue[];        // Vector<JSONObjectValue>
+      value: api.JSONObjectValue[];           // Vector<JSONObjectValue>
     },
   };
 
@@ -5629,7 +5629,7 @@ declare namespace global {
       align_right?: true;                     // flags.4?true
       valign_middle?: true;                   // flags.5?true
       valign_bottom?: true;                   // flags.6?true
-      text?: global.RichText;                 // flags.7?RichText
+      text?: api.RichText;                    // flags.7?RichText
       colspan?: number;                       // flags.1?int
       rowspan?: number;                       // flags.2?int
     },
@@ -5641,7 +5641,7 @@ declare namespace global {
   > = ToUnderscore<_PageTableRow, K>;
   export type _PageTableRow = {
     "pageTableRow": {
-      cells: global.PageTableCell[];          // Vector<PageTableCell>
+      cells: api.PageTableCell[];             // Vector<PageTableCell>
     },
   };
 
@@ -5651,8 +5651,8 @@ declare namespace global {
   > = ToUnderscore<_PageCaption, K>;
   export type _PageCaption = {
     "pageCaption": {
-      text: global.RichText;                  // RichText
-      credit: global.RichText;                // RichText
+      text: api.RichText;                     // RichText
+      credit: api.RichText;                   // RichText
     },
   };
 
@@ -5662,10 +5662,10 @@ declare namespace global {
   > = ToUnderscore<_PageListItem, K>;
   export type _PageListItem = {
     "pageListItemText": {
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageListItemBlocks": {
-      blocks: global.PageBlock[];             // Vector<PageBlock>
+      blocks: api.PageBlock[];                // Vector<PageBlock>
     },
   };
 
@@ -5677,11 +5677,11 @@ declare namespace global {
   export type _PageListOrderedItem = {
     "pageListOrderedItemText": {
       num: string;                            // string
-      text: global.RichText;                  // RichText
+      text: api.RichText;                     // RichText
     },
     "pageListOrderedItemBlocks": {
       num: string;                            // string
-      blocks: global.PageBlock[];             // Vector<PageBlock>
+      blocks: api.PageBlock[];                // Vector<PageBlock>
     },
   };
 
@@ -5712,9 +5712,9 @@ declare namespace global {
       rtl?: true;                             // flags.1?true
       v2?: true;                              // flags.2?true
       url: string;                            // string
-      blocks: global.PageBlock[];             // Vector<PageBlock>
-      photos: global.Photo[];                 // Vector<Photo>
-      documents: global.Document[];           // Vector<Document>
+      blocks: api.PageBlock[];                // Vector<PageBlock>
+      photos: api.Photo[];                    // Vector<Photo>
+      documents: api.Document[];              // Vector<Document>
       views?: number;                         // flags.3?int
     },
   };
@@ -5742,7 +5742,7 @@ declare namespace global {
       multiple_choice?: true;                 // flags.2?true
       quiz?: true;                            // flags.3?true
       question: string;                       // string
-      answers: global.PollAnswer[];           // Vector<PollAnswer>
+      answers: api.PollAnswer[];              // Vector<PollAnswer>
       close_period?: number;                  // flags.4?int
       close_date?: number;                    // flags.5?int
     },
@@ -5768,11 +5768,11 @@ declare namespace global {
   export type _PollResults = {
     "pollResults": {
       min?: true;                             // flags.0?true
-      results?: global.PollAnswerVoters[];    // flags.1?Vector<PollAnswerVoters>
+      results?: api.PollAnswerVoters[];       // flags.1?Vector<PollAnswerVoters>
       total_voters?: number;                  // flags.2?int
-      recent_voters?: global.Peer[];          // flags.3?Vector<Peer>
+      recent_voters?: api.Peer[];             // flags.3?Vector<Peer>
       solution?: string;                      // flags.4?string
-      solution_entities?: global.MessageEntity[]; // flags.4?Vector<MessageEntity>
+      solution_entities?: api.MessageEntity[]; // flags.4?Vector<MessageEntity>
     },
   };
 
@@ -5949,7 +5949,7 @@ declare namespace global {
       lang_code: string;                      // string
       from_version: number;                   // int
       version: number;                        // int
-      keywords: global.EmojiKeyword[];        // Vector<EmojiKeyword>
+      keywords: api.EmojiKeyword[];           // Vector<EmojiKeyword>
     },
   };
 
@@ -5984,7 +5984,7 @@ declare namespace global {
       autofill_new_correspondents?: true;     // flags.2?true
       id: number;                             // int
       title: string;                          // string
-      photo?: global.ChatPhoto;               // flags.3?ChatPhoto
+      photo?: api.ChatPhoto;                  // flags.3?ChatPhoto
     },
   };
 
@@ -5994,7 +5994,7 @@ declare namespace global {
   > = ToUnderscore<_InputFolderPeer, K>;
   export type _InputFolderPeer = {
     "inputFolderPeer": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       folder_id: number;                      // int
     },
   };
@@ -6005,7 +6005,7 @@ declare namespace global {
   > = ToUnderscore<_FolderPeer, K>;
   export type _FolderPeer = {
     "folderPeer": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       folder_id: number;                      // int
     },
   };
@@ -6017,7 +6017,7 @@ declare namespace global {
   export type _UrlAuthResult = {
     "urlAuthResultRequest": {
       request_write_access?: true;            // flags.0?true
-      bot: global.User;                       // User
+      bot: api.User;                          // User
       domain: string;                         // string
     },
     "urlAuthResultAccepted": {
@@ -6035,7 +6035,7 @@ declare namespace global {
   export type _ChannelLocation = {
     "channelLocationEmpty": {}
     "channelLocation": {
-      geo_point: global.GeoPoint;             // GeoPoint
+      geo_point: api.GeoPoint;                // GeoPoint
       address: string;                        // string
     },
   };
@@ -6047,7 +6047,7 @@ declare namespace global {
   > = ToUnderscore<_PeerLocated, K>;
   export type _PeerLocated = {
     "peerLocated": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       expires: number;                        // int
       distance: number;                       // int
     },
@@ -6097,8 +6097,8 @@ declare namespace global {
       access_hash: bigint;                    // long
       slug: string;                           // string
       title: string;                          // string
-      document?: global.Document;             // flags.2?Document
-      settings?: global.ThemeSettings[];      // flags.3?Vector<ThemeSettings>
+      document?: api.Document;                // flags.2?Document
+      settings?: api.ThemeSettings[];         // flags.3?Vector<ThemeSettings>
       emoticon?: string;                      // flags.6?string
       installs_count?: number;                // flags.4?int
     },
@@ -6127,12 +6127,12 @@ declare namespace global {
   export type _InputThemeSettings = {
     "inputThemeSettings": {
       message_colors_animated?: true;         // flags.2?true
-      base_theme: global.BaseTheme;           // BaseTheme
+      base_theme: api.BaseTheme;              // BaseTheme
       accent_color: number;                   // int
       outbox_accent_color?: number;           // flags.3?int
       message_colors?: number[];              // flags.0?Vector<int>
-      wallpaper?: global.InputWallPaper;      // flags.1?InputWallPaper
-      wallpaper_settings?: global.WallPaperSettings; // flags.1?WallPaperSettings
+      wallpaper?: api.InputWallPaper;         // flags.1?InputWallPaper
+      wallpaper_settings?: api.WallPaperSettings; // flags.1?WallPaperSettings
     },
   };
 
@@ -6143,11 +6143,11 @@ declare namespace global {
   export type _ThemeSettings = {
     "themeSettings": {
       message_colors_animated?: true;         // flags.2?true
-      base_theme: global.BaseTheme;           // BaseTheme
+      base_theme: api.BaseTheme;              // BaseTheme
       accent_color: number;                   // int
       outbox_accent_color?: number;           // flags.3?int
       message_colors?: number[];              // flags.0?Vector<int>
-      wallpaper?: global.WallPaper;           // flags.1?WallPaper
+      wallpaper?: api.WallPaper;              // flags.1?WallPaper
     },
   };
 
@@ -6157,13 +6157,13 @@ declare namespace global {
   > = ToUnderscore<_WebPageAttribute, K>;
   export type _WebPageAttribute = {
     "webPageAttributeTheme": {
-      documents?: global.Document[];          // flags.0?Vector<Document>
-      settings?: global.ThemeSettings;        // flags.1?ThemeSettings
+      documents?: api.Document[];             // flags.0?Vector<Document>
+      settings?: api.ThemeSettings;           // flags.1?ThemeSettings
     },
     "webPageAttributeStory": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       id: number;                             // int
-      story?: global.StoryItem;               // flags.0?StoryItem
+      story?: api.StoryItem;                  // flags.0?StoryItem
     },
   };
 
@@ -6197,9 +6197,9 @@ declare namespace global {
       title: string;                          // string
       emoticon?: string;                      // flags.25?string
       color?: number;                         // flags.27?int
-      pinned_peers: global.InputPeer[];       // Vector<InputPeer>
-      include_peers: global.InputPeer[];      // Vector<InputPeer>
-      exclude_peers: global.InputPeer[];      // Vector<InputPeer>
+      pinned_peers: api.InputPeer[];          // Vector<InputPeer>
+      include_peers: api.InputPeer[];         // Vector<InputPeer>
+      exclude_peers: api.InputPeer[];         // Vector<InputPeer>
     },
     "dialogFilterDefault": {}
     "dialogFilterChatlist": {
@@ -6208,8 +6208,8 @@ declare namespace global {
       title: string;                          // string
       emoticon?: string;                      // flags.25?string
       color?: number;                         // flags.27?int
-      pinned_peers: global.InputPeer[];       // Vector<InputPeer>
-      include_peers: global.InputPeer[];      // Vector<InputPeer>
+      pinned_peers: api.InputPeer[];          // Vector<InputPeer>
+      include_peers: api.InputPeer[];         // Vector<InputPeer>
     },
   };
 
@@ -6221,7 +6221,7 @@ declare namespace global {
   > = ToUnderscore<_DialogFilterSuggested, K>;
   export type _DialogFilterSuggested = {
     "dialogFilterSuggested": {
-      filter: global.DialogFilter;            // DialogFilter
+      filter: api.DialogFilter;               // DialogFilter
       description: string;                    // string
     },
   };
@@ -6271,7 +6271,7 @@ declare namespace global {
       error: string;                          // string
     },
     "statsGraph": {
-      json: global.DataJSON;                  // DataJSON
+      json: api.DataJSON;                     // DataJSON
       zoom_token?: string;                    // flags.0?string
     },
   };
@@ -6295,7 +6295,7 @@ declare namespace global {
       background_colors: number[];            // Vector<int>
     },
     "videoSizeStickerMarkup": {
-      stickerset: global.InputStickerSet;     // InputStickerSet
+      stickerset: api.InputStickerSet;        // InputStickerSet
       sticker_id: bigint;                     // long
       background_colors: number[];            // Vector<int>
     },
@@ -6361,7 +6361,7 @@ declare namespace global {
     "messageViews": {
       views?: number;                         // flags.0?int
       forwards?: number;                      // flags.1?int
-      replies?: global.MessageReplies;        // flags.2?MessageReplies
+      replies?: api.MessageReplies;           // flags.2?MessageReplies
     },
   };
 
@@ -6375,16 +6375,16 @@ declare namespace global {
       forum_topic?: true;                     // flags.3?true
       quote?: true;                           // flags.9?true
       reply_to_msg_id?: number;               // flags.4?int
-      reply_to_peer_id?: global.Peer;         // flags.0?Peer
-      reply_from?: global.MessageFwdHeader;   // flags.5?MessageFwdHeader
-      reply_media?: global.MessageMedia;      // flags.8?MessageMedia
+      reply_to_peer_id?: api.Peer;            // flags.0?Peer
+      reply_from?: api.MessageFwdHeader;      // flags.5?MessageFwdHeader
+      reply_media?: api.MessageMedia;         // flags.8?MessageMedia
       reply_to_top_id?: number;               // flags.1?int
       quote_text?: string;                    // flags.6?string
-      quote_entities?: global.MessageEntity[]; // flags.7?Vector<MessageEntity>
+      quote_entities?: api.MessageEntity[];   // flags.7?Vector<MessageEntity>
       quote_offset?: number;                  // flags.10?int
     },
     "messageReplyStoryHeader": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       story_id: number;                       // int
     },
   };
@@ -6399,7 +6399,7 @@ declare namespace global {
       comments?: true;                        // flags.0?true
       replies: number;                        // int
       replies_pts: number;                    // int
-      recent_repliers?: global.Peer[];        // flags.1?Vector<Peer>
+      recent_repliers?: api.Peer[];           // flags.1?Vector<Peer>
       channel_id?: bigint;                    // flags.0?long
       max_id?: number;                        // flags.2?int
       read_max_id?: number;                   // flags.3?int
@@ -6412,7 +6412,7 @@ declare namespace global {
   > = ToUnderscore<_PeerBlocked, K>;
   export type _PeerBlocked = {
     "peerBlocked": {
-      peer_id: global.Peer;                   // Peer
+      peer_id: api.Peer;                      // Peer
       date: number;                           // int
     },
   };
@@ -6477,15 +6477,15 @@ declare namespace global {
       volume_by_admin?: true;                 // flags.10?true
       self?: true;                            // flags.12?true
       video_joined?: true;                    // flags.15?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       date: number;                           // int
       active_date?: number;                   // flags.3?int
       source: number;                         // int
       volume?: number;                        // flags.7?int
       about?: string;                         // flags.11?string
       raise_hand_rating?: bigint;             // flags.13?long
-      video?: global.GroupCallParticipantVideo; // flags.6?GroupCallParticipantVideo
-      presentation?: global.GroupCallParticipantVideo; // flags.14?GroupCallParticipantVideo
+      video?: api.GroupCallParticipantVideo;  // flags.6?GroupCallParticipantVideo
+      presentation?: api.GroupCallParticipantVideo; // flags.14?GroupCallParticipantVideo
     },
   };
 
@@ -6553,7 +6553,7 @@ declare namespace global {
     "groupCallParticipantVideo": {
       paused?: true;                          // flags.0?true
       endpoint: string;                       // string
-      source_groups: global.GroupCallParticipantVideoSourceGroup[]; // Vector<GroupCallParticipantVideoSourceGroup>
+      source_groups: api.GroupCallParticipantVideoSourceGroup[]; // Vector<GroupCallParticipantVideoSourceGroup>
       audio_source?: number;                  // flags.1?int
     },
   };
@@ -6568,14 +6568,14 @@ declare namespace global {
     "botCommandScopeChats": {}
     "botCommandScopeChatAdmins": {}
     "botCommandScopePeer": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
     },
     "botCommandScopePeerAdmins": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
     },
     "botCommandScopePeerUser": {
-      peer: global.InputPeer;                 // InputPeer
-      user_id: global.InputUser;              // InputUser
+      peer: api.InputPeer;                    // InputPeer
+      user_id: api.InputUser;                 // InputUser
     },
   };
 
@@ -6595,15 +6595,15 @@ declare namespace global {
       show_peer_photo?: true;                 // flags.6?true
       can_report?: true;                      // flags.12?true
       random_id: Uint8Array;                  // bytes
-      from_id?: global.Peer;                  // flags.3?Peer
-      chat_invite?: global.ChatInvite;        // flags.4?ChatInvite
+      from_id?: api.Peer;                     // flags.3?Peer
+      chat_invite?: api.ChatInvite;           // flags.4?ChatInvite
       chat_invite_hash?: string;              // flags.4?string
       channel_post?: number;                  // flags.2?int
       start_param?: string;                   // flags.0?string
-      webpage?: global.SponsoredWebPage;      // flags.9?SponsoredWebPage
-      app?: global.BotApp;                    // flags.10?BotApp
+      webpage?: api.SponsoredWebPage;         // flags.9?SponsoredWebPage
+      app?: api.BotApp;                       // flags.10?BotApp
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
       button_text?: string;                   // flags.11?string
       sponsor_info?: string;                  // flags.7?string
       additional_info?: string;               // flags.8?string
@@ -6642,7 +6642,7 @@ declare namespace global {
   export type _ReactionCount = {
     "reactionCount": {
       chosen_order?: number;                  // flags.0?int
-      reaction: global.Reaction;              // Reaction
+      reaction: api.Reaction;                 // Reaction
       count: number;                          // int
     },
   };
@@ -6656,8 +6656,8 @@ declare namespace global {
       min?: true;                             // flags.0?true
       can_see_list?: true;                    // flags.2?true
       reactions_as_tags?: true;               // flags.3?true
-      results: global.ReactionCount[];        // Vector<ReactionCount>
-      recent_reactions?: global.MessagePeerReaction[]; // flags.1?Vector<MessagePeerReaction>
+      results: api.ReactionCount[];           // Vector<ReactionCount>
+      recent_reactions?: api.MessagePeerReaction[]; // flags.1?Vector<MessagePeerReaction>
     },
   };
 
@@ -6671,13 +6671,13 @@ declare namespace global {
       premium?: true;                         // flags.2?true
       reaction: string;                       // string
       title: string;                          // string
-      static_icon: global.Document;           // Document
-      appear_animation: global.Document;      // Document
-      select_animation: global.Document;      // Document
-      activate_animation: global.Document;    // Document
-      effect_animation: global.Document;      // Document
-      around_animation?: global.Document;     // flags.1?Document
-      center_icon?: global.Document;          // flags.1?Document
+      static_icon: api.Document;              // Document
+      appear_animation: api.Document;         // Document
+      select_animation: api.Document;         // Document
+      activate_animation: api.Document;       // Document
+      effect_animation: api.Document;         // Document
+      around_animation?: api.Document;        // flags.1?Document
+      center_icon?: api.Document;             // flags.1?Document
     },
   };
 
@@ -6690,9 +6690,9 @@ declare namespace global {
       big?: true;                             // flags.0?true
       unread?: true;                          // flags.1?true
       my?: true;                              // flags.2?true
-      peer_id: global.Peer;                   // Peer
+      peer_id: api.Peer;                      // Peer
       date: number;                           // int
-      reaction: global.Reaction;              // Reaction
+      reaction: api.Reaction;                 // Reaction
     },
   };
 
@@ -6726,8 +6726,8 @@ declare namespace global {
   export type _AttachMenuBotIcon = {
     "attachMenuBotIcon": {
       name: string;                           // string
-      icon: global.Document;                  // Document
-      colors?: global.AttachMenuBotIconColor[]; // flags.0?Vector<AttachMenuBotIconColor>
+      icon: api.Document;                     // Document
+      colors?: api.AttachMenuBotIconColor[];  // flags.0?Vector<AttachMenuBotIconColor>
     },
   };
 
@@ -6745,8 +6745,8 @@ declare namespace global {
       side_menu_disclaimer_needed?: true;     // flags.5?true
       bot_id: bigint;                         // long
       short_name: string;                     // string
-      peer_types?: global.AttachMenuPeerType[]; // flags.3?Vector<AttachMenuPeerType>
-      icons: global.AttachMenuBotIcon[];      // Vector<AttachMenuBotIcon>
+      peer_types?: api.AttachMenuPeerType[];  // flags.3?Vector<AttachMenuPeerType>
+      icons: api.AttachMenuBotIcon[];         // Vector<AttachMenuBotIcon>
     },
   };
 
@@ -6758,8 +6758,8 @@ declare namespace global {
     "attachMenuBotsNotModified": {}
     "attachMenuBots": {
       hash: bigint;                           // long
-      bots: global.AttachMenuBot[];           // Vector<AttachMenuBot>
-      users: global.User[];                   // Vector<User>
+      bots: api.AttachMenuBot[];              // Vector<AttachMenuBot>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -6770,8 +6770,8 @@ declare namespace global {
   > = ToUnderscore<_AttachMenuBotsBot, K>;
   export type _AttachMenuBotsBot = {
     "attachMenuBotsBot": {
-      bot: global.AttachMenuBot;              // AttachMenuBot
-      users: global.User[];                   // Vector<User>
+      bot: api.AttachMenuBot;                 // AttachMenuBot
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -6802,7 +6802,7 @@ declare namespace global {
   > = ToUnderscore<_WebViewMessageSent, K>;
   export type _WebViewMessageSent = {
     "webViewMessageSent": {
-      msg_id?: global.InputBotInlineMessageID; // flags.0?InputBotInlineMessageID
+      msg_id?: api.InputBotInlineMessageID;   // flags.0?InputBotInlineMessageID
     },
   };
 
@@ -6862,15 +6862,15 @@ declare namespace global {
   > = ToUnderscore<_InputInvoice, K>;
   export type _InputInvoice = {
     "inputInvoiceMessage": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       msg_id: number;                         // int
     },
     "inputInvoiceSlug": {
       slug: string;                           // string
     },
     "inputInvoicePremiumGiftCode": {
-      purpose: global.InputStorePaymentPurpose; // InputStorePaymentPurpose
-      option: global.PremiumGiftCodeOption;   // PremiumGiftCodeOption
+      purpose: api.InputStorePaymentPurpose;  // InputStorePaymentPurpose
+      option: api.PremiumGiftCodeOption;      // PremiumGiftCodeOption
     },
   };
 
@@ -6886,21 +6886,21 @@ declare namespace global {
       upgrade?: true;                         // flags.1?true
     },
     "inputStorePaymentGiftPremium": {
-      user_id: global.InputUser;              // InputUser
+      user_id: api.InputUser;                 // InputUser
       currency: string;                       // string
       amount: bigint;                         // long
     },
     "inputStorePaymentPremiumGiftCode": {
-      users: global.InputUser[];              // Vector<InputUser>
-      boost_peer?: global.InputPeer;          // flags.0?InputPeer
+      users: api.InputUser[];                 // Vector<InputUser>
+      boost_peer?: api.InputPeer;             // flags.0?InputPeer
       currency: string;                       // string
       amount: bigint;                         // long
     },
     "inputStorePaymentPremiumGiveaway": {
       only_new_subscribers?: true;            // flags.0?true
       winners_are_visible?: true;             // flags.3?true
-      boost_peer: global.InputPeer;           // InputPeer
-      additional_peers?: global.InputPeer[];  // flags.1?Vector<InputPeer>
+      boost_peer: api.InputPeer;              // InputPeer
+      additional_peers?: api.InputPeer[];     // flags.1?Vector<InputPeer>
       countries_iso2?: string[];              // flags.2?Vector<string>
       prize_description?: string;             // flags.4?string
       random_id: bigint;                      // long
@@ -6981,7 +6981,7 @@ declare namespace global {
       allow_custom?: true;                    // flags.0?true
     },
     "chatReactionsSome": {
-      reactions: global.Reaction[];           // Vector<Reaction>
+      reactions: api.Reaction[];              // Vector<Reaction>
     },
   };
 
@@ -7044,7 +7044,7 @@ declare namespace global {
   export type _SendAsPeer = {
     "sendAsPeer": {
       premium_required?: true;                // flags.0?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
     },
   };
 
@@ -7056,11 +7056,11 @@ declare namespace global {
     "messageExtendedMediaPreview": {
       w?: number;                             // flags.0?int
       h?: number;                             // flags.0?int
-      thumb?: global.PhotoSize;               // flags.1?PhotoSize
+      thumb?: api.PhotoSize;                  // flags.1?PhotoSize
       video_duration?: number;                // flags.2?int
     },
     "messageExtendedMedia": {
-      media: global.MessageMedia;             // MessageMedia
+      media: api.MessageMedia;                // MessageMedia
     },
   };
 
@@ -7113,9 +7113,9 @@ declare namespace global {
       unread_count: number;                   // int
       unread_mentions_count: number;          // int
       unread_reactions_count: number;         // int
-      from_id: global.Peer;                   // Peer
-      notify_settings: global.PeerNotifySettings; // PeerNotifySettings
-      draft?: global.DraftMessage;            // flags.4?DraftMessage
+      from_id: api.Peer;                      // Peer
+      notify_settings: api.PeerNotifySettings; // PeerNotifySettings
+      draft?: api.DraftMessage;               // flags.4?DraftMessage
     },
   };
 
@@ -7155,14 +7155,14 @@ declare namespace global {
       bot_participant?: true;                 // flags.5?true
       has_username?: boolean;                 // flags.3?Bool
       forum?: boolean;                        // flags.4?Bool
-      user_admin_rights?: global.ChatAdminRights; // flags.1?ChatAdminRights
-      bot_admin_rights?: global.ChatAdminRights; // flags.2?ChatAdminRights
+      user_admin_rights?: api.ChatAdminRights; // flags.1?ChatAdminRights
+      bot_admin_rights?: api.ChatAdminRights; // flags.2?ChatAdminRights
     },
     "requestPeerTypeBroadcast": {
       creator?: true;                         // flags.0?true
       has_username?: boolean;                 // flags.3?Bool
-      user_admin_rights?: global.ChatAdminRights; // flags.1?ChatAdminRights
-      bot_admin_rights?: global.ChatAdminRights; // flags.2?ChatAdminRights
+      user_admin_rights?: api.ChatAdminRights; // flags.1?ChatAdminRights
+      bot_admin_rights?: api.ChatAdminRights; // flags.2?ChatAdminRights
     },
   };
 
@@ -7200,7 +7200,7 @@ declare namespace global {
   export type _TextWithEntities = {
     "textWithEntities": {
       text: string;                           // string
-      entities: global.MessageEntity[];       // Vector<MessageEntity>
+      entities: api.MessageEntity[];          // Vector<MessageEntity>
     },
   };
 
@@ -7222,8 +7222,8 @@ declare namespace global {
   > = ToUnderscore<_AutoSaveException, K>;
   export type _AutoSaveException = {
     "autoSaveException": {
-      peer: global.Peer;                      // Peer
-      settings: global.AutoSaveSettings;      // AutoSaveSettings
+      peer: api.Peer;                         // Peer
+      settings: api.AutoSaveSettings;         // AutoSaveSettings
     },
   };
 
@@ -7237,7 +7237,7 @@ declare namespace global {
       access_hash: bigint;                    // long
     },
     "inputBotAppShortName": {
-      bot_id: global.InputUser;               // InputUser
+      bot_id: api.InputUser;                  // InputUser
       short_name: string;                     // string
     },
   };
@@ -7255,8 +7255,8 @@ declare namespace global {
       short_name: string;                     // string
       title: string;                          // string
       description: string;                    // string
-      photo: global.Photo;                    // Photo
-      document?: global.Document;             // flags.0?Document
+      photo: api.Photo;                       // Photo
+      document?: api.Document;                // flags.0?Document
       hash: bigint;                           // long
     },
   };
@@ -7312,7 +7312,7 @@ declare namespace global {
     "exportedChatlistInvite": {
       title: string;                          // string
       url: string;                            // string
-      peers: global.Peer[];                   // Vector<Peer>
+      peers: api.Peer[];                      // Vector<Peer>
     },
   };
 
@@ -7322,16 +7322,16 @@ declare namespace global {
   > = ToUnderscore<_MessagePeerVote, K>;
   export type _MessagePeerVote = {
     "messagePeerVote": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       option: Uint8Array;                     // bytes
       date: number;                           // int
     },
     "messagePeerVoteInputOption": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       date: number;                           // int
     },
     "messagePeerVoteMultiple": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       options: Uint8Array[];                  // Vector<bytes>
       date: number;                           // int
     },
@@ -7347,7 +7347,7 @@ declare namespace global {
     "sponsoredWebPage": {
       url: string;                            // string
       site_name: string;                      // string
-      photo?: global.Photo;                   // flags.0?Photo
+      photo?: api.Photo;                      // flags.0?Photo
     },
   };
 
@@ -7360,7 +7360,7 @@ declare namespace global {
       has_viewers?: true;                     // flags.1?true
       views_count: number;                    // int
       forwards_count?: number;                // flags.2?int
-      reactions?: global.ReactionCount[];     // flags.3?Vector<ReactionCount>
+      reactions?: api.ReactionCount[];        // flags.3?Vector<ReactionCount>
       reactions_count?: number;               // flags.4?int
       recent_viewers?: bigint[];              // flags.0?Vector<long>
     },
@@ -7392,16 +7392,16 @@ declare namespace global {
       out?: true;                             // flags.16?true
       id: number;                             // int
       date: number;                           // int
-      from_id?: global.Peer;                  // flags.18?Peer
-      fwd_from?: global.StoryFwdHeader;       // flags.17?StoryFwdHeader
+      from_id?: api.Peer;                     // flags.18?Peer
+      fwd_from?: api.StoryFwdHeader;          // flags.17?StoryFwdHeader
       expire_date: number;                    // int
       caption?: string;                       // flags.0?string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
-      media: global.MessageMedia;             // MessageMedia
-      media_areas?: global.MediaArea[];       // flags.14?Vector<MediaArea>
-      privacy?: global.PrivacyRule[];         // flags.2?Vector<PrivacyRule>
-      views?: global.StoryViews;              // flags.3?StoryViews
-      sent_reaction?: global.Reaction;        // flags.15?Reaction
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
+      media: api.MessageMedia;                // MessageMedia
+      media_areas?: api.MediaArea[];          // flags.14?Vector<MediaArea>
+      privacy?: api.PrivacyRule[];            // flags.2?Vector<PrivacyRule>
+      views?: api.StoryViews;                 // flags.3?StoryViews
+      sent_reaction?: api.Reaction;           // flags.15?Reaction
     },
   };
 
@@ -7417,18 +7417,18 @@ declare namespace global {
       blocked_my_stories_from?: true;         // flags.1?true
       user_id: bigint;                        // long
       date: number;                           // int
-      reaction?: global.Reaction;             // flags.2?Reaction
+      reaction?: api.Reaction;                // flags.2?Reaction
     },
     "storyViewPublicForward": {
       blocked?: true;                         // flags.0?true
       blocked_my_stories_from?: true;         // flags.1?true
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "storyViewPublicRepost": {
       blocked?: true;                         // flags.0?true
       blocked_my_stories_from?: true;         // flags.1?true
-      peer_id: global.Peer;                   // Peer
-      story: global.StoryItem;                // StoryItem
+      peer_id: api.Peer;                      // Peer
+      story: api.StoryItem;                   // StoryItem
     },
   };
 
@@ -7442,13 +7442,13 @@ declare namespace global {
     "inputReplyToMessage": {
       reply_to_msg_id: number;                // int
       top_msg_id?: number;                    // flags.0?int
-      reply_to_peer_id?: global.InputPeer;    // flags.1?InputPeer
+      reply_to_peer_id?: api.InputPeer;       // flags.1?InputPeer
       quote_text?: string;                    // flags.2?string
-      quote_entities?: global.MessageEntity[]; // flags.3?Vector<MessageEntity>
+      quote_entities?: api.MessageEntity[];   // flags.3?Vector<MessageEntity>
       quote_offset?: number;                  // flags.4?int
     },
     "inputReplyToStory": {
-      peer: global.InputPeer;                 // InputPeer
+      peer: api.InputPeer;                    // InputPeer
       story_id: number;                       // int
     },
   };
@@ -7495,8 +7495,8 @@ declare namespace global {
   > = ToUnderscore<_MediaArea, K>;
   export type _MediaArea = {
     "mediaAreaVenue": {
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
-      geo: global.GeoPoint;                   // GeoPoint
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
+      geo: api.GeoPoint;                      // GeoPoint
       title: string;                          // string
       address: string;                        // string
       provider: string;                       // string
@@ -7504,28 +7504,28 @@ declare namespace global {
       venue_type: string;                     // string
     },
     "inputMediaAreaVenue": {
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
       query_id: bigint;                       // long
       result_id: string;                      // string
     },
     "mediaAreaGeoPoint": {
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
-      geo: global.GeoPoint;                   // GeoPoint
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
+      geo: api.GeoPoint;                      // GeoPoint
     },
     "mediaAreaSuggestedReaction": {
       dark?: true;                            // flags.0?true
       flipped?: true;                         // flags.1?true
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
-      reaction: global.Reaction;              // Reaction
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
+      reaction: api.Reaction;                 // Reaction
     },
     "mediaAreaChannelPost": {
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
       channel_id: bigint;                     // long
       msg_id: number;                         // int
     },
     "inputMediaAreaChannelPost": {
-      coordinates: global.MediaAreaCoordinates; // MediaAreaCoordinates
-      channel: global.InputChannel;           // InputChannel
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
+      channel: api.InputChannel;              // InputChannel
       msg_id: number;                         // int
     },
   };
@@ -7541,9 +7541,9 @@ declare namespace global {
   > = ToUnderscore<_PeerStories, K>;
   export type _PeerStories = {
     "peerStories": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       max_read_id?: number;                   // flags.0?int
-      stories: global.StoryItem[];            // Vector<StoryItem>
+      stories: api.StoryItem[];               // Vector<StoryItem>
     },
   };
 
@@ -7601,7 +7601,7 @@ declare namespace global {
   export type _MyBoost = {
     "myBoost": {
       slot: number;                           // int
-      peer?: global.Peer;                     // flags.0?Peer
+      peer?: api.Peer;                        // flags.0?Peer
       date: number;                           // int
       expires: number;                        // int
       cooldown_until_date?: number;           // flags.1?int
@@ -7615,7 +7615,7 @@ declare namespace global {
   export type _StoryFwdHeader = {
     "storyFwdHeader": {
       modified?: true;                        // flags.3?true
-      from?: global.Peer;                     // flags.0?Peer
+      from?: api.Peer;                        // flags.0?Peer
       from_name?: string;                     // flags.1?string
       story_id?: number;                      // flags.2?int
     },
@@ -7647,11 +7647,11 @@ declare namespace global {
   > = ToUnderscore<_PublicForward, K>;
   export type _PublicForward = {
     "publicForwardMessage": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "publicForwardStory": {
-      peer: global.Peer;                      // Peer
-      story: global.StoryItem;                // StoryItem
+      peer: api.Peer;                         // Peer
+      story: api.StoryItem;                   // StoryItem
     },
   };
 
@@ -7673,16 +7673,16 @@ declare namespace global {
   > = ToUnderscore<_StoryReaction, K>;
   export type _StoryReaction = {
     "storyReaction": {
-      peer_id: global.Peer;                   // Peer
+      peer_id: api.Peer;                      // Peer
       date: number;                           // int
-      reaction: global.Reaction;              // Reaction
+      reaction: api.Reaction;                 // Reaction
     },
     "storyReactionPublicForward": {
-      message: global.Message;                // Message
+      message: api.Message;                   // Message
     },
     "storyReactionPublicRepost": {
-      peer_id: global.Peer;                   // Peer
-      story: global.StoryItem;                // StoryItem
+      peer_id: api.Peer;                      // Peer
+      story: api.StoryItem;                   // StoryItem
     },
   };
 
@@ -7695,7 +7695,7 @@ declare namespace global {
   export type _SavedDialog = {
     "savedDialog": {
       pinned?: true;                          // flags.2?true
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       top_message: number;                    // int
     },
   };
@@ -7706,7 +7706,7 @@ declare namespace global {
   > = ToUnderscore<_SavedReactionTag, K>;
   export type _SavedReactionTag = {
     "savedReactionTag": {
-      reaction: global.Reaction;              // Reaction
+      reaction: api.Reaction;                 // Reaction
       title?: string;                         // flags.0?string
       count: number;                          // int
     },
@@ -7753,7 +7753,7 @@ declare namespace global {
     "businessWorkHours": {
       open_now?: true;                        // flags.0?true
       timezone_id: string;                    // string
-      weekly_open: global.BusinessWeeklyOpen[]; // Vector<BusinessWeeklyOpen>
+      weekly_open: api.BusinessWeeklyOpen[];  // Vector<BusinessWeeklyOpen>
     },
   };
 
@@ -7763,7 +7763,7 @@ declare namespace global {
   > = ToUnderscore<_BusinessLocation, K>;
   export type _BusinessLocation = {
     "businessLocation": {
-      geo_point?: global.GeoPoint;            // flags.0?GeoPoint
+      geo_point?: api.GeoPoint;               // flags.0?GeoPoint
       address: string;                        // string
     },
   };
@@ -7779,7 +7779,7 @@ declare namespace global {
       contacts?: true;                        // flags.2?true
       non_contacts?: true;                    // flags.3?true
       exclude_selected?: true;                // flags.5?true
-      users?: global.InputUser[];             // flags.4?Vector<InputUser>
+      users?: api.InputUser[];                // flags.4?Vector<InputUser>
     },
   };
 
@@ -7820,7 +7820,7 @@ declare namespace global {
   export type _InputBusinessGreetingMessage = {
     "inputBusinessGreetingMessage": {
       shortcut_id: number;                    // int
-      recipients: global.InputBusinessRecipients; // InputBusinessRecipients
+      recipients: api.InputBusinessRecipients; // InputBusinessRecipients
       no_activity_days: number;               // int
     },
   };
@@ -7832,7 +7832,7 @@ declare namespace global {
   export type _BusinessGreetingMessage = {
     "businessGreetingMessage": {
       shortcut_id: number;                    // int
-      recipients: global.BusinessRecipients;  // BusinessRecipients
+      recipients: api.BusinessRecipients;     // BusinessRecipients
       no_activity_days: number;               // int
     },
   };
@@ -7845,8 +7845,8 @@ declare namespace global {
     "inputBusinessAwayMessage": {
       offline_only?: true;                    // flags.0?true
       shortcut_id: number;                    // int
-      schedule: global.BusinessAwayMessageSchedule; // BusinessAwayMessageSchedule
-      recipients: global.InputBusinessRecipients; // InputBusinessRecipients
+      schedule: api.BusinessAwayMessageSchedule; // BusinessAwayMessageSchedule
+      recipients: api.InputBusinessRecipients; // InputBusinessRecipients
     },
   };
 
@@ -7858,8 +7858,8 @@ declare namespace global {
     "businessAwayMessage": {
       offline_only?: true;                    // flags.0?true
       shortcut_id: number;                    // int
-      schedule: global.BusinessAwayMessageSchedule; // BusinessAwayMessageSchedule
-      recipients: global.BusinessRecipients;  // BusinessRecipients
+      schedule: api.BusinessAwayMessageSchedule; // BusinessAwayMessageSchedule
+      recipients: api.BusinessRecipients;     // BusinessRecipients
     },
   };
 
@@ -7910,7 +7910,7 @@ declare namespace global {
     "connectedBot": {
       can_reply?: true;                       // flags.0?true
       bot_id: bigint;                         // long
-      recipients: global.BusinessBotRecipients; // BusinessBotRecipients
+      recipients: api.BusinessBotRecipients;  // BusinessBotRecipients
     },
   };
 
@@ -7949,7 +7949,7 @@ declare namespace global {
     "inputBusinessIntro": {
       title: string;                          // string
       description: string;                    // string
-      sticker?: global.InputDocument;         // flags.0?InputDocument
+      sticker?: api.InputDocument;            // flags.0?InputDocument
     },
   };
 
@@ -7961,7 +7961,7 @@ declare namespace global {
     "businessIntro": {
       title: string;                          // string
       description: string;                    // string
-      sticker?: global.Document;              // flags.0?Document
+      sticker?: api.Document;                 // flags.0?Document
     },
   };
 
@@ -7990,8 +7990,8 @@ declare namespace global {
       contacts?: true;                        // flags.2?true
       non_contacts?: true;                    // flags.3?true
       exclude_selected?: true;                // flags.5?true
-      users?: global.InputUser[];             // flags.4?Vector<InputUser>
-      exclude_users?: global.InputUser[];     // flags.6?Vector<InputUser>
+      users?: api.InputUser[];                // flags.4?Vector<InputUser>
+      exclude_users?: api.InputUser[];        // flags.6?Vector<InputUser>
     },
   };
 
@@ -8018,7 +8018,7 @@ declare namespace global {
   export type _ContactBirthday = {
     "contactBirthday": {
       contact_id: bigint;                     // long
-      birthday: global.Birthday;              // Birthday
+      birthday: api.Birthday;                 // Birthday
     },
   };
 
@@ -8041,7 +8041,7 @@ declare namespace global {
   export type _InputBusinessChatLink = {
     "inputBusinessChatLink": {
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.0?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.0?Vector<MessageEntity>
       title?: string;                         // flags.1?string
     },
   };
@@ -8054,7 +8054,7 @@ declare namespace global {
     "businessChatLink": {
       link: string;                           // string
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.0?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.0?Vector<MessageEntity>
       title?: string;                         // flags.1?string
       views: number;                          // int
     },
@@ -8070,18 +8070,18 @@ declare namespace global {
       first_name?: string;                    // flags.0?string
       last_name?: string;                     // flags.0?string
       username?: string;                      // flags.1?string
-      photo?: global.Photo;                   // flags.2?Photo
+      photo?: api.Photo;                      // flags.2?Photo
     },
     "requestedPeerChat": {
       chat_id: bigint;                        // long
       title?: string;                         // flags.0?string
-      photo?: global.Photo;                   // flags.2?Photo
+      photo?: api.Photo;                      // flags.2?Photo
     },
     "requestedPeerChannel": {
       channel_id: bigint;                     // long
       title?: string;                         // flags.0?string
       username?: string;                      // flags.1?string
-      photo?: global.Photo;                   // flags.2?Photo
+      photo?: api.Photo;                      // flags.2?Photo
     },
   };
 
@@ -8128,8 +8128,6 @@ declare namespace global {
   export const broadcastRevenueTransactionWithdrawal: TLConstructor<_BroadcastRevenueTransaction, "broadcastRevenueTransactionWithdrawal">;
   export const broadcastRevenueTransactionRefund: TLConstructor<_BroadcastRevenueTransaction, "broadcastRevenueTransactionRefund">;
 }
-
-export default global;
 
 export namespace storage {
   export type FileType<
@@ -8187,7 +8185,7 @@ export namespace auth {
       otherwise_relogin_days?: number;        // flags.1?int
       tmp_sessions?: number;                  // flags.0?int
       future_auth_token?: Uint8Array;         // flags.2?bytes
-      user: global.User;                      // User
+      user: api.User;                         // User
     },
     "auth.authorizationSignUpRequired": {
       terms_of_service?: help.TermsOfService; // flags.0?help.TermsOfService
@@ -8325,9 +8323,9 @@ export namespace contacts {
   export type _Contacts = {
     "contacts.contactsNotModified": {}
     "contacts.contacts": {
-      contacts: global.Contact[];             // Vector<Contact>
+      contacts: api.Contact[];                // Vector<Contact>
       saved_count: number;                    // int
-      users: global.User[];                   // Vector<User>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8338,10 +8336,10 @@ export namespace contacts {
   > = ToUnderscore<_ImportedContacts, K>;
   export type _ImportedContacts = {
     "contacts.importedContacts": {
-      imported: global.ImportedContact[];     // Vector<ImportedContact>
-      popular_invites: global.PopularContact[]; // Vector<PopularContact>
+      imported: api.ImportedContact[];        // Vector<ImportedContact>
+      popular_invites: api.PopularContact[];  // Vector<PopularContact>
       retry_contacts: bigint[];               // Vector<long>
-      users: global.User[];                   // Vector<User>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8351,15 +8349,15 @@ export namespace contacts {
   > = ToUnderscore<_Blocked, K>;
   export type _Blocked = {
     "contacts.blocked": {
-      blocked: global.PeerBlocked[];          // Vector<PeerBlocked>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      blocked: api.PeerBlocked[];             // Vector<PeerBlocked>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "contacts.blockedSlice": {
       count: number;                          // int
-      blocked: global.PeerBlocked[];          // Vector<PeerBlocked>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      blocked: api.PeerBlocked[];             // Vector<PeerBlocked>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8370,10 +8368,10 @@ export namespace contacts {
   > = ToUnderscore<_Found, K>;
   export type _Found = {
     "contacts.found": {
-      my_results: global.Peer[];              // Vector<Peer>
-      results: global.Peer[];                 // Vector<Peer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      my_results: api.Peer[];                 // Vector<Peer>
+      results: api.Peer[];                    // Vector<Peer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8383,9 +8381,9 @@ export namespace contacts {
   > = ToUnderscore<_ResolvedPeer, K>;
   export type _ResolvedPeer = {
     "contacts.resolvedPeer": {
-      peer: global.Peer;                      // Peer
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      peer: api.Peer;                         // Peer
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8396,9 +8394,9 @@ export namespace contacts {
   export type _TopPeers = {
     "contacts.topPeersNotModified": {}
     "contacts.topPeers": {
-      categories: global.TopPeerCategoryPeers[]; // Vector<TopPeerCategoryPeers>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      categories: api.TopPeerCategoryPeers[]; // Vector<TopPeerCategoryPeers>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "contacts.topPeersDisabled": {}
   };
@@ -8411,8 +8409,8 @@ export namespace contacts {
   > = ToUnderscore<_ContactBirthdays, K>;
   export type _ContactBirthdays = {
     "contacts.contactBirthdays": {
-      contacts: global.ContactBirthday[];     // Vector<ContactBirthday>
-      users: global.User[];                   // Vector<User>
+      contacts: api.ContactBirthday[];        // Vector<ContactBirthday>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8425,17 +8423,17 @@ export namespace messages {
   > = ToUnderscore<_Dialogs, K>;
   export type _Dialogs = {
     "messages.dialogs": {
-      dialogs: global.Dialog[];               // Vector<Dialog>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialogs: api.Dialog[];                  // Vector<Dialog>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.dialogsSlice": {
       count: number;                          // int
-      dialogs: global.Dialog[];               // Vector<Dialog>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialogs: api.Dialog[];                  // Vector<Dialog>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.dialogsNotModified": {
       count: number;                          // int
@@ -8450,28 +8448,28 @@ export namespace messages {
   > = ToUnderscore<_Messages, K>;
   export type _Messages = {
     "messages.messages": {
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.messagesSlice": {
       inexact?: true;                         // flags.1?true
       count: number;                          // int
       next_rate?: number;                     // flags.0?int
       offset_id_offset?: number;              // flags.2?int
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.channelMessages": {
       inexact?: true;                         // flags.1?true
       pts: number;                            // int
       count: number;                          // int
       offset_id_offset?: number;              // flags.2?int
-      messages: global.Message[];             // Vector<Message>
-      topics: global.ForumTopic[];            // Vector<ForumTopic>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      messages: api.Message[];                // Vector<Message>
+      topics: api.ForumTopic[];               // Vector<ForumTopic>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.messagesNotModified": {
       count: number;                          // int
@@ -8487,11 +8485,11 @@ export namespace messages {
   > = ToUnderscore<_Chats, K>;
   export type _Chats = {
     "messages.chats": {
-      chats: global.Chat[];                   // Vector<Chat>
+      chats: api.Chat[];                      // Vector<Chat>
     },
     "messages.chatsSlice": {
       count: number;                          // int
-      chats: global.Chat[];                   // Vector<Chat>
+      chats: api.Chat[];                      // Vector<Chat>
     },
   };
 
@@ -8502,9 +8500,9 @@ export namespace messages {
   > = ToUnderscore<_ChatFull, K>;
   export type _ChatFull = {
     "messages.chatFull": {
-      full_chat: global.ChatFull;             // ChatFull
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      full_chat: api.ChatFull;                // ChatFull
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8547,7 +8545,7 @@ export namespace messages {
     },
     "messages.sentEncryptedFile": {
       date: number;                           // int
-      file: global.EncryptedFile;             // EncryptedFile
+      file: api.EncryptedFile;                // EncryptedFile
     },
   };
 
@@ -8560,7 +8558,7 @@ export namespace messages {
     "messages.stickersNotModified": {}
     "messages.stickers": {
       hash: bigint;                           // long
-      stickers: global.Document[];            // Vector<Document>
+      stickers: api.Document[];               // Vector<Document>
     },
   };
 
@@ -8573,7 +8571,7 @@ export namespace messages {
     "messages.allStickersNotModified": {}
     "messages.allStickers": {
       hash: bigint;                           // long
-      sets: global.StickerSet[];              // Vector<StickerSet>
+      sets: api.StickerSet[];                 // Vector<StickerSet>
     },
   };
 
@@ -8595,10 +8593,10 @@ export namespace messages {
   > = ToUnderscore<_StickerSet, K>;
   export type _StickerSet = {
     "messages.stickerSet": {
-      set: global.StickerSet;                 // StickerSet
-      packs: global.StickerPack[];            // Vector<StickerPack>
-      keywords: global.StickerKeyword[];      // Vector<StickerKeyword>
-      documents: global.Document[];           // Vector<Document>
+      set: api.StickerSet;                    // StickerSet
+      packs: api.StickerPack[];               // Vector<StickerPack>
+      keywords: api.StickerKeyword[];         // Vector<StickerKeyword>
+      documents: api.Document[];              // Vector<Document>
     },
     "messages.stickerSetNotModified": {}
   };
@@ -8612,7 +8610,7 @@ export namespace messages {
     "messages.savedGifsNotModified": {}
     "messages.savedGifs": {
       hash: bigint;                           // long
-      gifs: global.Document[];                // Vector<Document>
+      gifs: api.Document[];                   // Vector<Document>
     },
   };
 
@@ -8626,11 +8624,11 @@ export namespace messages {
       gallery?: true;                         // flags.0?true
       query_id: bigint;                       // long
       next_offset?: string;                   // flags.1?string
-      switch_pm?: global.InlineBotSwitchPM;   // flags.2?InlineBotSwitchPM
-      switch_webview?: global.InlineBotWebView; // flags.3?InlineBotWebView
-      results: global.BotInlineResult[];      // Vector<BotInlineResult>
+      switch_pm?: api.InlineBotSwitchPM;      // flags.2?InlineBotSwitchPM
+      switch_webview?: api.InlineBotWebView;  // flags.3?InlineBotWebView
+      results: api.BotInlineResult[];         // Vector<BotInlineResult>
       cache_time: number;                     // int
-      users: global.User[];                   // Vector<User>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8665,10 +8663,10 @@ export namespace messages {
   > = ToUnderscore<_PeerDialogs, K>;
   export type _PeerDialogs = {
     "messages.peerDialogs": {
-      dialogs: global.Dialog[];               // Vector<Dialog>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialogs: api.Dialog[];                  // Vector<Dialog>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       state: updates.State;                   // updates.State
     },
   };
@@ -8685,7 +8683,7 @@ export namespace messages {
       premium?: true;                         // flags.0?true
       hash: bigint;                           // long
       count: number;                          // int
-      sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
+      sets: api.StickerSetCovered[];          // Vector<StickerSetCovered>
       unread: bigint[];                       // Vector<long>
     },
   };
@@ -8699,8 +8697,8 @@ export namespace messages {
     "messages.recentStickersNotModified": {}
     "messages.recentStickers": {
       hash: bigint;                           // long
-      packs: global.StickerPack[];            // Vector<StickerPack>
-      stickers: global.Document[];            // Vector<Document>
+      packs: api.StickerPack[];               // Vector<StickerPack>
+      stickers: api.Document[];               // Vector<Document>
       dates: number[];                        // Vector<int>
     },
   };
@@ -8713,7 +8711,7 @@ export namespace messages {
   export type _ArchivedStickers = {
     "messages.archivedStickers": {
       count: number;                          // int
-      sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
+      sets: api.StickerSetCovered[];          // Vector<StickerSetCovered>
     },
   };
 
@@ -8724,7 +8722,7 @@ export namespace messages {
   export type _StickerSetInstallResult = {
     "messages.stickerSetInstallResultSuccess": {}
     "messages.stickerSetInstallResultArchive": {
-      sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
+      sets: api.StickerSetCovered[];          // Vector<StickerSetCovered>
     },
   };
 
@@ -8735,8 +8733,8 @@ export namespace messages {
   > = ToUnderscore<_HighScores, K>;
   export type _HighScores = {
     "messages.highScores": {
-      scores: global.HighScore[];             // Vector<HighScore>
-      users: global.User[];                   // Vector<User>
+      scores: api.HighScore[];                // Vector<HighScore>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8748,8 +8746,8 @@ export namespace messages {
     "messages.favedStickersNotModified": {}
     "messages.favedStickers": {
       hash: bigint;                           // long
-      packs: global.StickerPack[];            // Vector<StickerPack>
-      stickers: global.Document[];            // Vector<Document>
+      packs: api.StickerPack[];               // Vector<StickerPack>
+      stickers: api.Document[];               // Vector<Document>
     },
   };
 
@@ -8762,7 +8760,7 @@ export namespace messages {
     "messages.foundStickerSetsNotModified": {}
     "messages.foundStickerSets": {
       hash: bigint;                           // long
-      sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
+      sets: api.StickerSetCovered[];          // Vector<StickerSetCovered>
     },
   };
 
@@ -8774,7 +8772,7 @@ export namespace messages {
   export type _SearchCounter = {
     "messages.searchCounter": {
       inexact?: true;                         // flags.1?true
-      filter: global.MessagesFilter;          // MessagesFilter
+      filter: api.MessagesFilter;             // MessagesFilter
       count: number;                          // int
     },
   };
@@ -8786,8 +8784,8 @@ export namespace messages {
   export type _InactiveChats = {
     "messages.inactiveChats": {
       dates: number[];                        // Vector<int>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8798,9 +8796,9 @@ export namespace messages {
   export type _VotesList = {
     "messages.votesList": {
       count: number;                          // int
-      votes: global.MessagePeerVote[];        // Vector<MessagePeerVote>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      votes: api.MessagePeerVote[];           // Vector<MessagePeerVote>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       next_offset?: string;                   // flags.0?string
     },
   };
@@ -8811,9 +8809,9 @@ export namespace messages {
   > = ToUnderscore<_MessageViews, K>;
   export type _MessageViews = {
     "messages.messageViews": {
-      views: global.MessageViews[];           // Vector<MessageViews>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      views: api.MessageViews[];              // Vector<MessageViews>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8823,13 +8821,13 @@ export namespace messages {
   > = ToUnderscore<_DiscussionMessage, K>;
   export type _DiscussionMessage = {
     "messages.discussionMessage": {
-      messages: global.Message[];             // Vector<Message>
+      messages: api.Message[];                // Vector<Message>
       max_id?: number;                        // flags.0?int
       read_inbox_max_id?: number;             // flags.1?int
       read_outbox_max_id?: number;            // flags.2?int
       unread_count: number;                   // int
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8875,8 +8873,8 @@ export namespace messages {
   export type _ExportedChatInvites = {
     "messages.exportedChatInvites": {
       count: number;                          // int
-      invites: global.ExportedChatInvite[];   // Vector<ExportedChatInvite>
-      users: global.User[];                   // Vector<User>
+      invites: api.ExportedChatInvite[];      // Vector<ExportedChatInvite>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8886,13 +8884,13 @@ export namespace messages {
   > = ToUnderscore<_ExportedChatInvite, K>;
   export type _ExportedChatInvite = {
     "messages.exportedChatInvite": {
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
-      users: global.User[];                   // Vector<User>
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
+      users: api.User[];                      // Vector<User>
     },
     "messages.exportedChatInviteReplaced": {
-      invite: global.ExportedChatInvite;      // ExportedChatInvite
-      new_invite: global.ExportedChatInvite;  // ExportedChatInvite
-      users: global.User[];                   // Vector<User>
+      invite: api.ExportedChatInvite;         // ExportedChatInvite
+      new_invite: api.ExportedChatInvite;     // ExportedChatInvite
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8904,8 +8902,8 @@ export namespace messages {
   export type _ChatInviteImporters = {
     "messages.chatInviteImporters": {
       count: number;                          // int
-      importers: global.ChatInviteImporter[]; // Vector<ChatInviteImporter>
-      users: global.User[];                   // Vector<User>
+      importers: api.ChatInviteImporter[];    // Vector<ChatInviteImporter>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8915,8 +8913,8 @@ export namespace messages {
   > = ToUnderscore<_ChatAdminsWithInvites, K>;
   export type _ChatAdminsWithInvites = {
     "messages.chatAdminsWithInvites": {
-      admins: global.ChatAdminWithInvites[];  // Vector<ChatAdminWithInvites>
-      users: global.User[];                   // Vector<User>
+      admins: api.ChatAdminWithInvites[];     // Vector<ChatAdminWithInvites>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8937,9 +8935,9 @@ export namespace messages {
   export type _SponsoredMessages = {
     "messages.sponsoredMessages": {
       posts_between?: number;                 // flags.0?int
-      messages: global.SponsoredMessage[];    // Vector<SponsoredMessage>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      messages: api.SponsoredMessage[];       // Vector<SponsoredMessage>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.sponsoredMessagesEmpty": {}
   };
@@ -8956,10 +8954,10 @@ export namespace messages {
       min_date: number;                       // int
       min_msg_id: number;                     // int
       offset_id_offset?: number;              // flags.1?int
-      periods: global.SearchResultsCalendarPeriod[]; // Vector<SearchResultsCalendarPeriod>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      periods: api.SearchResultsCalendarPeriod[]; // Vector<SearchResultsCalendarPeriod>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8970,7 +8968,7 @@ export namespace messages {
   export type _SearchResultsPositions = {
     "messages.searchResultsPositions": {
       count: number;                          // int
-      positions: global.SearchResultsPosition[]; // Vector<SearchResultsPosition>
+      positions: api.SearchResultsPosition[]; // Vector<SearchResultsPosition>
     },
   };
 
@@ -8980,9 +8978,9 @@ export namespace messages {
   > = ToUnderscore<_PeerSettings, K>;
   export type _PeerSettings = {
     "messages.peerSettings": {
-      settings: global.PeerSettings;          // PeerSettings
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      settings: api.PeerSettings;             // PeerSettings
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -8993,9 +8991,9 @@ export namespace messages {
   export type _MessageReactionsList = {
     "messages.messageReactionsList": {
       count: number;                          // int
-      reactions: global.MessagePeerReaction[]; // Vector<MessagePeerReaction>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      reactions: api.MessagePeerReaction[];   // Vector<MessagePeerReaction>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       next_offset?: string;                   // flags.0?string
     },
   };
@@ -9008,7 +9006,7 @@ export namespace messages {
     "messages.availableReactionsNotModified": {}
     "messages.availableReactions": {
       hash: number;                           // int
-      reactions: global.AvailableReaction[];  // Vector<AvailableReaction>
+      reactions: api.AvailableReaction[];     // Vector<AvailableReaction>
     },
   };
 
@@ -9035,7 +9033,7 @@ export namespace messages {
     "messages.reactionsNotModified": {}
     "messages.reactions": {
       hash: bigint;                           // long
-      reactions: global.Reaction[];           // Vector<Reaction>
+      reactions: api.Reaction[];              // Vector<Reaction>
     },
   };
 
@@ -9048,10 +9046,10 @@ export namespace messages {
     "messages.forumTopics": {
       order_by_create_date?: true;            // flags.0?true
       count: number;                          // int
-      topics: global.ForumTopic[];            // Vector<ForumTopic>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      topics: api.ForumTopic[];               // Vector<ForumTopic>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       pts: number;                            // int
     },
   };
@@ -9064,7 +9062,7 @@ export namespace messages {
     "messages.emojiGroupsNotModified": {}
     "messages.emojiGroups": {
       hash: number;                           // int
-      groups: global.EmojiGroup[];            // Vector<EmojiGroup>
+      groups: api.EmojiGroup[];               // Vector<EmojiGroup>
     },
   };
 
@@ -9075,7 +9073,7 @@ export namespace messages {
   > = ToUnderscore<_TranslatedText, K>;
   export type _TranslatedText = {
     "messages.translateResult": {
-      result: global.TextWithEntities[];      // Vector<TextWithEntities>
+      result: api.TextWithEntities[];         // Vector<TextWithEntities>
     },
   };
 
@@ -9088,7 +9086,7 @@ export namespace messages {
       inactive?: true;                        // flags.0?true
       request_write_access?: true;            // flags.1?true
       has_settings?: true;                    // flags.2?true
-      app: global.BotApp;                     // BotApp
+      app: api.BotApp;                        // BotApp
     },
   };
 
@@ -9098,9 +9096,9 @@ export namespace messages {
   > = ToUnderscore<_WebPage, K>;
   export type _WebPage = {
     "messages.webPage": {
-      webpage: global.WebPage;                // WebPage
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      webpage: api.WebPage;                   // WebPage
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9110,17 +9108,17 @@ export namespace messages {
   > = ToUnderscore<_SavedDialogs, K>;
   export type _SavedDialogs = {
     "messages.savedDialogs": {
-      dialogs: global.SavedDialog[];          // Vector<SavedDialog>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialogs: api.SavedDialog[];             // Vector<SavedDialog>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.savedDialogsSlice": {
       count: number;                          // int
-      dialogs: global.SavedDialog[];          // Vector<SavedDialog>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialogs: api.SavedDialog[];             // Vector<SavedDialog>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.savedDialogsNotModified": {
       count: number;                          // int
@@ -9136,7 +9134,7 @@ export namespace messages {
   export type _SavedReactionTags = {
     "messages.savedReactionTagsNotModified": {}
     "messages.savedReactionTags": {
-      tags: global.SavedReactionTag[];        // Vector<SavedReactionTag>
+      tags: api.SavedReactionTag[];           // Vector<SavedReactionTag>
       hash: bigint;                           // long
     },
   };
@@ -9148,10 +9146,10 @@ export namespace messages {
   > = ToUnderscore<_QuickReplies, K>;
   export type _QuickReplies = {
     "messages.quickReplies": {
-      quick_replies: global.QuickReply[];     // Vector<QuickReply>
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      quick_replies: api.QuickReply[];        // Vector<QuickReply>
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "messages.quickRepliesNotModified": {}
   };
@@ -9164,7 +9162,7 @@ export namespace messages {
   export type _DialogFilters = {
     "messages.dialogFilters": {
       tags_enabled?: true;                    // flags.0?true
-      filters: global.DialogFilter[];         // Vector<DialogFilter>
+      filters: api.DialogFilter[];            // Vector<DialogFilter>
     },
   };
 
@@ -9175,7 +9173,7 @@ export namespace messages {
   export type _MyStickers = {
     "messages.myStickers": {
       count: number;                          // int
-      sets: global.StickerSetCovered[];       // Vector<StickerSetCovered>
+      sets: api.StickerSetCovered[];          // Vector<StickerSetCovered>
     },
   };
 
@@ -9185,8 +9183,8 @@ export namespace messages {
   > = ToUnderscore<_InvitedUsers, K>;
   export type _InvitedUsers = {
     "messages.invitedUsers": {
-      updates: global.Updates;                // Updates
-      missing_invitees: global.MissingInvitee[]; // Vector<MissingInvitee>
+      updates: api.Updates;                   // Updates
+      missing_invitees: api.MissingInvitee[]; // Vector<MissingInvitee>
     },
   };
 
@@ -9217,19 +9215,19 @@ export namespace updates {
       seq: number;                            // int
     },
     "updates.difference": {
-      new_messages: global.Message[];         // Vector<Message>
-      new_encrypted_messages: global.EncryptedMessage[]; // Vector<EncryptedMessage>
-      other_updates: global.Update[];         // Vector<Update>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      new_messages: api.Message[];            // Vector<Message>
+      new_encrypted_messages: api.EncryptedMessage[]; // Vector<EncryptedMessage>
+      other_updates: api.Update[];            // Vector<Update>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       state: updates.State;                   // updates.State
     },
     "updates.differenceSlice": {
-      new_messages: global.Message[];         // Vector<Message>
-      new_encrypted_messages: global.EncryptedMessage[]; // Vector<EncryptedMessage>
-      other_updates: global.Update[];         // Vector<Update>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      new_messages: api.Message[];            // Vector<Message>
+      new_encrypted_messages: api.EncryptedMessage[]; // Vector<EncryptedMessage>
+      other_updates: api.Update[];            // Vector<Update>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       intermediate_state: updates.State;      // updates.State
     },
     "updates.differenceTooLong": {
@@ -9253,19 +9251,19 @@ export namespace updates {
     "updates.channelDifferenceTooLong": {
       final?: true;                           // flags.0?true
       timeout?: number;                       // flags.1?int
-      dialog: global.Dialog;                  // Dialog
-      messages: global.Message[];             // Vector<Message>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      dialog: api.Dialog;                     // Dialog
+      messages: api.Message[];                // Vector<Message>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "updates.channelDifference": {
       final?: true;                           // flags.0?true
       pts: number;                            // int
       timeout?: number;                       // flags.1?int
-      new_messages: global.Message[];         // Vector<Message>
-      other_updates: global.Update[];         // Vector<Update>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      new_messages: api.Message[];            // Vector<Message>
+      other_updates: api.Update[];            // Vector<Update>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9280,13 +9278,13 @@ export namespace photos {
   > = ToUnderscore<_Photos, K>;
   export type _Photos = {
     "photos.photos": {
-      photos: global.Photo[];                 // Vector<Photo>
-      users: global.User[];                   // Vector<User>
+      photos: api.Photo[];                    // Vector<Photo>
+      users: api.User[];                      // Vector<User>
     },
     "photos.photosSlice": {
       count: number;                          // int
-      photos: global.Photo[];                 // Vector<Photo>
-      users: global.User[];                   // Vector<User>
+      photos: api.Photo[];                    // Vector<Photo>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9297,8 +9295,8 @@ export namespace photos {
   > = ToUnderscore<_Photo, K>;
   export type _Photo = {
     "photos.photo": {
-      photo: global.Photo;                    // Photo
-      users: global.User[];                   // Vector<User>
+      photo: api.Photo;                       // Photo
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9320,7 +9318,7 @@ export namespace upload {
       file_token: Uint8Array;                 // bytes
       encryption_key: Uint8Array;             // bytes
       encryption_iv: Uint8Array;              // bytes
-      file_hashes: global.FileHash[];         // Vector<FileHash>
+      file_hashes: api.FileHash[];            // Vector<FileHash>
     },
   };
 
@@ -9366,10 +9364,10 @@ export namespace help {
       id: number;                             // int
       version: string;                        // string
       text: string;                           // string
-      entities: global.MessageEntity[];       // Vector<MessageEntity>
-      document?: global.Document;             // flags.1?Document
+      entities: api.MessageEntity[];          // Vector<MessageEntity>
+      document?: api.Document;                // flags.1?Document
       url?: string;                           // flags.2?string
-      sticker?: global.Document;              // flags.3?Document
+      sticker?: api.Document;                 // flags.3?Document
     },
     "help.noAppUpdate": {}
   };
@@ -9392,7 +9390,7 @@ export namespace help {
   export type _Support = {
     "help.support": {
       phone_number: string;                   // string
-      user: global.User;                      // User
+      user: api.User;                         // User
     },
   };
 
@@ -9403,9 +9401,9 @@ export namespace help {
   export type _TermsOfService = {
     "help.termsOfService": {
       popup?: true;                           // flags.0?true
-      id: global.DataJSON;                    // DataJSON
+      id: api.DataJSON;                       // DataJSON
       text: string;                           // string
-      entities: global.MessageEntity[];       // Vector<MessageEntity>
+      entities: api.MessageEntity[];          // Vector<MessageEntity>
       min_age_confirm?: number;               // flags.1?int
     },
   };
@@ -9416,9 +9414,9 @@ export namespace help {
   > = ToUnderscore<_RecentMeUrls, K>;
   export type _RecentMeUrls = {
     "help.recentMeUrls": {
-      urls: global.RecentMeUrl[];             // Vector<RecentMeUrl>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      urls: api.RecentMeUrl[];                // Vector<RecentMeUrl>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9446,7 +9444,7 @@ export namespace help {
     "help.deepLinkInfo": {
       update_app?: true;                      // flags.0?true
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.1?Vector<MessageEntity>
+      entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
     },
   };
 
@@ -9459,7 +9457,7 @@ export namespace help {
     "help.passportConfigNotModified": {}
     "help.passportConfig": {
       hash: number;                           // int
-      countries_langs: global.DataJSON;       // DataJSON
+      countries_langs: api.DataJSON;          // DataJSON
     },
   };
 
@@ -9482,7 +9480,7 @@ export namespace help {
     "help.userInfoEmpty": {}
     "help.userInfo": {
       message: string;                        // string
-      entities: global.MessageEntity[];       // Vector<MessageEntity>
+      entities: api.MessageEntity[];          // Vector<MessageEntity>
       author: string;                         // string
       date: number;                           // int
     },
@@ -9500,9 +9498,9 @@ export namespace help {
     "help.promoData": {
       proxy?: true;                           // flags.0?true
       expires: number;                        // int
-      peer: global.Peer;                      // Peer
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      peer: api.Peer;                         // Peer
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       psa_type?: string;                      // flags.1?string
       psa_message?: string;                   // flags.2?string
     },
@@ -9555,11 +9553,11 @@ export namespace help {
   export type _PremiumPromo = {
     "help.premiumPromo": {
       status_text: string;                    // string
-      status_entities: global.MessageEntity[]; // Vector<MessageEntity>
+      status_entities: api.MessageEntity[];   // Vector<MessageEntity>
       video_sections: string[];               // Vector<string>
-      videos: global.Document[];              // Vector<Document>
-      period_options: global.PremiumSubscriptionOption[]; // Vector<PremiumSubscriptionOption>
-      users: global.User[];                   // Vector<User>
+      videos: api.Document[];                 // Vector<Document>
+      period_options: api.PremiumSubscriptionOption[]; // Vector<PremiumSubscriptionOption>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9571,7 +9569,7 @@ export namespace help {
     "help.appConfigNotModified": {}
     "help.appConfig": {
       hash: number;                           // int
-      config: global.JSONValue;               // JSONValue
+      config: api.JSONValue;                  // JSONValue
     },
   };
 
@@ -9627,7 +9625,7 @@ export namespace help {
   export type _TimezonesList = {
     "help.timezonesListNotModified": {}
     "help.timezonesList": {
-      timezones: global.Timezone[];           // Vector<Timezone>
+      timezones: api.Timezone[];              // Vector<Timezone>
       hash: number;                           // int
     },
   };
@@ -9642,9 +9640,9 @@ export namespace account {
   > = ToUnderscore<_PrivacyRules, K>;
   export type _PrivacyRules = {
     "account.privacyRules": {
-      rules: global.PrivacyRule[];            // Vector<PrivacyRule>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      rules: api.PrivacyRule[];               // Vector<PrivacyRule>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9655,7 +9653,7 @@ export namespace account {
   export type _Authorizations = {
     "account.authorizations": {
       authorization_ttl_days: number;         // int
-      authorizations: global.Authorization[]; // Vector<Authorization>
+      authorizations: api.Authorization[];    // Vector<Authorization>
     },
   };
 
@@ -9668,13 +9666,13 @@ export namespace account {
       has_recovery?: true;                    // flags.0?true
       has_secure_values?: true;               // flags.1?true
       has_password?: true;                    // flags.2?true
-      current_algo?: global.PasswordKdfAlgo;  // flags.2?PasswordKdfAlgo
+      current_algo?: api.PasswordKdfAlgo;     // flags.2?PasswordKdfAlgo
       srp_B?: Uint8Array;                     // flags.2?bytes
       srp_id?: bigint;                        // flags.2?long
       hint?: string;                          // flags.3?string
       email_unconfirmed_pattern?: string;     // flags.4?string
-      new_algo: global.PasswordKdfAlgo;       // PasswordKdfAlgo
-      new_secure_algo: global.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
+      new_algo: api.PasswordKdfAlgo;          // PasswordKdfAlgo
+      new_secure_algo: api.SecurePasswordKdfAlgo; // SecurePasswordKdfAlgo
       secure_random: Uint8Array;              // bytes
       pending_reset_date?: number;            // flags.5?int
       login_email_pattern?: string;           // flags.6?string
@@ -9688,7 +9686,7 @@ export namespace account {
   export type _PasswordSettings = {
     "account.passwordSettings": {
       email?: string;                         // flags.0?string
-      secure_settings?: global.SecureSecretSettings; // flags.1?SecureSecretSettings
+      secure_settings?: api.SecureSecretSettings; // flags.1?SecureSecretSettings
     },
   };
 
@@ -9698,11 +9696,11 @@ export namespace account {
   > = ToUnderscore<_PasswordInputSettings, K>;
   export type _PasswordInputSettings = {
     "account.passwordInputSettings": {
-      new_algo?: global.PasswordKdfAlgo;      // flags.0?PasswordKdfAlgo
+      new_algo?: api.PasswordKdfAlgo;         // flags.0?PasswordKdfAlgo
       new_password_hash?: Uint8Array;         // flags.0?bytes
       hint?: string;                          // flags.0?string
       email?: string;                         // flags.1?string
-      new_secure_settings?: global.SecureSecretSettings; // flags.2?SecureSecretSettings
+      new_secure_settings?: api.SecureSecretSettings; // flags.2?SecureSecretSettings
     },
   };
 
@@ -9723,8 +9721,8 @@ export namespace account {
   > = ToUnderscore<_WebAuthorizations, K>;
   export type _WebAuthorizations = {
     "account.webAuthorizations": {
-      authorizations: global.WebAuthorization[]; // Vector<WebAuthorization>
-      users: global.User[];                   // Vector<User>
+      authorizations: api.WebAuthorization[]; // Vector<WebAuthorization>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9734,10 +9732,10 @@ export namespace account {
   > = ToUnderscore<_AuthorizationForm, K>;
   export type _AuthorizationForm = {
     "account.authorizationForm": {
-      required_types: global.SecureRequiredType[]; // Vector<SecureRequiredType>
-      values: global.SecureValue[];           // Vector<SecureValue>
-      errors: global.SecureValueError[];      // Vector<SecureValueError>
-      users: global.User[];                   // Vector<User>
+      required_types: api.SecureRequiredType[]; // Vector<SecureRequiredType>
+      values: api.SecureValue[];              // Vector<SecureValue>
+      errors: api.SecureValueError[];         // Vector<SecureValueError>
+      users: api.User[];                      // Vector<User>
       privacy_policy_url?: string;            // flags.0?string
     },
   };
@@ -9771,7 +9769,7 @@ export namespace account {
     "account.wallPapersNotModified": {}
     "account.wallPapers": {
       hash: bigint;                           // long
-      wallpapers: global.WallPaper[];         // Vector<WallPaper>
+      wallpapers: api.WallPaper[];            // Vector<WallPaper>
     },
   };
 
@@ -9782,9 +9780,9 @@ export namespace account {
   > = ToUnderscore<_AutoDownloadSettings, K>;
   export type _AutoDownloadSettings = {
     "account.autoDownloadSettings": {
-      low: global.AutoDownloadSettings;       // AutoDownloadSettings
-      medium: global.AutoDownloadSettings;    // AutoDownloadSettings
-      high: global.AutoDownloadSettings;      // AutoDownloadSettings
+      low: api.AutoDownloadSettings;          // AutoDownloadSettings
+      medium: api.AutoDownloadSettings;       // AutoDownloadSettings
+      high: api.AutoDownloadSettings;         // AutoDownloadSettings
     },
   };
 
@@ -9796,7 +9794,7 @@ export namespace account {
     "account.themesNotModified": {}
     "account.themes": {
       hash: bigint;                           // long
-      themes: global.Theme[];                 // Vector<Theme>
+      themes: api.Theme[];                    // Vector<Theme>
     },
   };
 
@@ -9836,7 +9834,7 @@ export namespace account {
     "account.savedRingtonesNotModified": {}
     "account.savedRingtones": {
       hash: bigint;                           // long
-      ringtones: global.Document[];           // Vector<Document>
+      ringtones: api.Document[];              // Vector<Document>
     },
   };
 
@@ -9848,7 +9846,7 @@ export namespace account {
   export type _SavedRingtone = {
     "account.savedRingtone": {}
     "account.savedRingtoneConverted": {
-      document: global.Document;              // Document
+      document: api.Document;                 // Document
     },
   };
 
@@ -9861,7 +9859,7 @@ export namespace account {
     "account.emojiStatusesNotModified": {}
     "account.emojiStatuses": {
       hash: bigint;                           // long
-      statuses: global.EmojiStatus[];         // Vector<EmojiStatus>
+      statuses: api.EmojiStatus[];            // Vector<EmojiStatus>
     },
   };
 
@@ -9887,12 +9885,12 @@ export namespace account {
   > = ToUnderscore<_AutoSaveSettings, K>;
   export type _AutoSaveSettings = {
     "account.autoSaveSettings": {
-      users_settings: global.AutoSaveSettings; // AutoSaveSettings
-      chats_settings: global.AutoSaveSettings; // AutoSaveSettings
-      broadcasts_settings: global.AutoSaveSettings; // AutoSaveSettings
-      exceptions: global.AutoSaveException[]; // Vector<AutoSaveException>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      users_settings: api.AutoSaveSettings;   // AutoSaveSettings
+      chats_settings: api.AutoSaveSettings;   // AutoSaveSettings
+      broadcasts_settings: api.AutoSaveSettings; // AutoSaveSettings
+      exceptions: api.AutoSaveException[];    // Vector<AutoSaveException>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9902,8 +9900,8 @@ export namespace account {
   > = ToUnderscore<_ConnectedBots, K>;
   export type _ConnectedBots = {
     "account.connectedBots": {
-      connected_bots: global.ConnectedBot[];  // Vector<ConnectedBot>
-      users: global.User[];                   // Vector<User>
+      connected_bots: api.ConnectedBot[];     // Vector<ConnectedBot>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9913,9 +9911,9 @@ export namespace account {
   > = ToUnderscore<_BusinessChatLinks, K>;
   export type _BusinessChatLinks = {
     "account.businessChatLinks": {
-      links: global.BusinessChatLink[];       // Vector<BusinessChatLink>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      links: api.BusinessChatLink[];          // Vector<BusinessChatLink>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9925,11 +9923,11 @@ export namespace account {
   > = ToUnderscore<_ResolvedBusinessChatLinks, K>;
   export type _ResolvedBusinessChatLinks = {
     "account.resolvedBusinessChatLinks": {
-      peer: global.Peer;                      // Peer
+      peer: api.Peer;                         // Peer
       message: string;                        // string
-      entities?: global.MessageEntity[];      // flags.0?Vector<MessageEntity>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      entities?: api.MessageEntity[];         // flags.0?Vector<MessageEntity>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9943,9 +9941,9 @@ export namespace channels {
   export type _ChannelParticipants = {
     "channels.channelParticipants": {
       count: number;                          // int
-      participants: global.ChannelParticipant[]; // Vector<ChannelParticipant>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      participants: api.ChannelParticipant[]; // Vector<ChannelParticipant>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "channels.channelParticipantsNotModified": {}
   };
@@ -9957,9 +9955,9 @@ export namespace channels {
   > = ToUnderscore<_ChannelParticipant, K>;
   export type _ChannelParticipant = {
     "channels.channelParticipant": {
-      participant: global.ChannelParticipant; // ChannelParticipant
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      participant: api.ChannelParticipant;    // ChannelParticipant
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9969,9 +9967,9 @@ export namespace channels {
   > = ToUnderscore<_AdminLogResults, K>;
   export type _AdminLogResults = {
     "channels.adminLogResults": {
-      events: global.ChannelAdminLogEvent[];  // Vector<ChannelAdminLogEvent>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      events: api.ChannelAdminLogEvent[];     // Vector<ChannelAdminLogEvent>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9981,9 +9979,9 @@ export namespace channels {
   > = ToUnderscore<_SendAsPeers, K>;
   export type _SendAsPeers = {
     "channels.sendAsPeers": {
-      peers: global.SendAsPeer[];             // Vector<SendAsPeer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      peers: api.SendAsPeer[];                // Vector<SendAsPeer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -9994,7 +9992,7 @@ export namespace channels {
   export type _SponsoredMessageReportResult = {
     "channels.sponsoredMessageReportResultChooseOption": {
       title: string;                          // string
-      options: global.SponsoredMessageReportOption[]; // Vector<SponsoredMessageReportOption>
+      options: api.SponsoredMessageReportOption[]; // Vector<SponsoredMessageReportOption>
     },
     "channels.sponsoredMessageReportResultAdsHidden": {}
     "channels.sponsoredMessageReportResultReported": {}
@@ -10017,16 +10015,16 @@ export namespace payments {
       bot_id: bigint;                         // long
       title: string;                          // string
       description: string;                    // string
-      photo?: global.WebDocument;             // flags.5?WebDocument
-      invoice: global.Invoice;                // Invoice
+      photo?: api.WebDocument;                // flags.5?WebDocument
+      invoice: api.Invoice;                   // Invoice
       provider_id: bigint;                    // long
       url: string;                            // string
       native_provider?: string;               // flags.4?string
-      native_params?: global.DataJSON;        // flags.4?DataJSON
-      additional_methods?: global.PaymentFormMethod[]; // flags.6?Vector<PaymentFormMethod>
-      saved_info?: global.PaymentRequestedInfo; // flags.0?PaymentRequestedInfo
-      saved_credentials?: global.PaymentSavedCredentials[]; // flags.1?Vector<PaymentSavedCredentials>
-      users: global.User[];                   // Vector<User>
+      native_params?: api.DataJSON;           // flags.4?DataJSON
+      additional_methods?: api.PaymentFormMethod[]; // flags.6?Vector<PaymentFormMethod>
+      saved_info?: api.PaymentRequestedInfo;  // flags.0?PaymentRequestedInfo
+      saved_credentials?: api.PaymentSavedCredentials[]; // flags.1?Vector<PaymentSavedCredentials>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10037,7 +10035,7 @@ export namespace payments {
   export type _ValidatedRequestedInfo = {
     "payments.validatedRequestedInfo": {
       id?: string;                            // flags.0?string
-      shipping_options?: global.ShippingOption[]; // flags.1?Vector<ShippingOption>
+      shipping_options?: api.ShippingOption[]; // flags.1?Vector<ShippingOption>
     },
   };
 
@@ -10047,7 +10045,7 @@ export namespace payments {
   > = ToUnderscore<_PaymentResult, K>;
   export type _PaymentResult = {
     "payments.paymentResult": {
-      updates: global.Updates;                // Updates
+      updates: api.Updates;                   // Updates
     },
     "payments.paymentVerificationNeeded": {
       url: string;                            // string
@@ -10066,15 +10064,15 @@ export namespace payments {
       provider_id: bigint;                    // long
       title: string;                          // string
       description: string;                    // string
-      photo?: global.WebDocument;             // flags.2?WebDocument
-      invoice: global.Invoice;                // Invoice
-      info?: global.PaymentRequestedInfo;     // flags.0?PaymentRequestedInfo
-      shipping?: global.ShippingOption;       // flags.1?ShippingOption
+      photo?: api.WebDocument;                // flags.2?WebDocument
+      invoice: api.Invoice;                   // Invoice
+      info?: api.PaymentRequestedInfo;        // flags.0?PaymentRequestedInfo
+      shipping?: api.ShippingOption;          // flags.1?ShippingOption
       tip_amount?: bigint;                    // flags.3?long
       currency: string;                       // string
       total_amount: bigint;                   // long
       credentials_title: string;              // string
-      users: global.User[];                   // Vector<User>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10085,7 +10083,7 @@ export namespace payments {
   export type _SavedInfo = {
     "payments.savedInfo": {
       has_saved_credentials?: true;           // flags.1?true
-      saved_info?: global.PaymentRequestedInfo; // flags.0?PaymentRequestedInfo
+      saved_info?: api.PaymentRequestedInfo;  // flags.0?PaymentRequestedInfo
     },
   };
 
@@ -10096,7 +10094,7 @@ export namespace payments {
   export type _BankCardData = {
     "payments.bankCardData": {
       title: string;                          // string
-      open_urls: global.BankCardOpenUrl[];    // Vector<BankCardOpenUrl>
+      open_urls: api.BankCardOpenUrl[];       // Vector<BankCardOpenUrl>
     },
   };
 
@@ -10117,14 +10115,14 @@ export namespace payments {
   export type _CheckedGiftCode = {
     "payments.checkedGiftCode": {
       via_giveaway?: true;                    // flags.2?true
-      from_id?: global.Peer;                  // flags.4?Peer
+      from_id?: api.Peer;                     // flags.4?Peer
       giveaway_msg_id?: number;               // flags.3?int
       to_id?: bigint;                         // flags.0?long
       date: number;                           // int
       months: number;                         // int
       used_date?: number;                     // flags.1?int
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10162,8 +10160,8 @@ export namespace phone {
   > = ToUnderscore<_PhoneCall, K>;
   export type _PhoneCall = {
     "phone.phoneCall": {
-      phone_call: global.PhoneCall;           // PhoneCall
-      users: global.User[];                   // Vector<User>
+      phone_call: api.PhoneCall;              // PhoneCall
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10173,11 +10171,11 @@ export namespace phone {
   > = ToUnderscore<_GroupCall, K>;
   export type _GroupCall = {
     "phone.groupCall": {
-      call: global.GroupCall;                 // GroupCall
-      participants: global.GroupCallParticipant[]; // Vector<GroupCallParticipant>
+      call: api.GroupCall;                    // GroupCall
+      participants: api.GroupCallParticipant[]; // Vector<GroupCallParticipant>
       participants_next_offset: string;       // string
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10188,10 +10186,10 @@ export namespace phone {
   export type _GroupParticipants = {
     "phone.groupParticipants": {
       count: number;                          // int
-      participants: global.GroupCallParticipant[]; // Vector<GroupCallParticipant>
+      participants: api.GroupCallParticipant[]; // Vector<GroupCallParticipant>
       next_offset: string;                    // string
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       version: number;                        // int
     },
   };
@@ -10202,9 +10200,9 @@ export namespace phone {
   > = ToUnderscore<_JoinAsPeers, K>;
   export type _JoinAsPeers = {
     "phone.joinAsPeers": {
-      peers: global.Peer[];                   // Vector<Peer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      peers: api.Peer[];                      // Vector<Peer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10224,7 +10222,7 @@ export namespace phone {
   > = ToUnderscore<_GroupCallStreamChannels, K>;
   export type _GroupCallStreamChannels = {
     "phone.groupCallStreamChannels": {
-      channels: global.GroupCallStreamChannel[]; // Vector<GroupCallStreamChannel>
+      channels: api.GroupCallStreamChannel[]; // Vector<GroupCallStreamChannel>
     },
   };
 
@@ -10248,28 +10246,28 @@ export namespace stats {
   > = ToUnderscore<_BroadcastStats, K>;
   export type _BroadcastStats = {
     "stats.broadcastStats": {
-      period: global.StatsDateRangeDays;      // StatsDateRangeDays
-      followers: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      views_per_post: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      shares_per_post: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      reactions_per_post: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      views_per_story: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      shares_per_story: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      reactions_per_story: global.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
-      enabled_notifications: global.StatsPercentValue; // StatsPercentValue
-      growth_graph: global.StatsGraph;        // StatsGraph
-      followers_graph: global.StatsGraph;     // StatsGraph
-      mute_graph: global.StatsGraph;          // StatsGraph
-      top_hours_graph: global.StatsGraph;     // StatsGraph
-      interactions_graph: global.StatsGraph;  // StatsGraph
-      iv_interactions_graph: global.StatsGraph; // StatsGraph
-      views_by_source_graph: global.StatsGraph; // StatsGraph
-      new_followers_by_source_graph: global.StatsGraph; // StatsGraph
-      languages_graph: global.StatsGraph;     // StatsGraph
-      reactions_by_emotion_graph: global.StatsGraph; // StatsGraph
-      story_interactions_graph: global.StatsGraph; // StatsGraph
-      story_reactions_by_emotion_graph: global.StatsGraph; // StatsGraph
-      recent_posts_interactions: global.PostInteractionCounters[]; // Vector<PostInteractionCounters>
+      period: api.StatsDateRangeDays;         // StatsDateRangeDays
+      followers: api.StatsAbsValueAndPrev;    // StatsAbsValueAndPrev
+      views_per_post: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      shares_per_post: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      reactions_per_post: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      views_per_story: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      shares_per_story: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      reactions_per_story: api.StatsAbsValueAndPrev; // StatsAbsValueAndPrev
+      enabled_notifications: api.StatsPercentValue; // StatsPercentValue
+      growth_graph: api.StatsGraph;           // StatsGraph
+      followers_graph: api.StatsGraph;        // StatsGraph
+      mute_graph: api.StatsGraph;             // StatsGraph
+      top_hours_graph: api.StatsGraph;        // StatsGraph
+      interactions_graph: api.StatsGraph;     // StatsGraph
+      iv_interactions_graph: api.StatsGraph;  // StatsGraph
+      views_by_source_graph: api.StatsGraph;  // StatsGraph
+      new_followers_by_source_graph: api.StatsGraph; // StatsGraph
+      languages_graph: api.StatsGraph;        // StatsGraph
+      reactions_by_emotion_graph: api.StatsGraph; // StatsGraph
+      story_interactions_graph: api.StatsGraph; // StatsGraph
+      story_reactions_by_emotion_graph: api.StatsGraph; // StatsGraph
+      recent_posts_interactions: api.PostInteractionCounters[]; // Vector<PostInteractionCounters>
     },
   };
 
@@ -10279,23 +10277,23 @@ export namespace stats {
   > = ToUnderscore<_MegagroupStats, K>;
   export type _MegagroupStats = {
     "stats.megagroupStats": {
-      period: global.StatsDateRangeDays;      // StatsDateRangeDays
-      members: global.StatsAbsValueAndPrev;   // StatsAbsValueAndPrev
-      messages: global.StatsAbsValueAndPrev;  // StatsAbsValueAndPrev
-      viewers: global.StatsAbsValueAndPrev;   // StatsAbsValueAndPrev
-      posters: global.StatsAbsValueAndPrev;   // StatsAbsValueAndPrev
-      growth_graph: global.StatsGraph;        // StatsGraph
-      members_graph: global.StatsGraph;       // StatsGraph
-      new_members_by_source_graph: global.StatsGraph; // StatsGraph
-      languages_graph: global.StatsGraph;     // StatsGraph
-      messages_graph: global.StatsGraph;      // StatsGraph
-      actions_graph: global.StatsGraph;       // StatsGraph
-      top_hours_graph: global.StatsGraph;     // StatsGraph
-      weekdays_graph: global.StatsGraph;      // StatsGraph
-      top_posters: global.StatsGroupTopPoster[]; // Vector<StatsGroupTopPoster>
-      top_admins: global.StatsGroupTopAdmin[]; // Vector<StatsGroupTopAdmin>
-      top_inviters: global.StatsGroupTopInviter[]; // Vector<StatsGroupTopInviter>
-      users: global.User[];                   // Vector<User>
+      period: api.StatsDateRangeDays;         // StatsDateRangeDays
+      members: api.StatsAbsValueAndPrev;      // StatsAbsValueAndPrev
+      messages: api.StatsAbsValueAndPrev;     // StatsAbsValueAndPrev
+      viewers: api.StatsAbsValueAndPrev;      // StatsAbsValueAndPrev
+      posters: api.StatsAbsValueAndPrev;      // StatsAbsValueAndPrev
+      growth_graph: api.StatsGraph;           // StatsGraph
+      members_graph: api.StatsGraph;          // StatsGraph
+      new_members_by_source_graph: api.StatsGraph; // StatsGraph
+      languages_graph: api.StatsGraph;        // StatsGraph
+      messages_graph: api.StatsGraph;         // StatsGraph
+      actions_graph: api.StatsGraph;          // StatsGraph
+      top_hours_graph: api.StatsGraph;        // StatsGraph
+      weekdays_graph: api.StatsGraph;         // StatsGraph
+      top_posters: api.StatsGroupTopPoster[]; // Vector<StatsGroupTopPoster>
+      top_admins: api.StatsGroupTopAdmin[];   // Vector<StatsGroupTopAdmin>
+      top_inviters: api.StatsGroupTopInviter[]; // Vector<StatsGroupTopInviter>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10305,8 +10303,8 @@ export namespace stats {
   > = ToUnderscore<_MessageStats, K>;
   export type _MessageStats = {
     "stats.messageStats": {
-      views_graph: global.StatsGraph;         // StatsGraph
-      reactions_by_emotion_graph: global.StatsGraph; // StatsGraph
+      views_graph: api.StatsGraph;            // StatsGraph
+      reactions_by_emotion_graph: api.StatsGraph; // StatsGraph
     },
   };
 
@@ -10316,8 +10314,8 @@ export namespace stats {
   > = ToUnderscore<_StoryStats, K>;
   export type _StoryStats = {
     "stats.storyStats": {
-      views_graph: global.StatsGraph;         // StatsGraph
-      reactions_by_emotion_graph: global.StatsGraph; // StatsGraph
+      views_graph: api.StatsGraph;            // StatsGraph
+      reactions_by_emotion_graph: api.StatsGraph; // StatsGraph
     },
   };
 
@@ -10328,10 +10326,10 @@ export namespace stats {
   export type _PublicForwards = {
     "stats.publicForwards": {
       count: number;                          // int
-      forwards: global.PublicForward[];       // Vector<PublicForward>
+      forwards: api.PublicForward[];          // Vector<PublicForward>
       next_offset?: string;                   // flags.0?string
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10341,8 +10339,8 @@ export namespace stats {
   > = ToUnderscore<_BroadcastRevenueStats, K>;
   export type _BroadcastRevenueStats = {
     "stats.broadcastRevenueStats": {
-      top_hours_graph: global.StatsGraph;     // StatsGraph
-      revenue_graph: global.StatsGraph;       // StatsGraph
+      top_hours_graph: api.StatsGraph;        // StatsGraph
+      revenue_graph: api.StatsGraph;          // StatsGraph
       current_balance: bigint;                // long
       available_balance: bigint;              // long
       overall_revenue: bigint;                // long
@@ -10367,7 +10365,7 @@ export namespace stats {
   export type _BroadcastRevenueTransactions = {
     "stats.broadcastRevenueTransactions": {
       count: number;                          // int
-      transactions: global.BroadcastRevenueTransaction[]; // Vector<BroadcastRevenueTransaction>
+      transactions: api.BroadcastRevenueTransaction[]; // Vector<BroadcastRevenueTransaction>
     },
   };
 
@@ -10393,9 +10391,9 @@ export namespace users {
   > = ToUnderscore<_UserFull, K>;
   export type _UserFull = {
     "users.userFull": {
-      full_user: global.UserFull;             // UserFull
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      full_user: api.UserFull;                // UserFull
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10408,8 +10406,8 @@ export namespace chatlists {
   > = ToUnderscore<_ExportedChatlistInvite, K>;
   export type _ExportedChatlistInvite = {
     "chatlists.exportedChatlistInvite": {
-      filter: global.DialogFilter;            // DialogFilter
-      invite: global.ExportedChatlistInvite;  // ExportedChatlistInvite
+      filter: api.DialogFilter;               // DialogFilter
+      invite: api.ExportedChatlistInvite;     // ExportedChatlistInvite
     },
   };
 
@@ -10419,9 +10417,9 @@ export namespace chatlists {
   > = ToUnderscore<_ExportedInvites, K>;
   export type _ExportedInvites = {
     "chatlists.exportedInvites": {
-      invites: global.ExportedChatlistInvite[]; // Vector<ExportedChatlistInvite>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      invites: api.ExportedChatlistInvite[];  // Vector<ExportedChatlistInvite>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10432,17 +10430,17 @@ export namespace chatlists {
   export type _ChatlistInvite = {
     "chatlists.chatlistInviteAlready": {
       filter_id: number;                      // int
-      missing_peers: global.Peer[];           // Vector<Peer>
-      already_peers: global.Peer[];           // Vector<Peer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      missing_peers: api.Peer[];              // Vector<Peer>
+      already_peers: api.Peer[];              // Vector<Peer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
     "chatlists.chatlistInvite": {
       title: string;                          // string
       emoticon?: string;                      // flags.0?string
-      peers: global.Peer[];                   // Vector<Peer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      peers: api.Peer[];                      // Vector<Peer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10453,9 +10451,9 @@ export namespace chatlists {
   > = ToUnderscore<_ChatlistUpdates, K>;
   export type _ChatlistUpdates = {
     "chatlists.chatlistUpdates": {
-      missing_peers: global.Peer[];           // Vector<Peer>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      missing_peers: api.Peer[];              // Vector<Peer>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10484,16 +10482,16 @@ export namespace stories {
   export type _AllStories = {
     "stories.allStoriesNotModified": {
       state: string;                          // string
-      stealth_mode: global.StoriesStealthMode; // StoriesStealthMode
+      stealth_mode: api.StoriesStealthMode;   // StoriesStealthMode
     },
     "stories.allStories": {
       has_more?: true;                        // flags.0?true
       count: number;                          // int
       state: string;                          // string
-      peer_stories: global.PeerStories[];     // Vector<PeerStories>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
-      stealth_mode: global.StoriesStealthMode; // StoriesStealthMode
+      peer_stories: api.PeerStories[];        // Vector<PeerStories>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
+      stealth_mode: api.StoriesStealthMode;   // StoriesStealthMode
     },
   };
 
@@ -10505,9 +10503,9 @@ export namespace stories {
   export type _Stories = {
     "stories.stories": {
       count: number;                          // int
-      stories: global.StoryItem[];            // Vector<StoryItem>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      stories: api.StoryItem[];               // Vector<StoryItem>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10521,9 +10519,9 @@ export namespace stories {
       views_count: number;                    // int
       forwards_count: number;                 // int
       reactions_count: number;                // int
-      views: global.StoryView[];              // Vector<StoryView>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      views: api.StoryView[];                 // Vector<StoryView>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       next_offset?: string;                   // flags.0?string
     },
   };
@@ -10534,8 +10532,8 @@ export namespace stories {
   > = ToUnderscore<_StoryViews, K>;
   export type _StoryViews = {
     "stories.storyViews": {
-      views: global.StoryViews[];             // Vector<StoryViews>
-      users: global.User[];                   // Vector<User>
+      views: api.StoryViews[];                // Vector<StoryViews>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10545,9 +10543,9 @@ export namespace stories {
   > = ToUnderscore<_PeerStories, K>;
   export type _PeerStories = {
     "stories.peerStories": {
-      stories: global.PeerStories;            // PeerStories
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      stories: api.PeerStories;               // PeerStories
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10558,9 +10556,9 @@ export namespace stories {
   export type _StoryReactionsList = {
     "stories.storyReactionsList": {
       count: number;                          // int
-      reactions: global.StoryReaction[];      // Vector<StoryReaction>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      reactions: api.StoryReaction[];         // Vector<StoryReaction>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
       next_offset?: string;                   // flags.0?string
     },
   };
@@ -10575,9 +10573,9 @@ export namespace premium {
   export type _BoostsList = {
     "premium.boostsList": {
       count: number;                          // int
-      boosts: global.Boost[];                 // Vector<Boost>
+      boosts: api.Boost[];                    // Vector<Boost>
       next_offset?: string;                   // flags.0?string
-      users: global.User[];                   // Vector<User>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10587,9 +10585,9 @@ export namespace premium {
   > = ToUnderscore<_MyBoosts, K>;
   export type _MyBoosts = {
     "premium.myBoosts": {
-      my_boosts: global.MyBoost[];            // Vector<MyBoost>
-      chats: global.Chat[];                   // Vector<Chat>
-      users: global.User[];                   // Vector<User>
+      my_boosts: api.MyBoost[];               // Vector<MyBoost>
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
     },
   };
 
@@ -10605,9 +10603,9 @@ export namespace premium {
       boosts: number;                         // int
       gift_boosts?: number;                   // flags.4?int
       next_level_boosts?: number;             // flags.0?int
-      premium_audience?: global.StatsPercentValue; // flags.1?StatsPercentValue
+      premium_audience?: api.StatsPercentValue; // flags.1?StatsPercentValue
       boost_url: string;                      // string
-      prepaid_giveaways?: global.PrepaidGiveaway[]; // flags.3?Vector<PrepaidGiveaway>
+      prepaid_giveaways?: api.PrepaidGiveaway[]; // flags.3?Vector<PrepaidGiveaway>
       my_boost_slots?: number[];              // flags.2?Vector<int>
     },
   };
@@ -10695,45 +10693,45 @@ export type AnyObject =
   | mt.BindAuthKeyInner
   | mt.DestroyAuthKeyRes
   | mt.DestroySessionRes
-  | global.InputPeer
-  | global.InputUser
-  | global.InputContact
-  | global.InputFile
-  | global.InputMedia
-  | global.InputChatPhoto
-  | global.InputGeoPoint
-  | global.InputPhoto
-  | global.InputFileLocation
-  | global.Peer
+  | api.InputPeer
+  | api.InputUser
+  | api.InputContact
+  | api.InputFile
+  | api.InputMedia
+  | api.InputChatPhoto
+  | api.InputGeoPoint
+  | api.InputPhoto
+  | api.InputFileLocation
+  | api.Peer
   | storage.FileType
-  | global.User
-  | global.UserProfilePhoto
-  | global.UserStatus
-  | global.Chat
-  | global.ChatFull
-  | global.ChatParticipant
-  | global.ChatParticipants
-  | global.ChatPhoto
-  | global.Message
-  | global.MessageMedia
-  | global.MessageAction
-  | global.Dialog
-  | global.Photo
-  | global.PhotoSize
-  | global.GeoPoint
+  | api.User
+  | api.UserProfilePhoto
+  | api.UserStatus
+  | api.Chat
+  | api.ChatFull
+  | api.ChatParticipant
+  | api.ChatParticipants
+  | api.ChatPhoto
+  | api.Message
+  | api.MessageMedia
+  | api.MessageAction
+  | api.Dialog
+  | api.Photo
+  | api.PhotoSize
+  | api.GeoPoint
   | auth.SentCode
   | auth.Authorization
   | auth.ExportedAuthorization
-  | global.InputNotifyPeer
-  | global.InputPeerNotifySettings
-  | global.PeerNotifySettings
-  | global.PeerSettings
-  | global.WallPaper
-  | global.ReportReason
-  | global.UserFull
-  | global.Contact
-  | global.ImportedContact
-  | global.ContactStatus
+  | api.InputNotifyPeer
+  | api.InputPeerNotifySettings
+  | api.PeerNotifySettings
+  | api.PeerSettings
+  | api.WallPaper
+  | api.ReportReason
+  | api.UserFull
+  | api.Contact
+  | api.ImportedContact
+  | api.ContactStatus
   | contacts.Contacts
   | contacts.ImportedContacts
   | contacts.Blocked
@@ -10742,439 +10740,439 @@ export type AnyObject =
   | messages.Chats
   | messages.ChatFull
   | messages.AffectedHistory
-  | global.MessagesFilter
-  | global.Update
+  | api.MessagesFilter
+  | api.Update
   | updates.State
   | updates.Difference
-  | global.Updates
+  | api.Updates
   | photos.Photos
   | photos.Photo
   | upload.File
-  | global.DcOption
-  | global.Config
-  | global.NearestDc
+  | api.DcOption
+  | api.Config
+  | api.NearestDc
   | help.AppUpdate
   | help.InviteText
-  | global.EncryptedChat
-  | global.InputEncryptedChat
-  | global.EncryptedFile
-  | global.InputEncryptedFile
-  | global.EncryptedMessage
+  | api.EncryptedChat
+  | api.InputEncryptedChat
+  | api.EncryptedFile
+  | api.InputEncryptedFile
+  | api.EncryptedMessage
   | messages.DhConfig
   | messages.SentEncryptedMessage
-  | global.InputDocument
-  | global.Document
+  | api.InputDocument
+  | api.Document
   | help.Support
-  | global.NotifyPeer
-  | global.SendMessageAction
+  | api.NotifyPeer
+  | api.SendMessageAction
   | contacts.Found
-  | global.InputPrivacyKey
-  | global.PrivacyKey
-  | global.InputPrivacyRule
-  | global.PrivacyRule
+  | api.InputPrivacyKey
+  | api.PrivacyKey
+  | api.InputPrivacyRule
+  | api.PrivacyRule
   | account.PrivacyRules
-  | global.AccountDaysTTL
-  | global.DocumentAttribute
+  | api.AccountDaysTTL
+  | api.DocumentAttribute
   | messages.Stickers
-  | global.StickerPack
+  | api.StickerPack
   | messages.AllStickers
   | messages.AffectedMessages
-  | global.WebPage
-  | global.Authorization
+  | api.WebPage
+  | api.Authorization
   | account.Authorizations
   | account.Password
   | account.PasswordSettings
   | account.PasswordInputSettings
   | auth.PasswordRecovery
-  | global.ReceivedNotifyMessage
-  | global.ExportedChatInvite
-  | global.ChatInvite
-  | global.InputStickerSet
-  | global.StickerSet
+  | api.ReceivedNotifyMessage
+  | api.ExportedChatInvite
+  | api.ChatInvite
+  | api.InputStickerSet
+  | api.StickerSet
   | messages.StickerSet
-  | global.BotCommand
-  | global.BotInfo
-  | global.KeyboardButton
-  | global.KeyboardButtonRow
-  | global.ReplyMarkup
-  | global.MessageEntity
-  | global.InputChannel
+  | api.BotCommand
+  | api.BotInfo
+  | api.KeyboardButton
+  | api.KeyboardButtonRow
+  | api.ReplyMarkup
+  | api.MessageEntity
+  | api.InputChannel
   | contacts.ResolvedPeer
-  | global.MessageRange
+  | api.MessageRange
   | updates.ChannelDifference
-  | global.ChannelMessagesFilter
-  | global.ChannelParticipant
-  | global.ChannelParticipantsFilter
+  | api.ChannelMessagesFilter
+  | api.ChannelParticipant
+  | api.ChannelParticipantsFilter
   | channels.ChannelParticipants
   | channels.ChannelParticipant
   | help.TermsOfService
   | messages.SavedGifs
-  | global.InputBotInlineMessage
-  | global.InputBotInlineResult
-  | global.BotInlineMessage
-  | global.BotInlineResult
+  | api.InputBotInlineMessage
+  | api.InputBotInlineResult
+  | api.BotInlineMessage
+  | api.BotInlineResult
   | messages.BotResults
-  | global.ExportedMessageLink
-  | global.MessageFwdHeader
+  | api.ExportedMessageLink
+  | api.MessageFwdHeader
   | auth.CodeType
   | auth.SentCodeType
   | messages.BotCallbackAnswer
   | messages.MessageEditData
-  | global.InputBotInlineMessageID
-  | global.InlineBotSwitchPM
+  | api.InputBotInlineMessageID
+  | api.InlineBotSwitchPM
   | messages.PeerDialogs
-  | global.TopPeer
-  | global.TopPeerCategory
-  | global.TopPeerCategoryPeers
+  | api.TopPeer
+  | api.TopPeerCategory
+  | api.TopPeerCategoryPeers
   | contacts.TopPeers
-  | global.DraftMessage
+  | api.DraftMessage
   | messages.FeaturedStickers
   | messages.RecentStickers
   | messages.ArchivedStickers
   | messages.StickerSetInstallResult
-  | global.StickerSetCovered
-  | global.MaskCoords
-  | global.InputStickeredMedia
-  | global.Game
-  | global.InputGame
-  | global.HighScore
+  | api.StickerSetCovered
+  | api.MaskCoords
+  | api.InputStickeredMedia
+  | api.Game
+  | api.InputGame
+  | api.HighScore
   | messages.HighScores
-  | global.RichText
-  | global.PageBlock
-  | global.PhoneCallDiscardReason
-  | global.DataJSON
-  | global.LabeledPrice
-  | global.Invoice
-  | global.PaymentCharge
-  | global.PostAddress
-  | global.PaymentRequestedInfo
-  | global.PaymentSavedCredentials
-  | global.WebDocument
-  | global.InputWebDocument
-  | global.InputWebFileLocation
+  | api.RichText
+  | api.PageBlock
+  | api.PhoneCallDiscardReason
+  | api.DataJSON
+  | api.LabeledPrice
+  | api.Invoice
+  | api.PaymentCharge
+  | api.PostAddress
+  | api.PaymentRequestedInfo
+  | api.PaymentSavedCredentials
+  | api.WebDocument
+  | api.InputWebDocument
+  | api.InputWebFileLocation
   | upload.WebFile
   | payments.PaymentForm
   | payments.ValidatedRequestedInfo
   | payments.PaymentResult
   | payments.PaymentReceipt
   | payments.SavedInfo
-  | global.InputPaymentCredentials
+  | api.InputPaymentCredentials
   | account.TmpPassword
-  | global.ShippingOption
-  | global.InputStickerSetItem
-  | global.InputPhoneCall
-  | global.PhoneCall
-  | global.PhoneConnection
-  | global.PhoneCallProtocol
+  | api.ShippingOption
+  | api.InputStickerSetItem
+  | api.InputPhoneCall
+  | api.PhoneCall
+  | api.PhoneConnection
+  | api.PhoneCallProtocol
   | phone.PhoneCall
   | upload.CdnFile
-  | global.CdnPublicKey
-  | global.CdnConfig
-  | global.LangPackString
-  | global.LangPackDifference
-  | global.LangPackLanguage
-  | global.ChannelAdminLogEventAction
-  | global.ChannelAdminLogEvent
+  | api.CdnPublicKey
+  | api.CdnConfig
+  | api.LangPackString
+  | api.LangPackDifference
+  | api.LangPackLanguage
+  | api.ChannelAdminLogEventAction
+  | api.ChannelAdminLogEvent
   | channels.AdminLogResults
-  | global.ChannelAdminLogEventsFilter
-  | global.PopularContact
+  | api.ChannelAdminLogEventsFilter
+  | api.PopularContact
   | messages.FavedStickers
-  | global.RecentMeUrl
+  | api.RecentMeUrl
   | help.RecentMeUrls
-  | global.InputSingleMedia
-  | global.WebAuthorization
+  | api.InputSingleMedia
+  | api.WebAuthorization
   | account.WebAuthorizations
-  | global.InputMessage
-  | global.InputDialogPeer
-  | global.DialogPeer
+  | api.InputMessage
+  | api.InputDialogPeer
+  | api.DialogPeer
   | messages.FoundStickerSets
-  | global.FileHash
-  | global.InputClientProxy
+  | api.FileHash
+  | api.InputClientProxy
   | help.TermsOfServiceUpdate
-  | global.InputSecureFile
-  | global.SecureFile
-  | global.SecureData
-  | global.SecurePlainData
-  | global.SecureValueType
-  | global.SecureValue
-  | global.InputSecureValue
-  | global.SecureValueHash
-  | global.SecureValueError
-  | global.SecureCredentialsEncrypted
+  | api.InputSecureFile
+  | api.SecureFile
+  | api.SecureData
+  | api.SecurePlainData
+  | api.SecureValueType
+  | api.SecureValue
+  | api.InputSecureValue
+  | api.SecureValueHash
+  | api.SecureValueError
+  | api.SecureCredentialsEncrypted
   | account.AuthorizationForm
   | account.SentEmailCode
   | help.DeepLinkInfo
-  | global.SavedContact
+  | api.SavedContact
   | account.Takeout
-  | global.PasswordKdfAlgo
-  | global.SecurePasswordKdfAlgo
-  | global.SecureSecretSettings
-  | global.InputCheckPasswordSRP
-  | global.SecureRequiredType
+  | api.PasswordKdfAlgo
+  | api.SecurePasswordKdfAlgo
+  | api.SecureSecretSettings
+  | api.InputCheckPasswordSRP
+  | api.SecureRequiredType
   | help.PassportConfig
-  | global.InputAppEvent
-  | global.JSONObjectValue
-  | global.JSONValue
-  | global.PageTableCell
-  | global.PageTableRow
-  | global.PageCaption
-  | global.PageListItem
-  | global.PageListOrderedItem
-  | global.PageRelatedArticle
-  | global.Page
+  | api.InputAppEvent
+  | api.JSONObjectValue
+  | api.JSONValue
+  | api.PageTableCell
+  | api.PageTableRow
+  | api.PageCaption
+  | api.PageListItem
+  | api.PageListOrderedItem
+  | api.PageRelatedArticle
+  | api.Page
   | help.SupportName
   | help.UserInfo
-  | global.PollAnswer
-  | global.Poll
-  | global.PollAnswerVoters
-  | global.PollResults
-  | global.ChatOnlines
-  | global.StatsURL
-  | global.ChatAdminRights
-  | global.ChatBannedRights
-  | global.InputWallPaper
+  | api.PollAnswer
+  | api.Poll
+  | api.PollAnswerVoters
+  | api.PollResults
+  | api.ChatOnlines
+  | api.StatsURL
+  | api.ChatAdminRights
+  | api.ChatBannedRights
+  | api.InputWallPaper
   | account.WallPapers
-  | global.CodeSettings
-  | global.WallPaperSettings
-  | global.AutoDownloadSettings
+  | api.CodeSettings
+  | api.WallPaperSettings
+  | api.AutoDownloadSettings
   | account.AutoDownloadSettings
-  | global.EmojiKeyword
-  | global.EmojiKeywordsDifference
-  | global.EmojiURL
-  | global.EmojiLanguage
-  | global.Folder
-  | global.InputFolderPeer
-  | global.FolderPeer
+  | api.EmojiKeyword
+  | api.EmojiKeywordsDifference
+  | api.EmojiURL
+  | api.EmojiLanguage
+  | api.Folder
+  | api.InputFolderPeer
+  | api.FolderPeer
   | messages.SearchCounter
-  | global.UrlAuthResult
-  | global.ChannelLocation
-  | global.PeerLocated
-  | global.RestrictionReason
-  | global.InputTheme
-  | global.Theme
+  | api.UrlAuthResult
+  | api.ChannelLocation
+  | api.PeerLocated
+  | api.RestrictionReason
+  | api.InputTheme
+  | api.Theme
   | account.Themes
   | auth.LoginToken
   | account.ContentSettings
   | messages.InactiveChats
-  | global.BaseTheme
-  | global.InputThemeSettings
-  | global.ThemeSettings
-  | global.WebPageAttribute
+  | api.BaseTheme
+  | api.InputThemeSettings
+  | api.ThemeSettings
+  | api.WebPageAttribute
   | messages.VotesList
-  | global.BankCardOpenUrl
+  | api.BankCardOpenUrl
   | payments.BankCardData
-  | global.DialogFilter
-  | global.DialogFilterSuggested
-  | global.StatsDateRangeDays
-  | global.StatsAbsValueAndPrev
-  | global.StatsPercentValue
-  | global.StatsGraph
+  | api.DialogFilter
+  | api.DialogFilterSuggested
+  | api.StatsDateRangeDays
+  | api.StatsAbsValueAndPrev
+  | api.StatsPercentValue
+  | api.StatsGraph
   | stats.BroadcastStats
   | help.PromoData
-  | global.VideoSize
-  | global.StatsGroupTopPoster
-  | global.StatsGroupTopAdmin
-  | global.StatsGroupTopInviter
+  | api.VideoSize
+  | api.StatsGroupTopPoster
+  | api.StatsGroupTopAdmin
+  | api.StatsGroupTopInviter
   | stats.MegagroupStats
-  | global.GlobalPrivacySettings
+  | api.GlobalPrivacySettings
   | help.CountryCode
   | help.Country
   | help.CountriesList
-  | global.MessageViews
+  | api.MessageViews
   | messages.MessageViews
   | messages.DiscussionMessage
-  | global.MessageReplyHeader
-  | global.MessageReplies
-  | global.PeerBlocked
+  | api.MessageReplyHeader
+  | api.MessageReplies
+  | api.PeerBlocked
   | stats.MessageStats
-  | global.GroupCall
-  | global.InputGroupCall
-  | global.GroupCallParticipant
+  | api.GroupCall
+  | api.InputGroupCall
+  | api.GroupCallParticipant
   | phone.GroupCall
   | phone.GroupParticipants
-  | global.InlineQueryPeerType
+  | api.InlineQueryPeerType
   | messages.HistoryImport
   | messages.HistoryImportParsed
   | messages.AffectedFoundMessages
-  | global.ChatInviteImporter
+  | api.ChatInviteImporter
   | messages.ExportedChatInvites
   | messages.ExportedChatInvite
   | messages.ChatInviteImporters
-  | global.ChatAdminWithInvites
+  | api.ChatAdminWithInvites
   | messages.ChatAdminsWithInvites
   | messages.CheckedHistoryImportPeer
   | phone.JoinAsPeers
   | phone.ExportedGroupCallInvite
-  | global.GroupCallParticipantVideoSourceGroup
-  | global.GroupCallParticipantVideo
+  | api.GroupCallParticipantVideoSourceGroup
+  | api.GroupCallParticipantVideo
   | stickers.SuggestedShortName
-  | global.BotCommandScope
+  | api.BotCommandScope
   | account.ResetPasswordResult
-  | global.SponsoredMessage
+  | api.SponsoredMessage
   | messages.SponsoredMessages
-  | global.SearchResultsCalendarPeriod
+  | api.SearchResultsCalendarPeriod
   | messages.SearchResultsCalendar
-  | global.SearchResultsPosition
+  | api.SearchResultsPosition
   | messages.SearchResultsPositions
   | channels.SendAsPeers
   | users.UserFull
   | messages.PeerSettings
   | auth.LoggedOut
-  | global.ReactionCount
-  | global.MessageReactions
+  | api.ReactionCount
+  | api.MessageReactions
   | messages.MessageReactionsList
-  | global.AvailableReaction
+  | api.AvailableReaction
   | messages.AvailableReactions
-  | global.MessagePeerReaction
-  | global.GroupCallStreamChannel
+  | api.MessagePeerReaction
+  | api.GroupCallStreamChannel
   | phone.GroupCallStreamChannels
   | phone.GroupCallStreamRtmpUrl
-  | global.AttachMenuBotIconColor
-  | global.AttachMenuBotIcon
-  | global.AttachMenuBot
-  | global.AttachMenuBots
-  | global.AttachMenuBotsBot
-  | global.WebViewResult
-  | global.SimpleWebViewResult
-  | global.WebViewMessageSent
-  | global.BotMenuButton
+  | api.AttachMenuBotIconColor
+  | api.AttachMenuBotIcon
+  | api.AttachMenuBot
+  | api.AttachMenuBots
+  | api.AttachMenuBotsBot
+  | api.WebViewResult
+  | api.SimpleWebViewResult
+  | api.WebViewMessageSent
+  | api.BotMenuButton
   | account.SavedRingtones
-  | global.NotificationSound
+  | api.NotificationSound
   | account.SavedRingtone
-  | global.AttachMenuPeerType
-  | global.InputInvoice
+  | api.AttachMenuPeerType
+  | api.InputInvoice
   | payments.ExportedInvoice
   | messages.TranscribedAudio
   | help.PremiumPromo
-  | global.InputStorePaymentPurpose
-  | global.PremiumGiftOption
-  | global.PaymentFormMethod
-  | global.EmojiStatus
+  | api.InputStorePaymentPurpose
+  | api.PremiumGiftOption
+  | api.PaymentFormMethod
+  | api.EmojiStatus
   | account.EmojiStatuses
-  | global.Reaction
-  | global.ChatReactions
+  | api.Reaction
+  | api.ChatReactions
   | messages.Reactions
-  | global.EmailVerifyPurpose
-  | global.EmailVerification
+  | api.EmailVerifyPurpose
+  | api.EmailVerification
   | account.EmailVerified
-  | global.PremiumSubscriptionOption
-  | global.SendAsPeer
-  | global.MessageExtendedMedia
-  | global.StickerKeyword
-  | global.Username
-  | global.ForumTopic
+  | api.PremiumSubscriptionOption
+  | api.SendAsPeer
+  | api.MessageExtendedMedia
+  | api.StickerKeyword
+  | api.Username
+  | api.ForumTopic
   | messages.ForumTopics
-  | global.DefaultHistoryTTL
-  | global.ExportedContactToken
-  | global.RequestPeerType
-  | global.EmojiList
-  | global.EmojiGroup
+  | api.DefaultHistoryTTL
+  | api.ExportedContactToken
+  | api.RequestPeerType
+  | api.EmojiList
+  | api.EmojiGroup
   | messages.EmojiGroups
-  | global.TextWithEntities
+  | api.TextWithEntities
   | messages.TranslatedText
-  | global.AutoSaveSettings
-  | global.AutoSaveException
+  | api.AutoSaveSettings
+  | api.AutoSaveException
   | account.AutoSaveSettings
   | help.AppConfig
-  | global.InputBotApp
-  | global.BotApp
+  | api.InputBotApp
+  | api.BotApp
   | messages.BotApp
-  | global.AppWebViewResult
-  | global.InlineBotWebView
-  | global.ReadParticipantDate
-  | global.InputChatlist
-  | global.ExportedChatlistInvite
+  | api.AppWebViewResult
+  | api.InlineBotWebView
+  | api.ReadParticipantDate
+  | api.InputChatlist
+  | api.ExportedChatlistInvite
   | chatlists.ExportedChatlistInvite
   | chatlists.ExportedInvites
   | chatlists.ChatlistInvite
   | chatlists.ChatlistUpdates
   | bots.BotInfo
-  | global.MessagePeerVote
-  | global.SponsoredWebPage
-  | global.StoryViews
-  | global.StoryItem
+  | api.MessagePeerVote
+  | api.SponsoredWebPage
+  | api.StoryViews
+  | api.StoryItem
   | stories.AllStories
   | stories.Stories
-  | global.StoryView
+  | api.StoryView
   | stories.StoryViewsList
   | stories.StoryViews
-  | global.InputReplyTo
-  | global.ExportedStoryLink
-  | global.StoriesStealthMode
-  | global.MediaAreaCoordinates
-  | global.MediaArea
-  | global.PeerStories
+  | api.InputReplyTo
+  | api.ExportedStoryLink
+  | api.StoriesStealthMode
+  | api.MediaAreaCoordinates
+  | api.MediaArea
+  | api.PeerStories
   | stories.PeerStories
   | messages.WebPage
-  | global.PremiumGiftCodeOption
+  | api.PremiumGiftCodeOption
   | payments.CheckedGiftCode
   | payments.GiveawayInfo
-  | global.PrepaidGiveaway
-  | global.Boost
+  | api.PrepaidGiveaway
+  | api.Boost
   | premium.BoostsList
-  | global.MyBoost
+  | api.MyBoost
   | premium.MyBoosts
   | premium.BoostsStatus
-  | global.StoryFwdHeader
-  | global.PostInteractionCounters
+  | api.StoryFwdHeader
+  | api.PostInteractionCounters
   | stats.StoryStats
-  | global.PublicForward
+  | api.PublicForward
   | stats.PublicForwards
-  | global.PeerColor
+  | api.PeerColor
   | help.PeerColorSet
   | help.PeerColorOption
   | help.PeerColors
-  | global.StoryReaction
+  | api.StoryReaction
   | stories.StoryReactionsList
-  | global.SavedDialog
+  | api.SavedDialog
   | messages.SavedDialogs
-  | global.SavedReactionTag
+  | api.SavedReactionTag
   | messages.SavedReactionTags
-  | global.OutboxReadDate
+  | api.OutboxReadDate
   | smsjobs.EligibilityToJoin
   | smsjobs.Status
-  | global.SmsJob
-  | global.BusinessWeeklyOpen
-  | global.BusinessWorkHours
-  | global.BusinessLocation
-  | global.InputBusinessRecipients
-  | global.BusinessRecipients
-  | global.BusinessAwayMessageSchedule
-  | global.InputBusinessGreetingMessage
-  | global.BusinessGreetingMessage
-  | global.InputBusinessAwayMessage
-  | global.BusinessAwayMessage
-  | global.Timezone
+  | api.SmsJob
+  | api.BusinessWeeklyOpen
+  | api.BusinessWorkHours
+  | api.BusinessLocation
+  | api.InputBusinessRecipients
+  | api.BusinessRecipients
+  | api.BusinessAwayMessageSchedule
+  | api.InputBusinessGreetingMessage
+  | api.BusinessGreetingMessage
+  | api.InputBusinessAwayMessage
+  | api.BusinessAwayMessage
+  | api.Timezone
   | help.TimezonesList
-  | global.QuickReply
-  | global.InputQuickReplyShortcut
+  | api.QuickReply
+  | api.InputQuickReplyShortcut
   | messages.QuickReplies
-  | global.ConnectedBot
+  | api.ConnectedBot
   | account.ConnectedBots
   | messages.DialogFilters
-  | global.Birthday
-  | global.BotBusinessConnection
-  | global.InputBusinessIntro
-  | global.BusinessIntro
+  | api.Birthday
+  | api.BotBusinessConnection
+  | api.InputBusinessIntro
+  | api.BusinessIntro
   | messages.MyStickers
-  | global.InputCollectible
+  | api.InputCollectible
   | fragment.CollectibleInfo
-  | global.InputBusinessBotRecipients
-  | global.BusinessBotRecipients
-  | global.ContactBirthday
+  | api.InputBusinessBotRecipients
+  | api.BusinessBotRecipients
+  | api.ContactBirthday
   | contacts.ContactBirthdays
-  | global.MissingInvitee
+  | api.MissingInvitee
   | messages.InvitedUsers
-  | global.InputBusinessChatLink
-  | global.BusinessChatLink
+  | api.InputBusinessChatLink
+  | api.BusinessChatLink
   | account.BusinessChatLinks
   | account.ResolvedBusinessChatLinks
-  | global.RequestedPeer
-  | global.SponsoredMessageReportOption
+  | api.RequestedPeer
+  | api.SponsoredMessageReportOption
   | channels.SponsoredMessageReportResult
   | stats.BroadcastRevenueStats
   | stats.BroadcastRevenueWithdrawalUrl
-  | global.BroadcastRevenueTransaction
+  | api.BroadcastRevenueTransaction
   | stats.BroadcastRevenueTransactions;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
@@ -11241,8 +11239,8 @@ export const initConnection: TLApiMethod<"initConnection", {
   system_lang_code: string                // string
   lang_pack: string                       // string
   lang_code: string                       // string
-  proxy?: global.InputClientProxy         // flags.0?InputClientProxy
-  params?: global.JSONValue               // flags.1?JSONValue
+  proxy?: api.InputClientProxy            // flags.0?InputClientProxy
+  params?: api.JSONValue                  // flags.1?JSONValue
   query: any                              // !X
 }, any>
 export const invokeWithLayer: TLApiMethod<"invokeWithLayer", {
@@ -11253,7 +11251,7 @@ export const invokeWithoutUpdates: TLApiMethod<"invokeWithoutUpdates", {
   query: any                              // !X
 }, any>
 export const invokeWithMessagesRange: TLApiMethod<"invokeWithMessagesRange", {
-  range: global.MessageRange              // MessageRange
+  range: api.MessageRange                 // MessageRange
   query: any                              // !X
 }, any>
 export const invokeWithTakeout: TLApiMethod<"invokeWithTakeout", {
@@ -11270,7 +11268,7 @@ export namespace auth {
     phone_number: string                    // string
     api_id: number                          // int
     api_hash: string                        // string
-    settings: global.CodeSettings           // CodeSettings
+    settings: api.CodeSettings              // CodeSettings
   }, SentCode>
   export const signUp: TLApiMethod<"auth.signUp", {
     no_joined_notifications?: true          // flags.0?true
@@ -11283,7 +11281,7 @@ export namespace auth {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     phone_code?: string                     // flags.0?string
-    email_verification?: global.EmailVerification // flags.1?EmailVerification
+    email_verification?: api.EmailVerification // flags.1?EmailVerification
   }, Authorization>
   export const logOut: TLApiMethod<"auth.logOut", void, LoggedOut>
   export const resetAuthorizations: TLApiMethod<"auth.resetAuthorizations", void, boolean>
@@ -11307,7 +11305,7 @@ export namespace auth {
     bot_auth_token: string                  // string
   }, Authorization>
   export const checkPassword: TLApiMethod<"auth.checkPassword", {
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
   }, Authorization>
   export const requestPasswordRecovery: TLApiMethod<"auth.requestPasswordRecovery", void, PasswordRecovery>
   export const recoverPassword: TLApiMethod<"auth.recoverPassword", {
@@ -11335,7 +11333,7 @@ export namespace auth {
   }, LoginToken>
   export const acceptLoginToken: TLApiMethod<"auth.acceptLoginToken", {
     token: Uint8Array                       // bytes
-  }, global.Authorization>
+  }, api.Authorization>
   export const checkRecoveryPassword: TLApiMethod<"auth.checkRecoveryPassword", {
     code: string                            // string
   }, boolean>
@@ -11371,18 +11369,18 @@ export namespace account {
     other_uids: bigint[]                    // Vector<long>
   }, boolean>
   export const updateNotifySettings: TLApiMethod<"account.updateNotifySettings", {
-    peer: global.InputNotifyPeer            // InputNotifyPeer
-    settings: global.InputPeerNotifySettings // InputPeerNotifySettings
+    peer: api.InputNotifyPeer               // InputNotifyPeer
+    settings: api.InputPeerNotifySettings   // InputPeerNotifySettings
   }, boolean>
   export const getNotifySettings: TLApiMethod<"account.getNotifySettings", {
-    peer: global.InputNotifyPeer            // InputNotifyPeer
-  }, global.PeerNotifySettings>
+    peer: api.InputNotifyPeer               // InputNotifyPeer
+  }, api.PeerNotifySettings>
   export const resetNotifySettings: TLApiMethod<"account.resetNotifySettings", void, boolean>
   export const updateProfile: TLApiMethod<"account.updateProfile", {
     first_name?: string                     // flags.0?string
     last_name?: string                      // flags.1?string
     about?: string                          // flags.2?string
-  }, global.User>
+  }, api.User>
   export const updateStatus: TLApiMethod<"account.updateStatus", {
     offline: boolean                        // Bool
   }, boolean>
@@ -11390,8 +11388,8 @@ export namespace account {
     hash: bigint                            // long
   }, WallPapers>
   export const reportPeer: TLApiMethod<"account.reportPeer", {
-    peer: global.InputPeer                  // InputPeer
-    reason: global.ReportReason             // ReportReason
+    peer: api.InputPeer                     // InputPeer
+    reason: api.ReportReason                // ReportReason
     message: string                         // string
   }, boolean>
   export const checkUsername: TLApiMethod<"account.checkUsername", {
@@ -11399,31 +11397,31 @@ export namespace account {
   }, boolean>
   export const updateUsername: TLApiMethod<"account.updateUsername", {
     username: string                        // string
-  }, global.User>
+  }, api.User>
   export const getPrivacy: TLApiMethod<"account.getPrivacy", {
-    key: global.InputPrivacyKey             // InputPrivacyKey
+    key: api.InputPrivacyKey                // InputPrivacyKey
   }, PrivacyRules>
   export const setPrivacy: TLApiMethod<"account.setPrivacy", {
-    key: global.InputPrivacyKey             // InputPrivacyKey
-    rules: global.InputPrivacyRule[]        // Vector<InputPrivacyRule>
+    key: api.InputPrivacyKey                // InputPrivacyKey
+    rules: api.InputPrivacyRule[]           // Vector<InputPrivacyRule>
   }, PrivacyRules>
   export const deleteAccount: TLApiMethod<"account.deleteAccount", {
     reason: string                          // string
-    password?: global.InputCheckPasswordSRP // flags.0?InputCheckPasswordSRP
+    password?: api.InputCheckPasswordSRP    // flags.0?InputCheckPasswordSRP
   }, boolean>
-  export const getAccountTTL: TLApiMethod<"account.getAccountTTL", void, global.AccountDaysTTL>
+  export const getAccountTTL: TLApiMethod<"account.getAccountTTL", void, api.AccountDaysTTL>
   export const setAccountTTL: TLApiMethod<"account.setAccountTTL", {
-    ttl: global.AccountDaysTTL              // AccountDaysTTL
+    ttl: api.AccountDaysTTL                 // AccountDaysTTL
   }, boolean>
   export const sendChangePhoneCode: TLApiMethod<"account.sendChangePhoneCode", {
     phone_number: string                    // string
-    settings: global.CodeSettings           // CodeSettings
+    settings: api.CodeSettings              // CodeSettings
   }, auth.SentCode>
   export const changePhone: TLApiMethod<"account.changePhone", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     phone_code: string                      // string
-  }, global.User>
+  }, api.User>
   export const updateDeviceLocked: TLApiMethod<"account.updateDeviceLocked", {
     period: number                          // int
   }, boolean>
@@ -11433,22 +11431,22 @@ export namespace account {
   }, boolean>
   export const getPassword: TLApiMethod<"account.getPassword", void, Password>
   export const getPasswordSettings: TLApiMethod<"account.getPasswordSettings", {
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
   }, PasswordSettings>
   export const updatePasswordSettings: TLApiMethod<"account.updatePasswordSettings", {
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
     new_settings: account.PasswordInputSettings // account.PasswordInputSettings
   }, boolean>
   export const sendConfirmPhoneCode: TLApiMethod<"account.sendConfirmPhoneCode", {
     hash: string                            // string
-    settings: global.CodeSettings           // CodeSettings
+    settings: api.CodeSettings              // CodeSettings
   }, auth.SentCode>
   export const confirmPhone: TLApiMethod<"account.confirmPhone", {
     phone_code_hash: string                 // string
     phone_code: string                      // string
   }, boolean>
   export const getTmpPassword: TLApiMethod<"account.getTmpPassword", {
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
     period: number                          // int
   }, TmpPassword>
   export const getWebAuthorizations: TLApiMethod<"account.getWebAuthorizations", void, WebAuthorizations>
@@ -11456,16 +11454,16 @@ export namespace account {
     hash: bigint                            // long
   }, boolean>
   export const resetWebAuthorizations: TLApiMethod<"account.resetWebAuthorizations", void, boolean>
-  export const getAllSecureValues: TLApiMethod<"account.getAllSecureValues", void, global.SecureValue[]>
+  export const getAllSecureValues: TLApiMethod<"account.getAllSecureValues", void, api.SecureValue[]>
   export const getSecureValue: TLApiMethod<"account.getSecureValue", {
-    types: global.SecureValueType[]         // Vector<SecureValueType>
-  }, global.SecureValue[]>
+    types: api.SecureValueType[]            // Vector<SecureValueType>
+  }, api.SecureValue[]>
   export const saveSecureValue: TLApiMethod<"account.saveSecureValue", {
-    value: global.InputSecureValue          // InputSecureValue
+    value: api.InputSecureValue             // InputSecureValue
     secure_secret_id: bigint                // long
-  }, global.SecureValue>
+  }, api.SecureValue>
   export const deleteSecureValue: TLApiMethod<"account.deleteSecureValue", {
-    types: global.SecureValueType[]         // Vector<SecureValueType>
+    types: api.SecureValueType[]            // Vector<SecureValueType>
   }, boolean>
   export const getAuthorizationForm: TLApiMethod<"account.getAuthorizationForm", {
     bot_id: bigint                          // long
@@ -11476,12 +11474,12 @@ export namespace account {
     bot_id: bigint                          // long
     scope: string                           // string
     public_key: string                      // string
-    value_hashes: global.SecureValueHash[]  // Vector<SecureValueHash>
-    credentials: global.SecureCredentialsEncrypted // SecureCredentialsEncrypted
+    value_hashes: api.SecureValueHash[]     // Vector<SecureValueHash>
+    credentials: api.SecureCredentialsEncrypted // SecureCredentialsEncrypted
   }, boolean>
   export const sendVerifyPhoneCode: TLApiMethod<"account.sendVerifyPhoneCode", {
     phone_number: string                    // string
-    settings: global.CodeSettings           // CodeSettings
+    settings: api.CodeSettings              // CodeSettings
   }, auth.SentCode>
   export const verifyPhone: TLApiMethod<"account.verifyPhone", {
     phone_number: string                    // string
@@ -11489,12 +11487,12 @@ export namespace account {
     phone_code: string                      // string
   }, boolean>
   export const sendVerifyEmailCode: TLApiMethod<"account.sendVerifyEmailCode", {
-    purpose: global.EmailVerifyPurpose      // EmailVerifyPurpose
+    purpose: api.EmailVerifyPurpose         // EmailVerifyPurpose
     email: string                           // string
   }, SentEmailCode>
   export const verifyEmail: TLApiMethod<"account.verifyEmail", {
-    purpose: global.EmailVerifyPurpose      // EmailVerifyPurpose
-    verification: global.EmailVerification  // EmailVerification
+    purpose: api.EmailVerifyPurpose         // EmailVerifyPurpose
+    verification: api.EmailVerification     // EmailVerification
   }, EmailVerified>
   export const initTakeoutSession: TLApiMethod<"account.initTakeoutSession", {
     contacts?: true                         // flags.0?true
@@ -11520,67 +11518,67 @@ export namespace account {
   export const getNotifyExceptions: TLApiMethod<"account.getNotifyExceptions", {
     compare_sound?: true                    // flags.1?true
     compare_stories?: true                  // flags.2?true
-    peer?: global.InputNotifyPeer           // flags.0?InputNotifyPeer
-  }, global.Updates>
+    peer?: api.InputNotifyPeer              // flags.0?InputNotifyPeer
+  }, api.Updates>
   export const getWallPaper: TLApiMethod<"account.getWallPaper", {
-    wallpaper: global.InputWallPaper        // InputWallPaper
-  }, global.WallPaper>
+    wallpaper: api.InputWallPaper           // InputWallPaper
+  }, api.WallPaper>
   export const uploadWallPaper: TLApiMethod<"account.uploadWallPaper", {
     for_chat?: true                         // flags.0?true
-    file: global.InputFile                  // InputFile
+    file: api.InputFile                     // InputFile
     mime_type: string                       // string
-    settings: global.WallPaperSettings      // WallPaperSettings
-  }, global.WallPaper>
+    settings: api.WallPaperSettings         // WallPaperSettings
+  }, api.WallPaper>
   export const saveWallPaper: TLApiMethod<"account.saveWallPaper", {
-    wallpaper: global.InputWallPaper        // InputWallPaper
+    wallpaper: api.InputWallPaper           // InputWallPaper
     unsave: boolean                         // Bool
-    settings: global.WallPaperSettings      // WallPaperSettings
+    settings: api.WallPaperSettings         // WallPaperSettings
   }, boolean>
   export const installWallPaper: TLApiMethod<"account.installWallPaper", {
-    wallpaper: global.InputWallPaper        // InputWallPaper
-    settings: global.WallPaperSettings      // WallPaperSettings
+    wallpaper: api.InputWallPaper           // InputWallPaper
+    settings: api.WallPaperSettings         // WallPaperSettings
   }, boolean>
   export const resetWallPapers: TLApiMethod<"account.resetWallPapers", void, boolean>
   export const getAutoDownloadSettings: TLApiMethod<"account.getAutoDownloadSettings", void, AutoDownloadSettings>
   export const saveAutoDownloadSettings: TLApiMethod<"account.saveAutoDownloadSettings", {
     low?: true                              // flags.0?true
     high?: true                             // flags.1?true
-    settings: global.AutoDownloadSettings   // AutoDownloadSettings
+    settings: api.AutoDownloadSettings      // AutoDownloadSettings
   }, boolean>
   export const uploadTheme: TLApiMethod<"account.uploadTheme", {
-    file: global.InputFile                  // InputFile
-    thumb?: global.InputFile                // flags.0?InputFile
+    file: api.InputFile                     // InputFile
+    thumb?: api.InputFile                   // flags.0?InputFile
     file_name: string                       // string
     mime_type: string                       // string
-  }, global.Document>
+  }, api.Document>
   export const createTheme: TLApiMethod<"account.createTheme", {
     slug: string                            // string
     title: string                           // string
-    document?: global.InputDocument         // flags.2?InputDocument
-    settings?: global.InputThemeSettings[]  // flags.3?Vector<InputThemeSettings>
-  }, global.Theme>
+    document?: api.InputDocument            // flags.2?InputDocument
+    settings?: api.InputThemeSettings[]     // flags.3?Vector<InputThemeSettings>
+  }, api.Theme>
   export const updateTheme: TLApiMethod<"account.updateTheme", {
     format: string                          // string
-    theme: global.InputTheme                // InputTheme
+    theme: api.InputTheme                   // InputTheme
     slug?: string                           // flags.0?string
     title?: string                          // flags.1?string
-    document?: global.InputDocument         // flags.2?InputDocument
-    settings?: global.InputThemeSettings[]  // flags.3?Vector<InputThemeSettings>
-  }, global.Theme>
+    document?: api.InputDocument            // flags.2?InputDocument
+    settings?: api.InputThemeSettings[]     // flags.3?Vector<InputThemeSettings>
+  }, api.Theme>
   export const saveTheme: TLApiMethod<"account.saveTheme", {
-    theme: global.InputTheme                // InputTheme
+    theme: api.InputTheme                   // InputTheme
     unsave: boolean                         // Bool
   }, boolean>
   export const installTheme: TLApiMethod<"account.installTheme", {
     dark?: true                             // flags.0?true
-    theme?: global.InputTheme               // flags.1?InputTheme
+    theme?: api.InputTheme                  // flags.1?InputTheme
     format?: string                         // flags.2?string
-    base_theme?: global.BaseTheme           // flags.3?BaseTheme
+    base_theme?: api.BaseTheme              // flags.3?BaseTheme
   }, boolean>
   export const getTheme: TLApiMethod<"account.getTheme", {
     format: string                          // string
-    theme: global.InputTheme                // InputTheme
-  }, global.Theme>
+    theme: api.InputTheme                   // InputTheme
+  }, api.Theme>
   export const getThemes: TLApiMethod<"account.getThemes", {
     format: string                          // string
     hash: bigint                            // long
@@ -11590,16 +11588,16 @@ export namespace account {
   }, boolean>
   export const getContentSettings: TLApiMethod<"account.getContentSettings", void, ContentSettings>
   export const getMultiWallPapers: TLApiMethod<"account.getMultiWallPapers", {
-    wallpapers: global.InputWallPaper[]     // Vector<InputWallPaper>
-  }, global.WallPaper[]>
-  export const getGlobalPrivacySettings: TLApiMethod<"account.getGlobalPrivacySettings", void, global.GlobalPrivacySettings>
+    wallpapers: api.InputWallPaper[]        // Vector<InputWallPaper>
+  }, api.WallPaper[]>
+  export const getGlobalPrivacySettings: TLApiMethod<"account.getGlobalPrivacySettings", void, api.GlobalPrivacySettings>
   export const setGlobalPrivacySettings: TLApiMethod<"account.setGlobalPrivacySettings", {
-    settings: global.GlobalPrivacySettings  // GlobalPrivacySettings
-  }, global.GlobalPrivacySettings>
+    settings: api.GlobalPrivacySettings     // GlobalPrivacySettings
+  }, api.GlobalPrivacySettings>
   export const reportProfilePhoto: TLApiMethod<"account.reportProfilePhoto", {
-    peer: global.InputPeer                  // InputPeer
-    photo_id: global.InputPhoto             // InputPhoto
-    reason: global.ReportReason             // ReportReason
+    peer: api.InputPeer                     // InputPeer
+    photo_id: api.InputPhoto                // InputPhoto
+    reason: api.ReportReason                // ReportReason
     message: string                         // string
   }, boolean>
   export const resetPassword: TLApiMethod<"account.resetPassword", void, ResetPasswordResult>
@@ -11620,16 +11618,16 @@ export namespace account {
     hash: bigint                            // long
   }, SavedRingtones>
   export const saveRingtone: TLApiMethod<"account.saveRingtone", {
-    id: global.InputDocument                // InputDocument
+    id: api.InputDocument                   // InputDocument
     unsave: boolean                         // Bool
   }, SavedRingtone>
   export const uploadRingtone: TLApiMethod<"account.uploadRingtone", {
-    file: global.InputFile                  // InputFile
+    file: api.InputFile                     // InputFile
     file_name: string                       // string
     mime_type: string                       // string
-  }, global.Document>
+  }, api.Document>
   export const updateEmojiStatus: TLApiMethod<"account.updateEmojiStatus", {
-    emoji_status: global.EmojiStatus        // EmojiStatus
+    emoji_status: api.EmojiStatus           // EmojiStatus
   }, boolean>
   export const getDefaultEmojiStatuses: TLApiMethod<"account.getDefaultEmojiStatuses", {
     hash: bigint                            // long
@@ -11647,17 +11645,17 @@ export namespace account {
   }, boolean>
   export const getDefaultProfilePhotoEmojis: TLApiMethod<"account.getDefaultProfilePhotoEmojis", {
     hash: bigint                            // long
-  }, global.EmojiList>
+  }, api.EmojiList>
   export const getDefaultGroupPhotoEmojis: TLApiMethod<"account.getDefaultGroupPhotoEmojis", {
     hash: bigint                            // long
-  }, global.EmojiList>
+  }, api.EmojiList>
   export const getAutoSaveSettings: TLApiMethod<"account.getAutoSaveSettings", void, AutoSaveSettings>
   export const saveAutoSaveSettings: TLApiMethod<"account.saveAutoSaveSettings", {
     users?: true                            // flags.0?true
     chats?: true                            // flags.1?true
     broadcasts?: true                       // flags.2?true
-    peer?: global.InputPeer                 // flags.3?InputPeer
-    settings: global.AutoSaveSettings       // AutoSaveSettings
+    peer?: api.InputPeer                    // flags.3?InputPeer
+    settings: api.AutoSaveSettings          // AutoSaveSettings
   }, boolean>
   export const deleteAutoSaveExceptions: TLApiMethod<"account.deleteAutoSaveExceptions", void, boolean>
   export const invalidateSignInCodes: TLApiMethod<"account.invalidateSignInCodes", {
@@ -11670,56 +11668,56 @@ export namespace account {
   }, boolean>
   export const getDefaultBackgroundEmojis: TLApiMethod<"account.getDefaultBackgroundEmojis", {
     hash: bigint                            // long
-  }, global.EmojiList>
+  }, api.EmojiList>
   export const getChannelDefaultEmojiStatuses: TLApiMethod<"account.getChannelDefaultEmojiStatuses", {
     hash: bigint                            // long
   }, EmojiStatuses>
   export const getChannelRestrictedStatusEmojis: TLApiMethod<"account.getChannelRestrictedStatusEmojis", {
     hash: bigint                            // long
-  }, global.EmojiList>
+  }, api.EmojiList>
   export const updateBusinessWorkHours: TLApiMethod<"account.updateBusinessWorkHours", {
-    business_work_hours?: global.BusinessWorkHours // flags.0?BusinessWorkHours
+    business_work_hours?: api.BusinessWorkHours // flags.0?BusinessWorkHours
   }, boolean>
   export const updateBusinessLocation: TLApiMethod<"account.updateBusinessLocation", {
-    geo_point?: global.InputGeoPoint        // flags.1?InputGeoPoint
+    geo_point?: api.InputGeoPoint           // flags.1?InputGeoPoint
     address?: string                        // flags.0?string
   }, boolean>
   export const updateBusinessGreetingMessage: TLApiMethod<"account.updateBusinessGreetingMessage", {
-    message?: global.InputBusinessGreetingMessage // flags.0?InputBusinessGreetingMessage
+    message?: api.InputBusinessGreetingMessage // flags.0?InputBusinessGreetingMessage
   }, boolean>
   export const updateBusinessAwayMessage: TLApiMethod<"account.updateBusinessAwayMessage", {
-    message?: global.InputBusinessAwayMessage // flags.0?InputBusinessAwayMessage
+    message?: api.InputBusinessAwayMessage  // flags.0?InputBusinessAwayMessage
   }, boolean>
   export const updateConnectedBot: TLApiMethod<"account.updateConnectedBot", {
     can_reply?: true                        // flags.0?true
     deleted?: true                          // flags.1?true
-    bot: global.InputUser                   // InputUser
-    recipients: global.InputBusinessBotRecipients // InputBusinessBotRecipients
-  }, global.Updates>
+    bot: api.InputUser                      // InputUser
+    recipients: api.InputBusinessBotRecipients // InputBusinessBotRecipients
+  }, api.Updates>
   export const getConnectedBots: TLApiMethod<"account.getConnectedBots", void, ConnectedBots>
   export const getBotBusinessConnection: TLApiMethod<"account.getBotBusinessConnection", {
     connection_id: string                   // string
-  }, global.Updates>
+  }, api.Updates>
   export const updateBusinessIntro: TLApiMethod<"account.updateBusinessIntro", {
-    intro?: global.InputBusinessIntro       // flags.0?InputBusinessIntro
+    intro?: api.InputBusinessIntro          // flags.0?InputBusinessIntro
   }, boolean>
   export const toggleConnectedBotPaused: TLApiMethod<"account.toggleConnectedBotPaused", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     paused: boolean                         // Bool
   }, boolean>
   export const disablePeerConnectedBot: TLApiMethod<"account.disablePeerConnectedBot", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const updateBirthday: TLApiMethod<"account.updateBirthday", {
-    birthday?: global.Birthday              // flags.0?Birthday
+    birthday?: api.Birthday                 // flags.0?Birthday
   }, boolean>
   export const createBusinessChatLink: TLApiMethod<"account.createBusinessChatLink", {
-    link: global.InputBusinessChatLink      // InputBusinessChatLink
-  }, global.BusinessChatLink>
+    link: api.InputBusinessChatLink         // InputBusinessChatLink
+  }, api.BusinessChatLink>
   export const editBusinessChatLink: TLApiMethod<"account.editBusinessChatLink", {
     slug: string                            // string
-    link: global.InputBusinessChatLink      // InputBusinessChatLink
-  }, global.BusinessChatLink>
+    link: api.InputBusinessChatLink         // InputBusinessChatLink
+  }, api.BusinessChatLink>
   export const deleteBusinessChatLink: TLApiMethod<"account.deleteBusinessChatLink", {
     slug: string                            // string
   }, boolean>
@@ -11728,23 +11726,23 @@ export namespace account {
     slug: string                            // string
   }, ResolvedBusinessChatLinks>
   export const updatePersonalChannel: TLApiMethod<"account.updatePersonalChannel", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, boolean>
 }
 
 export namespace users {
   export const getUsers: TLApiMethod<"users.getUsers", {
-    id: global.InputUser[]                  // Vector<InputUser>
-  }, global.User[]>
+    id: api.InputUser[]                     // Vector<InputUser>
+  }, api.User[]>
   export const getFullUser: TLApiMethod<"users.getFullUser", {
-    id: global.InputUser                    // InputUser
+    id: api.InputUser                       // InputUser
   }, UserFull>
   export const setSecureValueErrors: TLApiMethod<"users.setSecureValueErrors", {
-    id: global.InputUser                    // InputUser
-    errors: global.SecureValueError[]       // Vector<SecureValueError>
+    id: api.InputUser                       // InputUser
+    errors: api.SecureValueError[]          // Vector<SecureValueError>
   }, boolean>
   export const getIsPremiumRequiredToContact: TLApiMethod<"users.getIsPremiumRequiredToContact", {
-    id: global.InputUser[]                  // Vector<InputUser>
+    id: api.InputUser[]                     // Vector<InputUser>
   }, boolean[]>
 }
 
@@ -11752,26 +11750,26 @@ export namespace contacts {
   export const getContactIDs: TLApiMethod<"contacts.getContactIDs", {
     hash: bigint                            // long
   }, number[]>
-  export const getStatuses: TLApiMethod<"contacts.getStatuses", void, global.ContactStatus[]>
+  export const getStatuses: TLApiMethod<"contacts.getStatuses", void, api.ContactStatus[]>
   export const getContacts: TLApiMethod<"contacts.getContacts", {
     hash: bigint                            // long
   }, Contacts>
   export const importContacts: TLApiMethod<"contacts.importContacts", {
-    contacts: global.InputContact[]         // Vector<InputContact>
+    contacts: api.InputContact[]            // Vector<InputContact>
   }, ImportedContacts>
   export const deleteContacts: TLApiMethod<"contacts.deleteContacts", {
-    id: global.InputUser[]                  // Vector<InputUser>
-  }, global.Updates>
+    id: api.InputUser[]                     // Vector<InputUser>
+  }, api.Updates>
   export const deleteByPhones: TLApiMethod<"contacts.deleteByPhones", {
     phones: string[]                        // Vector<string>
   }, boolean>
   export const block: TLApiMethod<"contacts.block", {
     my_stories_from?: true                  // flags.0?true
-    id: global.InputPeer                    // InputPeer
+    id: api.InputPeer                       // InputPeer
   }, boolean>
   export const unblock: TLApiMethod<"contacts.unblock", {
     my_stories_from?: true                  // flags.0?true
-    id: global.InputPeer                    // InputPeer
+    id: api.InputPeer                       // InputPeer
   }, boolean>
   export const getBlocked: TLApiMethod<"contacts.getBlocked", {
     my_stories_from?: true                  // flags.0?true
@@ -11799,48 +11797,48 @@ export namespace contacts {
     hash: bigint                            // long
   }, TopPeers>
   export const resetTopPeerRating: TLApiMethod<"contacts.resetTopPeerRating", {
-    category: global.TopPeerCategory        // TopPeerCategory
-    peer: global.InputPeer                  // InputPeer
+    category: api.TopPeerCategory           // TopPeerCategory
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const resetSaved: TLApiMethod<"contacts.resetSaved", void, boolean>
-  export const getSaved: TLApiMethod<"contacts.getSaved", void, global.SavedContact[]>
+  export const getSaved: TLApiMethod<"contacts.getSaved", void, api.SavedContact[]>
   export const toggleTopPeers: TLApiMethod<"contacts.toggleTopPeers", {
     enabled: boolean                        // Bool
   }, boolean>
   export const addContact: TLApiMethod<"contacts.addContact", {
     add_phone_privacy_exception?: true      // flags.0?true
-    id: global.InputUser                    // InputUser
+    id: api.InputUser                       // InputUser
     first_name: string                      // string
     last_name: string                       // string
     phone: string                           // string
-  }, global.Updates>
+  }, api.Updates>
   export const acceptContact: TLApiMethod<"contacts.acceptContact", {
-    id: global.InputUser                    // InputUser
-  }, global.Updates>
+    id: api.InputUser                       // InputUser
+  }, api.Updates>
   export const getLocated: TLApiMethod<"contacts.getLocated", {
     background?: true                       // flags.1?true
-    geo_point: global.InputGeoPoint         // InputGeoPoint
+    geo_point: api.InputGeoPoint            // InputGeoPoint
     self_expires?: number                   // flags.0?int
-  }, global.Updates>
+  }, api.Updates>
   export const blockFromReplies: TLApiMethod<"contacts.blockFromReplies", {
     delete_message?: true                   // flags.0?true
     delete_history?: true                   // flags.1?true
     report_spam?: true                      // flags.2?true
     msg_id: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const resolvePhone: TLApiMethod<"contacts.resolvePhone", {
     phone: string                           // string
   }, ResolvedPeer>
-  export const exportContactToken: TLApiMethod<"contacts.exportContactToken", void, global.ExportedContactToken>
+  export const exportContactToken: TLApiMethod<"contacts.exportContactToken", void, api.ExportedContactToken>
   export const importContactToken: TLApiMethod<"contacts.importContactToken", {
     token: string                           // string
-  }, global.User>
+  }, api.User>
   export const editCloseFriends: TLApiMethod<"contacts.editCloseFriends", {
     id: bigint[]                            // Vector<long>
   }, boolean>
   export const setBlocked: TLApiMethod<"contacts.setBlocked", {
     my_stories_from?: true                  // flags.0?true
-    id: global.InputPeer[]                  // Vector<InputPeer>
+    id: api.InputPeer[]                     // Vector<InputPeer>
     limit: number                           // int
   }, boolean>
   export const getBirthdays: TLApiMethod<"contacts.getBirthdays", void, ContactBirthdays>
@@ -11848,19 +11846,19 @@ export namespace contacts {
 
 export namespace messages {
   export const getMessages: TLApiMethod<"messages.getMessages", {
-    id: global.InputMessage[]               // Vector<InputMessage>
+    id: api.InputMessage[]                  // Vector<InputMessage>
   }, Messages>
   export const getDialogs: TLApiMethod<"messages.getDialogs", {
     exclude_pinned?: true                   // flags.0?true
     folder_id?: number                      // flags.1?int
     offset_date: number                     // int
     offset_id: number                       // int
-    offset_peer: global.InputPeer           // InputPeer
+    offset_peer: api.InputPeer              // InputPeer
     limit: number                           // int
     hash: bigint                            // long
   }, Dialogs>
   export const getHistory: TLApiMethod<"messages.getHistory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     offset_id: number                       // int
     offset_date: number                     // int
     add_offset: number                      // int
@@ -11870,13 +11868,13 @@ export namespace messages {
     hash: bigint                            // long
   }, Messages>
   export const search: TLApiMethod<"messages.search", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     q: string                               // string
-    from_id?: global.InputPeer              // flags.0?InputPeer
-    saved_peer_id?: global.InputPeer        // flags.2?InputPeer
-    saved_reaction?: global.Reaction[]      // flags.3?Vector<Reaction>
+    from_id?: api.InputPeer                 // flags.0?InputPeer
+    saved_peer_id?: api.InputPeer           // flags.2?InputPeer
+    saved_reaction?: api.Reaction[]         // flags.3?Vector<Reaction>
     top_msg_id?: number                     // flags.1?int
-    filter: global.MessagesFilter           // MessagesFilter
+    filter: api.MessagesFilter              // MessagesFilter
     min_date: number                        // int
     max_date: number                        // int
     offset_id: number                       // int
@@ -11887,13 +11885,13 @@ export namespace messages {
     hash: bigint                            // long
   }, Messages>
   export const readHistory: TLApiMethod<"messages.readHistory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     max_id: number                          // int
   }, AffectedMessages>
   export const deleteHistory: TLApiMethod<"messages.deleteHistory", {
     just_clear?: true                       // flags.0?true
     revoke?: true                           // flags.1?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     max_id: number                          // int
     min_date?: number                       // flags.2?int
     max_date?: number                       // flags.3?int
@@ -11904,11 +11902,11 @@ export namespace messages {
   }, AffectedMessages>
   export const receivedMessages: TLApiMethod<"messages.receivedMessages", {
     max_id: number                          // int
-  }, global.ReceivedNotifyMessage[]>
+  }, api.ReceivedNotifyMessage[]>
   export const setTyping: TLApiMethod<"messages.setTyping", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
-    action: global.SendMessageAction        // SendMessageAction
+    action: api.SendMessageAction           // SendMessageAction
   }, boolean>
   export const sendMessage: TLApiMethod<"messages.sendMessage", {
     no_webpage?: true                       // flags.1?true
@@ -11918,16 +11916,16 @@ export namespace messages {
     noforwards?: true                       // flags.14?true
     update_stickersets_order?: true         // flags.15?true
     invert_media?: true                     // flags.16?true
-    peer: global.InputPeer                  // InputPeer
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
+    peer: api.InputPeer                     // InputPeer
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
     message: string                         // string
     random_id: bigint                       // long
-    reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
+    reply_markup?: api.ReplyMarkup          // flags.2?ReplyMarkup
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.10?int
-    send_as?: global.InputPeer              // flags.13?InputPeer
-    quick_reply_shortcut?: global.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+    quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+  }, api.Updates>
   export const sendMedia: TLApiMethod<"messages.sendMedia", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -11935,17 +11933,17 @@ export namespace messages {
     noforwards?: true                       // flags.14?true
     update_stickersets_order?: true         // flags.15?true
     invert_media?: true                     // flags.16?true
-    peer: global.InputPeer                  // InputPeer
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
-    media: global.InputMedia                // InputMedia
+    peer: api.InputPeer                     // InputPeer
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
+    media: api.InputMedia                   // InputMedia
     message: string                         // string
     random_id: bigint                       // long
-    reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
+    reply_markup?: api.ReplyMarkup          // flags.2?ReplyMarkup
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.10?int
-    send_as?: global.InputPeer              // flags.13?InputPeer
-    quick_reply_shortcut?: global.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+    quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+  }, api.Updates>
   export const forwardMessages: TLApiMethod<"messages.forwardMessages", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
@@ -11953,25 +11951,25 @@ export namespace messages {
     drop_author?: true                      // flags.11?true
     drop_media_captions?: true              // flags.12?true
     noforwards?: true                       // flags.14?true
-    from_peer: global.InputPeer             // InputPeer
+    from_peer: api.InputPeer                // InputPeer
     id: number[]                            // Vector<int>
     random_id: bigint[]                     // Vector<long>
-    to_peer: global.InputPeer               // InputPeer
+    to_peer: api.InputPeer                  // InputPeer
     top_msg_id?: number                     // flags.9?int
     schedule_date?: number                  // flags.10?int
-    send_as?: global.InputPeer              // flags.13?InputPeer
-    quick_reply_shortcut?: global.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+    quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+  }, api.Updates>
   export const reportSpam: TLApiMethod<"messages.reportSpam", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const getPeerSettings: TLApiMethod<"messages.getPeerSettings", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, PeerSettings>
   export const report: TLApiMethod<"messages.report", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-    reason: global.ReportReason             // ReportReason
+    reason: api.ReportReason                // ReportReason
     message: string                         // string
   }, boolean>
   export const getChats: TLApiMethod<"messages.getChats", {
@@ -11983,23 +11981,23 @@ export namespace messages {
   export const editChatTitle: TLApiMethod<"messages.editChatTitle", {
     chat_id: bigint                         // long
     title: string                           // string
-  }, global.Updates>
+  }, api.Updates>
   export const editChatPhoto: TLApiMethod<"messages.editChatPhoto", {
     chat_id: bigint                         // long
-    photo: global.InputChatPhoto            // InputChatPhoto
-  }, global.Updates>
+    photo: api.InputChatPhoto               // InputChatPhoto
+  }, api.Updates>
   export const addChatUser: TLApiMethod<"messages.addChatUser", {
     chat_id: bigint                         // long
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     fwd_limit: number                       // int
   }, InvitedUsers>
   export const deleteChatUser: TLApiMethod<"messages.deleteChatUser", {
     revoke_history?: true                   // flags.0?true
     chat_id: bigint                         // long
-    user_id: global.InputUser               // InputUser
-  }, global.Updates>
+    user_id: api.InputUser                  // InputUser
+  }, api.Updates>
   export const createChat: TLApiMethod<"messages.createChat", {
-    users: global.InputUser[]               // Vector<InputUser>
+    users: api.InputUser[]                  // Vector<InputUser>
     title: string                           // string
     ttl_period?: number                     // flags.0?int
   }, InvitedUsers>
@@ -12008,42 +12006,42 @@ export namespace messages {
     random_length: number                   // int
   }, DhConfig>
   export const requestEncryption: TLApiMethod<"messages.requestEncryption", {
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     random_id: number                       // int
     g_a: Uint8Array                         // bytes
-  }, global.EncryptedChat>
+  }, api.EncryptedChat>
   export const acceptEncryption: TLApiMethod<"messages.acceptEncryption", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     g_b: Uint8Array                         // bytes
     key_fingerprint: bigint                 // long
-  }, global.EncryptedChat>
+  }, api.EncryptedChat>
   export const discardEncryption: TLApiMethod<"messages.discardEncryption", {
     delete_history?: true                   // flags.0?true
     chat_id: number                         // int
   }, boolean>
   export const setEncryptedTyping: TLApiMethod<"messages.setEncryptedTyping", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     typing: boolean                         // Bool
   }, boolean>
   export const readEncryptedHistory: TLApiMethod<"messages.readEncryptedHistory", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     max_date: number                        // int
   }, boolean>
   export const sendEncrypted: TLApiMethod<"messages.sendEncrypted", {
     silent?: true                           // flags.0?true
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     random_id: bigint                       // long
     data: Uint8Array                        // bytes
   }, SentEncryptedMessage>
   export const sendEncryptedFile: TLApiMethod<"messages.sendEncryptedFile", {
     silent?: true                           // flags.0?true
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     random_id: bigint                       // long
     data: Uint8Array                        // bytes
-    file: global.InputEncryptedFile         // InputEncryptedFile
+    file: api.InputEncryptedFile            // InputEncryptedFile
   }, SentEncryptedMessage>
   export const sendEncryptedService: TLApiMethod<"messages.sendEncryptedService", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
     random_id: bigint                       // long
     data: Uint8Array                        // bytes
   }, SentEncryptedMessage>
@@ -12051,7 +12049,7 @@ export namespace messages {
     max_qts: number                         // int
   }, bigint[]>
   export const reportEncryptedSpam: TLApiMethod<"messages.reportEncryptedSpam", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
+    peer: api.InputEncryptedChat            // InputEncryptedChat
   }, boolean>
   export const readMessageContents: TLApiMethod<"messages.readMessageContents", {
     id: number[]                            // Vector<int>
@@ -12065,60 +12063,60 @@ export namespace messages {
   }, AllStickers>
   export const getWebPagePreview: TLApiMethod<"messages.getWebPagePreview", {
     message: string                         // string
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
-  }, global.MessageMedia>
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
+  }, api.MessageMedia>
   export const exportChatInvite: TLApiMethod<"messages.exportChatInvite", {
     legacy_revoke_permanent?: true          // flags.2?true
     request_needed?: true                   // flags.3?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     expire_date?: number                    // flags.0?int
     usage_limit?: number                    // flags.1?int
     title?: string                          // flags.4?string
-  }, global.ExportedChatInvite>
+  }, api.ExportedChatInvite>
   export const checkChatInvite: TLApiMethod<"messages.checkChatInvite", {
     hash: string                            // string
-  }, global.ChatInvite>
+  }, api.ChatInvite>
   export const importChatInvite: TLApiMethod<"messages.importChatInvite", {
     hash: string                            // string
-  }, global.Updates>
+  }, api.Updates>
   export const getStickerSet: TLApiMethod<"messages.getStickerSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
+    stickerset: api.InputStickerSet         // InputStickerSet
     hash: number                            // int
   }, StickerSet>
   export const installStickerSet: TLApiMethod<"messages.installStickerSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
+    stickerset: api.InputStickerSet         // InputStickerSet
     archived: boolean                       // Bool
   }, StickerSetInstallResult>
   export const uninstallStickerSet: TLApiMethod<"messages.uninstallStickerSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
+    stickerset: api.InputStickerSet         // InputStickerSet
   }, boolean>
   export const startBot: TLApiMethod<"messages.startBot", {
-    bot: global.InputUser                   // InputUser
-    peer: global.InputPeer                  // InputPeer
+    bot: api.InputUser                      // InputUser
+    peer: api.InputPeer                     // InputPeer
     random_id: bigint                       // long
     start_param: string                     // string
-  }, global.Updates>
+  }, api.Updates>
   export const getMessagesViews: TLApiMethod<"messages.getMessagesViews", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
     increment: boolean                      // Bool
   }, MessageViews>
   export const editChatAdmin: TLApiMethod<"messages.editChatAdmin", {
     chat_id: bigint                         // long
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     is_admin: boolean                       // Bool
   }, boolean>
   export const migrateChat: TLApiMethod<"messages.migrateChat", {
     chat_id: bigint                         // long
-  }, global.Updates>
+  }, api.Updates>
   export const searchGlobal: TLApiMethod<"messages.searchGlobal", {
     folder_id?: number                      // flags.0?int
     q: string                               // string
-    filter: global.MessagesFilter           // MessagesFilter
+    filter: api.MessagesFilter              // MessagesFilter
     min_date: number                        // int
     max_date: number                        // int
     offset_rate: number                     // int
-    offset_peer: global.InputPeer           // InputPeer
+    offset_peer: api.InputPeer              // InputPeer
     offset_id: number                       // int
     limit: number                           // int
   }, Messages>
@@ -12131,18 +12129,18 @@ export namespace messages {
     sha256: Uint8Array                      // bytes
     size: bigint                            // long
     mime_type: string                       // string
-  }, global.Document>
+  }, api.Document>
   export const getSavedGifs: TLApiMethod<"messages.getSavedGifs", {
     hash: bigint                            // long
   }, SavedGifs>
   export const saveGif: TLApiMethod<"messages.saveGif", {
-    id: global.InputDocument                // InputDocument
+    id: api.InputDocument                   // InputDocument
     unsave: boolean                         // Bool
   }, boolean>
   export const getInlineBotResults: TLApiMethod<"messages.getInlineBotResults", {
-    bot: global.InputUser                   // InputUser
-    peer: global.InputPeer                  // InputPeer
-    geo_point?: global.InputGeoPoint        // flags.0?InputGeoPoint
+    bot: api.InputUser                      // InputUser
+    peer: api.InputPeer                     // InputPeer
+    geo_point?: api.InputGeoPoint           // flags.0?InputGeoPoint
     query: string                           // string
     offset: string                          // string
   }, BotResults>
@@ -12150,57 +12148,57 @@ export namespace messages {
     gallery?: true                          // flags.0?true
     private?: true                          // flags.1?true
     query_id: bigint                        // long
-    results: global.InputBotInlineResult[]  // Vector<InputBotInlineResult>
+    results: api.InputBotInlineResult[]     // Vector<InputBotInlineResult>
     cache_time: number                      // int
     next_offset?: string                    // flags.2?string
-    switch_pm?: global.InlineBotSwitchPM    // flags.3?InlineBotSwitchPM
-    switch_webview?: global.InlineBotWebView // flags.4?InlineBotWebView
+    switch_pm?: api.InlineBotSwitchPM       // flags.3?InlineBotSwitchPM
+    switch_webview?: api.InlineBotWebView   // flags.4?InlineBotWebView
   }, boolean>
   export const sendInlineBotResult: TLApiMethod<"messages.sendInlineBotResult", {
     silent?: true                           // flags.5?true
     background?: true                       // flags.6?true
     clear_draft?: true                      // flags.7?true
     hide_via?: true                         // flags.11?true
-    peer: global.InputPeer                  // InputPeer
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
+    peer: api.InputPeer                     // InputPeer
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
     random_id: bigint                       // long
     query_id: bigint                        // long
     id: string                              // string
     schedule_date?: number                  // flags.10?int
-    send_as?: global.InputPeer              // flags.13?InputPeer
-    quick_reply_shortcut?: global.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+    quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+  }, api.Updates>
   export const getMessageEditData: TLApiMethod<"messages.getMessageEditData", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
   }, MessageEditData>
   export const editMessage: TLApiMethod<"messages.editMessage", {
     no_webpage?: true                       // flags.1?true
     invert_media?: true                     // flags.16?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
     message?: string                        // flags.11?string
-    media?: global.InputMedia               // flags.14?InputMedia
-    reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
+    media?: api.InputMedia                  // flags.14?InputMedia
+    reply_markup?: api.ReplyMarkup          // flags.2?ReplyMarkup
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
     schedule_date?: number                  // flags.15?int
     quick_reply_shortcut_id?: number        // flags.17?int
-  }, global.Updates>
+  }, api.Updates>
   export const editInlineBotMessage: TLApiMethod<"messages.editInlineBotMessage", {
     no_webpage?: true                       // flags.1?true
     invert_media?: true                     // flags.16?true
-    id: global.InputBotInlineMessageID      // InputBotInlineMessageID
+    id: api.InputBotInlineMessageID         // InputBotInlineMessageID
     message?: string                        // flags.11?string
-    media?: global.InputMedia               // flags.14?InputMedia
-    reply_markup?: global.ReplyMarkup       // flags.2?ReplyMarkup
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
+    media?: api.InputMedia                  // flags.14?InputMedia
+    reply_markup?: api.ReplyMarkup          // flags.2?ReplyMarkup
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
   }, boolean>
   export const getBotCallbackAnswer: TLApiMethod<"messages.getBotCallbackAnswer", {
     game?: true                             // flags.1?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     data?: Uint8Array                       // flags.0?bytes
-    password?: global.InputCheckPasswordSRP // flags.2?InputCheckPasswordSRP
+    password?: api.InputCheckPasswordSRP    // flags.2?InputCheckPasswordSRP
   }, BotCallbackAnswer>
   export const setBotCallbackAnswer: TLApiMethod<"messages.setBotCallbackAnswer", {
     alert?: true                            // flags.1?true
@@ -12210,18 +12208,18 @@ export namespace messages {
     cache_time: number                      // int
   }, boolean>
   export const getPeerDialogs: TLApiMethod<"messages.getPeerDialogs", {
-    peers: global.InputDialogPeer[]         // Vector<InputDialogPeer>
+    peers: api.InputDialogPeer[]            // Vector<InputDialogPeer>
   }, PeerDialogs>
   export const saveDraft: TLApiMethod<"messages.saveDraft", {
     no_webpage?: true                       // flags.1?true
     invert_media?: true                     // flags.6?true
-    reply_to?: global.InputReplyTo          // flags.4?InputReplyTo
-    peer: global.InputPeer                  // InputPeer
+    reply_to?: api.InputReplyTo             // flags.4?InputReplyTo
+    peer: api.InputPeer                     // InputPeer
     message: string                         // string
-    entities?: global.MessageEntity[]       // flags.3?Vector<MessageEntity>
-    media?: global.InputMedia               // flags.5?InputMedia
+    entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
+    media?: api.InputMedia                  // flags.5?InputMedia
   }, boolean>
-  export const getAllDrafts: TLApiMethod<"messages.getAllDrafts", void, global.Updates>
+  export const getAllDrafts: TLApiMethod<"messages.getAllDrafts", void, api.Updates>
   export const getFeaturedStickers: TLApiMethod<"messages.getFeaturedStickers", {
     hash: bigint                            // long
   }, FeaturedStickers>
@@ -12234,7 +12232,7 @@ export namespace messages {
   }, RecentStickers>
   export const saveRecentSticker: TLApiMethod<"messages.saveRecentSticker", {
     attached?: true                         // flags.0?true
-    id: global.InputDocument                // InputDocument
+    id: api.InputDocument                   // InputDocument
     unsave: boolean                         // Bool
   }, boolean>
   export const clearRecentStickers: TLApiMethod<"messages.clearRecentStickers", {
@@ -12250,34 +12248,34 @@ export namespace messages {
     hash: bigint                            // long
   }, AllStickers>
   export const getAttachedStickers: TLApiMethod<"messages.getAttachedStickers", {
-    media: global.InputStickeredMedia       // InputStickeredMedia
-  }, global.StickerSetCovered[]>
+    media: api.InputStickeredMedia          // InputStickeredMedia
+  }, api.StickerSetCovered[]>
   export const setGameScore: TLApiMethod<"messages.setGameScore", {
     edit_message?: true                     // flags.0?true
     force?: true                            // flags.1?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     score: number                           // int
-  }, global.Updates>
+  }, api.Updates>
   export const setInlineGameScore: TLApiMethod<"messages.setInlineGameScore", {
     edit_message?: true                     // flags.0?true
     force?: true                            // flags.1?true
-    id: global.InputBotInlineMessageID      // InputBotInlineMessageID
-    user_id: global.InputUser               // InputUser
+    id: api.InputBotInlineMessageID         // InputBotInlineMessageID
+    user_id: api.InputUser                  // InputUser
     score: number                           // int
   }, boolean>
   export const getGameHighScores: TLApiMethod<"messages.getGameHighScores", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
   }, HighScores>
   export const getInlineGameHighScores: TLApiMethod<"messages.getInlineGameHighScores", {
-    id: global.InputBotInlineMessageID      // InputBotInlineMessageID
-    user_id: global.InputUser               // InputUser
+    id: api.InputBotInlineMessageID         // InputBotInlineMessageID
+    user_id: api.InputUser                  // InputUser
   }, HighScores>
   export const getCommonChats: TLApiMethod<"messages.getCommonChats", {
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     max_id: bigint                          // long
     limit: number                           // int
   }, Chats>
@@ -12287,12 +12285,12 @@ export namespace messages {
   }, WebPage>
   export const toggleDialogPin: TLApiMethod<"messages.toggleDialogPin", {
     pinned?: true                           // flags.0?true
-    peer: global.InputDialogPeer            // InputDialogPeer
+    peer: api.InputDialogPeer               // InputDialogPeer
   }, boolean>
   export const reorderPinnedDialogs: TLApiMethod<"messages.reorderPinnedDialogs", {
     force?: true                            // flags.0?true
     folder_id: number                       // int
-    order: global.InputDialogPeer[]         // Vector<InputDialogPeer>
+    order: api.InputDialogPeer[]            // Vector<InputDialogPeer>
   }, boolean>
   export const getPinnedDialogs: TLApiMethod<"messages.getPinnedDialogs", {
     folder_id: number                       // int
@@ -12300,7 +12298,7 @@ export namespace messages {
   export const setBotShippingResults: TLApiMethod<"messages.setBotShippingResults", {
     query_id: bigint                        // long
     error?: string                          // flags.0?string
-    shipping_options?: global.ShippingOption[] // flags.1?Vector<ShippingOption>
+    shipping_options?: api.ShippingOption[] // flags.1?Vector<ShippingOption>
   }, boolean>
   export const setBotPrecheckoutResults: TLApiMethod<"messages.setBotPrecheckoutResults", {
     success?: true                          // flags.1?true
@@ -12309,23 +12307,23 @@ export namespace messages {
   }, boolean>
   export const uploadMedia: TLApiMethod<"messages.uploadMedia", {
     business_connection_id?: string         // flags.0?string
-    peer: global.InputPeer                  // InputPeer
-    media: global.InputMedia                // InputMedia
-  }, global.MessageMedia>
+    peer: api.InputPeer                     // InputPeer
+    media: api.InputMedia                   // InputMedia
+  }, api.MessageMedia>
   export const sendScreenshotNotification: TLApiMethod<"messages.sendScreenshotNotification", {
-    peer: global.InputPeer                  // InputPeer
-    reply_to: global.InputReplyTo           // InputReplyTo
+    peer: api.InputPeer                     // InputPeer
+    reply_to: api.InputReplyTo              // InputReplyTo
     random_id: bigint                       // long
-  }, global.Updates>
+  }, api.Updates>
   export const getFavedStickers: TLApiMethod<"messages.getFavedStickers", {
     hash: bigint                            // long
   }, FavedStickers>
   export const faveSticker: TLApiMethod<"messages.faveSticker", {
-    id: global.InputDocument                // InputDocument
+    id: api.InputDocument                   // InputDocument
     unfave: boolean                         // Bool
   }, boolean>
   export const getUnreadMentions: TLApiMethod<"messages.getUnreadMentions", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
     offset_id: number                       // int
     add_offset: number                      // int
@@ -12334,11 +12332,11 @@ export namespace messages {
     min_id: number                          // int
   }, Messages>
   export const readMentions: TLApiMethod<"messages.readMentions", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
   }, AffectedHistory>
   export const getRecentLocations: TLApiMethod<"messages.getRecentLocations", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     limit: number                           // int
     hash: bigint                            // long
   }, Messages>
@@ -12349,109 +12347,109 @@ export namespace messages {
     noforwards?: true                       // flags.14?true
     update_stickersets_order?: true         // flags.15?true
     invert_media?: true                     // flags.16?true
-    peer: global.InputPeer                  // InputPeer
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
-    multi_media: global.InputSingleMedia[]  // Vector<InputSingleMedia>
+    peer: api.InputPeer                     // InputPeer
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
+    multi_media: api.InputSingleMedia[]     // Vector<InputSingleMedia>
     schedule_date?: number                  // flags.10?int
-    send_as?: global.InputPeer              // flags.13?InputPeer
-    quick_reply_shortcut?: global.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+    quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+  }, api.Updates>
   export const uploadEncryptedFile: TLApiMethod<"messages.uploadEncryptedFile", {
-    peer: global.InputEncryptedChat         // InputEncryptedChat
-    file: global.InputEncryptedFile         // InputEncryptedFile
-  }, global.EncryptedFile>
+    peer: api.InputEncryptedChat            // InputEncryptedChat
+    file: api.InputEncryptedFile            // InputEncryptedFile
+  }, api.EncryptedFile>
   export const searchStickerSets: TLApiMethod<"messages.searchStickerSets", {
     exclude_featured?: true                 // flags.0?true
     q: string                               // string
     hash: bigint                            // long
   }, FoundStickerSets>
-  export const getSplitRanges: TLApiMethod<"messages.getSplitRanges", void, global.MessageRange[]>
+  export const getSplitRanges: TLApiMethod<"messages.getSplitRanges", void, api.MessageRange[]>
   export const markDialogUnread: TLApiMethod<"messages.markDialogUnread", {
     unread?: true                           // flags.0?true
-    peer: global.InputDialogPeer            // InputDialogPeer
+    peer: api.InputDialogPeer               // InputDialogPeer
   }, boolean>
-  export const getDialogUnreadMarks: TLApiMethod<"messages.getDialogUnreadMarks", void, global.DialogPeer[]>
+  export const getDialogUnreadMarks: TLApiMethod<"messages.getDialogUnreadMarks", void, api.DialogPeer[]>
   export const clearAllDrafts: TLApiMethod<"messages.clearAllDrafts", void, boolean>
   export const updatePinnedMessage: TLApiMethod<"messages.updatePinnedMessage", {
     silent?: true                           // flags.0?true
     unpin?: true                            // flags.1?true
     pm_oneside?: true                       // flags.2?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-  }, global.Updates>
+  }, api.Updates>
   export const sendVote: TLApiMethod<"messages.sendVote", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     options: Uint8Array[]                   // Vector<bytes>
-  }, global.Updates>
+  }, api.Updates>
   export const getPollResults: TLApiMethod<"messages.getPollResults", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const getOnlines: TLApiMethod<"messages.getOnlines", {
-    peer: global.InputPeer                  // InputPeer
-  }, global.ChatOnlines>
+    peer: api.InputPeer                     // InputPeer
+  }, api.ChatOnlines>
   export const editChatAbout: TLApiMethod<"messages.editChatAbout", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     about: string                           // string
   }, boolean>
   export const editChatDefaultBannedRights: TLApiMethod<"messages.editChatDefaultBannedRights", {
-    peer: global.InputPeer                  // InputPeer
-    banned_rights: global.ChatBannedRights  // ChatBannedRights
-  }, global.Updates>
+    peer: api.InputPeer                     // InputPeer
+    banned_rights: api.ChatBannedRights     // ChatBannedRights
+  }, api.Updates>
   export const getEmojiKeywords: TLApiMethod<"messages.getEmojiKeywords", {
     lang_code: string                       // string
-  }, global.EmojiKeywordsDifference>
+  }, api.EmojiKeywordsDifference>
   export const getEmojiKeywordsDifference: TLApiMethod<"messages.getEmojiKeywordsDifference", {
     lang_code: string                       // string
     from_version: number                    // int
-  }, global.EmojiKeywordsDifference>
+  }, api.EmojiKeywordsDifference>
   export const getEmojiKeywordsLanguages: TLApiMethod<"messages.getEmojiKeywordsLanguages", {
     lang_codes: string[]                    // Vector<string>
-  }, global.EmojiLanguage[]>
+  }, api.EmojiLanguage[]>
   export const getEmojiURL: TLApiMethod<"messages.getEmojiURL", {
     lang_code: string                       // string
-  }, global.EmojiURL>
+  }, api.EmojiURL>
   export const getSearchCounters: TLApiMethod<"messages.getSearchCounters", {
-    peer: global.InputPeer                  // InputPeer
-    saved_peer_id?: global.InputPeer        // flags.2?InputPeer
+    peer: api.InputPeer                     // InputPeer
+    saved_peer_id?: api.InputPeer           // flags.2?InputPeer
     top_msg_id?: number                     // flags.0?int
-    filters: global.MessagesFilter[]        // Vector<MessagesFilter>
+    filters: api.MessagesFilter[]           // Vector<MessagesFilter>
   }, SearchCounter[]>
   export const requestUrlAuth: TLApiMethod<"messages.requestUrlAuth", {
-    peer?: global.InputPeer                 // flags.1?InputPeer
+    peer?: api.InputPeer                    // flags.1?InputPeer
     msg_id?: number                         // flags.1?int
     button_id?: number                      // flags.1?int
     url?: string                            // flags.2?string
-  }, global.UrlAuthResult>
+  }, api.UrlAuthResult>
   export const acceptUrlAuth: TLApiMethod<"messages.acceptUrlAuth", {
     write_allowed?: true                    // flags.0?true
-    peer?: global.InputPeer                 // flags.1?InputPeer
+    peer?: api.InputPeer                    // flags.1?InputPeer
     msg_id?: number                         // flags.1?int
     button_id?: number                      // flags.1?int
     url?: string                            // flags.2?string
-  }, global.UrlAuthResult>
+  }, api.UrlAuthResult>
   export const hidePeerSettingsBar: TLApiMethod<"messages.hidePeerSettingsBar", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const getScheduledHistory: TLApiMethod<"messages.getScheduledHistory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     hash: bigint                            // long
   }, Messages>
   export const getScheduledMessages: TLApiMethod<"messages.getScheduledMessages", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, Messages>
   export const sendScheduledMessages: TLApiMethod<"messages.sendScheduledMessages", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const deleteScheduledMessages: TLApiMethod<"messages.deleteScheduledMessages", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const getPollVotes: TLApiMethod<"messages.getPollVotes", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
     option?: Uint8Array                     // flags.0?bytes
     offset?: string                         // flags.1?string
@@ -12461,13 +12459,13 @@ export namespace messages {
     uninstall?: true                        // flags.0?true
     archive?: true                          // flags.1?true
     unarchive?: true                        // flags.2?true
-    stickersets: global.InputStickerSet[]   // Vector<InputStickerSet>
+    stickersets: api.InputStickerSet[]      // Vector<InputStickerSet>
   }, boolean>
   export const getDialogFilters: TLApiMethod<"messages.getDialogFilters", void, DialogFilters>
-  export const getSuggestedDialogFilters: TLApiMethod<"messages.getSuggestedDialogFilters", void, global.DialogFilterSuggested[]>
+  export const getSuggestedDialogFilters: TLApiMethod<"messages.getSuggestedDialogFilters", void, api.DialogFilterSuggested[]>
   export const updateDialogFilter: TLApiMethod<"messages.updateDialogFilter", {
     id: number                              // int
-    filter?: global.DialogFilter            // flags.0?DialogFilter
+    filter?: api.DialogFilter               // flags.0?DialogFilter
   }, boolean>
   export const updateDialogFiltersOrder: TLApiMethod<"messages.updateDialogFiltersOrder", {
     order: number[]                         // Vector<int>
@@ -12478,7 +12476,7 @@ export namespace messages {
     hash: bigint                            // long
   }, FeaturedStickers>
   export const getReplies: TLApiMethod<"messages.getReplies", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     offset_id: number                       // int
     offset_date: number                     // int
@@ -12489,16 +12487,16 @@ export namespace messages {
     hash: bigint                            // long
   }, Messages>
   export const getDiscussionMessage: TLApiMethod<"messages.getDiscussionMessage", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
   }, DiscussionMessage>
   export const readDiscussion: TLApiMethod<"messages.readDiscussion", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     read_max_id: number                     // int
   }, boolean>
   export const unpinAllMessages: TLApiMethod<"messages.unpinAllMessages", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
   }, AffectedHistory>
   export const deleteChat: TLApiMethod<"messages.deleteChat", {
@@ -12511,35 +12509,35 @@ export namespace messages {
     import_head: string                     // string
   }, HistoryImportParsed>
   export const initHistoryImport: TLApiMethod<"messages.initHistoryImport", {
-    peer: global.InputPeer                  // InputPeer
-    file: global.InputFile                  // InputFile
+    peer: api.InputPeer                     // InputPeer
+    file: api.InputFile                     // InputFile
     media_count: number                     // int
   }, HistoryImport>
   export const uploadImportedMedia: TLApiMethod<"messages.uploadImportedMedia", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     import_id: bigint                       // long
     file_name: string                       // string
-    media: global.InputMedia                // InputMedia
-  }, global.MessageMedia>
+    media: api.InputMedia                   // InputMedia
+  }, api.MessageMedia>
   export const startHistoryImport: TLApiMethod<"messages.startHistoryImport", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     import_id: bigint                       // long
   }, boolean>
   export const getExportedChatInvites: TLApiMethod<"messages.getExportedChatInvites", {
     revoked?: true                          // flags.3?true
-    peer: global.InputPeer                  // InputPeer
-    admin_id: global.InputUser              // InputUser
+    peer: api.InputPeer                     // InputPeer
+    admin_id: api.InputUser                 // InputUser
     offset_date?: number                    // flags.2?int
     offset_link?: string                    // flags.2?string
     limit: number                           // int
   }, ExportedChatInvites>
   export const getExportedChatInvite: TLApiMethod<"messages.getExportedChatInvite", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     link: string                            // string
   }, ExportedChatInvite>
   export const editExportedChatInvite: TLApiMethod<"messages.editExportedChatInvite", {
     revoked?: true                          // flags.2?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     link: string                            // string
     expire_date?: number                    // flags.0?int
     usage_limit?: number                    // flags.1?int
@@ -12547,108 +12545,108 @@ export namespace messages {
     title?: string                          // flags.4?string
   }, ExportedChatInvite>
   export const deleteRevokedExportedChatInvites: TLApiMethod<"messages.deleteRevokedExportedChatInvites", {
-    peer: global.InputPeer                  // InputPeer
-    admin_id: global.InputUser              // InputUser
+    peer: api.InputPeer                     // InputPeer
+    admin_id: api.InputUser                 // InputUser
   }, boolean>
   export const deleteExportedChatInvite: TLApiMethod<"messages.deleteExportedChatInvite", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     link: string                            // string
   }, boolean>
   export const getAdminsWithInvites: TLApiMethod<"messages.getAdminsWithInvites", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, ChatAdminsWithInvites>
   export const getChatInviteImporters: TLApiMethod<"messages.getChatInviteImporters", {
     requested?: true                        // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     link?: string                           // flags.1?string
     q?: string                              // flags.2?string
     offset_date: number                     // int
-    offset_user: global.InputUser           // InputUser
+    offset_user: api.InputUser              // InputUser
     limit: number                           // int
   }, ChatInviteImporters>
   export const setHistoryTTL: TLApiMethod<"messages.setHistoryTTL", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     period: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const checkHistoryImportPeer: TLApiMethod<"messages.checkHistoryImportPeer", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, CheckedHistoryImportPeer>
   export const setChatTheme: TLApiMethod<"messages.setChatTheme", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     emoticon: string                        // string
-  }, global.Updates>
+  }, api.Updates>
   export const getMessageReadParticipants: TLApiMethod<"messages.getMessageReadParticipants", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
-  }, global.ReadParticipantDate[]>
+  }, api.ReadParticipantDate[]>
   export const getSearchResultsCalendar: TLApiMethod<"messages.getSearchResultsCalendar", {
-    peer: global.InputPeer                  // InputPeer
-    saved_peer_id?: global.InputPeer        // flags.2?InputPeer
-    filter: global.MessagesFilter           // MessagesFilter
+    peer: api.InputPeer                     // InputPeer
+    saved_peer_id?: api.InputPeer           // flags.2?InputPeer
+    filter: api.MessagesFilter              // MessagesFilter
     offset_id: number                       // int
     offset_date: number                     // int
   }, SearchResultsCalendar>
   export const getSearchResultsPositions: TLApiMethod<"messages.getSearchResultsPositions", {
-    peer: global.InputPeer                  // InputPeer
-    saved_peer_id?: global.InputPeer        // flags.2?InputPeer
-    filter: global.MessagesFilter           // MessagesFilter
+    peer: api.InputPeer                     // InputPeer
+    saved_peer_id?: api.InputPeer           // flags.2?InputPeer
+    filter: api.MessagesFilter              // MessagesFilter
     offset_id: number                       // int
     limit: number                           // int
   }, SearchResultsPositions>
   export const hideChatJoinRequest: TLApiMethod<"messages.hideChatJoinRequest", {
     approved?: true                         // flags.0?true
-    peer: global.InputPeer                  // InputPeer
-    user_id: global.InputUser               // InputUser
-  }, global.Updates>
+    peer: api.InputPeer                     // InputPeer
+    user_id: api.InputUser                  // InputUser
+  }, api.Updates>
   export const hideAllChatJoinRequests: TLApiMethod<"messages.hideAllChatJoinRequests", {
     approved?: true                         // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     link?: string                           // flags.1?string
-  }, global.Updates>
+  }, api.Updates>
   export const toggleNoForwards: TLApiMethod<"messages.toggleNoForwards", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const saveDefaultSendAs: TLApiMethod<"messages.saveDefaultSendAs", {
-    peer: global.InputPeer                  // InputPeer
-    send_as: global.InputPeer               // InputPeer
+    peer: api.InputPeer                     // InputPeer
+    send_as: api.InputPeer                  // InputPeer
   }, boolean>
   export const sendReaction: TLApiMethod<"messages.sendReaction", {
     big?: true                              // flags.1?true
     add_to_recent?: true                    // flags.2?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
-    reaction?: global.Reaction[]            // flags.0?Vector<Reaction>
-  }, global.Updates>
+    reaction?: api.Reaction[]               // flags.0?Vector<Reaction>
+  }, api.Updates>
   export const getMessagesReactions: TLApiMethod<"messages.getMessagesReactions", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const getMessageReactionsList: TLApiMethod<"messages.getMessageReactionsList", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    reaction?: global.Reaction              // flags.0?Reaction
+    reaction?: api.Reaction                 // flags.0?Reaction
     offset?: string                         // flags.1?string
     limit: number                           // int
   }, MessageReactionsList>
   export const setChatAvailableReactions: TLApiMethod<"messages.setChatAvailableReactions", {
-    peer: global.InputPeer                  // InputPeer
-    available_reactions: global.ChatReactions // ChatReactions
-  }, global.Updates>
+    peer: api.InputPeer                     // InputPeer
+    available_reactions: api.ChatReactions  // ChatReactions
+  }, api.Updates>
   export const getAvailableReactions: TLApiMethod<"messages.getAvailableReactions", {
     hash: number                            // int
   }, AvailableReactions>
   export const setDefaultReaction: TLApiMethod<"messages.setDefaultReaction", {
-    reaction: global.Reaction               // Reaction
+    reaction: api.Reaction                  // Reaction
   }, boolean>
   export const translateText: TLApiMethod<"messages.translateText", {
-    peer?: global.InputPeer                 // flags.0?InputPeer
+    peer?: api.InputPeer                    // flags.0?InputPeer
     id?: number[]                           // flags.0?Vector<int>
-    text?: global.TextWithEntities[]        // flags.1?Vector<TextWithEntities>
+    text?: api.TextWithEntities[]           // flags.1?Vector<TextWithEntities>
     to_lang: string                         // string
   }, TranslatedText>
   export const getUnreadReactions: TLApiMethod<"messages.getUnreadReactions", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
     offset_id: number                       // int
     add_offset: number                      // int
@@ -12657,77 +12655,77 @@ export namespace messages {
     min_id: number                          // int
   }, Messages>
   export const readReactions: TLApiMethod<"messages.readReactions", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     top_msg_id?: number                     // flags.0?int
   }, AffectedHistory>
   export const searchSentMedia: TLApiMethod<"messages.searchSentMedia", {
     q: string                               // string
-    filter: global.MessagesFilter           // MessagesFilter
+    filter: api.MessagesFilter              // MessagesFilter
     limit: number                           // int
   }, Messages>
   export const getAttachMenuBots: TLApiMethod<"messages.getAttachMenuBots", {
     hash: bigint                            // long
-  }, global.AttachMenuBots>
+  }, api.AttachMenuBots>
   export const getAttachMenuBot: TLApiMethod<"messages.getAttachMenuBot", {
-    bot: global.InputUser                   // InputUser
-  }, global.AttachMenuBotsBot>
+    bot: api.InputUser                      // InputUser
+  }, api.AttachMenuBotsBot>
   export const toggleBotInAttachMenu: TLApiMethod<"messages.toggleBotInAttachMenu", {
     write_allowed?: true                    // flags.0?true
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     enabled: boolean                        // Bool
   }, boolean>
   export const requestWebView: TLApiMethod<"messages.requestWebView", {
     from_bot_menu?: true                    // flags.4?true
     silent?: true                           // flags.5?true
-    peer: global.InputPeer                  // InputPeer
-    bot: global.InputUser                   // InputUser
+    peer: api.InputPeer                     // InputPeer
+    bot: api.InputUser                      // InputUser
     url?: string                            // flags.1?string
     start_param?: string                    // flags.3?string
-    theme_params?: global.DataJSON          // flags.2?DataJSON
+    theme_params?: api.DataJSON             // flags.2?DataJSON
     platform: string                        // string
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
-    send_as?: global.InputPeer              // flags.13?InputPeer
-  }, global.WebViewResult>
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
+    send_as?: api.InputPeer                 // flags.13?InputPeer
+  }, api.WebViewResult>
   export const prolongWebView: TLApiMethod<"messages.prolongWebView", {
     silent?: true                           // flags.5?true
-    peer: global.InputPeer                  // InputPeer
-    bot: global.InputUser                   // InputUser
+    peer: api.InputPeer                     // InputPeer
+    bot: api.InputUser                      // InputUser
     query_id: bigint                        // long
-    reply_to?: global.InputReplyTo          // flags.0?InputReplyTo
-    send_as?: global.InputPeer              // flags.13?InputPeer
+    reply_to?: api.InputReplyTo             // flags.0?InputReplyTo
+    send_as?: api.InputPeer                 // flags.13?InputPeer
   }, boolean>
   export const requestSimpleWebView: TLApiMethod<"messages.requestSimpleWebView", {
     from_switch_webview?: true              // flags.1?true
     from_side_menu?: true                   // flags.2?true
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     url?: string                            // flags.3?string
     start_param?: string                    // flags.4?string
-    theme_params?: global.DataJSON          // flags.0?DataJSON
+    theme_params?: api.DataJSON             // flags.0?DataJSON
     platform: string                        // string
-  }, global.SimpleWebViewResult>
+  }, api.SimpleWebViewResult>
   export const sendWebViewResultMessage: TLApiMethod<"messages.sendWebViewResultMessage", {
     bot_query_id: string                    // string
-    result: global.InputBotInlineResult     // InputBotInlineResult
-  }, global.WebViewMessageSent>
+    result: api.InputBotInlineResult        // InputBotInlineResult
+  }, api.WebViewMessageSent>
   export const sendWebViewData: TLApiMethod<"messages.sendWebViewData", {
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     random_id: bigint                       // long
     button_text: string                     // string
     data: string                            // string
-  }, global.Updates>
+  }, api.Updates>
   export const transcribeAudio: TLApiMethod<"messages.transcribeAudio", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
   }, TranscribedAudio>
   export const rateTranscribedAudio: TLApiMethod<"messages.rateTranscribedAudio", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     transcription_id: bigint                // long
     good: boolean                           // Bool
   }, boolean>
   export const getCustomEmojiDocuments: TLApiMethod<"messages.getCustomEmojiDocuments", {
     document_id: bigint[]                   // Vector<long>
-  }, global.Document[]>
+  }, api.Document[]>
   export const getEmojiStickers: TLApiMethod<"messages.getEmojiStickers", {
     hash: bigint                            // long
   }, AllStickers>
@@ -12735,9 +12733,9 @@ export namespace messages {
     hash: bigint                            // long
   }, FeaturedStickers>
   export const reportReaction: TLApiMethod<"messages.reportReaction", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    reaction_peer: global.InputPeer         // InputPeer
+    reaction_peer: api.InputPeer            // InputPeer
   }, boolean>
   export const getTopReactions: TLApiMethod<"messages.getTopReactions", {
     limit: number                           // int
@@ -12749,19 +12747,19 @@ export namespace messages {
   }, Reactions>
   export const clearRecentReactions: TLApiMethod<"messages.clearRecentReactions", void, boolean>
   export const getExtendedMedia: TLApiMethod<"messages.getExtendedMedia", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const setDefaultHistoryTTL: TLApiMethod<"messages.setDefaultHistoryTTL", {
     period: number                          // int
   }, boolean>
-  export const getDefaultHistoryTTL: TLApiMethod<"messages.getDefaultHistoryTTL", void, global.DefaultHistoryTTL>
+  export const getDefaultHistoryTTL: TLApiMethod<"messages.getDefaultHistoryTTL", void, api.DefaultHistoryTTL>
   export const sendBotRequestedPeer: TLApiMethod<"messages.sendBotRequestedPeer", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
     button_id: number                       // int
-    requested_peers: global.InputPeer[]     // Vector<InputPeer>
-  }, global.Updates>
+    requested_peers: api.InputPeer[]        // Vector<InputPeer>
+  }, api.Updates>
   export const getEmojiGroups: TLApiMethod<"messages.getEmojiGroups", {
     hash: number                            // int
   }, EmojiGroups>
@@ -12774,31 +12772,31 @@ export namespace messages {
   export const searchCustomEmoji: TLApiMethod<"messages.searchCustomEmoji", {
     emoticon: string                        // string
     hash: bigint                            // long
-  }, global.EmojiList>
+  }, api.EmojiList>
   export const togglePeerTranslations: TLApiMethod<"messages.togglePeerTranslations", {
     disabled?: true                         // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const getBotApp: TLApiMethod<"messages.getBotApp", {
-    app: global.InputBotApp                 // InputBotApp
+    app: api.InputBotApp                    // InputBotApp
     hash: bigint                            // long
   }, BotApp>
   export const requestAppWebView: TLApiMethod<"messages.requestAppWebView", {
     write_allowed?: true                    // flags.0?true
-    peer: global.InputPeer                  // InputPeer
-    app: global.InputBotApp                 // InputBotApp
+    peer: api.InputPeer                     // InputPeer
+    app: api.InputBotApp                    // InputBotApp
     start_param?: string                    // flags.1?string
-    theme_params?: global.DataJSON          // flags.2?DataJSON
+    theme_params?: api.DataJSON             // flags.2?DataJSON
     platform: string                        // string
-  }, global.AppWebViewResult>
+  }, api.AppWebViewResult>
   export const setChatWallPaper: TLApiMethod<"messages.setChatWallPaper", {
     for_both?: true                         // flags.3?true
     revert?: true                           // flags.4?true
-    peer: global.InputPeer                  // InputPeer
-    wallpaper?: global.InputWallPaper       // flags.0?InputWallPaper
-    settings?: global.WallPaperSettings     // flags.2?WallPaperSettings
+    peer: api.InputPeer                     // InputPeer
+    wallpaper?: api.InputWallPaper          // flags.0?InputWallPaper
+    settings?: api.WallPaperSettings        // flags.2?WallPaperSettings
     id?: number                             // flags.1?int
-  }, global.Updates>
+  }, api.Updates>
   export const searchEmojiStickerSets: TLApiMethod<"messages.searchEmojiStickerSets", {
     exclude_featured?: true                 // flags.0?true
     q: string                               // string
@@ -12808,12 +12806,12 @@ export namespace messages {
     exclude_pinned?: true                   // flags.0?true
     offset_date: number                     // int
     offset_id: number                       // int
-    offset_peer: global.InputPeer           // InputPeer
+    offset_peer: api.InputPeer              // InputPeer
     limit: number                           // int
     hash: bigint                            // long
   }, SavedDialogs>
   export const getSavedHistory: TLApiMethod<"messages.getSavedHistory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     offset_id: number                       // int
     offset_date: number                     // int
     add_offset: number                      // int
@@ -12823,7 +12821,7 @@ export namespace messages {
     hash: bigint                            // long
   }, Messages>
   export const deleteSavedHistory: TLApiMethod<"messages.deleteSavedHistory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     max_id: number                          // int
     min_date?: number                       // flags.2?int
     max_date?: number                       // flags.3?int
@@ -12831,27 +12829,27 @@ export namespace messages {
   export const getPinnedSavedDialogs: TLApiMethod<"messages.getPinnedSavedDialogs", void, SavedDialogs>
   export const toggleSavedDialogPin: TLApiMethod<"messages.toggleSavedDialogPin", {
     pinned?: true                           // flags.0?true
-    peer: global.InputDialogPeer            // InputDialogPeer
+    peer: api.InputDialogPeer               // InputDialogPeer
   }, boolean>
   export const reorderPinnedSavedDialogs: TLApiMethod<"messages.reorderPinnedSavedDialogs", {
     force?: true                            // flags.0?true
-    order: global.InputDialogPeer[]         // Vector<InputDialogPeer>
+    order: api.InputDialogPeer[]            // Vector<InputDialogPeer>
   }, boolean>
   export const getSavedReactionTags: TLApiMethod<"messages.getSavedReactionTags", {
-    peer?: global.InputPeer                 // flags.0?InputPeer
+    peer?: api.InputPeer                    // flags.0?InputPeer
     hash: bigint                            // long
   }, SavedReactionTags>
   export const updateSavedReactionTag: TLApiMethod<"messages.updateSavedReactionTag", {
-    reaction: global.Reaction               // Reaction
+    reaction: api.Reaction                  // Reaction
     title?: string                          // flags.0?string
   }, boolean>
   export const getDefaultTagReactions: TLApiMethod<"messages.getDefaultTagReactions", {
     hash: bigint                            // long
   }, Reactions>
   export const getOutboxReadDate: TLApiMethod<"messages.getOutboxReadDate", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
-  }, global.OutboxReadDate>
+  }, api.OutboxReadDate>
   export const getQuickReplies: TLApiMethod<"messages.getQuickReplies", {
     hash: bigint                            // long
   }, QuickReplies>
@@ -12874,15 +12872,15 @@ export namespace messages {
     hash: bigint                            // long
   }, Messages>
   export const sendQuickReplyMessages: TLApiMethod<"messages.sendQuickReplyMessages", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     shortcut_id: number                     // int
     id: number[]                            // Vector<int>
     random_id: bigint[]                     // Vector<long>
-  }, global.Updates>
+  }, api.Updates>
   export const deleteQuickReplyMessages: TLApiMethod<"messages.deleteQuickReplyMessages", {
     shortcut_id: number                     // int
     id: number[]                            // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const toggleDialogFilterTags: TLApiMethod<"messages.toggleDialogFilterTags", {
     enabled: boolean                        // Bool
   }, boolean>
@@ -12904,8 +12902,8 @@ export namespace updates {
   }, Difference>
   export const getChannelDifference: TLApiMethod<"updates.getChannelDifference", {
     force?: true                            // flags.0?true
-    channel: global.InputChannel            // InputChannel
-    filter: global.ChannelMessagesFilter    // ChannelMessagesFilter
+    channel: api.InputChannel               // InputChannel
+    filter: api.ChannelMessagesFilter       // ChannelMessagesFilter
     pts: number                             // int
     limit: number                           // int
   }, ChannelDifference>
@@ -12914,22 +12912,22 @@ export namespace updates {
 export namespace photos {
   export const updateProfilePhoto: TLApiMethod<"photos.updateProfilePhoto", {
     fallback?: true                         // flags.0?true
-    bot?: global.InputUser                  // flags.1?InputUser
-    id: global.InputPhoto                   // InputPhoto
+    bot?: api.InputUser                     // flags.1?InputUser
+    id: api.InputPhoto                      // InputPhoto
   }, Photo>
   export const uploadProfilePhoto: TLApiMethod<"photos.uploadProfilePhoto", {
     fallback?: true                         // flags.3?true
-    bot?: global.InputUser                  // flags.5?InputUser
-    file?: global.InputFile                 // flags.0?InputFile
-    video?: global.InputFile                // flags.1?InputFile
+    bot?: api.InputUser                     // flags.5?InputUser
+    file?: api.InputFile                    // flags.0?InputFile
+    video?: api.InputFile                   // flags.1?InputFile
     video_start_ts?: number                 // flags.2?double
-    video_emoji_markup?: global.VideoSize   // flags.4?VideoSize
+    video_emoji_markup?: api.VideoSize      // flags.4?VideoSize
   }, Photo>
   export const deletePhotos: TLApiMethod<"photos.deletePhotos", {
-    id: global.InputPhoto[]                 // Vector<InputPhoto>
+    id: api.InputPhoto[]                    // Vector<InputPhoto>
   }, bigint[]>
   export const getUserPhotos: TLApiMethod<"photos.getUserPhotos", {
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     offset: number                          // int
     max_id: bigint                          // long
     limit: number                           // int
@@ -12937,11 +12935,11 @@ export namespace photos {
   export const uploadContactProfilePhoto: TLApiMethod<"photos.uploadContactProfilePhoto", {
     suggest?: true                          // flags.3?true
     save?: true                             // flags.4?true
-    user_id: global.InputUser               // InputUser
-    file?: global.InputFile                 // flags.0?InputFile
-    video?: global.InputFile                // flags.1?InputFile
+    user_id: api.InputUser                  // InputUser
+    file?: api.InputFile                    // flags.0?InputFile
+    video?: api.InputFile                   // flags.1?InputFile
     video_start_ts?: number                 // flags.2?double
-    video_emoji_markup?: global.VideoSize   // flags.5?VideoSize
+    video_emoji_markup?: api.VideoSize      // flags.5?VideoSize
   }, Photo>
 }
 
@@ -12954,7 +12952,7 @@ export namespace upload {
   export const getFile: TLApiMethod<"upload.getFile", {
     precise?: true                          // flags.0?true
     cdn_supported?: true                    // flags.1?true
-    location: global.InputFileLocation      // InputFileLocation
+    location: api.InputFileLocation         // InputFileLocation
     offset: bigint                          // long
     limit: number                           // int
   }, File>
@@ -12965,7 +12963,7 @@ export namespace upload {
     bytes: Uint8Array                       // bytes
   }, boolean>
   export const getWebFile: TLApiMethod<"upload.getWebFile", {
-    location: global.InputWebFileLocation   // InputWebFileLocation
+    location: api.InputWebFileLocation      // InputWebFileLocation
     offset: number                          // int
     limit: number                           // int
   }, WebFile>
@@ -12977,20 +12975,20 @@ export namespace upload {
   export const reuploadCdnFile: TLApiMethod<"upload.reuploadCdnFile", {
     file_token: Uint8Array                  // bytes
     request_token: Uint8Array               // bytes
-  }, global.FileHash[]>
+  }, api.FileHash[]>
   export const getCdnFileHashes: TLApiMethod<"upload.getCdnFileHashes", {
     file_token: Uint8Array                  // bytes
     offset: bigint                          // long
-  }, global.FileHash[]>
+  }, api.FileHash[]>
   export const getFileHashes: TLApiMethod<"upload.getFileHashes", {
-    location: global.InputFileLocation      // InputFileLocation
+    location: api.InputFileLocation         // InputFileLocation
     offset: bigint                          // long
-  }, global.FileHash[]>
+  }, api.FileHash[]>
 }
 
 export namespace help {
-  export const getConfig: TLApiMethod<"help.getConfig", void, global.Config>
-  export const getNearestDc: TLApiMethod<"help.getNearestDc", void, global.NearestDc>
+  export const getConfig: TLApiMethod<"help.getConfig", void, api.Config>
+  export const getNearestDc: TLApiMethod<"help.getNearestDc", void, api.NearestDc>
   export const getAppUpdate: TLApiMethod<"help.getAppUpdate", {
     source: string                          // string
   }, AppUpdate>
@@ -13000,13 +12998,13 @@ export namespace help {
     pending_updates_count: number           // int
     message: string                         // string
   }, boolean>
-  export const getCdnConfig: TLApiMethod<"help.getCdnConfig", void, global.CdnConfig>
+  export const getCdnConfig: TLApiMethod<"help.getCdnConfig", void, api.CdnConfig>
   export const getRecentMeUrls: TLApiMethod<"help.getRecentMeUrls", {
     referer: string                         // string
   }, RecentMeUrls>
   export const getTermsOfServiceUpdate: TLApiMethod<"help.getTermsOfServiceUpdate", void, TermsOfServiceUpdate>
   export const acceptTermsOfService: TLApiMethod<"help.acceptTermsOfService", {
-    id: global.DataJSON                     // DataJSON
+    id: api.DataJSON                        // DataJSON
   }, boolean>
   export const getDeepLinkInfo: TLApiMethod<"help.getDeepLinkInfo", {
     path: string                            // string
@@ -13015,26 +13013,26 @@ export namespace help {
     hash: number                            // int
   }, AppConfig>
   export const saveAppLog: TLApiMethod<"help.saveAppLog", {
-    events: global.InputAppEvent[]          // Vector<InputAppEvent>
+    events: api.InputAppEvent[]             // Vector<InputAppEvent>
   }, boolean>
   export const getPassportConfig: TLApiMethod<"help.getPassportConfig", {
     hash: number                            // int
   }, PassportConfig>
   export const getSupportName: TLApiMethod<"help.getSupportName", void, SupportName>
   export const getUserInfo: TLApiMethod<"help.getUserInfo", {
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
   }, UserInfo>
   export const editUserInfo: TLApiMethod<"help.editUserInfo", {
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     message: string                         // string
-    entities: global.MessageEntity[]        // Vector<MessageEntity>
+    entities: api.MessageEntity[]           // Vector<MessageEntity>
   }, UserInfo>
   export const getPromoData: TLApiMethod<"help.getPromoData", void, PromoData>
   export const hidePromoData: TLApiMethod<"help.hidePromoData", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const dismissSuggestion: TLApiMethod<"help.dismissSuggestion", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     suggestion: string                      // string
   }, boolean>
   export const getCountriesList: TLApiMethod<"help.getCountriesList", {
@@ -13055,38 +13053,38 @@ export namespace help {
 
 export namespace channels {
   export const readHistory: TLApiMethod<"channels.readHistory", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     max_id: number                          // int
   }, boolean>
   export const deleteMessages: TLApiMethod<"channels.deleteMessages", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     id: number[]                            // Vector<int>
   }, messages.AffectedMessages>
   export const reportSpam: TLApiMethod<"channels.reportSpam", {
-    channel: global.InputChannel            // InputChannel
-    participant: global.InputPeer           // InputPeer
+    channel: api.InputChannel               // InputChannel
+    participant: api.InputPeer              // InputPeer
     id: number[]                            // Vector<int>
   }, boolean>
   export const getMessages: TLApiMethod<"channels.getMessages", {
-    channel: global.InputChannel            // InputChannel
-    id: global.InputMessage[]               // Vector<InputMessage>
+    channel: api.InputChannel               // InputChannel
+    id: api.InputMessage[]                  // Vector<InputMessage>
   }, messages.Messages>
   export const getParticipants: TLApiMethod<"channels.getParticipants", {
-    channel: global.InputChannel            // InputChannel
-    filter: global.ChannelParticipantsFilter // ChannelParticipantsFilter
+    channel: api.InputChannel               // InputChannel
+    filter: api.ChannelParticipantsFilter   // ChannelParticipantsFilter
     offset: number                          // int
     limit: number                           // int
     hash: bigint                            // long
   }, ChannelParticipants>
   export const getParticipant: TLApiMethod<"channels.getParticipant", {
-    channel: global.InputChannel            // InputChannel
-    participant: global.InputPeer           // InputPeer
+    channel: api.InputChannel               // InputChannel
+    participant: api.InputPeer              // InputPeer
   }, ChannelParticipant>
   export const getChannels: TLApiMethod<"channels.getChannels", {
-    id: global.InputChannel[]               // Vector<InputChannel>
+    id: api.InputChannel[]                  // Vector<InputChannel>
   }, messages.Chats>
   export const getFullChannel: TLApiMethod<"channels.getFullChannel", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, messages.ChatFull>
   export const createChannel: TLApiMethod<"channels.createChannel", {
     broadcast?: true                        // flags.0?true
@@ -13095,165 +13093,165 @@ export namespace channels {
     forum?: true                            // flags.5?true
     title: string                           // string
     about: string                           // string
-    geo_point?: global.InputGeoPoint        // flags.2?InputGeoPoint
+    geo_point?: api.InputGeoPoint           // flags.2?InputGeoPoint
     address?: string                        // flags.2?string
     ttl_period?: number                     // flags.4?int
-  }, global.Updates>
+  }, api.Updates>
   export const editAdmin: TLApiMethod<"channels.editAdmin", {
-    channel: global.InputChannel            // InputChannel
-    user_id: global.InputUser               // InputUser
-    admin_rights: global.ChatAdminRights    // ChatAdminRights
+    channel: api.InputChannel               // InputChannel
+    user_id: api.InputUser                  // InputUser
+    admin_rights: api.ChatAdminRights       // ChatAdminRights
     rank: string                            // string
-  }, global.Updates>
+  }, api.Updates>
   export const editTitle: TLApiMethod<"channels.editTitle", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     title: string                           // string
-  }, global.Updates>
+  }, api.Updates>
   export const editPhoto: TLApiMethod<"channels.editPhoto", {
-    channel: global.InputChannel            // InputChannel
-    photo: global.InputChatPhoto            // InputChatPhoto
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+    photo: api.InputChatPhoto               // InputChatPhoto
+  }, api.Updates>
   export const checkUsername: TLApiMethod<"channels.checkUsername", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     username: string                        // string
   }, boolean>
   export const updateUsername: TLApiMethod<"channels.updateUsername", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     username: string                        // string
   }, boolean>
   export const joinChannel: TLApiMethod<"channels.joinChannel", {
-    channel: global.InputChannel            // InputChannel
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+  }, api.Updates>
   export const leaveChannel: TLApiMethod<"channels.leaveChannel", {
-    channel: global.InputChannel            // InputChannel
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+  }, api.Updates>
   export const inviteToChannel: TLApiMethod<"channels.inviteToChannel", {
-    channel: global.InputChannel            // InputChannel
-    users: global.InputUser[]               // Vector<InputUser>
+    channel: api.InputChannel               // InputChannel
+    users: api.InputUser[]                  // Vector<InputUser>
   }, messages.InvitedUsers>
   export const deleteChannel: TLApiMethod<"channels.deleteChannel", {
-    channel: global.InputChannel            // InputChannel
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+  }, api.Updates>
   export const exportMessageLink: TLApiMethod<"channels.exportMessageLink", {
     grouped?: true                          // flags.0?true
     thread?: true                           // flags.1?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     id: number                              // int
-  }, global.ExportedMessageLink>
+  }, api.ExportedMessageLink>
   export const toggleSignatures: TLApiMethod<"channels.toggleSignatures", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const getAdminedPublicChannels: TLApiMethod<"channels.getAdminedPublicChannels", {
     by_location?: true                      // flags.0?true
     check_limit?: true                      // flags.1?true
     for_personal?: true                     // flags.2?true
   }, messages.Chats>
   export const editBanned: TLApiMethod<"channels.editBanned", {
-    channel: global.InputChannel            // InputChannel
-    participant: global.InputPeer           // InputPeer
-    banned_rights: global.ChatBannedRights  // ChatBannedRights
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+    participant: api.InputPeer              // InputPeer
+    banned_rights: api.ChatBannedRights     // ChatBannedRights
+  }, api.Updates>
   export const getAdminLog: TLApiMethod<"channels.getAdminLog", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     q: string                               // string
-    events_filter?: global.ChannelAdminLogEventsFilter // flags.0?ChannelAdminLogEventsFilter
-    admins?: global.InputUser[]             // flags.1?Vector<InputUser>
+    events_filter?: api.ChannelAdminLogEventsFilter // flags.0?ChannelAdminLogEventsFilter
+    admins?: api.InputUser[]                // flags.1?Vector<InputUser>
     max_id: bigint                          // long
     min_id: bigint                          // long
     limit: number                           // int
   }, AdminLogResults>
   export const setStickers: TLApiMethod<"channels.setStickers", {
-    channel: global.InputChannel            // InputChannel
-    stickerset: global.InputStickerSet      // InputStickerSet
+    channel: api.InputChannel               // InputChannel
+    stickerset: api.InputStickerSet         // InputStickerSet
   }, boolean>
   export const readMessageContents: TLApiMethod<"channels.readMessageContents", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     id: number[]                            // Vector<int>
   }, boolean>
   export const deleteHistory: TLApiMethod<"channels.deleteHistory", {
     for_everyone?: true                     // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     max_id: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const togglePreHistoryHidden: TLApiMethod<"channels.togglePreHistoryHidden", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const getLeftChannels: TLApiMethod<"channels.getLeftChannels", {
     offset: number                          // int
   }, messages.Chats>
   export const getGroupsForDiscussion: TLApiMethod<"channels.getGroupsForDiscussion", void, messages.Chats>
   export const setDiscussionGroup: TLApiMethod<"channels.setDiscussionGroup", {
-    broadcast: global.InputChannel          // InputChannel
-    group: global.InputChannel              // InputChannel
+    broadcast: api.InputChannel             // InputChannel
+    group: api.InputChannel                 // InputChannel
   }, boolean>
   export const editCreator: TLApiMethod<"channels.editCreator", {
-    channel: global.InputChannel            // InputChannel
-    user_id: global.InputUser               // InputUser
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+    user_id: api.InputUser                  // InputUser
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
+  }, api.Updates>
   export const editLocation: TLApiMethod<"channels.editLocation", {
-    channel: global.InputChannel            // InputChannel
-    geo_point: global.InputGeoPoint         // InputGeoPoint
+    channel: api.InputChannel               // InputChannel
+    geo_point: api.InputGeoPoint            // InputGeoPoint
     address: string                         // string
   }, boolean>
   export const toggleSlowMode: TLApiMethod<"channels.toggleSlowMode", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     seconds: number                         // int
-  }, global.Updates>
+  }, api.Updates>
   export const getInactiveChannels: TLApiMethod<"channels.getInactiveChannels", void, messages.InactiveChats>
   export const convertToGigagroup: TLApiMethod<"channels.convertToGigagroup", {
-    channel: global.InputChannel            // InputChannel
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+  }, api.Updates>
   export const viewSponsoredMessage: TLApiMethod<"channels.viewSponsoredMessage", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     random_id: Uint8Array                   // bytes
   }, boolean>
   export const getSponsoredMessages: TLApiMethod<"channels.getSponsoredMessages", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, messages.SponsoredMessages>
   export const getSendAs: TLApiMethod<"channels.getSendAs", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, SendAsPeers>
   export const deleteParticipantHistory: TLApiMethod<"channels.deleteParticipantHistory", {
-    channel: global.InputChannel            // InputChannel
-    participant: global.InputPeer           // InputPeer
+    channel: api.InputChannel               // InputChannel
+    participant: api.InputPeer              // InputPeer
   }, messages.AffectedHistory>
   export const toggleJoinToSend: TLApiMethod<"channels.toggleJoinToSend", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const toggleJoinRequest: TLApiMethod<"channels.toggleJoinRequest", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const reorderUsernames: TLApiMethod<"channels.reorderUsernames", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     order: string[]                         // Vector<string>
   }, boolean>
   export const toggleUsername: TLApiMethod<"channels.toggleUsername", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     username: string                        // string
     active: boolean                         // Bool
   }, boolean>
   export const deactivateAllUsernames: TLApiMethod<"channels.deactivateAllUsernames", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, boolean>
   export const toggleForum: TLApiMethod<"channels.toggleForum", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const createForumTopic: TLApiMethod<"channels.createForumTopic", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     title: string                           // string
     icon_color?: number                     // flags.0?int
     icon_emoji_id?: bigint                  // flags.3?long
     random_id: bigint                       // long
-    send_as?: global.InputPeer              // flags.2?InputPeer
-  }, global.Updates>
+    send_as?: api.InputPeer                 // flags.2?InputPeer
+  }, api.Updates>
   export const getForumTopics: TLApiMethod<"channels.getForumTopics", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     q?: string                              // flags.0?string
     offset_date: number                     // int
     offset_id: number                       // int
@@ -13261,171 +13259,171 @@ export namespace channels {
     limit: number                           // int
   }, messages.ForumTopics>
   export const getForumTopicsByID: TLApiMethod<"channels.getForumTopicsByID", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     topics: number[]                        // Vector<int>
   }, messages.ForumTopics>
   export const editForumTopic: TLApiMethod<"channels.editForumTopic", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     topic_id: number                        // int
     title?: string                          // flags.0?string
     icon_emoji_id?: bigint                  // flags.1?long
     closed?: boolean                        // flags.2?Bool
     hidden?: boolean                        // flags.3?Bool
-  }, global.Updates>
+  }, api.Updates>
   export const updatePinnedForumTopic: TLApiMethod<"channels.updatePinnedForumTopic", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     topic_id: number                        // int
     pinned: boolean                         // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const deleteTopicHistory: TLApiMethod<"channels.deleteTopicHistory", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     top_msg_id: number                      // int
   }, messages.AffectedHistory>
   export const reorderPinnedForumTopics: TLApiMethod<"channels.reorderPinnedForumTopics", {
     force?: true                            // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     order: number[]                         // Vector<int>
-  }, global.Updates>
+  }, api.Updates>
   export const toggleAntiSpam: TLApiMethod<"channels.toggleAntiSpam", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const reportAntiSpamFalsePositive: TLApiMethod<"channels.reportAntiSpamFalsePositive", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     msg_id: number                          // int
   }, boolean>
   export const toggleParticipantsHidden: TLApiMethod<"channels.toggleParticipantsHidden", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const clickSponsoredMessage: TLApiMethod<"channels.clickSponsoredMessage", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     random_id: Uint8Array                   // bytes
   }, boolean>
   export const updateColor: TLApiMethod<"channels.updateColor", {
     for_profile?: true                      // flags.1?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     color?: number                          // flags.2?int
     background_emoji_id?: bigint            // flags.0?long
-  }, global.Updates>
+  }, api.Updates>
   export const toggleViewForumAsMessages: TLApiMethod<"channels.toggleViewForumAsMessages", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     enabled: boolean                        // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const getChannelRecommendations: TLApiMethod<"channels.getChannelRecommendations", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, messages.Chats>
   export const updateEmojiStatus: TLApiMethod<"channels.updateEmojiStatus", {
-    channel: global.InputChannel            // InputChannel
-    emoji_status: global.EmojiStatus        // EmojiStatus
-  }, global.Updates>
+    channel: api.InputChannel               // InputChannel
+    emoji_status: api.EmojiStatus           // EmojiStatus
+  }, api.Updates>
   export const setBoostsToUnblockRestrictions: TLApiMethod<"channels.setBoostsToUnblockRestrictions", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     boosts: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const setEmojiStickers: TLApiMethod<"channels.setEmojiStickers", {
-    channel: global.InputChannel            // InputChannel
-    stickerset: global.InputStickerSet      // InputStickerSet
+    channel: api.InputChannel               // InputChannel
+    stickerset: api.InputStickerSet         // InputStickerSet
   }, boolean>
   export const reportSponsoredMessage: TLApiMethod<"channels.reportSponsoredMessage", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     random_id: Uint8Array                   // bytes
     option: Uint8Array                      // bytes
   }, SponsoredMessageReportResult>
   export const restrictSponsoredMessages: TLApiMethod<"channels.restrictSponsoredMessages", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     restricted: boolean                     // Bool
-  }, global.Updates>
+  }, api.Updates>
 }
 
 export namespace bots {
   export const sendCustomRequest: TLApiMethod<"bots.sendCustomRequest", {
     custom_method: string                   // string
-    params: global.DataJSON                 // DataJSON
-  }, global.DataJSON>
+    params: api.DataJSON                    // DataJSON
+  }, api.DataJSON>
   export const answerWebhookJSONQuery: TLApiMethod<"bots.answerWebhookJSONQuery", {
     query_id: bigint                        // long
-    data: global.DataJSON                   // DataJSON
+    data: api.DataJSON                      // DataJSON
   }, boolean>
   export const setBotCommands: TLApiMethod<"bots.setBotCommands", {
-    scope: global.BotCommandScope           // BotCommandScope
+    scope: api.BotCommandScope              // BotCommandScope
     lang_code: string                       // string
-    commands: global.BotCommand[]           // Vector<BotCommand>
+    commands: api.BotCommand[]              // Vector<BotCommand>
   }, boolean>
   export const resetBotCommands: TLApiMethod<"bots.resetBotCommands", {
-    scope: global.BotCommandScope           // BotCommandScope
+    scope: api.BotCommandScope              // BotCommandScope
     lang_code: string                       // string
   }, boolean>
   export const getBotCommands: TLApiMethod<"bots.getBotCommands", {
-    scope: global.BotCommandScope           // BotCommandScope
+    scope: api.BotCommandScope              // BotCommandScope
     lang_code: string                       // string
-  }, global.BotCommand[]>
+  }, api.BotCommand[]>
   export const setBotMenuButton: TLApiMethod<"bots.setBotMenuButton", {
-    user_id: global.InputUser               // InputUser
-    button: global.BotMenuButton            // BotMenuButton
+    user_id: api.InputUser                  // InputUser
+    button: api.BotMenuButton               // BotMenuButton
   }, boolean>
   export const getBotMenuButton: TLApiMethod<"bots.getBotMenuButton", {
-    user_id: global.InputUser               // InputUser
-  }, global.BotMenuButton>
+    user_id: api.InputUser                  // InputUser
+  }, api.BotMenuButton>
   export const setBotBroadcastDefaultAdminRights: TLApiMethod<"bots.setBotBroadcastDefaultAdminRights", {
-    admin_rights: global.ChatAdminRights    // ChatAdminRights
+    admin_rights: api.ChatAdminRights       // ChatAdminRights
   }, boolean>
   export const setBotGroupDefaultAdminRights: TLApiMethod<"bots.setBotGroupDefaultAdminRights", {
-    admin_rights: global.ChatAdminRights    // ChatAdminRights
+    admin_rights: api.ChatAdminRights       // ChatAdminRights
   }, boolean>
   export const setBotInfo: TLApiMethod<"bots.setBotInfo", {
-    bot?: global.InputUser                  // flags.2?InputUser
+    bot?: api.InputUser                     // flags.2?InputUser
     lang_code: string                       // string
     name?: string                           // flags.3?string
     about?: string                          // flags.0?string
     description?: string                    // flags.1?string
   }, boolean>
   export const getBotInfo: TLApiMethod<"bots.getBotInfo", {
-    bot?: global.InputUser                  // flags.0?InputUser
+    bot?: api.InputUser                     // flags.0?InputUser
     lang_code: string                       // string
   }, BotInfo>
   export const reorderUsernames: TLApiMethod<"bots.reorderUsernames", {
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     order: string[]                         // Vector<string>
   }, boolean>
   export const toggleUsername: TLApiMethod<"bots.toggleUsername", {
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     username: string                        // string
     active: boolean                         // Bool
   }, boolean>
   export const canSendMessage: TLApiMethod<"bots.canSendMessage", {
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
   }, boolean>
   export const allowSendMessage: TLApiMethod<"bots.allowSendMessage", {
-    bot: global.InputUser                   // InputUser
-  }, global.Updates>
+    bot: api.InputUser                      // InputUser
+  }, api.Updates>
   export const invokeWebViewCustomMethod: TLApiMethod<"bots.invokeWebViewCustomMethod", {
-    bot: global.InputUser                   // InputUser
+    bot: api.InputUser                      // InputUser
     custom_method: string                   // string
-    params: global.DataJSON                 // DataJSON
-  }, global.DataJSON>
+    params: api.DataJSON                    // DataJSON
+  }, api.DataJSON>
 }
 
 export namespace payments {
   export const getPaymentForm: TLApiMethod<"payments.getPaymentForm", {
-    invoice: global.InputInvoice            // InputInvoice
-    theme_params?: global.DataJSON          // flags.0?DataJSON
+    invoice: api.InputInvoice               // InputInvoice
+    theme_params?: api.DataJSON             // flags.0?DataJSON
   }, PaymentForm>
   export const getPaymentReceipt: TLApiMethod<"payments.getPaymentReceipt", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
   }, PaymentReceipt>
   export const validateRequestedInfo: TLApiMethod<"payments.validateRequestedInfo", {
     save?: true                             // flags.0?true
-    invoice: global.InputInvoice            // InputInvoice
-    info: global.PaymentRequestedInfo       // PaymentRequestedInfo
+    invoice: api.InputInvoice               // InputInvoice
+    info: api.PaymentRequestedInfo          // PaymentRequestedInfo
   }, ValidatedRequestedInfo>
   export const sendPaymentForm: TLApiMethod<"payments.sendPaymentForm", {
     form_id: bigint                         // long
-    invoice: global.InputInvoice            // InputInvoice
+    invoice: api.InputInvoice               // InputInvoice
     requested_info_id?: string              // flags.0?string
     shipping_option_id?: string             // flags.1?string
-    credentials: global.InputPaymentCredentials // InputPaymentCredentials
+    credentials: api.InputPaymentCredentials // InputPaymentCredentials
     tip_amount?: bigint                     // flags.2?long
   }, PaymentResult>
   export const getSavedInfo: TLApiMethod<"payments.getSavedInfo", void, SavedInfo>
@@ -13437,37 +13435,37 @@ export namespace payments {
     number: string                          // string
   }, BankCardData>
   export const exportInvoice: TLApiMethod<"payments.exportInvoice", {
-    invoice_media: global.InputMedia        // InputMedia
+    invoice_media: api.InputMedia           // InputMedia
   }, ExportedInvoice>
   export const assignAppStoreTransaction: TLApiMethod<"payments.assignAppStoreTransaction", {
     receipt: Uint8Array                     // bytes
-    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
-  }, global.Updates>
+    purpose: api.InputStorePaymentPurpose   // InputStorePaymentPurpose
+  }, api.Updates>
   export const assignPlayMarketTransaction: TLApiMethod<"payments.assignPlayMarketTransaction", {
-    receipt: global.DataJSON                // DataJSON
-    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
-  }, global.Updates>
+    receipt: api.DataJSON                   // DataJSON
+    purpose: api.InputStorePaymentPurpose   // InputStorePaymentPurpose
+  }, api.Updates>
   export const canPurchasePremium: TLApiMethod<"payments.canPurchasePremium", {
-    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
+    purpose: api.InputStorePaymentPurpose   // InputStorePaymentPurpose
   }, boolean>
   export const getPremiumGiftCodeOptions: TLApiMethod<"payments.getPremiumGiftCodeOptions", {
-    boost_peer?: global.InputPeer           // flags.0?InputPeer
-  }, global.PremiumGiftCodeOption[]>
+    boost_peer?: api.InputPeer              // flags.0?InputPeer
+  }, api.PremiumGiftCodeOption[]>
   export const checkGiftCode: TLApiMethod<"payments.checkGiftCode", {
     slug: string                            // string
   }, CheckedGiftCode>
   export const applyGiftCode: TLApiMethod<"payments.applyGiftCode", {
     slug: string                            // string
-  }, global.Updates>
+  }, api.Updates>
   export const getGiveawayInfo: TLApiMethod<"payments.getGiveawayInfo", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     msg_id: number                          // int
   }, GiveawayInfo>
   export const launchPrepaidGiveaway: TLApiMethod<"payments.launchPrepaidGiveaway", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     giveaway_id: bigint                     // long
-    purpose: global.InputStorePaymentPurpose // InputStorePaymentPurpose
-  }, global.Updates>
+    purpose: api.InputStorePaymentPurpose   // InputStorePaymentPurpose
+  }, api.Updates>
 }
 
 export namespace stickers {
@@ -13475,27 +13473,27 @@ export namespace stickers {
     masks?: true                            // flags.0?true
     emojis?: true                           // flags.5?true
     text_color?: true                       // flags.6?true
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     title: string                           // string
     short_name: string                      // string
-    thumb?: global.InputDocument            // flags.2?InputDocument
-    stickers: global.InputStickerSetItem[]  // Vector<InputStickerSetItem>
+    thumb?: api.InputDocument               // flags.2?InputDocument
+    stickers: api.InputStickerSetItem[]     // Vector<InputStickerSetItem>
     software?: string                       // flags.3?string
   }, messages.StickerSet>
   export const removeStickerFromSet: TLApiMethod<"stickers.removeStickerFromSet", {
-    sticker: global.InputDocument           // InputDocument
+    sticker: api.InputDocument              // InputDocument
   }, messages.StickerSet>
   export const changeStickerPosition: TLApiMethod<"stickers.changeStickerPosition", {
-    sticker: global.InputDocument           // InputDocument
+    sticker: api.InputDocument              // InputDocument
     position: number                        // int
   }, messages.StickerSet>
   export const addStickerToSet: TLApiMethod<"stickers.addStickerToSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
-    sticker: global.InputStickerSetItem     // InputStickerSetItem
+    stickerset: api.InputStickerSet         // InputStickerSet
+    sticker: api.InputStickerSetItem        // InputStickerSetItem
   }, messages.StickerSet>
   export const setStickerSetThumb: TLApiMethod<"stickers.setStickerSetThumb", {
-    stickerset: global.InputStickerSet      // InputStickerSet
-    thumb?: global.InputDocument            // flags.0?InputDocument
+    stickerset: api.InputStickerSet         // InputStickerSet
+    thumb?: api.InputDocument               // flags.0?InputDocument
     thumb_document_id?: bigint              // flags.1?long
   }, messages.StickerSet>
   export const checkShortName: TLApiMethod<"stickers.checkShortName", {
@@ -13505,170 +13503,170 @@ export namespace stickers {
     title: string                           // string
   }, SuggestedShortName>
   export const changeSticker: TLApiMethod<"stickers.changeSticker", {
-    sticker: global.InputDocument           // InputDocument
+    sticker: api.InputDocument              // InputDocument
     emoji?: string                          // flags.0?string
-    mask_coords?: global.MaskCoords         // flags.1?MaskCoords
+    mask_coords?: api.MaskCoords            // flags.1?MaskCoords
     keywords?: string                       // flags.2?string
   }, messages.StickerSet>
   export const renameStickerSet: TLApiMethod<"stickers.renameStickerSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
+    stickerset: api.InputStickerSet         // InputStickerSet
     title: string                           // string
   }, messages.StickerSet>
   export const deleteStickerSet: TLApiMethod<"stickers.deleteStickerSet", {
-    stickerset: global.InputStickerSet      // InputStickerSet
+    stickerset: api.InputStickerSet         // InputStickerSet
   }, boolean>
   export const replaceSticker: TLApiMethod<"stickers.replaceSticker", {
-    sticker: global.InputDocument           // InputDocument
-    new_sticker: global.InputStickerSetItem // InputStickerSetItem
+    sticker: api.InputDocument              // InputDocument
+    new_sticker: api.InputStickerSetItem    // InputStickerSetItem
   }, messages.StickerSet>
 }
 
 export namespace phone {
-  export const getCallConfig: TLApiMethod<"phone.getCallConfig", void, global.DataJSON>
+  export const getCallConfig: TLApiMethod<"phone.getCallConfig", void, api.DataJSON>
   export const requestCall: TLApiMethod<"phone.requestCall", {
     video?: true                            // flags.0?true
-    user_id: global.InputUser               // InputUser
+    user_id: api.InputUser                  // InputUser
     random_id: number                       // int
     g_a_hash: Uint8Array                    // bytes
-    protocol: global.PhoneCallProtocol      // PhoneCallProtocol
+    protocol: api.PhoneCallProtocol         // PhoneCallProtocol
   }, PhoneCall>
   export const acceptCall: TLApiMethod<"phone.acceptCall", {
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
     g_b: Uint8Array                         // bytes
-    protocol: global.PhoneCallProtocol      // PhoneCallProtocol
+    protocol: api.PhoneCallProtocol         // PhoneCallProtocol
   }, PhoneCall>
   export const confirmCall: TLApiMethod<"phone.confirmCall", {
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
     g_a: Uint8Array                         // bytes
     key_fingerprint: bigint                 // long
-    protocol: global.PhoneCallProtocol      // PhoneCallProtocol
+    protocol: api.PhoneCallProtocol         // PhoneCallProtocol
   }, PhoneCall>
   export const receivedCall: TLApiMethod<"phone.receivedCall", {
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
   }, boolean>
   export const discardCall: TLApiMethod<"phone.discardCall", {
     video?: true                            // flags.0?true
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
     duration: number                        // int
-    reason: global.PhoneCallDiscardReason   // PhoneCallDiscardReason
+    reason: api.PhoneCallDiscardReason      // PhoneCallDiscardReason
     connection_id: bigint                   // long
-  }, global.Updates>
+  }, api.Updates>
   export const setCallRating: TLApiMethod<"phone.setCallRating", {
     user_initiative?: true                  // flags.0?true
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
     rating: number                          // int
     comment: string                         // string
-  }, global.Updates>
+  }, api.Updates>
   export const saveCallDebug: TLApiMethod<"phone.saveCallDebug", {
-    peer: global.InputPhoneCall             // InputPhoneCall
-    debug: global.DataJSON                  // DataJSON
+    peer: api.InputPhoneCall                // InputPhoneCall
+    debug: api.DataJSON                     // DataJSON
   }, boolean>
   export const sendSignalingData: TLApiMethod<"phone.sendSignalingData", {
-    peer: global.InputPhoneCall             // InputPhoneCall
+    peer: api.InputPhoneCall                // InputPhoneCall
     data: Uint8Array                        // bytes
   }, boolean>
   export const createGroupCall: TLApiMethod<"phone.createGroupCall", {
     rtmp_stream?: true                      // flags.2?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     random_id: number                       // int
     title?: string                          // flags.0?string
     schedule_date?: number                  // flags.1?int
-  }, global.Updates>
+  }, api.Updates>
   export const joinGroupCall: TLApiMethod<"phone.joinGroupCall", {
     muted?: true                            // flags.0?true
     video_stopped?: true                    // flags.2?true
-    call: global.InputGroupCall             // InputGroupCall
-    join_as: global.InputPeer               // InputPeer
+    call: api.InputGroupCall                // InputGroupCall
+    join_as: api.InputPeer                  // InputPeer
     invite_hash?: string                    // flags.1?string
-    params: global.DataJSON                 // DataJSON
-  }, global.Updates>
+    params: api.DataJSON                    // DataJSON
+  }, api.Updates>
   export const leaveGroupCall: TLApiMethod<"phone.leaveGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     source: number                          // int
-  }, global.Updates>
+  }, api.Updates>
   export const inviteToGroupCall: TLApiMethod<"phone.inviteToGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
-    users: global.InputUser[]               // Vector<InputUser>
-  }, global.Updates>
+    call: api.InputGroupCall                // InputGroupCall
+    users: api.InputUser[]                  // Vector<InputUser>
+  }, api.Updates>
   export const discardGroupCall: TLApiMethod<"phone.discardGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates>
+    call: api.InputGroupCall                // InputGroupCall
+  }, api.Updates>
   export const toggleGroupCallSettings: TLApiMethod<"phone.toggleGroupCallSettings", {
     reset_invite_hash?: true                // flags.1?true
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     join_muted?: boolean                    // flags.0?Bool
-  }, global.Updates>
+  }, api.Updates>
   export const getGroupCall: TLApiMethod<"phone.getGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     limit: number                           // int
   }, GroupCall>
   export const getGroupParticipants: TLApiMethod<"phone.getGroupParticipants", {
-    call: global.InputGroupCall             // InputGroupCall
-    ids: global.InputPeer[]                 // Vector<InputPeer>
+    call: api.InputGroupCall                // InputGroupCall
+    ids: api.InputPeer[]                    // Vector<InputPeer>
     sources: number[]                       // Vector<int>
     offset: string                          // string
     limit: number                           // int
   }, GroupParticipants>
   export const checkGroupCall: TLApiMethod<"phone.checkGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     sources: number[]                       // Vector<int>
   }, number[]>
   export const toggleGroupCallRecord: TLApiMethod<"phone.toggleGroupCallRecord", {
     start?: true                            // flags.0?true
     video?: true                            // flags.2?true
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     title?: string                          // flags.1?string
     video_portrait?: boolean                // flags.2?Bool
-  }, global.Updates>
+  }, api.Updates>
   export const editGroupCallParticipant: TLApiMethod<"phone.editGroupCallParticipant", {
-    call: global.InputGroupCall             // InputGroupCall
-    participant: global.InputPeer           // InputPeer
+    call: api.InputGroupCall                // InputGroupCall
+    participant: api.InputPeer              // InputPeer
     muted?: boolean                         // flags.0?Bool
     volume?: number                         // flags.1?int
     raise_hand?: boolean                    // flags.2?Bool
     video_stopped?: boolean                 // flags.3?Bool
     video_paused?: boolean                  // flags.4?Bool
     presentation_paused?: boolean           // flags.5?Bool
-  }, global.Updates>
+  }, api.Updates>
   export const editGroupCallTitle: TLApiMethod<"phone.editGroupCallTitle", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     title: string                           // string
-  }, global.Updates>
+  }, api.Updates>
   export const getGroupCallJoinAs: TLApiMethod<"phone.getGroupCallJoinAs", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, JoinAsPeers>
   export const exportGroupCallInvite: TLApiMethod<"phone.exportGroupCallInvite", {
     can_self_unmute?: true                  // flags.0?true
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
   }, ExportedGroupCallInvite>
   export const toggleGroupCallStartSubscription: TLApiMethod<"phone.toggleGroupCallStartSubscription", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
     subscribed: boolean                     // Bool
-  }, global.Updates>
+  }, api.Updates>
   export const startScheduledGroupCall: TLApiMethod<"phone.startScheduledGroupCall", {
-    call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates>
+    call: api.InputGroupCall                // InputGroupCall
+  }, api.Updates>
   export const saveDefaultGroupCallJoinAs: TLApiMethod<"phone.saveDefaultGroupCallJoinAs", {
-    peer: global.InputPeer                  // InputPeer
-    join_as: global.InputPeer               // InputPeer
+    peer: api.InputPeer                     // InputPeer
+    join_as: api.InputPeer                  // InputPeer
   }, boolean>
   export const joinGroupCallPresentation: TLApiMethod<"phone.joinGroupCallPresentation", {
-    call: global.InputGroupCall             // InputGroupCall
-    params: global.DataJSON                 // DataJSON
-  }, global.Updates>
+    call: api.InputGroupCall                // InputGroupCall
+    params: api.DataJSON                    // DataJSON
+  }, api.Updates>
   export const leaveGroupCallPresentation: TLApiMethod<"phone.leaveGroupCallPresentation", {
-    call: global.InputGroupCall             // InputGroupCall
-  }, global.Updates>
+    call: api.InputGroupCall                // InputGroupCall
+  }, api.Updates>
   export const getGroupCallStreamChannels: TLApiMethod<"phone.getGroupCallStreamChannels", {
-    call: global.InputGroupCall             // InputGroupCall
+    call: api.InputGroupCall                // InputGroupCall
   }, GroupCallStreamChannels>
   export const getGroupCallStreamRtmpUrl: TLApiMethod<"phone.getGroupCallStreamRtmpUrl", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     revoke: boolean                         // Bool
   }, GroupCallStreamRtmpUrl>
   export const saveCallLog: TLApiMethod<"phone.saveCallLog", {
-    peer: global.InputPhoneCall             // InputPhoneCall
-    file: global.InputFile                  // InputFile
+    peer: api.InputPhoneCall                // InputPhoneCall
+    file: api.InputFile                     // InputFile
   }, boolean>
 }
 
@@ -13676,77 +13674,77 @@ export namespace langpack {
   export const getLangPack: TLApiMethod<"langpack.getLangPack", {
     lang_pack: string                       // string
     lang_code: string                       // string
-  }, global.LangPackDifference>
+  }, api.LangPackDifference>
   export const getStrings: TLApiMethod<"langpack.getStrings", {
     lang_pack: string                       // string
     lang_code: string                       // string
     keys: string[]                          // Vector<string>
-  }, global.LangPackString[]>
+  }, api.LangPackString[]>
   export const getDifference: TLApiMethod<"langpack.getDifference", {
     lang_pack: string                       // string
     lang_code: string                       // string
     from_version: number                    // int
-  }, global.LangPackDifference>
+  }, api.LangPackDifference>
   export const getLanguages: TLApiMethod<"langpack.getLanguages", {
     lang_pack: string                       // string
-  }, global.LangPackLanguage[]>
+  }, api.LangPackLanguage[]>
   export const getLanguage: TLApiMethod<"langpack.getLanguage", {
     lang_pack: string                       // string
     lang_code: string                       // string
-  }, global.LangPackLanguage>
+  }, api.LangPackLanguage>
 }
 
 export namespace folders {
   export const editPeerFolders: TLApiMethod<"folders.editPeerFolders", {
-    folder_peers: global.InputFolderPeer[]  // Vector<InputFolderPeer>
-  }, global.Updates>
+    folder_peers: api.InputFolderPeer[]     // Vector<InputFolderPeer>
+  }, api.Updates>
 }
 
 export namespace stats {
   export const getBroadcastStats: TLApiMethod<"stats.getBroadcastStats", {
     dark?: true                             // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, BroadcastStats>
   export const loadAsyncGraph: TLApiMethod<"stats.loadAsyncGraph", {
     token: string                           // string
     x?: bigint                              // flags.0?long
-  }, global.StatsGraph>
+  }, api.StatsGraph>
   export const getMegagroupStats: TLApiMethod<"stats.getMegagroupStats", {
     dark?: true                             // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, MegagroupStats>
   export const getMessagePublicForwards: TLApiMethod<"stats.getMessagePublicForwards", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     msg_id: number                          // int
     offset: string                          // string
     limit: number                           // int
   }, PublicForwards>
   export const getMessageStats: TLApiMethod<"stats.getMessageStats", {
     dark?: true                             // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     msg_id: number                          // int
   }, MessageStats>
   export const getStoryStats: TLApiMethod<"stats.getStoryStats", {
     dark?: true                             // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
   }, StoryStats>
   export const getStoryPublicForwards: TLApiMethod<"stats.getStoryPublicForwards", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
     offset: string                          // string
     limit: number                           // int
   }, PublicForwards>
   export const getBroadcastRevenueStats: TLApiMethod<"stats.getBroadcastRevenueStats", {
     dark?: true                             // flags.0?true
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
   }, BroadcastRevenueStats>
   export const getBroadcastRevenueWithdrawalUrl: TLApiMethod<"stats.getBroadcastRevenueWithdrawalUrl", {
-    channel: global.InputChannel            // InputChannel
-    password: global.InputCheckPasswordSRP  // InputCheckPasswordSRP
+    channel: api.InputChannel               // InputChannel
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
   }, BroadcastRevenueWithdrawalUrl>
   export const getBroadcastRevenueTransactions: TLApiMethod<"stats.getBroadcastRevenueTransactions", {
-    channel: global.InputChannel            // InputChannel
+    channel: api.InputChannel               // InputChannel
     offset: number                          // int
     limit: number                           // int
   }, BroadcastRevenueTransactions>
@@ -13754,83 +13752,83 @@ export namespace stats {
 
 export namespace chatlists {
   export const exportChatlistInvite: TLApiMethod<"chatlists.exportChatlistInvite", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
     title: string                           // string
-    peers: global.InputPeer[]               // Vector<InputPeer>
+    peers: api.InputPeer[]                  // Vector<InputPeer>
   }, ExportedChatlistInvite>
   export const deleteExportedInvite: TLApiMethod<"chatlists.deleteExportedInvite", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
     slug: string                            // string
   }, boolean>
   export const editExportedInvite: TLApiMethod<"chatlists.editExportedInvite", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
     slug: string                            // string
     title?: string                          // flags.1?string
-    peers?: global.InputPeer[]              // flags.2?Vector<InputPeer>
-  }, global.ExportedChatlistInvite>
+    peers?: api.InputPeer[]                 // flags.2?Vector<InputPeer>
+  }, api.ExportedChatlistInvite>
   export const getExportedInvites: TLApiMethod<"chatlists.getExportedInvites", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
   }, ExportedInvites>
   export const checkChatlistInvite: TLApiMethod<"chatlists.checkChatlistInvite", {
     slug: string                            // string
   }, ChatlistInvite>
   export const joinChatlistInvite: TLApiMethod<"chatlists.joinChatlistInvite", {
     slug: string                            // string
-    peers: global.InputPeer[]               // Vector<InputPeer>
-  }, global.Updates>
+    peers: api.InputPeer[]                  // Vector<InputPeer>
+  }, api.Updates>
   export const getChatlistUpdates: TLApiMethod<"chatlists.getChatlistUpdates", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
   }, ChatlistUpdates>
   export const joinChatlistUpdates: TLApiMethod<"chatlists.joinChatlistUpdates", {
-    chatlist: global.InputChatlist          // InputChatlist
-    peers: global.InputPeer[]               // Vector<InputPeer>
-  }, global.Updates>
+    chatlist: api.InputChatlist             // InputChatlist
+    peers: api.InputPeer[]                  // Vector<InputPeer>
+  }, api.Updates>
   export const hideChatlistUpdates: TLApiMethod<"chatlists.hideChatlistUpdates", {
-    chatlist: global.InputChatlist          // InputChatlist
+    chatlist: api.InputChatlist             // InputChatlist
   }, boolean>
   export const getLeaveChatlistSuggestions: TLApiMethod<"chatlists.getLeaveChatlistSuggestions", {
-    chatlist: global.InputChatlist          // InputChatlist
-  }, global.Peer[]>
+    chatlist: api.InputChatlist             // InputChatlist
+  }, api.Peer[]>
   export const leaveChatlist: TLApiMethod<"chatlists.leaveChatlist", {
-    chatlist: global.InputChatlist          // InputChatlist
-    peers: global.InputPeer[]               // Vector<InputPeer>
-  }, global.Updates>
+    chatlist: api.InputChatlist             // InputChatlist
+    peers: api.InputPeer[]                  // Vector<InputPeer>
+  }, api.Updates>
 }
 
 export namespace stories {
   export const canSendStory: TLApiMethod<"stories.canSendStory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, boolean>
   export const sendStory: TLApiMethod<"stories.sendStory", {
     pinned?: true                           // flags.2?true
     noforwards?: true                       // flags.4?true
     fwd_modified?: true                     // flags.7?true
-    peer: global.InputPeer                  // InputPeer
-    media: global.InputMedia                // InputMedia
-    media_areas?: global.MediaArea[]        // flags.5?Vector<MediaArea>
+    peer: api.InputPeer                     // InputPeer
+    media: api.InputMedia                   // InputMedia
+    media_areas?: api.MediaArea[]           // flags.5?Vector<MediaArea>
     caption?: string                        // flags.0?string
-    entities?: global.MessageEntity[]       // flags.1?Vector<MessageEntity>
-    privacy_rules: global.InputPrivacyRule[] // Vector<InputPrivacyRule>
+    entities?: api.MessageEntity[]          // flags.1?Vector<MessageEntity>
+    privacy_rules: api.InputPrivacyRule[]   // Vector<InputPrivacyRule>
     random_id: bigint                       // long
     period?: number                         // flags.3?int
-    fwd_from_id?: global.InputPeer          // flags.6?InputPeer
+    fwd_from_id?: api.InputPeer             // flags.6?InputPeer
     fwd_from_story?: number                 // flags.6?int
-  }, global.Updates>
+  }, api.Updates>
   export const editStory: TLApiMethod<"stories.editStory", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    media?: global.InputMedia               // flags.0?InputMedia
-    media_areas?: global.MediaArea[]        // flags.3?Vector<MediaArea>
+    media?: api.InputMedia                  // flags.0?InputMedia
+    media_areas?: api.MediaArea[]           // flags.3?Vector<MediaArea>
     caption?: string                        // flags.1?string
-    entities?: global.MessageEntity[]       // flags.1?Vector<MessageEntity>
-    privacy_rules?: global.InputPrivacyRule[] // flags.2?Vector<InputPrivacyRule>
-  }, global.Updates>
+    entities?: api.MessageEntity[]          // flags.1?Vector<MessageEntity>
+    privacy_rules?: api.InputPrivacyRule[]  // flags.2?Vector<InputPrivacyRule>
+  }, api.Updates>
   export const deleteStories: TLApiMethod<"stories.deleteStories", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, number[]>
   export const togglePinned: TLApiMethod<"stories.togglePinned", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
     pinned: boolean                         // Bool
   }, number[]>
@@ -13840,81 +13838,81 @@ export namespace stories {
     state?: string                          // flags.0?string
   }, AllStories>
   export const getPinnedStories: TLApiMethod<"stories.getPinnedStories", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     offset_id: number                       // int
     limit: number                           // int
   }, Stories>
   export const getStoriesArchive: TLApiMethod<"stories.getStoriesArchive", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     offset_id: number                       // int
     limit: number                           // int
   }, Stories>
   export const getStoriesByID: TLApiMethod<"stories.getStoriesByID", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, Stories>
   export const toggleAllStoriesHidden: TLApiMethod<"stories.toggleAllStoriesHidden", {
     hidden: boolean                         // Bool
   }, boolean>
   export const readStories: TLApiMethod<"stories.readStories", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     max_id: number                          // int
   }, number[]>
   export const incrementStoryViews: TLApiMethod<"stories.incrementStoryViews", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, boolean>
   export const getStoryViewsList: TLApiMethod<"stories.getStoryViewsList", {
     just_contacts?: true                    // flags.0?true
     reactions_first?: true                  // flags.2?true
     forwards_first?: true                   // flags.3?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     q?: string                              // flags.1?string
     id: number                              // int
     offset: string                          // string
     limit: number                           // int
   }, StoryViewsList>
   export const getStoriesViews: TLApiMethod<"stories.getStoriesViews", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, StoryViews>
   export const exportStoryLink: TLApiMethod<"stories.exportStoryLink", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-  }, global.ExportedStoryLink>
+  }, api.ExportedStoryLink>
   export const report: TLApiMethod<"stories.report", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
-    reason: global.ReportReason             // ReportReason
+    reason: api.ReportReason                // ReportReason
     message: string                         // string
   }, boolean>
   export const activateStealthMode: TLApiMethod<"stories.activateStealthMode", {
     past?: true                             // flags.0?true
     future?: true                           // flags.1?true
-  }, global.Updates>
+  }, api.Updates>
   export const sendReaction: TLApiMethod<"stories.sendReaction", {
     add_to_recent?: true                    // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     story_id: number                        // int
-    reaction: global.Reaction               // Reaction
-  }, global.Updates>
+    reaction: api.Reaction                  // Reaction
+  }, api.Updates>
   export const getPeerStories: TLApiMethod<"stories.getPeerStories", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, PeerStories>
-  export const getAllReadPeerStories: TLApiMethod<"stories.getAllReadPeerStories", void, global.Updates>
+  export const getAllReadPeerStories: TLApiMethod<"stories.getAllReadPeerStories", void, api.Updates>
   export const getPeerMaxIDs: TLApiMethod<"stories.getPeerMaxIDs", {
-    id: global.InputPeer[]                  // Vector<InputPeer>
+    id: api.InputPeer[]                     // Vector<InputPeer>
   }, number[]>
   export const getChatsToSend: TLApiMethod<"stories.getChatsToSend", void, messages.Chats>
   export const togglePeerStoriesHidden: TLApiMethod<"stories.togglePeerStoriesHidden", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     hidden: boolean                         // Bool
   }, boolean>
   export const getStoryReactionsList: TLApiMethod<"stories.getStoryReactionsList", {
     forwards_first?: true                   // flags.2?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     id: number                              // int
-    reaction?: global.Reaction              // flags.0?Reaction
+    reaction?: api.Reaction                 // flags.0?Reaction
     offset?: string                         // flags.1?string
     limit: number                           // int
   }, StoryReactionsList>
@@ -13923,21 +13921,21 @@ export namespace stories {
 export namespace premium {
   export const getBoostsList: TLApiMethod<"premium.getBoostsList", {
     gifts?: true                            // flags.0?true
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
     offset: string                          // string
     limit: number                           // int
   }, BoostsList>
   export const getMyBoosts: TLApiMethod<"premium.getMyBoosts", void, MyBoosts>
   export const applyBoost: TLApiMethod<"premium.applyBoost", {
     slots?: number[]                        // flags.0?Vector<int>
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, MyBoosts>
   export const getBoostsStatus: TLApiMethod<"premium.getBoostsStatus", {
-    peer: global.InputPeer                  // InputPeer
+    peer: api.InputPeer                     // InputPeer
   }, BoostsStatus>
   export const getUserBoosts: TLApiMethod<"premium.getUserBoosts", {
-    peer: global.InputPeer                  // InputPeer
-    user_id: global.InputUser               // InputUser
+    peer: api.InputPeer                     // InputPeer
+    user_id: api.InputUser                  // InputUser
   }, BoostsList>
 }
 
@@ -13951,7 +13949,7 @@ export namespace smsjobs {
   export const getStatus: TLApiMethod<"smsjobs.getStatus", void, Status>
   export const getSmsJob: TLApiMethod<"smsjobs.getSmsJob", {
     job_id: string                          // string
-  }, global.SmsJob>
+  }, api.SmsJob>
   export const finishJob: TLApiMethod<"smsjobs.finishJob", {
     job_id: string                          // string
     error?: string                          // flags.0?string
@@ -13960,7 +13958,7 @@ export namespace smsjobs {
 
 export namespace fragment {
   export const getCollectibleInfo: TLApiMethod<"fragment.getCollectibleInfo", {
-    collectible: global.InputCollectible    // InputCollectible
+    collectible: api.InputCollectible       // InputCollectible
   }, CollectibleInfo>
 }
 
