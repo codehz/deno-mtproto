@@ -7,6 +7,8 @@
  *
  * This storage implementation is intended for testing and
  * development purposes.
+ * 
+ * @module
  */
 
 import {

@@ -6,6 +6,8 @@
  * 
  * This storage implementation is not optimized for performance
  * and should not be used in production.
+ * 
+ * @module
  */
 
 import { debounce } from "../common/debounce.ts";
