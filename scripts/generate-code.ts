@@ -225,28 +225,26 @@ function encodeType(jsfile: DocumentWriter, name: string, type: string) {
     default:
       base = `this.object`;
   }
-  if (base != undefined) {
+  if (base == undefined) {
+    jsfile.append`// ERROR: ${name}${comments}`;
+  } else {
     if (parsed.vector) {
-      if (parsed.bare) {
-        base = `this.vector(_.${name}, ${base}, true);`;
-      } else {
-        base = `this.vector(_.${name}, ${base});`;
-      }
+      base = parsed.bare
+        ? `this.vector(_.${name}, ${base}, true);`
+        : `this.vector(_.${name}, ${base});`;
     } else {
       base = `${base}(_.${name});`;
     }
-    if (parsed.flag != null) {
+    if (parsed.flag == null) {
+      jsfile.append`${`${base.padEnd(39)}`} // ${comments}`;
+    } else {
       if (parsed.vector) {
         jsfile.append`if (_.${name} != null && _.${name}.length > 0)`;
       } else {
         jsfile.append`if (_.${name} != null)`;
       }
       jsfile.append`${`  ${base}`.padEnd(39)} // ${comments}`;
-    } else {
-      jsfile.append`${`${base.padEnd(39)}`} // ${comments}`;
     }
-  } else {
-    jsfile.append`// ERROR: ${name}${comments}`;
   }
 }
 
@@ -308,28 +306,26 @@ class DefinitionProcessor {
         types.add(item.type);
         filtered.push(item);
         typelist.add(item);
-        if (!item.type.includes(".")) {
-          typesubs.add("api." + item.type, item.predicate);
-        } else {
+        if (item.type.includes(".")) {
           typesubs.add(item.type, item.predicate);
+        } else {
+          typesubs.add("api." + item.type, item.predicate);
         }
       }
     }
     for (const item of filtered) {
       for (const param of item.params) {
         const parsed = parseParamType(param.type);
-        if (mt) {
-          if (!commontypes.includes(parsed.type)) {
-            parsed.type = "mt." + parsed.type;
-            console.assert(parsed.flag == null);
-            let base = parsed.type;
-            if (parsed.bare) base = `%${base}`;
-            if (parsed.vector) base = `vector<${base}>`;
-            param.type = base;
-          }
+        if (mt && !commontypes.includes(parsed.type)) {
+          parsed.type = "mt." + parsed.type;
+          console.assert(parsed.flag == null);
+          let base = parsed.type;
+          if (parsed.bare) base = `%${base}`;
+          if (parsed.vector) base = `vector<${base}>`;
+          param.type = base;
         }
         if (!types.has(parsed.type) && !commontypes.includes(parsed.type)) {
-          console.log(parsed);
+          console.error(parsed);
           throw new Error(
             `Could not find definition for type ${param.type} in constructor ${item.predicate}#${item.id}`,
           );
@@ -360,13 +356,11 @@ class DefinitionProcessor {
     const { namespace: typenamespace, name: barename } = parseNamespace(
       parsed.type,
     );
-    if (!typenamespace) {
-      if (!(barename in tstypemaps)) {
-        if (this.typelist.get()!.has(barename)) {
-          parsed.type = `api.${parsed.type}`;
-        } else {
-          console.log(`${parsed.type} not found`);
-        }
+    if (!typenamespace && !(barename in tstypemaps)) {
+      if (this.typelist.get()!.has(barename)) {
+        parsed.type = `api.${parsed.type}`;
+      } else {
+        console.error(`${parsed.type} not found`);
       }
     }
     return parsed;
@@ -432,17 +426,15 @@ class DefinitionProcessor {
             jsfile.append`${name}() {`;
             jsfile.indent++;
             jsfile.append`return { _: "${predicate}" };`;
-            jsfile.indent--;
-            jsfile.append`},`;
           } else {
             tsfile
               .append`export const ${name}: TLConstructor<_${typename}, "${predicate}">;`;
             jsfile.append`${name}(params) {`;
             jsfile.indent++;
             jsfile.append`return { ...params, _: "${predicate}" };`;
-            jsfile.indent--;
-            jsfile.append`},`;
           }
+          jsfile.indent--;
+          jsfile.append`},`;
         }
         jsfile.empty();
       }
@@ -560,7 +552,9 @@ class DefinitionProcessor {
             base = `this.object`;
         }
 
-        if (base != undefined) {
+        if (base == undefined) {
+          jsfile.append`// ERROR: ${name}${comments}`;
+        } else {
           if (parsed.vector) {
             if (parsed.bare) {
               console.assert(parsed.type == "mt.Message");
@@ -571,7 +565,9 @@ class DefinitionProcessor {
           } else {
             base = `${base}()`;
           }
-          if (parsed.flag != null) {
+          if (parsed.flag == null) {
+            base = `_.${name} = ${base};`;
+          } else {
             const cond = `${parsed.flag.name} & ${1 << parsed.flag.pos}`;
             if (parsed.type == "true") {
               console.assert(!parsed.vector);
@@ -579,12 +575,8 @@ class DefinitionProcessor {
             } else {
               base = `if (${cond}) _.${name} = ${base}`;
             }
-          } else {
-            base = `_.${name} = ${base};`;
           }
           jsfile.append`${`${base.padEnd(39)}`} // ${comments}`;
-        } else {
-          jsfile.append`// ERROR: ${name}${comments}`;
         }
       }
       jsfile.append`return _;`;
@@ -628,13 +620,10 @@ class DefinitionProcessor {
           paramtypestr = paramtype.toString();
         }
         const parsed = this.resolve_global_type(type);
-        let decl = generateMethodReturnType(parsed, namespace);
-        if (
-          !commontypes.includes(parsed.type) &&
-          typesubs.get(parsed.type) == null
-        ) {
-          decl = "unknown";
-        }
+        const decl = !commontypes.includes(parsed.type) &&
+            typesubs.get(parsed.type) == null
+          ? "unknown"
+          : generateMethodReturnType(parsed, namespace);
         if (namespace == "mt") {
           tsfile
             .append`export const ${name}: TLMethod<${paramtypestr}, ${decl}>`;
@@ -698,9 +687,7 @@ class DefinitionProcessor {
           jsfile.append`${name}.verify = function($$) {`;
         }
         jsfile.indent++;
-        if (type == "X") {
-          jsfile.append`return $$;`;
-        } else {
+        if (type != "X") {
           let base: string | undefined;
           if (parsed.type == "true") {
             base = "$ === true";
@@ -738,8 +725,8 @@ class DefinitionProcessor {
             jsfile.append`const $ = $$;`;
             jsfile.append`if (!(${base})) throw new TypeError("element");`;
           }
-          jsfile.append`return $$;`;
         }
+        jsfile.append`return $$;`;
         jsfile.indent--;
         jsfile.append`};`;
       }
