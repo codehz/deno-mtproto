@@ -1,11 +1,11 @@
-import {
+import { todv } from "../../common/utils.ts";
+import type {
   PacketCodec,
   Transport,
   TransportEvent,
   TransportEvents,
   TransportFactory,
 } from "../../types.ts";
-import { todv } from "../../common/utils.ts";
 import { get_address } from "../dcmap.ts";
 
 class BufferSync {
