@@ -481,14 +481,14 @@ const global = {
   userStatusOffline(params) {
     return { ...params, _: "userStatusOffline" };
   },
-  userStatusRecently() {
-    return { _: "userStatusRecently" };
+  userStatusRecently(params) {
+    return { ...params, _: "userStatusRecently" };
   },
-  userStatusLastWeek() {
-    return { _: "userStatusLastWeek" };
+  userStatusLastWeek(params) {
+    return { ...params, _: "userStatusLastWeek" };
   },
-  userStatusLastMonth() {
-    return { _: "userStatusLastMonth" };
+  userStatusLastMonth(params) {
+    return { ...params, _: "userStatusLastMonth" };
   },
 
   // type Chat
@@ -599,6 +599,9 @@ const global = {
   },
   messageMediaGiveaway(params) {
     return { ...params, _: "messageMediaGiveaway" };
+  },
+  messageMediaGiveawayResults(params) {
+    return { ...params, _: "messageMediaGiveawayResults" };
   },
 
   // type MessageAction
@@ -716,14 +719,20 @@ const global = {
   messageActionSetChatWallPaper(params) {
     return { ...params, _: "messageActionSetChatWallPaper" };
   },
-  messageActionSetSameChatWallPaper(params) {
-    return { ...params, _: "messageActionSetSameChatWallPaper" };
-  },
   messageActionGiftCode(params) {
     return { ...params, _: "messageActionGiftCode" };
   },
   messageActionGiveawayLaunch() {
     return { _: "messageActionGiveawayLaunch" };
+  },
+  messageActionGiveawayResults(params) {
+    return { ...params, _: "messageActionGiveawayResults" };
+  },
+  messageActionBoostApply(params) {
+    return { ...params, _: "messageActionBoostApply" };
+  },
+  messageActionRequestedPeerSentMe(params) {
+    return { ...params, _: "messageActionRequestedPeerSentMe" };
   },
 
   // type Dialog
@@ -1249,9 +1258,6 @@ const global = {
   updateAutoSaveSettings() {
     return { _: "updateAutoSaveSettings" };
   },
-  updateGroupInvitePrivacyForbidden(params) {
-    return { ...params, _: "updateGroupInvitePrivacyForbidden" };
-  },
   updateStory(params) {
     return { ...params, _: "updateStory" };
   },
@@ -1266,6 +1272,60 @@ const global = {
   },
   updateSentStoryReaction(params) {
     return { ...params, _: "updateSentStoryReaction" };
+  },
+  updateBotChatBoost(params) {
+    return { ...params, _: "updateBotChatBoost" };
+  },
+  updateChannelViewForumAsMessages(params) {
+    return { ...params, _: "updateChannelViewForumAsMessages" };
+  },
+  updatePeerWallpaper(params) {
+    return { ...params, _: "updatePeerWallpaper" };
+  },
+  updateBotMessageReaction(params) {
+    return { ...params, _: "updateBotMessageReaction" };
+  },
+  updateBotMessageReactions(params) {
+    return { ...params, _: "updateBotMessageReactions" };
+  },
+  updateSavedDialogPinned(params) {
+    return { ...params, _: "updateSavedDialogPinned" };
+  },
+  updatePinnedSavedDialogs(params) {
+    return { ...params, _: "updatePinnedSavedDialogs" };
+  },
+  updateSavedReactionTags() {
+    return { _: "updateSavedReactionTags" };
+  },
+  updateSmsJob(params) {
+    return { ...params, _: "updateSmsJob" };
+  },
+  updateQuickReplies(params) {
+    return { ...params, _: "updateQuickReplies" };
+  },
+  updateNewQuickReply(params) {
+    return { ...params, _: "updateNewQuickReply" };
+  },
+  updateDeleteQuickReply(params) {
+    return { ...params, _: "updateDeleteQuickReply" };
+  },
+  updateQuickReplyMessage(params) {
+    return { ...params, _: "updateQuickReplyMessage" };
+  },
+  updateDeleteQuickReplyMessages(params) {
+    return { ...params, _: "updateDeleteQuickReplyMessages" };
+  },
+  updateBotBusinessConnect(params) {
+    return { ...params, _: "updateBotBusinessConnect" };
+  },
+  updateBotNewBusinessMessage(params) {
+    return { ...params, _: "updateBotNewBusinessMessage" };
+  },
+  updateBotEditBusinessMessage(params) {
+    return { ...params, _: "updateBotEditBusinessMessage" };
+  },
+  updateBotDeleteBusinessMessage(params) {
+    return { ...params, _: "updateBotDeleteBusinessMessage" };
   },
 
   // type Updates
@@ -1478,6 +1538,9 @@ const global = {
   inputPrivacyKeyAbout() {
     return { _: "inputPrivacyKeyAbout" };
   },
+  inputPrivacyKeyBirthday() {
+    return { _: "inputPrivacyKeyBirthday" };
+  },
 
   // type PrivacyKey
   privacyKeyStatusTimestamp() {
@@ -1510,6 +1573,9 @@ const global = {
   privacyKeyAbout() {
     return { _: "privacyKeyAbout" };
   },
+  privacyKeyBirthday() {
+    return { _: "privacyKeyBirthday" };
+  },
 
   // type InputPrivacyRule
   inputPrivacyValueAllowContacts() {
@@ -1539,6 +1605,9 @@ const global = {
   inputPrivacyValueAllowCloseFriends() {
     return { _: "inputPrivacyValueAllowCloseFriends" };
   },
+  inputPrivacyValueAllowPremium() {
+    return { _: "inputPrivacyValueAllowPremium" };
+  },
 
   // type PrivacyRule
   privacyValueAllowContacts() {
@@ -1567,6 +1636,9 @@ const global = {
   },
   privacyValueAllowCloseFriends() {
     return { _: "privacyValueAllowCloseFriends" };
+  },
+  privacyValueAllowPremium() {
+    return { _: "privacyValueAllowPremium" };
   },
 
   // type AccountDaysTTL
@@ -1679,6 +1751,9 @@ const global = {
   inputStickerSetEmojiDefaultTopicIcons() {
     return { _: "inputStickerSetEmojiDefaultTopicIcons" };
   },
+  inputStickerSetEmojiChannelDefaultStatuses() {
+    return { _: "inputStickerSetEmojiChannelDefaultStatuses" };
+  },
 
   // type StickerSet
   stickerSet(params) {
@@ -1743,6 +1818,9 @@ const global = {
   },
   keyboardButtonRequestPeer(params) {
     return { ...params, _: "keyboardButtonRequestPeer" };
+  },
+  inputKeyboardButtonRequestPeer(params) {
+    return { ...params, _: "inputKeyboardButtonRequestPeer" };
   },
 
   // type KeyboardButtonRow
@@ -2517,11 +2595,20 @@ const global = {
   channelAdminLogEventActionToggleAntiSpam(params) {
     return { ...params, _: "channelAdminLogEventActionToggleAntiSpam" };
   },
-  channelAdminLogEventActionChangeColor(params) {
-    return { ...params, _: "channelAdminLogEventActionChangeColor" };
+  channelAdminLogEventActionChangePeerColor(params) {
+    return { ...params, _: "channelAdminLogEventActionChangePeerColor" };
   },
-  channelAdminLogEventActionChangeBackgroundEmoji(params) {
-    return { ...params, _: "channelAdminLogEventActionChangeBackgroundEmoji" };
+  channelAdminLogEventActionChangeProfilePeerColor(params) {
+    return { ...params, _: "channelAdminLogEventActionChangeProfilePeerColor" };
+  },
+  channelAdminLogEventActionChangeWallpaper(params) {
+    return { ...params, _: "channelAdminLogEventActionChangeWallpaper" };
+  },
+  channelAdminLogEventActionChangeEmojiStatus(params) {
+    return { ...params, _: "channelAdminLogEventActionChangeEmojiStatus" };
+  },
+  channelAdminLogEventActionChangeEmojiStickerSet(params) {
+    return { ...params, _: "channelAdminLogEventActionChangeEmojiStickerSet" };
   },
 
   // type ChannelAdminLogEvent
@@ -3072,11 +3159,6 @@ const global = {
     return { ...params, _: "statsGraph" };
   },
 
-  // type MessageInteractionCounters
-  messageInteractionCounters(params) {
-    return { ...params, _: "messageInteractionCounters" };
-  },
-
   // type VideoSize
   videoSize(params) {
     return { ...params, _: "videoSize" };
@@ -3589,6 +3671,12 @@ const global = {
   storyView(params) {
     return { ...params, _: "storyView" };
   },
+  storyViewPublicForward(params) {
+    return { ...params, _: "storyViewPublicForward" };
+  },
+  storyViewPublicRepost(params) {
+    return { ...params, _: "storyViewPublicRepost" };
+  },
 
   // type InputReplyTo
   inputReplyToMessage(params) {
@@ -3626,6 +3714,12 @@ const global = {
   mediaAreaSuggestedReaction(params) {
     return { ...params, _: "mediaAreaSuggestedReaction" };
   },
+  mediaAreaChannelPost(params) {
+    return { ...params, _: "mediaAreaChannelPost" };
+  },
+  inputMediaAreaChannelPost(params) {
+    return { ...params, _: "inputMediaAreaChannelPost" };
+  },
 
   // type PeerStories
   peerStories(params) {
@@ -3650,6 +3744,227 @@ const global = {
   // type MyBoost
   myBoost(params) {
     return { ...params, _: "myBoost" };
+  },
+
+  // type StoryFwdHeader
+  storyFwdHeader(params) {
+    return { ...params, _: "storyFwdHeader" };
+  },
+
+  // type PostInteractionCounters
+  postInteractionCountersMessage(params) {
+    return { ...params, _: "postInteractionCountersMessage" };
+  },
+  postInteractionCountersStory(params) {
+    return { ...params, _: "postInteractionCountersStory" };
+  },
+
+  // type PublicForward
+  publicForwardMessage(params) {
+    return { ...params, _: "publicForwardMessage" };
+  },
+  publicForwardStory(params) {
+    return { ...params, _: "publicForwardStory" };
+  },
+
+  // type PeerColor
+  peerColor(params) {
+    return { ...params, _: "peerColor" };
+  },
+
+  // type StoryReaction
+  storyReaction(params) {
+    return { ...params, _: "storyReaction" };
+  },
+  storyReactionPublicForward(params) {
+    return { ...params, _: "storyReactionPublicForward" };
+  },
+  storyReactionPublicRepost(params) {
+    return { ...params, _: "storyReactionPublicRepost" };
+  },
+
+  // type SavedDialog
+  savedDialog(params) {
+    return { ...params, _: "savedDialog" };
+  },
+
+  // type SavedReactionTag
+  savedReactionTag(params) {
+    return { ...params, _: "savedReactionTag" };
+  },
+
+  // type OutboxReadDate
+  outboxReadDate(params) {
+    return { ...params, _: "outboxReadDate" };
+  },
+
+  // type SmsJob
+  smsJob(params) {
+    return { ...params, _: "smsJob" };
+  },
+
+  // type BusinessWeeklyOpen
+  businessWeeklyOpen(params) {
+    return { ...params, _: "businessWeeklyOpen" };
+  },
+
+  // type BusinessWorkHours
+  businessWorkHours(params) {
+    return { ...params, _: "businessWorkHours" };
+  },
+
+  // type BusinessLocation
+  businessLocation(params) {
+    return { ...params, _: "businessLocation" };
+  },
+
+  // type InputBusinessRecipients
+  inputBusinessRecipients(params) {
+    return { ...params, _: "inputBusinessRecipients" };
+  },
+
+  // type BusinessRecipients
+  businessRecipients(params) {
+    return { ...params, _: "businessRecipients" };
+  },
+
+  // type BusinessAwayMessageSchedule
+  businessAwayMessageScheduleAlways() {
+    return { _: "businessAwayMessageScheduleAlways" };
+  },
+  businessAwayMessageScheduleOutsideWorkHours() {
+    return { _: "businessAwayMessageScheduleOutsideWorkHours" };
+  },
+  businessAwayMessageScheduleCustom(params) {
+    return { ...params, _: "businessAwayMessageScheduleCustom" };
+  },
+
+  // type InputBusinessGreetingMessage
+  inputBusinessGreetingMessage(params) {
+    return { ...params, _: "inputBusinessGreetingMessage" };
+  },
+
+  // type BusinessGreetingMessage
+  businessGreetingMessage(params) {
+    return { ...params, _: "businessGreetingMessage" };
+  },
+
+  // type InputBusinessAwayMessage
+  inputBusinessAwayMessage(params) {
+    return { ...params, _: "inputBusinessAwayMessage" };
+  },
+
+  // type BusinessAwayMessage
+  businessAwayMessage(params) {
+    return { ...params, _: "businessAwayMessage" };
+  },
+
+  // type Timezone
+  timezone(params) {
+    return { ...params, _: "timezone" };
+  },
+
+  // type QuickReply
+  quickReply(params) {
+    return { ...params, _: "quickReply" };
+  },
+
+  // type InputQuickReplyShortcut
+  inputQuickReplyShortcut(params) {
+    return { ...params, _: "inputQuickReplyShortcut" };
+  },
+  inputQuickReplyShortcutId(params) {
+    return { ...params, _: "inputQuickReplyShortcutId" };
+  },
+
+  // type ConnectedBot
+  connectedBot(params) {
+    return { ...params, _: "connectedBot" };
+  },
+
+  // type Birthday
+  birthday(params) {
+    return { ...params, _: "birthday" };
+  },
+
+  // type BotBusinessConnection
+  botBusinessConnection(params) {
+    return { ...params, _: "botBusinessConnection" };
+  },
+
+  // type InputBusinessIntro
+  inputBusinessIntro(params) {
+    return { ...params, _: "inputBusinessIntro" };
+  },
+
+  // type BusinessIntro
+  businessIntro(params) {
+    return { ...params, _: "businessIntro" };
+  },
+
+  // type InputCollectible
+  inputCollectibleUsername(params) {
+    return { ...params, _: "inputCollectibleUsername" };
+  },
+  inputCollectiblePhone(params) {
+    return { ...params, _: "inputCollectiblePhone" };
+  },
+
+  // type InputBusinessBotRecipients
+  inputBusinessBotRecipients(params) {
+    return { ...params, _: "inputBusinessBotRecipients" };
+  },
+
+  // type BusinessBotRecipients
+  businessBotRecipients(params) {
+    return { ...params, _: "businessBotRecipients" };
+  },
+
+  // type ContactBirthday
+  contactBirthday(params) {
+    return { ...params, _: "contactBirthday" };
+  },
+
+  // type MissingInvitee
+  missingInvitee(params) {
+    return { ...params, _: "missingInvitee" };
+  },
+
+  // type InputBusinessChatLink
+  inputBusinessChatLink(params) {
+    return { ...params, _: "inputBusinessChatLink" };
+  },
+
+  // type BusinessChatLink
+  businessChatLink(params) {
+    return { ...params, _: "businessChatLink" };
+  },
+
+  // type RequestedPeer
+  requestedPeerUser(params) {
+    return { ...params, _: "requestedPeerUser" };
+  },
+  requestedPeerChat(params) {
+    return { ...params, _: "requestedPeerChat" };
+  },
+  requestedPeerChannel(params) {
+    return { ...params, _: "requestedPeerChannel" };
+  },
+
+  // type SponsoredMessageReportOption
+  sponsoredMessageReportOption(params) {
+    return { ...params, _: "sponsoredMessageReportOption" };
+  },
+
+  // type BroadcastRevenueTransaction
+  broadcastRevenueTransactionProceeds(params) {
+    return { ...params, _: "broadcastRevenueTransactionProceeds" };
+  },
+  broadcastRevenueTransactionWithdrawal(params) {
+    return { ...params, _: "broadcastRevenueTransactionWithdrawal" };
+  },
+  broadcastRevenueTransactionRefund(params) {
+    return { ...params, _: "broadcastRevenueTransactionRefund" };
   },
 
 };
@@ -3786,6 +4101,7 @@ global.messageMediaPoll.ref = "messageMediaPoll";
 global.messageMediaDice.ref = "messageMediaDice";
 global.messageMediaStory.ref = "messageMediaStory";
 global.messageMediaGiveaway.ref = "messageMediaGiveaway";
+global.messageMediaGiveawayResults.ref = "messageMediaGiveawayResults";
 
 // type MessageAction
 global.messageActionEmpty.ref = "messageActionEmpty";
@@ -3826,9 +4142,11 @@ global.messageActionTopicEdit.ref = "messageActionTopicEdit";
 global.messageActionSuggestProfilePhoto.ref = "messageActionSuggestProfilePhoto";
 global.messageActionRequestedPeer.ref = "messageActionRequestedPeer";
 global.messageActionSetChatWallPaper.ref = "messageActionSetChatWallPaper";
-global.messageActionSetSameChatWallPaper.ref = "messageActionSetSameChatWallPaper";
 global.messageActionGiftCode.ref = "messageActionGiftCode";
 global.messageActionGiveawayLaunch.ref = "messageActionGiveawayLaunch";
+global.messageActionGiveawayResults.ref = "messageActionGiveawayResults";
+global.messageActionBoostApply.ref = "messageActionBoostApply";
+global.messageActionRequestedPeerSentMe.ref = "messageActionRequestedPeerSentMe";
 
 // type Dialog
 global.dialog.ref = "dialog";
@@ -4025,12 +4343,29 @@ global.updateChannelPinnedTopic.ref = "updateChannelPinnedTopic";
 global.updateChannelPinnedTopics.ref = "updateChannelPinnedTopics";
 global.updateUser.ref = "updateUser";
 global.updateAutoSaveSettings.ref = "updateAutoSaveSettings";
-global.updateGroupInvitePrivacyForbidden.ref = "updateGroupInvitePrivacyForbidden";
 global.updateStory.ref = "updateStory";
 global.updateReadStories.ref = "updateReadStories";
 global.updateStoryID.ref = "updateStoryID";
 global.updateStoriesStealthMode.ref = "updateStoriesStealthMode";
 global.updateSentStoryReaction.ref = "updateSentStoryReaction";
+global.updateBotChatBoost.ref = "updateBotChatBoost";
+global.updateChannelViewForumAsMessages.ref = "updateChannelViewForumAsMessages";
+global.updatePeerWallpaper.ref = "updatePeerWallpaper";
+global.updateBotMessageReaction.ref = "updateBotMessageReaction";
+global.updateBotMessageReactions.ref = "updateBotMessageReactions";
+global.updateSavedDialogPinned.ref = "updateSavedDialogPinned";
+global.updatePinnedSavedDialogs.ref = "updatePinnedSavedDialogs";
+global.updateSavedReactionTags.ref = "updateSavedReactionTags";
+global.updateSmsJob.ref = "updateSmsJob";
+global.updateQuickReplies.ref = "updateQuickReplies";
+global.updateNewQuickReply.ref = "updateNewQuickReply";
+global.updateDeleteQuickReply.ref = "updateDeleteQuickReply";
+global.updateQuickReplyMessage.ref = "updateQuickReplyMessage";
+global.updateDeleteQuickReplyMessages.ref = "updateDeleteQuickReplyMessages";
+global.updateBotBusinessConnect.ref = "updateBotBusinessConnect";
+global.updateBotNewBusinessMessage.ref = "updateBotNewBusinessMessage";
+global.updateBotEditBusinessMessage.ref = "updateBotEditBusinessMessage";
+global.updateBotDeleteBusinessMessage.ref = "updateBotDeleteBusinessMessage";
 
 // type Updates
 global.updatesTooLong.ref = "updatesTooLong";
@@ -4120,6 +4455,7 @@ global.inputPrivacyKeyPhoneNumber.ref = "inputPrivacyKeyPhoneNumber";
 global.inputPrivacyKeyAddedByPhone.ref = "inputPrivacyKeyAddedByPhone";
 global.inputPrivacyKeyVoiceMessages.ref = "inputPrivacyKeyVoiceMessages";
 global.inputPrivacyKeyAbout.ref = "inputPrivacyKeyAbout";
+global.inputPrivacyKeyBirthday.ref = "inputPrivacyKeyBirthday";
 
 // type PrivacyKey
 global.privacyKeyStatusTimestamp.ref = "privacyKeyStatusTimestamp";
@@ -4132,6 +4468,7 @@ global.privacyKeyPhoneNumber.ref = "privacyKeyPhoneNumber";
 global.privacyKeyAddedByPhone.ref = "privacyKeyAddedByPhone";
 global.privacyKeyVoiceMessages.ref = "privacyKeyVoiceMessages";
 global.privacyKeyAbout.ref = "privacyKeyAbout";
+global.privacyKeyBirthday.ref = "privacyKeyBirthday";
 
 // type InputPrivacyRule
 global.inputPrivacyValueAllowContacts.ref = "inputPrivacyValueAllowContacts";
@@ -4143,6 +4480,7 @@ global.inputPrivacyValueDisallowUsers.ref = "inputPrivacyValueDisallowUsers";
 global.inputPrivacyValueAllowChatParticipants.ref = "inputPrivacyValueAllowChatParticipants";
 global.inputPrivacyValueDisallowChatParticipants.ref = "inputPrivacyValueDisallowChatParticipants";
 global.inputPrivacyValueAllowCloseFriends.ref = "inputPrivacyValueAllowCloseFriends";
+global.inputPrivacyValueAllowPremium.ref = "inputPrivacyValueAllowPremium";
 
 // type PrivacyRule
 global.privacyValueAllowContacts.ref = "privacyValueAllowContacts";
@@ -4154,6 +4492,7 @@ global.privacyValueDisallowUsers.ref = "privacyValueDisallowUsers";
 global.privacyValueAllowChatParticipants.ref = "privacyValueAllowChatParticipants";
 global.privacyValueDisallowChatParticipants.ref = "privacyValueDisallowChatParticipants";
 global.privacyValueAllowCloseFriends.ref = "privacyValueAllowCloseFriends";
+global.privacyValueAllowPremium.ref = "privacyValueAllowPremium";
 
 // type AccountDaysTTL
 global.accountDaysTTL.ref = "accountDaysTTL";
@@ -4203,6 +4542,7 @@ global.inputStickerSetPremiumGifts.ref = "inputStickerSetPremiumGifts";
 global.inputStickerSetEmojiGenericAnimations.ref = "inputStickerSetEmojiGenericAnimations";
 global.inputStickerSetEmojiDefaultStatuses.ref = "inputStickerSetEmojiDefaultStatuses";
 global.inputStickerSetEmojiDefaultTopicIcons.ref = "inputStickerSetEmojiDefaultTopicIcons";
+global.inputStickerSetEmojiChannelDefaultStatuses.ref = "inputStickerSetEmojiChannelDefaultStatuses";
 
 // type StickerSet
 global.stickerSet.ref = "stickerSet";
@@ -4230,6 +4570,7 @@ global.keyboardButtonUserProfile.ref = "keyboardButtonUserProfile";
 global.keyboardButtonWebView.ref = "keyboardButtonWebView";
 global.keyboardButtonSimpleWebView.ref = "keyboardButtonSimpleWebView";
 global.keyboardButtonRequestPeer.ref = "keyboardButtonRequestPeer";
+global.inputKeyboardButtonRequestPeer.ref = "inputKeyboardButtonRequestPeer";
 
 // type KeyboardButtonRow
 global.keyboardButtonRow.ref = "keyboardButtonRow";
@@ -4557,8 +4898,11 @@ global.channelAdminLogEventActionEditTopic.ref = "channelAdminLogEventActionEdit
 global.channelAdminLogEventActionDeleteTopic.ref = "channelAdminLogEventActionDeleteTopic";
 global.channelAdminLogEventActionPinTopic.ref = "channelAdminLogEventActionPinTopic";
 global.channelAdminLogEventActionToggleAntiSpam.ref = "channelAdminLogEventActionToggleAntiSpam";
-global.channelAdminLogEventActionChangeColor.ref = "channelAdminLogEventActionChangeColor";
-global.channelAdminLogEventActionChangeBackgroundEmoji.ref = "channelAdminLogEventActionChangeBackgroundEmoji";
+global.channelAdminLogEventActionChangePeerColor.ref = "channelAdminLogEventActionChangePeerColor";
+global.channelAdminLogEventActionChangeProfilePeerColor.ref = "channelAdminLogEventActionChangeProfilePeerColor";
+global.channelAdminLogEventActionChangeWallpaper.ref = "channelAdminLogEventActionChangeWallpaper";
+global.channelAdminLogEventActionChangeEmojiStatus.ref = "channelAdminLogEventActionChangeEmojiStatus";
+global.channelAdminLogEventActionChangeEmojiStickerSet.ref = "channelAdminLogEventActionChangeEmojiStickerSet";
 
 // type ChannelAdminLogEvent
 global.channelAdminLogEvent.ref = "channelAdminLogEvent";
@@ -4840,9 +5184,6 @@ global.statsGraphAsync.ref = "statsGraphAsync";
 global.statsGraphError.ref = "statsGraphError";
 global.statsGraph.ref = "statsGraph";
 
-// type MessageInteractionCounters
-global.messageInteractionCounters.ref = "messageInteractionCounters";
-
 // type VideoSize
 global.videoSize.ref = "videoSize";
 global.videoSizeEmojiMarkup.ref = "videoSizeEmojiMarkup";
@@ -5109,6 +5450,8 @@ global.storyItem.ref = "storyItem";
 
 // type StoryView
 global.storyView.ref = "storyView";
+global.storyViewPublicForward.ref = "storyViewPublicForward";
+global.storyViewPublicRepost.ref = "storyViewPublicRepost";
 
 // type InputReplyTo
 global.inputReplyToMessage.ref = "inputReplyToMessage";
@@ -5128,6 +5471,8 @@ global.mediaAreaVenue.ref = "mediaAreaVenue";
 global.inputMediaAreaVenue.ref = "inputMediaAreaVenue";
 global.mediaAreaGeoPoint.ref = "mediaAreaGeoPoint";
 global.mediaAreaSuggestedReaction.ref = "mediaAreaSuggestedReaction";
+global.mediaAreaChannelPost.ref = "mediaAreaChannelPost";
+global.inputMediaAreaChannelPost.ref = "inputMediaAreaChannelPost";
 
 // type PeerStories
 global.peerStories.ref = "peerStories";
@@ -5143,6 +5488,129 @@ global.boost.ref = "boost";
 
 // type MyBoost
 global.myBoost.ref = "myBoost";
+
+// type StoryFwdHeader
+global.storyFwdHeader.ref = "storyFwdHeader";
+
+// type PostInteractionCounters
+global.postInteractionCountersMessage.ref = "postInteractionCountersMessage";
+global.postInteractionCountersStory.ref = "postInteractionCountersStory";
+
+// type PublicForward
+global.publicForwardMessage.ref = "publicForwardMessage";
+global.publicForwardStory.ref = "publicForwardStory";
+
+// type PeerColor
+global.peerColor.ref = "peerColor";
+
+// type StoryReaction
+global.storyReaction.ref = "storyReaction";
+global.storyReactionPublicForward.ref = "storyReactionPublicForward";
+global.storyReactionPublicRepost.ref = "storyReactionPublicRepost";
+
+// type SavedDialog
+global.savedDialog.ref = "savedDialog";
+
+// type SavedReactionTag
+global.savedReactionTag.ref = "savedReactionTag";
+
+// type OutboxReadDate
+global.outboxReadDate.ref = "outboxReadDate";
+
+// type SmsJob
+global.smsJob.ref = "smsJob";
+
+// type BusinessWeeklyOpen
+global.businessWeeklyOpen.ref = "businessWeeklyOpen";
+
+// type BusinessWorkHours
+global.businessWorkHours.ref = "businessWorkHours";
+
+// type BusinessLocation
+global.businessLocation.ref = "businessLocation";
+
+// type InputBusinessRecipients
+global.inputBusinessRecipients.ref = "inputBusinessRecipients";
+
+// type BusinessRecipients
+global.businessRecipients.ref = "businessRecipients";
+
+// type BusinessAwayMessageSchedule
+global.businessAwayMessageScheduleAlways.ref = "businessAwayMessageScheduleAlways";
+global.businessAwayMessageScheduleOutsideWorkHours.ref = "businessAwayMessageScheduleOutsideWorkHours";
+global.businessAwayMessageScheduleCustom.ref = "businessAwayMessageScheduleCustom";
+
+// type InputBusinessGreetingMessage
+global.inputBusinessGreetingMessage.ref = "inputBusinessGreetingMessage";
+
+// type BusinessGreetingMessage
+global.businessGreetingMessage.ref = "businessGreetingMessage";
+
+// type InputBusinessAwayMessage
+global.inputBusinessAwayMessage.ref = "inputBusinessAwayMessage";
+
+// type BusinessAwayMessage
+global.businessAwayMessage.ref = "businessAwayMessage";
+
+// type Timezone
+global.timezone.ref = "timezone";
+
+// type QuickReply
+global.quickReply.ref = "quickReply";
+
+// type InputQuickReplyShortcut
+global.inputQuickReplyShortcut.ref = "inputQuickReplyShortcut";
+global.inputQuickReplyShortcutId.ref = "inputQuickReplyShortcutId";
+
+// type ConnectedBot
+global.connectedBot.ref = "connectedBot";
+
+// type Birthday
+global.birthday.ref = "birthday";
+
+// type BotBusinessConnection
+global.botBusinessConnection.ref = "botBusinessConnection";
+
+// type InputBusinessIntro
+global.inputBusinessIntro.ref = "inputBusinessIntro";
+
+// type BusinessIntro
+global.businessIntro.ref = "businessIntro";
+
+// type InputCollectible
+global.inputCollectibleUsername.ref = "inputCollectibleUsername";
+global.inputCollectiblePhone.ref = "inputCollectiblePhone";
+
+// type InputBusinessBotRecipients
+global.inputBusinessBotRecipients.ref = "inputBusinessBotRecipients";
+
+// type BusinessBotRecipients
+global.businessBotRecipients.ref = "businessBotRecipients";
+
+// type ContactBirthday
+global.contactBirthday.ref = "contactBirthday";
+
+// type MissingInvitee
+global.missingInvitee.ref = "missingInvitee";
+
+// type InputBusinessChatLink
+global.inputBusinessChatLink.ref = "inputBusinessChatLink";
+
+// type BusinessChatLink
+global.businessChatLink.ref = "businessChatLink";
+
+// type RequestedPeer
+global.requestedPeerUser.ref = "requestedPeerUser";
+global.requestedPeerChat.ref = "requestedPeerChat";
+global.requestedPeerChannel.ref = "requestedPeerChannel";
+
+// type SponsoredMessageReportOption
+global.sponsoredMessageReportOption.ref = "sponsoredMessageReportOption";
+
+// type BroadcastRevenueTransaction
+global.broadcastRevenueTransactionProceeds.ref = "broadcastRevenueTransactionProceeds";
+global.broadcastRevenueTransactionWithdrawal.ref = "broadcastRevenueTransactionWithdrawal";
+global.broadcastRevenueTransactionRefund.ref = "broadcastRevenueTransactionRefund";
 
 export default global;
 
@@ -5367,6 +5835,11 @@ export const contacts = {
     return { _: "contacts.topPeersDisabled" };
   },
 
+  // type ContactBirthdays
+  contactBirthdays(params) {
+    return { ...params, _: "contacts.contactBirthdays" };
+  },
+
 };
 
 // type Contacts
@@ -5390,6 +5863,9 @@ contacts.resolvedPeer.ref = "contacts.resolvedPeer";
 contacts.topPeersNotModified.ref = "contacts.topPeersNotModified";
 contacts.topPeers.ref = "contacts.topPeers";
 contacts.topPeersDisabled.ref = "contacts.topPeersDisabled";
+
+// type ContactBirthdays
+contacts.contactBirthdays.ref = "contacts.contactBirthdays";
 
 export const messages = {
   // type Dialogs
@@ -5703,6 +6179,48 @@ export const messages = {
     return { ...params, _: "messages.webPage" };
   },
 
+  // type SavedDialogs
+  savedDialogs(params) {
+    return { ...params, _: "messages.savedDialogs" };
+  },
+  savedDialogsSlice(params) {
+    return { ...params, _: "messages.savedDialogsSlice" };
+  },
+  savedDialogsNotModified(params) {
+    return { ...params, _: "messages.savedDialogsNotModified" };
+  },
+
+  // type SavedReactionTags
+  savedReactionTagsNotModified() {
+    return { _: "messages.savedReactionTagsNotModified" };
+  },
+  savedReactionTags(params) {
+    return { ...params, _: "messages.savedReactionTags" };
+  },
+
+  // type QuickReplies
+  quickReplies(params) {
+    return { ...params, _: "messages.quickReplies" };
+  },
+  quickRepliesNotModified() {
+    return { _: "messages.quickRepliesNotModified" };
+  },
+
+  // type DialogFilters
+  dialogFilters(params) {
+    return { ...params, _: "messages.dialogFilters" };
+  },
+
+  // type MyStickers
+  myStickers(params) {
+    return { ...params, _: "messages.myStickers" };
+  },
+
+  // type InvitedUsers
+  invitedUsers(params) {
+    return { ...params, _: "messages.invitedUsers" };
+  },
+
 };
 
 // type Dialogs
@@ -5873,6 +6391,28 @@ messages.botApp.ref = "messages.botApp";
 
 // type WebPage
 messages.webPage.ref = "messages.webPage";
+
+// type SavedDialogs
+messages.savedDialogs.ref = "messages.savedDialogs";
+messages.savedDialogsSlice.ref = "messages.savedDialogsSlice";
+messages.savedDialogsNotModified.ref = "messages.savedDialogsNotModified";
+
+// type SavedReactionTags
+messages.savedReactionTagsNotModified.ref = "messages.savedReactionTagsNotModified";
+messages.savedReactionTags.ref = "messages.savedReactionTags";
+
+// type QuickReplies
+messages.quickReplies.ref = "messages.quickReplies";
+messages.quickRepliesNotModified.ref = "messages.quickRepliesNotModified";
+
+// type DialogFilters
+messages.dialogFilters.ref = "messages.dialogFilters";
+
+// type MyStickers
+messages.myStickers.ref = "messages.myStickers";
+
+// type InvitedUsers
+messages.invitedUsers.ref = "messages.invitedUsers";
 
 export const updates = {
   // type State
@@ -6084,6 +6624,35 @@ export const help = {
     return { ...params, _: "help.appConfig" };
   },
 
+  // type PeerColorSet
+  peerColorSet(params) {
+    return { ...params, _: "help.peerColorSet" };
+  },
+  peerColorProfileSet(params) {
+    return { ...params, _: "help.peerColorProfileSet" };
+  },
+
+  // type PeerColorOption
+  peerColorOption(params) {
+    return { ...params, _: "help.peerColorOption" };
+  },
+
+  // type PeerColors
+  peerColorsNotModified() {
+    return { _: "help.peerColorsNotModified" };
+  },
+  peerColors(params) {
+    return { ...params, _: "help.peerColors" };
+  },
+
+  // type TimezonesList
+  timezonesListNotModified() {
+    return { _: "help.timezonesListNotModified" };
+  },
+  timezonesList(params) {
+    return { ...params, _: "help.timezonesList" };
+  },
+
 };
 
 // type AppUpdate
@@ -6141,6 +6710,21 @@ help.premiumPromo.ref = "help.premiumPromo";
 // type AppConfig
 help.appConfigNotModified.ref = "help.appConfigNotModified";
 help.appConfig.ref = "help.appConfig";
+
+// type PeerColorSet
+help.peerColorSet.ref = "help.peerColorSet";
+help.peerColorProfileSet.ref = "help.peerColorProfileSet";
+
+// type PeerColorOption
+help.peerColorOption.ref = "help.peerColorOption";
+
+// type PeerColors
+help.peerColorsNotModified.ref = "help.peerColorsNotModified";
+help.peerColors.ref = "help.peerColors";
+
+// type TimezonesList
+help.timezonesListNotModified.ref = "help.timezonesListNotModified";
+help.timezonesList.ref = "help.timezonesList";
 
 export const account = {
   // type PrivacyRules
@@ -6267,6 +6851,21 @@ export const account = {
     return { ...params, _: "account.autoSaveSettings" };
   },
 
+  // type ConnectedBots
+  connectedBots(params) {
+    return { ...params, _: "account.connectedBots" };
+  },
+
+  // type BusinessChatLinks
+  businessChatLinks(params) {
+    return { ...params, _: "account.businessChatLinks" };
+  },
+
+  // type ResolvedBusinessChatLinks
+  resolvedBusinessChatLinks(params) {
+    return { ...params, _: "account.resolvedBusinessChatLinks" };
+  },
+
 };
 
 // type PrivacyRules
@@ -6337,6 +6936,15 @@ account.emailVerifiedLogin.ref = "account.emailVerifiedLogin";
 // type AutoSaveSettings
 account.autoSaveSettings.ref = "account.autoSaveSettings";
 
+// type ConnectedBots
+account.connectedBots.ref = "account.connectedBots";
+
+// type BusinessChatLinks
+account.businessChatLinks.ref = "account.businessChatLinks";
+
+// type ResolvedBusinessChatLinks
+account.resolvedBusinessChatLinks.ref = "account.resolvedBusinessChatLinks";
+
 export const channels = {
   // type ChannelParticipants
   channelParticipants(params) {
@@ -6361,6 +6969,17 @@ export const channels = {
     return { ...params, _: "channels.sendAsPeers" };
   },
 
+  // type SponsoredMessageReportResult
+  sponsoredMessageReportResultChooseOption(params) {
+    return { ...params, _: "channels.sponsoredMessageReportResultChooseOption" };
+  },
+  sponsoredMessageReportResultAdsHidden() {
+    return { _: "channels.sponsoredMessageReportResultAdsHidden" };
+  },
+  sponsoredMessageReportResultReported() {
+    return { _: "channels.sponsoredMessageReportResultReported" };
+  },
+
 };
 
 // type ChannelParticipants
@@ -6375,6 +6994,11 @@ channels.adminLogResults.ref = "channels.adminLogResults";
 
 // type SendAsPeers
 channels.sendAsPeers.ref = "channels.sendAsPeers";
+
+// type SponsoredMessageReportResult
+channels.sponsoredMessageReportResultChooseOption.ref = "channels.sponsoredMessageReportResultChooseOption";
+channels.sponsoredMessageReportResultAdsHidden.ref = "channels.sponsoredMessageReportResultAdsHidden";
+channels.sponsoredMessageReportResultReported.ref = "channels.sponsoredMessageReportResultReported";
 
 export const payments = {
   // type PaymentForm
@@ -6534,6 +7158,31 @@ export const stats = {
     return { ...params, _: "stats.messageStats" };
   },
 
+  // type StoryStats
+  storyStats(params) {
+    return { ...params, _: "stats.storyStats" };
+  },
+
+  // type PublicForwards
+  publicForwards(params) {
+    return { ...params, _: "stats.publicForwards" };
+  },
+
+  // type BroadcastRevenueStats
+  broadcastRevenueStats(params) {
+    return { ...params, _: "stats.broadcastRevenueStats" };
+  },
+
+  // type BroadcastRevenueWithdrawalUrl
+  broadcastRevenueWithdrawalUrl(params) {
+    return { ...params, _: "stats.broadcastRevenueWithdrawalUrl" };
+  },
+
+  // type BroadcastRevenueTransactions
+  broadcastRevenueTransactions(params) {
+    return { ...params, _: "stats.broadcastRevenueTransactions" };
+  },
+
 };
 
 // type BroadcastStats
@@ -6544,6 +7193,21 @@ stats.megagroupStats.ref = "stats.megagroupStats";
 
 // type MessageStats
 stats.messageStats.ref = "stats.messageStats";
+
+// type StoryStats
+stats.storyStats.ref = "stats.storyStats";
+
+// type PublicForwards
+stats.publicForwards.ref = "stats.publicForwards";
+
+// type BroadcastRevenueStats
+stats.broadcastRevenueStats.ref = "stats.broadcastRevenueStats";
+
+// type BroadcastRevenueWithdrawalUrl
+stats.broadcastRevenueWithdrawalUrl.ref = "stats.broadcastRevenueWithdrawalUrl";
+
+// type BroadcastRevenueTransactions
+stats.broadcastRevenueTransactions.ref = "stats.broadcastRevenueTransactions";
 
 export const stickers = {
   // type SuggestedShortName
@@ -6646,6 +7310,11 @@ export const stories = {
     return { ...params, _: "stories.peerStories" };
   },
 
+  // type StoryReactionsList
+  storyReactionsList(params) {
+    return { ...params, _: "stories.storyReactionsList" };
+  },
+
 };
 
 // type AllStories
@@ -6663,6 +7332,9 @@ stories.storyViews.ref = "stories.storyViews";
 
 // type PeerStories
 stories.peerStories.ref = "stories.peerStories";
+
+// type StoryReactionsList
+stories.storyReactionsList.ref = "stories.storyReactionsList";
 
 export const premium = {
   // type BoostsList
@@ -6690,6 +7362,36 @@ premium.myBoosts.ref = "premium.myBoosts";
 
 // type BoostsStatus
 premium.boostsStatus.ref = "premium.boostsStatus";
+
+export const smsjobs = {
+  // type EligibilityToJoin
+  eligibleToJoin(params) {
+    return { ...params, _: "smsjobs.eligibleToJoin" };
+  },
+
+  // type Status
+  status(params) {
+    return { ...params, _: "smsjobs.status" };
+  },
+
+};
+
+// type EligibilityToJoin
+smsjobs.eligibleToJoin.ref = "smsjobs.eligibleToJoin";
+
+// type Status
+smsjobs.status.ref = "smsjobs.status";
+
+export const fragment = {
+  // type CollectibleInfo
+  collectibleInfo(params) {
+    return { ...params, _: "fragment.collectibleInfo" };
+  },
+
+};
+
+// type CollectibleInfo
+fragment.collectibleInfo.ref = "fragment.collectibleInfo";
 
 // #endregion "constructors"
 
@@ -7358,7 +8060,7 @@ export const $encoder = {
     this.int64(_.id);                       // : bigint - long
   },
   ["user"](_) {
-    this.int32(-346018011);
+    this.int32(559694904);
     this.int32(
       (+(_.self != null) << 10)
       | (+(_.contact != null) << 11)
@@ -7432,10 +8134,12 @@ export const $encoder = {
       | (+(_.close_friend != null) << 2)
       | (+(_.stories_hidden != null) << 3)
       | (+(_.stories_unavailable != null) << 4)
+      | (+(_.contact_require_premium != null) << 10)
+      | (+(_.bot_business != null) << 11)
       | (+(_.usernames != null && _.usernames.length > 0) << 0)
       | (+(_.stories_max_id != null) << 5)
-      | (+(_.color != null) << 7)
-      | (+(_.background_emoji_id != null) << 6)
+      | (+(_.color != null) << 8)
+      | (+(_.profile_color != null) << 9)
     )
     if (_.bot_can_edit != null)
       this.true(_.bot_can_edit);            // ?: true - flags2.1?true
@@ -7445,6 +8149,10 @@ export const $encoder = {
       this.true(_.stories_hidden);          // ?: true - flags2.3?true
     if (_.stories_unavailable != null)
       this.true(_.stories_unavailable);     // ?: true - flags2.4?true
+    if (_.contact_require_premium != null)
+      this.true(_.contact_require_premium); // ?: true - flags2.10?true
+    if (_.bot_business != null)
+      this.true(_.bot_business);            // ?: true - flags2.11?true
     this.int64(_.id);                       // : bigint - long
     if (_.access_hash != null)
       this.int64(_.access_hash);            // ?: bigint - flags.0?long
@@ -7475,9 +8183,9 @@ export const $encoder = {
     if (_.stories_max_id != null)
       this.int32(_.stories_max_id);         // ?: number - flags2.5?int
     if (_.color != null)
-      this.int32(_.color);                  // ?: number - flags2.7?int
-    if (_.background_emoji_id != null)
-      this.int64(_.background_emoji_id);    // ?: bigint - flags2.6?long
+      this.object(_.color);                 // ?: PeerColor - flags2.8?PeerColor
+    if (_.profile_color != null)
+      this.object(_.profile_color);         // ?: PeerColor - flags2.9?PeerColor
   },
   ["userProfilePhotoEmpty"](_) {
     this.int32(1326562017);
@@ -7510,13 +8218,28 @@ export const $encoder = {
     this.int32(_.was_online);               // : number - int
   },
   ["userStatusRecently"](_) {
-    this.int32(-496024847);
+    this.int32(2065268168);
+    this.int32(
+      (+(_.by_me != null) << 0)
+    )
+    if (_.by_me != null)
+      this.true(_.by_me);                   // ?: true - flags.0?true
   },
   ["userStatusLastWeek"](_) {
-    this.int32(129960444);
+    this.int32(1410997530);
+    this.int32(
+      (+(_.by_me != null) << 0)
+    )
+    if (_.by_me != null)
+      this.true(_.by_me);                   // ?: true - flags.0?true
   },
   ["userStatusLastMonth"](_) {
-    this.int32(2011940674);
+    this.int32(1703516023);
+    this.int32(
+      (+(_.by_me != null) << 0)
+    )
+    if (_.by_me != null)
+      this.true(_.by_me);                   // ?: true - flags.0?true
   },
   ["chatEmpty"](_) {
     this.int32(693512293);
@@ -7566,7 +8289,7 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
   },
   ["channel"](_) {
-    this.int32(427944574);
+    this.int32(179174543);
     this.int32(
       (+(_.creator != null) << 0)
       | (+(_.left != null) << 2)
@@ -7642,8 +8365,10 @@ export const $encoder = {
       | (+(_.stories_unavailable != null) << 3)
       | (+(_.usernames != null && _.usernames.length > 0) << 0)
       | (+(_.stories_max_id != null) << 4)
-      | (+(_.color != null) << 6)
-      | (+(_.background_emoji_id != null) << 5)
+      | (+(_.color != null) << 7)
+      | (+(_.profile_color != null) << 8)
+      | (+(_.emoji_status != null) << 9)
+      | (+(_.level != null) << 10)
     )
     if (_.stories_hidden != null)
       this.true(_.stories_hidden);          // ?: true - flags2.1?true
@@ -7674,9 +8399,13 @@ export const $encoder = {
     if (_.stories_max_id != null)
       this.int32(_.stories_max_id);         // ?: number - flags2.4?int
     if (_.color != null)
-      this.int32(_.color);                  // ?: number - flags2.6?int
-    if (_.background_emoji_id != null)
-      this.int64(_.background_emoji_id);    // ?: bigint - flags2.5?long
+      this.object(_.color);                 // ?: PeerColor - flags2.7?PeerColor
+    if (_.profile_color != null)
+      this.object(_.profile_color);         // ?: PeerColor - flags2.8?PeerColor
+    if (_.emoji_status != null)
+      this.object(_.emoji_status);          // ?: EmojiStatus - flags2.9?EmojiStatus
+    if (_.level != null)
+      this.int32(_.level);                  // ?: number - flags2.10?int
   },
   ["channelForbidden"](_) {
     this.int32(399807445);
@@ -7750,7 +8479,7 @@ export const $encoder = {
       this.object(_.available_reactions);   // ?: ChatReactions - flags.18?ChatReactions
   },
   ["channelFull"](_) {
-    this.int32(1915758525);
+    this.int32(1153455271);
     this.int32(
       (+(_.can_view_participants != null) << 3)
       | (+(_.can_set_username != null) << 6)
@@ -7809,7 +8538,14 @@ export const $encoder = {
       | (+(_.participants_hidden != null) << 2)
       | (+(_.translations_disabled != null) << 3)
       | (+(_.stories_pinned_available != null) << 5)
+      | (+(_.view_forum_as_messages != null) << 6)
+      | (+(_.restricted_sponsored != null) << 11)
+      | (+(_.can_view_revenue != null) << 12)
       | (+(_.stories != null) << 4)
+      | (+(_.wallpaper != null) << 7)
+      | (+(_.boosts_applied != null) << 8)
+      | (+(_.boosts_unrestrict != null) << 9)
+      | (+(_.emojiset != null) << 10)
     )
     if (_.can_delete_channel != null)
       this.true(_.can_delete_channel);      // ?: true - flags2.0?true
@@ -7821,6 +8557,12 @@ export const $encoder = {
       this.true(_.translations_disabled);   // ?: true - flags2.3?true
     if (_.stories_pinned_available != null)
       this.true(_.stories_pinned_available); // ?: true - flags2.5?true
+    if (_.view_forum_as_messages != null)
+      this.true(_.view_forum_as_messages);  // ?: true - flags2.6?true
+    if (_.restricted_sponsored != null)
+      this.true(_.restricted_sponsored);    // ?: true - flags2.11?true
+    if (_.can_view_revenue != null)
+      this.true(_.can_view_revenue);        // ?: true - flags2.12?true
     this.int64(_.id);                       // : bigint - long
     this.string(_.about);                   // : string - string
     if (_.participants_count != null)
@@ -7884,6 +8626,14 @@ export const $encoder = {
       this.object(_.available_reactions);   // ?: ChatReactions - flags.30?ChatReactions
     if (_.stories != null)
       this.object(_.stories);               // ?: PeerStories - flags2.4?PeerStories
+    if (_.wallpaper != null)
+      this.object(_.wallpaper);             // ?: WallPaper - flags2.7?WallPaper
+    if (_.boosts_applied != null)
+      this.int32(_.boosts_applied);         // ?: number - flags2.8?int
+    if (_.boosts_unrestrict != null)
+      this.int32(_.boosts_unrestrict);      // ?: number - flags2.9?int
+    if (_.emojiset != null)
+      this.object(_.emojiset);              // ?: StickerSet - flags2.10?StickerSet
   },
   ["chatParticipant"](_) {
     this.int32(-1070776313);
@@ -7942,7 +8692,7 @@ export const $encoder = {
       this.object(_.peer_id);               // ?: Peer - flags.0?Peer
   },
   ["message"](_) {
-    this.int32(940666592);
+    this.int32(592953125);
     this.int32(
       (+(_.out != null) << 1)
       | (+(_.mentioned != null) << 4)
@@ -7956,6 +8706,8 @@ export const $encoder = {
       | (+(_.noforwards != null) << 26)
       | (+(_.invert_media != null) << 27)
       | (+(_.from_id != null) << 8)
+      | (+(_.from_boosts_applied != null) << 29)
+      | (+(_.saved_peer_id != null) << 28)
       | (+(_.fwd_from != null) << 2)
       | (+(_.via_bot_id != null) << 11)
       | (+(_.reply_to != null) << 3)
@@ -7971,6 +8723,7 @@ export const $encoder = {
       | (+(_.reactions != null) << 20)
       | (+(_.restriction_reason != null && _.restriction_reason.length > 0) << 22)
       | (+(_.ttl_period != null) << 25)
+      | (+(_.quick_reply_shortcut_id != null) << 30)
     )
     if (_.out != null)
       this.true(_.out);                     // ?: true - flags.1?true
@@ -7994,14 +8747,26 @@ export const $encoder = {
       this.true(_.noforwards);              // ?: true - flags.26?true
     if (_.invert_media != null)
       this.true(_.invert_media);            // ?: true - flags.27?true
+    this.int32(
+      (+(_.offline != null) << 1)
+      | (+(_.via_business_bot_id != null) << 0)
+    )
+    if (_.offline != null)
+      this.true(_.offline);                 // ?: true - flags2.1?true
     this.int32(_.id);                       // : number - int
     if (_.from_id != null)
       this.object(_.from_id);               // ?: Peer - flags.8?Peer
+    if (_.from_boosts_applied != null)
+      this.int32(_.from_boosts_applied);    // ?: number - flags.29?int
     this.object(_.peer_id);                 // : Peer - Peer
+    if (_.saved_peer_id != null)
+      this.object(_.saved_peer_id);         // ?: Peer - flags.28?Peer
     if (_.fwd_from != null)
       this.object(_.fwd_from);              // ?: MessageFwdHeader - flags.2?MessageFwdHeader
     if (_.via_bot_id != null)
       this.int64(_.via_bot_id);             // ?: bigint - flags.11?long
+    if (_.via_business_bot_id != null)
+      this.int64(_.via_business_bot_id);    // ?: bigint - flags2.0?long
     if (_.reply_to != null)
       this.object(_.reply_to);              // ?: MessageReplyHeader - flags.3?MessageReplyHeader
     this.int32(_.date);                     // : number - int
@@ -8030,6 +8795,8 @@ export const $encoder = {
       this.vector(_.restriction_reason, this.object); // ?: RestrictionReason[] - flags.22?Vector<RestrictionReason>
     if (_.ttl_period != null)
       this.int32(_.ttl_period);             // ?: number - flags.25?int
+    if (_.quick_reply_shortcut_id != null)
+      this.int32(_.quick_reply_shortcut_id); // ?: number - flags.30?int
   },
   ["messageService"](_) {
     this.int32(721967202);
@@ -8104,6 +8871,9 @@ export const $encoder = {
     this.int32(
       (+(_.nopremium != null) << 3)
       | (+(_.spoiler != null) << 4)
+      | (+(_.video != null) << 6)
+      | (+(_.round != null) << 7)
+      | (+(_.voice != null) << 8)
       | (+(_.document != null) << 0)
       | (+(_.alt_document != null) << 5)
       | (+(_.ttl_seconds != null) << 2)
@@ -8112,6 +8882,12 @@ export const $encoder = {
       this.true(_.nopremium);               // ?: true - flags.3?true
     if (_.spoiler != null)
       this.true(_.spoiler);                 // ?: true - flags.4?true
+    if (_.video != null)
+      this.true(_.video);                   // ?: true - flags.6?true
+    if (_.round != null)
+      this.true(_.round);                   // ?: true - flags.7?true
+    if (_.voice != null)
+      this.true(_.voice);                   // ?: true - flags.8?true
     if (_.document != null)
       this.object(_.document);              // ?: Document - flags.0?Document
     if (_.alt_document != null)
@@ -8212,18 +8988,48 @@ export const $encoder = {
       this.object(_.story);                 // ?: StoryItem - flags.0?StoryItem
   },
   ["messageMediaGiveaway"](_) {
-    this.int32(1478887012);
+    this.int32(-626162256);
     this.int32(
       (+(_.only_new_subscribers != null) << 0)
+      | (+(_.winners_are_visible != null) << 2)
       | (+(_.countries_iso2 != null && _.countries_iso2.length > 0) << 1)
+      | (+(_.prize_description != null) << 3)
     )
     if (_.only_new_subscribers != null)
       this.true(_.only_new_subscribers);    // ?: true - flags.0?true
+    if (_.winners_are_visible != null)
+      this.true(_.winners_are_visible);     // ?: true - flags.2?true
     this.vector(_.channels, this.int64);    // : bigint[] - Vector<long>
     if (_.countries_iso2 != null && _.countries_iso2.length > 0)
       this.vector(_.countries_iso2, this.string); // ?: string[] - flags.1?Vector<string>
+    if (_.prize_description != null)
+      this.string(_.prize_description);     // ?: string - flags.3?string
     this.int32(_.quantity);                 // : number - int
     this.int32(_.months);                   // : number - int
+    this.int32(_.until_date);               // : number - int
+  },
+  ["messageMediaGiveawayResults"](_) {
+    this.int32(-963047320);
+    this.int32(
+      (+(_.only_new_subscribers != null) << 0)
+      | (+(_.refunded != null) << 2)
+      | (+(_.additional_peers_count != null) << 3)
+      | (+(_.prize_description != null) << 1)
+    )
+    if (_.only_new_subscribers != null)
+      this.true(_.only_new_subscribers);    // ?: true - flags.0?true
+    if (_.refunded != null)
+      this.true(_.refunded);                // ?: true - flags.2?true
+    this.int64(_.channel_id);               // : bigint - long
+    if (_.additional_peers_count != null)
+      this.int32(_.additional_peers_count); // ?: number - flags.3?int
+    this.int32(_.launch_msg_id);            // : number - int
+    this.int32(_.winners_count);            // : number - int
+    this.int32(_.unclaimed_count);          // : number - int
+    this.vector(_.winners, this.int64);     // : bigint[] - Vector<long>
+    this.int32(_.months);                   // : number - int
+    if (_.prize_description != null)
+      this.string(_.prize_description);     // ?: string - flags.1?string
     this.int32(_.until_date);               // : number - int
   },
   ["messageActionEmpty"](_) {
@@ -8465,24 +9271,32 @@ export const $encoder = {
     this.object(_.photo);                   // : Photo - Photo
   },
   ["messageActionRequestedPeer"](_) {
-    this.int32(-25742243);
+    this.int32(827428507);
     this.int32(_.button_id);                // : number - int
-    this.object(_.peer);                    // : Peer - Peer
+    this.vector(_.peers, this.object);      // : Peer[] - Vector<Peer>
   },
   ["messageActionSetChatWallPaper"](_) {
-    this.int32(-1136350937);
-    this.object(_.wallpaper);               // : WallPaper - WallPaper
-  },
-  ["messageActionSetSameChatWallPaper"](_) {
-    this.int32(-1065845395);
+    this.int32(1348510708);
+    this.int32(
+      (+(_.same != null) << 0)
+      | (+(_.for_both != null) << 1)
+    )
+    if (_.same != null)
+      this.true(_.same);                    // ?: true - flags.0?true
+    if (_.for_both != null)
+      this.true(_.for_both);                // ?: true - flags.1?true
     this.object(_.wallpaper);               // : WallPaper - WallPaper
   },
   ["messageActionGiftCode"](_) {
-    this.int32(-758129906);
+    this.int32(1737240073);
     this.int32(
       (+(_.via_giveaway != null) << 0)
       | (+(_.unclaimed != null) << 2)
       | (+(_.boost_peer != null) << 1)
+      | (+(_.currency != null) << 2)
+      | (+(_.amount != null) << 2)
+      | (+(_.crypto_currency != null) << 3)
+      | (+(_.crypto_amount != null) << 3)
     )
     if (_.via_giveaway != null)
       this.true(_.via_giveaway);            // ?: true - flags.0?true
@@ -8492,15 +9306,38 @@ export const $encoder = {
       this.object(_.boost_peer);            // ?: Peer - flags.1?Peer
     this.int32(_.months);                   // : number - int
     this.string(_.slug);                    // : string - string
+    if (_.currency != null)
+      this.string(_.currency);              // ?: string - flags.2?string
+    if (_.amount != null)
+      this.int64(_.amount);                 // ?: bigint - flags.2?long
+    if (_.crypto_currency != null)
+      this.string(_.crypto_currency);       // ?: string - flags.3?string
+    if (_.crypto_amount != null)
+      this.int64(_.crypto_amount);          // ?: bigint - flags.3?long
   },
   ["messageActionGiveawayLaunch"](_) {
     this.int32(858499565);
+  },
+  ["messageActionGiveawayResults"](_) {
+    this.int32(715107781);
+    this.int32(_.winners_count);            // : number - int
+    this.int32(_.unclaimed_count);          // : number - int
+  },
+  ["messageActionBoostApply"](_) {
+    this.int32(-872240531);
+    this.int32(_.boosts);                   // : number - int
+  },
+  ["messageActionRequestedPeerSentMe"](_) {
+    this.int32(-1816979384);
+    this.int32(_.button_id);                // : number - int
+    this.vector(_.peers, this.object);      // : RequestedPeer[] - Vector<RequestedPeer>
   },
   ["dialog"](_) {
     this.int32(-712374074);
     this.int32(
       (+(_.pinned != null) << 2)
       | (+(_.unread_mark != null) << 3)
+      | (+(_.view_forum_as_messages != null) << 6)
       | (+(_.pts != null) << 0)
       | (+(_.draft != null) << 1)
       | (+(_.folder_id != null) << 4)
@@ -8510,6 +9347,8 @@ export const $encoder = {
       this.true(_.pinned);                  // ?: true - flags.2?true
     if (_.unread_mark != null)
       this.true(_.unread_mark);             // ?: true - flags.3?true
+    if (_.view_forum_as_messages != null)
+      this.true(_.view_forum_as_messages);  // ?: true - flags.6?true
     this.object(_.peer);                    // : Peer - Peer
     this.int32(_.top_message);              // : number - int
     this.int32(_.read_inbox_max_id);        // : number - int
@@ -8743,7 +9582,7 @@ export const $encoder = {
       this.object(_.stories_other_sound);   // ?: NotificationSound - flags.10?NotificationSound
   },
   ["peerSettings"](_) {
-    this.int32(-1525149427);
+    this.int32(-1395233698);
     this.int32(
       (+(_.report_spam != null) << 0)
       | (+(_.add_contact != null) << 1)
@@ -8754,9 +9593,13 @@ export const $encoder = {
       | (+(_.autoarchived != null) << 7)
       | (+(_.invite_members != null) << 8)
       | (+(_.request_chat_broadcast != null) << 10)
+      | (+(_.business_bot_paused != null) << 11)
+      | (+(_.business_bot_can_reply != null) << 12)
       | (+(_.geo_distance != null) << 6)
       | (+(_.request_chat_title != null) << 9)
       | (+(_.request_chat_date != null) << 9)
+      | (+(_.business_bot_id != null) << 13)
+      | (+(_.business_bot_manage_url != null) << 13)
     )
     if (_.report_spam != null)
       this.true(_.report_spam);             // ?: true - flags.0?true
@@ -8776,12 +9619,20 @@ export const $encoder = {
       this.true(_.invite_members);          // ?: true - flags.8?true
     if (_.request_chat_broadcast != null)
       this.true(_.request_chat_broadcast);  // ?: true - flags.10?true
+    if (_.business_bot_paused != null)
+      this.true(_.business_bot_paused);     // ?: true - flags.11?true
+    if (_.business_bot_can_reply != null)
+      this.true(_.business_bot_can_reply);  // ?: true - flags.12?true
     if (_.geo_distance != null)
       this.int32(_.geo_distance);           // ?: number - flags.6?int
     if (_.request_chat_title != null)
       this.string(_.request_chat_title);    // ?: string - flags.9?string
     if (_.request_chat_date != null)
       this.int32(_.request_chat_date);      // ?: number - flags.9?int
+    if (_.business_bot_id != null)
+      this.int64(_.business_bot_id);        // ?: bigint - flags.13?long
+    if (_.business_bot_manage_url != null)
+      this.string(_.business_bot_manage_url); // ?: string - flags.13?string
   },
   ["wallPaper"](_) {
     this.int32(-1539849235);
@@ -8853,7 +9704,7 @@ export const $encoder = {
     this.int32(-1631091139);
   },
   ["userFull"](_) {
-    this.int32(-1179571092);
+    this.int32(-862357728);
     this.int32(
       (+(_.blocked != null) << 0)
       | (+(_.phone_calls_available != null) << 4)
@@ -8865,6 +9716,9 @@ export const $encoder = {
       | (+(_.translations_disabled != null) << 23)
       | (+(_.stories_pinned_available != null) << 26)
       | (+(_.blocked_my_stories_from != null) << 27)
+      | (+(_.wallpaper_overridden != null) << 28)
+      | (+(_.contact_require_premium != null) << 29)
+      | (+(_.read_dates_private != null) << 30)
       | (+(_.about != null) << 1)
       | (+(_.personal_photo != null) << 21)
       | (+(_.profile_photo != null) << 2)
@@ -8901,6 +9755,22 @@ export const $encoder = {
       this.true(_.stories_pinned_available); // ?: true - flags.26?true
     if (_.blocked_my_stories_from != null)
       this.true(_.blocked_my_stories_from); // ?: true - flags.27?true
+    if (_.wallpaper_overridden != null)
+      this.true(_.wallpaper_overridden);    // ?: true - flags.28?true
+    if (_.contact_require_premium != null)
+      this.true(_.contact_require_premium); // ?: true - flags.29?true
+    if (_.read_dates_private != null)
+      this.true(_.read_dates_private);      // ?: true - flags.30?true
+    this.int32(
+      (+(_.business_work_hours != null) << 0)
+      | (+(_.business_location != null) << 1)
+      | (+(_.business_greeting_message != null) << 2)
+      | (+(_.business_away_message != null) << 3)
+      | (+(_.business_intro != null) << 4)
+      | (+(_.birthday != null) << 5)
+      | (+(_.personal_channel_id != null) << 6)
+      | (+(_.personal_channel_message != null) << 6)
+    )
     this.int64(_.id);                       // : bigint - long
     if (_.about != null)
       this.string(_.about);                 // ?: string - flags.1?string
@@ -8935,6 +9805,22 @@ export const $encoder = {
       this.object(_.wallpaper);             // ?: WallPaper - flags.24?WallPaper
     if (_.stories != null)
       this.object(_.stories);               // ?: PeerStories - flags.25?PeerStories
+    if (_.business_work_hours != null)
+      this.object(_.business_work_hours);   // ?: BusinessWorkHours - flags2.0?BusinessWorkHours
+    if (_.business_location != null)
+      this.object(_.business_location);     // ?: BusinessLocation - flags2.1?BusinessLocation
+    if (_.business_greeting_message != null)
+      this.object(_.business_greeting_message); // ?: BusinessGreetingMessage - flags2.2?BusinessGreetingMessage
+    if (_.business_away_message != null)
+      this.object(_.business_away_message); // ?: BusinessAwayMessage - flags2.3?BusinessAwayMessage
+    if (_.business_intro != null)
+      this.object(_.business_intro);        // ?: BusinessIntro - flags2.4?BusinessIntro
+    if (_.birthday != null)
+      this.object(_.birthday);              // ?: Birthday - flags2.5?Birthday
+    if (_.personal_channel_id != null)
+      this.int64(_.personal_channel_id);    // ?: bigint - flags2.6?long
+    if (_.personal_channel_message != null)
+      this.int32(_.personal_channel_message); // ?: number - flags2.6?int
   },
   ["contact"](_) {
     this.int32(341499403);
@@ -9927,10 +10813,6 @@ export const $encoder = {
   ["updateAutoSaveSettings"](_) {
     this.int32(-335171433);
   },
-  ["updateGroupInvitePrivacyForbidden"](_) {
-    this.int32(-856651050);
-    this.int64(_.user_id);                  // : bigint - long
-  },
   ["updateStory"](_) {
     this.int32(1974712216);
     this.object(_.peer);                    // : Peer - Peer
@@ -9955,6 +10837,126 @@ export const $encoder = {
     this.object(_.peer);                    // : Peer - Peer
     this.int32(_.story_id);                 // : number - int
     this.object(_.reaction);                // : Reaction - Reaction
+  },
+  ["updateBotChatBoost"](_) {
+    this.int32(-1873947492);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.boost);                   // : Boost - Boost
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateChannelViewForumAsMessages"](_) {
+    this.int32(129403168);
+    this.int64(_.channel_id);               // : bigint - long
+    this.bool(_.enabled);                   // : boolean - Bool
+  },
+  ["updatePeerWallpaper"](_) {
+    this.int32(-1371598819);
+    this.int32(
+      (+(_.wallpaper_overridden != null) << 1)
+      | (+(_.wallpaper != null) << 0)
+    )
+    if (_.wallpaper_overridden != null)
+      this.true(_.wallpaper_overridden);    // ?: true - flags.1?true
+    this.object(_.peer);                    // : Peer - Peer
+    if (_.wallpaper != null)
+      this.object(_.wallpaper);             // ?: WallPaper - flags.0?WallPaper
+  },
+  ["updateBotMessageReaction"](_) {
+    this.int32(-1407069234);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.int32(_.date);                     // : number - int
+    this.object(_.actor);                   // : Peer - Peer
+    this.vector(_.old_reactions, this.object); // : Reaction[] - Vector<Reaction>
+    this.vector(_.new_reactions, this.object); // : Reaction[] - Vector<Reaction>
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateBotMessageReactions"](_) {
+    this.int32(164329305);
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.msg_id);                   // : number - int
+    this.int32(_.date);                     // : number - int
+    this.vector(_.reactions, this.object);  // : ReactionCount[] - Vector<ReactionCount>
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateSavedDialogPinned"](_) {
+    this.int32(-1364222348);
+    this.int32(
+      (+(_.pinned != null) << 0)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.0?true
+    this.object(_.peer);                    // : DialogPeer - DialogPeer
+  },
+  ["updatePinnedSavedDialogs"](_) {
+    this.int32(1751942566);
+    this.int32(
+      (+(_.order != null && _.order.length > 0) << 0)
+    )
+    if (_.order != null && _.order.length > 0)
+      this.vector(_.order, this.object);    // ?: DialogPeer[] - flags.0?Vector<DialogPeer>
+  },
+  ["updateSavedReactionTags"](_) {
+    this.int32(969307186);
+  },
+  ["updateSmsJob"](_) {
+    this.int32(-245208620);
+    this.string(_.job_id);                  // : string - string
+  },
+  ["updateQuickReplies"](_) {
+    this.int32(-112784718);
+    this.vector(_.quick_replies, this.object); // : QuickReply[] - Vector<QuickReply>
+  },
+  ["updateNewQuickReply"](_) {
+    this.int32(-180508905);
+    this.object(_.quick_reply);             // : QuickReply - QuickReply
+  },
+  ["updateDeleteQuickReply"](_) {
+    this.int32(1407644140);
+    this.int32(_.shortcut_id);              // : number - int
+  },
+  ["updateQuickReplyMessage"](_) {
+    this.int32(1040518415);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["updateDeleteQuickReplyMessages"](_) {
+    this.int32(1450174413);
+    this.int32(_.shortcut_id);              // : number - int
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+  },
+  ["updateBotBusinessConnect"](_) {
+    this.int32(-1964652166);
+    this.object(_.connection);              // : BotBusinessConnection - BotBusinessConnection
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateBotNewBusinessMessage"](_) {
+    this.int32(-1646578564);
+    this.int32(
+      (+(_.reply_to_message != null) << 0)
+    )
+    this.string(_.connection_id);           // : string - string
+    this.object(_.message);                 // : Message - Message
+    if (_.reply_to_message != null)
+      this.object(_.reply_to_message);      // ?: Message - flags.0?Message
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateBotEditBusinessMessage"](_) {
+    this.int32(132077692);
+    this.int32(
+      (+(_.reply_to_message != null) << 0)
+    )
+    this.string(_.connection_id);           // : string - string
+    this.object(_.message);                 // : Message - Message
+    if (_.reply_to_message != null)
+      this.object(_.reply_to_message);      // ?: Message - flags.0?Message
+    this.int32(_.qts);                      // : number - int
+  },
+  ["updateBotDeleteBusinessMessage"](_) {
+    this.int32(-1607821266);
+    this.string(_.connection_id);           // : string - string
+    this.object(_.peer);                    // : Peer - Peer
+    this.vector(_.messages, this.int32);    // : number[] - Vector<int>
+    this.int32(_.qts);                      // : number - int
   },
   ["updates.state"](_) {
     this.int32(-1519637954);
@@ -10564,6 +11566,9 @@ export const $encoder = {
   ["inputPrivacyKeyAbout"](_) {
     this.int32(941870144);
   },
+  ["inputPrivacyKeyBirthday"](_) {
+    this.int32(-698740276);
+  },
   ["privacyKeyStatusTimestamp"](_) {
     this.int32(-1137792208);
   },
@@ -10593,6 +11598,9 @@ export const $encoder = {
   },
   ["privacyKeyAbout"](_) {
     this.int32(-1534675103);
+  },
+  ["privacyKeyBirthday"](_) {
+    this.int32(536913176);
   },
   ["inputPrivacyValueAllowContacts"](_) {
     this.int32(218751099);
@@ -10625,6 +11633,9 @@ export const $encoder = {
   ["inputPrivacyValueAllowCloseFriends"](_) {
     this.int32(793067081);
   },
+  ["inputPrivacyValueAllowPremium"](_) {
+    this.int32(2009975281);
+  },
   ["privacyValueAllowContacts"](_) {
     this.int32(-123988);
   },
@@ -10655,6 +11666,9 @@ export const $encoder = {
   },
   ["privacyValueAllowCloseFriends"](_) {
     this.int32(-135735141);
+  },
+  ["privacyValueAllowPremium"](_) {
+    this.int32(-320241333);
   },
   ["account.privacyRules"](_) {
     this.int32(1352683077);
@@ -11090,16 +12104,19 @@ export const $encoder = {
   ["inputStickerSetEmojiDefaultTopicIcons"](_) {
     this.int32(1153562857);
   },
+  ["inputStickerSetEmojiChannelDefaultStatuses"](_) {
+    this.int32(1232373075);
+  },
   ["stickerSet"](_) {
     this.int32(768691932);
     this.int32(
       (+(_.archived != null) << 1)
       | (+(_.official != null) << 2)
       | (+(_.masks != null) << 3)
-      | (+(_.animated != null) << 5)
-      | (+(_.videos != null) << 6)
       | (+(_.emojis != null) << 7)
       | (+(_.text_color != null) << 9)
+      | (+(_.channel_emoji_status != null) << 10)
+      | (+(_.creator != null) << 11)
       | (+(_.installed_date != null) << 0)
       | (+(_.thumbs != null && _.thumbs.length > 0) << 4)
       | (+(_.thumb_dc_id != null) << 4)
@@ -11112,14 +12129,14 @@ export const $encoder = {
       this.true(_.official);                // ?: true - flags.2?true
     if (_.masks != null)
       this.true(_.masks);                   // ?: true - flags.3?true
-    if (_.animated != null)
-      this.true(_.animated);                // ?: true - flags.5?true
-    if (_.videos != null)
-      this.true(_.videos);                  // ?: true - flags.6?true
     if (_.emojis != null)
       this.true(_.emojis);                  // ?: true - flags.7?true
     if (_.text_color != null)
       this.true(_.text_color);              // ?: true - flags.9?true
+    if (_.channel_emoji_status != null)
+      this.true(_.channel_emoji_status);    // ?: true - flags.10?true
+    if (_.creator != null)
+      this.true(_.creator);                 // ?: true - flags.11?true
     if (_.installed_date != null)
       this.int32(_.installed_date);         // ?: number - flags.0?int
     this.int64(_.id);                       // : bigint - long
@@ -11278,10 +12295,29 @@ export const $encoder = {
     this.string(_.url);                     // : string - string
   },
   ["keyboardButtonRequestPeer"](_) {
-    this.int32(218842764);
+    this.int32(1406648280);
     this.string(_.text);                    // : string - string
     this.int32(_.button_id);                // : number - int
     this.object(_.peer_type);               // : RequestPeerType - RequestPeerType
+    this.int32(_.max_quantity);             // : number - int
+  },
+  ["inputKeyboardButtonRequestPeer"](_) {
+    this.int32(-916050683);
+    this.int32(
+      (+(_.name_requested != null) << 0)
+      | (+(_.username_requested != null) << 1)
+      | (+(_.photo_requested != null) << 2)
+    )
+    if (_.name_requested != null)
+      this.true(_.name_requested);          // ?: true - flags.0?true
+    if (_.username_requested != null)
+      this.true(_.username_requested);      // ?: true - flags.1?true
+    if (_.photo_requested != null)
+      this.true(_.photo_requested);         // ?: true - flags.2?true
+    this.string(_.text);                    // : string - string
+    this.int32(_.button_id);                // : number - int
+    this.object(_.peer_type);               // : RequestPeerType - RequestPeerType
+    this.int32(_.max_quantity);             // : number - int
   },
   ["keyboardButtonRow"](_) {
     this.int32(2002815875);
@@ -12035,19 +13071,25 @@ export const $encoder = {
     this.string(_.html);                    // : string - string
   },
   ["messageFwdHeader"](_) {
-    this.int32(1601666510);
+    this.int32(1313731771);
     this.int32(
       (+(_.imported != null) << 7)
+      | (+(_.saved_out != null) << 11)
       | (+(_.from_id != null) << 0)
       | (+(_.from_name != null) << 5)
       | (+(_.channel_post != null) << 2)
       | (+(_.post_author != null) << 3)
       | (+(_.saved_from_peer != null) << 4)
       | (+(_.saved_from_msg_id != null) << 4)
+      | (+(_.saved_from_id != null) << 8)
+      | (+(_.saved_from_name != null) << 9)
+      | (+(_.saved_date != null) << 10)
       | (+(_.psa_type != null) << 6)
     )
     if (_.imported != null)
       this.true(_.imported);                // ?: true - flags.7?true
+    if (_.saved_out != null)
+      this.true(_.saved_out);               // ?: true - flags.11?true
     if (_.from_id != null)
       this.object(_.from_id);               // ?: Peer - flags.0?Peer
     if (_.from_name != null)
@@ -12061,6 +13103,12 @@ export const $encoder = {
       this.object(_.saved_from_peer);       // ?: Peer - flags.4?Peer
     if (_.saved_from_msg_id != null)
       this.int32(_.saved_from_msg_id);      // ?: number - flags.4?int
+    if (_.saved_from_id != null)
+      this.object(_.saved_from_id);         // ?: Peer - flags.8?Peer
+    if (_.saved_from_name != null)
+      this.string(_.saved_from_name);       // ?: string - flags.9?string
+    if (_.saved_date != null)
+      this.int32(_.saved_date);             // ?: number - flags.10?int
     if (_.psa_type != null)
       this.string(_.psa_type);              // ?: string - flags.6?string
   },
@@ -13007,10 +14055,11 @@ export const $encoder = {
     this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
   },
   ["phoneCall"](_) {
-    this.int32(-1770029977);
+    this.int32(810769141);
     this.int32(
       (+(_.p2p_allowed != null) << 5)
       | (+(_.video != null) << 6)
+      | (+(_.custom_parameters != null) << 7)
     )
     if (_.p2p_allowed != null)
       this.true(_.p2p_allowed);             // ?: true - flags.5?true
@@ -13026,6 +14075,8 @@ export const $encoder = {
     this.object(_.protocol);                // : PhoneCallProtocol - PhoneCallProtocol
     this.vector(_.connections, this.object); // : PhoneConnection[] - Vector<PhoneConnection>
     this.int32(_.start_date);               // : number - int
+    if (_.custom_parameters != null)
+      this.object(_.custom_parameters);     // ?: DataJSON - flags.7?DataJSON
   },
   ["phoneCallDiscarded"](_) {
     this.int32(1355435489);
@@ -13376,15 +14427,30 @@ export const $encoder = {
     this.int32(1693675004);
     this.bool(_.new_value);                 // : boolean - Bool
   },
-  ["channelAdminLogEventActionChangeColor"](_) {
-    this.int32(1009460347);
-    this.int32(_.prev_value);               // : number - int
-    this.int32(_.new_value);                // : number - int
+  ["channelAdminLogEventActionChangePeerColor"](_) {
+    this.int32(1469507456);
+    this.object(_.prev_value);              // : PeerColor - PeerColor
+    this.object(_.new_value);               // : PeerColor - PeerColor
   },
-  ["channelAdminLogEventActionChangeBackgroundEmoji"](_) {
-    this.int32(1147126836);
-    this.int64(_.prev_value);               // : bigint - long
-    this.int64(_.new_value);                // : bigint - long
+  ["channelAdminLogEventActionChangeProfilePeerColor"](_) {
+    this.int32(1581742885);
+    this.object(_.prev_value);              // : PeerColor - PeerColor
+    this.object(_.new_value);               // : PeerColor - PeerColor
+  },
+  ["channelAdminLogEventActionChangeWallpaper"](_) {
+    this.int32(834362706);
+    this.object(_.prev_value);              // : WallPaper - WallPaper
+    this.object(_.new_value);               // : WallPaper - WallPaper
+  },
+  ["channelAdminLogEventActionChangeEmojiStatus"](_) {
+    this.int32(1051328177);
+    this.object(_.prev_value);              // : EmojiStatus - EmojiStatus
+    this.object(_.new_value);               // : EmojiStatus - EmojiStatus
+  },
+  ["channelAdminLogEventActionChangeEmojiStickerSet"](_) {
+    this.int32(1188577451);
+    this.object(_.prev_stickerset);         // : InputStickerSet - InputStickerSet
+    this.object(_.new_stickerset);          // : InputStickerSet - InputStickerSet
   },
   ["channelAdminLogEvent"](_) {
     this.int32(531458253);
@@ -14286,7 +15352,7 @@ export const $encoder = {
       this.bool(_.app_sandbox);             // ?: boolean - flags.8?Bool
   },
   ["wallPaperSettings"](_) {
-    this.int32(499236004);
+    this.int32(925826256);
     this.int32(
       (+(_.blur != null) << 1)
       | (+(_.motion != null) << 2)
@@ -14296,6 +15362,7 @@ export const $encoder = {
       | (+(_.fourth_background_color != null) << 6)
       | (+(_.intensity != null) << 3)
       | (+(_.rotation != null) << 4)
+      | (+(_.emoticon != null) << 7)
     )
     if (_.blur != null)
       this.true(_.blur);                    // ?: true - flags.1?true
@@ -14313,6 +15380,8 @@ export const $encoder = {
       this.int32(_.intensity);              // ?: number - flags.3?int
     if (_.rotation != null)
       this.int32(_.rotation);               // ?: number - flags.4?int
+    if (_.emoticon != null)
+      this.string(_.emoticon);              // ?: string - flags.7?string
   },
   ["autoDownloadSettings"](_) {
     this.int32(-1163561432);
@@ -14629,7 +15698,7 @@ export const $encoder = {
     this.vector(_.open_urls, this.object);  // : BankCardOpenUrl[] - Vector<BankCardOpenUrl>
   },
   ["dialogFilter"](_) {
-    this.int32(1949890536);
+    this.int32(1605718587);
     this.int32(
       (+(_.contacts != null) << 0)
       | (+(_.non_contacts != null) << 1)
@@ -14640,6 +15709,7 @@ export const $encoder = {
       | (+(_.exclude_read != null) << 12)
       | (+(_.exclude_archived != null) << 13)
       | (+(_.emoticon != null) << 25)
+      | (+(_.color != null) << 27)
     )
     if (_.contacts != null)
       this.true(_.contacts);                // ?: true - flags.0?true
@@ -14661,6 +15731,8 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
     if (_.emoticon != null)
       this.string(_.emoticon);              // ?: string - flags.25?string
+    if (_.color != null)
+      this.int32(_.color);                  // ?: number - flags.27?int
     this.vector(_.pinned_peers, this.object); // : InputPeer[] - Vector<InputPeer>
     this.vector(_.include_peers, this.object); // : InputPeer[] - Vector<InputPeer>
     this.vector(_.exclude_peers, this.object); // : InputPeer[] - Vector<InputPeer>
@@ -14669,10 +15741,11 @@ export const $encoder = {
     this.int32(909284270);
   },
   ["dialogFilterChatlist"](_) {
-    this.int32(-699792216);
+    this.int32(-1612542300);
     this.int32(
       (+(_.has_my_invites != null) << 26)
       | (+(_.emoticon != null) << 25)
+      | (+(_.color != null) << 27)
     )
     if (_.has_my_invites != null)
       this.true(_.has_my_invites);          // ?: true - flags.26?true
@@ -14680,6 +15753,8 @@ export const $encoder = {
     this.string(_.title);                   // : string - string
     if (_.emoticon != null)
       this.string(_.emoticon);              // ?: string - flags.25?string
+    if (_.color != null)
+      this.int32(_.color);                  // ?: number - flags.27?int
     this.vector(_.pinned_peers, this.object); // : InputPeer[] - Vector<InputPeer>
     this.vector(_.include_peers, this.object); // : InputPeer[] - Vector<InputPeer>
   },
@@ -14720,18 +15795,16 @@ export const $encoder = {
     if (_.zoom_token != null)
       this.string(_.zoom_token);            // ?: string - flags.0?string
   },
-  ["messageInteractionCounters"](_) {
-    this.int32(-1387279939);
-    this.int32(_.msg_id);                   // : number - int
-    this.int32(_.views);                    // : number - int
-    this.int32(_.forwards);                 // : number - int
-  },
   ["stats.broadcastStats"](_) {
-    this.int32(-1107852396);
+    this.int32(963421692);
     this.object(_.period);                  // : StatsDateRangeDays - StatsDateRangeDays
     this.object(_.followers);               // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
     this.object(_.views_per_post);          // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
     this.object(_.shares_per_post);         // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    this.object(_.reactions_per_post);      // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    this.object(_.views_per_story);         // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    this.object(_.shares_per_story);        // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    this.object(_.reactions_per_story);     // : StatsAbsValueAndPrev - StatsAbsValueAndPrev
     this.object(_.enabled_notifications);   // : StatsPercentValue - StatsPercentValue
     this.object(_.growth_graph);            // : StatsGraph - StatsGraph
     this.object(_.followers_graph);         // : StatsGraph - StatsGraph
@@ -14742,7 +15815,10 @@ export const $encoder = {
     this.object(_.views_by_source_graph);   // : StatsGraph - StatsGraph
     this.object(_.new_followers_by_source_graph); // : StatsGraph - StatsGraph
     this.object(_.languages_graph);         // : StatsGraph - StatsGraph
-    this.vector(_.recent_message_interactions, this.object); // : MessageInteractionCounters[] - Vector<MessageInteractionCounters>
+    this.object(_.reactions_by_emotion_graph); // : StatsGraph - StatsGraph
+    this.object(_.story_interactions_graph); // : StatsGraph - StatsGraph
+    this.object(_.story_reactions_by_emotion_graph); // : StatsGraph - StatsGraph
+    this.vector(_.recent_posts_interactions, this.object); // : PostInteractionCounters[] - Vector<PostInteractionCounters>
   },
   ["help.promoDataEmpty"](_) {
     this.int32(-1728664459);
@@ -14833,6 +15909,8 @@ export const $encoder = {
       (+(_.archive_and_mute_new_noncontact_peers != null) << 0)
       | (+(_.keep_archived_unmuted != null) << 1)
       | (+(_.keep_archived_folders != null) << 2)
+      | (+(_.hide_read_marks != null) << 3)
+      | (+(_.new_noncontact_peers_require_premium != null) << 4)
     )
     if (_.archive_and_mute_new_noncontact_peers != null)
       this.true(_.archive_and_mute_new_noncontact_peers); // ?: true - flags.0?true
@@ -14840,6 +15918,10 @@ export const $encoder = {
       this.true(_.keep_archived_unmuted);   // ?: true - flags.1?true
     if (_.keep_archived_folders != null)
       this.true(_.keep_archived_folders);   // ?: true - flags.2?true
+    if (_.hide_read_marks != null)
+      this.true(_.hide_read_marks);         // ?: true - flags.3?true
+    if (_.new_noncontact_peers_require_premium != null)
+      this.true(_.new_noncontact_peers_require_premium); // ?: true - flags.4?true
   },
   ["help.countryCode"](_) {
     this.int32(1107543535);
@@ -14914,7 +15996,7 @@ export const $encoder = {
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["messageReplyHeader"](_) {
-    this.int32(1860946621);
+    this.int32(-1346631205);
     this.int32(
       (+(_.reply_to_scheduled != null) << 2)
       | (+(_.forum_topic != null) << 3)
@@ -14926,6 +16008,7 @@ export const $encoder = {
       | (+(_.reply_to_top_id != null) << 1)
       | (+(_.quote_text != null) << 6)
       | (+(_.quote_entities != null && _.quote_entities.length > 0) << 7)
+      | (+(_.quote_offset != null) << 10)
     )
     if (_.reply_to_scheduled != null)
       this.true(_.reply_to_scheduled);      // ?: true - flags.2?true
@@ -14947,10 +16030,12 @@ export const $encoder = {
       this.string(_.quote_text);            // ?: string - flags.6?string
     if (_.quote_entities != null && _.quote_entities.length > 0)
       this.vector(_.quote_entities, this.object); // ?: MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (_.quote_offset != null)
+      this.int32(_.quote_offset);           // ?: number - flags.10?int
   },
   ["messageReplyStoryHeader"](_) {
-    this.int32(-1667711039);
-    this.int64(_.user_id);                  // : bigint - long
+    this.int32(240843065);
+    this.object(_.peer);                    // : Peer - Peer
     this.int32(_.story_id);                 // : number - int
   },
   ["messageReplies"](_) {
@@ -14981,8 +16066,9 @@ export const $encoder = {
     this.int32(_.date);                     // : number - int
   },
   ["stats.messageStats"](_) {
-    this.int32(-1986399595);
+    this.int32(2145983508);
     this.object(_.views_graph);             // : StatsGraph - StatsGraph
+    this.object(_.reactions_by_emotion_graph); // : StatsGraph - StatsGraph
   },
   ["groupCallDiscarded"](_) {
     this.int32(2004925620);
@@ -15286,17 +16372,20 @@ export const $encoder = {
     this.int32(-383330754);
   },
   ["sponsoredMessage"](_) {
-    this.int32(-626000021);
+    this.int32(-313293833);
     this.int32(
       (+(_.recommended != null) << 5)
       | (+(_.show_peer_photo != null) << 6)
+      | (+(_.can_report != null) << 12)
       | (+(_.from_id != null) << 3)
       | (+(_.chat_invite != null) << 4)
       | (+(_.chat_invite_hash != null) << 4)
       | (+(_.channel_post != null) << 2)
       | (+(_.start_param != null) << 0)
       | (+(_.webpage != null) << 9)
+      | (+(_.app != null) << 10)
       | (+(_.entities != null && _.entities.length > 0) << 1)
+      | (+(_.button_text != null) << 11)
       | (+(_.sponsor_info != null) << 7)
       | (+(_.additional_info != null) << 8)
     )
@@ -15304,6 +16393,8 @@ export const $encoder = {
       this.true(_.recommended);             // ?: true - flags.5?true
     if (_.show_peer_photo != null)
       this.true(_.show_peer_photo);         // ?: true - flags.6?true
+    if (_.can_report != null)
+      this.true(_.can_report);              // ?: true - flags.12?true
     this.bytes(_.random_id);                // : Uint8Array - bytes
     if (_.from_id != null)
       this.object(_.from_id);               // ?: Peer - flags.3?Peer
@@ -15317,9 +16408,13 @@ export const $encoder = {
       this.string(_.start_param);           // ?: string - flags.0?string
     if (_.webpage != null)
       this.object(_.webpage);               // ?: SponsoredWebPage - flags.9?SponsoredWebPage
+    if (_.app != null)
+      this.object(_.app);                   // ?: BotApp - flags.10?BotApp
     this.string(_.message);                 // : string - string
     if (_.entities != null && _.entities.length > 0)
       this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (_.button_text != null)
+      this.string(_.button_text);           // ?: string - flags.11?string
     if (_.sponsor_info != null)
       this.string(_.sponsor_info);          // ?: string - flags.7?string
     if (_.additional_info != null)
@@ -15416,12 +16511,15 @@ export const $encoder = {
     this.int32(
       (+(_.min != null) << 0)
       | (+(_.can_see_list != null) << 2)
+      | (+(_.reactions_as_tags != null) << 3)
       | (+(_.recent_reactions != null && _.recent_reactions.length > 0) << 1)
     )
     if (_.min != null)
       this.true(_.min);                     // ?: true - flags.0?true
     if (_.can_see_list != null)
       this.true(_.can_see_list);            // ?: true - flags.2?true
+    if (_.reactions_as_tags != null)
+      this.true(_.reactions_as_tags);       // ?: true - flags.3?true
     this.vector(_.results, this.object);    // : ReactionCount[] - Vector<ReactionCount>
     if (_.recent_reactions != null && _.recent_reactions.length > 0)
       this.vector(_.recent_reactions, this.object); // ?: MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
@@ -15652,14 +16750,20 @@ export const $encoder = {
     this.string(_.url);                     // : string - string
   },
   ["messages.transcribedAudio"](_) {
-    this.int32(-1821037486);
+    this.int32(-809903785);
     this.int32(
       (+(_.pending != null) << 0)
+      | (+(_.trial_remains_num != null) << 1)
+      | (+(_.trial_remains_until_date != null) << 1)
     )
     if (_.pending != null)
       this.true(_.pending);                 // ?: true - flags.0?true
     this.int64(_.transcription_id);         // : bigint - long
     this.string(_.text);                    // : string - string
+    if (_.trial_remains_num != null)
+      this.int32(_.trial_remains_num);      // ?: number - flags.1?int
+    if (_.trial_remains_until_date != null)
+      this.int32(_.trial_remains_until_date); // ?: number - flags.1?int
   },
   ["help.premiumPromo"](_) {
     this.int32(1395946908);
@@ -15699,19 +16803,25 @@ export const $encoder = {
     this.int64(_.amount);                   // : bigint - long
   },
   ["inputStorePaymentPremiumGiveaway"](_) {
-    this.int32(2090038758);
+    this.int32(369444042);
     this.int32(
       (+(_.only_new_subscribers != null) << 0)
+      | (+(_.winners_are_visible != null) << 3)
       | (+(_.additional_peers != null && _.additional_peers.length > 0) << 1)
       | (+(_.countries_iso2 != null && _.countries_iso2.length > 0) << 2)
+      | (+(_.prize_description != null) << 4)
     )
     if (_.only_new_subscribers != null)
       this.true(_.only_new_subscribers);    // ?: true - flags.0?true
+    if (_.winners_are_visible != null)
+      this.true(_.winners_are_visible);     // ?: true - flags.3?true
     this.object(_.boost_peer);              // : InputPeer - InputPeer
     if (_.additional_peers != null && _.additional_peers.length > 0)
       this.vector(_.additional_peers, this.object); // ?: InputPeer[] - flags.1?Vector<InputPeer>
     if (_.countries_iso2 != null && _.countries_iso2.length > 0)
       this.vector(_.countries_iso2, this.string); // ?: string[] - flags.2?Vector<string>
+    if (_.prize_description != null)
+      this.string(_.prize_description);     // ?: string - flags.4?string
     this.int64(_.random_id);                // : bigint - long
     this.int32(_.until_date);               // : number - int
     this.string(_.currency);                // : string - string
@@ -16248,7 +17358,7 @@ export const $encoder = {
     this.int32(_.expire_date);              // : number - int
   },
   ["storyItem"](_) {
-    this.int32(1153718222);
+    this.int32(2041735716);
     this.int32(
       (+(_.pinned != null) << 5)
       | (+(_.public != null) << 7)
@@ -16259,6 +17369,8 @@ export const $encoder = {
       | (+(_.contacts != null) << 12)
       | (+(_.selected_contacts != null) << 13)
       | (+(_.out != null) << 16)
+      | (+(_.from_id != null) << 18)
+      | (+(_.fwd_from != null) << 17)
       | (+(_.caption != null) << 0)
       | (+(_.entities != null && _.entities.length > 0) << 1)
       | (+(_.media_areas != null && _.media_areas.length > 0) << 14)
@@ -16286,6 +17398,10 @@ export const $encoder = {
       this.true(_.out);                     // ?: true - flags.16?true
     this.int32(_.id);                       // : number - int
     this.int32(_.date);                     // : number - int
+    if (_.from_id != null)
+      this.object(_.from_id);               // ?: Peer - flags.18?Peer
+    if (_.fwd_from != null)
+      this.object(_.fwd_from);              // ?: StoryFwdHeader - flags.17?StoryFwdHeader
     this.int32(_.expire_date);              // : number - int
     if (_.caption != null)
       this.string(_.caption);               // ?: string - flags.0?string
@@ -16346,14 +17462,42 @@ export const $encoder = {
     if (_.reaction != null)
       this.object(_.reaction);              // ?: Reaction - flags.2?Reaction
   },
+  ["storyViewPublicForward"](_) {
+    this.int32(-1870436597);
+    this.int32(
+      (+(_.blocked != null) << 0)
+      | (+(_.blocked_my_stories_from != null) << 1)
+    )
+    if (_.blocked != null)
+      this.true(_.blocked);                 // ?: true - flags.0?true
+    if (_.blocked_my_stories_from != null)
+      this.true(_.blocked_my_stories_from); // ?: true - flags.1?true
+    this.object(_.message);                 // : Message - Message
+  },
+  ["storyViewPublicRepost"](_) {
+    this.int32(-1116418231);
+    this.int32(
+      (+(_.blocked != null) << 0)
+      | (+(_.blocked_my_stories_from != null) << 1)
+    )
+    if (_.blocked != null)
+      this.true(_.blocked);                 // ?: true - flags.0?true
+    if (_.blocked_my_stories_from != null)
+      this.true(_.blocked_my_stories_from); // ?: true - flags.1?true
+    this.object(_.peer_id);                 // : Peer - Peer
+    this.object(_.story);                   // : StoryItem - StoryItem
+  },
   ["stories.storyViewsList"](_) {
-    this.int32(1189722604);
+    this.int32(1507299269);
     this.int32(
       (+(_.next_offset != null) << 0)
     )
     this.int32(_.count);                    // : number - int
+    this.int32(_.views_count);              // : number - int
+    this.int32(_.forwards_count);           // : number - int
     this.int32(_.reactions_count);          // : number - int
     this.vector(_.views, this.object);      // : StoryView[] - Vector<StoryView>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
     if (_.next_offset != null)
       this.string(_.next_offset);           // ?: string - flags.0?string
@@ -16364,12 +17508,13 @@ export const $encoder = {
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["inputReplyToMessage"](_) {
-    this.int32(121554949);
+    this.int32(583071445);
     this.int32(
       (+(_.top_msg_id != null) << 0)
       | (+(_.reply_to_peer_id != null) << 1)
       | (+(_.quote_text != null) << 2)
       | (+(_.quote_entities != null && _.quote_entities.length > 0) << 3)
+      | (+(_.quote_offset != null) << 4)
     )
     this.int32(_.reply_to_msg_id);          // : number - int
     if (_.top_msg_id != null)
@@ -16380,10 +17525,12 @@ export const $encoder = {
       this.string(_.quote_text);            // ?: string - flags.2?string
     if (_.quote_entities != null && _.quote_entities.length > 0)
       this.vector(_.quote_entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
+    if (_.quote_offset != null)
+      this.int32(_.quote_offset);           // ?: number - flags.4?int
   },
   ["inputReplyToStory"](_) {
-    this.int32(363917955);
-    this.object(_.user_id);                 // : InputUser - InputUser
+    this.int32(1484862010);
+    this.object(_.peer);                    // : InputPeer - InputPeer
     this.int32(_.story_id);                 // : number - int
   },
   ["exportedStoryLink"](_) {
@@ -16443,6 +17590,18 @@ export const $encoder = {
     this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
     this.object(_.reaction);                // : Reaction - Reaction
   },
+  ["mediaAreaChannelPost"](_) {
+    this.int32(1996756655);
+    this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
+    this.int64(_.channel_id);               // : bigint - long
+    this.int32(_.msg_id);                   // : number - int
+  },
+  ["inputMediaAreaChannelPost"](_) {
+    this.int32(577893055);
+    this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
+    this.object(_.channel);                 // : InputChannel - InputChannel
+    this.int32(_.msg_id);                   // : number - int
+  },
   ["peerStories"](_) {
     this.int32(-1707742823);
     this.int32(
@@ -16481,16 +17640,18 @@ export const $encoder = {
     this.int64(_.amount);                   // : bigint - long
   },
   ["payments.checkedGiftCode"](_) {
-    this.int32(-1222446760);
+    this.int32(675942550);
     this.int32(
       (+(_.via_giveaway != null) << 2)
+      | (+(_.from_id != null) << 4)
       | (+(_.giveaway_msg_id != null) << 3)
       | (+(_.to_id != null) << 0)
       | (+(_.used_date != null) << 1)
     )
     if (_.via_giveaway != null)
       this.true(_.via_giveaway);            // ?: true - flags.2?true
-    this.object(_.from_id);                 // : Peer - Peer
+    if (_.from_id != null)
+      this.object(_.from_id);               // ?: Peer - flags.4?Peer
     if (_.giveaway_msg_id != null)
       this.int32(_.giveaway_msg_id);        // ?: number - flags.3?int
     if (_.to_id != null)
@@ -16634,6 +17795,698 @@ export const $encoder = {
       this.vector(_.prepaid_giveaways, this.object); // ?: PrepaidGiveaway[] - flags.3?Vector<PrepaidGiveaway>
     if (_.my_boost_slots != null && _.my_boost_slots.length > 0)
       this.vector(_.my_boost_slots, this.int32); // ?: number[] - flags.2?Vector<int>
+  },
+  ["storyFwdHeader"](_) {
+    this.int32(-1205411504);
+    this.int32(
+      (+(_.modified != null) << 3)
+      | (+(_.from != null) << 0)
+      | (+(_.from_name != null) << 1)
+      | (+(_.story_id != null) << 2)
+    )
+    if (_.modified != null)
+      this.true(_.modified);                // ?: true - flags.3?true
+    if (_.from != null)
+      this.object(_.from);                  // ?: Peer - flags.0?Peer
+    if (_.from_name != null)
+      this.string(_.from_name);             // ?: string - flags.1?string
+    if (_.story_id != null)
+      this.int32(_.story_id);               // ?: number - flags.2?int
+  },
+  ["postInteractionCountersMessage"](_) {
+    this.int32(-419066241);
+    this.int32(_.msg_id);                   // : number - int
+    this.int32(_.views);                    // : number - int
+    this.int32(_.forwards);                 // : number - int
+    this.int32(_.reactions);                // : number - int
+  },
+  ["postInteractionCountersStory"](_) {
+    this.int32(-1974989273);
+    this.int32(_.story_id);                 // : number - int
+    this.int32(_.views);                    // : number - int
+    this.int32(_.forwards);                 // : number - int
+    this.int32(_.reactions);                // : number - int
+  },
+  ["stats.storyStats"](_) {
+    this.int32(1355613820);
+    this.object(_.views_graph);             // : StatsGraph - StatsGraph
+    this.object(_.reactions_by_emotion_graph); // : StatsGraph - StatsGraph
+  },
+  ["publicForwardMessage"](_) {
+    this.int32(32685898);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["publicForwardStory"](_) {
+    this.int32(-302797360);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.story);                   // : StoryItem - StoryItem
+  },
+  ["stats.publicForwards"](_) {
+    this.int32(-1828487648);
+    this.int32(
+      (+(_.next_offset != null) << 0)
+    )
+    this.int32(_.count);                    // : number - int
+    this.vector(_.forwards, this.object);   // : PublicForward[] - Vector<PublicForward>
+    if (_.next_offset != null)
+      this.string(_.next_offset);           // ?: string - flags.0?string
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["peerColor"](_) {
+    this.int32(-1253352753);
+    this.int32(
+      (+(_.color != null) << 0)
+      | (+(_.background_emoji_id != null) << 1)
+    )
+    if (_.color != null)
+      this.int32(_.color);                  // ?: number - flags.0?int
+    if (_.background_emoji_id != null)
+      this.int64(_.background_emoji_id);    // ?: bigint - flags.1?long
+  },
+  ["help.peerColorSet"](_) {
+    this.int32(639736408);
+    this.vector(_.colors, this.int32);      // : number[] - Vector<int>
+  },
+  ["help.peerColorProfileSet"](_) {
+    this.int32(1987928555);
+    this.vector(_.palette_colors, this.int32); // : number[] - Vector<int>
+    this.vector(_.bg_colors, this.int32);   // : number[] - Vector<int>
+    this.vector(_.story_colors, this.int32); // : number[] - Vector<int>
+  },
+  ["help.peerColorOption"](_) {
+    this.int32(-1377014082);
+    this.int32(
+      (+(_.hidden != null) << 0)
+      | (+(_.colors != null) << 1)
+      | (+(_.dark_colors != null) << 2)
+      | (+(_.channel_min_level != null) << 3)
+      | (+(_.group_min_level != null) << 4)
+    )
+    if (_.hidden != null)
+      this.true(_.hidden);                  // ?: true - flags.0?true
+    this.int32(_.color_id);                 // : number - int
+    if (_.colors != null)
+      this.object(_.colors);                // ?: help.PeerColorSet - flags.1?help.PeerColorSet
+    if (_.dark_colors != null)
+      this.object(_.dark_colors);           // ?: help.PeerColorSet - flags.2?help.PeerColorSet
+    if (_.channel_min_level != null)
+      this.int32(_.channel_min_level);      // ?: number - flags.3?int
+    if (_.group_min_level != null)
+      this.int32(_.group_min_level);        // ?: number - flags.4?int
+  },
+  ["help.peerColorsNotModified"](_) {
+    this.int32(732034510);
+  },
+  ["help.peerColors"](_) {
+    this.int32(16313608);
+    this.int32(_.hash);                     // : number - int
+    this.vector(_.colors, this.object);     // : help.PeerColorOption[] - Vector<help.PeerColorOption>
+  },
+  ["storyReaction"](_) {
+    this.int32(1620104917);
+    this.object(_.peer_id);                 // : Peer - Peer
+    this.int32(_.date);                     // : number - int
+    this.object(_.reaction);                // : Reaction - Reaction
+  },
+  ["storyReactionPublicForward"](_) {
+    this.int32(-1146411453);
+    this.object(_.message);                 // : Message - Message
+  },
+  ["storyReactionPublicRepost"](_) {
+    this.int32(-808644845);
+    this.object(_.peer_id);                 // : Peer - Peer
+    this.object(_.story);                   // : StoryItem - StoryItem
+  },
+  ["stories.storyReactionsList"](_) {
+    this.int32(-1436583780);
+    this.int32(
+      (+(_.next_offset != null) << 0)
+    )
+    this.int32(_.count);                    // : number - int
+    this.vector(_.reactions, this.object);  // : StoryReaction[] - Vector<StoryReaction>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+    if (_.next_offset != null)
+      this.string(_.next_offset);           // ?: string - flags.0?string
+  },
+  ["savedDialog"](_) {
+    this.int32(-1115174036);
+    this.int32(
+      (+(_.pinned != null) << 2)
+    )
+    if (_.pinned != null)
+      this.true(_.pinned);                  // ?: true - flags.2?true
+    this.object(_.peer);                    // : Peer - Peer
+    this.int32(_.top_message);              // : number - int
+  },
+  ["messages.savedDialogs"](_) {
+    this.int32(-130358751);
+    this.vector(_.dialogs, this.object);    // : SavedDialog[] - Vector<SavedDialog>
+    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.savedDialogsSlice"](_) {
+    this.int32(1153080793);
+    this.int32(_.count);                    // : number - int
+    this.vector(_.dialogs, this.object);    // : SavedDialog[] - Vector<SavedDialog>
+    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.savedDialogsNotModified"](_) {
+    this.int32(-1071681560);
+    this.int32(_.count);                    // : number - int
+  },
+  ["savedReactionTag"](_) {
+    this.int32(-881854424);
+    this.int32(
+      (+(_.title != null) << 0)
+    )
+    this.object(_.reaction);                // : Reaction - Reaction
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.0?string
+    this.int32(_.count);                    // : number - int
+  },
+  ["messages.savedReactionTagsNotModified"](_) {
+    this.int32(-2003084817);
+  },
+  ["messages.savedReactionTags"](_) {
+    this.int32(844731658);
+    this.vector(_.tags, this.object);       // : SavedReactionTag[] - Vector<SavedReactionTag>
+    this.int64(_.hash);                     // : bigint - long
+  },
+  ["outboxReadDate"](_) {
+    this.int32(1001931436);
+    this.int32(_.date);                     // : number - int
+  },
+  ["smsjobs.eligibleToJoin"](_) {
+    this.int32(-594852657);
+    this.string(_.terms_url);               // : string - string
+    this.int32(_.monthly_sent_sms);         // : number - int
+  },
+  ["smsjobs.status"](_) {
+    this.int32(720277905);
+    this.int32(
+      (+(_.allow_international != null) << 0)
+      | (+(_.last_gift_slug != null) << 1)
+    )
+    if (_.allow_international != null)
+      this.true(_.allow_international);     // ?: true - flags.0?true
+    this.int32(_.recent_sent);              // : number - int
+    this.int32(_.recent_since);             // : number - int
+    this.int32(_.recent_remains);           // : number - int
+    this.int32(_.total_sent);               // : number - int
+    this.int32(_.total_since);              // : number - int
+    if (_.last_gift_slug != null)
+      this.string(_.last_gift_slug);        // ?: string - flags.1?string
+    this.string(_.terms_url);               // : string - string
+  },
+  ["smsJob"](_) {
+    this.int32(-425595208);
+    this.string(_.job_id);                  // : string - string
+    this.string(_.phone_number);            // : string - string
+    this.string(_.text);                    // : string - string
+  },
+  ["businessWeeklyOpen"](_) {
+    this.int32(302717625);
+    this.int32(_.start_minute);             // : number - int
+    this.int32(_.end_minute);               // : number - int
+  },
+  ["businessWorkHours"](_) {
+    this.int32(-1936543592);
+    this.int32(
+      (+(_.open_now != null) << 0)
+    )
+    if (_.open_now != null)
+      this.true(_.open_now);                // ?: true - flags.0?true
+    this.string(_.timezone_id);             // : string - string
+    this.vector(_.weekly_open, this.object); // : BusinessWeeklyOpen[] - Vector<BusinessWeeklyOpen>
+  },
+  ["businessLocation"](_) {
+    this.int32(-1403249929);
+    this.int32(
+      (+(_.geo_point != null) << 0)
+    )
+    if (_.geo_point != null)
+      this.object(_.geo_point);             // ?: GeoPoint - flags.0?GeoPoint
+    this.string(_.address);                 // : string - string
+  },
+  ["inputBusinessRecipients"](_) {
+    this.int32(1871393450);
+    this.int32(
+      (+(_.existing_chats != null) << 0)
+      | (+(_.new_chats != null) << 1)
+      | (+(_.contacts != null) << 2)
+      | (+(_.non_contacts != null) << 3)
+      | (+(_.exclude_selected != null) << 5)
+      | (+(_.users != null && _.users.length > 0) << 4)
+    )
+    if (_.existing_chats != null)
+      this.true(_.existing_chats);          // ?: true - flags.0?true
+    if (_.new_chats != null)
+      this.true(_.new_chats);               // ?: true - flags.1?true
+    if (_.contacts != null)
+      this.true(_.contacts);                // ?: true - flags.2?true
+    if (_.non_contacts != null)
+      this.true(_.non_contacts);            // ?: true - flags.3?true
+    if (_.exclude_selected != null)
+      this.true(_.exclude_selected);        // ?: true - flags.5?true
+    if (_.users != null && _.users.length > 0)
+      this.vector(_.users, this.object);    // ?: InputUser[] - flags.4?Vector<InputUser>
+  },
+  ["businessRecipients"](_) {
+    this.int32(554733559);
+    this.int32(
+      (+(_.existing_chats != null) << 0)
+      | (+(_.new_chats != null) << 1)
+      | (+(_.contacts != null) << 2)
+      | (+(_.non_contacts != null) << 3)
+      | (+(_.exclude_selected != null) << 5)
+      | (+(_.users != null && _.users.length > 0) << 4)
+    )
+    if (_.existing_chats != null)
+      this.true(_.existing_chats);          // ?: true - flags.0?true
+    if (_.new_chats != null)
+      this.true(_.new_chats);               // ?: true - flags.1?true
+    if (_.contacts != null)
+      this.true(_.contacts);                // ?: true - flags.2?true
+    if (_.non_contacts != null)
+      this.true(_.non_contacts);            // ?: true - flags.3?true
+    if (_.exclude_selected != null)
+      this.true(_.exclude_selected);        // ?: true - flags.5?true
+    if (_.users != null && _.users.length > 0)
+      this.vector(_.users, this.int64);     // ?: bigint[] - flags.4?Vector<long>
+  },
+  ["businessAwayMessageScheduleAlways"](_) {
+    this.int32(-910564679);
+  },
+  ["businessAwayMessageScheduleOutsideWorkHours"](_) {
+    this.int32(-1007487743);
+  },
+  ["businessAwayMessageScheduleCustom"](_) {
+    this.int32(-867328308);
+    this.int32(_.start_date);               // : number - int
+    this.int32(_.end_date);                 // : number - int
+  },
+  ["inputBusinessGreetingMessage"](_) {
+    this.int32(26528571);
+    this.int32(_.shortcut_id);              // : number - int
+    this.object(_.recipients);              // : InputBusinessRecipients - InputBusinessRecipients
+    this.int32(_.no_activity_days);         // : number - int
+  },
+  ["businessGreetingMessage"](_) {
+    this.int32(-451302485);
+    this.int32(_.shortcut_id);              // : number - int
+    this.object(_.recipients);              // : BusinessRecipients - BusinessRecipients
+    this.int32(_.no_activity_days);         // : number - int
+  },
+  ["inputBusinessAwayMessage"](_) {
+    this.int32(-2094959136);
+    this.int32(
+      (+(_.offline_only != null) << 0)
+    )
+    if (_.offline_only != null)
+      this.true(_.offline_only);            // ?: true - flags.0?true
+    this.int32(_.shortcut_id);              // : number - int
+    this.object(_.schedule);                // : BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    this.object(_.recipients);              // : InputBusinessRecipients - InputBusinessRecipients
+  },
+  ["businessAwayMessage"](_) {
+    this.int32(-283809188);
+    this.int32(
+      (+(_.offline_only != null) << 0)
+    )
+    if (_.offline_only != null)
+      this.true(_.offline_only);            // ?: true - flags.0?true
+    this.int32(_.shortcut_id);              // : number - int
+    this.object(_.schedule);                // : BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    this.object(_.recipients);              // : BusinessRecipients - BusinessRecipients
+  },
+  ["timezone"](_) {
+    this.int32(-7173643);
+    this.string(_.id);                      // : string - string
+    this.string(_.name);                    // : string - string
+    this.int32(_.utc_offset);               // : number - int
+  },
+  ["help.timezonesListNotModified"](_) {
+    this.int32(-1761146676);
+  },
+  ["help.timezonesList"](_) {
+    this.int32(2071260529);
+    this.vector(_.timezones, this.object);  // : Timezone[] - Vector<Timezone>
+    this.int32(_.hash);                     // : number - int
+  },
+  ["quickReply"](_) {
+    this.int32(110563371);
+    this.int32(_.shortcut_id);              // : number - int
+    this.string(_.shortcut);                // : string - string
+    this.int32(_.top_message);              // : number - int
+    this.int32(_.count);                    // : number - int
+  },
+  ["inputQuickReplyShortcut"](_) {
+    this.int32(609840449);
+    this.string(_.shortcut);                // : string - string
+  },
+  ["inputQuickReplyShortcutId"](_) {
+    this.int32(18418929);
+    this.int32(_.shortcut_id);              // : number - int
+  },
+  ["messages.quickReplies"](_) {
+    this.int32(-963811691);
+    this.vector(_.quick_replies, this.object); // : QuickReply[] - Vector<QuickReply>
+    this.vector(_.messages, this.object);   // : Message[] - Vector<Message>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.quickRepliesNotModified"](_) {
+    this.int32(1603398491);
+  },
+  ["connectedBot"](_) {
+    this.int32(-1123645951);
+    this.int32(
+      (+(_.can_reply != null) << 0)
+    )
+    if (_.can_reply != null)
+      this.true(_.can_reply);               // ?: true - flags.0?true
+    this.int64(_.bot_id);                   // : bigint - long
+    this.object(_.recipients);              // : BusinessBotRecipients - BusinessBotRecipients
+  },
+  ["account.connectedBots"](_) {
+    this.int32(400029819);
+    this.vector(_.connected_bots, this.object); // : ConnectedBot[] - Vector<ConnectedBot>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["messages.dialogFilters"](_) {
+    this.int32(718878489);
+    this.int32(
+      (+(_.tags_enabled != null) << 0)
+    )
+    if (_.tags_enabled != null)
+      this.true(_.tags_enabled);            // ?: true - flags.0?true
+    this.vector(_.filters, this.object);    // : DialogFilter[] - Vector<DialogFilter>
+  },
+  ["birthday"](_) {
+    this.int32(1821253126);
+    this.int32(
+      (+(_.year != null) << 0)
+    )
+    this.int32(_.day);                      // : number - int
+    this.int32(_.month);                    // : number - int
+    if (_.year != null)
+      this.int32(_.year);                   // ?: number - flags.0?int
+  },
+  ["botBusinessConnection"](_) {
+    this.int32(-1989921868);
+    this.int32(
+      (+(_.can_reply != null) << 0)
+      | (+(_.disabled != null) << 1)
+    )
+    if (_.can_reply != null)
+      this.true(_.can_reply);               // ?: true - flags.0?true
+    if (_.disabled != null)
+      this.true(_.disabled);                // ?: true - flags.1?true
+    this.string(_.connection_id);           // : string - string
+    this.int64(_.user_id);                  // : bigint - long
+    this.int32(_.dc_id);                    // : number - int
+    this.int32(_.date);                     // : number - int
+  },
+  ["inputBusinessIntro"](_) {
+    this.int32(163867085);
+    this.int32(
+      (+(_.sticker != null) << 0)
+    )
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.sticker != null)
+      this.object(_.sticker);               // ?: InputDocument - flags.0?InputDocument
+  },
+  ["businessIntro"](_) {
+    this.int32(1510606445);
+    this.int32(
+      (+(_.sticker != null) << 0)
+    )
+    this.string(_.title);                   // : string - string
+    this.string(_.description);             // : string - string
+    if (_.sticker != null)
+      this.object(_.sticker);               // ?: Document - flags.0?Document
+  },
+  ["messages.myStickers"](_) {
+    this.int32(-83926371);
+    this.int32(_.count);                    // : number - int
+    this.vector(_.sets, this.object);       // : StickerSetCovered[] - Vector<StickerSetCovered>
+  },
+  ["inputCollectibleUsername"](_) {
+    this.int32(-476815191);
+    this.string(_.username);                // : string - string
+  },
+  ["inputCollectiblePhone"](_) {
+    this.int32(-1562241884);
+    this.string(_.phone);                   // : string - string
+  },
+  ["fragment.collectibleInfo"](_) {
+    this.int32(1857945489);
+    this.int32(_.purchase_date);            // : number - int
+    this.string(_.currency);                // : string - string
+    this.int64(_.amount);                   // : bigint - long
+    this.string(_.crypto_currency);         // : string - string
+    this.int64(_.crypto_amount);            // : bigint - long
+    this.string(_.url);                     // : string - string
+  },
+  ["inputBusinessBotRecipients"](_) {
+    this.int32(-991587810);
+    this.int32(
+      (+(_.existing_chats != null) << 0)
+      | (+(_.new_chats != null) << 1)
+      | (+(_.contacts != null) << 2)
+      | (+(_.non_contacts != null) << 3)
+      | (+(_.exclude_selected != null) << 5)
+      | (+(_.users != null && _.users.length > 0) << 4)
+      | (+(_.exclude_users != null && _.exclude_users.length > 0) << 6)
+    )
+    if (_.existing_chats != null)
+      this.true(_.existing_chats);          // ?: true - flags.0?true
+    if (_.new_chats != null)
+      this.true(_.new_chats);               // ?: true - flags.1?true
+    if (_.contacts != null)
+      this.true(_.contacts);                // ?: true - flags.2?true
+    if (_.non_contacts != null)
+      this.true(_.non_contacts);            // ?: true - flags.3?true
+    if (_.exclude_selected != null)
+      this.true(_.exclude_selected);        // ?: true - flags.5?true
+    if (_.users != null && _.users.length > 0)
+      this.vector(_.users, this.object);    // ?: InputUser[] - flags.4?Vector<InputUser>
+    if (_.exclude_users != null && _.exclude_users.length > 0)
+      this.vector(_.exclude_users, this.object); // ?: InputUser[] - flags.6?Vector<InputUser>
+  },
+  ["businessBotRecipients"](_) {
+    this.int32(-1198722189);
+    this.int32(
+      (+(_.existing_chats != null) << 0)
+      | (+(_.new_chats != null) << 1)
+      | (+(_.contacts != null) << 2)
+      | (+(_.non_contacts != null) << 3)
+      | (+(_.exclude_selected != null) << 5)
+      | (+(_.users != null && _.users.length > 0) << 4)
+      | (+(_.exclude_users != null && _.exclude_users.length > 0) << 6)
+    )
+    if (_.existing_chats != null)
+      this.true(_.existing_chats);          // ?: true - flags.0?true
+    if (_.new_chats != null)
+      this.true(_.new_chats);               // ?: true - flags.1?true
+    if (_.contacts != null)
+      this.true(_.contacts);                // ?: true - flags.2?true
+    if (_.non_contacts != null)
+      this.true(_.non_contacts);            // ?: true - flags.3?true
+    if (_.exclude_selected != null)
+      this.true(_.exclude_selected);        // ?: true - flags.5?true
+    if (_.users != null && _.users.length > 0)
+      this.vector(_.users, this.int64);     // ?: bigint[] - flags.4?Vector<long>
+    if (_.exclude_users != null && _.exclude_users.length > 0)
+      this.vector(_.exclude_users, this.int64); // ?: bigint[] - flags.6?Vector<long>
+  },
+  ["contactBirthday"](_) {
+    this.int32(496600883);
+    this.int64(_.contact_id);               // : bigint - long
+    this.object(_.birthday);                // : Birthday - Birthday
+  },
+  ["contacts.contactBirthdays"](_) {
+    this.int32(290452237);
+    this.vector(_.contacts, this.object);   // : ContactBirthday[] - Vector<ContactBirthday>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["missingInvitee"](_) {
+    this.int32(1653379620);
+    this.int32(
+      (+(_.premium_would_allow_invite != null) << 0)
+      | (+(_.premium_required_for_pm != null) << 1)
+    )
+    if (_.premium_would_allow_invite != null)
+      this.true(_.premium_would_allow_invite); // ?: true - flags.0?true
+    if (_.premium_required_for_pm != null)
+      this.true(_.premium_required_for_pm); // ?: true - flags.1?true
+    this.int64(_.user_id);                  // : bigint - long
+  },
+  ["messages.invitedUsers"](_) {
+    this.int32(2136862630);
+    this.object(_.updates);                 // : Updates - Updates
+    this.vector(_.missing_invitees, this.object); // : MissingInvitee[] - Vector<MissingInvitee>
+  },
+  ["inputBusinessChatLink"](_) {
+    this.int32(292003751);
+    this.int32(
+      (+(_.entities != null && _.entities.length > 0) << 0)
+      | (+(_.title != null) << 1)
+    )
+    this.string(_.message);                 // : string - string
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.1?string
+  },
+  ["businessChatLink"](_) {
+    this.int32(-1263638929);
+    this.int32(
+      (+(_.entities != null && _.entities.length > 0) << 0)
+      | (+(_.title != null) << 1)
+    )
+    this.string(_.link);                    // : string - string
+    this.string(_.message);                 // : string - string
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.1?string
+    this.int32(_.views);                    // : number - int
+  },
+  ["account.businessChatLinks"](_) {
+    this.int32(-331111727);
+    this.vector(_.links, this.object);      // : BusinessChatLink[] - Vector<BusinessChatLink>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["account.resolvedBusinessChatLinks"](_) {
+    this.int32(-1708937439);
+    this.int32(
+      (+(_.entities != null && _.entities.length > 0) << 0)
+    )
+    this.object(_.peer);                    // : Peer - Peer
+    this.string(_.message);                 // : string - string
+    if (_.entities != null && _.entities.length > 0)
+      this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.0?Vector<MessageEntity>
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["requestedPeerUser"](_) {
+    this.int32(-701500310);
+    this.int32(
+      (+(_.first_name != null) << 0)
+      | (+(_.last_name != null) << 0)
+      | (+(_.username != null) << 1)
+      | (+(_.photo != null) << 2)
+    )
+    this.int64(_.user_id);                  // : bigint - long
+    if (_.first_name != null)
+      this.string(_.first_name);            // ?: string - flags.0?string
+    if (_.last_name != null)
+      this.string(_.last_name);             // ?: string - flags.0?string
+    if (_.username != null)
+      this.string(_.username);              // ?: string - flags.1?string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: Photo - flags.2?Photo
+  },
+  ["requestedPeerChat"](_) {
+    this.int32(1929860175);
+    this.int32(
+      (+(_.title != null) << 0)
+      | (+(_.photo != null) << 2)
+    )
+    this.int64(_.chat_id);                  // : bigint - long
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.0?string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: Photo - flags.2?Photo
+  },
+  ["requestedPeerChannel"](_) {
+    this.int32(-1952185372);
+    this.int32(
+      (+(_.title != null) << 0)
+      | (+(_.username != null) << 1)
+      | (+(_.photo != null) << 2)
+    )
+    this.int64(_.channel_id);               // : bigint - long
+    if (_.title != null)
+      this.string(_.title);                 // ?: string - flags.0?string
+    if (_.username != null)
+      this.string(_.username);              // ?: string - flags.1?string
+    if (_.photo != null)
+      this.object(_.photo);                 // ?: Photo - flags.2?Photo
+  },
+  ["sponsoredMessageReportOption"](_) {
+    this.int32(1124938064);
+    this.string(_.text);                    // : string - string
+    this.bytes(_.option);                   // : Uint8Array - bytes
+  },
+  ["channels.sponsoredMessageReportResultChooseOption"](_) {
+    this.int32(-2073059774);
+    this.string(_.title);                   // : string - string
+    this.vector(_.options, this.object);    // : SponsoredMessageReportOption[] - Vector<SponsoredMessageReportOption>
+  },
+  ["channels.sponsoredMessageReportResultAdsHidden"](_) {
+    this.int32(1044107055);
+  },
+  ["channels.sponsoredMessageReportResultReported"](_) {
+    this.int32(-1384544183);
+  },
+  ["stats.broadcastRevenueStats"](_) {
+    this.int32(-797226067);
+    this.object(_.top_hours_graph);         // : StatsGraph - StatsGraph
+    this.object(_.revenue_graph);           // : StatsGraph - StatsGraph
+    this.int64(_.current_balance);          // : bigint - long
+    this.int64(_.available_balance);        // : bigint - long
+    this.int64(_.overall_revenue);          // : bigint - long
+    this.double(_.usd_rate);                // : number - double
+  },
+  ["stats.broadcastRevenueWithdrawalUrl"](_) {
+    this.int32(-328886473);
+    this.string(_.url);                     // : string - string
+  },
+  ["broadcastRevenueTransactionProceeds"](_) {
+    this.int32(1434332356);
+    this.int64(_.amount);                   // : bigint - long
+    this.int32(_.from_date);                // : number - int
+    this.int32(_.to_date);                  // : number - int
+  },
+  ["broadcastRevenueTransactionWithdrawal"](_) {
+    this.int32(1515784568);
+    this.int32(
+      (+(_.pending != null) << 0)
+      | (+(_.failed != null) << 2)
+      | (+(_.transaction_date != null) << 1)
+      | (+(_.transaction_url != null) << 1)
+    )
+    if (_.pending != null)
+      this.true(_.pending);                 // ?: true - flags.0?true
+    if (_.failed != null)
+      this.true(_.failed);                  // ?: true - flags.2?true
+    this.int64(_.amount);                   // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.string(_.provider);                // : string - string
+    if (_.transaction_date != null)
+      this.int32(_.transaction_date);       // ?: number - flags.1?int
+    if (_.transaction_url != null)
+      this.string(_.transaction_url);       // ?: string - flags.1?string
+  },
+  ["broadcastRevenueTransactionRefund"](_) {
+    this.int32(1121127726);
+    this.int64(_.amount);                   // : bigint - long
+    this.int32(_.date);                     // : number - int
+    this.string(_.provider);                // : string - string
+  },
+  ["stats.broadcastRevenueTransactions"](_) {
+    this.int32(-2028632986);
+    this.int32(_.count);                    // : number - int
+    this.vector(_.transactions, this.object); // : BroadcastRevenueTransaction[] - Vector<BroadcastRevenueTransaction>
   },
 };
 
@@ -17288,7 +19141,7 @@ export const $decoder = new Map([
     _.id = this.int64();                    // : bigint - long
     return _;
   }],
-  [-346018011, function decode$user() {
+  [559694904, function decode$user() {
     const _ = { _: "user" }
     const flags = this.int32();
     if (flags & 1024) _.self = true         // ?: true - flags.10?true
@@ -17314,6 +19167,8 @@ export const $decoder = new Map([
     if (flags2 & 4) _.close_friend = true   // ?: true - flags2.2?true
     if (flags2 & 8) _.stories_hidden = true // ?: true - flags2.3?true
     if (flags2 & 16) _.stories_unavailable = true // ?: true - flags2.4?true
+    if (flags2 & 1024) _.contact_require_premium = true // ?: true - flags2.10?true
+    if (flags2 & 2048) _.bot_business = true // ?: true - flags2.11?true
     _.id = this.int64();                    // : bigint - long
     if (flags & 1) _.access_hash = this.int64() // ?: bigint - flags.0?long
     if (flags & 2) _.first_name = this.string() // ?: string - flags.1?string
@@ -17329,8 +19184,8 @@ export const $decoder = new Map([
     if (flags & 1073741824) _.emoji_status = this.object() // ?: global.EmojiStatus - flags.30?EmojiStatus
     if (flags2 & 1) _.usernames = this.vector(this.object) // ?: global.Username[] - flags2.0?Vector<Username>
     if (flags2 & 32) _.stories_max_id = this.int32() // ?: number - flags2.5?int
-    if (flags2 & 128) _.color = this.int32() // ?: number - flags2.7?int
-    if (flags2 & 64) _.background_emoji_id = this.int64() // ?: bigint - flags2.6?long
+    if (flags2 & 256) _.color = this.object() // ?: global.PeerColor - flags2.8?PeerColor
+    if (flags2 & 512) _.profile_color = this.object() // ?: global.PeerColor - flags2.9?PeerColor
     return _;
   }],
   [1326562017, function decode$userProfilePhotoEmpty() {
@@ -17359,14 +19214,23 @@ export const $decoder = new Map([
     _.was_online = this.int32();            // : number - int
     return _;
   }],
-  [-496024847, function decode$userStatusRecently() {
-    return { _: "userStatusRecently" }
+  [2065268168, function decode$userStatusRecently() {
+    const _ = { _: "userStatusRecently" }
+    const flags = this.int32();
+    if (flags & 1) _.by_me = true           // ?: true - flags.0?true
+    return _;
   }],
-  [129960444, function decode$userStatusLastWeek() {
-    return { _: "userStatusLastWeek" }
+  [1410997530, function decode$userStatusLastWeek() {
+    const _ = { _: "userStatusLastWeek" }
+    const flags = this.int32();
+    if (flags & 1) _.by_me = true           // ?: true - flags.0?true
+    return _;
   }],
-  [2011940674, function decode$userStatusLastMonth() {
-    return { _: "userStatusLastMonth" }
+  [1703516023, function decode$userStatusLastMonth() {
+    const _ = { _: "userStatusLastMonth" }
+    const flags = this.int32();
+    if (flags & 1) _.by_me = true           // ?: true - flags.0?true
+    return _;
   }],
   [693512293, function decode$chatEmpty() {
     const _ = { _: "chatEmpty" }
@@ -17399,7 +19263,7 @@ export const $decoder = new Map([
     _.title = this.string();                // : string - string
     return _;
   }],
-  [427944574, function decode$channel() {
+  [179174543, function decode$channel() {
     const _ = { _: "channel" }
     const flags = this.int32();
     if (flags & 1) _.creator = true         // ?: true - flags.0?true
@@ -17439,8 +19303,10 @@ export const $decoder = new Map([
     if (flags & 131072) _.participants_count = this.int32() // ?: number - flags.17?int
     if (flags2 & 1) _.usernames = this.vector(this.object) // ?: global.Username[] - flags2.0?Vector<Username>
     if (flags2 & 16) _.stories_max_id = this.int32() // ?: number - flags2.4?int
-    if (flags2 & 64) _.color = this.int32() // ?: number - flags2.6?int
-    if (flags2 & 32) _.background_emoji_id = this.int64() // ?: bigint - flags2.5?long
+    if (flags2 & 128) _.color = this.object() // ?: global.PeerColor - flags2.7?PeerColor
+    if (flags2 & 256) _.profile_color = this.object() // ?: global.PeerColor - flags2.8?PeerColor
+    if (flags2 & 512) _.emoji_status = this.object() // ?: global.EmojiStatus - flags2.9?EmojiStatus
+    if (flags2 & 1024) _.level = this.int32() // ?: number - flags2.10?int
     return _;
   }],
   [399807445, function decode$channelForbidden() {
@@ -17478,7 +19344,7 @@ export const $decoder = new Map([
     if (flags & 262144) _.available_reactions = this.object() // ?: global.ChatReactions - flags.18?ChatReactions
     return _;
   }],
-  [1915758525, function decode$channelFull() {
+  [1153455271, function decode$channelFull() {
     const _ = { _: "channelFull" }
     const flags = this.int32();
     if (flags & 8) _.can_view_participants = true // ?: true - flags.3?true
@@ -17495,6 +19361,9 @@ export const $decoder = new Map([
     if (flags2 & 4) _.participants_hidden = true // ?: true - flags2.2?true
     if (flags2 & 8) _.translations_disabled = true // ?: true - flags2.3?true
     if (flags2 & 32) _.stories_pinned_available = true // ?: true - flags2.5?true
+    if (flags2 & 64) _.view_forum_as_messages = true // ?: true - flags2.6?true
+    if (flags2 & 2048) _.restricted_sponsored = true // ?: true - flags2.11?true
+    if (flags2 & 4096) _.can_view_revenue = true // ?: true - flags2.12?true
     _.id = this.int64();                    // : bigint - long
     _.about = this.string();                // : string - string
     if (flags & 1) _.participants_count = this.int32() // ?: number - flags.0?int
@@ -17531,6 +19400,10 @@ export const $decoder = new Map([
     if (flags & 536870912) _.default_send_as = this.object() // ?: global.Peer - flags.29?Peer
     if (flags & 1073741824) _.available_reactions = this.object() // ?: global.ChatReactions - flags.30?ChatReactions
     if (flags2 & 16) _.stories = this.object() // ?: global.PeerStories - flags2.4?PeerStories
+    if (flags2 & 128) _.wallpaper = this.object() // ?: global.WallPaper - flags2.7?WallPaper
+    if (flags2 & 256) _.boosts_applied = this.int32() // ?: number - flags2.8?int
+    if (flags2 & 512) _.boosts_unrestrict = this.int32() // ?: number - flags2.9?int
+    if (flags2 & 1024) _.emojiset = this.object() // ?: global.StickerSet - flags2.10?StickerSet
     return _;
   }],
   [-1070776313, function decode$chatParticipant() {
@@ -17585,7 +19458,7 @@ export const $decoder = new Map([
     if (flags & 1) _.peer_id = this.object() // ?: global.Peer - flags.0?Peer
     return _;
   }],
-  [940666592, function decode$message() {
+  [592953125, function decode$message() {
     const _ = { _: "message" }
     const flags = this.int32();
     if (flags & 2) _.out = true             // ?: true - flags.1?true
@@ -17599,11 +19472,16 @@ export const $decoder = new Map([
     if (flags & 16777216) _.pinned = true   // ?: true - flags.24?true
     if (flags & 67108864) _.noforwards = true // ?: true - flags.26?true
     if (flags & 134217728) _.invert_media = true // ?: true - flags.27?true
+    const flags2 = this.int32();
+    if (flags2 & 2) _.offline = true        // ?: true - flags2.1?true
     _.id = this.int32();                    // : number - int
     if (flags & 256) _.from_id = this.object() // ?: global.Peer - flags.8?Peer
+    if (flags & 536870912) _.from_boosts_applied = this.int32() // ?: number - flags.29?int
     _.peer_id = this.object();              // : global.Peer - Peer
+    if (flags & 268435456) _.saved_peer_id = this.object() // ?: global.Peer - flags.28?Peer
     if (flags & 4) _.fwd_from = this.object() // ?: global.MessageFwdHeader - flags.2?MessageFwdHeader
     if (flags & 2048) _.via_bot_id = this.int64() // ?: bigint - flags.11?long
+    if (flags2 & 1) _.via_business_bot_id = this.int64() // ?: bigint - flags2.0?long
     if (flags & 8) _.reply_to = this.object() // ?: global.MessageReplyHeader - flags.3?MessageReplyHeader
     _.date = this.int32();                  // : number - int
     _.message = this.string();              // : string - string
@@ -17619,6 +19497,7 @@ export const $decoder = new Map([
     if (flags & 1048576) _.reactions = this.object() // ?: global.MessageReactions - flags.20?MessageReactions
     if (flags & 4194304) _.restriction_reason = this.vector(this.object) // ?: global.RestrictionReason[] - flags.22?Vector<RestrictionReason>
     if (flags & 33554432) _.ttl_period = this.int32() // ?: number - flags.25?int
+    if (flags & 1073741824) _.quick_reply_shortcut_id = this.int32() // ?: number - flags.30?int
     return _;
   }],
   [721967202, function decode$messageService() {
@@ -17672,6 +19551,9 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 8) _.nopremium = true       // ?: true - flags.3?true
     if (flags & 16) _.spoiler = true        // ?: true - flags.4?true
+    if (flags & 64) _.video = true          // ?: true - flags.6?true
+    if (flags & 128) _.round = true         // ?: true - flags.7?true
+    if (flags & 256) _.voice = true         // ?: true - flags.8?true
     if (flags & 1) _.document = this.object() // ?: global.Document - flags.0?Document
     if (flags & 32) _.alt_document = this.object() // ?: global.Document - flags.5?Document
     if (flags & 4) _.ttl_seconds = this.int32() // ?: number - flags.2?int
@@ -17747,14 +19629,32 @@ export const $decoder = new Map([
     if (flags & 1) _.story = this.object()  // ?: global.StoryItem - flags.0?StoryItem
     return _;
   }],
-  [1478887012, function decode$messageMediaGiveaway() {
+  [-626162256, function decode$messageMediaGiveaway() {
     const _ = { _: "messageMediaGiveaway" }
     const flags = this.int32();
     if (flags & 1) _.only_new_subscribers = true // ?: true - flags.0?true
+    if (flags & 4) _.winners_are_visible = true // ?: true - flags.2?true
     _.channels = this.vector(this.int64);   // : bigint[] - Vector<long>
     if (flags & 2) _.countries_iso2 = this.vector(this.string) // ?: string[] - flags.1?Vector<string>
+    if (flags & 8) _.prize_description = this.string() // ?: string - flags.3?string
     _.quantity = this.int32();              // : number - int
     _.months = this.int32();                // : number - int
+    _.until_date = this.int32();            // : number - int
+    return _;
+  }],
+  [-963047320, function decode$messageMediaGiveawayResults() {
+    const _ = { _: "messageMediaGiveawayResults" }
+    const flags = this.int32();
+    if (flags & 1) _.only_new_subscribers = true // ?: true - flags.0?true
+    if (flags & 4) _.refunded = true        // ?: true - flags.2?true
+    _.channel_id = this.int64();            // : bigint - long
+    if (flags & 8) _.additional_peers_count = this.int32() // ?: number - flags.3?int
+    _.launch_msg_id = this.int32();         // : number - int
+    _.winners_count = this.int32();         // : number - int
+    _.unclaimed_count = this.int32();       // : number - int
+    _.winners = this.vector(this.int64);    // : bigint[] - Vector<long>
+    _.months = this.int32();                // : number - int
+    if (flags & 2) _.prize_description = this.string() // ?: string - flags.1?string
     _.until_date = this.int32();            // : number - int
     return _;
   }],
@@ -17970,23 +19870,21 @@ export const $decoder = new Map([
     _.photo = this.object();                // : global.Photo - Photo
     return _;
   }],
-  [-25742243, function decode$messageActionRequestedPeer() {
+  [827428507, function decode$messageActionRequestedPeer() {
     const _ = { _: "messageActionRequestedPeer" }
     _.button_id = this.int32();             // : number - int
-    _.peer = this.object();                 // : global.Peer - Peer
+    _.peers = this.vector(this.object);     // : global.Peer[] - Vector<Peer>
     return _;
   }],
-  [-1136350937, function decode$messageActionSetChatWallPaper() {
+  [1348510708, function decode$messageActionSetChatWallPaper() {
     const _ = { _: "messageActionSetChatWallPaper" }
+    const flags = this.int32();
+    if (flags & 1) _.same = true            // ?: true - flags.0?true
+    if (flags & 2) _.for_both = true        // ?: true - flags.1?true
     _.wallpaper = this.object();            // : global.WallPaper - WallPaper
     return _;
   }],
-  [-1065845395, function decode$messageActionSetSameChatWallPaper() {
-    const _ = { _: "messageActionSetSameChatWallPaper" }
-    _.wallpaper = this.object();            // : global.WallPaper - WallPaper
-    return _;
-  }],
-  [-758129906, function decode$messageActionGiftCode() {
+  [1737240073, function decode$messageActionGiftCode() {
     const _ = { _: "messageActionGiftCode" }
     const flags = this.int32();
     if (flags & 1) _.via_giveaway = true    // ?: true - flags.0?true
@@ -17994,16 +19892,38 @@ export const $decoder = new Map([
     if (flags & 2) _.boost_peer = this.object() // ?: global.Peer - flags.1?Peer
     _.months = this.int32();                // : number - int
     _.slug = this.string();                 // : string - string
+    if (flags & 4) _.currency = this.string() // ?: string - flags.2?string
+    if (flags & 4) _.amount = this.int64()  // ?: bigint - flags.2?long
+    if (flags & 8) _.crypto_currency = this.string() // ?: string - flags.3?string
+    if (flags & 8) _.crypto_amount = this.int64() // ?: bigint - flags.3?long
     return _;
   }],
   [858499565, function decode$messageActionGiveawayLaunch() {
     return { _: "messageActionGiveawayLaunch" }
+  }],
+  [715107781, function decode$messageActionGiveawayResults() {
+    const _ = { _: "messageActionGiveawayResults" }
+    _.winners_count = this.int32();         // : number - int
+    _.unclaimed_count = this.int32();       // : number - int
+    return _;
+  }],
+  [-872240531, function decode$messageActionBoostApply() {
+    const _ = { _: "messageActionBoostApply" }
+    _.boosts = this.int32();                // : number - int
+    return _;
+  }],
+  [-1816979384, function decode$messageActionRequestedPeerSentMe() {
+    const _ = { _: "messageActionRequestedPeerSentMe" }
+    _.button_id = this.int32();             // : number - int
+    _.peers = this.vector(this.object);     // : global.RequestedPeer[] - Vector<RequestedPeer>
+    return _;
   }],
   [-712374074, function decode$dialog() {
     const _ = { _: "dialog" }
     const flags = this.int32();
     if (flags & 4) _.pinned = true          // ?: true - flags.2?true
     if (flags & 8) _.unread_mark = true     // ?: true - flags.3?true
+    if (flags & 64) _.view_forum_as_messages = true // ?: true - flags.6?true
     _.peer = this.object();                 // : global.Peer - Peer
     _.top_message = this.int32();           // : number - int
     _.read_inbox_max_id = this.int32();     // : number - int
@@ -18186,7 +20106,7 @@ export const $decoder = new Map([
     if (flags & 1024) _.stories_other_sound = this.object() // ?: global.NotificationSound - flags.10?NotificationSound
     return _;
   }],
-  [-1525149427, function decode$peerSettings() {
+  [-1395233698, function decode$peerSettings() {
     const _ = { _: "peerSettings" }
     const flags = this.int32();
     if (flags & 1) _.report_spam = true     // ?: true - flags.0?true
@@ -18198,9 +20118,13 @@ export const $decoder = new Map([
     if (flags & 128) _.autoarchived = true  // ?: true - flags.7?true
     if (flags & 256) _.invite_members = true // ?: true - flags.8?true
     if (flags & 1024) _.request_chat_broadcast = true // ?: true - flags.10?true
+    if (flags & 2048) _.business_bot_paused = true // ?: true - flags.11?true
+    if (flags & 4096) _.business_bot_can_reply = true // ?: true - flags.12?true
     if (flags & 64) _.geo_distance = this.int32() // ?: number - flags.6?int
     if (flags & 512) _.request_chat_title = this.string() // ?: string - flags.9?string
     if (flags & 512) _.request_chat_date = this.int32() // ?: number - flags.9?int
+    if (flags & 8192) _.business_bot_id = this.int64() // ?: bigint - flags.13?long
+    if (flags & 8192) _.business_bot_manage_url = this.string() // ?: string - flags.13?string
     return _;
   }],
   [-1539849235, function decode$wallPaper() {
@@ -18256,7 +20180,7 @@ export const $decoder = new Map([
   [-1631091139, function decode$inputReportReasonPersonalDetails() {
     return { _: "inputReportReasonPersonalDetails" }
   }],
-  [-1179571092, function decode$userFull() {
+  [-862357728, function decode$userFull() {
     const _ = { _: "userFull" }
     const flags = this.int32();
     if (flags & 1) _.blocked = true         // ?: true - flags.0?true
@@ -18269,6 +20193,10 @@ export const $decoder = new Map([
     if (flags & 8388608) _.translations_disabled = true // ?: true - flags.23?true
     if (flags & 67108864) _.stories_pinned_available = true // ?: true - flags.26?true
     if (flags & 134217728) _.blocked_my_stories_from = true // ?: true - flags.27?true
+    if (flags & 268435456) _.wallpaper_overridden = true // ?: true - flags.28?true
+    if (flags & 536870912) _.contact_require_premium = true // ?: true - flags.29?true
+    if (flags & 1073741824) _.read_dates_private = true // ?: true - flags.30?true
+    const flags2 = this.int32();
     _.id = this.int64();                    // : bigint - long
     if (flags & 2) _.about = this.string()  // ?: string - flags.1?string
     _.settings = this.object();             // : global.PeerSettings - PeerSettings
@@ -18288,6 +20216,14 @@ export const $decoder = new Map([
     if (flags & 524288) _.premium_gifts = this.vector(this.object) // ?: global.PremiumGiftOption[] - flags.19?Vector<PremiumGiftOption>
     if (flags & 16777216) _.wallpaper = this.object() // ?: global.WallPaper - flags.24?WallPaper
     if (flags & 33554432) _.stories = this.object() // ?: global.PeerStories - flags.25?PeerStories
+    if (flags2 & 1) _.business_work_hours = this.object() // ?: global.BusinessWorkHours - flags2.0?BusinessWorkHours
+    if (flags2 & 2) _.business_location = this.object() // ?: global.BusinessLocation - flags2.1?BusinessLocation
+    if (flags2 & 4) _.business_greeting_message = this.object() // ?: global.BusinessGreetingMessage - flags2.2?BusinessGreetingMessage
+    if (flags2 & 8) _.business_away_message = this.object() // ?: global.BusinessAwayMessage - flags2.3?BusinessAwayMessage
+    if (flags2 & 16) _.business_intro = this.object() // ?: global.BusinessIntro - flags2.4?BusinessIntro
+    if (flags2 & 32) _.birthday = this.object() // ?: global.Birthday - flags2.5?Birthday
+    if (flags2 & 64) _.personal_channel_id = this.int64() // ?: bigint - flags2.6?long
+    if (flags2 & 64) _.personal_channel_message = this.int32() // ?: number - flags2.6?int
     return _;
   }],
   [341499403, function decode$contact() {
@@ -19235,11 +21171,6 @@ export const $decoder = new Map([
   [-335171433, function decode$updateAutoSaveSettings() {
     return { _: "updateAutoSaveSettings" }
   }],
-  [-856651050, function decode$updateGroupInvitePrivacyForbidden() {
-    const _ = { _: "updateGroupInvitePrivacyForbidden" }
-    _.user_id = this.int64();               // : bigint - long
-    return _;
-  }],
   [1974712216, function decode$updateStory() {
     const _ = { _: "updateStory" }
     _.peer = this.object();                 // : global.Peer - Peer
@@ -19268,6 +21199,126 @@ export const $decoder = new Map([
     _.peer = this.object();                 // : global.Peer - Peer
     _.story_id = this.int32();              // : number - int
     _.reaction = this.object();             // : global.Reaction - Reaction
+    return _;
+  }],
+  [-1873947492, function decode$updateBotChatBoost() {
+    const _ = { _: "updateBotChatBoost" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.boost = this.object();                // : global.Boost - Boost
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [129403168, function decode$updateChannelViewForumAsMessages() {
+    const _ = { _: "updateChannelViewForumAsMessages" }
+    _.channel_id = this.int64();            // : bigint - long
+    _.enabled = this.bool();                // : boolean - Bool
+    return _;
+  }],
+  [-1371598819, function decode$updatePeerWallpaper() {
+    const _ = { _: "updatePeerWallpaper" }
+    const flags = this.int32();
+    if (flags & 2) _.wallpaper_overridden = true // ?: true - flags.1?true
+    _.peer = this.object();                 // : global.Peer - Peer
+    if (flags & 1) _.wallpaper = this.object() // ?: global.WallPaper - flags.0?WallPaper
+    return _;
+  }],
+  [-1407069234, function decode$updateBotMessageReaction() {
+    const _ = { _: "updateBotMessageReaction" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.date = this.int32();                  // : number - int
+    _.actor = this.object();                // : global.Peer - Peer
+    _.old_reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
+    _.new_reactions = this.vector(this.object); // : global.Reaction[] - Vector<Reaction>
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [164329305, function decode$updateBotMessageReactions() {
+    const _ = { _: "updateBotMessageReactions" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.msg_id = this.int32();                // : number - int
+    _.date = this.int32();                  // : number - int
+    _.reactions = this.vector(this.object); // : global.ReactionCount[] - Vector<ReactionCount>
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1364222348, function decode$updateSavedDialogPinned() {
+    const _ = { _: "updateSavedDialogPinned" }
+    const flags = this.int32();
+    if (flags & 1) _.pinned = true          // ?: true - flags.0?true
+    _.peer = this.object();                 // : global.DialogPeer - DialogPeer
+    return _;
+  }],
+  [1751942566, function decode$updatePinnedSavedDialogs() {
+    const _ = { _: "updatePinnedSavedDialogs" }
+    const flags = this.int32();
+    if (flags & 1) _.order = this.vector(this.object) // ?: global.DialogPeer[] - flags.0?Vector<DialogPeer>
+    return _;
+  }],
+  [969307186, function decode$updateSavedReactionTags() {
+    return { _: "updateSavedReactionTags" }
+  }],
+  [-245208620, function decode$updateSmsJob() {
+    const _ = { _: "updateSmsJob" }
+    _.job_id = this.string();               // : string - string
+    return _;
+  }],
+  [-112784718, function decode$updateQuickReplies() {
+    const _ = { _: "updateQuickReplies" }
+    _.quick_replies = this.vector(this.object); // : global.QuickReply[] - Vector<QuickReply>
+    return _;
+  }],
+  [-180508905, function decode$updateNewQuickReply() {
+    const _ = { _: "updateNewQuickReply" }
+    _.quick_reply = this.object();          // : global.QuickReply - QuickReply
+    return _;
+  }],
+  [1407644140, function decode$updateDeleteQuickReply() {
+    const _ = { _: "updateDeleteQuickReply" }
+    _.shortcut_id = this.int32();           // : number - int
+    return _;
+  }],
+  [1040518415, function decode$updateQuickReplyMessage() {
+    const _ = { _: "updateQuickReplyMessage" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [1450174413, function decode$updateDeleteQuickReplyMessages() {
+    const _ = { _: "updateDeleteQuickReplyMessages" }
+    _.shortcut_id = this.int32();           // : number - int
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    return _;
+  }],
+  [-1964652166, function decode$updateBotBusinessConnect() {
+    const _ = { _: "updateBotBusinessConnect" }
+    _.connection = this.object();           // : global.BotBusinessConnection - BotBusinessConnection
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1646578564, function decode$updateBotNewBusinessMessage() {
+    const _ = { _: "updateBotNewBusinessMessage" }
+    const flags = this.int32();
+    _.connection_id = this.string();        // : string - string
+    _.message = this.object();              // : global.Message - Message
+    if (flags & 1) _.reply_to_message = this.object() // ?: global.Message - flags.0?Message
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [132077692, function decode$updateBotEditBusinessMessage() {
+    const _ = { _: "updateBotEditBusinessMessage" }
+    const flags = this.int32();
+    _.connection_id = this.string();        // : string - string
+    _.message = this.object();              // : global.Message - Message
+    if (flags & 1) _.reply_to_message = this.object() // ?: global.Message - flags.0?Message
+    _.qts = this.int32();                   // : number - int
+    return _;
+  }],
+  [-1607821266, function decode$updateBotDeleteBusinessMessage() {
+    const _ = { _: "updateBotDeleteBusinessMessage" }
+    _.connection_id = this.string();        // : string - string
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.messages = this.vector(this.int32);   // : number[] - Vector<int>
+    _.qts = this.int32();                   // : number - int
     return _;
   }],
   [-1519637954, function decode$updates__state() {
@@ -19815,6 +21866,9 @@ export const $decoder = new Map([
   [941870144, function decode$inputPrivacyKeyAbout() {
     return { _: "inputPrivacyKeyAbout" }
   }],
+  [-698740276, function decode$inputPrivacyKeyBirthday() {
+    return { _: "inputPrivacyKeyBirthday" }
+  }],
   [-1137792208, function decode$privacyKeyStatusTimestamp() {
     return { _: "privacyKeyStatusTimestamp" }
   }],
@@ -19844,6 +21898,9 @@ export const $decoder = new Map([
   }],
   [-1534675103, function decode$privacyKeyAbout() {
     return { _: "privacyKeyAbout" }
+  }],
+  [536913176, function decode$privacyKeyBirthday() {
+    return { _: "privacyKeyBirthday" }
   }],
   [218751099, function decode$inputPrivacyValueAllowContacts() {
     return { _: "inputPrivacyValueAllowContacts" }
@@ -19880,6 +21937,9 @@ export const $decoder = new Map([
   [793067081, function decode$inputPrivacyValueAllowCloseFriends() {
     return { _: "inputPrivacyValueAllowCloseFriends" }
   }],
+  [2009975281, function decode$inputPrivacyValueAllowPremium() {
+    return { _: "inputPrivacyValueAllowPremium" }
+  }],
   [-123988, function decode$privacyValueAllowContacts() {
     return { _: "privacyValueAllowContacts" }
   }],
@@ -19914,6 +21974,9 @@ export const $decoder = new Map([
   }],
   [-135735141, function decode$privacyValueAllowCloseFriends() {
     return { _: "privacyValueAllowCloseFriends" }
+  }],
+  [-320241333, function decode$privacyValueAllowPremium() {
+    return { _: "privacyValueAllowPremium" }
   }],
   [1352683077, function decode$account__privacyRules() {
     const _ = { _: "account.privacyRules" }
@@ -20221,16 +22284,19 @@ export const $decoder = new Map([
   [1153562857, function decode$inputStickerSetEmojiDefaultTopicIcons() {
     return { _: "inputStickerSetEmojiDefaultTopicIcons" }
   }],
+  [1232373075, function decode$inputStickerSetEmojiChannelDefaultStatuses() {
+    return { _: "inputStickerSetEmojiChannelDefaultStatuses" }
+  }],
   [768691932, function decode$stickerSet() {
     const _ = { _: "stickerSet" }
     const flags = this.int32();
     if (flags & 2) _.archived = true        // ?: true - flags.1?true
     if (flags & 4) _.official = true        // ?: true - flags.2?true
     if (flags & 8) _.masks = true           // ?: true - flags.3?true
-    if (flags & 32) _.animated = true       // ?: true - flags.5?true
-    if (flags & 64) _.videos = true         // ?: true - flags.6?true
     if (flags & 128) _.emojis = true        // ?: true - flags.7?true
     if (flags & 512) _.text_color = true    // ?: true - flags.9?true
+    if (flags & 1024) _.channel_emoji_status = true // ?: true - flags.10?true
+    if (flags & 2048) _.creator = true      // ?: true - flags.11?true
     if (flags & 1) _.installed_date = this.int32() // ?: number - flags.0?int
     _.id = this.int64();                    // : bigint - long
     _.access_hash = this.int64();           // : bigint - long
@@ -20370,11 +22436,24 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     return _;
   }],
-  [218842764, function decode$keyboardButtonRequestPeer() {
+  [1406648280, function decode$keyboardButtonRequestPeer() {
     const _ = { _: "keyboardButtonRequestPeer" }
     _.text = this.string();                 // : string - string
     _.button_id = this.int32();             // : number - int
     _.peer_type = this.object();            // : global.RequestPeerType - RequestPeerType
+    _.max_quantity = this.int32();          // : number - int
+    return _;
+  }],
+  [-916050683, function decode$inputKeyboardButtonRequestPeer() {
+    const _ = { _: "inputKeyboardButtonRequestPeer" }
+    const flags = this.int32();
+    if (flags & 1) _.name_requested = true  // ?: true - flags.0?true
+    if (flags & 2) _.username_requested = true // ?: true - flags.1?true
+    if (flags & 4) _.photo_requested = true // ?: true - flags.2?true
+    _.text = this.string();                 // : string - string
+    _.button_id = this.int32();             // : number - int
+    _.peer_type = this.object();            // : global.RequestPeerType - RequestPeerType
+    _.max_quantity = this.int32();          // : number - int
     return _;
   }],
   [2002815875, function decode$keyboardButtonRow() {
@@ -20981,10 +23060,11 @@ export const $decoder = new Map([
     _.html = this.string();                 // : string - string
     return _;
   }],
-  [1601666510, function decode$messageFwdHeader() {
+  [1313731771, function decode$messageFwdHeader() {
     const _ = { _: "messageFwdHeader" }
     const flags = this.int32();
     if (flags & 128) _.imported = true      // ?: true - flags.7?true
+    if (flags & 2048) _.saved_out = true    // ?: true - flags.11?true
     if (flags & 1) _.from_id = this.object() // ?: global.Peer - flags.0?Peer
     if (flags & 32) _.from_name = this.string() // ?: string - flags.5?string
     _.date = this.int32();                  // : number - int
@@ -20992,6 +23072,9 @@ export const $decoder = new Map([
     if (flags & 8) _.post_author = this.string() // ?: string - flags.3?string
     if (flags & 16) _.saved_from_peer = this.object() // ?: global.Peer - flags.4?Peer
     if (flags & 16) _.saved_from_msg_id = this.int32() // ?: number - flags.4?int
+    if (flags & 256) _.saved_from_id = this.object() // ?: global.Peer - flags.8?Peer
+    if (flags & 512) _.saved_from_name = this.string() // ?: string - flags.9?string
+    if (flags & 1024) _.saved_date = this.int32() // ?: number - flags.10?int
     if (flags & 64) _.psa_type = this.string() // ?: string - flags.6?string
     return _;
   }],
@@ -21862,7 +23945,7 @@ export const $decoder = new Map([
     _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
     return _;
   }],
-  [-1770029977, function decode$phoneCall() {
+  [810769141, function decode$phoneCall() {
     const _ = { _: "phoneCall" }
     const flags = this.int32();
     if (flags & 32) _.p2p_allowed = true    // ?: true - flags.5?true
@@ -21877,6 +23960,7 @@ export const $decoder = new Map([
     _.protocol = this.object();             // : global.PhoneCallProtocol - PhoneCallProtocol
     _.connections = this.vector(this.object); // : global.PhoneConnection[] - Vector<PhoneConnection>
     _.start_date = this.int32();            // : number - int
+    if (flags & 128) _.custom_parameters = this.object() // ?: global.DataJSON - flags.7?DataJSON
     return _;
   }],
   [1355435489, function decode$phoneCallDiscarded() {
@@ -22231,16 +24315,34 @@ export const $decoder = new Map([
     _.new_value = this.bool();              // : boolean - Bool
     return _;
   }],
-  [1009460347, function decode$channelAdminLogEventActionChangeColor() {
-    const _ = { _: "channelAdminLogEventActionChangeColor" }
-    _.prev_value = this.int32();            // : number - int
-    _.new_value = this.int32();             // : number - int
+  [1469507456, function decode$channelAdminLogEventActionChangePeerColor() {
+    const _ = { _: "channelAdminLogEventActionChangePeerColor" }
+    _.prev_value = this.object();           // : global.PeerColor - PeerColor
+    _.new_value = this.object();            // : global.PeerColor - PeerColor
     return _;
   }],
-  [1147126836, function decode$channelAdminLogEventActionChangeBackgroundEmoji() {
-    const _ = { _: "channelAdminLogEventActionChangeBackgroundEmoji" }
-    _.prev_value = this.int64();            // : bigint - long
-    _.new_value = this.int64();             // : bigint - long
+  [1581742885, function decode$channelAdminLogEventActionChangeProfilePeerColor() {
+    const _ = { _: "channelAdminLogEventActionChangeProfilePeerColor" }
+    _.prev_value = this.object();           // : global.PeerColor - PeerColor
+    _.new_value = this.object();            // : global.PeerColor - PeerColor
+    return _;
+  }],
+  [834362706, function decode$channelAdminLogEventActionChangeWallpaper() {
+    const _ = { _: "channelAdminLogEventActionChangeWallpaper" }
+    _.prev_value = this.object();           // : global.WallPaper - WallPaper
+    _.new_value = this.object();            // : global.WallPaper - WallPaper
+    return _;
+  }],
+  [1051328177, function decode$channelAdminLogEventActionChangeEmojiStatus() {
+    const _ = { _: "channelAdminLogEventActionChangeEmojiStatus" }
+    _.prev_value = this.object();           // : global.EmojiStatus - EmojiStatus
+    _.new_value = this.object();            // : global.EmojiStatus - EmojiStatus
+    return _;
+  }],
+  [1188577451, function decode$channelAdminLogEventActionChangeEmojiStickerSet() {
+    const _ = { _: "channelAdminLogEventActionChangeEmojiStickerSet" }
+    _.prev_stickerset = this.object();      // : global.InputStickerSet - InputStickerSet
+    _.new_stickerset = this.object();       // : global.InputStickerSet - InputStickerSet
     return _;
   }],
   [531458253, function decode$channelAdminLogEvent() {
@@ -22989,7 +25091,7 @@ export const $decoder = new Map([
     if (flags & 256) _.app_sandbox = this.bool() // ?: boolean - flags.8?Bool
     return _;
   }],
-  [499236004, function decode$wallPaperSettings() {
+  [925826256, function decode$wallPaperSettings() {
     const _ = { _: "wallPaperSettings" }
     const flags = this.int32();
     if (flags & 2) _.blur = true            // ?: true - flags.1?true
@@ -23000,6 +25102,7 @@ export const $decoder = new Map([
     if (flags & 64) _.fourth_background_color = this.int32() // ?: number - flags.6?int
     if (flags & 8) _.intensity = this.int32() // ?: number - flags.3?int
     if (flags & 16) _.rotation = this.int32() // ?: number - flags.4?int
+    if (flags & 128) _.emoticon = this.string() // ?: string - flags.7?string
     return _;
   }],
   [-1163561432, function decode$autoDownloadSettings() {
@@ -23272,7 +25375,7 @@ export const $decoder = new Map([
     _.open_urls = this.vector(this.object); // : global.BankCardOpenUrl[] - Vector<BankCardOpenUrl>
     return _;
   }],
-  [1949890536, function decode$dialogFilter() {
+  [1605718587, function decode$dialogFilter() {
     const _ = { _: "dialogFilter" }
     const flags = this.int32();
     if (flags & 1) _.contacts = true        // ?: true - flags.0?true
@@ -23286,6 +25389,7 @@ export const $decoder = new Map([
     _.id = this.int32();                    // : number - int
     _.title = this.string();                // : string - string
     if (flags & 33554432) _.emoticon = this.string() // ?: string - flags.25?string
+    if (flags & 134217728) _.color = this.int32() // ?: number - flags.27?int
     _.pinned_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
     _.include_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
     _.exclude_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
@@ -23294,13 +25398,14 @@ export const $decoder = new Map([
   [909284270, function decode$dialogFilterDefault() {
     return { _: "dialogFilterDefault" }
   }],
-  [-699792216, function decode$dialogFilterChatlist() {
+  [-1612542300, function decode$dialogFilterChatlist() {
     const _ = { _: "dialogFilterChatlist" }
     const flags = this.int32();
     if (flags & 67108864) _.has_my_invites = true // ?: true - flags.26?true
     _.id = this.int32();                    // : number - int
     _.title = this.string();                // : string - string
     if (flags & 33554432) _.emoticon = this.string() // ?: string - flags.25?string
+    if (flags & 134217728) _.color = this.int32() // ?: number - flags.27?int
     _.pinned_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
     _.include_peers = this.vector(this.object); // : global.InputPeer[] - Vector<InputPeer>
     return _;
@@ -23346,19 +25451,16 @@ export const $decoder = new Map([
     if (flags & 1) _.zoom_token = this.string() // ?: string - flags.0?string
     return _;
   }],
-  [-1387279939, function decode$messageInteractionCounters() {
-    const _ = { _: "messageInteractionCounters" }
-    _.msg_id = this.int32();                // : number - int
-    _.views = this.int32();                 // : number - int
-    _.forwards = this.int32();              // : number - int
-    return _;
-  }],
-  [-1107852396, function decode$stats__broadcastStats() {
+  [963421692, function decode$stats__broadcastStats() {
     const _ = { _: "stats.broadcastStats" }
     _.period = this.object();               // : global.StatsDateRangeDays - StatsDateRangeDays
     _.followers = this.object();            // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
     _.views_per_post = this.object();       // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
     _.shares_per_post = this.object();      // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.reactions_per_post = this.object();   // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.views_per_story = this.object();      // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.shares_per_story = this.object();     // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
+    _.reactions_per_story = this.object();  // : global.StatsAbsValueAndPrev - StatsAbsValueAndPrev
     _.enabled_notifications = this.object(); // : global.StatsPercentValue - StatsPercentValue
     _.growth_graph = this.object();         // : global.StatsGraph - StatsGraph
     _.followers_graph = this.object();      // : global.StatsGraph - StatsGraph
@@ -23369,7 +25471,10 @@ export const $decoder = new Map([
     _.views_by_source_graph = this.object(); // : global.StatsGraph - StatsGraph
     _.new_followers_by_source_graph = this.object(); // : global.StatsGraph - StatsGraph
     _.languages_graph = this.object();      // : global.StatsGraph - StatsGraph
-    _.recent_message_interactions = this.vector(this.object); // : global.MessageInteractionCounters[] - Vector<MessageInteractionCounters>
+    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
+    _.story_interactions_graph = this.object(); // : global.StatsGraph - StatsGraph
+    _.story_reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
+    _.recent_posts_interactions = this.vector(this.object); // : global.PostInteractionCounters[] - Vector<PostInteractionCounters>
     return _;
   }],
   [-1728664459, function decode$help__promoDataEmpty() {
@@ -23460,6 +25565,8 @@ export const $decoder = new Map([
     if (flags & 1) _.archive_and_mute_new_noncontact_peers = true // ?: true - flags.0?true
     if (flags & 2) _.keep_archived_unmuted = true // ?: true - flags.1?true
     if (flags & 4) _.keep_archived_folders = true // ?: true - flags.2?true
+    if (flags & 8) _.hide_read_marks = true // ?: true - flags.3?true
+    if (flags & 16) _.new_noncontact_peers_require_premium = true // ?: true - flags.4?true
     return _;
   }],
   [1107543535, function decode$help__countryCode() {
@@ -23516,7 +25623,7 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [1860946621, function decode$messageReplyHeader() {
+  [-1346631205, function decode$messageReplyHeader() {
     const _ = { _: "messageReplyHeader" }
     const flags = this.int32();
     if (flags & 4) _.reply_to_scheduled = true // ?: true - flags.2?true
@@ -23529,11 +25636,12 @@ export const $decoder = new Map([
     if (flags & 2) _.reply_to_top_id = this.int32() // ?: number - flags.1?int
     if (flags & 64) _.quote_text = this.string() // ?: string - flags.6?string
     if (flags & 128) _.quote_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.7?Vector<MessageEntity>
+    if (flags & 1024) _.quote_offset = this.int32() // ?: number - flags.10?int
     return _;
   }],
-  [-1667711039, function decode$messageReplyStoryHeader() {
+  [240843065, function decode$messageReplyStoryHeader() {
     const _ = { _: "messageReplyStoryHeader" }
-    _.user_id = this.int64();               // : bigint - long
+    _.peer = this.object();                 // : global.Peer - Peer
     _.story_id = this.int32();              // : number - int
     return _;
   }],
@@ -23555,9 +25663,10 @@ export const $decoder = new Map([
     _.date = this.int32();                  // : number - int
     return _;
   }],
-  [-1986399595, function decode$stats__messageStats() {
+  [2145983508, function decode$stats__messageStats() {
     const _ = { _: "stats.messageStats" }
     _.views_graph = this.object();          // : global.StatsGraph - StatsGraph
+    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
     return _;
   }],
   [2004925620, function decode$groupCallDiscarded() {
@@ -23807,11 +25916,12 @@ export const $decoder = new Map([
   [-383330754, function decode$account__resetPasswordOk() {
     return { _: "account.resetPasswordOk" }
   }],
-  [-626000021, function decode$sponsoredMessage() {
+  [-313293833, function decode$sponsoredMessage() {
     const _ = { _: "sponsoredMessage" }
     const flags = this.int32();
     if (flags & 32) _.recommended = true    // ?: true - flags.5?true
     if (flags & 64) _.show_peer_photo = true // ?: true - flags.6?true
+    if (flags & 4096) _.can_report = true   // ?: true - flags.12?true
     _.random_id = this.bytes();             // : Uint8Array - bytes
     if (flags & 8) _.from_id = this.object() // ?: global.Peer - flags.3?Peer
     if (flags & 16) _.chat_invite = this.object() // ?: global.ChatInvite - flags.4?ChatInvite
@@ -23819,8 +25929,10 @@ export const $decoder = new Map([
     if (flags & 4) _.channel_post = this.int32() // ?: number - flags.2?int
     if (flags & 1) _.start_param = this.string() // ?: string - flags.0?string
     if (flags & 512) _.webpage = this.object() // ?: global.SponsoredWebPage - flags.9?SponsoredWebPage
+    if (flags & 1024) _.app = this.object() // ?: global.BotApp - flags.10?BotApp
     _.message = this.string();              // : string - string
     if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
+    if (flags & 2048) _.button_text = this.string() // ?: string - flags.11?string
     if (flags & 128) _.sponsor_info = this.string() // ?: string - flags.7?string
     if (flags & 256) _.additional_info = this.string() // ?: string - flags.8?string
     return _;
@@ -23912,6 +26024,7 @@ export const $decoder = new Map([
     const flags = this.int32();
     if (flags & 1) _.min = true             // ?: true - flags.0?true
     if (flags & 4) _.can_see_list = true    // ?: true - flags.2?true
+    if (flags & 8) _.reactions_as_tags = true // ?: true - flags.3?true
     _.results = this.vector(this.object);   // : global.ReactionCount[] - Vector<ReactionCount>
     if (flags & 2) _.recent_reactions = this.vector(this.object) // ?: global.MessagePeerReaction[] - flags.1?Vector<MessagePeerReaction>
     return _;
@@ -24125,12 +26238,14 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     return _;
   }],
-  [-1821037486, function decode$messages__transcribedAudio() {
+  [-809903785, function decode$messages__transcribedAudio() {
     const _ = { _: "messages.transcribedAudio" }
     const flags = this.int32();
     if (flags & 1) _.pending = true         // ?: true - flags.0?true
     _.transcription_id = this.int64();      // : bigint - long
     _.text = this.string();                 // : string - string
+    if (flags & 2) _.trial_remains_num = this.int32() // ?: number - flags.1?int
+    if (flags & 2) _.trial_remains_until_date = this.int32() // ?: number - flags.1?int
     return _;
   }],
   [1395946908, function decode$help__premiumPromo() {
@@ -24166,13 +26281,15 @@ export const $decoder = new Map([
     _.amount = this.int64();                // : bigint - long
     return _;
   }],
-  [2090038758, function decode$inputStorePaymentPremiumGiveaway() {
+  [369444042, function decode$inputStorePaymentPremiumGiveaway() {
     const _ = { _: "inputStorePaymentPremiumGiveaway" }
     const flags = this.int32();
     if (flags & 1) _.only_new_subscribers = true // ?: true - flags.0?true
+    if (flags & 8) _.winners_are_visible = true // ?: true - flags.3?true
     _.boost_peer = this.object();           // : global.InputPeer - InputPeer
     if (flags & 2) _.additional_peers = this.vector(this.object) // ?: global.InputPeer[] - flags.1?Vector<InputPeer>
     if (flags & 4) _.countries_iso2 = this.vector(this.string) // ?: string[] - flags.2?Vector<string>
+    if (flags & 16) _.prize_description = this.string() // ?: string - flags.4?string
     _.random_id = this.int64();             // : bigint - long
     _.until_date = this.int32();            // : number - int
     _.currency = this.string();             // : string - string
@@ -24654,7 +26771,7 @@ export const $decoder = new Map([
     _.expire_date = this.int32();           // : number - int
     return _;
   }],
-  [1153718222, function decode$storyItem() {
+  [2041735716, function decode$storyItem() {
     const _ = { _: "storyItem" }
     const flags = this.int32();
     if (flags & 32) _.pinned = true         // ?: true - flags.5?true
@@ -24668,6 +26785,8 @@ export const $decoder = new Map([
     if (flags & 65536) _.out = true         // ?: true - flags.16?true
     _.id = this.int32();                    // : number - int
     _.date = this.int32();                  // : number - int
+    if (flags & 262144) _.from_id = this.object() // ?: global.Peer - flags.18?Peer
+    if (flags & 131072) _.fwd_from = this.object() // ?: global.StoryFwdHeader - flags.17?StoryFwdHeader
     _.expire_date = this.int32();           // : number - int
     if (flags & 1) _.caption = this.string() // ?: string - flags.0?string
     if (flags & 2) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.1?Vector<MessageEntity>
@@ -24715,12 +26834,32 @@ export const $decoder = new Map([
     if (flags & 4) _.reaction = this.object() // ?: global.Reaction - flags.2?Reaction
     return _;
   }],
-  [1189722604, function decode$stories__storyViewsList() {
+  [-1870436597, function decode$storyViewPublicForward() {
+    const _ = { _: "storyViewPublicForward" }
+    const flags = this.int32();
+    if (flags & 1) _.blocked = true         // ?: true - flags.0?true
+    if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-1116418231, function decode$storyViewPublicRepost() {
+    const _ = { _: "storyViewPublicRepost" }
+    const flags = this.int32();
+    if (flags & 1) _.blocked = true         // ?: true - flags.0?true
+    if (flags & 2) _.blocked_my_stories_from = true // ?: true - flags.1?true
+    _.peer_id = this.object();              // : global.Peer - Peer
+    _.story = this.object();                // : global.StoryItem - StoryItem
+    return _;
+  }],
+  [1507299269, function decode$stories__storyViewsList() {
     const _ = { _: "stories.storyViewsList" }
     const flags = this.int32();
     _.count = this.int32();                 // : number - int
+    _.views_count = this.int32();           // : number - int
+    _.forwards_count = this.int32();        // : number - int
     _.reactions_count = this.int32();       // : number - int
     _.views = this.vector(this.object);     // : global.StoryView[] - Vector<StoryView>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     return _;
@@ -24731,7 +26870,7 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : global.User[] - Vector<User>
     return _;
   }],
-  [121554949, function decode$inputReplyToMessage() {
+  [583071445, function decode$inputReplyToMessage() {
     const _ = { _: "inputReplyToMessage" }
     const flags = this.int32();
     _.reply_to_msg_id = this.int32();       // : number - int
@@ -24739,11 +26878,12 @@ export const $decoder = new Map([
     if (flags & 2) _.reply_to_peer_id = this.object() // ?: global.InputPeer - flags.1?InputPeer
     if (flags & 4) _.quote_text = this.string() // ?: string - flags.2?string
     if (flags & 8) _.quote_entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.3?Vector<MessageEntity>
+    if (flags & 16) _.quote_offset = this.int32() // ?: number - flags.4?int
     return _;
   }],
-  [363917955, function decode$inputReplyToStory() {
+  [1484862010, function decode$inputReplyToStory() {
     const _ = { _: "inputReplyToStory" }
-    _.user_id = this.object();              // : global.InputUser - InputUser
+    _.peer = this.object();                 // : global.InputPeer - InputPeer
     _.story_id = this.int32();              // : number - int
     return _;
   }],
@@ -24801,6 +26941,20 @@ export const $decoder = new Map([
     _.reaction = this.object();             // : global.Reaction - Reaction
     return _;
   }],
+  [1996756655, function decode$mediaAreaChannelPost() {
+    const _ = { _: "mediaAreaChannelPost" }
+    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
+    _.channel_id = this.int64();            // : bigint - long
+    _.msg_id = this.int32();                // : number - int
+    return _;
+  }],
+  [577893055, function decode$inputMediaAreaChannelPost() {
+    const _ = { _: "inputMediaAreaChannelPost" }
+    _.coordinates = this.object();          // : global.MediaAreaCoordinates - MediaAreaCoordinates
+    _.channel = this.object();              // : global.InputChannel - InputChannel
+    _.msg_id = this.int32();                // : number - int
+    return _;
+  }],
   [-1707742823, function decode$peerStories() {
     const _ = { _: "peerStories" }
     const flags = this.int32();
@@ -24834,11 +26988,11 @@ export const $decoder = new Map([
     _.amount = this.int64();                // : bigint - long
     return _;
   }],
-  [-1222446760, function decode$payments__checkedGiftCode() {
+  [675942550, function decode$payments__checkedGiftCode() {
     const _ = { _: "payments.checkedGiftCode" }
     const flags = this.int32();
     if (flags & 4) _.via_giveaway = true    // ?: true - flags.2?true
-    _.from_id = this.object();              // : global.Peer - Peer
+    if (flags & 16) _.from_id = this.object() // ?: global.Peer - flags.4?Peer
     if (flags & 8) _.giveaway_msg_id = this.int32() // ?: number - flags.3?int
     if (flags & 1) _.to_id = this.int64()   // ?: bigint - flags.0?long
     _.date = this.int32();                  // : number - int
@@ -24933,6 +27087,594 @@ export const $decoder = new Map([
     _.boost_url = this.string();            // : string - string
     if (flags & 8) _.prepaid_giveaways = this.vector(this.object) // ?: global.PrepaidGiveaway[] - flags.3?Vector<PrepaidGiveaway>
     if (flags & 4) _.my_boost_slots = this.vector(this.int32) // ?: number[] - flags.2?Vector<int>
+    return _;
+  }],
+  [-1205411504, function decode$storyFwdHeader() {
+    const _ = { _: "storyFwdHeader" }
+    const flags = this.int32();
+    if (flags & 8) _.modified = true        // ?: true - flags.3?true
+    if (flags & 1) _.from = this.object()   // ?: global.Peer - flags.0?Peer
+    if (flags & 2) _.from_name = this.string() // ?: string - flags.1?string
+    if (flags & 4) _.story_id = this.int32() // ?: number - flags.2?int
+    return _;
+  }],
+  [-419066241, function decode$postInteractionCountersMessage() {
+    const _ = { _: "postInteractionCountersMessage" }
+    _.msg_id = this.int32();                // : number - int
+    _.views = this.int32();                 // : number - int
+    _.forwards = this.int32();              // : number - int
+    _.reactions = this.int32();             // : number - int
+    return _;
+  }],
+  [-1974989273, function decode$postInteractionCountersStory() {
+    const _ = { _: "postInteractionCountersStory" }
+    _.story_id = this.int32();              // : number - int
+    _.views = this.int32();                 // : number - int
+    _.forwards = this.int32();              // : number - int
+    _.reactions = this.int32();             // : number - int
+    return _;
+  }],
+  [1355613820, function decode$stats__storyStats() {
+    const _ = { _: "stats.storyStats" }
+    _.views_graph = this.object();          // : global.StatsGraph - StatsGraph
+    _.reactions_by_emotion_graph = this.object(); // : global.StatsGraph - StatsGraph
+    return _;
+  }],
+  [32685898, function decode$publicForwardMessage() {
+    const _ = { _: "publicForwardMessage" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-302797360, function decode$publicForwardStory() {
+    const _ = { _: "publicForwardStory" }
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.story = this.object();                // : global.StoryItem - StoryItem
+    return _;
+  }],
+  [-1828487648, function decode$stats__publicForwards() {
+    const _ = { _: "stats.publicForwards" }
+    const flags = this.int32();
+    _.count = this.int32();                 // : number - int
+    _.forwards = this.vector(this.object);  // : global.PublicForward[] - Vector<PublicForward>
+    if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-1253352753, function decode$peerColor() {
+    const _ = { _: "peerColor" }
+    const flags = this.int32();
+    if (flags & 1) _.color = this.int32()   // ?: number - flags.0?int
+    if (flags & 2) _.background_emoji_id = this.int64() // ?: bigint - flags.1?long
+    return _;
+  }],
+  [639736408, function decode$help__peerColorSet() {
+    const _ = { _: "help.peerColorSet" }
+    _.colors = this.vector(this.int32);     // : number[] - Vector<int>
+    return _;
+  }],
+  [1987928555, function decode$help__peerColorProfileSet() {
+    const _ = { _: "help.peerColorProfileSet" }
+    _.palette_colors = this.vector(this.int32); // : number[] - Vector<int>
+    _.bg_colors = this.vector(this.int32);  // : number[] - Vector<int>
+    _.story_colors = this.vector(this.int32); // : number[] - Vector<int>
+    return _;
+  }],
+  [-1377014082, function decode$help__peerColorOption() {
+    const _ = { _: "help.peerColorOption" }
+    const flags = this.int32();
+    if (flags & 1) _.hidden = true          // ?: true - flags.0?true
+    _.color_id = this.int32();              // : number - int
+    if (flags & 2) _.colors = this.object() // ?: help.PeerColorSet - flags.1?help.PeerColorSet
+    if (flags & 4) _.dark_colors = this.object() // ?: help.PeerColorSet - flags.2?help.PeerColorSet
+    if (flags & 8) _.channel_min_level = this.int32() // ?: number - flags.3?int
+    if (flags & 16) _.group_min_level = this.int32() // ?: number - flags.4?int
+    return _;
+  }],
+  [732034510, function decode$help__peerColorsNotModified() {
+    return { _: "help.peerColorsNotModified" }
+  }],
+  [16313608, function decode$help__peerColors() {
+    const _ = { _: "help.peerColors" }
+    _.hash = this.int32();                  // : number - int
+    _.colors = this.vector(this.object);    // : help.PeerColorOption[] - Vector<help.PeerColorOption>
+    return _;
+  }],
+  [1620104917, function decode$storyReaction() {
+    const _ = { _: "storyReaction" }
+    _.peer_id = this.object();              // : global.Peer - Peer
+    _.date = this.int32();                  // : number - int
+    _.reaction = this.object();             // : global.Reaction - Reaction
+    return _;
+  }],
+  [-1146411453, function decode$storyReactionPublicForward() {
+    const _ = { _: "storyReactionPublicForward" }
+    _.message = this.object();              // : global.Message - Message
+    return _;
+  }],
+  [-808644845, function decode$storyReactionPublicRepost() {
+    const _ = { _: "storyReactionPublicRepost" }
+    _.peer_id = this.object();              // : global.Peer - Peer
+    _.story = this.object();                // : global.StoryItem - StoryItem
+    return _;
+  }],
+  [-1436583780, function decode$stories__storyReactionsList() {
+    const _ = { _: "stories.storyReactionsList" }
+    const flags = this.int32();
+    _.count = this.int32();                 // : number - int
+    _.reactions = this.vector(this.object); // : global.StoryReaction[] - Vector<StoryReaction>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
+    return _;
+  }],
+  [-1115174036, function decode$savedDialog() {
+    const _ = { _: "savedDialog" }
+    const flags = this.int32();
+    if (flags & 4) _.pinned = true          // ?: true - flags.2?true
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.top_message = this.int32();           // : number - int
+    return _;
+  }],
+  [-130358751, function decode$messages__savedDialogs() {
+    const _ = { _: "messages.savedDialogs" }
+    _.dialogs = this.vector(this.object);   // : global.SavedDialog[] - Vector<SavedDialog>
+    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1153080793, function decode$messages__savedDialogsSlice() {
+    const _ = { _: "messages.savedDialogsSlice" }
+    _.count = this.int32();                 // : number - int
+    _.dialogs = this.vector(this.object);   // : global.SavedDialog[] - Vector<SavedDialog>
+    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-1071681560, function decode$messages__savedDialogsNotModified() {
+    const _ = { _: "messages.savedDialogsNotModified" }
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
+  [-881854424, function decode$savedReactionTag() {
+    const _ = { _: "savedReactionTag" }
+    const flags = this.int32();
+    _.reaction = this.object();             // : global.Reaction - Reaction
+    if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
+  [-2003084817, function decode$messages__savedReactionTagsNotModified() {
+    return { _: "messages.savedReactionTagsNotModified" }
+  }],
+  [844731658, function decode$messages__savedReactionTags() {
+    const _ = { _: "messages.savedReactionTags" }
+    _.tags = this.vector(this.object);      // : global.SavedReactionTag[] - Vector<SavedReactionTag>
+    _.hash = this.int64();                  // : bigint - long
+    return _;
+  }],
+  [1001931436, function decode$outboxReadDate() {
+    const _ = { _: "outboxReadDate" }
+    _.date = this.int32();                  // : number - int
+    return _;
+  }],
+  [-594852657, function decode$smsjobs__eligibleToJoin() {
+    const _ = { _: "smsjobs.eligibleToJoin" }
+    _.terms_url = this.string();            // : string - string
+    _.monthly_sent_sms = this.int32();      // : number - int
+    return _;
+  }],
+  [720277905, function decode$smsjobs__status() {
+    const _ = { _: "smsjobs.status" }
+    const flags = this.int32();
+    if (flags & 1) _.allow_international = true // ?: true - flags.0?true
+    _.recent_sent = this.int32();           // : number - int
+    _.recent_since = this.int32();          // : number - int
+    _.recent_remains = this.int32();        // : number - int
+    _.total_sent = this.int32();            // : number - int
+    _.total_since = this.int32();           // : number - int
+    if (flags & 2) _.last_gift_slug = this.string() // ?: string - flags.1?string
+    _.terms_url = this.string();            // : string - string
+    return _;
+  }],
+  [-425595208, function decode$smsJob() {
+    const _ = { _: "smsJob" }
+    _.job_id = this.string();               // : string - string
+    _.phone_number = this.string();         // : string - string
+    _.text = this.string();                 // : string - string
+    return _;
+  }],
+  [302717625, function decode$businessWeeklyOpen() {
+    const _ = { _: "businessWeeklyOpen" }
+    _.start_minute = this.int32();          // : number - int
+    _.end_minute = this.int32();            // : number - int
+    return _;
+  }],
+  [-1936543592, function decode$businessWorkHours() {
+    const _ = { _: "businessWorkHours" }
+    const flags = this.int32();
+    if (flags & 1) _.open_now = true        // ?: true - flags.0?true
+    _.timezone_id = this.string();          // : string - string
+    _.weekly_open = this.vector(this.object); // : global.BusinessWeeklyOpen[] - Vector<BusinessWeeklyOpen>
+    return _;
+  }],
+  [-1403249929, function decode$businessLocation() {
+    const _ = { _: "businessLocation" }
+    const flags = this.int32();
+    if (flags & 1) _.geo_point = this.object() // ?: global.GeoPoint - flags.0?GeoPoint
+    _.address = this.string();              // : string - string
+    return _;
+  }],
+  [1871393450, function decode$inputBusinessRecipients() {
+    const _ = { _: "inputBusinessRecipients" }
+    const flags = this.int32();
+    if (flags & 1) _.existing_chats = true  // ?: true - flags.0?true
+    if (flags & 2) _.new_chats = true       // ?: true - flags.1?true
+    if (flags & 4) _.contacts = true        // ?: true - flags.2?true
+    if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
+    if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
+    if (flags & 16) _.users = this.vector(this.object) // ?: global.InputUser[] - flags.4?Vector<InputUser>
+    return _;
+  }],
+  [554733559, function decode$businessRecipients() {
+    const _ = { _: "businessRecipients" }
+    const flags = this.int32();
+    if (flags & 1) _.existing_chats = true  // ?: true - flags.0?true
+    if (flags & 2) _.new_chats = true       // ?: true - flags.1?true
+    if (flags & 4) _.contacts = true        // ?: true - flags.2?true
+    if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
+    if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
+    if (flags & 16) _.users = this.vector(this.int64) // ?: bigint[] - flags.4?Vector<long>
+    return _;
+  }],
+  [-910564679, function decode$businessAwayMessageScheduleAlways() {
+    return { _: "businessAwayMessageScheduleAlways" }
+  }],
+  [-1007487743, function decode$businessAwayMessageScheduleOutsideWorkHours() {
+    return { _: "businessAwayMessageScheduleOutsideWorkHours" }
+  }],
+  [-867328308, function decode$businessAwayMessageScheduleCustom() {
+    const _ = { _: "businessAwayMessageScheduleCustom" }
+    _.start_date = this.int32();            // : number - int
+    _.end_date = this.int32();              // : number - int
+    return _;
+  }],
+  [26528571, function decode$inputBusinessGreetingMessage() {
+    const _ = { _: "inputBusinessGreetingMessage" }
+    _.shortcut_id = this.int32();           // : number - int
+    _.recipients = this.object();           // : global.InputBusinessRecipients - InputBusinessRecipients
+    _.no_activity_days = this.int32();      // : number - int
+    return _;
+  }],
+  [-451302485, function decode$businessGreetingMessage() {
+    const _ = { _: "businessGreetingMessage" }
+    _.shortcut_id = this.int32();           // : number - int
+    _.recipients = this.object();           // : global.BusinessRecipients - BusinessRecipients
+    _.no_activity_days = this.int32();      // : number - int
+    return _;
+  }],
+  [-2094959136, function decode$inputBusinessAwayMessage() {
+    const _ = { _: "inputBusinessAwayMessage" }
+    const flags = this.int32();
+    if (flags & 1) _.offline_only = true    // ?: true - flags.0?true
+    _.shortcut_id = this.int32();           // : number - int
+    _.schedule = this.object();             // : global.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    _.recipients = this.object();           // : global.InputBusinessRecipients - InputBusinessRecipients
+    return _;
+  }],
+  [-283809188, function decode$businessAwayMessage() {
+    const _ = { _: "businessAwayMessage" }
+    const flags = this.int32();
+    if (flags & 1) _.offline_only = true    // ?: true - flags.0?true
+    _.shortcut_id = this.int32();           // : number - int
+    _.schedule = this.object();             // : global.BusinessAwayMessageSchedule - BusinessAwayMessageSchedule
+    _.recipients = this.object();           // : global.BusinessRecipients - BusinessRecipients
+    return _;
+  }],
+  [-7173643, function decode$timezone() {
+    const _ = { _: "timezone" }
+    _.id = this.string();                   // : string - string
+    _.name = this.string();                 // : string - string
+    _.utc_offset = this.int32();            // : number - int
+    return _;
+  }],
+  [-1761146676, function decode$help__timezonesListNotModified() {
+    return { _: "help.timezonesListNotModified" }
+  }],
+  [2071260529, function decode$help__timezonesList() {
+    const _ = { _: "help.timezonesList" }
+    _.timezones = this.vector(this.object); // : global.Timezone[] - Vector<Timezone>
+    _.hash = this.int32();                  // : number - int
+    return _;
+  }],
+  [110563371, function decode$quickReply() {
+    const _ = { _: "quickReply" }
+    _.shortcut_id = this.int32();           // : number - int
+    _.shortcut = this.string();             // : string - string
+    _.top_message = this.int32();           // : number - int
+    _.count = this.int32();                 // : number - int
+    return _;
+  }],
+  [609840449, function decode$inputQuickReplyShortcut() {
+    const _ = { _: "inputQuickReplyShortcut" }
+    _.shortcut = this.string();             // : string - string
+    return _;
+  }],
+  [18418929, function decode$inputQuickReplyShortcutId() {
+    const _ = { _: "inputQuickReplyShortcutId" }
+    _.shortcut_id = this.int32();           // : number - int
+    return _;
+  }],
+  [-963811691, function decode$messages__quickReplies() {
+    const _ = { _: "messages.quickReplies" }
+    _.quick_replies = this.vector(this.object); // : global.QuickReply[] - Vector<QuickReply>
+    _.messages = this.vector(this.object);  // : global.Message[] - Vector<Message>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1603398491, function decode$messages__quickRepliesNotModified() {
+    return { _: "messages.quickRepliesNotModified" }
+  }],
+  [-1123645951, function decode$connectedBot() {
+    const _ = { _: "connectedBot" }
+    const flags = this.int32();
+    if (flags & 1) _.can_reply = true       // ?: true - flags.0?true
+    _.bot_id = this.int64();                // : bigint - long
+    _.recipients = this.object();           // : global.BusinessBotRecipients - BusinessBotRecipients
+    return _;
+  }],
+  [400029819, function decode$account__connectedBots() {
+    const _ = { _: "account.connectedBots" }
+    _.connected_bots = this.vector(this.object); // : global.ConnectedBot[] - Vector<ConnectedBot>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [718878489, function decode$messages__dialogFilters() {
+    const _ = { _: "messages.dialogFilters" }
+    const flags = this.int32();
+    if (flags & 1) _.tags_enabled = true    // ?: true - flags.0?true
+    _.filters = this.vector(this.object);   // : global.DialogFilter[] - Vector<DialogFilter>
+    return _;
+  }],
+  [1821253126, function decode$birthday() {
+    const _ = { _: "birthday" }
+    const flags = this.int32();
+    _.day = this.int32();                   // : number - int
+    _.month = this.int32();                 // : number - int
+    if (flags & 1) _.year = this.int32()    // ?: number - flags.0?int
+    return _;
+  }],
+  [-1989921868, function decode$botBusinessConnection() {
+    const _ = { _: "botBusinessConnection" }
+    const flags = this.int32();
+    if (flags & 1) _.can_reply = true       // ?: true - flags.0?true
+    if (flags & 2) _.disabled = true        // ?: true - flags.1?true
+    _.connection_id = this.string();        // : string - string
+    _.user_id = this.int64();               // : bigint - long
+    _.dc_id = this.int32();                 // : number - int
+    _.date = this.int32();                  // : number - int
+    return _;
+  }],
+  [163867085, function decode$inputBusinessIntro() {
+    const _ = { _: "inputBusinessIntro" }
+    const flags = this.int32();
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.sticker = this.object() // ?: global.InputDocument - flags.0?InputDocument
+    return _;
+  }],
+  [1510606445, function decode$businessIntro() {
+    const _ = { _: "businessIntro" }
+    const flags = this.int32();
+    _.title = this.string();                // : string - string
+    _.description = this.string();          // : string - string
+    if (flags & 1) _.sticker = this.object() // ?: global.Document - flags.0?Document
+    return _;
+  }],
+  [-83926371, function decode$messages__myStickers() {
+    const _ = { _: "messages.myStickers" }
+    _.count = this.int32();                 // : number - int
+    _.sets = this.vector(this.object);      // : global.StickerSetCovered[] - Vector<StickerSetCovered>
+    return _;
+  }],
+  [-476815191, function decode$inputCollectibleUsername() {
+    const _ = { _: "inputCollectibleUsername" }
+    _.username = this.string();             // : string - string
+    return _;
+  }],
+  [-1562241884, function decode$inputCollectiblePhone() {
+    const _ = { _: "inputCollectiblePhone" }
+    _.phone = this.string();                // : string - string
+    return _;
+  }],
+  [1857945489, function decode$fragment__collectibleInfo() {
+    const _ = { _: "fragment.collectibleInfo" }
+    _.purchase_date = this.int32();         // : number - int
+    _.currency = this.string();             // : string - string
+    _.amount = this.int64();                // : bigint - long
+    _.crypto_currency = this.string();      // : string - string
+    _.crypto_amount = this.int64();         // : bigint - long
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [-991587810, function decode$inputBusinessBotRecipients() {
+    const _ = { _: "inputBusinessBotRecipients" }
+    const flags = this.int32();
+    if (flags & 1) _.existing_chats = true  // ?: true - flags.0?true
+    if (flags & 2) _.new_chats = true       // ?: true - flags.1?true
+    if (flags & 4) _.contacts = true        // ?: true - flags.2?true
+    if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
+    if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
+    if (flags & 16) _.users = this.vector(this.object) // ?: global.InputUser[] - flags.4?Vector<InputUser>
+    if (flags & 64) _.exclude_users = this.vector(this.object) // ?: global.InputUser[] - flags.6?Vector<InputUser>
+    return _;
+  }],
+  [-1198722189, function decode$businessBotRecipients() {
+    const _ = { _: "businessBotRecipients" }
+    const flags = this.int32();
+    if (flags & 1) _.existing_chats = true  // ?: true - flags.0?true
+    if (flags & 2) _.new_chats = true       // ?: true - flags.1?true
+    if (flags & 4) _.contacts = true        // ?: true - flags.2?true
+    if (flags & 8) _.non_contacts = true    // ?: true - flags.3?true
+    if (flags & 32) _.exclude_selected = true // ?: true - flags.5?true
+    if (flags & 16) _.users = this.vector(this.int64) // ?: bigint[] - flags.4?Vector<long>
+    if (flags & 64) _.exclude_users = this.vector(this.int64) // ?: bigint[] - flags.6?Vector<long>
+    return _;
+  }],
+  [496600883, function decode$contactBirthday() {
+    const _ = { _: "contactBirthday" }
+    _.contact_id = this.int64();            // : bigint - long
+    _.birthday = this.object();             // : global.Birthday - Birthday
+    return _;
+  }],
+  [290452237, function decode$contacts__contactBirthdays() {
+    const _ = { _: "contacts.contactBirthdays" }
+    _.contacts = this.vector(this.object);  // : global.ContactBirthday[] - Vector<ContactBirthday>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [1653379620, function decode$missingInvitee() {
+    const _ = { _: "missingInvitee" }
+    const flags = this.int32();
+    if (flags & 1) _.premium_would_allow_invite = true // ?: true - flags.0?true
+    if (flags & 2) _.premium_required_for_pm = true // ?: true - flags.1?true
+    _.user_id = this.int64();               // : bigint - long
+    return _;
+  }],
+  [2136862630, function decode$messages__invitedUsers() {
+    const _ = { _: "messages.invitedUsers" }
+    _.updates = this.object();              // : global.Updates - Updates
+    _.missing_invitees = this.vector(this.object); // : global.MissingInvitee[] - Vector<MissingInvitee>
+    return _;
+  }],
+  [292003751, function decode$inputBusinessChatLink() {
+    const _ = { _: "inputBusinessChatLink" }
+    const flags = this.int32();
+    _.message = this.string();              // : string - string
+    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
+    return _;
+  }],
+  [-1263638929, function decode$businessChatLink() {
+    const _ = { _: "businessChatLink" }
+    const flags = this.int32();
+    _.link = this.string();                 // : string - string
+    _.message = this.string();              // : string - string
+    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    if (flags & 2) _.title = this.string()  // ?: string - flags.1?string
+    _.views = this.int32();                 // : number - int
+    return _;
+  }],
+  [-331111727, function decode$account__businessChatLinks() {
+    const _ = { _: "account.businessChatLinks" }
+    _.links = this.vector(this.object);     // : global.BusinessChatLink[] - Vector<BusinessChatLink>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-1708937439, function decode$account__resolvedBusinessChatLinks() {
+    const _ = { _: "account.resolvedBusinessChatLinks" }
+    const flags = this.int32();
+    _.peer = this.object();                 // : global.Peer - Peer
+    _.message = this.string();              // : string - string
+    if (flags & 1) _.entities = this.vector(this.object) // ?: global.MessageEntity[] - flags.0?Vector<MessageEntity>
+    _.chats = this.vector(this.object);     // : global.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : global.User[] - Vector<User>
+    return _;
+  }],
+  [-701500310, function decode$requestedPeerUser() {
+    const _ = { _: "requestedPeerUser" }
+    const flags = this.int32();
+    _.user_id = this.int64();               // : bigint - long
+    if (flags & 1) _.first_name = this.string() // ?: string - flags.0?string
+    if (flags & 1) _.last_name = this.string() // ?: string - flags.0?string
+    if (flags & 2) _.username = this.string() // ?: string - flags.1?string
+    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    return _;
+  }],
+  [1929860175, function decode$requestedPeerChat() {
+    const _ = { _: "requestedPeerChat" }
+    const flags = this.int32();
+    _.chat_id = this.int64();               // : bigint - long
+    if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
+    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    return _;
+  }],
+  [-1952185372, function decode$requestedPeerChannel() {
+    const _ = { _: "requestedPeerChannel" }
+    const flags = this.int32();
+    _.channel_id = this.int64();            // : bigint - long
+    if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
+    if (flags & 2) _.username = this.string() // ?: string - flags.1?string
+    if (flags & 4) _.photo = this.object()  // ?: global.Photo - flags.2?Photo
+    return _;
+  }],
+  [1124938064, function decode$sponsoredMessageReportOption() {
+    const _ = { _: "sponsoredMessageReportOption" }
+    _.text = this.string();                 // : string - string
+    _.option = this.bytes();                // : Uint8Array - bytes
+    return _;
+  }],
+  [-2073059774, function decode$channels__sponsoredMessageReportResultChooseOption() {
+    const _ = { _: "channels.sponsoredMessageReportResultChooseOption" }
+    _.title = this.string();                // : string - string
+    _.options = this.vector(this.object);   // : global.SponsoredMessageReportOption[] - Vector<SponsoredMessageReportOption>
+    return _;
+  }],
+  [1044107055, function decode$channels__sponsoredMessageReportResultAdsHidden() {
+    return { _: "channels.sponsoredMessageReportResultAdsHidden" }
+  }],
+  [-1384544183, function decode$channels__sponsoredMessageReportResultReported() {
+    return { _: "channels.sponsoredMessageReportResultReported" }
+  }],
+  [-797226067, function decode$stats__broadcastRevenueStats() {
+    const _ = { _: "stats.broadcastRevenueStats" }
+    _.top_hours_graph = this.object();      // : global.StatsGraph - StatsGraph
+    _.revenue_graph = this.object();        // : global.StatsGraph - StatsGraph
+    _.current_balance = this.int64();       // : bigint - long
+    _.available_balance = this.int64();     // : bigint - long
+    _.overall_revenue = this.int64();       // : bigint - long
+    _.usd_rate = this.double();             // : number - double
+    return _;
+  }],
+  [-328886473, function decode$stats__broadcastRevenueWithdrawalUrl() {
+    const _ = { _: "stats.broadcastRevenueWithdrawalUrl" }
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [1434332356, function decode$broadcastRevenueTransactionProceeds() {
+    const _ = { _: "broadcastRevenueTransactionProceeds" }
+    _.amount = this.int64();                // : bigint - long
+    _.from_date = this.int32();             // : number - int
+    _.to_date = this.int32();               // : number - int
+    return _;
+  }],
+  [1515784568, function decode$broadcastRevenueTransactionWithdrawal() {
+    const _ = { _: "broadcastRevenueTransactionWithdrawal" }
+    const flags = this.int32();
+    if (flags & 1) _.pending = true         // ?: true - flags.0?true
+    if (flags & 4) _.failed = true          // ?: true - flags.2?true
+    _.amount = this.int64();                // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.provider = this.string();             // : string - string
+    if (flags & 2) _.transaction_date = this.int32() // ?: number - flags.1?int
+    if (flags & 2) _.transaction_url = this.string() // ?: string - flags.1?string
+    return _;
+  }],
+  [1121127726, function decode$broadcastRevenueTransactionRefund() {
+    const _ = { _: "broadcastRevenueTransactionRefund" }
+    _.amount = this.int64();                // : bigint - long
+    _.date = this.int32();                  // : number - int
+    _.provider = this.string();             // : string - string
+    return _;
+  }],
+  [-2028632986, function decode$stats__broadcastRevenueTransactions() {
+    const _ = { _: "stats.broadcastRevenueTransactions" }
+    _.count = this.int32();                 // : number - int
+    _.transactions = this.vector(this.object); // : global.BroadcastRevenueTransaction[] - Vector<BroadcastRevenueTransaction>
     return _;
   }],
 ]);
@@ -25145,6 +27887,18 @@ invokeWithTakeout.ref = "invokeWithTakeout";
 invokeWithTakeout.verify = function($$) {
   return $$;
 };
+export function invokeWithBusinessConnection(_) {
+  return { ..._, _: "invokeWithBusinessConnection" }
+}
+$encoder["invokeWithBusinessConnection"] = function (_) {
+  this.int32(-584540274);
+  this.string(_.connection_id);           // : string - string
+  this.object(_.query);                   // : any - !X
+};
+invokeWithBusinessConnection.ref = "invokeWithBusinessConnection";
+invokeWithBusinessConnection.verify = function($$) {
+  return $$;
+};
 
 auth.sendCode = function sendCode(_) {
   return { ..._, _: "auth.sendCode" }
@@ -25166,7 +27920,12 @@ auth.signUp = function signUp(_) {
   return { ..._, _: "auth.signUp" }
 }
 $encoder["auth.signUp"] = function (_) {
-  this.int32(-2131827673);
+  this.int32(-1429752041);
+  this.int32(
+    (+(_.no_joined_notifications != null) << 0)
+  )
+  if (_.no_joined_notifications != null)
+    this.true(_.no_joined_notifications); // ?: true - flags.0?true
   this.string(_.phone_number);            // : string - string
   this.string(_.phone_code_hash);         // : string - string
   this.string(_.first_name);              // : string - string
@@ -26791,11 +29550,16 @@ account.updateColor = function updateColor(_) {
   return { ..._, _: "account.updateColor" }
 }
 $encoder["account.updateColor"] = function (_) {
-  this.int32(-1610494909);
+  this.int32(2096079197);
   this.int32(
-    (+(_.background_emoji_id != null) << 0)
+    (+(_.for_profile != null) << 1)
+    | (+(_.color != null) << 2)
+    | (+(_.background_emoji_id != null) << 0)
   )
-  this.int32(_.color);                    // : number - int
+  if (_.for_profile != null)
+    this.true(_.for_profile);             // ?: true - flags.1?true
+  if (_.color != null)
+    this.int32(_.color);                  // ?: number - flags.2?int
   if (_.background_emoji_id != null)
     this.int64(_.background_emoji_id);    // ?: bigint - flags.0?long
 };
@@ -26816,6 +29580,289 @@ account.getDefaultBackgroundEmojis.ref = "account.getDefaultBackgroundEmojis";
 account.getDefaultBackgroundEmojis.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["emojiListNotModified", "emojiList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.getChannelDefaultEmojiStatuses = function getChannelDefaultEmojiStatuses(_) {
+  return { ..._, _: "account.getChannelDefaultEmojiStatuses" }
+}
+$encoder["account.getChannelDefaultEmojiStatuses"] = function (_) {
+  this.int32(1999087573);
+  this.int64(_.hash);                     // : bigint - long
+};
+account.getChannelDefaultEmojiStatuses.ref = "account.getChannelDefaultEmojiStatuses";
+account.getChannelDefaultEmojiStatuses.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.emojiStatusesNotModified", "account.emojiStatuses"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.getChannelRestrictedStatusEmojis = function getChannelRestrictedStatusEmojis(_) {
+  return { ..._, _: "account.getChannelRestrictedStatusEmojis" }
+}
+$encoder["account.getChannelRestrictedStatusEmojis"] = function (_) {
+  this.int32(900325589);
+  this.int64(_.hash);                     // : bigint - long
+};
+account.getChannelRestrictedStatusEmojis.ref = "account.getChannelRestrictedStatusEmojis";
+account.getChannelRestrictedStatusEmojis.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["emojiListNotModified", "emojiList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.updateBusinessWorkHours = function updateBusinessWorkHours(_) {
+  return { ..._, _: "account.updateBusinessWorkHours" }
+}
+$encoder["account.updateBusinessWorkHours"] = function (_) {
+  this.int32(1258348646);
+  this.int32(
+    (+(_.business_work_hours != null) << 0)
+  )
+  if (_.business_work_hours != null)
+    this.object(_.business_work_hours);   // ?: BusinessWorkHours - flags.0?BusinessWorkHours
+};
+account.updateBusinessWorkHours.ref = "account.updateBusinessWorkHours";
+account.updateBusinessWorkHours.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.updateBusinessLocation = function updateBusinessLocation(_) {
+  return { ..._, _: "account.updateBusinessLocation" }
+}
+$encoder["account.updateBusinessLocation"] = function (_) {
+  this.int32(-1637149926);
+  this.int32(
+    (+(_.geo_point != null) << 1)
+    | (+(_.address != null) << 0)
+  )
+  if (_.geo_point != null)
+    this.object(_.geo_point);             // ?: InputGeoPoint - flags.1?InputGeoPoint
+  if (_.address != null)
+    this.string(_.address);               // ?: string - flags.0?string
+};
+account.updateBusinessLocation.ref = "account.updateBusinessLocation";
+account.updateBusinessLocation.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.updateBusinessGreetingMessage = function updateBusinessGreetingMessage(_) {
+  return { ..._, _: "account.updateBusinessGreetingMessage" }
+}
+$encoder["account.updateBusinessGreetingMessage"] = function (_) {
+  this.int32(1724755908);
+  this.int32(
+    (+(_.message != null) << 0)
+  )
+  if (_.message != null)
+    this.object(_.message);               // ?: InputBusinessGreetingMessage - flags.0?InputBusinessGreetingMessage
+};
+account.updateBusinessGreetingMessage.ref = "account.updateBusinessGreetingMessage";
+account.updateBusinessGreetingMessage.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.updateBusinessAwayMessage = function updateBusinessAwayMessage(_) {
+  return { ..._, _: "account.updateBusinessAwayMessage" }
+}
+$encoder["account.updateBusinessAwayMessage"] = function (_) {
+  this.int32(-1570078811);
+  this.int32(
+    (+(_.message != null) << 0)
+  )
+  if (_.message != null)
+    this.object(_.message);               // ?: InputBusinessAwayMessage - flags.0?InputBusinessAwayMessage
+};
+account.updateBusinessAwayMessage.ref = "account.updateBusinessAwayMessage";
+account.updateBusinessAwayMessage.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.updateConnectedBot = function updateConnectedBot(_) {
+  return { ..._, _: "account.updateConnectedBot" }
+}
+$encoder["account.updateConnectedBot"] = function (_) {
+  this.int32(1138250269);
+  this.int32(
+    (+(_.can_reply != null) << 0)
+    | (+(_.deleted != null) << 1)
+  )
+  if (_.can_reply != null)
+    this.true(_.can_reply);               // ?: true - flags.0?true
+  if (_.deleted != null)
+    this.true(_.deleted);                 // ?: true - flags.1?true
+  this.object(_.bot);                     // : InputUser - InputUser
+  this.object(_.recipients);              // : InputBusinessBotRecipients - InputBusinessBotRecipients
+};
+account.updateConnectedBot.ref = "account.updateConnectedBot";
+account.updateConnectedBot.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.getConnectedBots = function getConnectedBots() {
+  return { _: "account.getConnectedBots" }
+}
+$encoder["account.getConnectedBots"] = function (_) {
+  this.int32(1319421967);
+};
+account.getConnectedBots.ref = "account.getConnectedBots";
+account.getConnectedBots.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.connectedBots"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.getBotBusinessConnection = function getBotBusinessConnection(_) {
+  return { ..._, _: "account.getBotBusinessConnection" }
+}
+$encoder["account.getBotBusinessConnection"] = function (_) {
+  this.int32(1990746736);
+  this.string(_.connection_id);           // : string - string
+};
+account.getBotBusinessConnection.ref = "account.getBotBusinessConnection";
+account.getBotBusinessConnection.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.updateBusinessIntro = function updateBusinessIntro(_) {
+  return { ..._, _: "account.updateBusinessIntro" }
+}
+$encoder["account.updateBusinessIntro"] = function (_) {
+  this.int32(-1508585420);
+  this.int32(
+    (+(_.intro != null) << 0)
+  )
+  if (_.intro != null)
+    this.object(_.intro);                 // ?: InputBusinessIntro - flags.0?InputBusinessIntro
+};
+account.updateBusinessIntro.ref = "account.updateBusinessIntro";
+account.updateBusinessIntro.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.toggleConnectedBotPaused = function toggleConnectedBotPaused(_) {
+  return { ..._, _: "account.toggleConnectedBotPaused" }
+}
+$encoder["account.toggleConnectedBotPaused"] = function (_) {
+  this.int32(1684934807);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.bool(_.paused);                    // : boolean - Bool
+};
+account.toggleConnectedBotPaused.ref = "account.toggleConnectedBotPaused";
+account.toggleConnectedBotPaused.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.disablePeerConnectedBot = function disablePeerConnectedBot(_) {
+  return { ..._, _: "account.disablePeerConnectedBot" }
+}
+$encoder["account.disablePeerConnectedBot"] = function (_) {
+  this.int32(1581481689);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+};
+account.disablePeerConnectedBot.ref = "account.disablePeerConnectedBot";
+account.disablePeerConnectedBot.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.updateBirthday = function updateBirthday(_) {
+  return { ..._, _: "account.updateBirthday" }
+}
+$encoder["account.updateBirthday"] = function (_) {
+  this.int32(-865203183);
+  this.int32(
+    (+(_.birthday != null) << 0)
+  )
+  if (_.birthday != null)
+    this.object(_.birthday);              // ?: Birthday - flags.0?Birthday
+};
+account.updateBirthday.ref = "account.updateBirthday";
+account.updateBirthday.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.createBusinessChatLink = function createBusinessChatLink(_) {
+  return { ..._, _: "account.createBusinessChatLink" }
+}
+$encoder["account.createBusinessChatLink"] = function (_) {
+  this.int32(-2007898482);
+  this.object(_.link);                    // : InputBusinessChatLink - InputBusinessChatLink
+};
+account.createBusinessChatLink.ref = "account.createBusinessChatLink";
+account.createBusinessChatLink.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["businessChatLink"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.editBusinessChatLink = function editBusinessChatLink(_) {
+  return { ..._, _: "account.editBusinessChatLink" }
+}
+$encoder["account.editBusinessChatLink"] = function (_) {
+  this.int32(-1942744913);
+  this.string(_.slug);                    // : string - string
+  this.object(_.link);                    // : InputBusinessChatLink - InputBusinessChatLink
+};
+account.editBusinessChatLink.ref = "account.editBusinessChatLink";
+account.editBusinessChatLink.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["businessChatLink"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.deleteBusinessChatLink = function deleteBusinessChatLink(_) {
+  return { ..._, _: "account.deleteBusinessChatLink" }
+}
+$encoder["account.deleteBusinessChatLink"] = function (_) {
+  this.int32(1611085428);
+  this.string(_.slug);                    // : string - string
+};
+account.deleteBusinessChatLink.ref = "account.deleteBusinessChatLink";
+account.deleteBusinessChatLink.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+account.getBusinessChatLinks = function getBusinessChatLinks() {
+  return { _: "account.getBusinessChatLinks" }
+}
+$encoder["account.getBusinessChatLinks"] = function (_) {
+  this.int32(1869667809);
+};
+account.getBusinessChatLinks.ref = "account.getBusinessChatLinks";
+account.getBusinessChatLinks.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.businessChatLinks"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.resolveBusinessChatLink = function resolveBusinessChatLink(_) {
+  return { ..._, _: "account.resolveBusinessChatLink" }
+}
+$encoder["account.resolveBusinessChatLink"] = function (_) {
+  this.int32(1418913262);
+  this.string(_.slug);                    // : string - string
+};
+account.resolveBusinessChatLink.ref = "account.resolveBusinessChatLink";
+account.resolveBusinessChatLink.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["account.resolvedBusinessChatLinks"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+account.updatePersonalChannel = function updatePersonalChannel(_) {
+  return { ..._, _: "account.updatePersonalChannel" }
+}
+$encoder["account.updatePersonalChannel"] = function (_) {
+  this.int32(-649919008);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+};
+account.updatePersonalChannel.ref = "account.updatePersonalChannel";
+account.updatePersonalChannel.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
 
@@ -26858,6 +29905,20 @@ users.setSecureValueErrors.ref = "users.setSecureValueErrors";
 users.setSecureValueErrors.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+users.getIsPremiumRequiredToContact = function getIsPremiumRequiredToContact(_) {
+  return { ..._, _: "users.getIsPremiumRequiredToContact" }
+}
+$encoder["users.getIsPremiumRequiredToContact"] = function (_) {
+  this.int32(-1507677680);
+  this.vector(_.id, this.object);         // : InputUser[] - Vector<InputUser>
+};
+users.getIsPremiumRequiredToContact.ref = "users.getIsPremiumRequiredToContact";
+users.getIsPremiumRequiredToContact.verify = function($$) {
+  if (!Array.isArray($$)) throw new TypeError("require array");
+  for (const $ of $$)
+    if (!(typeof $ == "boolean")) throw new TypeError("array element");
   return $$;
 };
 
@@ -27264,6 +30325,18 @@ contacts.setBlocked.verify = function($$) {
   if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
+contacts.getBirthdays = function getBirthdays() {
+  return { _: "contacts.getBirthdays" }
+}
+$encoder["contacts.getBirthdays"] = function (_) {
+  this.int32(-621959068);
+};
+contacts.getBirthdays.ref = "contacts.getBirthdays";
+contacts.getBirthdays.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["contacts.contactBirthdays"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 messages.getMessages = function getMessages(_) {
   return { ..._, _: "messages.getMessages" }
@@ -27327,15 +30400,21 @@ messages.search = function search(_) {
   return { ..._, _: "messages.search" }
 }
 $encoder["messages.search"] = function (_) {
-  this.int32(-1593989278);
+  this.int32(703497338);
   this.int32(
     (+(_.from_id != null) << 0)
+    | (+(_.saved_peer_id != null) << 2)
+    | (+(_.saved_reaction != null && _.saved_reaction.length > 0) << 3)
     | (+(_.top_msg_id != null) << 1)
   )
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.string(_.q);                       // : string - string
   if (_.from_id != null)
     this.object(_.from_id);               // ?: InputPeer - flags.0?InputPeer
+  if (_.saved_peer_id != null)
+    this.object(_.saved_peer_id);         // ?: InputPeer - flags.2?InputPeer
+  if (_.saved_reaction != null && _.saved_reaction.length > 0)
+    this.vector(_.saved_reaction, this.object); // ?: Reaction[] - flags.3?Vector<Reaction>
   if (_.top_msg_id != null)
     this.int32(_.top_msg_id);             // ?: number - flags.1?int
   this.object(_.filter);                  // : MessagesFilter - MessagesFilter
@@ -27451,7 +30530,7 @@ messages.sendMessage = function sendMessage(_) {
   return { ..._, _: "messages.sendMessage" }
 }
 $encoder["messages.sendMessage"] = function (_) {
-  this.int32(671943023);
+  this.int32(-537394132);
   this.int32(
     (+(_.no_webpage != null) << 1)
     | (+(_.silent != null) << 5)
@@ -27465,6 +30544,7 @@ $encoder["messages.sendMessage"] = function (_) {
     | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
+    | (+(_.quick_reply_shortcut != null) << 17)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -27493,6 +30573,8 @@ $encoder["messages.sendMessage"] = function (_) {
     this.int32(_.schedule_date);          // ?: number - flags.10?int
   if (_.send_as != null)
     this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+  if (_.quick_reply_shortcut != null)
+    this.object(_.quick_reply_shortcut);  // ?: InputQuickReplyShortcut - flags.17?InputQuickReplyShortcut
 };
 messages.sendMessage.ref = "messages.sendMessage";
 messages.sendMessage.verify = function($$) {
@@ -27504,7 +30586,7 @@ messages.sendMedia = function sendMedia(_) {
   return { ..._, _: "messages.sendMedia" }
 }
 $encoder["messages.sendMedia"] = function (_) {
-  this.int32(1926021693);
+  this.int32(2077646913);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
@@ -27517,6 +30599,7 @@ $encoder["messages.sendMedia"] = function (_) {
     | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
+    | (+(_.quick_reply_shortcut != null) << 17)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -27544,6 +30627,8 @@ $encoder["messages.sendMedia"] = function (_) {
     this.int32(_.schedule_date);          // ?: number - flags.10?int
   if (_.send_as != null)
     this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+  if (_.quick_reply_shortcut != null)
+    this.object(_.quick_reply_shortcut);  // ?: InputQuickReplyShortcut - flags.17?InputQuickReplyShortcut
 };
 messages.sendMedia.ref = "messages.sendMedia";
 messages.sendMedia.verify = function($$) {
@@ -27555,7 +30640,7 @@ messages.forwardMessages = function forwardMessages(_) {
   return { ..._, _: "messages.forwardMessages" }
 }
 $encoder["messages.forwardMessages"] = function (_) {
-  this.int32(-966673468);
+  this.int32(-721186296);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
@@ -27566,6 +30651,7 @@ $encoder["messages.forwardMessages"] = function (_) {
     | (+(_.top_msg_id != null) << 9)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
+    | (+(_.quick_reply_shortcut != null) << 17)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -27589,6 +30675,8 @@ $encoder["messages.forwardMessages"] = function (_) {
     this.int32(_.schedule_date);          // ?: number - flags.10?int
   if (_.send_as != null)
     this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+  if (_.quick_reply_shortcut != null)
+    this.object(_.quick_reply_shortcut);  // ?: InputQuickReplyShortcut - flags.17?InputQuickReplyShortcut
 };
 messages.forwardMessages.ref = "messages.forwardMessages";
 messages.forwardMessages.verify = function($$) {
@@ -27696,7 +30784,7 @@ messages.addChatUser = function addChatUser(_) {
   return { ..._, _: "messages.addChatUser" }
 }
 $encoder["messages.addChatUser"] = function (_) {
-  this.int32(-230206493);
+  this.int32(-876162809);
   this.int64(_.chat_id);                  // : bigint - long
   this.object(_.user_id);                 // : InputUser - InputUser
   this.int32(_.fwd_limit);                // : number - int
@@ -27704,7 +30792,7 @@ $encoder["messages.addChatUser"] = function (_) {
 messages.addChatUser.ref = "messages.addChatUser";
 messages.addChatUser.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.invitedUsers"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.deleteChatUser = function deleteChatUser(_) {
@@ -27730,7 +30818,7 @@ messages.createChat = function createChat(_) {
   return { ..._, _: "messages.createChat" }
 }
 $encoder["messages.createChat"] = function (_) {
-  this.int32(3450904);
+  this.int32(-1831936556);
   this.int32(
     (+(_.ttl_period != null) << 0)
   )
@@ -27742,7 +30830,7 @@ $encoder["messages.createChat"] = function (_) {
 messages.createChat.ref = "messages.createChat";
 messages.createChat.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.invitedUsers"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.getDhConfig = function getDhConfig(_) {
@@ -27973,7 +31061,7 @@ $encoder["messages.getWebPagePreview"] = function (_) {
 messages.getWebPagePreview.ref = "messages.getWebPagePreview";
 messages.getWebPagePreview.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.exportChatInvite = function exportChatInvite(_) {
@@ -28277,7 +31365,7 @@ messages.sendInlineBotResult = function sendInlineBotResult(_) {
   return { ..._, _: "messages.sendInlineBotResult" }
 }
 $encoder["messages.sendInlineBotResult"] = function (_) {
-  this.int32(-138647366);
+  this.int32(1052698730);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
@@ -28286,6 +31374,7 @@ $encoder["messages.sendInlineBotResult"] = function (_) {
     | (+(_.reply_to != null) << 0)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
+    | (+(_.quick_reply_shortcut != null) << 17)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -28305,6 +31394,8 @@ $encoder["messages.sendInlineBotResult"] = function (_) {
     this.int32(_.schedule_date);          // ?: number - flags.10?int
   if (_.send_as != null)
     this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+  if (_.quick_reply_shortcut != null)
+    this.object(_.quick_reply_shortcut);  // ?: InputQuickReplyShortcut - flags.17?InputQuickReplyShortcut
 };
 messages.sendInlineBotResult.ref = "messages.sendInlineBotResult";
 messages.sendInlineBotResult.verify = function($$) {
@@ -28330,7 +31421,7 @@ messages.editMessage = function editMessage(_) {
   return { ..._, _: "messages.editMessage" }
 }
 $encoder["messages.editMessage"] = function (_) {
-  this.int32(1224152952);
+  this.int32(-539934715);
   this.int32(
     (+(_.no_webpage != null) << 1)
     | (+(_.invert_media != null) << 16)
@@ -28339,6 +31430,7 @@ $encoder["messages.editMessage"] = function (_) {
     | (+(_.reply_markup != null) << 2)
     | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.schedule_date != null) << 15)
+    | (+(_.quick_reply_shortcut_id != null) << 17)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -28356,6 +31448,8 @@ $encoder["messages.editMessage"] = function (_) {
     this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
   if (_.schedule_date != null)
     this.int32(_.schedule_date);          // ?: number - flags.15?int
+  if (_.quick_reply_shortcut_id != null)
+    this.int32(_.quick_reply_shortcut_id); // ?: number - flags.17?int
 };
 messages.editMessage.ref = "messages.editMessage";
 messages.editMessage.verify = function($$) {
@@ -28832,14 +31926,19 @@ messages.uploadMedia = function uploadMedia(_) {
   return { ..._, _: "messages.uploadMedia" }
 }
 $encoder["messages.uploadMedia"] = function (_) {
-  this.int32(1369162417);
+  this.int32(345405816);
+  this.int32(
+    (+(_.business_connection_id != null) << 0)
+  )
+  if (_.business_connection_id != null)
+    this.string(_.business_connection_id); // ?: string - flags.0?string
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.object(_.media);                   // : InputMedia - InputMedia
 };
 messages.uploadMedia.ref = "messages.uploadMedia";
 messages.uploadMedia.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.sendScreenshotNotification = function sendScreenshotNotification(_) {
@@ -28944,7 +32043,7 @@ messages.sendMultiMedia = function sendMultiMedia(_) {
   return { ..._, _: "messages.sendMultiMedia" }
 }
 $encoder["messages.sendMultiMedia"] = function (_) {
-  this.int32(1164872071);
+  this.int32(211175177);
   this.int32(
     (+(_.silent != null) << 5)
     | (+(_.background != null) << 6)
@@ -28955,6 +32054,7 @@ $encoder["messages.sendMultiMedia"] = function (_) {
     | (+(_.reply_to != null) << 0)
     | (+(_.schedule_date != null) << 10)
     | (+(_.send_as != null) << 13)
+    | (+(_.quick_reply_shortcut != null) << 17)
   )
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
@@ -28976,6 +32076,8 @@ $encoder["messages.sendMultiMedia"] = function (_) {
     this.int32(_.schedule_date);          // ?: number - flags.10?int
   if (_.send_as != null)
     this.object(_.send_as);               // ?: InputPeer - flags.13?InputPeer
+  if (_.quick_reply_shortcut != null)
+    this.object(_.quick_reply_shortcut);  // ?: InputQuickReplyShortcut - flags.17?InputQuickReplyShortcut
 };
 messages.sendMultiMedia.ref = "messages.sendMultiMedia";
 messages.sendMultiMedia.verify = function($$) {
@@ -29225,11 +32327,14 @@ messages.getSearchCounters = function getSearchCounters(_) {
   return { ..._, _: "messages.getSearchCounters" }
 }
 $encoder["messages.getSearchCounters"] = function (_) {
-  this.int32(11435201);
+  this.int32(465367808);
   this.int32(
-    (+(_.top_msg_id != null) << 0)
+    (+(_.saved_peer_id != null) << 2)
+    | (+(_.top_msg_id != null) << 0)
   )
   this.object(_.peer);                    // : InputPeer - InputPeer
+  if (_.saved_peer_id != null)
+    this.object(_.saved_peer_id);         // ?: InputPeer - flags.2?InputPeer
   if (_.top_msg_id != null)
     this.int32(_.top_msg_id);             // ?: number - flags.0?int
   this.vector(_.filters, this.object);    // : MessagesFilter[] - Vector<MessagesFilter>
@@ -29416,13 +32521,12 @@ messages.getDialogFilters = function getDialogFilters() {
   return { _: "messages.getDialogFilters" }
 }
 $encoder["messages.getDialogFilters"] = function (_) {
-  this.int32(-241247891);
+  this.int32(-271283063);
 };
 messages.getDialogFilters.ref = "messages.getDialogFilters";
 messages.getDialogFilters.verify = function($$) {
-  if (!Array.isArray($$)) throw new TypeError("require array");
-  for (const $ of $$)
-    if (!(typeof $ == "object" && ["dialogFilter", "dialogFilterDefault", "dialogFilterChatlist"].includes($._))) throw new TypeError("array element");
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.dialogFilters"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.getSuggestedDialogFilters = function getSuggestedDialogFilters() {
@@ -29623,7 +32727,7 @@ $encoder["messages.uploadImportedMedia"] = function (_) {
 messages.uploadImportedMedia.ref = "messages.uploadImportedMedia";
 messages.uploadImportedMedia.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.startHistoryImport = function startHistoryImport(_) {
@@ -29839,8 +32943,13 @@ messages.getSearchResultsCalendar = function getSearchResultsCalendar(_) {
   return { ..._, _: "messages.getSearchResultsCalendar" }
 }
 $encoder["messages.getSearchResultsCalendar"] = function (_) {
-  this.int32(1240514025);
+  this.int32(1789130429);
+  this.int32(
+    (+(_.saved_peer_id != null) << 2)
+  )
   this.object(_.peer);                    // : InputPeer - InputPeer
+  if (_.saved_peer_id != null)
+    this.object(_.saved_peer_id);         // ?: InputPeer - flags.2?InputPeer
   this.object(_.filter);                  // : MessagesFilter - MessagesFilter
   this.int32(_.offset_id);                // : number - int
   this.int32(_.offset_date);              // : number - int
@@ -29855,8 +32964,13 @@ messages.getSearchResultsPositions = function getSearchResultsPositions(_) {
   return { ..._, _: "messages.getSearchResultsPositions" }
 }
 $encoder["messages.getSearchResultsPositions"] = function (_) {
-  this.int32(1855292323);
+  this.int32(-1669386480);
+  this.int32(
+    (+(_.saved_peer_id != null) << 2)
+  )
   this.object(_.peer);                    // : InputPeer - InputPeer
+  if (_.saved_peer_id != null)
+    this.object(_.saved_peer_id);         // ?: InputPeer - flags.2?InputPeer
   this.object(_.filter);                  // : MessagesFilter - MessagesFilter
   this.int32(_.offset_id);                // : number - int
   this.int32(_.limit);                    // : number - int
@@ -30455,11 +33569,11 @@ messages.sendBotRequestedPeer = function sendBotRequestedPeer(_) {
   return { ..._, _: "messages.sendBotRequestedPeer" }
 }
 $encoder["messages.sendBotRequestedPeer"] = function (_) {
-  this.int32(-29831141);
+  this.int32(-1850552224);
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.int32(_.msg_id);                   // : number - int
   this.int32(_.button_id);                // : number - int
-  this.object(_.requested_peer);          // : InputPeer - InputPeer
+  this.vector(_.requested_peers, this.object); // : InputPeer[] - Vector<InputPeer>
 };
 messages.sendBotRequestedPeer.ref = "messages.sendBotRequestedPeer";
 messages.sendBotRequestedPeer.verify = function($$) {
@@ -30584,10 +33698,16 @@ messages.setChatWallPaper = function setChatWallPaper(_) {
 $encoder["messages.setChatWallPaper"] = function (_) {
   this.int32(-1879389471);
   this.int32(
-    (+(_.wallpaper != null) << 0)
+    (+(_.for_both != null) << 3)
+    | (+(_.revert != null) << 4)
+    | (+(_.wallpaper != null) << 0)
     | (+(_.settings != null) << 2)
     | (+(_.id != null) << 1)
   )
+  if (_.for_both != null)
+    this.true(_.for_both);                // ?: true - flags.3?true
+  if (_.revert != null)
+    this.true(_.revert);                  // ?: true - flags.4?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.wallpaper != null)
     this.object(_.wallpaper);             // ?: InputWallPaper - flags.0?InputWallPaper
@@ -30600,6 +33720,342 @@ messages.setChatWallPaper.ref = "messages.setChatWallPaper";
 messages.setChatWallPaper.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.searchEmojiStickerSets = function searchEmojiStickerSets(_) {
+  return { ..._, _: "messages.searchEmojiStickerSets" }
+}
+$encoder["messages.searchEmojiStickerSets"] = function (_) {
+  this.int32(-1833678516);
+  this.int32(
+    (+(_.exclude_featured != null) << 0)
+  )
+  if (_.exclude_featured != null)
+    this.true(_.exclude_featured);        // ?: true - flags.0?true
+  this.string(_.q);                       // : string - string
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.searchEmojiStickerSets.ref = "messages.searchEmojiStickerSets";
+messages.searchEmojiStickerSets.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.foundStickerSetsNotModified", "messages.foundStickerSets"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getSavedDialogs = function getSavedDialogs(_) {
+  return { ..._, _: "messages.getSavedDialogs" }
+}
+$encoder["messages.getSavedDialogs"] = function (_) {
+  this.int32(1401016858);
+  this.int32(
+    (+(_.exclude_pinned != null) << 0)
+  )
+  if (_.exclude_pinned != null)
+    this.true(_.exclude_pinned);          // ?: true - flags.0?true
+  this.int32(_.offset_date);              // : number - int
+  this.int32(_.offset_id);                // : number - int
+  this.object(_.offset_peer);             // : InputPeer - InputPeer
+  this.int32(_.limit);                    // : number - int
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getSavedDialogs.ref = "messages.getSavedDialogs";
+messages.getSavedDialogs.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.savedDialogs", "messages.savedDialogsSlice", "messages.savedDialogsNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getSavedHistory = function getSavedHistory(_) {
+  return { ..._, _: "messages.getSavedHistory" }
+}
+$encoder["messages.getSavedHistory"] = function (_) {
+  this.int32(1033519437);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.offset_id);                // : number - int
+  this.int32(_.offset_date);              // : number - int
+  this.int32(_.add_offset);               // : number - int
+  this.int32(_.limit);                    // : number - int
+  this.int32(_.max_id);                   // : number - int
+  this.int32(_.min_id);                   // : number - int
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getSavedHistory.ref = "messages.getSavedHistory";
+messages.getSavedHistory.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.deleteSavedHistory = function deleteSavedHistory(_) {
+  return { ..._, _: "messages.deleteSavedHistory" }
+}
+$encoder["messages.deleteSavedHistory"] = function (_) {
+  this.int32(1855459371);
+  this.int32(
+    (+(_.min_date != null) << 2)
+    | (+(_.max_date != null) << 3)
+  )
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.max_id);                   // : number - int
+  if (_.min_date != null)
+    this.int32(_.min_date);               // ?: number - flags.2?int
+  if (_.max_date != null)
+    this.int32(_.max_date);               // ?: number - flags.3?int
+};
+messages.deleteSavedHistory.ref = "messages.deleteSavedHistory";
+messages.deleteSavedHistory.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.affectedHistory"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getPinnedSavedDialogs = function getPinnedSavedDialogs() {
+  return { _: "messages.getPinnedSavedDialogs" }
+}
+$encoder["messages.getPinnedSavedDialogs"] = function (_) {
+  this.int32(-700607264);
+};
+messages.getPinnedSavedDialogs.ref = "messages.getPinnedSavedDialogs";
+messages.getPinnedSavedDialogs.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.savedDialogs", "messages.savedDialogsSlice", "messages.savedDialogsNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.toggleSavedDialogPin = function toggleSavedDialogPin(_) {
+  return { ..._, _: "messages.toggleSavedDialogPin" }
+}
+$encoder["messages.toggleSavedDialogPin"] = function (_) {
+  this.int32(-1400783906);
+  this.int32(
+    (+(_.pinned != null) << 0)
+  )
+  if (_.pinned != null)
+    this.true(_.pinned);                  // ?: true - flags.0?true
+  this.object(_.peer);                    // : InputDialogPeer - InputDialogPeer
+};
+messages.toggleSavedDialogPin.ref = "messages.toggleSavedDialogPin";
+messages.toggleSavedDialogPin.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.reorderPinnedSavedDialogs = function reorderPinnedSavedDialogs(_) {
+  return { ..._, _: "messages.reorderPinnedSavedDialogs" }
+}
+$encoder["messages.reorderPinnedSavedDialogs"] = function (_) {
+  this.int32(-1955502713);
+  this.int32(
+    (+(_.force != null) << 0)
+  )
+  if (_.force != null)
+    this.true(_.force);                   // ?: true - flags.0?true
+  this.vector(_.order, this.object);      // : InputDialogPeer[] - Vector<InputDialogPeer>
+};
+messages.reorderPinnedSavedDialogs.ref = "messages.reorderPinnedSavedDialogs";
+messages.reorderPinnedSavedDialogs.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.getSavedReactionTags = function getSavedReactionTags(_) {
+  return { ..._, _: "messages.getSavedReactionTags" }
+}
+$encoder["messages.getSavedReactionTags"] = function (_) {
+  this.int32(909631579);
+  this.int32(
+    (+(_.peer != null) << 0)
+  )
+  if (_.peer != null)
+    this.object(_.peer);                  // ?: InputPeer - flags.0?InputPeer
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getSavedReactionTags.ref = "messages.getSavedReactionTags";
+messages.getSavedReactionTags.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.savedReactionTagsNotModified", "messages.savedReactionTags"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.updateSavedReactionTag = function updateSavedReactionTag(_) {
+  return { ..._, _: "messages.updateSavedReactionTag" }
+}
+$encoder["messages.updateSavedReactionTag"] = function (_) {
+  this.int32(1613331948);
+  this.int32(
+    (+(_.title != null) << 0)
+  )
+  this.object(_.reaction);                // : Reaction - Reaction
+  if (_.title != null)
+    this.string(_.title);                 // ?: string - flags.0?string
+};
+messages.updateSavedReactionTag.ref = "messages.updateSavedReactionTag";
+messages.updateSavedReactionTag.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.getDefaultTagReactions = function getDefaultTagReactions(_) {
+  return { ..._, _: "messages.getDefaultTagReactions" }
+}
+$encoder["messages.getDefaultTagReactions"] = function (_) {
+  this.int32(-1107741656);
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getDefaultTagReactions.ref = "messages.getDefaultTagReactions";
+messages.getDefaultTagReactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.reactionsNotModified", "messages.reactions"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getOutboxReadDate = function getOutboxReadDate(_) {
+  return { ..._, _: "messages.getOutboxReadDate" }
+}
+$encoder["messages.getOutboxReadDate"] = function (_) {
+  this.int32(-1941176739);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.msg_id);                   // : number - int
+};
+messages.getOutboxReadDate.ref = "messages.getOutboxReadDate";
+messages.getOutboxReadDate.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["outboxReadDate"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.getQuickReplies = function getQuickReplies(_) {
+  return { ..._, _: "messages.getQuickReplies" }
+}
+$encoder["messages.getQuickReplies"] = function (_) {
+  this.int32(-729550168);
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getQuickReplies.ref = "messages.getQuickReplies";
+messages.getQuickReplies.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.quickReplies", "messages.quickRepliesNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.reorderQuickReplies = function reorderQuickReplies(_) {
+  return { ..._, _: "messages.reorderQuickReplies" }
+}
+$encoder["messages.reorderQuickReplies"] = function (_) {
+  this.int32(1613961479);
+  this.vector(_.order, this.int32);       // : number[] - Vector<int>
+};
+messages.reorderQuickReplies.ref = "messages.reorderQuickReplies";
+messages.reorderQuickReplies.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.checkQuickReplyShortcut = function checkQuickReplyShortcut(_) {
+  return { ..._, _: "messages.checkQuickReplyShortcut" }
+}
+$encoder["messages.checkQuickReplyShortcut"] = function (_) {
+  this.int32(-237962285);
+  this.string(_.shortcut);                // : string - string
+};
+messages.checkQuickReplyShortcut.ref = "messages.checkQuickReplyShortcut";
+messages.checkQuickReplyShortcut.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.editQuickReplyShortcut = function editQuickReplyShortcut(_) {
+  return { ..._, _: "messages.editQuickReplyShortcut" }
+}
+$encoder["messages.editQuickReplyShortcut"] = function (_) {
+  this.int32(1543519471);
+  this.int32(_.shortcut_id);              // : number - int
+  this.string(_.shortcut);                // : string - string
+};
+messages.editQuickReplyShortcut.ref = "messages.editQuickReplyShortcut";
+messages.editQuickReplyShortcut.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.deleteQuickReplyShortcut = function deleteQuickReplyShortcut(_) {
+  return { ..._, _: "messages.deleteQuickReplyShortcut" }
+}
+$encoder["messages.deleteQuickReplyShortcut"] = function (_) {
+  this.int32(1019234112);
+  this.int32(_.shortcut_id);              // : number - int
+};
+messages.deleteQuickReplyShortcut.ref = "messages.deleteQuickReplyShortcut";
+messages.deleteQuickReplyShortcut.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.getQuickReplyMessages = function getQuickReplyMessages(_) {
+  return { ..._, _: "messages.getQuickReplyMessages" }
+}
+$encoder["messages.getQuickReplyMessages"] = function (_) {
+  this.int32(-1801153085);
+  this.int32(
+    (+(_.id != null && _.id.length > 0) << 0)
+  )
+  this.int32(_.shortcut_id);              // : number - int
+  if (_.id != null && _.id.length > 0)
+    this.vector(_.id, this.int32);        // ?: number[] - flags.0?Vector<int>
+  this.int64(_.hash);                     // : bigint - long
+};
+messages.getQuickReplyMessages.ref = "messages.getQuickReplyMessages";
+messages.getQuickReplyMessages.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.sendQuickReplyMessages = function sendQuickReplyMessages(_) {
+  return { ..._, _: "messages.sendQuickReplyMessages" }
+}
+$encoder["messages.sendQuickReplyMessages"] = function (_) {
+  this.int32(1819610593);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.shortcut_id);              // : number - int
+  this.vector(_.id, this.int32);          // : number[] - Vector<int>
+  this.vector(_.random_id, this.int64);   // : bigint[] - Vector<long>
+};
+messages.sendQuickReplyMessages.ref = "messages.sendQuickReplyMessages";
+messages.sendQuickReplyMessages.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.deleteQuickReplyMessages = function deleteQuickReplyMessages(_) {
+  return { ..._, _: "messages.deleteQuickReplyMessages" }
+}
+$encoder["messages.deleteQuickReplyMessages"] = function (_) {
+  this.int32(-519706352);
+  this.int32(_.shortcut_id);              // : number - int
+  this.vector(_.id, this.int32);          // : number[] - Vector<int>
+};
+messages.deleteQuickReplyMessages.ref = "messages.deleteQuickReplyMessages";
+messages.deleteQuickReplyMessages.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+messages.toggleDialogFilterTags = function toggleDialogFilterTags(_) {
+  return { ..._, _: "messages.toggleDialogFilterTags" }
+}
+$encoder["messages.toggleDialogFilterTags"] = function (_) {
+  this.int32(-47326647);
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+messages.toggleDialogFilterTags.ref = "messages.toggleDialogFilterTags";
+messages.toggleDialogFilterTags.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+messages.getMyStickers = function getMyStickers(_) {
+  return { ..._, _: "messages.getMyStickers" }
+}
+$encoder["messages.getMyStickers"] = function (_) {
+  this.int32(-793386500);
+  this.int64(_.offset_id);                // : bigint - long
+  this.int32(_.limit);                    // : number - int
+};
+messages.getMyStickers.ref = "messages.getMyStickers";
+messages.getMyStickers.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.myStickers"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -30971,19 +34427,6 @@ help.getSupport.verify = function($$) {
   if (!(typeof $ == "object" && ["help.support"].includes($._))) throw new TypeError("element");
   return $$;
 };
-help.getAppChangelog = function getAppChangelog(_) {
-  return { ..._, _: "help.getAppChangelog" }
-}
-$encoder["help.getAppChangelog"] = function (_) {
-  this.int32(-1877938321);
-  this.string(_.prev_app_version);        // : string - string
-};
-help.getAppChangelog.ref = "help.getAppChangelog";
-help.getAppChangelog.verify = function($$) {
-  const $ = $$;
-  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
-  return $$;
-};
 help.setBotUpdatesStatus = function setBotUpdatesStatus(_) {
   return { ..._, _: "help.setBotUpdatesStatus" }
 }
@@ -31203,6 +34646,45 @@ help.getPremiumPromo.ref = "help.getPremiumPromo";
 help.getPremiumPromo.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["help.premiumPromo"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+help.getPeerColors = function getPeerColors(_) {
+  return { ..._, _: "help.getPeerColors" }
+}
+$encoder["help.getPeerColors"] = function (_) {
+  this.int32(-629083089);
+  this.int32(_.hash);                     // : number - int
+};
+help.getPeerColors.ref = "help.getPeerColors";
+help.getPeerColors.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["help.peerColorsNotModified", "help.peerColors"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+help.getPeerProfileColors = function getPeerProfileColors(_) {
+  return { ..._, _: "help.getPeerProfileColors" }
+}
+$encoder["help.getPeerProfileColors"] = function (_) {
+  this.int32(-1412453891);
+  this.int32(_.hash);                     // : number - int
+};
+help.getPeerProfileColors.ref = "help.getPeerProfileColors";
+help.getPeerProfileColors.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["help.peerColorsNotModified", "help.peerColors"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+help.getTimezonesList = function getTimezonesList(_) {
+  return { ..._, _: "help.getTimezonesList" }
+}
+$encoder["help.getTimezonesList"] = function (_) {
+  this.int32(1236468288);
+  this.int32(_.hash);                     // : number - int
+};
+help.getTimezonesList.ref = "help.getTimezonesList";
+help.getTimezonesList.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["help.timezonesListNotModified", "help.timezonesList"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -31459,14 +34941,14 @@ channels.inviteToChannel = function inviteToChannel(_) {
   return { ..._, _: "channels.inviteToChannel" }
 }
 $encoder["channels.inviteToChannel"] = function (_) {
-  this.int32(429865580);
+  this.int32(-907854508);
   this.object(_.channel);                 // : InputChannel - InputChannel
   this.vector(_.users, this.object);      // : InputUser[] - Vector<InputUser>
 };
 channels.inviteToChannel.ref = "channels.inviteToChannel";
 channels.inviteToChannel.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messages.invitedUsers"].includes($._))) throw new TypeError("element");
   return $$;
 };
 channels.deleteChannel = function deleteChannel(_) {
@@ -31526,11 +35008,14 @@ $encoder["channels.getAdminedPublicChannels"] = function (_) {
   this.int32(
     (+(_.by_location != null) << 0)
     | (+(_.check_limit != null) << 1)
+    | (+(_.for_personal != null) << 2)
   )
   if (_.by_location != null)
     this.true(_.by_location);             // ?: true - flags.0?true
   if (_.check_limit != null)
     this.true(_.check_limit);             // ?: true - flags.1?true
+  if (_.for_personal != null)
+    this.true(_.for_personal);            // ?: true - flags.2?true
 };
 channels.getAdminedPublicChannels.ref = "channels.getAdminedPublicChannels";
 channels.getAdminedPublicChannels.verify = function($$) {
@@ -32083,17 +35568,120 @@ channels.updateColor = function updateColor(_) {
   return { ..._, _: "channels.updateColor" }
 }
 $encoder["channels.updateColor"] = function (_) {
-  this.int32(1645879327);
+  this.int32(-659933583);
   this.int32(
-    (+(_.background_emoji_id != null) << 0)
+    (+(_.for_profile != null) << 1)
+    | (+(_.color != null) << 2)
+    | (+(_.background_emoji_id != null) << 0)
   )
+  if (_.for_profile != null)
+    this.true(_.for_profile);             // ?: true - flags.1?true
   this.object(_.channel);                 // : InputChannel - InputChannel
-  this.int32(_.color);                    // : number - int
+  if (_.color != null)
+    this.int32(_.color);                  // ?: number - flags.2?int
   if (_.background_emoji_id != null)
     this.int64(_.background_emoji_id);    // ?: bigint - flags.0?long
 };
 channels.updateColor.ref = "channels.updateColor";
 channels.updateColor.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.toggleViewForumAsMessages = function toggleViewForumAsMessages(_) {
+  return { ..._, _: "channels.toggleViewForumAsMessages" }
+}
+$encoder["channels.toggleViewForumAsMessages"] = function (_) {
+  this.int32(-1757889771);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.bool(_.enabled);                   // : boolean - Bool
+};
+channels.toggleViewForumAsMessages.ref = "channels.toggleViewForumAsMessages";
+channels.toggleViewForumAsMessages.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.getChannelRecommendations = function getChannelRecommendations(_) {
+  return { ..._, _: "channels.getChannelRecommendations" }
+}
+$encoder["channels.getChannelRecommendations"] = function (_) {
+  this.int32(-2085155433);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+};
+channels.getChannelRecommendations.ref = "channels.getChannelRecommendations";
+channels.getChannelRecommendations.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.chats", "messages.chatsSlice"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.updateEmojiStatus = function updateEmojiStatus(_) {
+  return { ..._, _: "channels.updateEmojiStatus" }
+}
+$encoder["channels.updateEmojiStatus"] = function (_) {
+  this.int32(-254548312);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.object(_.emoji_status);            // : EmojiStatus - EmojiStatus
+};
+channels.updateEmojiStatus.ref = "channels.updateEmojiStatus";
+channels.updateEmojiStatus.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.setBoostsToUnblockRestrictions = function setBoostsToUnblockRestrictions(_) {
+  return { ..._, _: "channels.setBoostsToUnblockRestrictions" }
+}
+$encoder["channels.setBoostsToUnblockRestrictions"] = function (_) {
+  this.int32(-1388733202);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.int32(_.boosts);                   // : number - int
+};
+channels.setBoostsToUnblockRestrictions.ref = "channels.setBoostsToUnblockRestrictions";
+channels.setBoostsToUnblockRestrictions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.setEmojiStickers = function setEmojiStickers(_) {
+  return { ..._, _: "channels.setEmojiStickers" }
+}
+$encoder["channels.setEmojiStickers"] = function (_) {
+  this.int32(1020866743);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.object(_.stickerset);              // : InputStickerSet - InputStickerSet
+};
+channels.setEmojiStickers.ref = "channels.setEmojiStickers";
+channels.setEmojiStickers.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+channels.reportSponsoredMessage = function reportSponsoredMessage(_) {
+  return { ..._, _: "channels.reportSponsoredMessage" }
+}
+$encoder["channels.reportSponsoredMessage"] = function (_) {
+  this.int32(-1349519687);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.bytes(_.random_id);                // : Uint8Array - bytes
+  this.bytes(_.option);                   // : Uint8Array - bytes
+};
+channels.reportSponsoredMessage.ref = "channels.reportSponsoredMessage";
+channels.reportSponsoredMessage.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["channels.sponsoredMessageReportResultChooseOption", "channels.sponsoredMessageReportResultAdsHidden", "channels.sponsoredMessageReportResultReported"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+channels.restrictSponsoredMessages = function restrictSponsoredMessages(_) {
+  return { ..._, _: "channels.restrictSponsoredMessages" }
+}
+$encoder["channels.restrictSponsoredMessages"] = function (_) {
+  this.int32(-1696000743);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.bool(_.restricted);                // : boolean - Bool
+};
+channels.restrictSponsoredMessages.ref = "channels.restrictSponsoredMessages";
+channels.restrictSponsoredMessages.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
   return $$;
@@ -32597,8 +36185,6 @@ $encoder["stickers.createStickerSet"] = function (_) {
   this.int32(-1876841625);
   this.int32(
     (+(_.masks != null) << 0)
-    | (+(_.animated != null) << 1)
-    | (+(_.videos != null) << 4)
     | (+(_.emojis != null) << 5)
     | (+(_.text_color != null) << 6)
     | (+(_.thumb != null) << 2)
@@ -32606,10 +36192,6 @@ $encoder["stickers.createStickerSet"] = function (_) {
   )
   if (_.masks != null)
     this.true(_.masks);                   // ?: true - flags.0?true
-  if (_.animated != null)
-    this.true(_.animated);                // ?: true - flags.1?true
-  if (_.videos != null)
-    this.true(_.videos);                  // ?: true - flags.4?true
   if (_.emojis != null)
     this.true(_.emojis);                  // ?: true - flags.5?true
   if (_.text_color != null)
@@ -32766,6 +36348,20 @@ stickers.deleteStickerSet.ref = "stickers.deleteStickerSet";
 stickers.deleteStickerSet.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+stickers.replaceSticker = function replaceSticker(_) {
+  return { ..._, _: "stickers.replaceSticker" }
+}
+$encoder["stickers.replaceSticker"] = function (_) {
+  this.int32(1184253338);
+  this.object(_.sticker);                 // : InputDocument - InputDocument
+  this.object(_.new_sticker);             // : InputStickerSetItem - InputStickerSetItem
+};
+stickers.replaceSticker.ref = "stickers.replaceSticker";
+stickers.replaceSticker.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["messages.stickerSet", "messages.stickerSetNotModified"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -33438,18 +37034,16 @@ stats.getMessagePublicForwards = function getMessagePublicForwards(_) {
   return { ..._, _: "stats.getMessagePublicForwards" }
 }
 $encoder["stats.getMessagePublicForwards"] = function (_) {
-  this.int32(1445996571);
+  this.int32(1595212100);
   this.object(_.channel);                 // : InputChannel - InputChannel
   this.int32(_.msg_id);                   // : number - int
-  this.int32(_.offset_rate);              // : number - int
-  this.object(_.offset_peer);             // : InputPeer - InputPeer
-  this.int32(_.offset_id);                // : number - int
+  this.string(_.offset);                  // : string - string
   this.int32(_.limit);                    // : number - int
 };
 stats.getMessagePublicForwards.ref = "stats.getMessagePublicForwards";
 stats.getMessagePublicForwards.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messages.messages", "messages.messagesSlice", "messages.channelMessages", "messages.messagesNotModified"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["stats.publicForwards"].includes($._))) throw new TypeError("element");
   return $$;
 };
 stats.getMessageStats = function getMessageStats(_) {
@@ -33469,6 +37063,88 @@ stats.getMessageStats.ref = "stats.getMessageStats";
 stats.getMessageStats.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["stats.messageStats"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+stats.getStoryStats = function getStoryStats(_) {
+  return { ..._, _: "stats.getStoryStats" }
+}
+$encoder["stats.getStoryStats"] = function (_) {
+  this.int32(927985472);
+  this.int32(
+    (+(_.dark != null) << 0)
+  )
+  if (_.dark != null)
+    this.true(_.dark);                    // ?: true - flags.0?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.id);                       // : number - int
+};
+stats.getStoryStats.ref = "stats.getStoryStats";
+stats.getStoryStats.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stats.storyStats"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+stats.getStoryPublicForwards = function getStoryPublicForwards(_) {
+  return { ..._, _: "stats.getStoryPublicForwards" }
+}
+$encoder["stats.getStoryPublicForwards"] = function (_) {
+  this.int32(-1505526026);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.id);                       // : number - int
+  this.string(_.offset);                  // : string - string
+  this.int32(_.limit);                    // : number - int
+};
+stats.getStoryPublicForwards.ref = "stats.getStoryPublicForwards";
+stats.getStoryPublicForwards.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stats.publicForwards"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+stats.getBroadcastRevenueStats = function getBroadcastRevenueStats(_) {
+  return { ..._, _: "stats.getBroadcastRevenueStats" }
+}
+$encoder["stats.getBroadcastRevenueStats"] = function (_) {
+  this.int32(1977595505);
+  this.int32(
+    (+(_.dark != null) << 0)
+  )
+  if (_.dark != null)
+    this.true(_.dark);                    // ?: true - flags.0?true
+  this.object(_.channel);                 // : InputChannel - InputChannel
+};
+stats.getBroadcastRevenueStats.ref = "stats.getBroadcastRevenueStats";
+stats.getBroadcastRevenueStats.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stats.broadcastRevenueStats"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+stats.getBroadcastRevenueWithdrawalUrl = function getBroadcastRevenueWithdrawalUrl(_) {
+  return { ..._, _: "stats.getBroadcastRevenueWithdrawalUrl" }
+}
+$encoder["stats.getBroadcastRevenueWithdrawalUrl"] = function (_) {
+  this.int32(711323507);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.object(_.password);                // : InputCheckPasswordSRP - InputCheckPasswordSRP
+};
+stats.getBroadcastRevenueWithdrawalUrl.ref = "stats.getBroadcastRevenueWithdrawalUrl";
+stats.getBroadcastRevenueWithdrawalUrl.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stats.broadcastRevenueWithdrawalUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+stats.getBroadcastRevenueTransactions = function getBroadcastRevenueTransactions(_) {
+  return { ..._, _: "stats.getBroadcastRevenueTransactions" }
+}
+$encoder["stats.getBroadcastRevenueTransactions"] = function (_) {
+  this.int32(6891535);
+  this.object(_.channel);                 // : InputChannel - InputChannel
+  this.int32(_.offset);                   // : number - int
+  this.int32(_.limit);                    // : number - int
+};
+stats.getBroadcastRevenueTransactions.ref = "stats.getBroadcastRevenueTransactions";
+stats.getBroadcastRevenueTransactions.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stats.broadcastRevenueTransactions"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -33649,19 +37325,24 @@ stories.sendStory = function sendStory(_) {
   return { ..._, _: "stories.sendStory" }
 }
 $encoder["stories.sendStory"] = function (_) {
-  this.int32(-1128843708);
+  this.int32(-454661813);
   this.int32(
     (+(_.pinned != null) << 2)
     | (+(_.noforwards != null) << 4)
+    | (+(_.fwd_modified != null) << 7)
     | (+(_.media_areas != null && _.media_areas.length > 0) << 5)
     | (+(_.caption != null) << 0)
     | (+(_.entities != null && _.entities.length > 0) << 1)
     | (+(_.period != null) << 3)
+    | (+(_.fwd_from_id != null) << 6)
+    | (+(_.fwd_from_story != null) << 6)
   )
   if (_.pinned != null)
     this.true(_.pinned);                  // ?: true - flags.2?true
   if (_.noforwards != null)
     this.true(_.noforwards);              // ?: true - flags.4?true
+  if (_.fwd_modified != null)
+    this.true(_.fwd_modified);            // ?: true - flags.7?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.object(_.media);                   // : InputMedia - InputMedia
   if (_.media_areas != null && _.media_areas.length > 0)
@@ -33674,6 +37355,10 @@ $encoder["stories.sendStory"] = function (_) {
   this.int64(_.random_id);                // : bigint - long
   if (_.period != null)
     this.int32(_.period);                 // ?: number - flags.3?int
+  if (_.fwd_from_id != null)
+    this.object(_.fwd_from_id);           // ?: InputPeer - flags.6?InputPeer
+  if (_.fwd_from_story != null)
+    this.int32(_.fwd_from_story);         // ?: number - flags.6?int
 };
 stories.sendStory.ref = "stories.sendStory";
 stories.sendStory.verify = function($$) {
@@ -33860,12 +37545,15 @@ $encoder["stories.getStoryViewsList"] = function (_) {
   this.int32(
     (+(_.just_contacts != null) << 0)
     | (+(_.reactions_first != null) << 2)
+    | (+(_.forwards_first != null) << 3)
     | (+(_.q != null) << 1)
   )
   if (_.just_contacts != null)
     this.true(_.just_contacts);           // ?: true - flags.0?true
   if (_.reactions_first != null)
     this.true(_.reactions_first);         // ?: true - flags.2?true
+  if (_.forwards_first != null)
+    this.true(_.forwards_first);          // ?: true - flags.3?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   if (_.q != null)
     this.string(_.q);                     // ?: string - flags.1?string
@@ -34028,6 +37716,32 @@ stories.togglePeerStoriesHidden.verify = function($$) {
   if (!(typeof $ == "boolean")) throw new TypeError("element");
   return $$;
 };
+stories.getStoryReactionsList = function getStoryReactionsList(_) {
+  return { ..._, _: "stories.getStoryReactionsList" }
+}
+$encoder["stories.getStoryReactionsList"] = function (_) {
+  this.int32(-1179482081);
+  this.int32(
+    (+(_.forwards_first != null) << 2)
+    | (+(_.reaction != null) << 0)
+    | (+(_.offset != null) << 1)
+  )
+  if (_.forwards_first != null)
+    this.true(_.forwards_first);          // ?: true - flags.2?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int32(_.id);                       // : number - int
+  if (_.reaction != null)
+    this.object(_.reaction);              // ?: Reaction - flags.0?Reaction
+  if (_.offset != null)
+    this.string(_.offset);                // ?: string - flags.1?string
+  this.int32(_.limit);                    // : number - int
+};
+stories.getStoryReactionsList.ref = "stories.getStoryReactionsList";
+stories.getStoryReactionsList.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stories.storyReactionsList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
 
 premium.getBoostsList = function getBoostsList(_) {
   return { ..._, _: "premium.getBoostsList" }
@@ -34090,6 +37804,131 @@ premium.getBoostsStatus.ref = "premium.getBoostsStatus";
 premium.getBoostsStatus.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["premium.boostsStatus"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+premium.getUserBoosts = function getUserBoosts(_) {
+  return { ..._, _: "premium.getUserBoosts" }
+}
+$encoder["premium.getUserBoosts"] = function (_) {
+  this.int32(965037343);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.object(_.user_id);                 // : InputUser - InputUser
+};
+premium.getUserBoosts.ref = "premium.getUserBoosts";
+premium.getUserBoosts.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["premium.boostsList"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+
+smsjobs.isEligibleToJoin = function isEligibleToJoin() {
+  return { _: "smsjobs.isEligibleToJoin" }
+}
+$encoder["smsjobs.isEligibleToJoin"] = function (_) {
+  this.int32(249313744);
+};
+smsjobs.isEligibleToJoin.ref = "smsjobs.isEligibleToJoin";
+smsjobs.isEligibleToJoin.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["smsjobs.eligibleToJoin"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+smsjobs.join = function join() {
+  return { _: "smsjobs.join" }
+}
+$encoder["smsjobs.join"] = function (_) {
+  this.int32(-1488007635);
+};
+smsjobs.join.ref = "smsjobs.join";
+smsjobs.join.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+smsjobs.leave = function leave() {
+  return { _: "smsjobs.leave" }
+}
+$encoder["smsjobs.leave"] = function (_) {
+  this.int32(-1734824589);
+};
+smsjobs.leave.ref = "smsjobs.leave";
+smsjobs.leave.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+smsjobs.updateSettings = function updateSettings(_) {
+  return { ..._, _: "smsjobs.updateSettings" }
+}
+$encoder["smsjobs.updateSettings"] = function (_) {
+  this.int32(155164863);
+  this.int32(
+    (+(_.allow_international != null) << 0)
+  )
+  if (_.allow_international != null)
+    this.true(_.allow_international);     // ?: true - flags.0?true
+};
+smsjobs.updateSettings.ref = "smsjobs.updateSettings";
+smsjobs.updateSettings.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+smsjobs.getStatus = function getStatus() {
+  return { _: "smsjobs.getStatus" }
+}
+$encoder["smsjobs.getStatus"] = function (_) {
+  this.int32(279353576);
+};
+smsjobs.getStatus.ref = "smsjobs.getStatus";
+smsjobs.getStatus.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["smsjobs.status"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+smsjobs.getSmsJob = function getSmsJob(_) {
+  return { ..._, _: "smsjobs.getSmsJob" }
+}
+$encoder["smsjobs.getSmsJob"] = function (_) {
+  this.int32(2005766191);
+  this.string(_.job_id);                  // : string - string
+};
+smsjobs.getSmsJob.ref = "smsjobs.getSmsJob";
+smsjobs.getSmsJob.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["smsJob"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+smsjobs.finishJob = function finishJob(_) {
+  return { ..._, _: "smsjobs.finishJob" }
+}
+$encoder["smsjobs.finishJob"] = function (_) {
+  this.int32(1327415076);
+  this.int32(
+    (+(_.error != null) << 0)
+  )
+  this.string(_.job_id);                  // : string - string
+  if (_.error != null)
+    this.string(_.error);                 // ?: string - flags.0?string
+};
+smsjobs.finishJob.ref = "smsjobs.finishJob";
+smsjobs.finishJob.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+
+fragment.getCollectibleInfo = function getCollectibleInfo(_) {
+  return { ..._, _: "fragment.getCollectibleInfo" }
+}
+$encoder["fragment.getCollectibleInfo"] = function (_) {
+  this.int32(-1105295942);
+  this.object(_.collectible);             // : InputCollectible - InputCollectible
+};
+fragment.getCollectibleInfo.ref = "fragment.getCollectibleInfo";
+fragment.getCollectibleInfo.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["fragment.collectibleInfo"].includes($._))) throw new TypeError("element");
   return $$;
 };
 

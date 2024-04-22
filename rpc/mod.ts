@@ -33,7 +33,7 @@ import { serialize } from "../tl/serializer.ts";
 import { TLApiMethod, TLMethod } from "../tl/types.ts";
 import { EnvironmentInformation, Transport } from "../types.ts";
 
-const API_LAYER = 166;
+const API_LAYER = 177;
 
 export type RPCState = "connecting" | "connected" | "disconnected";
 
