@@ -1,8 +1,8 @@
 import {
   api,
-  Constructor,
-  Definition,
-  Method,
+  type Constructor,
+  type Definition,
+  type Method,
   mtproto,
 } from "../gen/schemas.ts";
 
@@ -387,7 +387,7 @@ class DefinitionProcessor {
     tsfile.empty();
     jsfile.append`// #region "constructors"`;
     jsfile.empty();
-    for (const [namespace = 'api', content] of typelist) {
+    for (const [namespace = "api", content] of typelist) {
       if (namespace) {
         tsfile.append`export namespace ${namespace} {`;
         tsfile.indent++;
@@ -455,7 +455,7 @@ class DefinitionProcessor {
       for (const [typename, constructors] of content) {
         jsfile.append`// type ${typename}`;
         for (const { constructor: { predicate } } of constructors) {
-          const { namespace = 'api', name } = parseNamespace(predicate);
+          const { namespace = "api", name } = parseNamespace(predicate);
           jsfile.append`${namespace ?? "global"}.${name}.ref = "${predicate}";`;
         }
         jsfile.empty();
