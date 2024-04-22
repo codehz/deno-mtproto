@@ -102,7 +102,7 @@ class Parser {
 
     const params = paramsAsArray
       .filter((param) => {
-        if (param[0] === "{" && param[param.length - 1] === "}") {
+        if (param.startsWith("{") && param.endsWith("}")) {
           return false;
         }
 

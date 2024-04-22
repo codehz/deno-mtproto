@@ -1,6 +1,6 @@
-import { PacketCodec } from "../../types.ts";
 import { concat_array, todv, view_arr } from "../../common/utils.ts";
 import crc32 from "../../crypto/crc32.ts";
+import type { PacketCodec } from "../../types.ts";
 
 export default class Full implements PacketCodec {
   #sendbuf = new Uint8Array(8);

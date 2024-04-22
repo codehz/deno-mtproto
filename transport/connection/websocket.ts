@@ -1,11 +1,11 @@
-import {
+import { concat_array, todv } from "../../common/utils.ts";
+import type {
   PacketCodec,
   Transport,
   TransportEvent,
   TransportEvents,
   TransportFactory,
 } from "../../types.ts";
-import { concat_array, todv } from "../../common/utils.ts";
 
 import Resolver from "../../common/resolver.ts";
 import { get_address } from "../dcmap.ts";
@@ -113,7 +113,7 @@ export class WebSocketTransport implements Transport {
 
   send(packet: Uint8Array): Promise<void> {
     this.#conn.send(concat_array(...this.#codec.encode_packet(packet)));
-    return Promise.resolve()
+    return Promise.resolve();
   }
 
   async *[Symbol.asyncIterator](): AsyncIterator<

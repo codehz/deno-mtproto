@@ -1,6 +1,6 @@
 import { todv } from "../common/utils.ts";
 import { $encoder } from "../gen/api.js";
-import { BaseSerializer, GenericObject } from "../tl/types.ts";
+import type { BaseSerializer, GenericObject } from "../tl/types.ts";
 
 class Counter implements BaseSerializer {
   #count = 0;
@@ -30,11 +30,7 @@ class Counter implements BaseSerializer {
   bytes(value: Uint8Array): void {
     const length = value.byteLength;
 
-    if (length <= 253) {
-      this.#count += 1;
-    } else {
-      this.#count += 4;
-    }
+    this.#count += length <= 253 ? 1 : 4;
 
     this.#count += length;
     const lost = this.#count % 4;
@@ -92,9 +88,9 @@ export class Serializer implements BaseSerializer {
   }
   bool(value: boolean): void {
     if (value) {
-      this.int32(-1720552011);
+      this.int32(-1_720_552_011);
     } else {
-      this.int32(-1132882121);
+      this.int32(-1_132_882_121);
     }
   }
   uint32(value: number): void {
@@ -150,7 +146,7 @@ export class Serializer implements BaseSerializer {
     value: T[],
     fn: (this: BaseSerializer, value: T) => void,
   ): void {
-    this.int32(0x1cb5c415);
+    this.int32(0x1c_b5_c4_15);
     this.int32(value.length);
     for (const item of value) fn.call(this, item);
   }

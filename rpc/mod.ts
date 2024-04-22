@@ -98,7 +98,7 @@ class Session {
     const timeTicks = Date.now();
     const timeSec = Math.floor(timeTicks / 1000) + this.#offset;
     const timeMSec = timeTicks % 1000;
-    const random = rand_int(0xffff);
+    const random = rand_int(0xff_ff);
 
     return (this.#lastmsgid = max(
       this.#lastmsgid + 4n,
@@ -156,13 +156,11 @@ class QueueHandler<T> {
 
   set blocked(value: boolean) {
     this.#blocked = value;
-    if (!value) {
-      if (this.#queue.length && !this.wait && !this.#next) {
-        this.wait = this.#runner();
-      }
-    } else {
+    if (value) {
       if (this.#next) clearTimeout(this.#next);
       this.#next = undefined;
+    } else if (this.#queue.length && !this.wait && !this.#next) {
+      this.wait = this.#runner();
     }
   }
 
@@ -562,16 +560,16 @@ export default class RPC extends EventEmitter<Events> {
             const obj: { resolve?: Promise<void> } = {};
             this.emit("authorize", obj);
             if (obj.resolve) {
-              (async (resolve) => {
+              (async () => {
                 try {
-                  await resolve;
+                  await obj.resolve;
                   const newid = await this.#send_encrypted(msg.packet);
                   this.#waitlist.set(newid, msg);
                 } catch (e) {
                   msg.resolver.reject(e);
                   this.#handleerr(e);
                 }
-              })(obj.resolve);
+              })();
               return;
             }
           }

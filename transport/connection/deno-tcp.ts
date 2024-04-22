@@ -1,5 +1,5 @@
 import { todv } from "../../common/utils.ts";
-import {
+import type {
   PacketCodec,
   Transport,
   TransportEvent,
@@ -64,7 +64,7 @@ export class DenoTCP implements Transport {
 }
 
 export default function createFactory(
-  codec: () => PacketCodec
+  codec: () => PacketCodec,
 ): TransportFactory {
   return async ({ ip, port }) => {
     const conn = await Deno.connect({ hostname: ip, port });

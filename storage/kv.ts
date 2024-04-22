@@ -1,8 +1,8 @@
 import {
-  KVStorage,
-  MTStorage,
+  type KVStorage,
+  type MTStorage,
   serialize_storage_kind,
-  StorageKind,
+  type StorageKind,
 } from "./types.ts";
 
 export default class KVStorageAdapter implements MTStorage {

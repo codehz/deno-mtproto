@@ -1,10 +1,6 @@
 // deno-lint-ignore-file require-await
+import { assertEquals, assertIsError, unreachable } from "@std/assert";
 import TaskQueue from "./queue.ts";
-import {
-  assertEquals,
-  assertIsError,
-  unreachable,
-} from "https://deno.land/std@0.205.0/testing/asserts.ts";
 
 function wait(msec: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, msec));

@@ -7,16 +7,15 @@
     "checkJs": false
   },
   "lint": {
-    "files": {
-      "exclude": ["gen/"]
-    },
+    "exclude": ["gen/"],
     "rules": {
       "exclude": ["no-explicit-any"]
     }
   },
   "fmt": {
-    "files": {
-      "exclude": ["gen/"]
-    }
+    "exclude": ["gen/"]
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^0.223.0"
   }
 }

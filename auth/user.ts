@@ -1,7 +1,9 @@
-import MTProto from "../mod.ts";
-import srp from "../crypto/srp.ts";
-import RPC, { RPCError } from "../rpc/mod.ts";
 import parse_error from "../common/errparse.ts";
+import { tou8 } from "../common/utils.ts";
+import srp from "../crypto/srp.ts";
+import type MTProto from "../mod.ts";
+import type RPC from "../rpc/mod.ts";
+import { RPCError } from "../rpc/mod.ts";
 
 export interface SendCodeUI {
   askCode(): Promise<string>;
@@ -36,7 +38,7 @@ export async function sendCode(
   proto: MTProto,
   ui: SendCodeUI,
   phone_number: string,
-  logout_tokens: BufferSource[] = []
+  logout_tokens: BufferSource[] = [],
 ) {
   while (true) {
     const rpc = await proto.rpc();
@@ -46,7 +48,7 @@ export async function sendCode(
         phone_number,
         settings: {
           _: "codeSettings",
-          logout_tokens,
+          logout_tokens: logout_tokens.map(tou8),
         },
       });
     } catch (e) {

@@ -1,4 +1,4 @@
-import EventEmitter from "./event.ts";
+import type EventEmitter from "./event.ts";
 import Resolver from "./resolver.ts";
 
 type WaitInterface<S> = {

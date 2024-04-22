@@ -18,7 +18,7 @@ import * as rsa from "../crypto/rsa.ts";
 import { mt } from "../gen/api.js";
 import { Deserializer } from "../tl/deserializer.ts";
 import { serialize } from "../tl/serializer.ts";
-import { TLMethod } from "../tl/types.ts";
+import type { TLMethod } from "../tl/types.ts";
 
 type DhParams = {
   prime: bigint;

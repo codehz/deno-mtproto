@@ -1,5 +1,5 @@
 import { $decoder } from "../gen/api.js";
-import { BaseDeserializer } from "../tl/types.ts";
+import type { BaseDeserializer } from "../tl/types.ts";
 import { sha1, tobig, todv, tou8, view_arr } from "../common/utils.ts";
 
 export class Deserializer implements BaseDeserializer {
@@ -26,8 +26,8 @@ export class Deserializer implements BaseDeserializer {
   bool(): boolean {
     const value = this.#view.getInt32(this.#offset, true);
     this.#offset += 4;
-    if (value == -1720552011) return true;
-    if (value == -1132882121) return false;
+    if (value == -1_720_552_011) return true;
+    if (value == -1_132_882_121) return false;
     throw new Error(`expected bool, bot got ${value}`);
   }
   uint32(): number {
@@ -84,7 +84,7 @@ export class Deserializer implements BaseDeserializer {
   vector(fn: any, id?: any): any[] {
     if (id == null) {
       const vid = this.int32();
-      if (vid != 481674261) {
+      if (vid != 481_674_261) {
         throw new Error(`expected vector(481674261) but got ${vid}`);
       }
     }
@@ -102,12 +102,12 @@ export class Deserializer implements BaseDeserializer {
     return result;
   }
   object<T = any>(id: number = this.int32()): T {
-    if (id == -1132882121) return false as any;
-    if (id == -1720552011) return true as any;
+    if (id == -1_132_882_121) return false as any;
+    if (id == -1_720_552_011) return true as any;
     const fn = $decoder.get(id);
     if (fn == null) {
       const filename = `diag_${tobig(sha1(this.#buffer))}.bin`;
-      console.log(`${filename}:${this.#offset} generated`);
+      console.warn(`${filename}:${this.#offset} generated`);
       Deno.writeFileSync(filename, this.#buffer);
       throw new Error(`unknown tag ${id}`);
     }

@@ -1,5 +1,5 @@
-import { PacketCodec } from "../../types.ts";
 import { concat_array, todv, view_arr } from "../../common/utils.ts";
+import type { PacketCodec } from "../../types.ts";
 
 const init = new Uint8Array([0xee, 0xee, 0xee, 0xee]);
 

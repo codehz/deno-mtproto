@@ -114,6 +114,8 @@ export default function createFactory(
     });
     const stream = new WebSocketStream(addr, { protocols: ["binary"] });
     try {
+      // deno-lint-ignore ban-ts-comment
+      // @ts-ignore
       const conn = await stream.connection;
       const transport = new WebSocketStreamTransport(stream, conn, codec());
       await transport.init;

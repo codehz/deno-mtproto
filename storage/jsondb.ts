@@ -1,10 +1,10 @@
-import {
-  KVStorage,
-  MTStorage,
-  serialize_storage_kind,
-  StorageKind,
-} from "./types.ts";
 import { debounce } from "../common/debounce.ts";
+import {
+  type KVStorage,
+  type MTStorage,
+  serialize_storage_kind,
+  type StorageKind,
+} from "./types.ts";
 
 class JsonKV extends Map<string, string> implements KVStorage {
   constructor(private update: () => void, source?: Iterable<[string, string]>) {
