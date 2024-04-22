@@ -1,6 +1,7 @@
 import parse_error from "../common/errparse.ts";
 import { tou8 } from "../common/utils.ts";
 import srp from "../crypto/srp.ts";
+import type { auth } from "../gen/api.js";
 import type MTProto from "../mod.ts";
 import type RPC from "../rpc/mod.ts";
 import { RPCError } from "../rpc/mod.ts";
@@ -11,7 +12,10 @@ export interface SendCodeUI {
   askSignUp(): Promise<{ first_name: string; last_name: string } | undefined>;
 }
 
-async function login2fa(rpc: RPC, ui: SendCodeUI) {
+async function login2fa(
+  rpc: RPC,
+  ui: SendCodeUI,
+): Promise<auth.Authorization<keyof auth._Authorization>> {
   const passinfo = await rpc.api.account.getPassword();
   if (
     !passinfo.current_algo ||
@@ -39,7 +43,7 @@ export async function sendCode(
   ui: SendCodeUI,
   phone_number: string,
   logout_tokens: BufferSource[] = [],
-) {
+): Promise<auth.Authorization<keyof auth._Authorization>> {
   while (true) {
     const rpc = await proto.rpc();
     let sent;
@@ -109,7 +113,7 @@ export async function sendCode(
           if (signup._ != "auth.authorization") {
             throw new Error("failed to signup");
           }
-          sign = signup;
+          return signup;
         }
         return sign;
       } catch (e) {

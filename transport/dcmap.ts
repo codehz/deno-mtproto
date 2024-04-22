@@ -18,7 +18,7 @@ export function get_address(dc: number, {
   tls,
   cors,
   test,
-}: AddressOption) {
+}: AddressOption): string {
   let address;
   if (websocket) {
     address = tls ? "wss://" : "ws://";

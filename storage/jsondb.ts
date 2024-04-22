@@ -11,12 +11,12 @@ class JsonKV extends Map<string, string> implements KVStorage {
     super(source);
   }
 
-  set(key: string, value: string) {
+  set(key: string, value: string): this {
     super.set(key, value);
     this.update?.();
     return this;
   }
-  delete(key: string) {
+  delete(key: string): boolean {
     const ret = super.delete(key);
     if (ret) {
       this.update?.();
@@ -42,7 +42,7 @@ export default class JsonDBAdapter implements MTStorage {
       throw e;
     }
   }
-  readonly sync = debounce(() => {
+  readonly sync: () => void = debounce(() => {
     const json: Record<string, Record<string, string>> = Object.fromEntries(
       [...this.data.entries()].map((
         [k, v],

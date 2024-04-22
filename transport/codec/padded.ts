@@ -1,7 +1,7 @@
 import { concat_array, rand_int, todv, view_arr } from "../../common/utils.ts";
 import type { PacketCodec } from "../../types.ts";
 
-const init = new Uint8Array([0xdd, 0xdd, 0xdd, 0xdd]);
+const init: Uint8Array = new Uint8Array([0xdd, 0xdd, 0xdd, 0xdd]);
 
 export default class Padded implements PacketCodec {
   init = init;

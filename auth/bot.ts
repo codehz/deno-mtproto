@@ -1,8 +1,12 @@
 import parse_error from "../common/errparse.ts";
+import type { auth } from "../gen/api.js";
 import type MTProto from "../mod.ts";
 import { RPCError } from "../rpc/mod.ts";
 
-export async function loginAsBot(proto: MTProto, token: string) {
+export async function loginAsBot(
+  proto: MTProto,
+  token: string,
+): Promise<auth.Authorization<keyof auth._Authorization>> {
   while (true) {
     const rpc = await proto.rpc();
     let ret;

@@ -1,7 +1,29 @@
 {
   "name": "@codehz/mtproto",
   "version": "0.6.0",
-  "exports": "./mod.ts",
+  "exports": {
+    ".": "./mod.ts",
+    "./types": "./types.ts",
+    "./auth/bot": "./auth/bot.ts",
+    "./auth/user": "./auth/user.ts",
+    "./rpc/mod": "./rpc/mod.ts",
+    "./storage/jsondb": "./storage/jsondb.ts",
+    "./storage/kv": "./storage/kv.ts",
+    "./storage/types": "./storage/types.ts",
+    "./storage/web": "./storage/web.ts",
+    "./transport/codec/abridged": "./transport/codec/abridged.ts",
+    "./transport/codec/full": "./transport/codec/full.ts",
+    "./transport/codec/intermediate": "./transport/codec/intermediate.ts",
+    "./transport/codec/obfuscated": "./transport/codec/obfuscated.ts",
+    "./transport/codec/padded": "./transport/codec/padded.ts",
+    "./transport/connection/deno-tcp": "./transport/connection/deno-tcp.ts",
+    "./transport/connection/websocket-stream": "./transport/connection/websocket-stream.ts",
+    "./transport/connection/websocket": "./transport/connection/websocket.ts",
+    "./transport/dcmap": "./transport/dcmap.ts",
+  },
+  "publish": {
+    "exclude": ["scripts/"]
+  },
   "compilerOptions": {
     "allowJs": true,
     "checkJs": false

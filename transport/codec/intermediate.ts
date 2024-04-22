@@ -1,7 +1,7 @@
 import { concat_array, todv, view_arr } from "../../common/utils.ts";
 import type { PacketCodec } from "../../types.ts";
 
-const init = new Uint8Array([0xee, 0xee, 0xee, 0xee]);
+const init: Uint8Array = new Uint8Array([0xee, 0xee, 0xee, 0xee]);
 
 export default class Intermediate implements PacketCodec {
   init = init;
