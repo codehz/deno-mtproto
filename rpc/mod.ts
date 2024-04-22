@@ -1,3 +1,16 @@
+/**
+ * Module for rpc transport layer.
+ *
+ * This layer is responsible for serializing and deserializing rpc messages,
+ * and sending them through a transport layer. This layer also handles
+ * gzipping and encryption of messages.
+ *
+ * This module is responsible for handling the rpc protocol, and abstracting
+ * away details like gzipping and encryption from the higher layers.
+ *
+ * @module
+ */
+
 import { max } from "../common/alg.ts";
 import { decodeBase64, encodeBase64 } from "../common/base64.ts";
 import cached from "../common/cached.ts";
@@ -181,7 +194,6 @@ type Events = api._Update & {
   sent: api._Updates["updateShortSentMessage"];
 };
 
-
 /**
  * Main client class of this library.
  *
@@ -190,7 +202,6 @@ type Events = api._Update & {
  * This class is the primary interface for interacting with Telegram's API. It
  * handles authorization, maintains the connection, and provides methods for
  * making requests.
- *
  */
 export default class RPC extends EventEmitter<Events> {
   #api_id: number;

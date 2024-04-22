@@ -1,3 +1,10 @@
+/**
+ * Obfuscated codec.
+ * 
+ * See https://core.telegram.org/mtproto/mtproto-transports#transport-obfuscation
+ * @module
+ */
+
 import { type DCIdentifier, toDCInfo } from "../../common/dc.ts";
 import { sha256, todv, view_arr } from "../../common/utils.ts";
 import { CTR } from "../../crypto/aes.ts";

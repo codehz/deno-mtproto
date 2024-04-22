@@ -1,3 +1,9 @@
+/**
+ * Deno TCP transport adapter
+ * 
+ * @module
+ */
+
 import { todv } from "../../common/utils.ts";
 import type {
   PacketCodec,

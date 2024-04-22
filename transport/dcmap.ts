@@ -1,3 +1,9 @@
+/**
+ * Data center mapping.
+ *
+ * @module
+ */
+
 const idmap = {
   1: "pluto",
   2: "venus",

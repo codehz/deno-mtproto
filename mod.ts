@@ -1,3 +1,13 @@
+/**
+ * Main entry point for this library.
+ *
+ * This is the main module for the Telegram client library,
+ * it provides a high level interface for Telegram client
+ * and provide API for other modules.
+ *
+ * @module mtproto
+ */
+
 import {
   type DCIdentifier,
   type DCType,
@@ -208,7 +218,7 @@ export default class MTProto {
 
   /**
    * Close all active connections and cleanup.
-   * 
+   *
    * This method should be called when user want to shutdown
    * all connections and stop working with library.
    */

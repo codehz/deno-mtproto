@@ -1,3 +1,10 @@
+/**
+ * Intermediate codec.
+ * 
+ * See https://core.telegram.org/mtproto/mtproto-transports#intermediate
+ * @module
+ */
+
 import { concat_array, todv, view_arr } from "../../common/utils.ts";
 import type { PacketCodec } from "../../types.ts";
 

@@ -1,3 +1,9 @@
+/**
+ * Websocket transport adapter
+ * 
+ * @module
+ */
+
 import { concat_array, todv } from "../../common/utils.ts";
 import type {
   PacketCodec,

@@ -1,3 +1,9 @@
+/**
+ * Types for the Telegram client library.
+ * 
+ * @module
+ */
+
 import type RPC from "./rpc/mod.ts";
 import type { MTStorage } from "./storage/types.ts";
 import type { ToUnderscore } from "./tl/types.ts";

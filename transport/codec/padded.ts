@@ -1,3 +1,10 @@
+/**
+ * Padded codec.
+ * 
+ * See https://core.telegram.org/mtproto/mtproto-transports#padded-intermediate
+ * @module
+ */
+
 import { concat_array, rand_int, todv, view_arr } from "../../common/utils.ts";
 import type { PacketCodec } from "../../types.ts";
 

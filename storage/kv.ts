@@ -1,3 +1,14 @@
+/**
+ * Module for in-memory key-value storage.
+ *
+ * This module provides an implementation of MTStorage
+ * using a Map as backend. The Map is created with default
+ * options.
+ *
+ * This storage implementation is intended for testing and
+ * development purposes.
+ */
+
 import {
   type KVStorage,
   type MTStorage,

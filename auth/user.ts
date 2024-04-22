@@ -1,3 +1,10 @@
+/**
+ * Interfaces and functions for user interaction during login.
+ *
+ * @module auth/user
+ * @packageDocumentation
+ */
+
 import parse_error from "../common/errparse.ts";
 import { tou8 } from "../common/utils.ts";
 import srp from "../crypto/srp.ts";

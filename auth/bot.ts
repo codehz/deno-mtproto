@@ -1,8 +1,13 @@
+/**
+ * Auth module for logging in as bot
+ * @module auth/bot
+ * @packageDocumentation
+ */
+
 import parse_error from "../common/errparse.ts";
 import type { auth } from "../gen/api.js";
 import type MTProto from "../mod.ts";
 import { RPCError } from "../rpc/mod.ts";
-
 
 /**
  * Log in as bot

@@ -1,3 +1,19 @@
+/**
+ * Module containing type definitions for storage adapters.
+ *
+ * Storage adapters are used to store data between Telegram client
+ * sessions. This can be useful to persist AuthKey, message IDs,
+ * etc.
+ *
+ * Any storage adapter must implement the `MTStorage` interface.
+ *
+ * This module also exports a `KVStorageAdapter` which is a simple
+ * wrapper around the browser's `localStorage` or `Deno.env` on other
+ * platforms.
+ *
+ * @module
+ */
+
 import { type DCInfo, toDCIdentifier } from "../common/dc.ts";
 import type { ToUnderscore } from "../common/magic.ts";
 

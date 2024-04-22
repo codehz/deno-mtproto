@@ -1,3 +1,10 @@
+/**
+ * Abridged codec.
+ * 
+ * See https://core.telegram.org/mtproto/mtproto-transports#abridged
+ * @module
+ */
+
 import { concat_array, view_arr } from "../../common/utils.ts";
 import type { PacketCodec } from "../../types.ts";
 

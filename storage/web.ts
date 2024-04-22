@@ -1,3 +1,17 @@
+/**
+ * Module for Web Storage API-based storage.
+ *
+ * This module provides an implementation of MTStorage using
+ * Web Storage API as backend. This is the default storage used
+ * by the library if none is provided.
+ *
+ * The Web Storage API is a simple key-value storage API provided
+ * by the browser. It is backed by localStorage or sessionStorage
+ * depending on how it is used.
+ *
+ * @module
+ */
+
 import KVStorageAdapter from "./kv.ts";
 import type { MTStorage } from "./types.ts";
 

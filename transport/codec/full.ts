@@ -1,3 +1,10 @@
+/**
+ * Full packet codec.
+ * 
+ * See https://core.telegram.org/mtproto/mtproto-transports#full
+ * @module
+ */
+
 import { concat_array, todv, view_arr } from "../../common/utils.ts";
 import crc32 from "../../crypto/crc32.ts";
 import type { PacketCodec } from "../../types.ts";

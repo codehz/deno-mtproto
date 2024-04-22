@@ -1,3 +1,13 @@
+/**
+ * Module for json based key-value storage.
+ * 
+ * This module provides an implementation of KVStorage
+ * and MTStorage interfaces using json based file storage.
+ * 
+ * This storage implementation is not optimized for performance
+ * and should not be used in production.
+ */
+
 import { debounce } from "../common/debounce.ts";
 import {
   type KVStorage,
