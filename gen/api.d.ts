@@ -570,7 +570,7 @@ export namespace api {
       photo?: api.InputWebDocument;           // flags.0?InputWebDocument
       invoice: api.Invoice;                   // Invoice
       payload: Uint8Array;                    // bytes
-      provider: string;                       // string
+      provider?: string;                      // flags.3?string
       provider_data: api.DataJSON;            // DataJSON
       start_param?: string;                   // flags.1?string
       extended_media?: api.InputMedia;        // flags.2?InputMedia
@@ -959,6 +959,7 @@ export namespace api {
       requests_pending?: number;              // flags.17?int
       recent_requesters?: bigint[];           // flags.17?Vector<long>
       available_reactions?: api.ChatReactions; // flags.18?ChatReactions
+      reactions_limit?: number;               // flags.20?int
     },
     "channelFull": {
       can_view_participants?: true;           // flags.3?true
@@ -1012,6 +1013,7 @@ export namespace api {
       recent_requesters?: bigint[];           // flags.28?Vector<long>
       default_send_as?: api.Peer;             // flags.29?Peer
       available_reactions?: api.ChatReactions; // flags.30?ChatReactions
+      reactions_limit?: number;               // flags2.13?int
       stories?: api.PeerStories;              // flags2.4?PeerStories
       wallpaper?: api.WallPaper;              // flags2.7?WallPaper
       boosts_applied?: number;                // flags2.8?int
@@ -1121,6 +1123,8 @@ export namespace api {
       restriction_reason?: api.RestrictionReason[]; // flags.22?Vector<RestrictionReason>
       ttl_period?: number;                    // flags.25?int
       quick_reply_shortcut_id?: number;       // flags.30?int
+      effect?: bigint;                        // flags2.2?long
+      factcheck?: api.FactCheck;              // flags2.3?FactCheck
     },
     "messageService": {
       out?: true;                             // flags.1?true
@@ -1739,6 +1743,7 @@ export namespace api {
       wallpaper_overridden?: true;            // flags.28?true
       contact_require_premium?: true;         // flags.29?true
       read_dates_private?: true;              // flags.30?true
+      sponsored_enabled?: true;               // flags2.7?true
       id: bigint;                             // long
       about?: string;                         // flags.1?string
       settings: api.PeerSettings;             // PeerSettings
@@ -2448,6 +2453,18 @@ export namespace api {
       messages: number[];                     // Vector<int>
       qts: number;                            // int
     },
+    "updateNewStoryReaction": {
+      story_id: number;                       // int
+      peer: api.Peer;                         // Peer
+      reaction: api.Reaction;                 // Reaction
+    },
+    "updateBroadcastRevenueTransactions": {
+      peer: api.Peer;                         // Peer
+      balances: api.BroadcastRevenueBalances; // BroadcastRevenueBalances
+    },
+    "updateStarsBalance": {
+      balance: bigint;                        // long
+    },
   };
 
   export const updateNewMessage: TLConstructor<_Update, "updateNewMessage">;
@@ -2584,6 +2601,9 @@ export namespace api {
   export const updateBotNewBusinessMessage: TLConstructor<_Update, "updateBotNewBusinessMessage">;
   export const updateBotEditBusinessMessage: TLConstructor<_Update, "updateBotEditBusinessMessage">;
   export const updateBotDeleteBusinessMessage: TLConstructor<_Update, "updateBotDeleteBusinessMessage">;
+  export const updateNewStoryReaction: TLConstructor<_Update, "updateNewStoryReaction">;
+  export const updateBroadcastRevenueTransactions: TLConstructor<_Update, "updateBroadcastRevenueTransactions">;
+  export const updateStarsBalance: TLConstructor<_Update, "updateStarsBalance">;
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
@@ -3634,6 +3654,7 @@ export namespace api {
       document_id: bigint;                    // long
     },
     "messageEntityBlockquote": {
+      collapsed?: true;                       // flags.0?true
       offset: number;                         // int
       length: number;                         // int
     },
@@ -5725,7 +5746,7 @@ export namespace api {
   > = ToUnderscore<_PollAnswer, K>;
   export type _PollAnswer = {
     "pollAnswer": {
-      text: string;                           // string
+      text: api.TextWithEntities;             // TextWithEntities
       option: Uint8Array;                     // bytes
     },
   };
@@ -5741,7 +5762,7 @@ export namespace api {
       public_voters?: true;                   // flags.1?true
       multiple_choice?: true;                 // flags.2?true
       quiz?: true;                            // flags.3?true
-      question: string;                       // string
+      question: api.TextWithEntities;         // TextWithEntities
       answers: api.PollAnswer[];              // Vector<PollAnswer>
       close_period?: number;                  // flags.4?int
       close_date?: number;                    // flags.5?int
@@ -5880,6 +5901,7 @@ export namespace api {
       allow_app_hash?: true;                  // flags.4?true
       allow_missed_call?: true;               // flags.5?true
       allow_firebase?: true;                  // flags.7?true
+      unknown_number?: true;                  // flags.9?true
       logout_tokens?: Uint8Array[];           // flags.6?Vector<bytes>
       token?: string;                         // flags.8?string
       app_sandbox?: boolean;                  // flags.8?Bool
@@ -6165,10 +6187,16 @@ export namespace api {
       id: number;                             // int
       story?: api.StoryItem;                  // flags.0?StoryItem
     },
+    "webPageAttributeStickerSet": {
+      emojis?: true;                          // flags.0?true
+      text_color?: true;                      // flags.1?true
+      stickers: api.Document[];               // Vector<Document>
+    },
   };
 
   export const webPageAttributeTheme: TLConstructor<_WebPageAttribute, "webPageAttributeTheme">;
   export const webPageAttributeStory: TLConstructor<_WebPageAttribute, "webPageAttributeStory">;
+  export const webPageAttributeStickerSet: TLConstructor<_WebPageAttribute, "webPageAttributeStickerSet">;
   export type BankCardOpenUrl<
     K extends keyof _BankCardOpenUrl = keyof _BankCardOpenUrl
   > = ToUnderscore<_BankCardOpenUrl, K>;
@@ -6592,19 +6620,15 @@ export namespace api {
   export type _SponsoredMessage = {
     "sponsoredMessage": {
       recommended?: true;                     // flags.5?true
-      show_peer_photo?: true;                 // flags.6?true
       can_report?: true;                      // flags.12?true
       random_id: Uint8Array;                  // bytes
-      from_id?: api.Peer;                     // flags.3?Peer
-      chat_invite?: api.ChatInvite;           // flags.4?ChatInvite
-      chat_invite_hash?: string;              // flags.4?string
-      channel_post?: number;                  // flags.2?int
-      start_param?: string;                   // flags.0?string
-      webpage?: api.SponsoredWebPage;         // flags.9?SponsoredWebPage
-      app?: api.BotApp;                       // flags.10?BotApp
+      url: string;                            // string
+      title: string;                          // string
       message: string;                        // string
       entities?: api.MessageEntity[];         // flags.1?Vector<MessageEntity>
-      button_text?: string;                   // flags.11?string
+      photo?: api.Photo;                      // flags.6?Photo
+      color?: api.PeerColor;                  // flags.13?PeerColor
+      button_text: string;                    // string
       sponsor_info?: string;                  // flags.7?string
       additional_info?: string;               // flags.8?string
     },
@@ -6872,11 +6896,15 @@ export namespace api {
       purpose: api.InputStorePaymentPurpose;  // InputStorePaymentPurpose
       option: api.PremiumGiftCodeOption;      // PremiumGiftCodeOption
     },
+    "inputInvoiceStars": {
+      option: api.StarsTopupOption;           // StarsTopupOption
+    },
   };
 
   export const inputInvoiceMessage: TLConstructor<_InputInvoice, "inputInvoiceMessage">;
   export const inputInvoiceSlug: TLConstructor<_InputInvoice, "inputInvoiceSlug">;
   export const inputInvoicePremiumGiftCode: TLConstructor<_InputInvoice, "inputInvoicePremiumGiftCode">;
+  export const inputInvoiceStars: TLConstructor<_InputInvoice, "inputInvoiceStars">;
   export type InputStorePaymentPurpose<
     K extends keyof _InputStorePaymentPurpose = keyof _InputStorePaymentPurpose
   > = ToUnderscore<_InputStorePaymentPurpose, K>;
@@ -6908,12 +6936,18 @@ export namespace api {
       currency: string;                       // string
       amount: bigint;                         // long
     },
+    "inputStorePaymentStars": {
+      stars: bigint;                          // long
+      currency: string;                       // string
+      amount: bigint;                         // long
+    },
   };
 
   export const inputStorePaymentPremiumSubscription: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentPremiumSubscription">;
   export const inputStorePaymentGiftPremium: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentGiftPremium">;
   export const inputStorePaymentPremiumGiftCode: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentPremiumGiftCode">;
   export const inputStorePaymentPremiumGiveaway: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentPremiumGiveaway">;
+  export const inputStorePaymentStars: TLConstructor<_InputStorePaymentPurpose, "inputStorePaymentStars">;
   export type PremiumGiftOption<
     K extends keyof _PremiumGiftOption = keyof _PremiumGiftOption
   > = ToUnderscore<_PremiumGiftOption, K>;
@@ -7191,9 +7225,20 @@ export namespace api {
       icon_emoji_id: bigint;                  // long
       emoticons: string[];                    // Vector<string>
     },
+    "emojiGroupGreeting": {
+      title: string;                          // string
+      icon_emoji_id: bigint;                  // long
+      emoticons: string[];                    // Vector<string>
+    },
+    "emojiGroupPremium": {
+      title: string;                          // string
+      icon_emoji_id: bigint;                  // long
+    },
   };
 
   export const emojiGroup: TLConstructor<_EmojiGroup, "emojiGroup">;
+  export const emojiGroupGreeting: TLConstructor<_EmojiGroup, "emojiGroupGreeting">;
+  export const emojiGroupPremium: TLConstructor<_EmojiGroup, "emojiGroupPremium">;
   export type TextWithEntities<
     K extends keyof _TextWithEntities = keyof _TextWithEntities
   > = ToUnderscore<_TextWithEntities, K>;
@@ -7340,18 +7385,6 @@ export namespace api {
   export const messagePeerVote: TLConstructor<_MessagePeerVote, "messagePeerVote">;
   export const messagePeerVoteInputOption: TLConstructor<_MessagePeerVote, "messagePeerVoteInputOption">;
   export const messagePeerVoteMultiple: TLConstructor<_MessagePeerVote, "messagePeerVoteMultiple">;
-  export type SponsoredWebPage<
-    K extends keyof _SponsoredWebPage = keyof _SponsoredWebPage
-  > = ToUnderscore<_SponsoredWebPage, K>;
-  export type _SponsoredWebPage = {
-    "sponsoredWebPage": {
-      url: string;                            // string
-      site_name: string;                      // string
-      photo?: api.Photo;                      // flags.0?Photo
-    },
-  };
-
-  export const sponsoredWebPage: TLConstructor<_SponsoredWebPage, "sponsoredWebPage">;
   export type StoryViews<
     K extends keyof _StoryViews = keyof _StoryViews
   > = ToUnderscore<_StoryViews, K>;
@@ -8127,6 +8160,120 @@ export namespace api {
   export const broadcastRevenueTransactionProceeds: TLConstructor<_BroadcastRevenueTransaction, "broadcastRevenueTransactionProceeds">;
   export const broadcastRevenueTransactionWithdrawal: TLConstructor<_BroadcastRevenueTransaction, "broadcastRevenueTransactionWithdrawal">;
   export const broadcastRevenueTransactionRefund: TLConstructor<_BroadcastRevenueTransaction, "broadcastRevenueTransactionRefund">;
+  export type ReactionNotificationsFrom<
+    K extends keyof _ReactionNotificationsFrom = keyof _ReactionNotificationsFrom
+  > = ToUnderscore<_ReactionNotificationsFrom, K>;
+  export type _ReactionNotificationsFrom = {
+    "reactionNotificationsFromContacts": {}
+    "reactionNotificationsFromAll": {}
+  };
+
+  export const reactionNotificationsFromContacts: TLConstructorEmpty<"reactionNotificationsFromContacts">;
+  export const reactionNotificationsFromAll: TLConstructorEmpty<"reactionNotificationsFromAll">;
+  export type ReactionsNotifySettings<
+    K extends keyof _ReactionsNotifySettings = keyof _ReactionsNotifySettings
+  > = ToUnderscore<_ReactionsNotifySettings, K>;
+  export type _ReactionsNotifySettings = {
+    "reactionsNotifySettings": {
+      messages_notify_from?: api.ReactionNotificationsFrom; // flags.0?ReactionNotificationsFrom
+      stories_notify_from?: api.ReactionNotificationsFrom; // flags.1?ReactionNotificationsFrom
+      sound: api.NotificationSound;           // NotificationSound
+      show_previews: boolean;                 // Bool
+    },
+  };
+
+  export const reactionsNotifySettings: TLConstructor<_ReactionsNotifySettings, "reactionsNotifySettings">;
+  export type BroadcastRevenueBalances<
+    K extends keyof _BroadcastRevenueBalances = keyof _BroadcastRevenueBalances
+  > = ToUnderscore<_BroadcastRevenueBalances, K>;
+  export type _BroadcastRevenueBalances = {
+    "broadcastRevenueBalances": {
+      current_balance: bigint;                // long
+      available_balance: bigint;              // long
+      overall_revenue: bigint;                // long
+    },
+  };
+
+  export const broadcastRevenueBalances: TLConstructor<_BroadcastRevenueBalances, "broadcastRevenueBalances">;
+  export type AvailableEffect<
+    K extends keyof _AvailableEffect = keyof _AvailableEffect
+  > = ToUnderscore<_AvailableEffect, K>;
+  export type _AvailableEffect = {
+    "availableEffect": {
+      premium_required?: true;                // flags.2?true
+      id: bigint;                             // long
+      emoticon: string;                       // string
+      static_icon_id?: bigint;                // flags.0?long
+      effect_sticker_id: bigint;              // long
+      effect_animation_id?: bigint;           // flags.1?long
+    },
+  };
+
+  export const availableEffect: TLConstructor<_AvailableEffect, "availableEffect">;
+  export type FactCheck<
+    K extends keyof _FactCheck = keyof _FactCheck
+  > = ToUnderscore<_FactCheck, K>;
+  export type _FactCheck = {
+    "factCheck": {
+      need_check?: true;                      // flags.0?true
+      country?: string;                       // flags.1?string
+      text?: api.TextWithEntities;            // flags.1?TextWithEntities
+      hash: bigint;                           // long
+    },
+  };
+
+  export const factCheck: TLConstructor<_FactCheck, "factCheck">;
+  export type StarsTransactionPeer<
+    K extends keyof _StarsTransactionPeer = keyof _StarsTransactionPeer
+  > = ToUnderscore<_StarsTransactionPeer, K>;
+  export type _StarsTransactionPeer = {
+    "starsTransactionPeerUnsupported": {}
+    "starsTransactionPeerAppStore": {}
+    "starsTransactionPeerPlayMarket": {}
+    "starsTransactionPeerPremiumBot": {}
+    "starsTransactionPeerFragment": {}
+    "starsTransactionPeer": {
+      peer: api.Peer;                         // Peer
+    },
+  };
+
+  export const starsTransactionPeerUnsupported: TLConstructorEmpty<"starsTransactionPeerUnsupported">;
+  export const starsTransactionPeerAppStore: TLConstructorEmpty<"starsTransactionPeerAppStore">;
+  export const starsTransactionPeerPlayMarket: TLConstructorEmpty<"starsTransactionPeerPlayMarket">;
+  export const starsTransactionPeerPremiumBot: TLConstructorEmpty<"starsTransactionPeerPremiumBot">;
+  export const starsTransactionPeerFragment: TLConstructorEmpty<"starsTransactionPeerFragment">;
+  export const starsTransactionPeer: TLConstructor<_StarsTransactionPeer, "starsTransactionPeer">;
+  export type StarsTopupOption<
+    K extends keyof _StarsTopupOption = keyof _StarsTopupOption
+  > = ToUnderscore<_StarsTopupOption, K>;
+  export type _StarsTopupOption = {
+    "starsTopupOption": {
+      extended?: true;                        // flags.1?true
+      stars: bigint;                          // long
+      store_product?: string;                 // flags.0?string
+      currency: string;                       // string
+      amount: bigint;                         // long
+    },
+  };
+
+  export const starsTopupOption: TLConstructor<_StarsTopupOption, "starsTopupOption">;
+  export type StarsTransaction<
+    K extends keyof _StarsTransaction = keyof _StarsTransaction
+  > = ToUnderscore<_StarsTransaction, K>;
+  export type _StarsTransaction = {
+    "starsTransaction": {
+      refund?: true;                          // flags.3?true
+      id: string;                             // string
+      stars: bigint;                          // long
+      date: number;                           // int
+      peer: api.StarsTransactionPeer;         // StarsTransactionPeer
+      title?: string;                         // flags.0?string
+      description?: string;                   // flags.1?string
+      photo?: api.WebDocument;                // flags.2?WebDocument
+    },
+  };
+
+  export const starsTransaction: TLConstructor<_StarsTransaction, "starsTransaction">;
 }
 
 export namespace storage {
@@ -8269,9 +8416,16 @@ export namespace auth {
     },
     "auth.sentCodeTypeFirebaseSms": {
       nonce?: Uint8Array;                     // flags.0?bytes
+      play_integrity_nonce?: Uint8Array;      // flags.2?bytes
       receipt?: string;                       // flags.1?string
       push_timeout?: number;                  // flags.1?int
       length: number;                         // int
+    },
+    "auth.sentCodeTypeSmsWord": {
+      beginning?: string;                     // flags.0?string
+    },
+    "auth.sentCodeTypeSmsPhrase": {
+      beginning?: string;                     // flags.0?string
     },
   };
 
@@ -8284,6 +8438,8 @@ export namespace auth {
   export const sentCodeTypeSetUpEmailRequired: TLConstructor<_SentCodeType, "auth.sentCodeTypeSetUpEmailRequired">;
   export const sentCodeTypeFragmentSms: TLConstructor<_SentCodeType, "auth.sentCodeTypeFragmentSms">;
   export const sentCodeTypeFirebaseSms: TLConstructor<_SentCodeType, "auth.sentCodeTypeFirebaseSms">;
+  export const sentCodeTypeSmsWord: TLConstructor<_SentCodeType, "auth.sentCodeTypeSmsWord">;
+  export const sentCodeTypeSmsPhrase: TLConstructor<_SentCodeType, "auth.sentCodeTypeSmsPhrase">;
   export type LoginToken<
     K extends keyof _LoginToken = keyof _LoginToken
   > = ToUnderscore<_LoginToken, K>;
@@ -9189,6 +9345,20 @@ export namespace messages {
   };
 
   export const invitedUsers: TLConstructor<_InvitedUsers, "messages.invitedUsers">;
+  export type AvailableEffects<
+    K extends keyof _AvailableEffects = keyof _AvailableEffects
+  > = ToUnderscore<_AvailableEffects, K>;
+  export type _AvailableEffects = {
+    "messages.availableEffectsNotModified": {}
+    "messages.availableEffects": {
+      hash: number;                           // int
+      effects: api.AvailableEffect[];         // Vector<AvailableEffect>
+      documents: api.Document[];              // Vector<Document>
+    },
+  };
+
+  export const availableEffectsNotModified: TLConstructorEmpty<"messages.availableEffectsNotModified">;
+  export const availableEffects: TLConstructor<_AvailableEffects, "messages.availableEffects">;
 }
 
 export namespace updates {
@@ -10026,9 +10196,19 @@ export namespace payments {
       saved_credentials?: api.PaymentSavedCredentials[]; // flags.1?Vector<PaymentSavedCredentials>
       users: api.User[];                      // Vector<User>
     },
+    "payments.paymentFormStars": {
+      form_id: bigint;                        // long
+      bot_id: bigint;                         // long
+      title: string;                          // string
+      description: string;                    // string
+      photo?: api.WebDocument;                // flags.5?WebDocument
+      invoice: api.Invoice;                   // Invoice
+      users: api.User[];                      // Vector<User>
+    },
   };
 
   export const paymentForm: TLConstructor<_PaymentForm, "payments.paymentForm">;
+  export const paymentFormStars: TLConstructor<_PaymentForm, "payments.paymentFormStars">;
   export type ValidatedRequestedInfo<
     K extends keyof _ValidatedRequestedInfo = keyof _ValidatedRequestedInfo
   > = ToUnderscore<_ValidatedRequestedInfo, K>;
@@ -10074,9 +10254,22 @@ export namespace payments {
       credentials_title: string;              // string
       users: api.User[];                      // Vector<User>
     },
+    "payments.paymentReceiptStars": {
+      date: number;                           // int
+      bot_id: bigint;                         // long
+      title: string;                          // string
+      description: string;                    // string
+      photo?: api.WebDocument;                // flags.2?WebDocument
+      invoice: api.Invoice;                   // Invoice
+      currency: string;                       // string
+      total_amount: bigint;                   // long
+      transaction_id: string;                 // string
+      users: api.User[];                      // Vector<User>
+    },
   };
 
   export const paymentReceipt: TLConstructor<_PaymentReceipt, "payments.paymentReceipt">;
+  export const paymentReceiptStars: TLConstructor<_PaymentReceipt, "payments.paymentReceiptStars">;
   export type SavedInfo<
     K extends keyof _SavedInfo = keyof _SavedInfo
   > = ToUnderscore<_SavedInfo, K>;
@@ -10152,6 +10345,20 @@ export namespace payments {
 
   export const giveawayInfo: TLConstructor<_GiveawayInfo, "payments.giveawayInfo">;
   export const giveawayInfoResults: TLConstructor<_GiveawayInfo, "payments.giveawayInfoResults">;
+  export type StarsStatus<
+    K extends keyof _StarsStatus = keyof _StarsStatus
+  > = ToUnderscore<_StarsStatus, K>;
+  export type _StarsStatus = {
+    "payments.starsStatus": {
+      balance: bigint;                        // long
+      history: api.StarsTransaction[];        // Vector<StarsTransaction>
+      next_offset?: string;                   // flags.0?string
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
+    },
+  };
+
+  export const starsStatus: TLConstructor<_StarsStatus, "payments.starsStatus">;
 }
 
 export namespace phone {
@@ -10341,9 +10548,7 @@ export namespace stats {
     "stats.broadcastRevenueStats": {
       top_hours_graph: api.StatsGraph;        // StatsGraph
       revenue_graph: api.StatsGraph;          // StatsGraph
-      current_balance: bigint;                // long
-      available_balance: bigint;              // long
-      overall_revenue: bigint;                // long
+      balances: api.BroadcastRevenueBalances; // BroadcastRevenueBalances
       usd_rate: number;                       // double
     },
   };
@@ -10504,6 +10709,7 @@ export namespace stories {
     "stories.stories": {
       count: number;                          // int
       stories: api.StoryItem[];               // Vector<StoryItem>
+      pinned_to_top?: number[];               // flags.0?Vector<int>
       chats: api.Chat[];                      // Vector<Chat>
       users: api.User[];                      // Vector<User>
     },
@@ -11088,7 +11294,6 @@ export type AnyObject =
   | chatlists.ChatlistUpdates
   | bots.BotInfo
   | api.MessagePeerVote
-  | api.SponsoredWebPage
   | api.StoryViews
   | api.StoryItem
   | stories.AllStories
@@ -11173,7 +11378,17 @@ export type AnyObject =
   | stats.BroadcastRevenueStats
   | stats.BroadcastRevenueWithdrawalUrl
   | api.BroadcastRevenueTransaction
-  | stats.BroadcastRevenueTransactions;
+  | stats.BroadcastRevenueTransactions
+  | api.ReactionNotificationsFrom
+  | api.ReactionsNotifySettings
+  | api.BroadcastRevenueBalances
+  | api.AvailableEffect
+  | messages.AvailableEffects
+  | api.FactCheck
+  | api.StarsTransactionPeer
+  | api.StarsTopupOption
+  | api.StarsTransaction
+  | payments.StarsStatus;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
 export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
@@ -11262,6 +11477,16 @@ export const invokeWithBusinessConnection: TLApiMethod<"invokeWithBusinessConnec
   connection_id: string                   // string
   query: any                              // !X
 }, any>
+export const invokeWithGooglePlayIntegrity: TLApiMethod<"invokeWithGooglePlayIntegrity", {
+  nonce: string                           // string
+  token: string                           // string
+  query: any                              // !X
+}, any>
+export const invokeWithApnsSecret: TLApiMethod<"invokeWithApnsSecret", {
+  nonce: string                           // string
+  secret: string                          // string
+  query: any                              // !X
+}, any>
 
 export namespace auth {
   export const sendCode: TLApiMethod<"auth.sendCode", {
@@ -11315,6 +11540,7 @@ export namespace auth {
   export const resendCode: TLApiMethod<"auth.resendCode", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
+    reason?: string                         // flags.0?string
   }, SentCode>
   export const cancelCode: TLApiMethod<"auth.cancelCode", {
     phone_number: string                    // string
@@ -11346,12 +11572,18 @@ export namespace auth {
     phone_number: string                    // string
     phone_code_hash: string                 // string
     safety_net_token?: string               // flags.0?string
+    play_integrity_token?: string           // flags.2?string
     ios_push_secret?: string                // flags.1?string
   }, boolean>
   export const resetLoginEmail: TLApiMethod<"auth.resetLoginEmail", {
     phone_number: string                    // string
     phone_code_hash: string                 // string
   }, SentCode>
+  export const reportMissingCode: TLApiMethod<"auth.reportMissingCode", {
+    phone_number: string                    // string
+    phone_code_hash: string                 // string
+    mnc: string                             // string
+  }, boolean>
 }
 
 export namespace account {
@@ -11728,6 +11960,13 @@ export namespace account {
   export const updatePersonalChannel: TLApiMethod<"account.updatePersonalChannel", {
     channel: api.InputChannel               // InputChannel
   }, boolean>
+  export const toggleSponsoredMessages: TLApiMethod<"account.toggleSponsoredMessages", {
+    enabled: boolean                        // Bool
+  }, boolean>
+  export const getReactionsNotifySettings: TLApiMethod<"account.getReactionsNotifySettings", void, api.ReactionsNotifySettings>
+  export const setReactionsNotifySettings: TLApiMethod<"account.setReactionsNotifySettings", {
+    settings: api.ReactionsNotifySettings   // ReactionsNotifySettings
+  }, api.ReactionsNotifySettings>
 }
 
 export namespace users {
@@ -11925,6 +12164,7 @@ export namespace messages {
     schedule_date?: number                  // flags.10?int
     send_as?: api.InputPeer                 // flags.13?InputPeer
     quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+    effect?: bigint                         // flags.18?long
   }, api.Updates>
   export const sendMedia: TLApiMethod<"messages.sendMedia", {
     silent?: true                           // flags.5?true
@@ -11943,6 +12183,7 @@ export namespace messages {
     schedule_date?: number                  // flags.10?int
     send_as?: api.InputPeer                 // flags.13?InputPeer
     quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+    effect?: bigint                         // flags.18?long
   }, api.Updates>
   export const forwardMessages: TLApiMethod<"messages.forwardMessages", {
     silent?: true                           // flags.5?true
@@ -12110,6 +12351,7 @@ export namespace messages {
     chat_id: bigint                         // long
   }, api.Updates>
   export const searchGlobal: TLApiMethod<"messages.searchGlobal", {
+    broadcasts_only?: true                  // flags.1?true
     folder_id?: number                      // flags.0?int
     q: string                               // string
     filter: api.MessagesFilter              // MessagesFilter
@@ -12353,6 +12595,7 @@ export namespace messages {
     schedule_date?: number                  // flags.10?int
     send_as?: api.InputPeer                 // flags.13?InputPeer
     quick_reply_shortcut?: api.InputQuickReplyShortcut // flags.17?InputQuickReplyShortcut
+    effect?: bigint                         // flags.18?long
   }, api.Updates>
   export const uploadEncryptedFile: TLApiMethod<"messages.uploadEncryptedFile", {
     peer: api.InputEncryptedChat            // InputEncryptedChat
@@ -12632,6 +12875,7 @@ export namespace messages {
   export const setChatAvailableReactions: TLApiMethod<"messages.setChatAvailableReactions", {
     peer: api.InputPeer                     // InputPeer
     available_reactions: api.ChatReactions  // ChatReactions
+    reactions_limit?: number                // flags.0?int
   }, api.Updates>
   export const getAvailableReactions: TLApiMethod<"messages.getAvailableReactions", {
     hash: number                            // int
@@ -12888,6 +13132,25 @@ export namespace messages {
     offset_id: bigint                       // long
     limit: number                           // int
   }, MyStickers>
+  export const getEmojiStickerGroups: TLApiMethod<"messages.getEmojiStickerGroups", {
+    hash: number                            // int
+  }, EmojiGroups>
+  export const getAvailableEffects: TLApiMethod<"messages.getAvailableEffects", {
+    hash: number                            // int
+  }, AvailableEffects>
+  export const editFactCheck: TLApiMethod<"messages.editFactCheck", {
+    peer: api.InputPeer                     // InputPeer
+    msg_id: number                          // int
+    text: api.TextWithEntities              // TextWithEntities
+  }, api.Updates>
+  export const deleteFactCheck: TLApiMethod<"messages.deleteFactCheck", {
+    peer: api.InputPeer                     // InputPeer
+    msg_id: number                          // int
+  }, api.Updates>
+  export const getFactCheck: TLApiMethod<"messages.getFactCheck", {
+    peer: api.InputPeer                     // InputPeer
+    msg_id: number[]                        // Vector<int>
+  }, api.FactCheck[]>
 }
 
 export namespace updates {
@@ -13311,7 +13574,7 @@ export namespace channels {
     enabled: boolean                        // Bool
   }, api.Updates>
   export const getChannelRecommendations: TLApiMethod<"channels.getChannelRecommendations", {
-    channel: api.InputChannel               // InputChannel
+    channel?: api.InputChannel              // flags.0?InputChannel
   }, messages.Chats>
   export const updateEmojiStatus: TLApiMethod<"channels.updateEmojiStatus", {
     channel: api.InputChannel               // InputChannel
@@ -13334,6 +13597,13 @@ export namespace channels {
     channel: api.InputChannel               // InputChannel
     restricted: boolean                     // Bool
   }, api.Updates>
+  export const searchPosts: TLApiMethod<"channels.searchPosts", {
+    hashtag: string                         // string
+    offset_rate: number                     // int
+    offset_peer: api.InputPeer              // InputPeer
+    offset_id: number                       // int
+    limit: number                           // int
+  }, messages.Messages>
 }
 
 export namespace bots {
@@ -13465,6 +13735,24 @@ export namespace payments {
     peer: api.InputPeer                     // InputPeer
     giveaway_id: bigint                     // long
     purpose: api.InputStorePaymentPurpose   // InputStorePaymentPurpose
+  }, api.Updates>
+  export const getStarsTopupOptions: TLApiMethod<"payments.getStarsTopupOptions", void, api.StarsTopupOption[]>
+  export const getStarsStatus: TLApiMethod<"payments.getStarsStatus", {
+    peer: api.InputPeer                     // InputPeer
+  }, StarsStatus>
+  export const getStarsTransactions: TLApiMethod<"payments.getStarsTransactions", {
+    inbound?: true                          // flags.0?true
+    outbound?: true                         // flags.1?true
+    peer: api.InputPeer                     // InputPeer
+    offset: string                          // string
+  }, StarsStatus>
+  export const sendStarsForm: TLApiMethod<"payments.sendStarsForm", {
+    form_id: bigint                         // long
+    invoice: api.InputInvoice               // InputInvoice
+  }, PaymentResult>
+  export const refundStarsCharge: TLApiMethod<"payments.refundStarsCharge", {
+    user_id: api.InputUser                  // InputUser
+    charge_id: string                       // string
   }, api.Updates>
 }
 
@@ -13916,6 +14204,10 @@ export namespace stories {
     offset?: string                         // flags.1?string
     limit: number                           // int
   }, StoryReactionsList>
+  export const togglePinnedToTop: TLApiMethod<"stories.togglePinnedToTop", {
+    peer: api.InputPeer                     // InputPeer
+    id: number[]                            // Vector<int>
+  }, boolean>
 }
 
 export namespace premium {
