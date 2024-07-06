@@ -1,6 +1,6 @@
 {
   "name": "bun-mtproto",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "module": "./mod.ts",
   "type": "module",
   "author": {

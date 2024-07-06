@@ -601,6 +601,10 @@ export namespace api {
       optional?: true;                        // flags.2?true
       url: string;                            // string
     },
+    "inputMediaPaidMedia": {
+      stars_amount: bigint;                   // long
+      extended_media: api.InputMedia[];       // Vector<InputMedia>
+    },
   };
 
   export const inputMediaEmpty: TLConstructorEmpty<"inputMediaEmpty">;
@@ -620,6 +624,7 @@ export namespace api {
   export const inputMediaDice: TLConstructor<_InputMedia, "inputMediaDice">;
   export const inputMediaStory: TLConstructor<_InputMedia, "inputMediaStory">;
   export const inputMediaWebPage: TLConstructor<_InputMedia, "inputMediaWebPage">;
+  export const inputMediaPaidMedia: TLConstructor<_InputMedia, "inputMediaPaidMedia">;
   export type InputChatPhoto<
     K extends keyof _InputChatPhoto = keyof _InputChatPhoto
   > = ToUnderscore<_InputChatPhoto, K>;
@@ -978,6 +983,7 @@ export namespace api {
       view_forum_as_messages?: true;          // flags2.6?true
       restricted_sponsored?: true;            // flags2.11?true
       can_view_revenue?: true;                // flags2.12?true
+      paid_media_allowed?: true;              // flags2.14?true
       id: bigint;                             // long
       about: string;                          // string
       participants_count?: number;            // flags.0?int
@@ -1250,6 +1256,10 @@ export namespace api {
       prize_description?: string;             // flags.1?string
       until_date: number;                     // int
     },
+    "messageMediaPaidMedia": {
+      stars_amount: bigint;                   // long
+      extended_media: api.MessageExtendedMedia[]; // Vector<MessageExtendedMedia>
+    },
   };
 
   export const messageMediaEmpty: TLConstructorEmpty<"messageMediaEmpty">;
@@ -1268,6 +1278,7 @@ export namespace api {
   export const messageMediaStory: TLConstructor<_MessageMedia, "messageMediaStory">;
   export const messageMediaGiveaway: TLConstructor<_MessageMedia, "messageMediaGiveaway">;
   export const messageMediaGiveawayResults: TLConstructor<_MessageMedia, "messageMediaGiveawayResults">;
+  export const messageMediaPaidMedia: TLConstructor<_MessageMedia, "messageMediaPaidMedia">;
   export type MessageAction<
     K extends keyof _MessageAction = keyof _MessageAction
   > = ToUnderscore<_MessageAction, K>;
@@ -2339,7 +2350,7 @@ export namespace api {
     "updateMessageExtendedMedia": {
       peer: api.Peer;                         // Peer
       msg_id: number;                         // int
-      extended_media: api.MessageExtendedMedia; // MessageExtendedMedia
+      extended_media: api.MessageExtendedMedia[]; // Vector<MessageExtendedMedia>
     },
     "updateChannelPinnedTopic": {
       pinned?: true;                          // flags.0?true
@@ -2464,6 +2475,19 @@ export namespace api {
     },
     "updateStarsBalance": {
       balance: bigint;                        // long
+    },
+    "updateBusinessBotCallbackQuery": {
+      query_id: bigint;                       // long
+      user_id: bigint;                        // long
+      connection_id: string;                  // string
+      message: api.Message;                   // Message
+      reply_to_message?: api.Message;         // flags.2?Message
+      chat_instance: bigint;                  // long
+      data?: Uint8Array;                      // flags.0?bytes
+    },
+    "updateStarsRevenueStatus": {
+      peer: api.Peer;                         // Peer
+      status: api.StarsRevenueStatus;         // StarsRevenueStatus
     },
   };
 
@@ -2604,6 +2628,8 @@ export namespace api {
   export const updateNewStoryReaction: TLConstructor<_Update, "updateNewStoryReaction">;
   export const updateBroadcastRevenueTransactions: TLConstructor<_Update, "updateBroadcastRevenueTransactions">;
   export const updateStarsBalance: TLConstructor<_Update, "updateStarsBalance">;
+  export const updateBusinessBotCallbackQuery: TLConstructor<_Update, "updateBusinessBotCallbackQuery">;
+  export const updateStarsRevenueStatus: TLConstructor<_Update, "updateStarsRevenueStatus">;
   export type Updates<
     K extends keyof _Updates = keyof _Updates
   > = ToUnderscore<_Updates, K>;
@@ -4136,6 +4162,7 @@ export namespace api {
       entities?: api.MessageEntity[];         // flags.3?Vector<MessageEntity>
       media?: api.InputMedia;                 // flags.5?InputMedia
       date: number;                           // int
+      effect?: bigint;                        // flags.7?long
     },
   };
 
@@ -6805,22 +6832,13 @@ export namespace api {
   > = ToUnderscore<_WebViewResult, K>;
   export type _WebViewResult = {
     "webViewResultUrl": {
-      query_id: bigint;                       // long
+      fullsize?: true;                        // flags.1?true
+      query_id?: bigint;                      // flags.0?long
       url: string;                            // string
     },
   };
 
   export const webViewResultUrl: TLConstructor<_WebViewResult, "webViewResultUrl">;
-  export type SimpleWebViewResult<
-    K extends keyof _SimpleWebViewResult = keyof _SimpleWebViewResult
-  > = ToUnderscore<_SimpleWebViewResult, K>;
-  export type _SimpleWebViewResult = {
-    "simpleWebViewResultUrl": {
-      url: string;                            // string
-    },
-  };
-
-  export const simpleWebViewResultUrl: TLConstructor<_SimpleWebViewResult, "simpleWebViewResultUrl">;
   export type WebViewMessageSent<
     K extends keyof _WebViewMessageSent = keyof _WebViewMessageSent
   > = ToUnderscore<_WebViewMessageSent, K>;
@@ -7308,16 +7326,6 @@ export namespace api {
 
   export const botAppNotModified: TLConstructorEmpty<"botAppNotModified">;
   export const botApp: TLConstructor<_BotApp, "botApp">;
-  export type AppWebViewResult<
-    K extends keyof _AppWebViewResult = keyof _AppWebViewResult
-  > = ToUnderscore<_AppWebViewResult, K>;
-  export type _AppWebViewResult = {
-    "appWebViewResultUrl": {
-      url: string;                            // string
-    },
-  };
-
-  export const appWebViewResultUrl: TLConstructor<_AppWebViewResult, "appWebViewResultUrl">;
   export type InlineBotWebView<
     K extends keyof _InlineBotWebView = keyof _InlineBotWebView
   > = ToUnderscore<_InlineBotWebView, K>;
@@ -7519,6 +7527,7 @@ export namespace api {
       w: number;                              // double
       h: number;                              // double
       rotation: number;                       // double
+      radius?: number;                        // flags.0?double
     },
   };
 
@@ -7544,6 +7553,7 @@ export namespace api {
     "mediaAreaGeoPoint": {
       coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
       geo: api.GeoPoint;                      // GeoPoint
+      address?: api.GeoPointAddress;          // flags.0?GeoPointAddress
     },
     "mediaAreaSuggestedReaction": {
       dark?: true;                            // flags.0?true
@@ -7561,6 +7571,10 @@ export namespace api {
       channel: api.InputChannel;              // InputChannel
       msg_id: number;                         // int
     },
+    "mediaAreaUrl": {
+      coordinates: api.MediaAreaCoordinates;  // MediaAreaCoordinates
+      url: string;                            // string
+    },
   };
 
   export const mediaAreaVenue: TLConstructor<_MediaArea, "mediaAreaVenue">;
@@ -7569,6 +7583,7 @@ export namespace api {
   export const mediaAreaSuggestedReaction: TLConstructor<_MediaArea, "mediaAreaSuggestedReaction">;
   export const mediaAreaChannelPost: TLConstructor<_MediaArea, "mediaAreaChannelPost">;
   export const inputMediaAreaChannelPost: TLConstructor<_MediaArea, "inputMediaAreaChannelPost">;
+  export const mediaAreaUrl: TLConstructor<_MediaArea, "mediaAreaUrl">;
   export type PeerStories<
     K extends keyof _PeerStories = keyof _PeerStories
   > = ToUnderscore<_PeerStories, K>;
@@ -8235,6 +8250,7 @@ export namespace api {
     "starsTransactionPeer": {
       peer: api.Peer;                         // Peer
     },
+    "starsTransactionPeerAds": {}
   };
 
   export const starsTransactionPeerUnsupported: TLConstructorEmpty<"starsTransactionPeerUnsupported">;
@@ -8243,6 +8259,7 @@ export namespace api {
   export const starsTransactionPeerPremiumBot: TLConstructorEmpty<"starsTransactionPeerPremiumBot">;
   export const starsTransactionPeerFragment: TLConstructorEmpty<"starsTransactionPeerFragment">;
   export const starsTransactionPeer: TLConstructor<_StarsTransactionPeer, "starsTransactionPeer">;
+  export const starsTransactionPeerAds: TLConstructorEmpty<"starsTransactionPeerAds">;
   export type StarsTopupOption<
     K extends keyof _StarsTopupOption = keyof _StarsTopupOption
   > = ToUnderscore<_StarsTopupOption, K>;
@@ -8263,6 +8280,8 @@ export namespace api {
   export type _StarsTransaction = {
     "starsTransaction": {
       refund?: true;                          // flags.3?true
+      pending?: true;                         // flags.4?true
+      failed?: true;                          // flags.6?true
       id: string;                             // string
       stars: bigint;                          // long
       date: number;                           // int
@@ -8270,10 +8289,64 @@ export namespace api {
       title?: string;                         // flags.0?string
       description?: string;                   // flags.1?string
       photo?: api.WebDocument;                // flags.2?WebDocument
+      transaction_date?: number;              // flags.5?int
+      transaction_url?: string;               // flags.5?string
+      bot_payload?: Uint8Array;               // flags.7?bytes
+      msg_id?: number;                        // flags.8?int
+      extended_media?: api.MessageMedia[];    // flags.9?Vector<MessageMedia>
     },
   };
 
   export const starsTransaction: TLConstructor<_StarsTransaction, "starsTransaction">;
+  export type FoundStory<
+    K extends keyof _FoundStory = keyof _FoundStory
+  > = ToUnderscore<_FoundStory, K>;
+  export type _FoundStory = {
+    "foundStory": {
+      peer: api.Peer;                         // Peer
+      story: api.StoryItem;                   // StoryItem
+    },
+  };
+
+  export const foundStory: TLConstructor<_FoundStory, "foundStory">;
+  export type GeoPointAddress<
+    K extends keyof _GeoPointAddress = keyof _GeoPointAddress
+  > = ToUnderscore<_GeoPointAddress, K>;
+  export type _GeoPointAddress = {
+    "geoPointAddress": {
+      country_iso2: string;                   // string
+      state?: string;                         // flags.0?string
+      city?: string;                          // flags.1?string
+      street?: string;                        // flags.2?string
+    },
+  };
+
+  export const geoPointAddress: TLConstructor<_GeoPointAddress, "geoPointAddress">;
+  export type StarsRevenueStatus<
+    K extends keyof _StarsRevenueStatus = keyof _StarsRevenueStatus
+  > = ToUnderscore<_StarsRevenueStatus, K>;
+  export type _StarsRevenueStatus = {
+    "starsRevenueStatus": {
+      withdrawal_enabled?: true;              // flags.0?true
+      current_balance: bigint;                // long
+      available_balance: bigint;              // long
+      overall_revenue: bigint;                // long
+      next_withdrawal_at?: number;            // flags.1?int
+    },
+  };
+
+  export const starsRevenueStatus: TLConstructor<_StarsRevenueStatus, "starsRevenueStatus">;
+  export type InputStarsTransaction<
+    K extends keyof _InputStarsTransaction = keyof _InputStarsTransaction
+  > = ToUnderscore<_InputStarsTransaction, K>;
+  export type _InputStarsTransaction = {
+    "inputStarsTransaction": {
+      refund?: true;                          // flags.0?true
+      id: string;                             // string
+    },
+  };
+
+  export const inputStarsTransaction: TLConstructor<_InputStarsTransaction, "inputStarsTransaction">;
 }
 
 export namespace storage {
@@ -8416,6 +8489,7 @@ export namespace auth {
     },
     "auth.sentCodeTypeFirebaseSms": {
       nonce?: Uint8Array;                     // flags.0?bytes
+      play_integrity_project_id?: bigint;     // flags.2?long
       play_integrity_nonce?: Uint8Array;      // flags.2?bytes
       receipt?: string;                       // flags.1?string
       push_timeout?: number;                  // flags.1?int
@@ -10359,6 +10433,38 @@ export namespace payments {
   };
 
   export const starsStatus: TLConstructor<_StarsStatus, "payments.starsStatus">;
+  export type StarsRevenueStats<
+    K extends keyof _StarsRevenueStats = keyof _StarsRevenueStats
+  > = ToUnderscore<_StarsRevenueStats, K>;
+  export type _StarsRevenueStats = {
+    "payments.starsRevenueStats": {
+      revenue_graph: api.StatsGraph;          // StatsGraph
+      status: api.StarsRevenueStatus;         // StarsRevenueStatus
+      usd_rate: number;                       // double
+    },
+  };
+
+  export const starsRevenueStats: TLConstructor<_StarsRevenueStats, "payments.starsRevenueStats">;
+  export type StarsRevenueWithdrawalUrl<
+    K extends keyof _StarsRevenueWithdrawalUrl = keyof _StarsRevenueWithdrawalUrl
+  > = ToUnderscore<_StarsRevenueWithdrawalUrl, K>;
+  export type _StarsRevenueWithdrawalUrl = {
+    "payments.starsRevenueWithdrawalUrl": {
+      url: string;                            // string
+    },
+  };
+
+  export const starsRevenueWithdrawalUrl: TLConstructor<_StarsRevenueWithdrawalUrl, "payments.starsRevenueWithdrawalUrl">;
+  export type StarsRevenueAdsAccountUrl<
+    K extends keyof _StarsRevenueAdsAccountUrl = keyof _StarsRevenueAdsAccountUrl
+  > = ToUnderscore<_StarsRevenueAdsAccountUrl, K>;
+  export type _StarsRevenueAdsAccountUrl = {
+    "payments.starsRevenueAdsAccountUrl": {
+      url: string;                            // string
+    },
+  };
+
+  export const starsRevenueAdsAccountUrl: TLConstructor<_StarsRevenueAdsAccountUrl, "payments.starsRevenueAdsAccountUrl">;
 }
 
 export namespace phone {
@@ -10770,6 +10876,20 @@ export namespace stories {
   };
 
   export const storyReactionsList: TLConstructor<_StoryReactionsList, "stories.storyReactionsList">;
+  export type FoundStories<
+    K extends keyof _FoundStories = keyof _FoundStories
+  > = ToUnderscore<_FoundStories, K>;
+  export type _FoundStories = {
+    "stories.foundStories": {
+      count: number;                          // int
+      stories: api.FoundStory[];              // Vector<FoundStory>
+      next_offset?: string;                   // flags.0?string
+      chats: api.Chat[];                      // Vector<Chat>
+      users: api.User[];                      // Vector<User>
+    },
+  };
+
+  export const foundStories: TLConstructor<_FoundStories, "stories.foundStories">;
 }
 
 export namespace premium {
@@ -11239,7 +11359,6 @@ export type AnyObject =
   | api.AttachMenuBots
   | api.AttachMenuBotsBot
   | api.WebViewResult
-  | api.SimpleWebViewResult
   | api.WebViewMessageSent
   | api.BotMenuButton
   | account.SavedRingtones
@@ -11283,7 +11402,6 @@ export type AnyObject =
   | api.InputBotApp
   | api.BotApp
   | messages.BotApp
-  | api.AppWebViewResult
   | api.InlineBotWebView
   | api.ReadParticipantDate
   | api.InputChatlist
@@ -11388,7 +11506,15 @@ export type AnyObject =
   | api.StarsTransactionPeer
   | api.StarsTopupOption
   | api.StarsTransaction
-  | payments.StarsStatus;
+  | payments.StarsStatus
+  | api.FoundStory
+  | stories.FoundStories
+  | api.GeoPointAddress
+  | api.StarsRevenueStatus
+  | payments.StarsRevenueStats
+  | payments.StarsRevenueWithdrawalUrl
+  | payments.StarsRevenueAdsAccountUrl
+  | api.InputStarsTransaction;
 
 export const $encoder: Record<string, (this: BaseSerializer, input: AnyObject) => void>;
 export const $decoder: Map<number, (this: BaseDeserializer) => AnyObject>;
@@ -12460,6 +12586,7 @@ export namespace messages {
     message: string                         // string
     entities?: api.MessageEntity[]          // flags.3?Vector<MessageEntity>
     media?: api.InputMedia                  // flags.5?InputMedia
+    effect?: bigint                         // flags.7?long
   }, boolean>
   export const getAllDrafts: TLApiMethod<"messages.getAllDrafts", void, api.Updates>
   export const getFeaturedStickers: TLApiMethod<"messages.getFeaturedStickers", {
@@ -12921,6 +13048,7 @@ export namespace messages {
   export const requestWebView: TLApiMethod<"messages.requestWebView", {
     from_bot_menu?: true                    // flags.4?true
     silent?: true                           // flags.5?true
+    compact?: true                          // flags.7?true
     peer: api.InputPeer                     // InputPeer
     bot: api.InputUser                      // InputUser
     url?: string                            // flags.1?string
@@ -12941,12 +13069,13 @@ export namespace messages {
   export const requestSimpleWebView: TLApiMethod<"messages.requestSimpleWebView", {
     from_switch_webview?: true              // flags.1?true
     from_side_menu?: true                   // flags.2?true
+    compact?: true                          // flags.7?true
     bot: api.InputUser                      // InputUser
     url?: string                            // flags.3?string
     start_param?: string                    // flags.4?string
     theme_params?: api.DataJSON             // flags.0?DataJSON
     platform: string                        // string
-  }, api.SimpleWebViewResult>
+  }, api.WebViewResult>
   export const sendWebViewResultMessage: TLApiMethod<"messages.sendWebViewResultMessage", {
     bot_query_id: string                    // string
     result: api.InputBotInlineResult        // InputBotInlineResult
@@ -13027,12 +13156,13 @@ export namespace messages {
   }, BotApp>
   export const requestAppWebView: TLApiMethod<"messages.requestAppWebView", {
     write_allowed?: true                    // flags.0?true
+    compact?: true                          // flags.7?true
     peer: api.InputPeer                     // InputPeer
     app: api.InputBotApp                    // InputBotApp
     start_param?: string                    // flags.1?string
     theme_params?: api.DataJSON             // flags.2?DataJSON
     platform: string                        // string
-  }, api.AppWebViewResult>
+  }, api.WebViewResult>
   export const setChatWallPaper: TLApiMethod<"messages.setChatWallPaper", {
     for_both?: true                         // flags.3?true
     revert?: true                           // flags.4?true
@@ -13743,8 +13873,10 @@ export namespace payments {
   export const getStarsTransactions: TLApiMethod<"payments.getStarsTransactions", {
     inbound?: true                          // flags.0?true
     outbound?: true                         // flags.1?true
+    ascending?: true                        // flags.2?true
     peer: api.InputPeer                     // InputPeer
     offset: string                          // string
+    limit: number                           // int
   }, StarsStatus>
   export const sendStarsForm: TLApiMethod<"payments.sendStarsForm", {
     form_id: bigint                         // long
@@ -13754,6 +13886,22 @@ export namespace payments {
     user_id: api.InputUser                  // InputUser
     charge_id: string                       // string
   }, api.Updates>
+  export const getStarsRevenueStats: TLApiMethod<"payments.getStarsRevenueStats", {
+    dark?: true                             // flags.0?true
+    peer: api.InputPeer                     // InputPeer
+  }, StarsRevenueStats>
+  export const getStarsRevenueWithdrawalUrl: TLApiMethod<"payments.getStarsRevenueWithdrawalUrl", {
+    peer: api.InputPeer                     // InputPeer
+    stars: bigint                           // long
+    password: api.InputCheckPasswordSRP     // InputCheckPasswordSRP
+  }, StarsRevenueWithdrawalUrl>
+  export const getStarsRevenueAdsAccountUrl: TLApiMethod<"payments.getStarsRevenueAdsAccountUrl", {
+    peer: api.InputPeer                     // InputPeer
+  }, StarsRevenueAdsAccountUrl>
+  export const getStarsTransactionsByID: TLApiMethod<"payments.getStarsTransactionsByID", {
+    peer: api.InputPeer                     // InputPeer
+    id: api.InputStarsTransaction[]         // Vector<InputStarsTransaction>
+  }, StarsStatus>
 }
 
 export namespace stickers {
@@ -14208,6 +14356,12 @@ export namespace stories {
     peer: api.InputPeer                     // InputPeer
     id: number[]                            // Vector<int>
   }, boolean>
+  export const searchPosts: TLApiMethod<"stories.searchPosts", {
+    hashtag?: string                        // flags.0?string
+    area?: api.MediaArea                    // flags.1?MediaArea
+    offset: string                          // string
+    limit: number                           // int
+  }, FoundStories>
 }
 
 export namespace premium {

@@ -384,6 +384,9 @@ export const api = {
   inputMediaWebPage(params) {
     return { ...params, _: "inputMediaWebPage" };
   },
+  inputMediaPaidMedia(params) {
+    return { ...params, _: "inputMediaPaidMedia" };
+  },
 
   // type InputChatPhoto
   inputChatPhotoEmpty() {
@@ -602,6 +605,9 @@ export const api = {
   },
   messageMediaGiveawayResults(params) {
     return { ...params, _: "messageMediaGiveawayResults" };
+  },
+  messageMediaPaidMedia(params) {
+    return { ...params, _: "messageMediaPaidMedia" };
   },
 
   // type MessageAction
@@ -1335,6 +1341,12 @@ export const api = {
   },
   updateStarsBalance(params) {
     return { ...params, _: "updateStarsBalance" };
+  },
+  updateBusinessBotCallbackQuery(params) {
+    return { ...params, _: "updateBusinessBotCallbackQuery" };
+  },
+  updateStarsRevenueStatus(params) {
+    return { ...params, _: "updateStarsRevenueStatus" };
   },
 
   // type Updates
@@ -3379,11 +3391,6 @@ export const api = {
     return { ...params, _: "webViewResultUrl" };
   },
 
-  // type SimpleWebViewResult
-  simpleWebViewResultUrl(params) {
-    return { ...params, _: "simpleWebViewResultUrl" };
-  },
-
   // type WebViewMessageSent
   webViewMessageSent(params) {
     return { ...params, _: "webViewMessageSent" };
@@ -3634,11 +3641,6 @@ export const api = {
     return { ...params, _: "botApp" };
   },
 
-  // type AppWebViewResult
-  appWebViewResultUrl(params) {
-    return { ...params, _: "appWebViewResultUrl" };
-  },
-
   // type InlineBotWebView
   inlineBotWebView(params) {
     return { ...params, _: "inlineBotWebView" };
@@ -3738,6 +3740,9 @@ export const api = {
   },
   inputMediaAreaChannelPost(params) {
     return { ...params, _: "inputMediaAreaChannelPost" };
+  },
+  mediaAreaUrl(params) {
+    return { ...params, _: "mediaAreaUrl" };
   },
 
   // type PeerStories
@@ -4033,6 +4038,9 @@ export const api = {
   starsTransactionPeer(params) {
     return { ...params, _: "starsTransactionPeer" };
   },
+  starsTransactionPeerAds() {
+    return { _: "starsTransactionPeerAds" };
+  },
 
   // type StarsTopupOption
   starsTopupOption(params) {
@@ -4042,6 +4050,26 @@ export const api = {
   // type StarsTransaction
   starsTransaction(params) {
     return { ...params, _: "starsTransaction" };
+  },
+
+  // type FoundStory
+  foundStory(params) {
+    return { ...params, _: "foundStory" };
+  },
+
+  // type GeoPointAddress
+  geoPointAddress(params) {
+    return { ...params, _: "geoPointAddress" };
+  },
+
+  // type StarsRevenueStatus
+  starsRevenueStatus(params) {
+    return { ...params, _: "starsRevenueStatus" };
+  },
+
+  // type InputStarsTransaction
+  inputStarsTransaction(params) {
+    return { ...params, _: "inputStarsTransaction" };
   },
 
 };
@@ -4086,6 +4114,7 @@ api.inputMediaPoll.ref = "inputMediaPoll";
 api.inputMediaDice.ref = "inputMediaDice";
 api.inputMediaStory.ref = "inputMediaStory";
 api.inputMediaWebPage.ref = "inputMediaWebPage";
+api.inputMediaPaidMedia.ref = "inputMediaPaidMedia";
 
 // type InputChatPhoto
 api.inputChatPhotoEmpty.ref = "inputChatPhotoEmpty";
@@ -4179,6 +4208,7 @@ api.messageMediaDice.ref = "messageMediaDice";
 api.messageMediaStory.ref = "messageMediaStory";
 api.messageMediaGiveaway.ref = "messageMediaGiveaway";
 api.messageMediaGiveawayResults.ref = "messageMediaGiveawayResults";
+api.messageMediaPaidMedia.ref = "messageMediaPaidMedia";
 
 // type MessageAction
 api.messageActionEmpty.ref = "messageActionEmpty";
@@ -4446,6 +4476,8 @@ api.updateBotDeleteBusinessMessage.ref = "updateBotDeleteBusinessMessage";
 api.updateNewStoryReaction.ref = "updateNewStoryReaction";
 api.updateBroadcastRevenueTransactions.ref = "updateBroadcastRevenueTransactions";
 api.updateStarsBalance.ref = "updateStarsBalance";
+api.updateBusinessBotCallbackQuery.ref = "updateBusinessBotCallbackQuery";
+api.updateStarsRevenueStatus.ref = "updateStarsRevenueStatus";
 
 // type Updates
 api.updatesTooLong.ref = "updatesTooLong";
@@ -5377,9 +5409,6 @@ api.attachMenuBotsBot.ref = "attachMenuBotsBot";
 // type WebViewResult
 api.webViewResultUrl.ref = "webViewResultUrl";
 
-// type SimpleWebViewResult
-api.simpleWebViewResultUrl.ref = "simpleWebViewResultUrl";
-
 // type WebViewMessageSent
 api.webViewMessageSent.ref = "webViewMessageSent";
 
@@ -5502,9 +5531,6 @@ api.inputBotAppShortName.ref = "inputBotAppShortName";
 api.botAppNotModified.ref = "botAppNotModified";
 api.botApp.ref = "botApp";
 
-// type AppWebViewResult
-api.appWebViewResultUrl.ref = "appWebViewResultUrl";
-
 // type InlineBotWebView
 api.inlineBotWebView.ref = "inlineBotWebView";
 
@@ -5555,6 +5581,7 @@ api.mediaAreaGeoPoint.ref = "mediaAreaGeoPoint";
 api.mediaAreaSuggestedReaction.ref = "mediaAreaSuggestedReaction";
 api.mediaAreaChannelPost.ref = "mediaAreaChannelPost";
 api.inputMediaAreaChannelPost.ref = "inputMediaAreaChannelPost";
+api.mediaAreaUrl.ref = "mediaAreaUrl";
 
 // type PeerStories
 api.peerStories.ref = "peerStories";
@@ -5717,12 +5744,25 @@ api.starsTransactionPeerPlayMarket.ref = "starsTransactionPeerPlayMarket";
 api.starsTransactionPeerPremiumBot.ref = "starsTransactionPeerPremiumBot";
 api.starsTransactionPeerFragment.ref = "starsTransactionPeerFragment";
 api.starsTransactionPeer.ref = "starsTransactionPeer";
+api.starsTransactionPeerAds.ref = "starsTransactionPeerAds";
 
 // type StarsTopupOption
 api.starsTopupOption.ref = "starsTopupOption";
 
 // type StarsTransaction
 api.starsTransaction.ref = "starsTransaction";
+
+// type FoundStory
+api.foundStory.ref = "foundStory";
+
+// type GeoPointAddress
+api.geoPointAddress.ref = "geoPointAddress";
+
+// type StarsRevenueStatus
+api.starsRevenueStatus.ref = "starsRevenueStatus";
+
+// type InputStarsTransaction
+api.inputStarsTransaction.ref = "inputStarsTransaction";
 
 export const storage = {
   // type FileType
@@ -7193,6 +7233,21 @@ export const payments = {
     return { ...params, _: "payments.starsStatus" };
   },
 
+  // type StarsRevenueStats
+  starsRevenueStats(params) {
+    return { ...params, _: "payments.starsRevenueStats" };
+  },
+
+  // type StarsRevenueWithdrawalUrl
+  starsRevenueWithdrawalUrl(params) {
+    return { ...params, _: "payments.starsRevenueWithdrawalUrl" };
+  },
+
+  // type StarsRevenueAdsAccountUrl
+  starsRevenueAdsAccountUrl(params) {
+    return { ...params, _: "payments.starsRevenueAdsAccountUrl" };
+  },
+
 };
 
 // type PaymentForm
@@ -7228,6 +7283,15 @@ payments.giveawayInfoResults.ref = "payments.giveawayInfoResults";
 
 // type StarsStatus
 payments.starsStatus.ref = "payments.starsStatus";
+
+// type StarsRevenueStats
+payments.starsRevenueStats.ref = "payments.starsRevenueStats";
+
+// type StarsRevenueWithdrawalUrl
+payments.starsRevenueWithdrawalUrl.ref = "payments.starsRevenueWithdrawalUrl";
+
+// type StarsRevenueAdsAccountUrl
+payments.starsRevenueAdsAccountUrl.ref = "payments.starsRevenueAdsAccountUrl";
 
 export const phone = {
   // type PhoneCall
@@ -7461,6 +7525,11 @@ export const stories = {
     return { ...params, _: "stories.storyReactionsList" };
   },
 
+  // type FoundStories
+  foundStories(params) {
+    return { ...params, _: "stories.foundStories" };
+  },
+
 };
 
 // type AllStories
@@ -7481,6 +7550,9 @@ stories.peerStories.ref = "stories.peerStories";
 
 // type StoryReactionsList
 stories.storyReactionsList.ref = "stories.storyReactionsList";
+
+// type FoundStories
+stories.foundStories.ref = "stories.foundStories";
 
 export const premium = {
   // type BoostsList
@@ -8042,6 +8114,11 @@ export const $encoder = {
     if (_.optional != null)
       this.true(_.optional);                // ?: true - flags.2?true
     this.string(_.url);                     // : string - string
+  },
+  ["inputMediaPaidMedia"](_) {
+    this.int32(-1436147773);
+    this.int64(_.stars_amount);             // : bigint - long
+    this.vector(_.extended_media, this.object); // : InputMedia[] - Vector<InputMedia>
   },
   ["inputChatPhotoEmpty"](_) {
     this.int32(480546647);
@@ -8692,6 +8769,7 @@ export const $encoder = {
       | (+(_.view_forum_as_messages != null) << 6)
       | (+(_.restricted_sponsored != null) << 11)
       | (+(_.can_view_revenue != null) << 12)
+      | (+(_.paid_media_allowed != null) << 14)
       | (+(_.reactions_limit != null) << 13)
       | (+(_.stories != null) << 4)
       | (+(_.wallpaper != null) << 7)
@@ -8715,6 +8793,8 @@ export const $encoder = {
       this.true(_.restricted_sponsored);    // ?: true - flags2.11?true
     if (_.can_view_revenue != null)
       this.true(_.can_view_revenue);        // ?: true - flags2.12?true
+    if (_.paid_media_allowed != null)
+      this.true(_.paid_media_allowed);      // ?: true - flags2.14?true
     this.int64(_.id);                       // : bigint - long
     this.string(_.about);                   // : string - string
     if (_.participants_count != null)
@@ -9191,6 +9271,11 @@ export const $encoder = {
     if (_.prize_description != null)
       this.string(_.prize_description);     // ?: string - flags.1?string
     this.int32(_.until_date);               // : number - int
+  },
+  ["messageMediaPaidMedia"](_) {
+    this.int32(-1467669359);
+    this.int64(_.stars_amount);             // : bigint - long
+    this.vector(_.extended_media, this.object); // : MessageExtendedMedia[] - Vector<MessageExtendedMedia>
   },
   ["messageActionEmpty"](_) {
     this.int32(-1230047312);
@@ -10945,10 +11030,10 @@ export const $encoder = {
     this.int64(_.stickerset);               // : bigint - long
   },
   ["updateMessageExtendedMedia"](_) {
-    this.int32(1517529484);
+    this.int32(-710666460);
     this.object(_.peer);                    // : Peer - Peer
     this.int32(_.msg_id);                   // : number - int
-    this.object(_.extended_media);          // : MessageExtendedMedia - MessageExtendedMedia
+    this.vector(_.extended_media, this.object); // : MessageExtendedMedia[] - Vector<MessageExtendedMedia>
   },
   ["updateChannelPinnedTopic"](_) {
     this.int32(422509539);
@@ -11135,6 +11220,27 @@ export const $encoder = {
   ["updateStarsBalance"](_) {
     this.int32(263737752);
     this.int64(_.balance);                  // : bigint - long
+  },
+  ["updateBusinessBotCallbackQuery"](_) {
+    this.int32(513998247);
+    this.int32(
+      (+(_.reply_to_message != null) << 2)
+      | (+(_.data != null) << 0)
+    )
+    this.int64(_.query_id);                 // : bigint - long
+    this.int64(_.user_id);                  // : bigint - long
+    this.string(_.connection_id);           // : string - string
+    this.object(_.message);                 // : Message - Message
+    if (_.reply_to_message != null)
+      this.object(_.reply_to_message);      // ?: Message - flags.2?Message
+    this.int64(_.chat_instance);            // : bigint - long
+    if (_.data != null)
+      this.bytes(_.data);                   // ?: Uint8Array - flags.0?bytes
+  },
+  ["updateStarsRevenueStatus"](_) {
+    this.int32(-1518030823);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.status);                  // : StarsRevenueStatus - StarsRevenueStatus
   },
   ["updates.state"](_) {
     this.int32(-1519637954);
@@ -13367,15 +13473,18 @@ export const $encoder = {
     this.int32(_.length);                   // : number - int
   },
   ["auth.sentCodeTypeFirebaseSms"](_) {
-    this.int32(331943703);
+    this.int32(10475318);
     this.int32(
       (+(_.nonce != null) << 0)
+      | (+(_.play_integrity_project_id != null) << 2)
       | (+(_.play_integrity_nonce != null) << 2)
       | (+(_.receipt != null) << 1)
       | (+(_.push_timeout != null) << 1)
     )
     if (_.nonce != null)
       this.bytes(_.nonce);                  // ?: Uint8Array - flags.0?bytes
+    if (_.play_integrity_project_id != null)
+      this.int64(_.play_integrity_project_id); // ?: bigint - flags.2?long
     if (_.play_integrity_nonce != null)
       this.bytes(_.play_integrity_nonce);   // ?: Uint8Array - flags.2?bytes
     if (_.receipt != null)
@@ -13511,13 +13620,14 @@ export const $encoder = {
       this.int32(_.date);                   // ?: number - flags.0?int
   },
   ["draftMessage"](_) {
-    this.int32(1070397423);
+    this.int32(761606687);
     this.int32(
       (+(_.no_webpage != null) << 1)
       | (+(_.invert_media != null) << 6)
       | (+(_.reply_to != null) << 4)
       | (+(_.entities != null && _.entities.length > 0) << 3)
       | (+(_.media != null) << 5)
+      | (+(_.effect != null) << 7)
     )
     if (_.no_webpage != null)
       this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -13531,6 +13641,8 @@ export const $encoder = {
     if (_.media != null)
       this.object(_.media);                 // ?: InputMedia - flags.5?InputMedia
     this.int32(_.date);                     // : number - int
+    if (_.effect != null)
+      this.int64(_.effect);                 // ?: bigint - flags.7?long
   },
   ["messages.featuredStickersNotModified"](_) {
     this.int32(-958657434);
@@ -16889,12 +17001,15 @@ export const $encoder = {
     this.vector(_.users, this.object);      // : User[] - Vector<User>
   },
   ["webViewResultUrl"](_) {
-    this.int32(202659196);
-    this.int64(_.query_id);                 // : bigint - long
-    this.string(_.url);                     // : string - string
-  },
-  ["simpleWebViewResultUrl"](_) {
-    this.int32(-2010155333);
+    this.int32(1294139288);
+    this.int32(
+      (+(_.fullsize != null) << 1)
+      | (+(_.query_id != null) << 0)
+    )
+    if (_.fullsize != null)
+      this.true(_.fullsize);                // ?: true - flags.1?true
+    if (_.query_id != null)
+      this.int64(_.query_id);               // ?: bigint - flags.0?long
     this.string(_.url);                     // : string - string
   },
   ["webViewMessageSent"](_) {
@@ -17478,10 +17593,6 @@ export const $encoder = {
       this.true(_.has_settings);            // ?: true - flags.2?true
     this.object(_.app);                     // : BotApp - BotApp
   },
-  ["appWebViewResultUrl"](_) {
-    this.int32(1008422669);
-    this.string(_.url);                     // : string - string
-  },
   ["inlineBotWebView"](_) {
     this.int32(-1250781739);
     this.string(_.text);                    // : string - string
@@ -17798,12 +17909,17 @@ export const $encoder = {
       this.int32(_.cooldown_until_date);    // ?: number - flags.1?int
   },
   ["mediaAreaCoordinates"](_) {
-    this.int32(64088654);
+    this.int32(-808853502);
+    this.int32(
+      (+(_.radius != null) << 0)
+    )
     this.double(_.x);                       // : number - double
     this.double(_.y);                       // : number - double
     this.double(_.w);                       // : number - double
     this.double(_.h);                       // : number - double
     this.double(_.rotation);                // : number - double
+    if (_.radius != null)
+      this.double(_.radius);                // ?: number - flags.0?double
   },
   ["mediaAreaVenue"](_) {
     this.int32(-1098720356);
@@ -17822,9 +17938,14 @@ export const $encoder = {
     this.string(_.result_id);               // : string - string
   },
   ["mediaAreaGeoPoint"](_) {
-    this.int32(-544523486);
+    this.int32(-891992787);
+    this.int32(
+      (+(_.address != null) << 0)
+    )
     this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
     this.object(_.geo);                     // : GeoPoint - GeoPoint
+    if (_.address != null)
+      this.object(_.address);               // ?: GeoPointAddress - flags.0?GeoPointAddress
   },
   ["mediaAreaSuggestedReaction"](_) {
     this.int32(340088945);
@@ -17850,6 +17971,11 @@ export const $encoder = {
     this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
     this.object(_.channel);                 // : InputChannel - InputChannel
     this.int32(_.msg_id);                   // : number - int
+  },
+  ["mediaAreaUrl"](_) {
+    this.int32(926421125);
+    this.object(_.coordinates);             // : MediaAreaCoordinates - MediaAreaCoordinates
+    this.string(_.url);                     // : string - string
   },
   ["peerStories"](_) {
     this.int32(-1707742823);
@@ -18820,6 +18946,9 @@ export const $encoder = {
     this.int32(-670195363);
     this.object(_.peer);                    // : Peer - Peer
   },
+  ["starsTransactionPeerAds"](_) {
+    this.int32(1617438738);
+  },
   ["starsTopupOption"](_) {
     this.int32(198776256);
     this.int32(
@@ -18835,15 +18964,26 @@ export const $encoder = {
     this.int64(_.amount);                   // : bigint - long
   },
   ["starsTransaction"](_) {
-    this.int32(-865044046);
+    this.int32(766853519);
     this.int32(
       (+(_.refund != null) << 3)
+      | (+(_.pending != null) << 4)
+      | (+(_.failed != null) << 6)
       | (+(_.title != null) << 0)
       | (+(_.description != null) << 1)
       | (+(_.photo != null) << 2)
+      | (+(_.transaction_date != null) << 5)
+      | (+(_.transaction_url != null) << 5)
+      | (+(_.bot_payload != null) << 7)
+      | (+(_.msg_id != null) << 8)
+      | (+(_.extended_media != null && _.extended_media.length > 0) << 9)
     )
     if (_.refund != null)
       this.true(_.refund);                  // ?: true - flags.3?true
+    if (_.pending != null)
+      this.true(_.pending);                 // ?: true - flags.4?true
+    if (_.failed != null)
+      this.true(_.failed);                  // ?: true - flags.6?true
     this.string(_.id);                      // : string - string
     this.int64(_.stars);                    // : bigint - long
     this.int32(_.date);                     // : number - int
@@ -18854,6 +18994,16 @@ export const $encoder = {
       this.string(_.description);           // ?: string - flags.1?string
     if (_.photo != null)
       this.object(_.photo);                 // ?: WebDocument - flags.2?WebDocument
+    if (_.transaction_date != null)
+      this.int32(_.transaction_date);       // ?: number - flags.5?int
+    if (_.transaction_url != null)
+      this.string(_.transaction_url);       // ?: string - flags.5?string
+    if (_.bot_payload != null)
+      this.bytes(_.bot_payload);            // ?: Uint8Array - flags.7?bytes
+    if (_.msg_id != null)
+      this.int32(_.msg_id);                 // ?: number - flags.8?int
+    if (_.extended_media != null && _.extended_media.length > 0)
+      this.vector(_.extended_media, this.object); // ?: MessageMedia[] - flags.9?Vector<MessageMedia>
   },
   ["payments.starsStatus"](_) {
     this.int32(-1930105248);
@@ -18866,6 +19016,75 @@ export const $encoder = {
       this.string(_.next_offset);           // ?: string - flags.0?string
     this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
     this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["foundStory"](_) {
+    this.int32(-394605632);
+    this.object(_.peer);                    // : Peer - Peer
+    this.object(_.story);                   // : StoryItem - StoryItem
+  },
+  ["stories.foundStories"](_) {
+    this.int32(-488736969);
+    this.int32(
+      (+(_.next_offset != null) << 0)
+    )
+    this.int32(_.count);                    // : number - int
+    this.vector(_.stories, this.object);    // : FoundStory[] - Vector<FoundStory>
+    if (_.next_offset != null)
+      this.string(_.next_offset);           // ?: string - flags.0?string
+    this.vector(_.chats, this.object);      // : Chat[] - Vector<Chat>
+    this.vector(_.users, this.object);      // : User[] - Vector<User>
+  },
+  ["geoPointAddress"](_) {
+    this.int32(-565420653);
+    this.int32(
+      (+(_.state != null) << 0)
+      | (+(_.city != null) << 1)
+      | (+(_.street != null) << 2)
+    )
+    this.string(_.country_iso2);            // : string - string
+    if (_.state != null)
+      this.string(_.state);                 // ?: string - flags.0?string
+    if (_.city != null)
+      this.string(_.city);                  // ?: string - flags.1?string
+    if (_.street != null)
+      this.string(_.street);                // ?: string - flags.2?string
+  },
+  ["starsRevenueStatus"](_) {
+    this.int32(2033461574);
+    this.int32(
+      (+(_.withdrawal_enabled != null) << 0)
+      | (+(_.next_withdrawal_at != null) << 1)
+    )
+    if (_.withdrawal_enabled != null)
+      this.true(_.withdrawal_enabled);      // ?: true - flags.0?true
+    this.int64(_.current_balance);          // : bigint - long
+    this.int64(_.available_balance);        // : bigint - long
+    this.int64(_.overall_revenue);          // : bigint - long
+    if (_.next_withdrawal_at != null)
+      this.int32(_.next_withdrawal_at);     // ?: number - flags.1?int
+  },
+  ["payments.starsRevenueStats"](_) {
+    this.int32(-919881925);
+    this.object(_.revenue_graph);           // : StatsGraph - StatsGraph
+    this.object(_.status);                  // : StarsRevenueStatus - StarsRevenueStatus
+    this.double(_.usd_rate);                // : number - double
+  },
+  ["payments.starsRevenueWithdrawalUrl"](_) {
+    this.int32(497778871);
+    this.string(_.url);                     // : string - string
+  },
+  ["payments.starsRevenueAdsAccountUrl"](_) {
+    this.int32(961445665);
+    this.string(_.url);                     // : string - string
+  },
+  ["inputStarsTransaction"](_) {
+    this.int32(543876817);
+    this.int32(
+      (+(_.refund != null) << 0)
+    )
+    if (_.refund != null)
+      this.true(_.refund);                  // ?: true - flags.0?true
+    this.string(_.id);                      // : string - string
   },
 };
 
@@ -19359,6 +19578,12 @@ export const $decoder = new Map([
     _.url = this.string();                  // : string - string
     return _;
   }],
+  [-1436147773, function decode$inputMediaPaidMedia() {
+    const _ = { _: "inputMediaPaidMedia" }
+    _.stars_amount = this.int64();          // : bigint - long
+    _.extended_media = this.vector(this.object); // : api.InputMedia[] - Vector<InputMedia>
+    return _;
+  }],
   [480546647, function decode$inputChatPhotoEmpty() {
     return { _: "inputChatPhotoEmpty" }
   }],
@@ -19744,6 +19969,7 @@ export const $decoder = new Map([
     if (flags2 & 64) _.view_forum_as_messages = true // ?: true - flags2.6?true
     if (flags2 & 2048) _.restricted_sponsored = true // ?: true - flags2.11?true
     if (flags2 & 4096) _.can_view_revenue = true // ?: true - flags2.12?true
+    if (flags2 & 16384) _.paid_media_allowed = true // ?: true - flags2.14?true
     _.id = this.int64();                    // : bigint - long
     _.about = this.string();                // : string - string
     if (flags & 1) _.participants_count = this.int32() // ?: number - flags.0?int
@@ -20039,6 +20265,12 @@ export const $decoder = new Map([
     _.months = this.int32();                // : number - int
     if (flags & 2) _.prize_description = this.string() // ?: string - flags.1?string
     _.until_date = this.int32();            // : number - int
+    return _;
+  }],
+  [-1467669359, function decode$messageMediaPaidMedia() {
+    const _ = { _: "messageMediaPaidMedia" }
+    _.stars_amount = this.int64();          // : bigint - long
+    _.extended_media = this.vector(this.object); // : api.MessageExtendedMedia[] - Vector<MessageExtendedMedia>
     return _;
   }],
   [-1230047312, function decode$messageActionEmpty() {
@@ -21525,11 +21757,11 @@ export const $decoder = new Map([
     _.stickerset = this.int64();            // : bigint - long
     return _;
   }],
-  [1517529484, function decode$updateMessageExtendedMedia() {
+  [-710666460, function decode$updateMessageExtendedMedia() {
     const _ = { _: "updateMessageExtendedMedia" }
     _.peer = this.object();                 // : api.Peer - Peer
     _.msg_id = this.int32();                // : number - int
-    _.extended_media = this.object();       // : api.MessageExtendedMedia - MessageExtendedMedia
+    _.extended_media = this.vector(this.object); // : api.MessageExtendedMedia[] - Vector<MessageExtendedMedia>
     return _;
   }],
   [422509539, function decode$updateChannelPinnedTopic() {
@@ -21721,6 +21953,24 @@ export const $decoder = new Map([
   [263737752, function decode$updateStarsBalance() {
     const _ = { _: "updateStarsBalance" }
     _.balance = this.int64();               // : bigint - long
+    return _;
+  }],
+  [513998247, function decode$updateBusinessBotCallbackQuery() {
+    const _ = { _: "updateBusinessBotCallbackQuery" }
+    const flags = this.int32();
+    _.query_id = this.int64();              // : bigint - long
+    _.user_id = this.int64();               // : bigint - long
+    _.connection_id = this.string();        // : string - string
+    _.message = this.object();              // : api.Message - Message
+    if (flags & 4) _.reply_to_message = this.object() // ?: api.Message - flags.2?Message
+    _.chat_instance = this.int64();         // : bigint - long
+    if (flags & 1) _.data = this.bytes()    // ?: Uint8Array - flags.0?bytes
+    return _;
+  }],
+  [-1518030823, function decode$updateStarsRevenueStatus() {
+    const _ = { _: "updateStarsRevenueStatus" }
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.status = this.object();               // : api.StarsRevenueStatus - StarsRevenueStatus
     return _;
   }],
   [-1519637954, function decode$updates__state() {
@@ -23547,10 +23797,11 @@ export const $decoder = new Map([
     _.length = this.int32();                // : number - int
     return _;
   }],
-  [331943703, function decode$auth__sentCodeTypeFirebaseSms() {
+  [10475318, function decode$auth__sentCodeTypeFirebaseSms() {
     const _ = { _: "auth.sentCodeTypeFirebaseSms" }
     const flags = this.int32();
     if (flags & 1) _.nonce = this.bytes()   // ?: Uint8Array - flags.0?bytes
+    if (flags & 4) _.play_integrity_project_id = this.int64() // ?: bigint - flags.2?long
     if (flags & 4) _.play_integrity_nonce = this.bytes() // ?: Uint8Array - flags.2?bytes
     if (flags & 2) _.receipt = this.string() // ?: string - flags.1?string
     if (flags & 2) _.push_timeout = this.int32() // ?: number - flags.1?int
@@ -23672,7 +23923,7 @@ export const $decoder = new Map([
     if (flags & 1) _.date = this.int32()    // ?: number - flags.0?int
     return _;
   }],
-  [1070397423, function decode$draftMessage() {
+  [761606687, function decode$draftMessage() {
     const _ = { _: "draftMessage" }
     const flags = this.int32();
     if (flags & 2) _.no_webpage = true      // ?: true - flags.1?true
@@ -23682,6 +23933,7 @@ export const $decoder = new Map([
     if (flags & 8) _.entities = this.vector(this.object) // ?: api.MessageEntity[] - flags.3?Vector<MessageEntity>
     if (flags & 32) _.media = this.object() // ?: api.InputMedia - flags.5?InputMedia
     _.date = this.int32();                  // : number - int
+    if (flags & 128) _.effect = this.int64() // ?: bigint - flags.7?long
     return _;
   }],
   [-958657434, function decode$messages__featuredStickersNotModified() {
@@ -26587,14 +26839,11 @@ export const $decoder = new Map([
     _.users = this.vector(this.object);     // : api.User[] - Vector<User>
     return _;
   }],
-  [202659196, function decode$webViewResultUrl() {
+  [1294139288, function decode$webViewResultUrl() {
     const _ = { _: "webViewResultUrl" }
-    _.query_id = this.int64();              // : bigint - long
-    _.url = this.string();                  // : string - string
-    return _;
-  }],
-  [-2010155333, function decode$simpleWebViewResultUrl() {
-    const _ = { _: "simpleWebViewResultUrl" }
+    const flags = this.int32();
+    if (flags & 2) _.fullsize = true        // ?: true - flags.1?true
+    if (flags & 1) _.query_id = this.int64() // ?: bigint - flags.0?long
     _.url = this.string();                  // : string - string
     return _;
   }],
@@ -27117,11 +27366,6 @@ export const $decoder = new Map([
     _.app = this.object();                  // : api.BotApp - BotApp
     return _;
   }],
-  [1008422669, function decode$appWebViewResultUrl() {
-    const _ = { _: "appWebViewResultUrl" }
-    _.url = this.string();                  // : string - string
-    return _;
-  }],
   [-1250781739, function decode$inlineBotWebView() {
     const _ = { _: "inlineBotWebView" }
     _.text = this.string();                 // : string - string
@@ -27368,13 +27612,15 @@ export const $decoder = new Map([
     if (flags & 2) _.cooldown_until_date = this.int32() // ?: number - flags.1?int
     return _;
   }],
-  [64088654, function decode$mediaAreaCoordinates() {
+  [-808853502, function decode$mediaAreaCoordinates() {
     const _ = { _: "mediaAreaCoordinates" }
+    const flags = this.int32();
     _.x = this.double();                    // : number - double
     _.y = this.double();                    // : number - double
     _.w = this.double();                    // : number - double
     _.h = this.double();                    // : number - double
     _.rotation = this.double();             // : number - double
+    if (flags & 1) _.radius = this.double() // ?: number - flags.0?double
     return _;
   }],
   [-1098720356, function decode$mediaAreaVenue() {
@@ -27395,10 +27641,12 @@ export const $decoder = new Map([
     _.result_id = this.string();            // : string - string
     return _;
   }],
-  [-544523486, function decode$mediaAreaGeoPoint() {
+  [-891992787, function decode$mediaAreaGeoPoint() {
     const _ = { _: "mediaAreaGeoPoint" }
+    const flags = this.int32();
     _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
     _.geo = this.object();                  // : api.GeoPoint - GeoPoint
+    if (flags & 1) _.address = this.object() // ?: api.GeoPointAddress - flags.0?GeoPointAddress
     return _;
   }],
   [340088945, function decode$mediaAreaSuggestedReaction() {
@@ -27422,6 +27670,12 @@ export const $decoder = new Map([
     _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
     _.channel = this.object();              // : api.InputChannel - InputChannel
     _.msg_id = this.int32();                // : number - int
+    return _;
+  }],
+  [926421125, function decode$mediaAreaUrl() {
+    const _ = { _: "mediaAreaUrl" }
+    _.coordinates = this.object();          // : api.MediaAreaCoordinates - MediaAreaCoordinates
+    _.url = this.string();                  // : string - string
     return _;
   }],
   [-1707742823, function decode$peerStories() {
@@ -28216,6 +28470,9 @@ export const $decoder = new Map([
     _.peer = this.object();                 // : api.Peer - Peer
     return _;
   }],
+  [1617438738, function decode$starsTransactionPeerAds() {
+    return { _: "starsTransactionPeerAds" }
+  }],
   [198776256, function decode$starsTopupOption() {
     const _ = { _: "starsTopupOption" }
     const flags = this.int32();
@@ -28226,10 +28483,12 @@ export const $decoder = new Map([
     _.amount = this.int64();                // : bigint - long
     return _;
   }],
-  [-865044046, function decode$starsTransaction() {
+  [766853519, function decode$starsTransaction() {
     const _ = { _: "starsTransaction" }
     const flags = this.int32();
     if (flags & 8) _.refund = true          // ?: true - flags.3?true
+    if (flags & 16) _.pending = true        // ?: true - flags.4?true
+    if (flags & 64) _.failed = true         // ?: true - flags.6?true
     _.id = this.string();                   // : string - string
     _.stars = this.int64();                 // : bigint - long
     _.date = this.int32();                  // : number - int
@@ -28237,6 +28496,11 @@ export const $decoder = new Map([
     if (flags & 1) _.title = this.string()  // ?: string - flags.0?string
     if (flags & 2) _.description = this.string() // ?: string - flags.1?string
     if (flags & 4) _.photo = this.object()  // ?: api.WebDocument - flags.2?WebDocument
+    if (flags & 32) _.transaction_date = this.int32() // ?: number - flags.5?int
+    if (flags & 32) _.transaction_url = this.string() // ?: string - flags.5?string
+    if (flags & 128) _.bot_payload = this.bytes() // ?: Uint8Array - flags.7?bytes
+    if (flags & 256) _.msg_id = this.int32() // ?: number - flags.8?int
+    if (flags & 512) _.extended_media = this.vector(this.object) // ?: api.MessageMedia[] - flags.9?Vector<MessageMedia>
     return _;
   }],
   [-1930105248, function decode$payments__starsStatus() {
@@ -28247,6 +28511,65 @@ export const $decoder = new Map([
     if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
     _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
     _.users = this.vector(this.object);     // : api.User[] - Vector<User>
+    return _;
+  }],
+  [-394605632, function decode$foundStory() {
+    const _ = { _: "foundStory" }
+    _.peer = this.object();                 // : api.Peer - Peer
+    _.story = this.object();                // : api.StoryItem - StoryItem
+    return _;
+  }],
+  [-488736969, function decode$stories__foundStories() {
+    const _ = { _: "stories.foundStories" }
+    const flags = this.int32();
+    _.count = this.int32();                 // : number - int
+    _.stories = this.vector(this.object);   // : api.FoundStory[] - Vector<FoundStory>
+    if (flags & 1) _.next_offset = this.string() // ?: string - flags.0?string
+    _.chats = this.vector(this.object);     // : api.Chat[] - Vector<Chat>
+    _.users = this.vector(this.object);     // : api.User[] - Vector<User>
+    return _;
+  }],
+  [-565420653, function decode$geoPointAddress() {
+    const _ = { _: "geoPointAddress" }
+    const flags = this.int32();
+    _.country_iso2 = this.string();         // : string - string
+    if (flags & 1) _.state = this.string()  // ?: string - flags.0?string
+    if (flags & 2) _.city = this.string()   // ?: string - flags.1?string
+    if (flags & 4) _.street = this.string() // ?: string - flags.2?string
+    return _;
+  }],
+  [2033461574, function decode$starsRevenueStatus() {
+    const _ = { _: "starsRevenueStatus" }
+    const flags = this.int32();
+    if (flags & 1) _.withdrawal_enabled = true // ?: true - flags.0?true
+    _.current_balance = this.int64();       // : bigint - long
+    _.available_balance = this.int64();     // : bigint - long
+    _.overall_revenue = this.int64();       // : bigint - long
+    if (flags & 2) _.next_withdrawal_at = this.int32() // ?: number - flags.1?int
+    return _;
+  }],
+  [-919881925, function decode$payments__starsRevenueStats() {
+    const _ = { _: "payments.starsRevenueStats" }
+    _.revenue_graph = this.object();        // : api.StatsGraph - StatsGraph
+    _.status = this.object();               // : api.StarsRevenueStatus - StarsRevenueStatus
+    _.usd_rate = this.double();             // : number - double
+    return _;
+  }],
+  [497778871, function decode$payments__starsRevenueWithdrawalUrl() {
+    const _ = { _: "payments.starsRevenueWithdrawalUrl" }
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [961445665, function decode$payments__starsRevenueAdsAccountUrl() {
+    const _ = { _: "payments.starsRevenueAdsAccountUrl" }
+    _.url = this.string();                  // : string - string
+    return _;
+  }],
+  [543876817, function decode$inputStarsTransaction() {
+    const _ = { _: "inputStarsTransaction" }
+    const flags = this.int32();
+    if (flags & 1) _.refund = true          // ?: true - flags.0?true
+    _.id = this.string();                   // : string - string
     return _;
   }],
 ]);
@@ -31726,7 +32049,7 @@ $encoder["messages.getWebPagePreview"] = function (_) {
 messages.getWebPagePreview.ref = "messages.getWebPagePreview";
 messages.getWebPagePreview.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults", "messageMediaPaidMedia"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.exportChatInvite = function exportChatInvite(_) {
@@ -32225,13 +32548,14 @@ messages.saveDraft = function saveDraft(_) {
   return { ..._, _: "messages.saveDraft" }
 }
 $encoder["messages.saveDraft"] = function (_) {
-  this.int32(2146678790);
+  this.int32(-747452978);
   this.int32(
     (+(_.no_webpage != null) << 1)
     | (+(_.invert_media != null) << 6)
     | (+(_.reply_to != null) << 4)
     | (+(_.entities != null && _.entities.length > 0) << 3)
     | (+(_.media != null) << 5)
+    | (+(_.effect != null) << 7)
   )
   if (_.no_webpage != null)
     this.true(_.no_webpage);              // ?: true - flags.1?true
@@ -32245,6 +32569,8 @@ $encoder["messages.saveDraft"] = function (_) {
     this.vector(_.entities, this.object); // ?: MessageEntity[] - flags.3?Vector<MessageEntity>
   if (_.media != null)
     this.object(_.media);                 // ?: InputMedia - flags.5?InputMedia
+  if (_.effect != null)
+    this.int64(_.effect);                 // ?: bigint - flags.7?long
 };
 messages.saveDraft.ref = "messages.saveDraft";
 messages.saveDraft.verify = function($$) {
@@ -32606,7 +32932,7 @@ $encoder["messages.uploadMedia"] = function (_) {
 messages.uploadMedia.ref = "messages.uploadMedia";
 messages.uploadMedia.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults", "messageMediaPaidMedia"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.sendScreenshotNotification = function sendScreenshotNotification(_) {
@@ -33398,7 +33724,7 @@ $encoder["messages.uploadImportedMedia"] = function (_) {
 messages.uploadImportedMedia.ref = "messages.uploadImportedMedia";
 messages.uploadImportedMedia.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["messageMediaEmpty", "messageMediaPhoto", "messageMediaGeo", "messageMediaContact", "messageMediaUnsupported", "messageMediaDocument", "messageMediaWebPage", "messageMediaVenue", "messageMediaGame", "messageMediaInvoice", "messageMediaGeoLive", "messageMediaPoll", "messageMediaDice", "messageMediaStory", "messageMediaGiveaway", "messageMediaGiveawayResults", "messageMediaPaidMedia"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.startHistoryImport = function startHistoryImport(_) {
@@ -33960,6 +34286,7 @@ $encoder["messages.requestWebView"] = function (_) {
   this.int32(
     (+(_.from_bot_menu != null) << 4)
     | (+(_.silent != null) << 5)
+    | (+(_.compact != null) << 7)
     | (+(_.url != null) << 1)
     | (+(_.start_param != null) << 3)
     | (+(_.theme_params != null) << 2)
@@ -33970,6 +34297,8 @@ $encoder["messages.requestWebView"] = function (_) {
     this.true(_.from_bot_menu);           // ?: true - flags.4?true
   if (_.silent != null)
     this.true(_.silent);                  // ?: true - flags.5?true
+  if (_.compact != null)
+    this.true(_.compact);                 // ?: true - flags.7?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.object(_.bot);                     // : InputUser - InputUser
   if (_.url != null)
@@ -34020,10 +34349,11 @@ messages.requestSimpleWebView = function requestSimpleWebView(_) {
   return { ..._, _: "messages.requestSimpleWebView" }
 }
 $encoder["messages.requestSimpleWebView"] = function (_) {
-  this.int32(440815626);
+  this.int32(1094336115);
   this.int32(
     (+(_.from_switch_webview != null) << 1)
     | (+(_.from_side_menu != null) << 2)
+    | (+(_.compact != null) << 7)
     | (+(_.url != null) << 3)
     | (+(_.start_param != null) << 4)
     | (+(_.theme_params != null) << 0)
@@ -34032,6 +34362,8 @@ $encoder["messages.requestSimpleWebView"] = function (_) {
     this.true(_.from_switch_webview);     // ?: true - flags.1?true
   if (_.from_side_menu != null)
     this.true(_.from_side_menu);          // ?: true - flags.2?true
+  if (_.compact != null)
+    this.true(_.compact);                 // ?: true - flags.7?true
   this.object(_.bot);                     // : InputUser - InputUser
   if (_.url != null)
     this.string(_.url);                   // ?: string - flags.3?string
@@ -34044,7 +34376,7 @@ $encoder["messages.requestSimpleWebView"] = function (_) {
 messages.requestSimpleWebView.ref = "messages.requestSimpleWebView";
 messages.requestSimpleWebView.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["simpleWebViewResultUrl"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["webViewResultUrl"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.sendWebViewResultMessage = function sendWebViewResultMessage(_) {
@@ -34346,14 +34678,17 @@ messages.requestAppWebView = function requestAppWebView(_) {
   return { ..._, _: "messages.requestAppWebView" }
 }
 $encoder["messages.requestAppWebView"] = function (_) {
-  this.int32(-1940243652);
+  this.int32(1398901710);
   this.int32(
     (+(_.write_allowed != null) << 0)
+    | (+(_.compact != null) << 7)
     | (+(_.start_param != null) << 1)
     | (+(_.theme_params != null) << 2)
   )
   if (_.write_allowed != null)
     this.true(_.write_allowed);           // ?: true - flags.0?true
+  if (_.compact != null)
+    this.true(_.compact);                 // ?: true - flags.7?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.object(_.app);                     // : InputBotApp - InputBotApp
   if (_.start_param != null)
@@ -34365,7 +34700,7 @@ $encoder["messages.requestAppWebView"] = function (_) {
 messages.requestAppWebView.ref = "messages.requestAppWebView";
 messages.requestAppWebView.verify = function($$) {
   const $ = $$;
-  if (!(typeof $ == "object" && ["appWebViewResultUrl"].includes($._))) throw new TypeError("element");
+  if (!(typeof $ == "object" && ["webViewResultUrl"].includes($._))) throw new TypeError("element");
   return $$;
 };
 messages.setChatWallPaper = function setChatWallPaper(_) {
@@ -36974,17 +37309,21 @@ payments.getStarsTransactions = function getStarsTransactions(_) {
   return { ..._, _: "payments.getStarsTransactions" }
 }
 $encoder["payments.getStarsTransactions"] = function (_) {
-  this.int32(1731904249);
+  this.int32(-1751937702);
   this.int32(
     (+(_.inbound != null) << 0)
     | (+(_.outbound != null) << 1)
+    | (+(_.ascending != null) << 2)
   )
   if (_.inbound != null)
     this.true(_.inbound);                 // ?: true - flags.0?true
   if (_.outbound != null)
     this.true(_.outbound);                // ?: true - flags.1?true
+  if (_.ascending != null)
+    this.true(_.ascending);               // ?: true - flags.2?true
   this.object(_.peer);                    // : InputPeer - InputPeer
   this.string(_.offset);                  // : string - string
+  this.int32(_.limit);                    // : number - int
 };
 payments.getStarsTransactions.ref = "payments.getStarsTransactions";
 payments.getStarsTransactions.verify = function($$) {
@@ -37021,6 +37360,66 @@ payments.refundStarsCharge.ref = "payments.refundStarsCharge";
 payments.refundStarsCharge.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "object" && ["updatesTooLong", "updateShortMessage", "updateShortChatMessage", "updateShort", "updatesCombined", "updates", "updateShortSentMessage"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.getStarsRevenueStats = function getStarsRevenueStats(_) {
+  return { ..._, _: "payments.getStarsRevenueStats" }
+}
+$encoder["payments.getStarsRevenueStats"] = function (_) {
+  this.int32(-652215594);
+  this.int32(
+    (+(_.dark != null) << 0)
+  )
+  if (_.dark != null)
+    this.true(_.dark);                    // ?: true - flags.0?true
+  this.object(_.peer);                    // : InputPeer - InputPeer
+};
+payments.getStarsRevenueStats.ref = "payments.getStarsRevenueStats";
+payments.getStarsRevenueStats.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["payments.starsRevenueStats"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.getStarsRevenueWithdrawalUrl = function getStarsRevenueWithdrawalUrl(_) {
+  return { ..._, _: "payments.getStarsRevenueWithdrawalUrl" }
+}
+$encoder["payments.getStarsRevenueWithdrawalUrl"] = function (_) {
+  this.int32(331081907);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.int64(_.stars);                    // : bigint - long
+  this.object(_.password);                // : InputCheckPasswordSRP - InputCheckPasswordSRP
+};
+payments.getStarsRevenueWithdrawalUrl.ref = "payments.getStarsRevenueWithdrawalUrl";
+payments.getStarsRevenueWithdrawalUrl.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["payments.starsRevenueWithdrawalUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.getStarsRevenueAdsAccountUrl = function getStarsRevenueAdsAccountUrl(_) {
+  return { ..._, _: "payments.getStarsRevenueAdsAccountUrl" }
+}
+$encoder["payments.getStarsRevenueAdsAccountUrl"] = function (_) {
+  this.int32(-774377531);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+};
+payments.getStarsRevenueAdsAccountUrl.ref = "payments.getStarsRevenueAdsAccountUrl";
+payments.getStarsRevenueAdsAccountUrl.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["payments.starsRevenueAdsAccountUrl"].includes($._))) throw new TypeError("element");
+  return $$;
+};
+payments.getStarsTransactionsByID = function getStarsTransactionsByID(_) {
+  return { ..._, _: "payments.getStarsTransactionsByID" }
+}
+$encoder["payments.getStarsTransactionsByID"] = function (_) {
+  this.int32(662973742);
+  this.object(_.peer);                    // : InputPeer - InputPeer
+  this.vector(_.id, this.object);         // : InputStarsTransaction[] - Vector<InputStarsTransaction>
+};
+payments.getStarsTransactionsByID.ref = "payments.getStarsTransactionsByID";
+payments.getStarsTransactionsByID.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["payments.starsStatus"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
@@ -38600,6 +38999,28 @@ stories.togglePinnedToTop.ref = "stories.togglePinnedToTop";
 stories.togglePinnedToTop.verify = function($$) {
   const $ = $$;
   if (!(typeof $ == "boolean")) throw new TypeError("element");
+  return $$;
+};
+stories.searchPosts = function searchPosts(_) {
+  return { ..._, _: "stories.searchPosts" }
+}
+$encoder["stories.searchPosts"] = function (_) {
+  this.int32(1827279210);
+  this.int32(
+    (+(_.hashtag != null) << 0)
+    | (+(_.area != null) << 1)
+  )
+  if (_.hashtag != null)
+    this.string(_.hashtag);               // ?: string - flags.0?string
+  if (_.area != null)
+    this.object(_.area);                  // ?: MediaArea - flags.1?MediaArea
+  this.string(_.offset);                  // : string - string
+  this.int32(_.limit);                    // : number - int
+};
+stories.searchPosts.ref = "stories.searchPosts";
+stories.searchPosts.verify = function($$) {
+  const $ = $$;
+  if (!(typeof $ == "object" && ["stories.foundStories"].includes($._))) throw new TypeError("element");
   return $$;
 };
 
